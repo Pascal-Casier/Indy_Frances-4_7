@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://coi37s7vuip1"]
+
+[ext_resource type="Script" uid="uid://ifeepftsbd8q" path="res://scripts/mechanics/dynamic_chain.gd" id="1_ggbgk"]
+[ext_resource type="ArrayMesh" uid="uid://dkyqst1tubb85" path="res://assets/blender/chaine.res" id="2_mttfw"]
+
+[node name="DynamicChain" type="Node3D" node_paths=PackedStringArray("anchor", "link_container")]
+script = ExtResource("1_ggbgk")
+link_collision_layer = 64
+link_collision_mask = 3
+link_mesh = ExtResource("2_mttfw")
+anchor = NodePath("Anchor")
+link_container = NodePath("LinkContainer")
+
+[node name="Anchor" type="StaticBody3D" parent="."]
+
+[node name="LinkContainer" type="Node3D" parent="."]
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]

@@ -1,0 +1,41 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://csilb4t6qn3id"]
+
+[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_1y1w6"]
+output_port_for_preview = 0
+expanded_output_ports = [0]
+parameter_name = "ColorParameter"
+
+[sub_resource type="VisualShaderNodeFresnel" id="VisualShaderNodeFresnel_ae1gx"]
+default_input_values = [2, false, 3, 2.0]
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 ColorParameter : source_color;
+
+
+
+void fragment() {
+// ColorParameter:2
+	vec4 n_out2p0 = ColorParameter;
+	float n_out2p3 = n_out2p0.b;
+
+
+// Fresnel:3
+	float n_in3p3 = 2.00000;
+	float n_out3p0 = pow(1.0 - clamp(dot(vec3(n_out2p3), VIEW), 0.0, 1.0), n_in3p3);
+
+
+// Output:0
+	ALPHA = n_out3p0;
+
+
+}
+"
+nodes/fragment/0/position = Vector2(480, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_1y1w6")
+nodes/fragment/2/position = Vector2(0, 80)
+nodes/fragment/3/node = SubResource("VisualShaderNodeFresnel_ae1gx")
+nodes/fragment/3/position = Vector2(260, 140)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 1, 2, 3, 3, 0)

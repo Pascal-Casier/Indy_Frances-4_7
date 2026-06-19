@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=2 format=3 uid="uid://ce4b0rnft3jih"]
+
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="1_fy27m"]
+
+[resource]
+script = ExtResource("1_fy27m")
+question = "bom dia em francês"
+choiceA = "au revoir"
+choiceB = "bonjour"
+choiceC = "hello"
+choiceD = "allez"
+correct = "b"
+explications = "bonjour = bom dia em francês."

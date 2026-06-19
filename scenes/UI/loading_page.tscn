@@ -1,0 +1,525 @@
+[gd_scene load_steps=24 format=3 uid="uid://di58ndqvxgc7j"]
+
+[ext_resource type="Texture2D" uid="uid://dfdnathrssoh6" path="res://assets/images/ui/paperUI/QuestLog.jpg" id="1_l242k"]
+[ext_resource type="Script" uid="uid://dvhm8rs4a6g28" path="res://scripts/UI/loading_page.gd" id="1_po631"]
+[ext_resource type="Theme" uid="uid://ceqkilgsj4c24" path="res://scenes/UI/Quizz/quizz_theme.tres" id="2_64d4a"]
+[ext_resource type="Texture2D" uid="uid://b5s16tkfu7p2f" path="res://assets/images/ui/btns/png/panneau_bois_trsprt.png" id="3_64d4a"]
+[ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="3_tvu2q"]
+[ext_resource type="Theme" uid="uid://b2qf352es2gjg" path="res://Themes/btnsQuete_theme.tres" id="4_6h0ew"]
+[ext_resource type="Texture2D" uid="uid://j1k38bgfsinu" path="res://assets/images/parcheminblank.png" id="7_yein8"]
+[ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="9_po631"]
+
+[sub_resource type="SystemFont" id="SystemFont_b67xi"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ww8wf"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.141176, 0.0941176, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfrdb"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.14902, 0.0901961, 0.0156863, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.827451, 0.109804, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfg64"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.321569, 0.164706, 0.027451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34nsl"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.0352941, 0.313726, 0.458824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.913725, 0.8, 0.168627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Theme" id="Theme_l242k"]
+Button/font_sizes/font_size = 20
+Button/fonts/font = SubResource("SystemFont_b67xi")
+Button/styles/focus = SubResource("StyleBoxFlat_ww8wf")
+Button/styles/hover = SubResource("StyleBoxFlat_jfrdb")
+Button/styles/normal = SubResource("StyleBoxFlat_kfg64")
+Button/styles/pressed = SubResource("StyleBoxFlat_34nsl")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6h0ew"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tvu2q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yein8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_64d4a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_po631"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_po631"]
+texture = ExtResource("7_yein8")
+modulate_color = Color(0.971354, 0.605318, 0.103712, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5a3dx"]
+texture = ExtResource("7_yein8")
+modulate_color = Color(0.971354, 0.605318, 0.103712, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnn74"]
+texture = ExtResource("7_yein8")
+modulate_color = Color(0.971354, 0.605318, 0.103712, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ss6mm"]
+texture = ExtResource("7_yein8")
+
+[node name="loadingPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_po631")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_l242k")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_64d4a")
+theme_override_colors/font_color = Color(0.986979, 0.951919, 0.239034, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.398438, 0.267554, 0.0881958, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 56
+text = "Charger un niveau"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = -5
+theme_override_constants/v_separation = 25
+columns = 5
+
+[node name="Button1" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+text = "Niveau 1
+l'Alphabet"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+text = "Niveau 2
+les Sons"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+text = "Niveau 3
+les Articles"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+text = "Niveau 4
+les Verbes"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button5" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+text = "Niveau 5
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button6" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button7" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button8" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button9" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button10" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button11" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button12" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button13" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button14" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button15" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/GridContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = SubResource("Theme_l242k")
+theme_override_colors/font_hover_pressed_color = Color(0.955729, 0.73208, 0.425598, 1)
+theme_override_colors/font_hover_color = Color(0.956863, 0.733333, 0.427451, 1)
+theme_override_colors/font_color = Color(0.184896, 0.127545, 0.0101115, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6h0ew")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tvu2q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_yein8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_64d4a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_po631")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tvu2q")
+disabled = true
+text = "Niveau 1
+les SONS"
+icon = ExtResource("3_64d4a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ButtonExit" type="Button" parent="TextureRect/MarginContainer/VBoxContainer" groups=["boutons"]]
+custom_minimum_size = Vector2(120, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("4_6h0ew")
+theme_override_colors/font_hover_color = Color(0.945313, 0.91981, 0.903463, 1)
+theme_override_colors/font_outline_color = Color(0.950521, 0.670307, 0.438131, 1)
+theme_override_colors/font_color = Color(0.221354, 0.153073, 0.0132582, 1)
+theme_override_colors/font_focus_color = Color(0.476563, 0.228838, 0.0235799, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_tvu2q")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_po631")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5a3dx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_fnn74")
+theme_override_styles/normal = SubResource("StyleBoxTexture_ss6mm")
+text = "retour"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_po631")
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

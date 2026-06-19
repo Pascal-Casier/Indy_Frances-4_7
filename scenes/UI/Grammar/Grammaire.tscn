@@ -1,0 +1,157 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4skv1b12drkg"]
+
+[ext_resource type="Texture2D" uid="uid://ukpdbwgmwtjv" path="res://assets/images/ui/backgroundFramed.jpg" id="1_wi0bm"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="2_ryn50"]
+[ext_resource type="Texture2D" uid="uid://o3vr4tpvsqhb" path="res://assets/images/audioOn.png" id="3_don02"]
+[ext_resource type="FontFile" uid="uid://crcp1fsksmqen" path="res://assets/fonts/Adventure.otf" id="4_fwycr"]
+
+[node name="Grammaire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bgd" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_wi0bm")
+patch_margin_left = 86
+patch_margin_top = 74
+patch_margin_right = 86
+patch_margin_bottom = 74
+
+[node name="MarginContainer" type="MarginContainer" parent="bgd"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 100
+
+[node name="TabContainer" type="TabContainer" parent="bgd/MarginContainer"]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 1
+
+[node name="Être" type="Panel" parent="bgd/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="bgd/MarginContainer/TabContainer/Être"]
+custom_minimum_size = Vector2(750, 400)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -200.0
+offset_right = 375.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="bgd/MarginContainer/TabContainer/Être/MarginContainer"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("2_ryn50")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[center][table=5] 
+[cell][color=#FFFF00]français[/color][/cell][cell]    [/cell][cell][color=#FFFF00]portugais[/color][/cell][cell]    [/cell][cell][color=#FFFF00]phonétique[/color][/cell] 
+
+[cell]Je suis[/cell][cell]    [/cell][cell]Eu sou[/cell][cell]    [/cell][cell][ʒə sɥi][/cell] 
+[cell]Tu es[/cell][cell]    [/cell][cell]Você é[/cell][cell]    [/cell][cell][ty ɛ][/cell] 
+[cell]Il/Elle est[/cell][cell]    [/cell][cell]Ele/Ela é[/cell][cell]    [/cell][cell][il/ɛl ɛ][/cell] 
+[cell]Nous sommes[/cell][cell]    [/cell][cell]Nós somos[/cell][cell]    [/cell][cell][nu sɔm][/cell] 
+[cell]Vous êtes[/cell][cell]    [/cell][cell]Vocês são / Você é[/cell][cell]    [/cell][cell][vuz ɛt][/cell] 
+[cell]Ils/Elles sont[/cell][cell]    [/cell][cell]Eles/Elas são[/cell][cell]    [/cell][cell][il/ɛl sɔ̃][/cell] 
+[/table][/center]
+"
+
+[node name="Avoir" type="Panel" parent="bgd/MarginContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="bgd/MarginContainer/TabContainer/Avoir"]
+custom_minimum_size = Vector2(750, 400)
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -375.0
+offset_top = -200.0
+offset_right = 375.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="bgd/MarginContainer/TabContainer/Avoir/MarginContainer2"]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("2_ryn50")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "
+
+[center][table=5] 
+[cell][left][color=#FFFF00]français[/color][/left][/cell][cell]    [/cell][cell][left][color=#FFFF00]phonétique[/color][/left][/cell][cell]    [/cell][cell][left][color=#FFFF00]portugais[/color][/left][/cell]
+[cell][left]J'ai		[/left][/cell][cell]    [/cell][cell][left][ʒ‿e][/left][/cell][cell]    [/cell][cell][left]Eu tenho[/left][/cell] 
+[cell][left]Tu as	[/left][/cell][cell]    [/cell][cell][left][ty a][/left][/cell][cell]    [/cell][cell][left]Você tem[/left][/cell] 
+[cell][left]Il/Elle a	[/left][/cell][cell]    [/cell][cell][left][il/ɛl a][/left][/cell][cell]    [/cell][cell][left]Ele/Ela tem[/left][/cell] 
+[cell][left]Nous avons	[/left][/cell][cell]    [/cell][cell][left][nuz avɔ̃][/left][/cell][cell]    [/cell][cell][left]Nós temos[/left][/cell] 
+[cell][left]Vous avez				[/left][/cell][cell]    [/cell][cell][left][vuz avè]				[/left][/cell][cell]    [/cell][cell][left]Vocês têm / Você tem[/left][/cell] 
+[cell][left]Ils/Elles ont	[/left][/cell][cell]    [/cell][cell][left][il/ɛl zɔ̃][/left][/cell][cell]    [/cell][cell][left]Eles/Elas têm[/left][/cell] 
+[/table][/center]
+"
+
+[node name="ButtonSound" type="Button" parent="bgd"]
+layout_mode = 2
+offset_left = 972.0
+offset_top = 149.0
+offset_right = 1030.0
+offset_bottom = 207.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("3_don02")
+
+[node name="ButtonExit" type="Button" parent="bgd"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -182.0
+offset_right = -119.0
+offset_bottom = -115.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("4_fwycr")
+theme_override_font_sizes/font_size = 46
+text = "X"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

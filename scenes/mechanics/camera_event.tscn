@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwly4b4ry5r4d"]
+
+[ext_resource type="Script" uid="uid://bmgdm52160dkw" path="res://scripts/mechanics/camera_event.gd" id="1_6i8u1"]
+
+[node name="CameraEvent" type="Camera3D"]
+script = ExtResource("1_6i8u1")

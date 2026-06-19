@@ -1,0 +1,234 @@
+[gd_scene load_steps=16 format=3 uid="uid://v6aup6pro73s"]
+
+[ext_resource type="FontFile" uid="uid://bpvnkn5cvgw0c" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_4js63"]
+[ext_resource type="Script" uid="uid://cyuqnimfq08jw" path="res://scripts/UI/conjugaison_game.gd" id="1_4ms0j"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="2_kj6r3"]
+[ext_resource type="Texture2D" uid="uid://cw7xyhuqvie5h" path="res://assets/images/ui/computer_screen2.jpg" id="4_kj6r3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lv87"]
+bg_color = Color(0.736979, 0.715868, 0.719464, 0.207843)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ts7jp"]
+bg_color = Color(0.2306, 0.768229, 0.0660197, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_doj7s"]
+bg_color = Color(0.2306, 0.768229, 0.0660197, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2emgr"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_psqe8"]
+bg_color = Color(0.713485, 0.945313, 0.642517, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_seckv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kj6r3"]
+bg_color = Color(0.835938, 0.825053, 0.825053, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="Theme" id="Theme_grcl0"]
+Button/colors/font_color = Color(0.408854, 0.408854, 0.408854, 1)
+Button/colors/font_disabled_color = Color(0.101563, 0.0785522, 0.0785522, 0.5)
+Button/colors/font_hover_pressed_color = Color(0.0668335, 0.351563, 0.151362, 0.698039)
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_4js63")
+Button/styles/disabled = SubResource("StyleBoxFlat_5lv87")
+Button/styles/focus = SubResource("StyleBoxFlat_ts7jp")
+Button/styles/hover = SubResource("StyleBoxFlat_doj7s")
+Button/styles/normal = SubResource("StyleBoxFlat_2emgr")
+Button/styles/pressed = SubResource("StyleBoxFlat_psqe8")
+Label/colors/font_color = Color(0.0204875, 0.0389363, 0.414063, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("2_kj6r3")
+Label/styles/normal = SubResource("StyleBoxEmpty_seckv")
+Panel/styles/panel = SubResource("StyleBoxFlat_kj6r3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ts7jp"]
+texture = ExtResource("4_kj6r3")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abs1y"]
+bg_color = Color(0.757813, 0.0374959, 0.0487509, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4js63"]
+bg_color = Color(0.025533, 0.653646, 0.0746044, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="ConjugaisonGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_grcl0")
+script = ExtResource("1_4ms0j")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0359904, 0.139249, 0.476563, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 35
+
+[node name="Panel" type="Panel" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ts7jp")
+
+[node name="Titre" type="Label" parent="TextureRect/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 416.0
+offset_top = 71.0
+offset_right = 656.0
+offset_bottom = 130.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 46
+text = "Conjugaison"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="TextureRect/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -378.0
+offset_top = -179.0
+offset_right = -303.0
+offset_bottom = -154.0
+grow_horizontal = 0
+grow_vertical = 2
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="TextureRect/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -147.0
+offset_top = 101.0
+offset_right = -126.0
+offset_bottom = 148.0
+grow_horizontal = 0
+text = "X"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="BarreProgression" type="ProgressBar" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_abs1y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_4js63")
+
+[node name="PhraseLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="BoutonsContainer" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="BoutonSuivant" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "suivant"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="TextureRect/MarginContainer/Panel/ButtonExit" to="." method="_on_button_exit_pressed"]

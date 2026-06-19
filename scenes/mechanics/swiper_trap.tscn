@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://wgv8rpj674ov"]
+
+[ext_resource type="PackedScene" uid="uid://b11kc7vnobks2" path="res://assets/blender/swiper_teamRed.gltf.glb" id="1_irubk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vwxj2"]
+height = 1.65815
+radius = 0.391247
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_khj33"]
+height = 2.54196
+radius = 0.391247
+
+[sub_resource type="Animation" id="Animation_nc6d0"]
+resource_name = "on"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("swiper_teamRed:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.26573, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0of2x"]
+_data = {
+&"on": SubResource("Animation_nc6d0")
+}
+
+[node name="swiper_trap" instance=ExtResource("1_irubk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="swiper_teamRed" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="swiper_teamRed/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.814128, 0)
+shape = SubResource("CylinderShape3D_vwxj2")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="swiper_teamRed/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.996347, 1.72197)
+shape = SubResource("CylinderShape3D_khj33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_0of2x")
+}
+autoplay = "on"

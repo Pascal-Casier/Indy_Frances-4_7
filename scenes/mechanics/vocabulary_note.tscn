@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw6ty8mw0nufw"]
+
+[ext_resource type="Script" uid="uid://6ywvf0ljsrm5" path="res://scripts/mechanics/vocabulary_note.gd" id="1_vpkf0"]
+[ext_resource type="PackedScene" uid="uid://chsybsl3u3sa2" path="res://assets/blender/Scroll_Tied_With_RedRibbon.glb" id="2_ov07l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1dxx0"]
+size = Vector3(1.94922, 1, 1)
+
+[node name="VocabularyNote" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_vpkf0")
+nomFr = "une souris"
+nomBR = "um rato"
+categorie = "animaux"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1dxx0")
+
+[node name="Scroll_Tied_With_RedRibbon" parent="." instance=ExtResource("2_ov07l")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

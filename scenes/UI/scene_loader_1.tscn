@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://dlumr1o3pi2m6"]
+
+[ext_resource type="Script" uid="uid://cyesr5fx6erk7" path="res://scripts/UI/scene_loader_1.gd" id="1_hyraw"]
+[ext_resource type="Texture2D" uid="uid://cl280tbktvpx2" path="res://assets/images/menu_bgd1.png" id="1_nqr21"]
+[ext_resource type="Texture2D" uid="uid://q2e4ipitj1ku" path="res://assets/images/ui/indiana/arrivée maison1.png" id="2_aicii"]
+[ext_resource type="Texture2D" uid="uid://7ivp63jm7d3n" path="res://assets/images/ui/indiana/ChatGPT Image 21 de abr. de 2025, 10_29_05.png" id="3_7w1r6"]
+[ext_resource type="Texture2D" uid="uid://do104y2wiw8ss" path="res://assets/images/ui/background2.png" id="3_8u2jn"]
+[ext_resource type="Texture2D" uid="uid://bjr6q4cgakcny" path="res://assets/images/ui/indiana/house_forest2.png" id="4_5r12e"]
+[ext_resource type="Texture2D" uid="uid://6qbrbfpyc3ap" path="res://assets/images/ui/indiana/Indy dans grenier.png" id="5_5r12e"]
+[ext_resource type="Texture2D" uid="uid://dg4wegc20856x" path="res://assets/images/ui/indiana/Indy foret.png" id="6_uelr0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5sis2"]
+texture = ExtResource("3_8u2jn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3yjf"]
+bg_color = Color(0.403922, 0.760784, 0.411765, 0.796078)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.211765, 0, 0.211765, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Scene_Loader1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hyraw")
+backgrounds = Array[Texture2D]([ExtResource("2_aicii"), ExtResource("3_7w1r6"), ExtResource("4_5r12e"), ExtResource("5_5r12e"), ExtResource("6_uelr0")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nqr21")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = 197.0
+offset_right = 199.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxTexture_5sis2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_g3yjf")
+max_value = 1.0
+step = 0.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -109.5
+offset_top = 284.0
+offset_right = 109.5
+offset_bottom = 341.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.705882, 0.788235, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 16
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 41
+text = "LOADING..."

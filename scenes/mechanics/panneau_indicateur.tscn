@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://crui07b1kklif"]
+
+[ext_resource type="Script" uid="uid://bu63jvw82gtsy" path="res://scripts/mechanics/panneau_indicateur.gd" id="1_16ti8"]
+[ext_resource type="Texture2D" uid="uid://dwihdgyv2gh17" path="res://assets/images/textures/Wood_13-128x128.png" id="1_wbt2h"]
+[ext_resource type="AudioStream" uid="uid://ctcrto5iq1cjl" path="res://assets/sounds/sfx/confirm.ogg" id="3_042t3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16ti8"]
+albedo_texture = ExtResource("1_wbt2h")
+
+[sub_resource type="BoxMesh" id="BoxMesh_042t3"]
+size = Vector3(1, 0.6, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q8vha"]
+size = Vector3(0.997803, 0.599365, 0.1)
+
+[node name="panneau_indicateur" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_16ti8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_16ti8")
+mesh = SubResource("BoxMesh_042t3")
+
+[node name="Label3D" type="Label3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0501711)
+text = "Exemple"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q8vha")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_042t3")
+volume_db = -11.652
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

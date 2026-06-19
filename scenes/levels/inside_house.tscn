@@ -1,0 +1,681 @@
+[gd_scene load_steps=27 format=3 uid="uid://by6hq3dxph3fh"]
+
+[ext_resource type="Script" uid="uid://gdtytkgaq0lm" path="res://scripts/Levels/inside_house.gd" id="1_7e5r7"]
+[ext_resource type="Texture2D" uid="uid://dngpy86qo20pu" path="res://assets/images/bgds/vieille_maison_en_bois_avec_un_1.jpg" id="1_qqwtq"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_pqs44"]
+[ext_resource type="Script" uid="uid://b7vgidiielq14" path="res://scripts/UI/notebook.gd" id="4_at24f"]
+[ext_resource type="Texture2D" uid="uid://c1mbbbk1qmpjp" path="res://assets/images/ui/blackboard_adorned_2.jpg" id="5_flc4g"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="6_ykxl6"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="7_32y3d"]
+[ext_resource type="Texture2D" uid="uid://ndxr1vhwwqh4" path="res://assets/images/ui/quit.png" id="8_h0ob7"]
+[ext_resource type="Texture2D" uid="uid://cvyhna88beo23" path="res://assets/images/ui/a-nice-frame-for-an-image-.png" id="9_a7dj3"]
+[ext_resource type="Texture2D" uid="uid://c8c1k5vukvfp7" path="res://assets/images/ui/notebooksingle.jpeg" id="10_mbvos"]
+[ext_resource type="Texture2D" uid="uid://4i2w7dbagfpl" path="res://assets/images/ui/notebookfront2.png" id="11_mhpdh"]
+[ext_resource type="AudioStream" uid="uid://v4skiobc41qy" path="res://assets/sounds/sfx/Whoosh Sound Effects.mp3" id="12_cv6c2"]
+[ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="13_8ismo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjmei"]
+bg_color = Color(0.0588235, 0.129412, 0.305882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljg13"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtk4"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sjbk"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hef20"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_t22su"]
+default_font = ExtResource("6_ykxl6")
+default_font_size = 50
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("6_ykxl6")
+Button/styles/focus = SubResource("StyleBoxFlat_ljg13")
+Button/styles/hover = SubResource("StyleBoxFlat_jqtk4")
+Button/styles/normal = SubResource("StyleBoxFlat_0sjbk")
+Button/styles/pressed = SubResource("StyleBoxFlat_hef20")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74ssr"]
+bg_color = Color(0.690196, 0.160784, 0.192157, 0.505882)
+skew = Vector2(0.265, 0)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l066p"]
+bg_color = Color(0.0745098, 0.172549, 0.635294, 0.505882)
+skew = Vector2(0.265, 0)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4g03o"]
+bg_color = Color(0.690196, 0.160784, 0.192157, 0.505882)
+skew = Vector2(0.265, 0)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+shadow_size = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8slel"]
+bg_color = Color(0.0352941, 0.0980392, 0.415686, 0.505882)
+skew = Vector2(0.265, 0)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+shadow_size = 30
+
+[sub_resource type="Animation" id="Animation_s261b"]
+resource_name = "new_note"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("agenda:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(74, 57), Vector2(128, 142), Vector2(74, 57)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("agenda:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.144681, 0.144681), Vector2(0.3, 0.3), Vector2(0.144681, 0.144681)]
+}
+
+[sub_resource type="Animation" id="Animation_a6lor"]
+resource_name = "note_found"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("note_found:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.3001, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("note_found:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf2qb"]
+_data = {
+&"new_note": SubResource("Animation_s261b"),
+&"note_found": SubResource("Animation_a6lor")
+}
+
+[node name="Inside_house" type="Node2D"]
+script = ExtResource("1_7e5r7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576.5, 323.5)
+scale = Vector2(0.973818, 0.962798)
+texture = ExtResource("1_qqwtq")
+
+[node name="lit" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/lit"]
+unique_name_in_owner = true
+polygon = PackedVector2Array(309.606, 102.306, 287.015, 192.668, 447.209, 292.377, 569.408, 281.991, 573.516, 86.7264, 514.984, 96.0742)
+
+[node name="Line2DLit" type="Line2D" parent="Sprite2D/lit"]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(277.773, 188.513, 447.209, 296.532, 565.301, 281.991, 571.462, 87.7651, 508.822, 97.1129, 305.499, 98.1515)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/lit/Line2DLit"]
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(305.499, 97.1129, 281.88, 188.513, 444.128, 291.339, 567.355, 280.952, 570.435, 87.7651, 482.123, 100.229)
+
+[node name="le_lit" type="Label" parent="Sprite2D/lit/Line2DLit/Polygon2D"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 416.402
+offset_top = 140.736
+offset_right = 464.402
+offset_bottom = 175.736
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "Le lit"
+
+[node name="livre" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/livre"]
+position = Vector2(-312.687, -89.8424)
+polygon = PackedVector2Array(374.814, 116.328, 376.867, 183.839, 399.459, 186.955, 398.432, 119.444)
+
+[node name="Line2DLivre" type="Line2D" parent="Sprite2D/livre"]
+unique_name_in_owner = true
+visible = false
+points = PackedVector2Array(64.1804, 95.0356, 89.8525, 95.0356, 86.7719, 26.4853, 64.1804, 25.4467)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/livre/Line2DLivre"]
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(61.0997, 97.1129, 91.9063, 97.1129, 88.8256, 30.6399, 62.1266, 30.6399)
+
+[node name="le_livre" type="Label" parent="Sprite2D/livre/Line2DLivre/Polygon2D"]
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 43.6427
+offset_top = -28.5626
+offset_right = 112.643
+offset_bottom = 6.43742
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "Le livre"
+
+[node name="bougie" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/bougie"]
+position = Vector2(-417.429, -188.513)
+polygon = PackedVector2Array(376.867, 102.825, 373.786, 190.071, 399.459, 190.071, 399.459, 103.864)
+
+[node name="Line2DBougie" type="Line2D" parent="Sprite2D/bougie"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-100.121, -111.654)
+points = PackedVector2Array(53.3981, 99.7094, 87.2853, 101.787, 79.0702, 11.425, 58.5325, 11.425)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/bougie/Line2DBougie"]
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(56.4787, 96.5935, 86.2585, 95.5548, 79.0702, 14.541, 60.5863, 15.5796)
+
+[node name="la_bougie" type="Label" parent="Sprite2D/bougie/Line2DBougie/Polygon2D"]
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 106.796
+offset_top = 47.7774
+offset_right = 197.796
+offset_bottom = 82.7774
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "La bougie"
+
+[node name="fenetre" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/fenetre"]
+position = Vector2(-571.462, -178.127)
+polygon = PackedVector2Array(375.84, 17.6569, 373.786, 190.071, 464.152, 189.032, 463.126, 16.6182)
+
+[node name="Line2DFenetre" type="Line2D" parent="Sprite2D/fenetre"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-258.262, -176.049)
+points = PackedVector2Array(60.5863, 187.994, 150.952, 187.994, 149.925, 11.425, 58.5325, 11.425)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/fenetre/Line2DFenetre"]
+position = Vector2(4.57764e-05, -2.07726)
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(59.5594, 187.994, 155.06, 186.955, 154.033, 12.4637, 60.5863, 15.5796)
+
+[node name="la_fenetre" type="Label" parent="Sprite2D/fenetre/Line2DFenetre/Polygon2D"]
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 59.5594
+offset_top = 112.173
+offset_right = 153.559
+offset_bottom = 147.173
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "La fenêtre"
+
+[node name="armoire" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/armoire"]
+modulate = Color(0.227451, 0.670588, 0, 1)
+position = Vector2(-182.272, -157.354)
+polygon = PackedVector2Array(375.84, 17.6569, 380.975, 297.051, 567.868, 253.428, 569.922, 15.5796)
+
+[node name="Line2DArmoire" type="Line2D" parent="Sprite2D/armoire"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(168.923, -136.581)
+points = PackedVector2Array(57.5056, 225.385, 213.592, 225.385, 213.592, 12.4637, 58.5325, 11.425)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/armoire/Line2DArmoire"]
+position = Vector2(4.57764e-05, -2.07726)
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(60.5862, 224.346, 124.253, 223.307, 208.458, 223.307, 210.512, 13.5023, 60.5863, 15.5796)
+
+[node name="larmoire" type="Label" parent="Sprite2D/armoire/Line2DArmoire/Polygon2D"]
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 89.339
+offset_top = 55.0479
+offset_right = 183.339
+offset_bottom = 90.0479
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "L'armoire"
+
+[node name="chaise" type="Area2D" parent="Sprite2D"]
+unique_name_in_owner = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/chaise"]
+position = Vector2(-858.99, -42.0649)
+polygon = PackedVector2Array(374.814, 116.328, 410.755, 246.158, 415.889, 301.206, 456.964, 337.558, 592.513, 308.476, 593.54, 223.308, 557.599, 173.453, 413.835, 118.405)
+
+[node name="Line2DChaise" type="Line2D" parent="Sprite2D/chaise"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-546.817, 36.8717)
+points = PackedVector2Array(103.715, 219.153, 147.872, 250.312, 281.367, 230.578, 278.286, 140.216, 103.715, 38.4297, 60.5862, 32.1978, 85.2315, 106.98)
+closed = true
+width = 7.0
+default_color = Color(0.843137, 0.0745098, 0.0745098, 0.552941)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+round_precision = 32
+antialiased = true
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/chaise/Line2DChaise"]
+position = Vector2(-3.24783, -2.36139)
+scale = Vector2(1.01163, 1.00943)
+color = Color(0.870588, 0.0705882, 0.0705882, 0.4)
+polygon = PackedVector2Array(102.689, 218.114, 147.872, 250.312, 279.313, 230.578, 277.259, 140.216, 105.734, 43.4966, 66.1456, 37.323, 89.4925, 114.493)
+
+[node name="la_chaise" type="Label" parent="Sprite2D/chaise/Line2DChaise/Polygon2D"]
+self_modulate = Color(1, 1, 1, 0.678431)
+offset_left = 153.443
+offset_top = 178.287
+offset_right = 239.443
+offset_bottom = 213.287
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("StyleBoxFlat_bjmei")
+text = "La chaise"
+
+[node name="Panel_message" type="Panel" parent="Sprite2D"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(400, 100)
+offset_left = -182.272
+offset_top = 176.049
+offset_right = 217.728
+offset_bottom = 276.049
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="message" type="Label" parent="Sprite2D/Panel_message"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_pqs44")
+horizontal_alignment = 1
+
+[node name="Notebook" type="Control" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+custom_minimum_size = Vector2(1000, 700)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 74.0
+offset_top = -23.0
+offset_right = 1074.0
+offset_bottom = 677.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_at24f")
+
+[node name="MarginContainer" type="MarginContainer" parent="Notebook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="Panel" type="TextureRect" parent="Notebook/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+texture = ExtResource("5_flc4g")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Notebook/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Notebook/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_pqs44")
+theme_override_font_sizes/font_size = 66
+text = "Mes notes"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NoteContainer" type="GridContainer" parent="Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme = SubResource("Theme_t22su")
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 30
+columns = 7
+
+[node name="Button" type="Button" parent="Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_32y3d")
+theme_override_font_sizes/font_size = 51
+text = "avoir"
+
+[node name="Exit" type="Button" parent="Notebook/MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.831373, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.905882, 0.945098, 0, 1)
+theme_override_font_sizes/font_size = 41
+icon = ExtResource("8_h0ob7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Feuille_note" type="NinePatchRect" parent="Notebook/MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_a7dj3")
+patch_margin_left = 150
+patch_margin_top = 88
+patch_margin_right = 150
+patch_margin_bottom = 88
+
+[node name="MarginContainer" type="MarginContainer" parent="Notebook/MarginContainer/Panel/Feuille_note"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 110
+
+[node name="TextureRect" type="TextureRect" parent="Notebook/MarginContainer/Panel/Feuille_note/MarginContainer"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("10_mbvos")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("7_32y3d")
+theme_override_font_sizes/font_size = 31
+text = "fdsf"
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="Notebook/MarginContainer/Panel/Feuille_note"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -66.0
+offset_top = 25.0
+offset_right = -29.0
+offset_bottom = 97.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 46
+icon = ExtResource("8_h0ob7")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="agenda" type="Button" parent="."]
+offset_left = 74.0
+offset_top = 57.0
+offset_right = 405.0
+offset_bottom = 432.0
+scale = Vector2(0.144681, 0.144681)
+theme_override_styles/focus = SubResource("StyleBoxFlat_74ssr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l066p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4g03o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8slel")
+icon = ExtResource("11_mhpdh")
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uf2qb")
+}
+
+[node name="note_found" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(548, 353)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_mbvos")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_cv6c2")
+
+[node name="ButtonExit" type="Button" parent="."]
+offset_top = 296.0
+offset_right = 58.0
+offset_bottom = 354.0
+icon = ExtResource("13_8ismo")
+
+[connection signal="input_event" from="Sprite2D/lit" to="." method="_on_lit_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/lit" to="." method="_on_lit_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/lit" to="." method="_on_lit_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/livre" to="." method="_on_livre_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/livre" to="." method="_on_livre_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/livre" to="." method="_on_livre_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/bougie" to="." method="_on_livre_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/bougie" to="." method="_on_bougie_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/bougie" to="." method="_on_bougie_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/fenetre" to="." method="_on_livre_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/fenetre" to="." method="_on_fenetre_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/fenetre" to="." method="_on_fenetre_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/armoire" to="." method="_on_livre_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/armoire" to="." method="_on_armoire_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/armoire" to="." method="_on_armoire_mouse_exited"]
+[connection signal="input_event" from="Sprite2D/chaise" to="." method="_on_livre_input_event"]
+[connection signal="mouse_entered" from="Sprite2D/chaise" to="." method="_on_chaise_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/chaise" to="." method="_on_chaise_mouse_exited"]
+[connection signal="pressed" from="Notebook/MarginContainer/Panel/MarginContainer/Exit" to="Notebook" method="_on_exit_pressed"]
+[connection signal="pressed" from="Notebook/MarginContainer/Panel/Feuille_note/ButtonExit" to="Notebook" method="_on_button_exit_pressed"]
+[connection signal="pressed" from="agenda" to="." method="_on_agenda_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]

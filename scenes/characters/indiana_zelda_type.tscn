@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://bejrujfqxb5ll"]
+[gd_scene load_steps=9 format=3 uid="uid://bejrujfqxb5ll"]
+
+[ext_resource type="Script" uid="uid://cb1rjm04ib8mi" path="res://scripts/characters/indiana_zelda_type.gd" id="1_5urn3"]
+[ext_resource type="PackedScene" uid="uid://0xx32b2viagu" path="res://scenes/characters/indiana_skin.tscn" id="2_l0qgq"]
+[ext_resource type="AudioStream" uid="uid://cx81lnxvy3tyc" path="res://assets/sounds/sfx/ow_hurtsound.mp3" id="5_xfiel"]
+[ext_resource type="Texture2D" uid="uid://lghjk4km8jf1" path="res://assets/images/ui/hurt.png" id="6_ok8c2"]
+[ext_resource type="AudioStream" uid="uid://cx81lnxvy3tyc" path="res://assets/sounds/sfx/ow_hurtsound.mp3" id="5_xfiel"]
+[ext_resource type="Texture2D" uid="uid://lghjk4km8jf1" path="res://assets/images/ui/hurt.png" id="6_ok8c2"]
+[ext_resource type="Script" uid="uid://yvu0s8mot1eq" path="res://scripts/camera/indy_player_camera.gd" id="26_6k0bk"]
+[ext_resource type="Script" uid="uid://c2yspg5tgc6ip" path="res://scripts/camera/Indy_camera_follow.gd" id="27_5urn3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_47oi5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ydpda"]
+radius = 0.3
+
+[node name="IndianaZeldaType" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 61
+script = ExtResource("1_5urn3")
+
+[node name="IndianaSkin" parent="." instance=ExtResource("2_l0qgq")]
+
+[node name="GeneralSkeleton" parent="IndianaSkin/init" index="0"]
+bones/0/position = Vector3(0.00756633, 0.774994, 0.00961625)
+bones/0/rotation = Quaternion(-0.0249919, -0.00180905, -0.0183685, 0.999517)
+bones/1/rotation = Quaternion(0.0114018, 0.000854459, -0.00321271, 0.99993)
+bones/2/rotation = Quaternion(0.01423, -0.0184808, -0.00396807, 0.99972)
+bones/3/rotation = Quaternion(0.0144074, -0.0184759, -0.00344159, 0.99972)
+bones/4/rotation = Quaternion(0.0192509, 0.00587494, -0.00312569, 0.999793)
+bones/5/rotation = Quaternion(0.0521595, -0.011507, 0.0305871, 0.998104)
+bones/7/rotation = Quaternion(0.493443, 0.504014, 0.498539, -0.503927)
+bones/8/rotation = Quaternion(0.119016, 0.793856, -0.590128, -0.0858906)
+bones/9/rotation = Quaternion(0.171992, -0.694526, 0.170832, 0.677398)
+bones/10/rotation = Quaternion(-0.0170266, 0.735761, -0.145587, 0.661188)
+bones/11/rotation = Quaternion(0.173129, -0.0576005, -0.00622035, 0.983194)
+bones/12/rotation = Quaternion(0.282418, 0.105607, -0.0484015, 0.952231)
+bones/13/rotation = Quaternion(0.148287, -0.0191859, -0.022322, 0.988506)
+bones/15/rotation = Quaternion(0.44191, -0.52845, -0.561367, -0.45861)
+bones/16/rotation = Quaternion(-0.170995, 0.8115, -0.539413, 0.145813)
+bones/17/rotation = Quaternion(0.183885, 0.692028, -0.182816, 0.673692)
+bones/18/rotation = Quaternion(-0.0767082, -0.669014, 0.0882614, 0.733993)
+bones/19/rotation = Quaternion(0.0712832, 0.00378432, 0.042322, 0.996551)
+bones/20/rotation = Quaternion(0.368188, 0.0026347, 0.0420622, 0.928796)
+bones/21/rotation = Quaternion(0.0848551, -0.000153052, 0.00978731, 0.996345)
+bones/23/rotation = Quaternion(0.0157776, 0.101764, 0.994326, -0.0266517)
+bones/24/rotation = Quaternion(-0.0311122, 0.951281, -0.283683, 0.116707)
+bones/25/rotation = Quaternion(-0.0148131, 0.57368, -0.817599, 0.0469418)
+bones/26/rotation = Quaternion(-1.64921e-07, 0.999996, 0.00273073, 7.3334e-09)
+bones/28/rotation = Quaternion(-0.111284, 0.107939, 0.986794, 0.0469451)
+bones/29/rotation = Quaternion(0.0269008, 0.967164, -0.244836, -0.0626551)
+bones/30/rotation = Quaternion(0.0345706, 0.615325, -0.784022, -0.0740952)
+bones/31/rotation = Quaternion(-6.91646e-08, 1, 0.000213766, 1.30749e-08)
+
+[node name="RightHandSlot" parent="IndianaSkin/init/GeneralSkeleton" index="1"]
+transform = Transform3D(0.522529, -0.192108, 0.830697, 0.168094, -0.931953, -0.32126, 0.835887, 0.307503, -0.45468, -0.232691, 0.850366, 0.114471)
+visible = false
+
+[node name="Wand" parent="IndianaSkin/init/GeneralSkeleton/RightHandSlot" index="0"]
+visible = true
+
+[node name="LeftHanSlot" parent="IndianaSkin/init/GeneralSkeleton" index="2"]
+transform = Transform3D(0.505589, -0.0241482, -0.862436, -0.219181, -0.970409, -0.10132, -0.834469, 0.240256, -0.495921, 0.257766, 0.827784, 0.125633)
+
+[node name="Skeleton_Shield_Small_A2" parent="IndianaSkin/init/GeneralSkeleton/LeftHanSlot" index="0"]
+visible = false
+
+[node name="AnimationTree" parent="IndianaSkin" index="2"]
+parameters/AttackOneShot/internal_active = -1
+parameters/ExtraOneShot/active = false
+parameters/ExtraOneShot/internal_active = false
+parameters/TimeScale/scale = 0.0281014
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_47oi5")
+
+[node name="SpringArmPivot" type="Node3D" parent="."]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.49141, 0)
+script = ExtResource("26_6k0bk")
+mouse_sensibility = 0.003
+
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmPivot"]
+shape = SubResource("SphereShape3D_ydpda")
+spring_length = 5.0
+
+[node name="SpringPosition" type="Node3D" parent="SpringArmPivot/SpringArm3D"]
+
+[node name="Camera3D" type="Camera3D" parent="SpringArmPivot" node_paths=PackedStringArray("springarm")]
+script = ExtResource("27_5urn3")
+springarm = NodePath("../SpringArm3D/SpringPosition")
+lerp_power = 8.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xfiel")
+
+[node name="hurt_image" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="hurt_image"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -36.0
+offset_right = 560.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.786277, 0.665808)
+texture = ExtResource("6_ok8c2")
+
+[editable path="IndianaSkin"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://8w4shbijv57x"]
+
+[ext_resource type="Shader" uid="uid://etty0xlrpgui" path="res://scenes/shaders/hypnose_shader.gdshader" id="1_cd3se"]
+[ext_resource type="Texture2D" uid="uid://di1h2e58gh5hs" path="res://assets/images/ui/paperUI/Cadre UI.png" id="2_ue842"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ue842"]
+shader = ExtResource("1_cd3se")
+shader_parameter/time_scale = 0.8
+shader_parameter/distortion_strength = 0.5
+shader_parameter/swirl_strength = 0.1
+shader_parameter/color_shift = Color(0.607686, 0.632843, 0.929688, 1)
+
+[node name="ColorRect" type="ColorRect"]
+material = SubResource("ShaderMaterial_ue842")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ue842")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Bienvenue, voyageur des mots, dans le cœur vivant de ce livre enchanté. Tu as été choisi pour parcourir les récits immortels de la littérature française, des contes étoilés aux épopées d’épée. Chaque chapitre est un monde, chaque monde est une quête. Résous les épreuves en tissant les mots de la langue française, et libère les pages de leur magie prisonnière.
+
+Mais prends garde : seule la maîtrise des défis te permettra de tourner les pages et de revenir dans ton monde. Explore, apprends, et deviens le scribe de ta propre légende. Oseras-tu écrire la fin de cette aventure ?
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -47.0
+offset_right = 45.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "continue..."

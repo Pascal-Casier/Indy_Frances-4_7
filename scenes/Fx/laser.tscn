@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://m5jhjaj2bdei"]
+
+[ext_resource type="Script" uid="uid://csa2t48kk6gk5" path="res://scripts/Fx/laser.gd" id="1_36s1n"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_kfr6v"]
+flip_faces = true
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.01
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cniu6"]
+transparency = 1
+albedo_color = Color(0.972549, 0.0235294, 0.0235294, 0.843137)
+emission_enabled = true
+emission = Color(0.973958, 0.0253635, 0.0253635, 1)
+emission_energy_multiplier = 10.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50xaa"]
+transparency = 1
+albedo_color = Color(0.973958, 0.0253635, 0.0253635, 1)
+emission_enabled = true
+emission = Color(0.972549, 0.0235294, 0.0235294, 0.843137)
+emission_energy_multiplier = 10.0
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_i7rnp"]
+_data = [Vector2(0, 0.54717), 0.0, 0.0, 0, 0, Vector2(0.217593, 1), 0.0, 0.0, 0, 0, Vector2(0.99537, 0.0490565), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jt83p"]
+curve = SubResource("Curve_i7rnp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlu4y"]
+spread = 80.0
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_jt83p")
+
+[sub_resource type="QuadMesh" id="QuadMesh_lf6i4"]
+size = Vector2(0.02, 0.02)
+
+[node name="Laser" type="RayCast3D"]
+collision_mask = 11
+script = ExtResource("1_36s1n")
+
+[node name="BeamMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_kfr6v")
+surface_material_override/0 = SubResource("StandardMaterial3D_cniu6")
+
+[node name="endParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_50xaa")
+amount = 20
+lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_tlu4y")
+draw_pass_1 = SubResource("QuadMesh_lf6i4")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://beldqmwwur3l7"]
+
+[ext_resource type="PackedScene" uid="uid://ce7v50n0ibjqt" path="res://assets/dungeonKaykit/stairs_wood.gltf.glb" id="1_venvr"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yow11"]
+points = PackedVector3Array(-1.7, 0, 0, 1.7, 0, 0, -1.7, 4, 0, 1.7, 4, 0, -1.7, 0, 6.2, 1.7, 0, 6.2, -1.7, 4, 0.7, 1.7, 4, 0.7)
+
+[node name="stairs_wood" instance=ExtResource("1_venvr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stairs_wood" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stairs_wood/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_yow11")

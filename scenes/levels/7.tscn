@@ -1,0 +1,2563 @@
+[gd_scene format=3 uid="uid://bb467njqywwj"]
+
+[ext_resource type="Texture2D" uid="uid://oe3tupbagbbd" path="res://assets/images/bgds/skygen-cavern2.png" id="1_jkjun"]
+[ext_resource type="Script" uid="uid://bmm2xfe50eth2" path="res://addons/cyclops_level_builder/nodes/cyclops_block.gd" id="1_l36gr"]
+[ext_resource type="Script" uid="uid://yb83r435ttq8" path="res://addons/cyclops_level_builder/resources/data_vector_byte.gd" id="2_4wvgs"]
+[ext_resource type="Script" uid="uid://hiodjk7b5iv" path="res://addons/cyclops_level_builder/resources/data_vector_int.gd" id="3_v0rpn"]
+[ext_resource type="Script" uid="uid://d04x5uoiacasp" path="res://addons/cyclops_level_builder/resources/data_vector_float.gd" id="4_nnaaq"]
+[ext_resource type="Script" uid="uid://efr2oj17lc7a" path="res://addons/cyclops_level_builder/resources/mesh_vector_data.gd" id="5_tm24v"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="6_5f2d8"]
+[ext_resource type="Material" uid="uid://bkbibjo18auvd" path="res://assets/materials/old_tiles1.tres" id="6_tm24v"]
+[ext_resource type="Material" uid="uid://svfru5q5nqnj" path="res://assets/blender/fantasy/materiaux/M_MOD_Wall_01_v1.tres" id="6_v0rpn"]
+[ext_resource type="Material" uid="uid://d2k4gu8a1yvk" path="res://assets/materials/old_bricks3_material.tres" id="7_5f2d8"]
+[ext_resource type="PackedScene" uid="uid://b8m2n1y0qk5vi" path="res://scenes/mechanics/secret_wall.tscn" id="8_nnaaq"]
+[ext_resource type="Material" uid="uid://da7ht4au7hp7w" path="res://assets/materials/old_ground1.tres" id="9_5f2d8"]
+[ext_resource type="PackedScene" uid="uid://d2cmb75ns1vbd" path="res://scenes/UI/popup_message.tscn" id="13_8xjyh"]
+[ext_resource type="PackedScene" uid="uid://de1mso7rec550" path="res://scenes/mechanics/panneau_phrases_traduction.tscn" id="14_h4gjh"]
+[ext_resource type="PackedScene" uid="uid://bp6q7c30cqb3a" path="res://scenes/mechanics/door_gate.tscn" id="15_jexwc"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
+panorama = ExtResource("1_jkjun")
+
+[sub_resource type="Sky" id="Sky_8xjyh"]
+sky_material = SubResource("PanoramaSkyMaterial_8xjyh")
+
+[sub_resource type="Environment" id="Environment_h4gjh"]
+background_mode = 2
+sky = SubResource("Sky_8xjyh")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_jkjun"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_jexwc"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_8xjyh"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_0v1cb"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_fd21f"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_h4gjh"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_yx64e"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_3tb56"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_8gg3f"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_u017p"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_e0d0c"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-4, 1, -10, -4, 1, 1, -4, 0, 1, -4, 0, -10, 4, 1, -10, 4, 1, 1, 4, 0, 1, 4, 0, -10)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_0txh5"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_4q2w8"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_e0d0c"),
+&"selected": SubResource("Resource_0txh5")
+}
+edge_data = {
+&"selected": SubResource("Resource_jkjun")
+}
+face_data = {
+&"color": SubResource("Resource_jexwc"),
+&"material_index": SubResource("Resource_8xjyh"),
+&"selected": SubResource("Resource_0v1cb"),
+&"uv_transform": SubResource("Resource_fd21f"),
+&"visible": SubResource("Resource_h4gjh")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_yx64e"),
+&"face_index": SubResource("Resource_3tb56"),
+&"normal": SubResource("Resource_8gg3f"),
+&"vertex_index": SubResource("Resource_u017p")
+}
+
+[sub_resource type="Resource" id="Resource_mywtu"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_yjkb7"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_x2gpa"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_mk7yj"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_iof32"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_1qm1i"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_vx4ev"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_ggqok"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_qcrrx"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_11era"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_d00xi"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 6, 0, 0, 6, 0, 0, 0, 2, 1, 0, 2, 1, 6, 2, 0, 6, 2, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_ju4wi"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_xdbbr"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_d00xi"),
+&"selected": SubResource("Resource_ju4wi")
+}
+edge_data = {
+&"selected": SubResource("Resource_mywtu")
+}
+face_data = {
+&"color": SubResource("Resource_yjkb7"),
+&"material_index": SubResource("Resource_x2gpa"),
+&"selected": SubResource("Resource_mk7yj"),
+&"uv_transform": SubResource("Resource_iof32"),
+&"visible": SubResource("Resource_1qm1i")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_vx4ev"),
+&"face_index": SubResource("Resource_ggqok"),
+&"normal": SubResource("Resource_qcrrx"),
+&"vertex_index": SubResource("Resource_11era")
+}
+
+[sub_resource type="Resource" id="Resource_q3dmg"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_32q6f"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_a10ry"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_v6u0g"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ewy4i"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_qyj6j"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_5n74u"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_x6lxv"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_mfyms"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -0.242536, 0.970142, 0, -0.242536, 0.970142, 0, -0.242536, 0.970142, 0, -0.242536, 0.970142, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_6mx1w"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_v0sfl"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(2, 1, 0, 2, 1, 2, 2, 0, 2, 2, 0, 0, 22, 6, 0, 22, 6, 2, 22, 0, 2, 22, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_wsxm1"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_wvoqp"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = 6
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_v0sfl"),
+&"selected": SubResource("Resource_wsxm1")
+}
+edge_data = {
+&"selected": SubResource("Resource_q3dmg")
+}
+face_data = {
+&"color": SubResource("Resource_32q6f"),
+&"material_index": SubResource("Resource_a10ry"),
+&"selected": SubResource("Resource_v6u0g"),
+&"uv_transform": SubResource("Resource_ewy4i"),
+&"visible": SubResource("Resource_qyj6j")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_5n74u"),
+&"face_index": SubResource("Resource_x6lxv"),
+&"normal": SubResource("Resource_mfyms"),
+&"vertex_index": SubResource("Resource_6mx1w")
+}
+
+[sub_resource type="Resource" id="Resource_iyi8x"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_hc4qq"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_rix4f"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_h3e1v"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 1, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_365dg"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_xr8jt"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_2tl1s"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_ublqe"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_lc7hw"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_m7unm"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_i1ant"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 0, 0, 6, 2, 0, 0, 2, 0, 0, 0, 2, 6, 0, 2, 6, 2, 2, 0, 2, 2, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_4xwvk"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ciulh"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 2
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_i1ant"),
+&"selected": SubResource("Resource_4xwvk")
+}
+edge_data = {
+&"selected": SubResource("Resource_iyi8x")
+}
+face_data = {
+&"color": SubResource("Resource_hc4qq"),
+&"material_index": SubResource("Resource_rix4f"),
+&"selected": SubResource("Resource_h3e1v"),
+&"uv_transform": SubResource("Resource_365dg"),
+&"visible": SubResource("Resource_xr8jt")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_2tl1s"),
+&"face_index": SubResource("Resource_ublqe"),
+&"normal": SubResource("Resource_lc7hw"),
+&"vertex_index": SubResource("Resource_m7unm")
+}
+
+[sub_resource type="Resource" id="Resource_5a13v"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_rdj55"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_3unl1"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_cdrj1"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 1)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_1puj6"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_ipwoo"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_2jjnj"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_8nu8y"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_c73dd"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0.976187, 0.21693, 0, 0.976187, 0.21693, 0, 0.976187, 0.21693, 0, 0.976187, 0.21693, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -0.976187, -0.21693, 0, -0.976187, -0.21693, 0, -0.976187, -0.21693, 0, -0.976187, -0.21693, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_03feb"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_dhv2n"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 3, 0, 0, 1, 9, 0, 0, 9, 0, 2, 0, 2, 3, 0, 2, 1, 9, 2, 0, 9, 2, 2, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_63wce"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_rnsk8"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 5
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_dhv2n"),
+&"selected": SubResource("Resource_63wce")
+}
+edge_data = {
+&"selected": SubResource("Resource_5a13v")
+}
+face_data = {
+&"color": SubResource("Resource_rdj55"),
+&"material_index": SubResource("Resource_3unl1"),
+&"selected": SubResource("Resource_cdrj1"),
+&"uv_transform": SubResource("Resource_1puj6"),
+&"visible": SubResource("Resource_ipwoo")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_2jjnj"),
+&"face_index": SubResource("Resource_8nu8y"),
+&"normal": SubResource("Resource_c73dd"),
+&"vertex_index": SubResource("Resource_03feb")
+}
+
+[sub_resource type="Resource" id="Resource_aj6xp"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_1yy34"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_v647d"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_a5k6n"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_bh1rf"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_1n385"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_x5w0q"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_tm3ri"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_1vpxv"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_qo1s8"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_kfm68"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 2, 0, 0, 2, 0, 0, 0, 2, 1, 0, 2, 1, 2, 2, 0, 2, 2, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_xyq8n"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_e3er6"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_kfm68"),
+&"selected": SubResource("Resource_xyq8n")
+}
+edge_data = {
+&"selected": SubResource("Resource_aj6xp")
+}
+face_data = {
+&"color": SubResource("Resource_1yy34"),
+&"material_index": SubResource("Resource_v647d"),
+&"selected": SubResource("Resource_a5k6n"),
+&"uv_transform": SubResource("Resource_bh1rf"),
+&"visible": SubResource("Resource_1n385")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_x5w0q"),
+&"face_index": SubResource("Resource_tm3ri"),
+&"normal": SubResource("Resource_1vpxv"),
+&"vertex_index": SubResource("Resource_qo1s8")
+}
+
+[sub_resource type="Resource" id="Resource_3twdu"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_6hjsy"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_33c8n"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_gfm3i"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_qdy33"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_io686"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_3f64q"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_ntba7"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_n6aiw"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_gtjqf"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_50ti5"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 12, 0, 0, 12, 0, 0, 0, 21, 1, 0, 21, 1, 12, 21, 0, 12, 21, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_aee3c"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_yocl6"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_50ti5"),
+&"selected": SubResource("Resource_aee3c")
+}
+edge_data = {
+&"selected": SubResource("Resource_3twdu")
+}
+face_data = {
+&"color": SubResource("Resource_6hjsy"),
+&"material_index": SubResource("Resource_33c8n"),
+&"selected": SubResource("Resource_gfm3i"),
+&"uv_transform": SubResource("Resource_qdy33"),
+&"visible": SubResource("Resource_io686")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_3f64q"),
+&"face_index": SubResource("Resource_ntba7"),
+&"normal": SubResource("Resource_n6aiw"),
+&"vertex_index": SubResource("Resource_gtjqf")
+}
+
+[sub_resource type="Resource" id="Resource_sbmlh"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_yj6le"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_1tnsa"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_6rj24"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 1, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ek2d4"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_dyv8i"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_bj7ai"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_ws0q0"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_17apy"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_omf7x"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_dtbij"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 0, 0, 6, 1, 0, 0, 1, 0, 0, 0, 11, 6, 0, 11, 6, 1, 11, 0, 1, 11, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_2adve"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_iyx2f"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 2
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_dtbij"),
+&"selected": SubResource("Resource_2adve")
+}
+edge_data = {
+&"selected": SubResource("Resource_sbmlh")
+}
+face_data = {
+&"color": SubResource("Resource_yj6le"),
+&"material_index": SubResource("Resource_1tnsa"),
+&"selected": SubResource("Resource_6rj24"),
+&"uv_transform": SubResource("Resource_ek2d4"),
+&"visible": SubResource("Resource_dyv8i")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_bj7ai"),
+&"face_index": SubResource("Resource_ws0q0"),
+&"normal": SubResource("Resource_17apy"),
+&"vertex_index": SubResource("Resource_omf7x")
+}
+
+[sub_resource type="Resource" id="Resource_w66cj"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_woq6s"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_bnyjl"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_axs3x"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 1, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_rauiy"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_8n68y"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_nwctd"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_i565d"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_hp4bt"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_27g6j"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_sa8c4"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 0, 0, 6, 1, 0, 0, 1, 0, 0, 0, 22, 6, 0, 22, 6, 1, 22, 0, 1, 22, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_xheyj"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_v2rco"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 2
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_sa8c4"),
+&"selected": SubResource("Resource_xheyj")
+}
+edge_data = {
+&"selected": SubResource("Resource_w66cj")
+}
+face_data = {
+&"color": SubResource("Resource_woq6s"),
+&"material_index": SubResource("Resource_bnyjl"),
+&"selected": SubResource("Resource_axs3x"),
+&"uv_transform": SubResource("Resource_rauiy"),
+&"visible": SubResource("Resource_8n68y")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_nwctd"),
+&"face_index": SubResource("Resource_i565d"),
+&"normal": SubResource("Resource_hp4bt"),
+&"vertex_index": SubResource("Resource_27g6j")
+}
+
+[sub_resource type="Resource" id="Resource_k074j"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_b1s6x"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_5cap2"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_0lpym"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 1)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_cbwtt"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_wvsg1"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_8is0k"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_vukhs"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_c8nqs"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_w3oe8"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_wob0s"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 6, 0, 6, 13, 0, 0, 13, 0, 0, 6, 1, 6, 6, 1, 6, 13, 1, 0, 13, 1, 0, 6)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_s2dvv"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_rbn3u"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 5
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_wob0s"),
+&"selected": SubResource("Resource_s2dvv")
+}
+edge_data = {
+&"selected": SubResource("Resource_k074j")
+}
+face_data = {
+&"color": SubResource("Resource_b1s6x"),
+&"material_index": SubResource("Resource_5cap2"),
+&"selected": SubResource("Resource_0lpym"),
+&"uv_transform": SubResource("Resource_cbwtt"),
+&"visible": SubResource("Resource_wvsg1")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_8is0k"),
+&"face_index": SubResource("Resource_vukhs"),
+&"normal": SubResource("Resource_c8nqs"),
+&"vertex_index": SubResource("Resource_w3oe8")
+}
+
+[sub_resource type="Resource" id="Resource_0583k"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_fh85a"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_l574t"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_rblj8"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 1, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_11jqm"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_0yixe"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_ylqek"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_3f7k7"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_6ivrb"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_kdflo"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_pnrcd"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 0, 0, 6, 1, 0, 0, 1, 0, 0, 0, 9, 6, 0, 9, 6, 1, 9, 0, 1, 9, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_1qxe2"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_6mnab"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 2
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_pnrcd"),
+&"selected": SubResource("Resource_1qxe2")
+}
+edge_data = {
+&"selected": SubResource("Resource_0583k")
+}
+face_data = {
+&"color": SubResource("Resource_fh85a"),
+&"material_index": SubResource("Resource_l574t"),
+&"selected": SubResource("Resource_rblj8"),
+&"uv_transform": SubResource("Resource_11jqm"),
+&"visible": SubResource("Resource_0yixe")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_ylqek"),
+&"face_index": SubResource("Resource_3f7k7"),
+&"normal": SubResource("Resource_6ivrb"),
+&"vertex_index": SubResource("Resource_kdflo")
+}
+
+[sub_resource type="Resource" id="Resource_81hdu"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_0wp4v"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_dc8bg"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_86mps"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 1, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_2mbqa"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_uf3ap"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_cyu8a"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_edd7e"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_xknpw"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_hdstn"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_nuotr"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 2, 0, 0, 2, 1, 0, 0, 1, 0, 0, 0, 2, 2, 0, 2, 2, 1, 2, 0, 1, 2, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_2k510"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_71dab"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 2
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_nuotr"),
+&"selected": SubResource("Resource_2k510")
+}
+edge_data = {
+&"selected": SubResource("Resource_81hdu")
+}
+face_data = {
+&"color": SubResource("Resource_0wp4v"),
+&"material_index": SubResource("Resource_dc8bg"),
+&"selected": SubResource("Resource_86mps"),
+&"uv_transform": SubResource("Resource_2mbqa"),
+&"visible": SubResource("Resource_uf3ap")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_cyu8a"),
+&"face_index": SubResource("Resource_edd7e"),
+&"normal": SubResource("Resource_xknpw"),
+&"vertex_index": SubResource("Resource_hdstn")
+}
+
+[sub_resource type="Resource" id="Resource_5v3mi"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_8g0aq"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_pya1l"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_mllty"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_sspu0"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_k001f"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_yuxfi"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_wufg7"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_gcsmu"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_1ewks"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_2e76j"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 2, 0, 0, 2, 0, 0, 0, 2, 1, 0, 2, 1, 2, 2, 0, 2, 2, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_2vcxv"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_4y6ug"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_2e76j"),
+&"selected": SubResource("Resource_2vcxv")
+}
+edge_data = {
+&"selected": SubResource("Resource_5v3mi")
+}
+face_data = {
+&"color": SubResource("Resource_8g0aq"),
+&"material_index": SubResource("Resource_pya1l"),
+&"selected": SubResource("Resource_mllty"),
+&"uv_transform": SubResource("Resource_sspu0"),
+&"visible": SubResource("Resource_k001f")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_yuxfi"),
+&"face_index": SubResource("Resource_wufg7"),
+&"normal": SubResource("Resource_gcsmu"),
+&"vertex_index": SubResource("Resource_1ewks")
+}
+
+[sub_resource type="Resource" id="Resource_fqefi"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ugcm4"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 0.356771, 0.0585327, 0.0585327, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_rk13c"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_qxvhf"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 1)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_16iqa"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_agoes"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_fp6sn"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_qkf1g"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_0spqu"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_k5no7"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_1r5h3"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 4, 0, 6, 13, 0, 0, 13, 0, 0, 4, 1, 6, 4, 1, 6, 13, 1, 0, 13, 1, 0, 4)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_lk2ig"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_2atwy"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 5
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_1r5h3"),
+&"selected": SubResource("Resource_lk2ig")
+}
+edge_data = {
+&"selected": SubResource("Resource_fqefi")
+}
+face_data = {
+&"color": SubResource("Resource_ugcm4"),
+&"material_index": SubResource("Resource_rk13c"),
+&"selected": SubResource("Resource_qxvhf"),
+&"uv_transform": SubResource("Resource_16iqa"),
+&"visible": SubResource("Resource_agoes")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_fp6sn"),
+&"face_index": SubResource("Resource_qkf1g"),
+&"normal": SubResource("Resource_0spqu"),
+&"vertex_index": SubResource("Resource_k5no7")
+}
+
+[sub_resource type="Resource" id="Resource_4unrm"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_yalmf"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_3c4fm"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_4hcvt"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 1)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_oxjca"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_k4oaa"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_lcloj"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_uwhsh"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_eg1rh"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_xf6t0"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_40fr1"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 4, 1, 1, 8, 1, 0, 8, 1, 0, 4, 2, 1, 4, 2, 1, 8, 2, 0, 8, 2, 0, 4)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_ay10c"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_4m1pb"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 5
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_40fr1"),
+&"selected": SubResource("Resource_ay10c")
+}
+edge_data = {
+&"selected": SubResource("Resource_4unrm")
+}
+face_data = {
+&"color": SubResource("Resource_yalmf"),
+&"material_index": SubResource("Resource_3c4fm"),
+&"selected": SubResource("Resource_4hcvt"),
+&"uv_transform": SubResource("Resource_oxjca"),
+&"visible": SubResource("Resource_k4oaa")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_lcloj"),
+&"face_index": SubResource("Resource_uwhsh"),
+&"normal": SubResource("Resource_eg1rh"),
+&"vertex_index": SubResource("Resource_xf6t0")
+}
+
+[sub_resource type="Resource" id="Resource_5jyql"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_qsxxm"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_nbexh"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_bwoev"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_85yc0"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_36fod"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_xcit7"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_0pxaj"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_124ef"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_oiwcg"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_8v3r6"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 1, 0, -1, 1, 4, -1, 0, 4, -1, 0, 0, 19, 1, 0, 19, 1, 4, 19, 0, 4, 19, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_o1jyv"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_v86c8"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_8v3r6"),
+&"selected": SubResource("Resource_o1jyv")
+}
+edge_data = {
+&"selected": SubResource("Resource_5jyql")
+}
+face_data = {
+&"color": SubResource("Resource_qsxxm"),
+&"material_index": SubResource("Resource_nbexh"),
+&"selected": SubResource("Resource_bwoev"),
+&"uv_transform": SubResource("Resource_85yc0"),
+&"visible": SubResource("Resource_36fod")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_xcit7"),
+&"face_index": SubResource("Resource_0pxaj"),
+&"normal": SubResource("Resource_124ef"),
+&"vertex_index": SubResource("Resource_oiwcg")
+}
+
+[sub_resource type="Resource" id="Resource_7ipmu"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_vjbdb"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_ik0kp"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_xv3aw"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_hfg3r"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_hycmi"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_5u70a"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_4wrtb"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_ly3i5"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_ji10k"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_23jml"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 4, 0, 0, 4, 0, 0, 0, 4, 1, 0, 4, 1, 4, 4, 0, 4, 4, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_5lanb"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_6p2bg"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_23jml"),
+&"selected": SubResource("Resource_5lanb")
+}
+edge_data = {
+&"selected": SubResource("Resource_7ipmu")
+}
+face_data = {
+&"color": SubResource("Resource_vjbdb"),
+&"material_index": SubResource("Resource_ik0kp"),
+&"selected": SubResource("Resource_xv3aw"),
+&"uv_transform": SubResource("Resource_hfg3r"),
+&"visible": SubResource("Resource_hycmi")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_5u70a"),
+&"face_index": SubResource("Resource_4wrtb"),
+&"normal": SubResource("Resource_ly3i5"),
+&"vertex_index": SubResource("Resource_ji10k")
+}
+
+[sub_resource type="Resource" id="Resource_inias"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_dpf8o"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_spj54"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_oa4cd"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_1bhev"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_85d5q"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_qh1ra"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_q4lti"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_60hmj"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_cye63"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_tu24k"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 16, 0, 0, 16, 0, 0, 0, 4, 1, 0, 4, 1, 16, 4, 0, 16, 4, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_c7lc4"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_kpfj1"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_tu24k"),
+&"selected": SubResource("Resource_c7lc4")
+}
+edge_data = {
+&"selected": SubResource("Resource_inias")
+}
+face_data = {
+&"color": SubResource("Resource_dpf8o"),
+&"material_index": SubResource("Resource_spj54"),
+&"selected": SubResource("Resource_oa4cd"),
+&"uv_transform": SubResource("Resource_1bhev"),
+&"visible": SubResource("Resource_85d5q")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_qh1ra"),
+&"face_index": SubResource("Resource_q4lti"),
+&"normal": SubResource("Resource_60hmj"),
+&"vertex_index": SubResource("Resource_cye63")
+}
+
+[sub_resource type="Resource" id="Resource_1mgxx"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_btwa0"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_pdid1"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_bithq"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_77hwa"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_df1qk"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_1ykxa"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_0fhsy"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_y14bm"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_8bq1o"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_ydkjh"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 1, 0, 0, 1, 4, 0, 0, 4, 0, 0, 0, 4, 1, 0, 4, 1, 4, 4, 0, 4, 4, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_coo6g"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ypqd4"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_ydkjh"),
+&"selected": SubResource("Resource_coo6g")
+}
+edge_data = {
+&"selected": SubResource("Resource_1mgxx")
+}
+face_data = {
+&"color": SubResource("Resource_btwa0"),
+&"material_index": SubResource("Resource_pdid1"),
+&"selected": SubResource("Resource_bithq"),
+&"uv_transform": SubResource("Resource_77hwa"),
+&"visible": SubResource("Resource_df1qk")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_1ykxa"),
+&"face_index": SubResource("Resource_0fhsy"),
+&"normal": SubResource("Resource_y14bm"),
+&"vertex_index": SubResource("Resource_8bq1o")
+}
+
+[sub_resource type="Resource" id="Resource_wfdij"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_oriwf"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_x5glt"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_7yics"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 1, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_4quhs"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_niwia"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_5c2k8"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_fgdfr"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_b8i0n"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_x74by"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 4, 5, 3, 2, 6, 4, 2, 1, 7, 0, 3, 5, 7, 5, 4, 6, 7, 6, 1, 0)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_w3beu"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 0, 4, 0, 0, 0, 0, 3, 0, 0, 3, 4, 5, 3, 0, 5, 3, 4, 5, 0, 0, 5, 0, 4)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_8qiku"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_oe0fl"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = 4
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 5, 5, 3, 2, 4, 6, 4, 1, 6, 7, 0, 5, 7, 6, 7)
+edge_face_indices = PackedInt32Array(0, 5, 0, 2, 0, 1, 0, 3, 1, 4, 1, 3, 1, 2, 2, 4, 2, 5, 3, 5, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 5, 3, 2, 6, 4, 2, 1, 7, 0, 3, 5, 7, 5, 4, 6, 7, 6, 1, 0)
+vertex_data = {
+&"position": SubResource("Resource_w3beu"),
+&"selected": SubResource("Resource_8qiku")
+}
+edge_data = {
+&"selected": SubResource("Resource_wfdij")
+}
+face_data = {
+&"color": SubResource("Resource_oriwf"),
+&"material_index": SubResource("Resource_x5glt"),
+&"selected": SubResource("Resource_7yics"),
+&"uv_transform": SubResource("Resource_4quhs"),
+&"visible": SubResource("Resource_niwia")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_5c2k8"),
+&"face_index": SubResource("Resource_fgdfr"),
+&"normal": SubResource("Resource_b8i0n"),
+&"vertex_index": SubResource("Resource_x74by")
+}
+
+[sub_resource type="Resource" id="Resource_y6fl4"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_k27nm"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_5i1tf"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_363qy"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_7q2fn"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_5f4dr"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_xsrk3"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_i6jda"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_4idjx"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_fumi3"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_s7a5l"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(0, 6, 0, 0, 6, 6, 0, 0, 6, 0, 0, 0, 1, 6, 0, 1, 6, 6, 1, 0, 6, 1, 0, 0)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_ckwbc"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_bel1f"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
+edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+vertex_data = {
+&"position": SubResource("Resource_s7a5l"),
+&"selected": SubResource("Resource_ckwbc")
+}
+edge_data = {
+&"selected": SubResource("Resource_y6fl4")
+}
+face_data = {
+&"color": SubResource("Resource_k27nm"),
+&"material_index": SubResource("Resource_5i1tf"),
+&"selected": SubResource("Resource_363qy"),
+&"uv_transform": SubResource("Resource_7q2fn"),
+&"visible": SubResource("Resource_5f4dr")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_xsrk3"),
+&"face_index": SubResource("Resource_i6jda"),
+&"normal": SubResource("Resource_4idjx"),
+&"vertex_index": SubResource("Resource_fumi3")
+}
+
+[sub_resource type="Resource" id="Resource_vkh86"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_ucawt"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_k5x8l"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 0, -1)
+name = &"material_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_seenx"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_addt0"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
+
+[sub_resource type="Resource" id="Resource_hlj8b"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(1, 1, 1, 1, 1, 1)
+name = &"visible"
+
+[sub_resource type="Resource" id="Resource_axrjb"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+name = &"color"
+data_type = 4
+stride = 4
+
+[sub_resource type="Resource" id="Resource_qmwh0"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_crh2o"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0)
+name = &"normal"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_dlg6f"]
+script = ExtResource("3_v0rpn")
+data = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 6, 7, 0, 3, 6, 4, 5, 7)
+name = &"vertex_index"
+data_type = 1
+
+[sub_resource type="Resource" id="Resource_c0i7n"]
+script = ExtResource("4_nnaaq")
+data = PackedFloat32Array(36, 0, 4, 36, 1, 4, 36, 1, 0, 36, 0, 0, 5, 1, 0, 5, 1, 4, 5, 0, 0, 5, 0, 4)
+name = &"position"
+data_type = 6
+stride = 3
+
+[sub_resource type="Resource" id="Resource_rm4lb"]
+script = ExtResource("2_4wvgs")
+data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0)
+name = &"selected"
+
+[sub_resource type="Resource" id="Resource_i5nrr"]
+script = ExtResource("5_tm24v")
+num_vertices = 8
+num_edges = 12
+num_faces = 6
+num_face_vertices = 24
+active_vertex = -1
+active_edge = -1
+active_face = -1
+active_face_vertex = -1
+edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 4, 2, 1, 5, 5, 4, 6, 3, 4, 6, 7, 5, 0, 7, 6, 7)
+edge_face_indices = PackedInt32Array(0, 3, 0, 1, 0, 2, 0, 4, 1, 2, 1, 3, 1, 5, 2, 4, 2, 5, 3, 5, 3, 4, 4, 5)
+face_vertex_count = PackedInt32Array(4, 4, 4, 4, 4, 4)
+face_vertex_indices = PackedInt32Array(0, 1, 2, 3, 4, 2, 1, 5, 6, 3, 2, 4, 7, 5, 1, 0, 6, 7, 0, 3, 6, 4, 5, 7)
+vertex_data = {
+&"position": SubResource("Resource_c0i7n"),
+&"selected": SubResource("Resource_rm4lb")
+}
+edge_data = {
+&"selected": SubResource("Resource_vkh86")
+}
+face_data = {
+&"color": SubResource("Resource_ucawt"),
+&"material_index": SubResource("Resource_k5x8l"),
+&"selected": SubResource("Resource_seenx"),
+&"uv_transform": SubResource("Resource_addt0"),
+&"visible": SubResource("Resource_hlj8b")
+}
+face_vertex_data = {
+&"color": SubResource("Resource_axrjb"),
+&"face_index": SubResource("Resource_qmwh0"),
+&"normal": SubResource("Resource_crh2o"),
+&"vertex_index": SubResource("Resource_dlg6f")
+}
+
+[node name="7" type="Node3D" unique_id=1533161143]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1409594730]
+environment = SubResource("Environment_h4gjh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=523062717]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Cyclops_blocks" type="Node3D" parent="." unique_id=1474465475]
+
+[node name="block0" type="Node3D" parent="Cyclops_blocks" unique_id=328345795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_4q2w8")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_0" type="Node3D" parent="Cyclops_blocks" unique_id=513937851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -12)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_xdbbr")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_1" type="Node3D" parent="Cyclops_blocks" unique_id=1790910797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -14)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_wvoqp")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_2" type="Node3D" parent="Cyclops_blocks" unique_id=1862580486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, -1, -14)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_ciulh")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_3" type="Node3D" parent="Cyclops_blocks" unique_id=601886276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 4, -23)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_rnsk8")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_4" type="Node3D" parent="Cyclops_blocks" unique_id=701295948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 6, -25)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_e3er6")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_5" type="Node3D" parent="Cyclops_blocks" unique_id=727883244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -37)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_yocl6")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_6" type="Node3D" parent="Cyclops_blocks" unique_id=1886649490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 6, -25)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_iyx2f")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_8" type="Node3D" parent="Cyclops_blocks" unique_id=1591961511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 6, -38)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_v2rco")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_9" type="Node3D" parent="Cyclops_blocks" unique_id=1962792122]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -38)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_rbn3u")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_10" type="Node3D" parent="Cyclops_blocks" unique_id=293387733]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -25)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_6mnab")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_11" type="Node3D" parent="Cyclops_blocks" unique_id=1600007560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 10, -25)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_71dab")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_12" type="Node3D" parent="Cyclops_blocks" unique_id=910214730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, -14)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_4y6ug")
+materials = Array[Material]([ExtResource("6_tm24v")])
+
+[node name="Block_7" type="Node3D" parent="Cyclops_blocks" unique_id=1845669904]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 6, -37)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_2atwy")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_13" type="Node3D" parent="Cyclops_blocks" unique_id=1795428284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 11, -41)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_4m1pb")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_14" type="Node3D" parent="Cyclops_blocks" unique_id=1361668141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 6, -37)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_v86c8")
+materials = Array[Material]([ExtResource("6_v0rpn")])
+
+[node name="Block_15" type="Node3D" parent="Cyclops_blocks" unique_id=1796366740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 6, -37)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_6p2bg")
+materials = Array[Material]([ExtResource("6_v0rpn")])
+
+[node name="Block_16" type="Node3D" parent="Cyclops_blocks" unique_id=735176839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 6, -53)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_kpfj1")
+materials = Array[Material]([ExtResource("6_v0rpn")])
+
+[node name="Block_17" type="Node3D" parent="Cyclops_blocks" unique_id=1051891979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 6, -57)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_ypqd4")
+materials = Array[Material]([ExtResource("6_v0rpn")])
+
+[node name="Block_18" type="Node3D" parent="Cyclops_blocks" unique_id=1705332165]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -57)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_oe0fl")
+materials = Array[Material]([ExtResource("6_v0rpn"), ExtResource("9_5f2d8")])
+
+[node name="Block_19" type="Node3D" parent="Cyclops_blocks" unique_id=1025388722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6, -38)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_bel1f")
+materials = Array[Material]([ExtResource("7_5f2d8")])
+
+[node name="Block_20" type="Node3D" parent="Cyclops_blocks" unique_id=1732075447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 6, -57)
+script = ExtResource("1_l36gr")
+mesh_vector_data = SubResource("Resource_i5nrr")
+materials = Array[Material]([ExtResource("6_v0rpn")])
+
+[node name="IndianaPlayer4_2" parent="." unique_id=696880928 instance=ExtResource("6_5f2d8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 7, -28)
+
+[node name="Secret_wall" parent="." unique_id=489095316 instance=ExtResource("8_nnaaq")]
+transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 1, -4.37114e-08, -4.37114e-08, 34, 7, -35)
+wall_type = 2
+can_interact = true
+
+[node name="Popup_message" parent="." unique_id=1529545789 instance=ExtResource("13_8xjyh")]
+
+[node name="Panneau_phrases_traduction" parent="." unique_id=1585963010 instance=ExtResource("14_h4gjh")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -2, 0, -4)
+door_nbr = 1
+
+[node name="door_gate" parent="." unique_id=458067659 instance=ExtResource("15_jexwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -8)
+door_nbr = 1

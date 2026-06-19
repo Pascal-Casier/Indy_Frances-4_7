@@ -1,0 +1,65 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx3wnsd2r62cu"]
+
+[ext_resource type="Script" uid="uid://b78dt8wugqba6" path="res://scenes/UI/pendu/pendu_main.gd" id="1_kiiv7"]
+
+[node name="PenduMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kiiv7")
+mots_indices = Array[Dictionary]([{
+"indice": "Succès dans une compétition",
+"mot": "VICTOIRE"
+}, {
+"table": "meuble"
+}])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="MotLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ErreursLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LettresContainer" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="IndiceButton" type="Button" parent="VBoxContainer/LettresContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "indice"
+
+[node name="NouvellePartieButton" type="Button" parent="VBoxContainer/LettresContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "nouvelle partie"
+
+[node name="IndiceLabel" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/LettresContainer/NouvellePartieButton" to="." method="_on_nouvelle_partie_button_pressed"]

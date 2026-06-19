@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=4 uid="uid://dcostka2nxxjv"]
+
+[ext_resource type="Script" uid="uid://dnq8ub32kg864" path="res://scripts/weapons/turret_stones.gd" id="1_1pgbs"]
+[ext_resource type="Texture2D" uid="uid://bdbjo3tqhnih8" path="res://assets/blender/turret_stones_Bricks_17-128x128.png" id="1_j3at0"]
+[ext_resource type="AudioStream" uid="uid://crdjjw20h4442" path="res://assets/sounds/sfx/woosh_5.wav" id="3_1pgbs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk1ja"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_j3at0")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1pgbs"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 5, 2),
+"format": 34359742465,
+"index_count": 168,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAACAAEABAADAAIAAQAFAAQABAAGAAMABgAEAAUAAQAHAAUAAQAIAAcAAAAIAAEACQAFAAcACQAHAAgABgAFAAoABQAJAAoACwADAAYACgALAAYACwAMAAMAAAADAAwACgANAAsACgAJAA4ACgAOAA0ACAAOAAkADQAPAAsADwAMAAsADgAQAA0ADQAQAA8ACAARAA4AEAAOABEACAASABEACAAAABIAEAARABMAEQASABMAEgAAABQAFAATABIAFQAAAAwAFQAUAAAAFQAMAA8AFgAUABUAFgAVAA8AFgATABQAFwAPABAAFgAPABcAGAAQABMAFwAQABgAEwAWABkAGAATABkAFwAaABYAGQAbABgAGAAcABcAFwAcABoAGAAbABwAFgAaAB0AFgAdABkAHQAaABwAGQAdABsAHQAcABsA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("AACAvwAAAAAUiWQ/FIlkvwAAAAAAAIC/AACAvwAAAAAUiWS/AACAvyKRnEAUiWS/FIlkvyKRnEAAAIC/FIlkPyKRnEAAAIC/FIlkvwAAoEAUiWS/FIlkPwAAAAAAAIC/AACAPwAAAAAUiWS/AACAPyKRnEAUiWS/FIlkPwAAoEAUiWS/FIlkvwAAoEAUiWQ/AACAvyKRnEAUiWQ/FIlkPwAAoEAUiWQ/AACAPyKRnEAUiWQ/82Rhv0FInkAAAIA/82RhP0FInkAAAIA/AACAPwAAAAAUiWQ/FIlkPwAAAAAAAIA/4YNhP+73iT4AAIA/FIlkvwAAAAAAAIA/4INhv/P3iT4AAIA/HIEtvtiS8D8AAIA/HIEtvv4QlEAAAIA/HIEtPv4QlEAAAIA/HIEtPtiS8D8AAIA/HIEtvtiS8D/OaGS/HIEtPv4QlEDOaGS/HIEtvv4QlEDOaGS/HIEtPtiS8D/OaGS/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uer0g"]
+resource_name = "turret_stones_Cube"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 5, 2),
+"attribute_data": PackedByteArray("mMYAvUihGj4bGg4/SCzxPVSXBT9IoRo+UpcFP/gB8L4bGg4/aPzevox5hL1k/N6+jHmEvWAs8T2YxgC9+AHwvmdlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP2dlCD9jKi0/leWkvjgEQD9CWdC9yafZP5XlpL4P/sw/hrwlv8mn2T+cDNC9HpaAPsup2r4P/sw/zI/IvfipKz4cxiW/HpaAPra1Jr/4qSs+y6navjgEQD/CROm9mLUkPkj24D7uqNY/wkTpve6o1j9I9uA+mLUkPnkMxD+ohAy/OHV6PwCkCrs6dXo/qIQMv3oMxD8ApAq7by4YP+zJLj4W6ZI/eOvXP28uGD9469c/FumSP+zJLj5nZQg/YyotP2dlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP2dlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP2dlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP2dlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP2dlCD9jKi0/Z2UIP2MqLT9nZQg/YyotP9zvDb8oSyg/3O8Nv/LNMD+kcha/8s0wP9zvDb8mSyg/pHIWv17IHz/c7w2/XsgfP7x10b3wqSs+snXRvVBPrD18X429UE+sPWhuez/wUQg9cPJxPwBBQjs4dXo/AKQKu95NyD8AQUI74o/DP+BRCD16DMQ/AKQKu344L7/4qSs+trUmv/ipKz4cxiW/HpaAPh4aDj9469c/VJcFP+zJLj4eGg4/7MkuPlSXBT9469c/nAzQvR6WgD6MeYS9eofXP0JZ0L3Jp9k/jHmEvfipKz6GvCW/yafZP344L7/4qSs+HMYlvx6WgD5+OC+/eofXP17d4j7uqNY/ztfRPpi1JD5e3eI+mLUkPs7X0T7uqNY/egzEPwCkCrtobns/8FEIPTh1ej8ApAq74o/DP+BRCD2Q7RO/T6UcP8hqC7+GJJU/kO0Tv4YklT/Iagu/T6UcP7j3GL+4XS0+8HQQvyr7OD+49xi/Kvs4P/B0EL+4XS0+pHIWv9c4nz/a7w2/tgrmP6JyFr+2CuY/3O8Nv9c4nz+wT4Y/6MkuPo4hzT9469c/sE+GP3jr1z+OIc0/6MkuPg=="),
+"format": 34359742487,
+"index_count": 168,
+"index_data": PackedByteArray("AAABAAIAAAADAAEAAQADAAQAAwAAAAUABQAAAAYAAwAFAAcACAAJAAoACAALAAkADAANAA4ADgANAA8ADAAQAA0ADgAPABEADAASABAAEQAPABMADAATABIAEgATABQAEQATABUAEwAMABUAFgAXABgAFgAZABcAGgAbABwAGgAdABsAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwAKgAtACsALgAvADAALgAxAC8AMgAzADQANQA2ADcAOAA5ADoAOwA8AD0APgA/AEAAQQBCAEMARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUA"),
+"material": SubResource("StandardMaterial3D_fk1ja"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 104,
+"vertex_data": PackedByteArray("AACAvwAAAAAUiWQ/FIlkvwAAAAAAAIC/AACAvwAAAAAUiWS/AACAPwAAAAAUiWS/FIlkPwAAAAAAAIC/FIlkPwAAAAAAAIA/FIlkvwAAAAAAAIA/AACAPwAAAAAUiWQ/HIEtPv4QlEAAAIA/HIEtvv4QlEDOaGS/HIEtvv4QlEAAAIA/HIEtPv4QlEDOaGS/HIEtvtiS8D8AAIA/82Rhv0FInkAAAIA/HIEtvv4QlEAAAIA/82RhP0FInkAAAIA/4INhv/P3iT4AAIA/HIEtPv4QlEAAAIA/FIlkvwAAAAAAAIA/4YNhP+73iT4AAIA/FIlkPwAAAAAAAIA/HIEtPtiS8D8AAIA/AACAvwAAAAAUiWQ/AACAvyKRnEAUiWS/AACAvyKRnEAUiWQ/AACAvwAAAAAUiWS/FIlkPwAAoEAUiWS/FIlkvwAAoEAUiWQ/FIlkvwAAoEAUiWS/FIlkPwAAoEAUiWQ/AACAPwAAAAAUiWS/AACAPyKRnEAUiWQ/AACAPyKRnEAUiWS/AACAPwAAAAAUiWQ/HIEtPtiS8D/OaGS/HIEtvv4QlEDOaGS/HIEtPv4QlEDOaGS/HIEtvtiS8D/OaGS/HIEtvv4QlEAAAIA/HIEtvtiS8D/OaGS/HIEtvtiS8D8AAIA/HIEtvv4QlEDOaGS/HIEtvtiS8D8AAIA/HIEtPtiS8D/OaGS/HIEtPtiS8D8AAIA/HIEtvtiS8D/OaGS/HIEtPtiS8D8AAIA/HIEtPv4QlEDOaGS/HIEtPv4QlEAAAIA/HIEtPtiS8D/OaGS/FIlkPyKRnEAAAIC/AACAPyKRnEAUiWS/FIlkPwAAoEAUiWS/FIlkvyKRnEAAAIC/FIlkvwAAoEAUiWS/AACAvyKRnEAUiWS/4INhv/P3iT4AAIA/FIlkvwAAAAAAAIA/AACAvwAAAAAUiWQ/82Rhv0FInkAAAIA/AACAvyKRnEAUiWQ/FIlkvwAAoEAUiWQ/AACAPyKRnEAUiWQ/82RhP0FInkAAAIA/FIlkPwAAoEAUiWQ/AACAPwAAAAAUiWQ/FIlkPwAAAAAAAIA/4YNhP+73iT4AAIA/AACAPyKRnEAUiWS/FIlkPwAAAAAAAIC/AACAPwAAAAAUiWS/FIlkPyKRnEAAAIC/4INhv/P3iT4AAIA/AACAvyKRnEAUiWQ/82Rhv0FInkAAAIA/AACAvwAAAAAUiWQ/82RhP0FInkAAAIA/AACAPwAAAAAUiWQ/4YNhP+73iT4AAIA/AACAPyKRnEAUiWQ/FIlkvyKRnEAAAIC/AACAvwAAAAAUiWS/FIlkvwAAAAAAAIC/AACAvyKRnEAUiWS/FIlkPwAAoEAUiWQ/82Rhv0FInkAAAIA/FIlkvwAAoEAUiWQ/82RhP0FInkAAAIA/FIlkPwAAoEAUiWS/AACAPyKRnEAUiWQ/FIlkPwAAoEAUiWQ/AACAPyKRnEAUiWS/FIlkvwAAoEAUiWQ/AACAvyKRnEAUiWS/FIlkvwAAoEAUiWS/AACAvyKRnEAUiWQ/FIlkvwAAoEAUiWS/FIlkPyKRnEAAAIC/FIlkPwAAoEAUiWS/FIlkvyKRnEAAAIC/FIlkvwAAAAAAAIC/FIlkPyKRnEAAAIC/FIlkvyKRnEAAAIC/FIlkPwAAAAAAAIC//38AAAAA/v//fwAA//////9/AAD//////38AAP//////fwAA//////9/AAAAAP7//38AAAAA/v//fwAA//////9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/7//f/9/AAD/v/9//38AAP+//3//fwAA/78AAP9//////wAA/3//////AAD/f/////8AAP9///////9///////+//3///////7//f///////v/9///////+/////f/9//7////9//3//v////3//f/+/////f/9//7//f/9/////P/9//3////8//3//f////z//f/9/////P////3////+/////f////7////9/////v////3////+//3///////7//f///////v/9///////+//3///////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v1PVVdUAwP+fU9VV1QDA/59T1VXVAMD/n6sqVdX+P/+fqypV1f4//5+rKlXV/j//n15BvIIAAP/fXkG8ggAA/99eQbyCAAD/3wtP87BNvnLcC0/zsE2+ctwLT/OwTb5y3POw87AZxyaf87DzsBnHJp/zsPOwGccmn6C+vIL/P/+/oL68gv8//7+gvryC/z//v////7//v/+/////v/+//7////+//7//v////7//v/+/ZUP/fwAAsqFlQ/9/AABM3mVD/38AAEzeZUP/fwAAsqGZvP9/mTz/v5m8/3+ZPP+/mbz/f5k8/7+ZvP9/mTz/vwAA/7/////fAAD/v////98AAP+/////3wAA/7/////f/39O1f7//7//f07V////v/9/TtX///+//39O1f7//7//v/+//7//n/+//7//v/+f/7//v/+//5//v/+//7//n/8//7//P/+f/z//v/8//5//P/+//z//n/8//7//P/+f/7////+/AID/v////78AgP+/////vwCA/7////+/AID/////////v/////////+//////////7//////////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1pgbs")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jpyvr"]
+size = Vector3(2.03296, 5, 1.96387)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qgfc2"]
+size = Vector3(9, 3, 13)
+
+[sub_resource type="Animation" id="Animation_1pgbs"]
+resource_name = "fire"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.45, 0.45, 0.45), Vector3(0.55, 0.45, 0.45), Vector3(0.45, 0.45, 0.45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpyvr"]
+_data = {
+&"fire": SubResource("Animation_1pgbs")
+}
+
+[node name="TurretStones" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_1pgbs")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+mesh = SubResource("ArrayMesh_uer0g")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5083, 0)
+shape = SubResource("BoxShape3D_jpyvr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+shape = SubResource("BoxShape3D_qgfc2")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44789, 0.705054)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_1pgbs")
+max_distance = 30.0
+max_polyphony = 4
+bus = &"Sfx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_jpyvr")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

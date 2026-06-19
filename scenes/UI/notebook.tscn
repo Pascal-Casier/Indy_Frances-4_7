@@ -1,0 +1,392 @@
+[gd_scene load_steps=17 format=3 uid="uid://d3nnd1d4w6f1r"]
+
+[ext_resource type="Script" uid="uid://b7vgidiielq14" path="res://scripts/UI/notebook.gd" id="1_rbak1"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="1_rpbxo"]
+[ext_resource type="Texture2D" uid="uid://ndxr1vhwwqh4" path="res://assets/images/ui/quit.png" id="2_38ngs"]
+[ext_resource type="Texture2D" uid="uid://blxp6j621i18p" path="res://assets/images/ui/paperUI/scrolls/wide.png" id="2_40ues"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="2_boleu"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="4_kvvrj"]
+[ext_resource type="Texture2D" uid="uid://dwuvobr4bhbib" path="res://assets/images/ui/paperUI/scrolls/paper.png" id="7_dk1ju"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljg13"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtk4"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sjbk"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hef20"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_t22su"]
+default_font = ExtResource("4_kvvrj")
+default_font_size = 50
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("4_kvvrj")
+Button/styles/focus = SubResource("StyleBoxFlat_ljg13")
+Button/styles/hover = SubResource("StyleBoxFlat_jqtk4")
+Button/styles/normal = SubResource("StyleBoxFlat_0sjbk")
+Button/styles/pressed = SubResource("StyleBoxFlat_hef20")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6qnt"]
+bg_color = Color(1, 0.0156863, 0.0156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0352941, 0.580392, 0.054902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a11v7"]
+bg_color = Color(1, 0.0156863, 0.0156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0352941, 0.580392, 0.054902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85irg"]
+bg_color = Color(1, 0.0156863, 0.0156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0352941, 0.580392, 0.054902, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7hyy"]
+bg_color = Color(1, 0.0156863, 0.0156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.054902, 0.305882, 0.941176, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+
+[node name="Notebook" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rbak1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="TextureRect" parent="MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+texture = ExtResource("2_40ues")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_rpbxo")
+theme_override_font_sizes/font_size = 66
+text = "Mes notes"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NoteContainer" type="GridContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme = SubResource("Theme_t22su")
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 30
+columns = 7
+
+[node name="Button" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button5" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button6" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button7" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button8" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button9" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button10" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button11" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button12" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button13" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Exit" type="Button" parent="MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.227451, 0.654902, 0, 1)
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 29
+theme_override_styles/focus = SubResource("StyleBoxFlat_d6qnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a11v7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_85irg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_w7hyy")
+text = "X"
+
+[node name="Feuille_note" type="NinePatchRect" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_dk1ju")
+patch_margin_left = 150
+patch_margin_top = 88
+patch_margin_right = 150
+patch_margin_bottom = 88
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/Feuille_note"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 110
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/Panel/Feuille_note/MarginContainer"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_boleu")
+theme_override_font_sizes/font_size = 31
+text = "fdsf"
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="MarginContainer/Panel/Feuille_note"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 19.0
+offset_right = -34.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 46
+icon = ExtResource("2_38ngs")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="MarginContainer/Panel/MarginContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/Feuille_note/ButtonExit" to="." method="_on_button_exit_pressed"]

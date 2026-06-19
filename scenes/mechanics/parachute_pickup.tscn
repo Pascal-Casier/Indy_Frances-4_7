@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://brxift0cmdg5b"]
+
+[ext_resource type="PackedScene" uid="uid://dkkdc0cx3gcue" path="res://scenes/mechanics/sword_pickup.tscn" id="1_hgbpu"]
+[ext_resource type="PackedScene" uid="uid://bcunn4fshh62d" path="res://assets/blender/parachute.glb" id="2_x2gjx"]
+
+[node name="parachute_pickup" instance=ExtResource("1_hgbpu")]
+type = 1
+
+[node name="sword_rare" parent="." index="0"]
+visible = false
+
+[node name="parachute" parent="." index="3" instance=ExtResource("2_x2gjx")]
+
+[node name="Plane" parent="parachute" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95026, 0)
+
+[editable path="parachute"]

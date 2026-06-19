@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://daab20xmubnro"]
+
+[ext_resource type="PackedScene" uid="uid://168x00lp6wfl" path="res://assets/blender/GameConsole.glb" id="1_57feh"]
+[ext_resource type="Script" uid="uid://b1idkegom7fyv" path="res://scripts/mechanics/game_console.gd" id="1_w858u"]
+[ext_resource type="PackedScene" uid="uid://blmg7dmkdspvp" path="res://scenes/UI/code_finder_letters_to_words.tscn" id="3_o4i5b"]
+[ext_resource type="PackedScene" uid="uid://v6aup6pro73s" path="res://scenes/UI/conjugaison_game.tscn" id="4_o4i5b"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0heyc"]
+points = PackedVector3Array(-0.5787, 0.0203907, 0.507209, 0.585344, 0.932983, 0.729414, -0.593817, 0.932983, 0.729414, 0.570964, 1.90702, -0.4951, 0.570964, 0.0191805, -0.4951, -0.5787, 1.90581, -0.494325, -0.5787, 0.0203907, -0.494325, -0.576954, 1.90294, 0.4473, 0.571407, 0.0184532, 0.508026, 0.56848, 1.90294, 0.4473, -0.565804, 0.0992853, 0.527061)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w858u"]
+size = Vector3(1, 1, 0.922119)
+
+[node name="GameConsole" type="Node3D"]
+script = ExtResource("1_w858u")
+
+[node name="GameConsole" parent="." instance=ExtResource("1_57feh")]
+transform = Transform3D(1.38984, 0, 0, 0, 1.38984, 0, 0, 0, 1.38984, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GameConsole/Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameConsole/Cube/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0heyc")
+
+[node name="Area3D" type="Area3D" parent="GameConsole"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameConsole/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.644038, 1.17174)
+shape = SubResource("BoxShape3D_w858u")
+
+[node name="PressElabel" type="Label3D" parent="GameConsole"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.996919, 0.0784417, 0, -0.0784417, 0.996919, 0, 1.31694, 0.340131)
+visible = false
+text = "E"
+font_size = 60
+outline_size = 18
+
+[node name="CodeFinder_letters_to_words" parent="." instance=ExtResource("3_o4i5b")]
+process_mode = 2
+visible = false
+
+[node name="ConjugaisonGame" parent="." instance=ExtResource("4_o4i5b")]
+process_mode = 2
+visible = false
+
+[connection signal="body_entered" from="GameConsole/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="GameConsole/Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="game_over" from="CodeFinder_letters_to_words" to="." method="_on_cast_game_letters_end"]
+[connection signal="exited" from="ConjugaisonGame" to="." method="_on_conjugaison_game_exited"]
+[connection signal="game_over" from="ConjugaisonGame" to="." method="_on_cast_game_letters_end"]
+
+[editable path="GameConsole"]

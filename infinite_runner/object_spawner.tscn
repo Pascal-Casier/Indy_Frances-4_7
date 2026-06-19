@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8x6go5gxuuwu"]
+
+[ext_resource type="Script" uid="uid://h0uhc8pgoxxn" path="res://infinite_runner/object_spawner.gd" id="1_wb4bx"]
+
+[node name="ObjectSpawner" type="Node3D"]
+script = ExtResource("1_wb4bx")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx2wxvqdslkfg"]
+
+[ext_resource type="PackedScene" uid="uid://ig63hwa8a8sx" path="res://assets/dungeonKaykit/table_long_tablecloth.gltf.glb" id="1_7ku6g"]
+[ext_resource type="Script" uid="uid://cmlekqldb4pdh" path="res://infinite_runner/object_infinite.gd" id="1_q23us"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q23us"]
+size = Vector3(7.99023, 0.5, 1.04468)
+
+[node name="TableInfinite" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_q23us")
+
+[node name="table_long_tablecloth_gltf" parent="." instance=ExtResource("1_7ku6g")]
+transform = Transform3D(-2.18557e-08, 0, -2, 0, 0.5, 0, 0.5, 0, -8.74228e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235755, 0)
+shape = SubResource("BoxShape3D_q23us")

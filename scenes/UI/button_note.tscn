@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ber4gn3iutsrt"]
+
+[ext_resource type="Script" uid="uid://b4c2h5witd255" path="res://scripts/UI/button_note.gd" id="1_lww74"]
+[ext_resource type="Theme" uid="uid://ceqkilgsj4c24" path="res://scenes/UI/Quizz/quizz_theme.tres" id="1_vg4sp"]
+
+[node name="ButtonNote" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_vg4sp")
+text = "test"
+script = ExtResource("1_lww74")

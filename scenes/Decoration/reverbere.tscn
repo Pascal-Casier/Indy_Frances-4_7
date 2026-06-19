@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cubx3p54hm57f"]
+
+[ext_resource type="PackedScene" uid="uid://bt2h8p65wpl6l" path="res://assets/blender/reverbere.glb" id="1_tbe0c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2l6ug"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6ms1u"]
+points = PackedVector3Array(0.859369, 4.23556, 0.0287241, -0.236906, -0.0162516, -0.104099, -0.236906, -0.0162516, 0.0952495, -0.0375249, 4.4018, -0.0376192, 0.792837, 3.63752, -0.237013, 0.12859, -0.0162516, 0.228164, 0.327757, 3.70402, 0.228164, 0.0953243, -0.0162516, -0.237013, 0.792837, 3.63752, 0.228164, 0.327757, 3.70402, -0.237013, 0.228281, -0.0162516, -0.104099, 0.560297, 4.70151, 0.0287241, -0.10395, 0.0834975, -0.237013, -0.10395, 0.0834975, 0.228164, -0.0707909, 3.47174, 0.0952495, 0.228281, -0.0162516, 0.128444, 0.659987, 4.6678, -0.0376192, 0.0288997, 4.5348, 0.0287241, 0.195015, 4.6678, -0.0376192, 0.859369, 4.43505, 0.0287241, -0.20364, 0.0834975, -0.170534, -0.20364, 0.0834975, 0.161684, 0.161749, -0.0162516, -0.203773, 0.859369, 4.43505, -0.0376192, 0.294706, 4.70151, 0.0287241, -0.0375249, 4.4018, 0.0287241, 0.792837, 3.70402, 0.228164, 0.792837, 3.70402, -0.237013, 0.560297, 4.70151, -0.0376192, -0.236906, 0.0834975, 0.0952495, 0.792837, 4.56805, 0.0287241, -0.236906, 0.0834975, -0.104099)
+
+[node name="reverbere" instance=ExtResource("1_tbe0c")]
+
+[node name="Lamppost Roger Pradier Avenue 3 N150820" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2l6ug")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Lamppost Roger Pradier Avenue 3 N150820" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Lamppost Roger Pradier Avenue 3 N150820/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_6ms1u")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamppost Roger Pradier Avenue 3 N150820" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.545133, 3.46198, 0)
+light_energy = 5.0
+omni_range = 9.0646

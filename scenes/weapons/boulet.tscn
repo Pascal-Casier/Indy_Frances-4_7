@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://du1gnq4s4h5wk"]
+
+[ext_resource type="Script" uid="uid://biqbo8ky2hgmb" path="res://scripts/weapons/boulet.gd" id="1_i561j"]
+[ext_resource type="PackedScene" uid="uid://dr0kjfcphs6mr" path="res://assets/blender/SpikyBall.gltf" id="1_wgawr"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i561j"]
+radius = 0.623388
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wgawr"]
+radius = 0.798987
+
+[node name="boulet" type="RigidBody3D"]
+collision_layer = 64
+collision_mask = 3
+script = ExtResource("1_i561j")
+
+[node name="SpikyBall2" parent="." instance=ExtResource("1_wgawr")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_i561j")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_wgawr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+
+[editable path="SpikyBall2"]

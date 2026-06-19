@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdc2qkdjpxgtw"]
+
+[ext_resource type="Script" uid="uid://cga54v4vqnwxe" path="res://scripts/UI/notification_area.gd" id="1_revcr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wokve"]
+size = Vector3(3, 3, 3)
+
+[sub_resource type="SystemFont" id="SystemFont_revcr"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_215v0"]
+bg_color = Color(0.216231, 0.861979, 0.0516289, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="NotificationArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_revcr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0104004, 0)
+shape = SubResource("BoxShape3D_wokve")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -3
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 101.0
+offset_right = -1.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -26.0
+offset_right = 87.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.0167847, 0.0205507, 0.257813, 1)
+theme_override_fonts/font = SubResource("SystemFont_revcr")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_215v0")
+text = "Ceci est un test"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

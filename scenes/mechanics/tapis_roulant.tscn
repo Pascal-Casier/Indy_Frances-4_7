@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bg5oj3t268qek"]
+
+[ext_resource type="Script" uid="uid://sfyl6xbxw8c0" path="res://scripts/mechanics/tapis_roulant.gd" id="1_6ikxo"]
+[ext_resource type="Shader" uid="uid://6ri7er8uk06x" path="res://shaders/tapis_roulant.gdshader" id="1_7h1wf"]
+[ext_resource type="Texture2D" uid="uid://domfndikxovi4" path="res://assets/images/textures/Textures/Tile/Tile_21-128x128.png" id="2_6ikxo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnt78"]
+render_priority = 0
+shader = ExtResource("1_7h1wf")
+shader_parameter/texture_albedo = ExtResource("2_6ikxo")
+shader_parameter/scroll_speed = Vector2(0, 1)
+shader_parameter/speed_multiplier = 2.4
+shader_parameter/texture_scale = Vector2(2, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ma6es"]
+material = SubResource("ShaderMaterial_mnt78")
+size = Vector3(1, 0.2, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cu26f"]
+size = Vector3(1, 0.2, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mnt78"]
+size = Vector3(1, 0.2, 5)
+
+[node name="Tapis_roulant" type="Node3D" node_paths=PackedStringArray("mesh_instance")]
+script = ExtResource("1_6ikxo")
+mesh_instance = NodePath("MeshInstance3D")
+shader_speed_multiplier = 2.4
+shader_scroll_direction = Vector2(0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ma6es")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_cu26f")
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153558, 0)
+shape = SubResource("BoxShape3D_mnt78")

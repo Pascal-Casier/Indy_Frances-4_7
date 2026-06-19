@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=3 format=3 uid="uid://cykniv1oopu1x"]
+
+[ext_resource type="AudioStream" uid="uid://chh67gj2txg4m" path="res://assets/sounds/pronuncia/fete.mp3" id="1_hygmp"]
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="1_n5rix"]
+
+[resource]
+script = ExtResource("1_n5rix")
+question = "écoutez ->"
+choiceA = "fête"
+choiceB = "fait"
+choiceC = "fêteau"
+choiceD = "fêteux"
+correct = "a"
+explications = "ê = [é]"
+audiostream = ExtResource("1_hygmp")

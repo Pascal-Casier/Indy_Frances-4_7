@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnpvryp8kdp2s"]
+
+[ext_resource type="PackedScene" uid="uid://cheuxcgkg617p" path="res://assets/blender/Digicode.glb" id="1_3n0tn"]
+[ext_resource type="Script" uid="uid://df6kd6ymh0rp6" path="res://scripts/mechanics/digicode.gd" id="1_xss15"]
+[ext_resource type="PackedScene" uid="uid://dr7s8npkdv1kh" path="res://scenes/UI/CastGameLetters/cast_game_letters.tscn" id="3_2o3k0"]
+[ext_resource type="PackedScene" uid="uid://1tjbt07uljl0" path="res://scenes/UI/NewQuizz/NewQuizz.tscn" id="4_6unrm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xss15"]
+size = Vector3(0.759766, 1, 0.488403)
+
+[node name="digicode" type="Area3D" node_paths=PackedStringArray("press_elbl")]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_xss15")
+press_elbl = NodePath("PressElbl")
+
+[node name="Digicode" parent="." instance=ExtResource("1_3n0tn")]
+
+[node name="Cube" parent="Digicode" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.255798)
+shape = SubResource("BoxShape3D_xss15")
+
+[node name="PressElbl" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55904, 0)
+visible = false
+text = "[E]"
+font_size = 37
+outline_size = 18
+
+[node name="game1" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CastGameLetters" parent="game1" instance=ExtResource("3_2o3k0")]
+mouse_filter = 1
+portuguese_words = Array[String](["GATO", "CACHORRO"])
+french_words = Array[String](["CHAT", "CHIEN"])
+
+[node name="game2" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="NewQuizz" parent="game2" instance=ExtResource("4_6unrm")]
+process_mode = 2
+door_nbr = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="end" from="game1/CastGameLetters" to="." method="_on_cast_game_letters_end"]
+[connection signal="exited" from="game1/CastGameLetters" to="." method="_on_cast_game_letters_exited"]
+[connection signal="game_over" from="game2/NewQuizz" to="." method="_on_cast_game_letters_end"]
+
+[editable path="Digicode"]

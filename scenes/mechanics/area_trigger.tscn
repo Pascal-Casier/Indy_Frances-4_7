@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3i1wq8xa2s6f"]
+
+[ext_resource type="Script" uid="uid://cqim6ovhburug" path="res://scripts/mechanics/area_trigger.gd" id="1_h78j3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epsxx"]
+transparency = 1
+albedo_color = Color(0.0395, 0.6, 0.03, 0.258824)
+emission_enabled = true
+emission = Color(0.0908601, 0.752604, 0.0803562, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_h78j3"]
+material = SubResource("StandardMaterial3D_epsxx")
+size = Vector3(2, 0.1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hitfy"]
+points = PackedVector3Array(-1, -0.05, -0.5, -1, 0.05, -0.5, 1, -0.05, -0.5, -1, -0.05, 0.5, -1, 0.05, 0.5, 1, 0.05, -0.5, 1, -0.05, 0.5, 1, 0.05, 0.5)
+
+[node name="AreaTrigger" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_h78j3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_h78j3")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_hitfy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

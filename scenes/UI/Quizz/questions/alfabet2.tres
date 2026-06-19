@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=3 format=3 uid="uid://hacksgafbr4v"]
+
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="1_apahj"]
+[ext_resource type="AudioStream" uid="uid://cb1pw546206ms" path="res://assets/sounds/alphabet/j.mp3" id="1_knexe"]
+
+[resource]
+script = ExtResource("1_apahj")
+question = "écoutez ->"
+choiceA = "G"
+choiceB = "J"
+choiceC = "H"
+choiceD = "X"
+correct = "b"
+explications = ""
+audiostream = ExtResource("1_knexe")

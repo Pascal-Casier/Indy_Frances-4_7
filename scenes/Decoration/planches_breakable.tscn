@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://buoeixy3mcbw6"]
+
+[ext_resource type="Script" uid="uid://dbsv2pio7tyr8" path="res://scripts/mechanics/tonneau_breakable.gd" id="1_aoyrh"]
+[ext_resource type="Texture2D" uid="uid://dwihdgyv2gh17" path="res://assets/images/textures/Wood_13-128x128.png" id="1_ktl57"]
+[ext_resource type="Script" uid="uid://ilbjqpeyf7y3" path="res://addons/destruction/destruction.gd" id="2_ktl57"]
+[ext_resource type="PackedScene" uid="uid://dihkpuah4y0jy" path="res://scenes/Decoration/planches_pieces.tscn" id="3_b6cw7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aoyrh"]
+albedo_texture = ExtResource("1_ktl57")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7u4nh"]
+material = SubResource("StandardMaterial3D_aoyrh")
+size = Vector3(2.3, 0.5, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aoyrh"]
+size = Vector3(2.32324, 2.31738, 0.109131)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ilfu"]
+size = Vector3(2.19702, 2.57422, 0.352051)
+
+[node name="planches_breakable" type="Area3D" groups=["Wall"]]
+collision_layer = 9
+collision_mask = 11
+script = ExtResource("1_aoyrh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999024, 0.0441599, 0, -0.0441599, 0.999024, 0, 0, 0, 1, 0, 0.515189, 0)
+mesh = SubResource("BoxMesh_7u4nh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(0.999025, -0.0441599, 0, 0.0441599, 0.999025, 0, 0, 0, 1, 0.0227507, -0.514687, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1824, 0)
+shape = SubResource("BoxShape3D_aoyrh")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997799, -0.0663087, 0, 0.0663087, 0.997799, 0, 0, 0, 1, 0, 1.24752, 0)
+mesh = SubResource("BoxMesh_7u4nh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.998597, 0.052946, 0, -0.052946, 0.998597, 0, 0, 0, 1, 0, 1.97737, 0)
+mesh = SubResource("BoxMesh_7u4nh")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.13031, 0.10376)
+shape = SubResource("BoxShape3D_6ilfu")
+
+[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
+script = ExtResource("2_ktl57")
+fragmented = ExtResource("3_b6cw7")
+shard_container = NodePath("")
+fade_delay = 3.0
+animation_length = 3.0

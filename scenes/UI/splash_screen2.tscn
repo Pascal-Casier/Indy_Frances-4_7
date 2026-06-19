@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpv7mbkly4r4h"]
+
+[ext_resource type="Texture2D" uid="uid://dhml2g0tim5gf" path="res://assets/images/characters/IndyPortraitwbg.png" id="1_2di56"]
+[ext_resource type="Script" uid="uid://xr7np6gvt5gn" path="res://scripts/UI/splash_screen_2.gd" id="1_56tfj"]
+[ext_resource type="PackedScene" uid="uid://df6gjtuu0mgxo" path="res://scenes/UI/main_menu.tscn" id="3_arnmt"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_56tfj")
+duree_affichage = 4.0
+logo_texture = ExtResource("1_2di56")
+scene_suivante = ExtResource("3_arnmt")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 245.0
+offset_bottom = 245.0
+texture = ExtResource("1_2di56")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="LoadingDots" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -67.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="Label1" type="Label" parent="LoadingDots"]
+layout_mode = 2
+size_flags_horizontal = 9
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "."
+
+[node name="Label2" type="Label" parent="LoadingDots"]
+layout_mode = 2
+size_flags_horizontal = 9
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "."
+
+[node name="Label3" type="Label" parent="LoadingDots"]
+layout_mode = 2
+size_flags_horizontal = 9
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "."

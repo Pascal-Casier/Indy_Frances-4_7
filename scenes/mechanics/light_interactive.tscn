@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctprj1flm3jea"]
+
+[ext_resource type="Script" uid="uid://7jthxr41dtnk" path="res://scripts/mechanics/light_interactive.gd" id="1_dotlr"]
+
+[node name="Light_interactive" type="Node3D"]
+script = ExtResource("1_dotlr")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]

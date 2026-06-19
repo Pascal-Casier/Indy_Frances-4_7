@@ -1,0 +1,490 @@
+[gd_scene load_steps=27 format=3 uid="uid://bhriea6h4wg5h"]
+
+[ext_resource type="Texture2D" uid="uid://ca46kjrmym1tt" path="res://assets/images/ui/audioOn.png" id="2_84bvv"]
+[ext_resource type="Script" uid="uid://dr2ca056clka6" path="res://scenes/UI/Quizz/quizz.gd" id="2_724kl"]
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="2_texrl"]
+[ext_resource type="Resource" uid="uid://ce4b0rnft3jih" path="res://scenes/UI/Quizz/questions/question001.tres" id="3_uh0ak"]
+[ext_resource type="Resource" uid="uid://b44duk4wfr4qs" path="res://scenes/UI/Quizz/questions/question002.tres" id="4_hp013"]
+[ext_resource type="AudioStream" uid="uid://bjrscon32jp3q" path="res://assets/sounds/sfx/correct2.ogg" id="5_8n1bn"]
+[ext_resource type="Resource" uid="uid://1uq7rudr1sg7" path="res://scenes/UI/Quizz/questions/question003.tres" id="5_rpwaq"]
+[ext_resource type="AudioStream" uid="uid://c5k6jemod63hg" path="res://assets/sounds/sfx/incorrect2.ogg" id="6_0qhix"]
+[ext_resource type="Texture2D" uid="uid://degcgnjesh8to" path="res://assets/images/ui/indiana/GameUIBlank.png" id="6_1fxq1"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="6_qy4ce"]
+[ext_resource type="Texture2D" uid="uid://dag05fuqtm0l2" path="res://assets/images/ui/sheet-paper.jpeg" id="8_gg0jm"]
+[ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="8_texrl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d841"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1fxq1"]
+bg_color = Color(0.341176, 0.34902, 0.266667, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.751888, 0.835938, 0.0674846, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qy4ce"]
+bg_color = Color(0.341176, 0.34902, 0.266667, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.751888, 0.835938, 0.0674846, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_texrl"]
+bg_color = Color(0.341176, 0.34902, 0.266667, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_e4hay"]
+Button/styles/disabled = SubResource("StyleBoxFlat_6d841")
+Button/styles/focus = SubResource("StyleBoxFlat_1fxq1")
+Button/styles/hover = SubResource("StyleBoxFlat_qy4ce")
+Button/styles/normal = SubResource("StyleBoxFlat_texrl")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4hay"]
+bg_color = Color(0.156487, 0.846354, 0.339733, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0425415, 0.398438, 0.0814676, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ac65q"]
+bg_color = Color(0.156487, 0.846354, 0.339733, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0425415, 0.398438, 0.0814676, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw22g"]
+bg_color = Color(0.156487, 0.846354, 0.339733, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0425415, 0.398438, 0.0814676, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ovp83"]
+bg_color = Color(0.156487, 0.846354, 0.339733, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0425415, 0.398438, 0.0814676, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhq1k"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eejqm"]
+bg_color = Color(0.8, 0.117647, 0.121569, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j810w"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcua1"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="SystemFont" id="SystemFont_bxf77"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[node name="Quizz" type="Control"]
+process_mode = 2
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_e4hay")
+script = ExtResource("2_724kl")
+quizz = Array[ExtResource("2_texrl")]([ExtResource("3_uh0ak"), ExtResource("4_hp013"), ExtResource("5_rpwaq")])
+door_number = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_1fxq1")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 210.0
+offset_right = -217.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 11
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = -70
+alignment = 1
+
+[node name="LblQuestion" type="Label" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qy4ce")
+theme_override_font_sizes/font_size = 41
+text = "question"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnAudio" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/focus = SubResource("StyleBoxFlat_e4hay")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ac65q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pw22g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ovp83")
+icon = ExtResource("2_84bvv")
+
+[node name="Control2" type="Control" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 37
+theme_override_constants/v_separation = 19
+columns = 2
+
+[node name="Button1" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(220, 82)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_texrl")
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+icon_alignment = 1
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(220, 82)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_texrl")
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(220, 82)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_texrl")
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(220, 82)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_texrl")
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Control" type="Control" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(650, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="lblTime" type="Label" parent="MarginContainer/Panel/VBoxContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.5
+offset_right = 40.0
+offset_bottom = 30.5
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_texrl")
+theme_override_font_sizes/font_size = 49
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 145
+alignment = 1
+
+[node name="btnExit" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxFlat_dhq1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eejqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j810w")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcua1")
+text = "exit"
+
+[node name="ColorRect" type="TextureRect" parent="MarginContainer/Panel"]
+visible = false
+custom_minimum_size = Vector2(300, 230)
+layout_mode = 1
+offset_left = 32.0
+offset_top = 265.0
+offset_right = 350.0
+offset_bottom = 583.0
+size_flags_horizontal = 0
+texture = ExtResource("8_gg0jm")
+expand_mode = 2
+
+[node name="LblExplicationsTitle" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -130.0
+offset_top = 34.0
+offset_right = 2.0
+offset_bottom = 67.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "explications :"
+horizontal_alignment = 1
+
+[node name="Explications" type="Label" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -14.0
+offset_right = 58.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_bxf77")
+theme_override_font_sizes/font_size = 20
+text = "explications"
+horizontal_alignment = 1
+
+[node name="ButtonOK" type="Button" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -10.0
+offset_top = -33.0
+offset_right = 10.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "ok"
+
+[node name="ScorePanel" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScorePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="lblScore" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Résultat"
+horizontal_alignment = 1
+
+[node name="lblScore2" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "00/00"
+horizontal_alignment = 1
+
+[node name="lblScore3" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "00/00"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/ScorePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="lblBravo" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.807843, 0.156863, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 66
+text = "Bravo"
+horizontal_alignment = 1
+
+[node name="btnRecommencer" type="Button" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Recommencer"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8n1bn")
+volume_db = -15.0
+bus = &"Sfx"
+
+[node name="IncorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0qhix")
+volume_db = -15.0
+bus = &"Sfx"
+
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/HBoxContainer/btnAudio" to="." method="_on_btn_audio_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/HBoxContainer2/btnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ColorRect/ButtonOK" to="." method="_on_button_ok_pressed"]
+[connection signal="pressed" from="MarginContainer/ScorePanel/VBoxContainer/btnRecommencer" to="." method="_on_btn_recommencer_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

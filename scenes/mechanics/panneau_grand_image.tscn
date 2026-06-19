@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvf5npkrseog3"]
+
+[ext_resource type="PackedScene" uid="uid://2bq5jphoxv84" path="res://scenes/mechanics/panneau_grand.tscn" id="1_0yee7"]
+[ext_resource type="Texture2D" uid="uid://4wj0b868acc7" path="res://assets/images/bookOld (1).jpg" id="2_22xbd"]
+
+[node name="panneau_grand_image" instance=ExtResource("1_0yee7")]
+
+[node name="Text" parent="." index="2"]
+visible = false
+
+[node name="frame2" type="Sprite3D" parent="." index="3"]
+transform = Transform3D(0.315, 0, 0, 0, 0.229, 0, 0, 0, 0.229, -0.398203, 1.891, 0.2)
+modulate = Color(0.403646, 0.379469, 0.379469, 1)
+transparent = false
+double_sided = false
+alpha_cut = 2
+texture = ExtResource("2_22xbd")

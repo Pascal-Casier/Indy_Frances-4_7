@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://kmhixofuof4h"]
+
+[ext_resource type="Script" uid="uid://b6eafkogesnh5" path="res://scripts/mechanics/trap_laser.gd" id="1_78jdc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cg5uq"]
+albedo_color = Color(0.169271, 0.151198, 0.151198, 1)
+metallic = 1.0
+roughness = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_78jdc"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 1.0
+radial_segments = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ib20e"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(2, 0.027, 0.027, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_15778"]
+size = Vector3(5, 0.04, 0.04)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ehvgk"]
+size = Vector3(5, 0.04, 0.04)
+
+[node name="trap_laser" type="Node3D"]
+script = ExtResource("1_78jdc")
+
+[node name="base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.504672, 0)
+material_override = SubResource("StandardMaterial3D_cg5uq")
+mesh = SubResource("CylinderMesh_78jdc")
+
+[node name="laser1" type="MeshInstance3D" parent="base"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.768, 0, 1.768)
+material_override = SubResource("StandardMaterial3D_ib20e")
+mesh = SubResource("BoxMesh_15778")
+
+[node name="laser2" type="MeshInstance3D" parent="base"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1.768, 0, -1.768)
+material_override = SubResource("StandardMaterial3D_ib20e")
+mesh = SubResource("BoxMesh_15778")
+
+[node name="Area3D" type="Area3D" parent="base"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1.06088, -0.237406, 1.06088)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="base/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.23554, 0)
+shape = SubResource("BoxShape3D_ehvgk")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="base/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.233541, 0)
+shape = SubResource("BoxShape3D_ehvgk")
+
+[connection signal="body_entered" from="base/Area3D" to="." method="_on_area_3d_body_entered"]

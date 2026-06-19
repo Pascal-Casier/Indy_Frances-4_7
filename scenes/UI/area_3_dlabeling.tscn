@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo5bf6bdxdpb7"]
+
+[ext_resource type="Script" uid="uid://t6mrebrgntn6" path="res://scripts/UI/area_3_dlabeling.gd" id="1_87ncc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l8lar"]
+size = Vector3(1, 1, 1.03516)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odxu3"]
+bg_color = Color(0.117647, 0.247059, 0.8, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Area3Dlabeling" type="Area3D"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_87ncc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -2.38419e-07, 1.194, 0.830269)
+shape = SubResource("BoxShape3D_l8lar")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+self_modulate = Color(1, 1, 1, 0.537255)
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -186.0
+offset_right = 100.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_odxu3")
+
+[node name="Label" type="Label" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -14.0
+offset_right = 20.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "test"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="contour" type="MeshInstance3D" parent="."]
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

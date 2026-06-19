@@ -1,0 +1,124 @@
+[gd_scene load_steps=12 format=3 uid="uid://c1pyhkic16kx0"]
+
+[ext_resource type="PackedScene" uid="uid://c464xpec1ty01" path="res://assets/blender/Gate_Big.glb" id="1_k55wd"]
+[ext_resource type="Script" uid="uid://dtdpredtukw4m" path="res://scripts/mechanics/gate_big.gd" id="2_peajl"]
+[ext_resource type="AudioStream" uid="uid://klqu6t1djtyg" path="res://assets/sounds/sfx/GateSounds.mp3" id="2_xfx77"]
+[ext_resource type="AudioStream" uid="uid://cpjmywltfqdsb" path="res://assets/sounds/sfx/chains_soundFX.mp3" id="4_1pl7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b7ox8"]
+size = Vector3(6.10052, 7.37878, 0.41333)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s303v"]
+size = Vector3(3.8573, 12.0307, 2.12463)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jinyn"]
+size = Vector3(4.09808, 12.0307, 2.12463)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hlttk"]
+size = Vector3(4.09808, 12.0307, 2.12463)
+
+[sub_resource type="Animation" id="Animation_sx7uf"]
+resource_name = "close_gate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grille:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.948483, 3.11918, 0), Vector3(0.948483, 0.176467, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_1pl7m")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_041ec"]
+resource_name = "open_gate"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grille:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.948483, 0.176467, 0), Vector3(0.948483, 3.11918, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_xfx77")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eerpb"]
+_data = {
+&"close_gate": SubResource("Animation_sx7uf"),
+&"open_gate": SubResource("Animation_041ec")
+}
+
+[node name="Gate_Big" instance=ExtResource("1_k55wd")]
+script = ExtResource("2_peajl")
+
+[node name="Grille" parent="." index="0"]
+transform = Transform3D(0.762888, 0, 0, 0, 0.762888, 0, 0, 0, 0.762888, 0.948483, 3.11918, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Grille" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Grille/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112885, 3.95194, -0.126099)
+shape = SubResource("BoxShape3D_b7ox8")
+
+[node name="Gate" parent="." index="1"]
+transform = Transform3D(0.762888, 0, 0, 0, 0.762888, 0, 0, 0, 0.762888, 6.49562, 0.0237352, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Gate" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01227, 5.97429, 0.0574341)
+shape = SubResource("BoxShape3D_s303v")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7133, 5.97429, 0.0574341)
+shape = SubResource("BoxShape3D_jinyn")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Gate/StaticBody3D" index="2"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -6.61626, 9.99754, 0.0574341)
+shape = SubResource("BoxShape3D_hlttk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_eerpb")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

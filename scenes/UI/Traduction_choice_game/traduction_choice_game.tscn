@@ -1,0 +1,287 @@
+[gd_scene load_steps=17 format=3 uid="uid://dilpmp0uuih4c"]
+
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="1_cwxwn"]
+[ext_resource type="Script" uid="uid://1t2sc2divup2" path="res://scripts/UI/Traduction_choice_game/traduction_choice_game.gd" id="2_uobax"]
+[ext_resource type="Script" uid="uid://7vm1eoq0acp5" path="res://scripts/UI/Traduction_choice_game/resources/dialog_entry.gd" id="3_vvtds"]
+[ext_resource type="Script" uid="uid://bdwxemgisnxtt" path="res://scripts/UI/Traduction_choice_game/resources/quizz_data.gd" id="4_5yjcv"]
+[ext_resource type="AudioStream" uid="uid://dwwjaynpdonvt" path="res://assets/sounds/dialogues/bonjour.mp3" id="5_1guuw"]
+[ext_resource type="Texture2D" uid="uid://qy1nmspc2x0g" path="res://assets/images/bgds/DialogueUI2.jpg" id="5_1x7cr"]
+[ext_resource type="Texture2D" uid="uid://dtxgq3jsyx7nq" path="res://assets/images/characters/chouettePortrait.png" id="5_6wbce"]
+[ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="6_5yjcv"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="6_aan8a"]
+[ext_resource type="Theme" uid="uid://cbsukqehcdaqx" path="res://Themes/buttons_dialogues_theme.tres" id="6_kpf2y"]
+[ext_resource type="Texture2D" uid="uid://etr1lmkrogo2" path="res://Timelines/characters/Mago.png" id="7_kpf2y"]
+[ext_resource type="AudioStream" uid="uid://80batsnep0sw" path="res://assets/sounds/pronuncia/nousallons.mp3" id="7_vp5dx"]
+
+[sub_resource type="Resource" id="Resource_1x7cr"]
+script = ExtResource("3_vvtds")
+original_text = "[center]Nous sommes arrivés[/center]"
+correct_translation = "nos chegamos"
+wrong_translation = "nos chegaremos"
+speaker_picture = ExtResource("7_kpf2y")
+spoken_audio = ExtResource("5_1guuw")
+metadata/_custom_type_script = "uid://7vm1eoq0acp5"
+
+[sub_resource type="Resource" id="Resource_kpf2y"]
+script = ExtResource("3_vvtds")
+original_text = "[center][color=red]vous[/color] partez[/center]"
+correct_translation = "vcs vão embora"
+wrong_translation = "eles vão embora"
+speaker_picture = ExtResource("5_6wbce")
+spoken_audio = ExtResource("7_vp5dx")
+metadata/_custom_type_script = "uid://7vm1eoq0acp5"
+
+[sub_resource type="Resource" id="Resource_aan8a"]
+script = ExtResource("4_5yjcv")
+entries = Array[ExtResource("3_vvtds")]([SubResource("Resource_1x7cr"), SubResource("Resource_kpf2y")])
+metadata/_custom_type_script = "uid://bdwxemgisnxtt"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wbce"]
+
+[node name="Traduction_choice_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_cwxwn")
+script = ExtResource("2_uobax")
+quiz_data = SubResource("Resource_aan8a")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1x7cr")
+expand_mode = 2
+
+[node name="Title" type="Label" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_right = 400.0
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 41
+text = "Choisis la traduction correcte :"
+horizontal_alignment = 1
+
+[node name="OriginalPanel" type="Panel" parent="TextureRect"]
+custom_minimum_size = Vector2(650, 180)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.0
+offset_top = 96.0
+offset_right = 423.0
+offset_bottom = 276.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6wbce")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/OriginalPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="OriginalLabel" type="RichTextLabel" parent="TextureRect/OriginalPanel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_font = ExtResource("6_aan8a")
+bbcode_enabled = true
+text = "Bonjour les [u] amis [/u]."
+fit_content = true
+scroll_active = false
+
+[node name="ProgressLabel" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -400.0
+offset_top = 312.0
+offset_right = 400.0
+offset_bottom = 365.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 41
+text = "1/5"
+horizontal_alignment = 1
+
+[node name="AnswerContainer" type="HBoxContainer" parent="TextureRect"]
+custom_minimum_size = Vector2(1000, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.0
+offset_top = 400.0
+offset_right = 500.0
+offset_bottom = 535.0
+grow_horizontal = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="AnswerA" type="Button" parent="TextureRect/AnswerContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 135)
+layout_mode = 2
+theme = ExtResource("6_kpf2y")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerA"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="AnswerALabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerA/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_font = ExtResource("6_aan8a")
+bbcode_enabled = true
+text = "Bonjour les [u] amis [/u]."
+fit_content = true
+scroll_active = false
+
+[node name="AnswerB" type="Button" parent="TextureRect/AnswerContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 135)
+layout_mode = 2
+theme = ExtResource("6_kpf2y")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerB"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="AnswerBLabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerB/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/normal_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_font = ExtResource("6_aan8a")
+bbcode_enabled = true
+text = "Bonjour les [u] amis [/u]."
+fit_content = true
+scroll_active = false
+
+[node name="FeedbackLabel" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_top = -53.0
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 41
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_colors/icon_hover_color = Color(0.882812, 0.0620728, 0.0620728, 1)
+theme_override_colors/icon_focus_color = Color(0.976562, 0.0991821, 0.0991821, 1)
+theme_override_colors/icon_normal_color = Color(0.481771, 0.0213284, 0.0213284, 1)
+disabled = true
+icon = ExtResource("6_5yjcv")
+
+[node name="IDPicture" type="TextureRect" parent="TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 168)
+layout_mode = 1
+offset_left = 162.0
+offset_top = 105.0
+offset_right = 302.0
+offset_bottom = 105.0
+texture = ExtResource("7_kpf2y")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AudioStreamPlayerCorrect" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="TextureRect/AnswerContainer/AnswerA" to="." method="_on_answer_a_pressed"]
+[connection signal="pressed" from="TextureRect/AnswerContainer/AnswerB" to="." method="_on_answer_b_pressed"]
+[connection signal="pressed" from="TextureRect/ButtonExit" to="." method="_on_button_exit_pressed"]

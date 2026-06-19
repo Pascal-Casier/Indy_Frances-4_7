@@ -1,0 +1,236 @@
+[gd_scene load_steps=13 format=3 uid="uid://blmg7dmkdspvp"]
+
+[ext_resource type="Script" uid="uid://c1gogjcn0efh2" path="res://scripts/UI/traduction_game.gd" id="1_bhff6"]
+[ext_resource type="Theme" uid="uid://1l24bl5jnqnx" path="res://Themes/vocab_theme.tres" id="2_0a3ln"]
+[ext_resource type="Script" uid="uid://bksug8fqxrlj0" path="res://scripts/UI/WordPair.gd" id="2_bs75b"]
+[ext_resource type="Texture2D" uid="uid://cw7xyhuqvie5h" path="res://assets/images/ui/computer_screen2.jpg" id="3_bs75b"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="4_867m6"]
+[ext_resource type="AudioStream" uid="uid://bjrscon32jp3q" path="res://assets/sounds/sfx/correct2.ogg" id="5_b165h"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="6_867m6"]
+[ext_resource type="Script" uid="uid://vu07vpfwp6m" path="res://scripts/UI/button_zoom_effect.gd" id="6_b165h"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="7_b165h"]
+
+[sub_resource type="Resource" id="Resource_867m6"]
+script = ExtResource("2_bs75b")
+portuguese = "gato"
+french = "chat"
+metadata/_custom_type_script = "uid://bksug8fqxrlj0"
+
+[sub_resource type="Resource" id="Resource_b165h"]
+script = ExtResource("2_bs75b")
+portuguese = "cachorro"
+french = "chien"
+metadata/_custom_type_script = "uid://bksug8fqxrlj0"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc0t6"]
+bg_color = Color(0.0141805, 0.320313, 0.105063, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0702108, 0.0707915, 0.0755208, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="CodeFinder_letters_to_words" type="CanvasLayer"]
+script = ExtResource("1_bhff6")
+word_pairs = Array[ExtResource("2_bs75b")]([SubResource("Resource_867m6"), SubResource("Resource_b165h")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_0a3ln")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0193485, 0.00669352, 0.122396, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_bs75b")
+expand_mode = 1
+
+[node name="Panel" type="Panel" parent="Control/ColorRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 145
+theme_override_constants/margin_top = 65
+theme_override_constants/margin_right = 125
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 27
+alignment = 1
+
+[node name="PortugueseLabel" type="Label" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FormedWordLabel" type="Label" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="LetterButton1" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton2" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton3" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton4" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton5" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton6" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton7" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton8" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="LetterButton9" type="Button" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("4_867m6")
+text = "A"
+script = ExtResource("6_b165h")
+
+[node name="FeedbackLabel" type="Label" parent="Control/ColorRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc0t6")
+text = "..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="Control/ColorRect/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -151.0
+offset_right = -94.0
+offset_bottom = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_867m6")
+theme_override_colors/font_hover_color = Color(0.986979, 0.396502, 0.0179918, 1)
+theme_override_colors/font_color = Color(0.815104, 0.0530667, 0.0530667, 1)
+theme_override_colors/font_focus_color = Color(0.960938, 0.162659, 0.162659, 1)
+theme_override_colors/font_pressed_color = Color(0.955729, 0.445315, 0.0223999, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("7_b165h")
+theme_override_font_sizes/font_size = 51
+text = "X"
+script = ExtResource("6_b165h")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("5_b165h")
+volume_db = -12.033
+
+[connection signal="pressed" from="Control/ColorRect/MarginContainer/Panel/ButtonExit" to="." method="_on_button_exit_pressed"]

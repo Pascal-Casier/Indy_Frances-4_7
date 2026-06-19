@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2e46vopetweq"]
+
+[ext_resource type="PackedScene" uid="uid://0345ww4q7oc" path="res://assets/blender/SpikeTrap.gltf" id="1_lq56a"]
+[ext_resource type="Script" uid="uid://cdll33u3y81o2" path="res://scripts/mechanics/spike_trap.gd" id="2_ow4ts"]
+[ext_resource type="AudioStream" uid="uid://cn8myu2iviuhq" path="res://assets/sounds/sfx/Splash1.mp3" id="3_tyq61"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fel32"]
+size = Vector3(1.96606, 0.552734, 1.99817)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wjkqg"]
+size = Vector3(1.42871, 0.53363, 1.29468)
+
+[node name="SpikeTrap" instance=ExtResource("1_lq56a")]
+collision_layer = 0
+collision_mask = 11
+script = ExtResource("2_ow4ts")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Hazard_SpikeTrap_Armature/Skeleton3D/Hazard_SpikeTrap" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hazard_SpikeTrap_Armature/Skeleton3D/Hazard_SpikeTrap/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00012207, 0.254883, -0.00531006)
+shape = SubResource("BoxShape3D_fel32")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0186105, 0.775025, 0.0123291)
+shape = SubResource("BoxShape3D_wjkqg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_tyq61")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

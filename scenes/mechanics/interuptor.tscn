@@ -1,0 +1,186 @@
+[gd_scene load_steps=12 format=4 uid="uid://bna7a3wwsi28t"]
+
+[ext_resource type="Material" uid="uid://bg5hjnqsviv1o" path="res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_03.tres" id="1_dv72s"]
+[ext_resource type="Script" uid="uid://c0ou2forgflvv" path="res://scripts/mechanics/interuptor.gd" id="1_x6w4v"]
+[ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="2_x6w4v"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5wo5c"]
+_surfaces = [{
+"aabb": AABB(-0.151513, -0.21786, -0.0463304, 0.292854, 0.442445, 0.155077),
+"format": 34896613377,
+"index_count": 264,
+"index_data": PackedByteArray("DAAQABEADAAFABAACwAMABEABQAbABAABQAEABsACwARABwACgALABwADQARABAACgAcAB0ACQAKAB0AHgAcABEAHgARAA0AHwAdABwAHwAcAB4ACQAdACAACAAJACAAIQAdAB8AIQAgAB0ACAAgABIAAQAIABIABwAgACEABwASACAAAQASACIAAAABACIAAgASAAcAAgAiABIAAAAiACMAAwAAACMAJAAiAAIAJAAjACIAAwAjACUABAADACUABAAlABsAEwAlACMAEwAjACQAJgAbACUAJgAlABMABgAbACYABgAQABsADQAQAAYAJwAGACYADgANAAYADgAGACcAGAANAA4AGAAeAA0AKAAmABMAJwAmACgAKAATABQAFAATACQAKAAZACcAFAAkACkAKQAkAAIAFAAqACgAKAAqABkAJwAZAA8AKgAPABkAJwAPAA4ADgAPACsAKgArAA8ADgArABgAFAAsACoALAArACoAKQAsABQAGAArAC0ALAAtACsAKQAuACwALgAtACwAFQAuACkAKQACABUAFQACAAcAGAAtAC8ALwAeABgALwAfAB4ALwAtADAALgAwAC0AMQAfAC8ALwAwADEAMQAhAB8AMQAwABoAFgAhADEAFgAHACEAMQAaABYAFQAHABYAFwAwAC4AFQAXAC4AFwAaADAAFgAXABUAFgAaABcA"),
+"lods": [0.0381031, PackedByteArray("DAAQABEACwAMABEADAAFABAACgALABEABQAEABAACQAKABEABAADABAACQARABIACAAJABIAAQAIABIAAQASAAIAAwACABAAAAABAAIAAwAAAAIABwASABEAAgASAAcADQARABAABwARAA0AEwAQAAIABgAQABMADQAQAAYADgAGABMADgANAAYAFAATAAIADgATABQAFQACAAcAFAACABUAFgAHAA0AFQAHABYAFQAXABQAFAAXAA4AFgAXABUAGAANAA4AFgANABgADgAXABkAFgAaABcADgAPABgAGAAPABYADgAZAA8AFgAPABoAFwAPABkAFwAaAA8A"), 0.0720854, PackedByteArray("AAABAAIAAwAAAAIABAADAAIABQAEAAIABgAFAAIAAQAHAAIAAQAIAAcACAAJAAcACQAKAAcACgALAAcACwAMAAcADQAMAAUADQAFAAYADQAHAAwADgAGAAIADgACAAcADgANAAYADgAHAA0ADgANAA4ADgAPAA4ADgAPAA8A")],
+"name": "M_wood_planks_dungeon_03",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 50,
+"vertex_data": PackedByteArray("3fpyQnYCAACV/rkDdgIAAAnn0xDQqwAAGP0NfnYCAACB+b28dgIAAIH5sf2oAAAAbOK+8OaaAAB9ETwTl64AAEwI1wZ2AgAAHwxyQnYCAABiDw1+dgIAANALPrp1AgAAngUb+wAAAABTHdLtx5MAAHRqyrwW4AAAE27KvA9yAACB+f//WFAAAPMCSv1aTAAAAADXBjtbAAAl2Q1+UvsAAIifDX7k/gAAn5zXPXHYAABCZIY/9uAAACSZoT8ncAAAt2pKq7PqAAC+mba9P3IAAIxpoz96cgAARfncvbBYAACDCsS6WlYAAGIPDX47WwAABSd1syzmAADZKQ1+//8AAJIGckI7WwAAlx2lSLPqAAD//wAAO1sAAEL7ckLPVgAABtylSD7WAAAj+w1+MVsAAMPZXrQJ6QAASZ2AwC3gAAD9m0qrs+oAAE6dv0+o4QAAvplnq3pyAAADb0qrenIAAL6ZDX56cgAAlGsNfnpyAACqmdBQDnAAAAdmDX7//wAAf2zQUHpyAACyZ85QsuoAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cqkfu"]
+resource_name = "Fantastic_Dungeon_Pack_Props_Cube_039"
+_surfaces = [{
+"aabb": AABB(-0.151513, -0.21786, -0.0463304, 0.292854, 0.442445, 0.155077),
+"attribute_data": PackedByteArray("8umKnTWUXtX//4qdSIFe1f//4aZIgX2+YtKKnW6oXtVpuYqd3r1e1R2fip1w1F7VHZ/hpnDUfb5k/1udYeT+/7yfo5PB9S/FZP+jk8H1/v+8n1udYeQvxWm54aYmvU+lHZ/hpnTTT6X//4qdSIHrux2fip100+u7YtLhpvenT6Xy6eGm+5NPpf//4aZIgU+lJpjCfNDhRYGFg4fRAtf+/4WDwnwC10WBJpiH0dDh/v9k/6OTYeSNi7yfW52M9EjCvJ+jk2HkSMJk/1udjPSNiy+Y//9FkgrxRIP//0iB/v9EgzX7SIFD2ESD9LypyUPYRIP0vKnJ/v9Eg/1eSIH+/y+Y/V5FkgrxvJ8JmLHrSMJk/wmYseuNix2fOaJw1OXJYtLhpm6ofb68nwmY5e0vxR2fOaJ005Ww//85okiBlbAmmNus0OEsyYWD26wC1yzJJphcyNDhSvKFgySnAteiwCaYJKfQ4aLAJpjPlNDhOaWFg3mCAtfQiUSDE9zJpkPYL5gT3MmmBOYvmPS8zroE5i+Y9LzOugrxL5jscg2XCvHXl3u7Uvg0z4qDQY7/////15dBjlL4//+Kg3u7//80z///OaJIgeXJ8uk5ojWU5cli0jmibqjlyWm5OaLeveXJHZ85onDU5cm8nwmY5e0vxWT/CZjl7f7/HZ85onTTlbBpuTmiJr2VsGLSOaL3p5Ww8uk5ovuTlbD//zmiSIGVsCaYBrbQ4eHWhYMGtgLX4dYmmDG/0OGV5IWD+p0C1+2yhYMxvwLXleQmmPqd0OHtsoWDz5QC1zmlhYNcyALXSvKFg6SLAteElyaYpIvQ4YSXJph5gtDh0Im8nwmYsetIwmT/CZix642L8unhpjWUfb7//zmiSIHlyfLpOaI1lOXJYtI5om6o5clpueGm3r19vmm5OaLeveXJZP8JmOXt/v9puYqdJr3ru2m5OaImvZWwYtKKnfen67ti0jmi96eVsPLpip37k+u78uk5ovuTlbAvmDX7RZIE5kSDtPANl0PYL5i08A2XBOZEgxTNZLZD2C+YFM1ktgTmRIOfqGS2/v8vmJ+oZLYK8USDHoPJpv7/L5geg8mmCvFEg+xyDZf+/9eXj5lS+MzzioOPmf7/zPPXl96kUviZ54qD3qT//5nn15ctsFL4Z9uKgy2w//9n2w=="),
+"format": 34896613431,
+"index_count": 264,
+"index_data": PackedByteArray("GQAhACIAGQAXACEAAAA4ADkAAAABADgAAwAAADkAAwA5ADoABAADADoABAA6ADsABQAEADsABQA7ADwABwA9AD4ABwAKAD0ACwA/AEAACwAMAD8ADwALAEAADwBAAEEAEAAPAEEAEABBAEIAEQAQAEIAEQBCAEMARAApACgAKAApACsARABFACkAKAArACwARgBFAEQALAArAEcARgBIAEUALABHAEkAKgBIAEYASQBHAEoAKgBLAEgAFQBLACoAFQATAEsASQBKAC0ALQBKAEwALQBMAE0ATQBMAC4ATQAuAE4ATgAuABQATgAUABIAFgBPABgAFgBQAE8AUQBSAAIAUQBTAFIAJABTAFEAJABUAFMAVQBUACQAVQBWAFQABgBWAFUABgAjAFYACQAlAAgACQBXACUAWAAmAA4AWABZACYAWgBZAFgAWgBbAFkAXABbAFoAXABdAFsADQBdAFwADQAnAF0AGgAcAF4AGgAbABwAXgAcAF8AXgBfAGAAYABfAC8AYAAvADAAMAAvAGEAMABhAGIAYgBhAB0AYgAdADEAMQAdAB4AMQAeADIAMgAeAGMAMgBjAGQAZABjAGUAZABlAGYAZgBlAGcAZgBnADMAMwBnAB8AMwAfACAAaAA1ADYAaABpADUAagBpAGgAagBrAGkAbABrAGoAbABtAGsANABtAGwANAA3AG0A"),
+"lods": [0.0381031, PackedByteArray("GQAhACIAGQAXACEAFgAiACEAFgAhABgAAAABAAIAAwAAAAIAAwACACMAJAAjAAIABgAjACQABAADACMABQAEACMABwAlAAkACQAlAAgABwAKACUACwAMACYADwALACYAEAAPACYAEAAmACcAEQAQACcADQAnACYADQAmAA4AKAATACkAKgATACgAFQATACoAKAApACsAKAArACwALAArAC0ALQArABIAEgArAC4AEgAuABQAGgAbABwAGgAcAC8AGgAvADAAMAAvAB0AMAAdADEAMQAdAB4AMQAeADIAMgAeAB8AMgAfADMAMwAfACAANAA1ADYANAA3ADUA"), 0.0720854, PackedByteArray("AAABAAIAAwAAAAIABAADAAIABQAEAAIABgAFAAIABwAIAAkABwAKAAgACwAMAA0ADgANAAwADwALAA0AEAAPAA0AEQAQAA0AEgATABQAFQATABIAFgAXABgAFgAZABcAGgAbABwAGgAcAB0AGgAdAB4AGgAeAB8AGgAfACAA")],
+"material": ExtResource("1_dv72s"),
+"name": "M_wood_planks_dungeon_03",
+"primitive": 3,
+"uv_scale": Vector4(1.12421, 3.23835, 1.9621, 1.98032),
+"vertex_count": 110,
+"vertex_data": PackedByteArray("3fpyQnYCKdWV/rkDdgK71Ann0xDQq2PCGP0NfnYCcNSB+b28dgLr1IH5sf2oAB/WbOK+8Oaa58+V/rkDdgKHwn0RPBOXru6sCefTENCr76xMCNcGdgKHwtALPrp1Ai/UngUb+wAAddR9ETwTl6581FMd0u3Hk/e+Yg8NfnYCNdYfDHJCdgIp2UwI1wZ2AhDadGrKvBbgs+0Tbsq8D3ID6xNuyrwPcofodGrKvBbgx+1THdLtx5OB/4H5sf2oAJn/bOK+8Oaas/+eBRv7AADG/3RqyrwW4FawUx3S7ceT3qVs4r7w5prHxgnn0xDQqx3zfRE8E5euUqBTHdLtx5PplXRqyrwW4Lylgfn//1hQnv/zAkr9WkzL/4H5//9YUInLJdkNflL71cwAANcGO1vurPMCSv1aTAzFAADXBjtb989CZIY/9uDZ7oxpoz96cpjrt2pKq7Pqh/8kmaE/J3BKxJ+c1z1x2FjDiJ8NfuT+ZL2+mba9P3ISxCXZDX5S+/f9iJ8NfuT+gv6fnNc9cdhV4UJkhj/24IqUt2pKq7PqkJAkmaE/J3AagRNuyrwPcqKAvpm2vT9yUoGMaaM/enIagf//AAA7W+PUQvtyQs9WJdUj+w1+MVtl1EX53L2wWBfVgfn//1hQV9YAANcGO1uHwv//AAA7W4fC8wJK/VpMOdSDCsS6Wlb802IPDX47WyHWkgZyQjtbItkAANcGO1sI2rJnzlCy6qL+f2zQUHpyYf4HZg1+//9v/6qZ0FAOcFK9lGsNfnpybv9Onb9PqOFLvb6ZDX56cmK9A29Kq3pyq/++mWerenLdvf2bSquz6te9SZ2AwC3goMOB+f//WFCp//MCSv1aTHz/BtylSD7WL8f//wAAO1vsxkL7ckLPVlPKI/sNfjFbOs3D2V60Cekd0UX53L2wWHzQ//8AADtb76wFJ3WzLOaPyIMKxLpaVlDK2SkNfv//hdBiDw1+O1tM0JcdpUiz6oTWkgZyQjtbuNRJnYDALeBt5MPZXrQJ6aLs/ZtKq7PqNfkG3KVIPtYV+k6dv0+o4eLzlx2lSLPqUZSyZ85QsuqgitkpDX7//82BB2YNfv//t4EFJ3WzLOarjb6ZZ6t6coyAA29Kq3pyLoC+mQ1+enJXgJRrDX56cliAqpnQUA5w24B/bNBQenLdgDqry1UkrLZVY6FFVXyqeVUDq/9VFqtXVi+npGKdA+SBmgSpgb8Ea4GcA9GBi1PWqt1SoKqJWVWi9GJwsT9VmKuvVQet+lScreUSvMtyFQTNkhMxy/QSyssQf+StbH9WwvF+2K02fznCeJtalGOkcpNKkQiUwQ8B+7wMHds1w7mPCaRbk2Z/UsIwfzbC/aUgX4mkjVuhBJ2BM2CpqkpbPqZTtXWQoLJklY0Ac8J5nD7E2pyAxRh/fP/uQ6HijYHzfMoCVP66Dlr3MglmxoS2M4xXfPcDnvjr2hn8d+tcfHYEPKzpVTerxlV2qmxVGasrVjermladA9SBngPmgQNT8KqrUxirUlW5q7JVE63/VKatsQFOw+kBbMOsAKbCsH6h+6wApsKdf5P9Kn8o/2IAWsIJgKn/soKw/qdG/eT3ftutFH/lrcOhFFcGo8dZQ6PEWpuk2VtZp1BhO6eRYcQEZIHxXJSp31wgp+Ba66X3Wh2m01l9ojdacaO2hyOV24RDjjSCDY2gDHz7TgzC+j0IrdJyAaGtB/FhBBCWl3PHztaLnvvG5wv16salSMYvDk0KM5BmwRmkZxMZ")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5wo5c")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i2ei5"]
+_surfaces = [{
+"aabb": AABB(-0.0450239, -0.037376, -0.0258827, 0.079577, 0.0755521, 0.276052),
+"format": 34896613377,
+"index_count": 126,
+"index_data": PackedByteArray("AAALAAIAAwACAAsAAwALABIABAADABIAAAAMAAsABAASABEAEQAFAAQAAAATAAwAAAAGABMABgAFABQAEQAUAAUABgAUABMAEQASAAgACQAUABEAEQAIAAkAEwAUAAoACQAKABQAEwAKAA0ADAATAA0ACAAVAAkACQAQAAoACQAVABAACgAWAA0ACgAQABYADAANAA4ACwAMAA4ADQAWAAcADQAHAA4AFgAQABcABwAWABcAEAAVAAEAEAABABcACAABABUABwAXABgADgAHABgAFwABABgADgAYAA8ADwAYAAEADwABAAgACwAOAA8AEgAPAAgAEgALAA8A"),
+"lods": [0.013665, PackedByteArray("AAALAAIAAwACAAsAAAAMAAsAAwALAAgAAAANAAwABAADAAgAAAAGAA0ACwAMAA4ADAANAA4ACwAOAA8ACAALAA8ADQAHAA4ADgAHAA8ABgAKAA0ABgAFAAoADQAQAAcACgAQAA0ADwAHAAEABwAQAAEADwABAAgACQABABAACQAQAAoACAABAAkAEQAKAAUACQAKABEAEQAIAAkAEQAFAAQABAAIABEA"), 0.0271476, PackedByteArray("AAAHAAIAAgAHAAgAAwACAAgABAADAAgACAAHAAEABAAIAAkACAABAAkACQAFAAQACgABAAcACQABAAoAAAAKAAcACQAKAAUAAAAGAAoABgAFAAoA"), 0.0465478, PackedByteArray("AAABAAIAAwACAAEABAADAAEAAQAFAAQAAAAGAAEABgAFAAEABgABAAEA")],
+"name": "M_wood_planks_dungeon_03",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 25,
+"vertex_data": PackedByteArray("gUgQnAAAAABaqSE4q/YAABtO4VgAAAAAwoxfPAAAAABit9ZQAAAAAPnG9KYAAAAAb4XOywAAAABzPM6u+/QAAAePAABO5AAAIfcSNrbgAAD//5HCktwAAFUkWkbLpAAA8RuYqcukAAAceP//U94AAAAAg7Pr4QAAaw1oMQ/mAAAP/om+MvEAAAHc1T7LpAAAApD2HcukAABahZbuy6QAAD/2/rnLpAAAwONFUiD0AAAimUrtcPIAAO+h/Yr//wAAgEouWun3AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_prnbn"]
+resource_name = "Fantastic_Dungeon_Pack_Props_Cube_041"
+_surfaces = [{
+"aabb": AABB(-0.0450239, -0.037376, -0.0258827, 0.079577, 0.0755521, 0.276052),
+"attribute_data": PackedByteArray("Y/j6w3v/5dHel2aigwDSt2P4jbR7/+rFY/hmonv/0rdj+FvUe/+d3t6Xr/6DAHv/Y/ie4nv/sOlj+GP0e/9892P4r/57/3v/3pf6w4MA5dGvmmai8wfSt6+anuLzB7Dpr5pj9PMHfPevmq/+8wd7/0WsjbRoNurFRaz6w2g25dGvmlvU8wed3q+ajbTzB+rFr5r6w/MH5dHel57igwCw6UWsY/RoNnz3Ea0a5IMAP554qJm5MiHDma3Nlch0Fsy2Raxmomg20rfel420gwDqxd6XW9SDAJ3eRaxb1Gg2nd5FrJ7iaDaw6d6XY/SDAHz3Rayv/mg2e/+6tgfLEBQlpZDEEuAjBEiwgJvuzToRNZA0xnK6MiG4sA=="),
+"format": 34896613431,
+"index_count": 126,
+"index_data": PackedByteArray("AAAOAAIAAwACAA4AAwAOABgAGAAOABEAGAARAAoAEQABAAoAEQAZAAEAEgAZABEADgASABEAEgAJABkAAAAPAA4ADgAPABIAEAAJABIADwAQABIAEAAaAAkAAAAbAA8ADwAbABAAAAAEABsACwAaABAAGwALABAACwATABoABAAcABsAGwAcAAsABAAGABwADAATAAsADAALABwADAAdABMADQAdAAwADQAFAB0ADAAcABQAFAANAAwAFAAcAAYAFAAeAA0AFAAGAAcABwAeABQABwAIAB4AFQAfACAAFQAhAB8AHwAXACAAIQAWAB8AFgAXAB8AFgAiABcA"),
+"lods": [0.013665, PackedByteArray("AAAOAAIAAwACAA4AAwAOAAoAAAAPAA4AAAAQAA8ACgAOABEAEQABAAoAEQAJAAEADgASABEADgAPABIAEgAJABEADwAQABIAEAAJABIAAAAEABAAEAATAAkABAALABAACwATABAABAAGAAsADAATAAsADAAFABMADQAFAAwADAALABQAFAALAAYAFAANAAwAFAAGAAcABwANABQABwAIAA0AFQAWABcA"), 0.0271476, PackedByteArray("AAAJAAIAAgAJAAoAAwACAAoACgAJAAEAAAALAAkAAAAEAAsACwAFAAkABAAGAAsADAAFAAsADAALAAYADQAFAAwADAAGAAcABwANAAwABwAIAA0A"), 0.0465478, PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAAFAAEABAAGAAUABQAGAAcABwAIAAUA")],
+"material": ExtResource("1_dv72s"),
+"name": "M_wood_planks_dungeon_03",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 35,
+"vertex_data": PackedByteArray("gUgQnAAAaPNaqSE4q/aw0RtO4VgAAIrtwoxfPAAAy9Rvhc7LAAB02VqpITir9krM+cb0pgAAlcVit9ZQAAAex8KMXzwAAFbWczzOrvv0v/MHjwAATuSg0///kcKS3GTCIfcSNrbgw8AHjwAATuRf0FUkWkbLpMvt8RuYqcukmfMceP//U97o2msNaDEP5h/rAACDs+vhWfYP/om+MvF+rQHc1T7LpPPHczzOrvv03sUP/om+MvEnyVqpITir9nXIApD2HcukAdaASi5a6fem7CKZSu1w8pPUWoWW7suk7tc/9v65y6SzxcDjRVIg9FuxApD2HcukUtfvof2K///9wYBKLlrp907DIplK7XDyHcrA40VSIPTo1YDydDvWdMRdG0dfbfFSBVXh1YwrE3LpXbSnbROFZKQ09VQAVKDwKhxDXldWvqzLFFtqWjQ6W5tXM0ZAbU3yLDyh1+QlllHdbx3xlTCVs+QU62UhMz56yakMsUFwAnAEXohTwVPWZ0B3utvrFnbWfC3nqC8VKXncPUhV3VLjh0t+oF8BhqGgXp/4kqla")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_i2ei5")
+
+[sub_resource type="Animation" id="Animation_sbpy7"]
+resource_name = "off"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_PROP_lever_dungeon_02/SM_PROP_lever_handle_dungeon_02:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.523599, 0, 0), Vector3(-0.523599, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_x6w4v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_m56l8"]
+resource_name = "on"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SM_PROP_lever_dungeon_02/SM_PROP_lever_handle_dungeon_02:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.523599, 0, 0), Vector3(0.523599, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_x6w4v")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbpy7"]
+_data = {
+&"off": SubResource("Animation_sbpy7"),
+&"on": SubResource("Animation_m56l8")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsyft"]
+
+[node name="Interuptor" type="Node3D"]
+script = ExtResource("1_x6w4v")
+turn_off = false
+
+[node name="SM_PROP_lever_dungeon_02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("ArrayMesh_cqkfu")
+skeleton = NodePath("")
+
+[node name="SM_PROP_lever_handle_dungeon_02" type="MeshInstance3D" parent="SM_PROP_lever_dungeon_02"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0.0276165)
+mesh = SubResource("ArrayMesh_prnbn")
+skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_sbpy7")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6421)
+shape = SubResource("BoxShape3D_nsyft")
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.896899, 0.0362449)
+visible = false
+text = "[E]"
+font_size = 72
+outline_size = 30
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

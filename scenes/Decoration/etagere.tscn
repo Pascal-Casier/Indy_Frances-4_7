@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://x487b0j2cju1"]
+
+[ext_resource type="PackedScene" uid="uid://b45vaqqtw3y3h" path="res://assets/blender/kaykitmeubles/bookcaseWideFilled.gltf.glb" id="1_i8uwj"]
+[ext_resource type="Script" uid="uid://ckcwqnvopbply" path="res://scripts/decoration/etagere.gd" id="1_jm070"]
+[ext_resource type="AudioStream" uid="uid://uwrifaubyxre" path="res://assets/sounds/sfx/chest_opening2.mp3" id="2_jm070"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ba7mc"]
+points = PackedVector3Array(0.93731, 0.239739, 0.266019, -0.94832, 0.195652, -0.264339, -0.903073, 0.121336, -0.259857, 0.9556, 1.9506, -0.264476, -0.918546, 1.92033, 0.262652, -0.95442, 0.0716566, 0.250528, 0.909866, 0.121336, -0.259857, -0.948807, 1.9506, -0.264476, 0.925339, 1.92033, 0.262652, 0.899101, 0.00991424, 0.219516, -0.838856, 0.0689, -0.228996, 0.960524, 0.220883, -0.265861, 0.958497, 0.0742844, 0.249827, -0.928186, 0.212633, 0.265363, 0.845649, 0.0689, -0.228996, 0.895648, 0.163765, 0.262416, -0.888855, 0.163765, 0.262416)
+
+[sub_resource type="Animation" id="Animation_n58qx"]
+resource_name = "rotate"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bookcaseWideFilled_gltf:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.0472, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_jm070")
+}],
+"times": PackedFloat32Array(0.0666667)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbn66"]
+_data = {
+&"rotate": SubResource("Animation_n58qx")
+}
+
+[node name="etagere" type="Node3D"]
+script = ExtResource("1_jm070")
+
+[node name="bookcaseWideFilled_gltf" parent="." instance=ExtResource("1_i8uwj")]
+
+[node name="bookcaseWideFilled" parent="bookcaseWideFilled_gltf" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.819015, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bookcaseWideFilled_gltf/bookcaseWideFilled" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bookcaseWideFilled_gltf/bookcaseWideFilled/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_ba7mc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sbn66")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+max_distance = 45.0
+max_polyphony = 3
+bus = &"Sfx"
+
+[editable path="bookcaseWideFilled_gltf"]

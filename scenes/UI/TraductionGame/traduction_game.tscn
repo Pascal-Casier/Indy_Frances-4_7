@@ -1,0 +1,233 @@
+[gd_scene load_steps=15 format=3 uid="uid://sowdoyysjcw3"]
+
+[ext_resource type="Script" uid="uid://c1gogjcn0efh2" path="res://scripts/UI/traduction_game.gd" id="1_yyw4h"]
+[ext_resource type="Theme" uid="uid://1l24bl5jnqnx" path="res://Themes/vocab_theme.tres" id="2_74fyp"]
+[ext_resource type="Script" uid="uid://bksug8fqxrlj0" path="res://scripts/UI/WordPair.gd" id="2_nxp3x"]
+[ext_resource type="Resource" uid="uid://h13e4cx2m3d7" path="res://scripts/UI/wordpair_questions/02.tres" id="4_w6wqj"]
+[ext_resource type="Texture2D" uid="uid://b7e5x8cnimdc8" path="res://assets/images/ui/blackboard_2.jpg" id="5_76nyv"]
+[ext_resource type="Texture2D" uid="uid://b25k3byct0083" path="res://assets/images/characters/indiana2.png" id="6_nxp3x"]
+[ext_resource type="Texture2D" uid="uid://d0ki0v08661fw" path="res://assets/images/ui/bulle.png" id="6_w6wqj"]
+[ext_resource type="AudioStream" uid="uid://bjrscon32jp3q" path="res://assets/sounds/sfx/correct2.ogg" id="7_76nyv"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="7_x8na4"]
+
+[sub_resource type="Resource" id="Resource_nxp3x"]
+script = ExtResource("2_nxp3x")
+portuguese = "animal de compagnie qui aime manger des os"
+french = "chien"
+metadata/_custom_type_script = "uid://bksug8fqxrlj0"
+
+[sub_resource type="Resource" id="Resource_fugco"]
+script = ExtResource("2_nxp3x")
+portuguese = "on habite dedans"
+french = "maison"
+metadata/_custom_type_script = "uid://bksug8fqxrlj0"
+
+[sub_resource type="Resource" id="Resource_76nyv"]
+script = ExtResource("2_nxp3x")
+portuguese = "escritorio"
+french = "bureau"
+metadata/_custom_type_script = "uid://bksug8fqxrlj0"
+
+[sub_resource type="SystemFont" id="SystemFont_w6wqj"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76nyv"]
+bg_color = Color(0.0141805, 0.320313, 0.105063, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0702108, 0.0707915, 0.0755208, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 10.0
+expand_margin_top = 5.0
+expand_margin_right = 10.0
+expand_margin_bottom = 5.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[node name="traduction_game" type="CanvasLayer"]
+script = ExtResource("1_yyw4h")
+word_pairs = Array[ExtResource("2_nxp3x")]([ExtResource("4_w6wqj"), SubResource("Resource_nxp3x"), SubResource("Resource_fugco"), SubResource("Resource_76nyv")])
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_74fyp")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_76nyv")
+expand_mode = 1
+
+[node name="Bulle" type="Sprite2D" parent="Control/TextureRect"]
+position = Vector2(740, 162)
+texture = ExtResource("6_w6wqj")
+
+[node name="Label" type="Label" parent="Control/TextureRect/Bulle"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -244.0
+offset_right = 114.0
+offset_bottom = -103.0
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_w6wqj")
+theme_override_font_sizes/font_size = 26
+text = "clique sur les 
+lettres 
+pour former 
+le mot :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 600
+theme_override_constants/margin_bottom = 30
+
+[node name="Panel" type="Panel" parent="Control/TextureRect/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+theme_override_constants/separation = 57
+alignment = 1
+
+[node name="PortugueseLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FormedWordLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 15
+columns = 3
+
+[node name="LetterButton1" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton2" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton3" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton4" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton5" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton6" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton7" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton8" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="LetterButton9" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme = ExtResource("7_x8na4")
+text = "A"
+
+[node name="FeedbackLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 5
+theme_override_styles/normal = SubResource("StyleBoxFlat_76nyv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Indiana2" type="Sprite2D" parent="Control"]
+position = Vector2(1066, 372)
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("6_nxp3x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+stream = ExtResource("7_76nyv")
+volume_db = -12.033

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=3 format=3 uid="uid://b44duk4wfr4qs"]
+
+[ext_resource type="AudioStream" uid="uid://dsgypxackndp2" path="res://assets/sounds/alphabet/ttsMP3.com_VoiceText_2024-9-8_14-23-46.mp3" id="1_w7ey5"]
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="2_h5x7o"]
+
+[resource]
+script = ExtResource("2_h5x7o")
+question = "Ecoutez ->"
+choiceA = "K"
+choiceB = "Q"
+choiceC = "C"
+choiceD = "G"
+correct = "b"
+explications = "Q
+= 
+[kü] (biquinho)"
+audiostream = ExtResource("1_w7ey5")

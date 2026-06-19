@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5hhnqe6vqnps"]
+
+[ext_resource type="Texture2D" uid="uid://dtxgq3jsyx7nq" path="res://assets/images/characters/chouettePortrait.png" id="1_mxb7l"]
+[ext_resource type="Script" uid="uid://cbwn7d7qqkbyh" path="res://scripts/UI/chouette_talking.gd" id="1_thkrd"]
+[ext_resource type="Texture2D" uid="uid://bakgsqo36tlpr" path="res://assets/images/ui/cadres/20250420manaSoul9SlicesF-Sheet.png" id="2_thkrd"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="3_2v5ju"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="4_u2k6i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6vu3n"]
+
+[node name="Chouette_talking" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_thkrd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6vu3n")
+
+[node name="Control" type="Control" parent="."]
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -106.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -41.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 55
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 55
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_mxb7l")
+expand_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer/HBoxContainer"]
+self_modulate = Color(1, 1, 1, 0.342)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_thkrd")
+region_rect = Rect2(2, 2, 93, 92)
+patch_margin_left = 28
+patch_margin_top = 28
+patch_margin_right = 29
+patch_margin_bottom = 28
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/HBoxContainer/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Control/MarginContainer/HBoxContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0444962, 0.0494792, 0.0436808, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_2v5ju")
+theme_override_font_sizes/font_size = 22
+text = "Fsdf sdfdfgg4e"
+
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/HBoxContainer/NinePatchRect/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme = ExtResource("4_u2k6i")
+text = "x"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="pressed" from="Control/MarginContainer/HBoxContainer/NinePatchRect/MarginContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://d12mrijq1amnt"]
+
+[ext_resource type="Texture2D" uid="uid://cw7xyhuqvie5h" path="res://assets/images/ui/computer_screen2.jpg" id="1_al5n0"]
+[ext_resource type="Script" uid="uid://ddo0s02phm4fq" path="res://scripts/UI/mots_trous.gd" id="1_j3dgl"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="2_5oe5v"]
+
+[node name="Mots_trous" type="CanvasLayer"]
+script = ExtResource("1_j3dgl")
+difficulty_level = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_al5n0")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="Control/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 84.0
+offset_top = 55.0
+offset_right = -80.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 33
+
+[node name="title" type="Label" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.581251, 0.903646, 0.697112, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_5oe5v")
+theme_override_font_sizes/font_size = 50
+text = "Trouvez la / les lettres qui manquent"
+horizontal_alignment = 1
+
+[node name="wordLbl" type="Label" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.581251, 0.903646, 0.697112, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_5oe5v")
+theme_override_font_sizes/font_size = 50
+text = "mot"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="enterlbl" type="Label" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.104685, 0.635913, 0.290603, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_5oe5v")
+theme_override_font_sizes/font_size = 30
+text = "entrez le mot en complétant
+ les lettres manquantes :"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_5oe5v")
+theme_override_font_sizes/font_size = 31
+text = "e"
+caret_blink = true
+
+[node name="messagelbl" type="Label" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.581251, 0.903646, 0.697112, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_5oe5v")
+theme_override_font_sizes/font_size = 50
+text = "bravo !!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Control/TextureRect/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "valider"

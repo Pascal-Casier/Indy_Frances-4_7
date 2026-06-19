@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://dniidi0sy4x7o"]
+
+[ext_resource type="PackedScene" uid="uid://is45s0lllxm6" path="res://assets/blender/Spider1.glb" id="1_pv546"]
+[ext_resource type="Script" uid="uid://dvk85fto52nd0" path="res://scripts/characters/Enemies/spider_flying.gd" id="1_w60w2"]
+[ext_resource type="AudioStream" uid="uid://cx40tm43c8dkr" path="res://assets/sounds/sfx/monkey-laugh.mp3" id="3_fbvso"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w60w2"]
+albedo_color = Color(0.158854, 0.146857, 0.146857, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_fbvso"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 8.0
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pv546"]
+size = Vector3(1.03491, 1.1084, 2.27832)
+
+[node name="Spider_flying" type="Node3D"]
+script = ExtResource("1_w60w2")
+
+[node name="axis" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.779819, -0.626005, 0, 0.626005, 0.779819, 0, 3.76277, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="axis"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.651937, -2.67605)
+material_override = SubResource("StandardMaterial3D_w60w2")
+mesh = SubResource("CylinderMesh_fbvso")
+skeleton = NodePath("../..")
+
+[node name="Spider1" parent="axis/MeshInstance3D" instance=ExtResource("1_pv546")]
+transform = Transform3D(0.304529, 0, 0, 0, 0.258814, 0.160478, 0, -0.160478, 0.258814, 0, -4.15062, -0.00334978)
+
+[node name="Area3D" type="Area3D" parent="axis/MeshInstance3D/Spider1"]
+transform = Transform3D(3.28376, 0, 0, 0, 3.25959, 0.397629, 0, -0.397629, 3.25959, 0, -3.49863, 17.2845)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="axis/MeshInstance3D/Spider1/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.58881, -5.10997)
+shape = SubResource("BoxShape3D_pv546")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="axis/MeshInstance3D/Spider1"]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="axis/MeshInstance3D/Spider1/StaticBody3D"]
+transform = Transform3D(3.28376, 0, 0, 0, 3.25959, 0.397629, 0, -0.397629, 3.25959, 0, -0.351615, -0.0037117)
+shape = SubResource("BoxShape3D_pv546")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_fbvso")
+pitch_scale = 0.83
+autoplay = true
+max_distance = 15.0
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="body_entered" from="axis/MeshInstance3D/Spider1/Area3D" to="." method="_on_area_3d_body_entered"]

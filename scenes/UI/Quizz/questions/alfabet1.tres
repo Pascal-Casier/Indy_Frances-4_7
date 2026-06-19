@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=3 format=3 uid="uid://dnpukbm01a2pq"]
+
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="1_cuow0"]
+[ext_resource type="AudioStream" uid="uid://bfosd5xp7c41l" path="res://assets/sounds/alphabet/p.mp3" id="1_msoka"]
+
+[resource]
+script = ExtResource("1_cuow0")
+question = "écoutez ->"
+choiceA = "B"
+choiceB = "P"
+choiceC = "V"
+choiceD = "D"
+correct = "b"
+explications = ""
+audiostream = ExtResource("1_msoka")

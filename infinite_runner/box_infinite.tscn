@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck7sd74wfam1"]
+
+[ext_resource type="Script" uid="uid://cmlekqldb4pdh" path="res://infinite_runner/object_infinite.gd" id="1_mm7jh"]
+[ext_resource type="PackedScene" uid="uid://rkxa0bebss4p" path="res://assets/dungeonKaykit/box_large.gltf.glb" id="1_mv3ms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mm7jh"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="BoxInfinite" type="StaticBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_mm7jh")
+
+[node name="box_large_gltf" parent="." instance=ExtResource("1_mv3ms")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.372116, 0)
+shape = SubResource("BoxShape3D_mm7jh")

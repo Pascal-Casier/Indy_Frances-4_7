@@ -1,0 +1,180 @@
+[gd_scene load_steps=12 format=3 uid="uid://pimwxr6ejo7d"]
+
+[ext_resource type="PackedScene" uid="uid://dagjno8vupak" path="res://assets/blender/metalTower.glb" id="1_oi7tv"]
+[ext_resource type="Script" uid="uid://dcihvi3bclxor" path="res://scripts/mechanics/metal_tower.gd" id="2_a7q1k"]
+[ext_resource type="AudioStream" uid="uid://77tsn7rsgqfs" path="res://assets/sounds/sfx/wallMoving.mp3" id="2_w5hi6"]
+[ext_resource type="AudioStream" uid="uid://on8ir7nf7sub" path="res://assets/sounds/sfx/metalClick.ogg" id="4_sx18o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iqro8"]
+size = Vector3(2.03839, 4.00537, 2.00842)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rk8f0"]
+resource_local_to_scene = true
+albedo_color = Color(0.533333, 0.980392, 0.0862745, 1)
+emission_enabled = true
+emission = Color(0.27451, 0.811765, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_08t83"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7vg63"]
+height = 0.25352
+radius = 0.970265
+
+[sub_resource type="Animation" id="Animation_428wb"]
+resource_name = "down"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 6.2, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -3.68982, 0), Vector3(0, -3.68982, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_w5hi6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_w5hi6")
+}],
+"times": PackedFloat32Array(0, 6.2)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8, 10.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cube/MeshInstance3D:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.8, 10.4, 10.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.533333, 0.980392, 0.0862745, 1), Color(0.996078, 0.0117647, 0.0117647, 1), Color(0.996078, 0.0117647, 0.0117647, 1), Color(0.533333, 0.980392, 0.0862745, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_reh6i"]
+resource_name = "down_only"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -3.68982, 0), Vector3(0, -3.68982, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_w5hi6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cube/Area3D:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cube/MeshInstance3D:material_override:albedo_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.533333, 0.980392, 0.0862745, 1), Color(0.996078, 0.0117647, 0.0117647, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y1b4g"]
+_data = {
+&"down": SubResource("Animation_428wb"),
+&"down_only": SubResource("Animation_reh6i")
+}
+
+[node name="metalTower" instance=ExtResource("1_oi7tv")]
+script = ExtResource("2_a7q1k")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00192261, 2.00216, 0.0105591)
+shape = SubResource("BoxShape3D_iqro8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cube" index="1"]
+transform = Transform3D(1.8606, 0, 0, 0, 0.0459599, 0, 0, 0, 1.8606, 0, 4.01029, 0)
+material_override = SubResource("StandardMaterial3D_rk8f0")
+mesh = SubResource("CylinderMesh_08t83")
+
+[node name="Area3D" type="Area3D" parent="Cube" index="2"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShapeArea" type="CollisionShape3D" parent="Cube/Area3D" index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.96771, 0)
+shape = SubResource("CylinderShape3D_7vg63")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_y1b4g")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+[node name="AudioStreamClic" type="AudioStreamPlayer" parent="." index="3"]
+unique_name_in_owner = true
+stream = ExtResource("4_sx18o")
+
+[connection signal="body_entered" from="Cube/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Cube/Area3D" to="." method="_on_area_3d_body_exited"]

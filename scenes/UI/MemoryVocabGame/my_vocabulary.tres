@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="VocabularyData" load_steps=2 format=3 uid="uid://bbb75w5j7a713"]
+
+[ext_resource type="Script" uid="uid://b4tcei5xu8yub" path="res://scenes/UI/MemoryVocabGame/VocabularyData.gd" id="1_mx0xg"]
+
+[resource]
+script = ExtResource("1_mx0xg")
+pairs = Dictionary[String, String]({
+"Table": "Mesa",
+"chaise": "cadeira",
+"chance": "sorte",
+"chat": "gato",
+"chien": "cachorro",
+"lumière": "luz"
+})
+metadata/_custom_type_script = "uid://b4tcei5xu8yub"

@@ -1,0 +1,91 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdnamhrkcehom"]
+
+[ext_resource type="Script" uid="uid://dojfxiu1byou0" path="res://scripts/mechanics/object_interactive.gd" id="1_32bhe"]
+[ext_resource type="Texture2D" uid="uid://dwihdgyv2gh17" path="res://assets/images/textures/Wood_13-128x128.png" id="1_mpbki"]
+[ext_resource type="Texture2D" uid="uid://c86c1gp2sc5yf" path="res://assets/images/icon_delete.png" id="2_32bhe"]
+[ext_resource type="Theme" uid="uid://1l24bl5jnqnx" path="res://Themes/vocab_theme.tres" id="4_2n4kp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2n4kp"]
+albedo_texture = ExtResource("1_mpbki")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kbji1"]
+size = Vector3(1, 0.6, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2n4kp"]
+points = PackedVector3Array(-0.507937, -0.307936, -0.0579256, 0.479005, 0.293481, 0.05, 0.507937, 0.311111, -0.0579256, 0.507937, -0.307936, -0.0579256, -0.507937, 0.311111, -0.0579256, -0.479005, -0.290307, 0.05, -0.479005, 0.293481, 0.05, 0.479005, -0.290307, 0.05)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_808cb"]
+size = Vector3(1, 0.609375, 1.0553)
+
+[node name="ObjectInteractive" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_32bhe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_2n4kp")
+mesh = SubResource("BoxMesh_kbji1")
+
+[node name="icon" type="Sprite3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0501711)
+double_sided = false
+texture = ExtResource("2_32bhe")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_2n4kp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.582825)
+shape = SubResource("BoxShape3D_808cb")
+
+[node name="PressE" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.585175, 0.408993, 0)
+visible = false
+text = "E"
+font_size = 62
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_2n4kp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -134.0
+offset_right = 122.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 20
+
+[node name="Button1" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "option1"
+
+[node name="Button2" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "option1"
+
+[node name="Button3" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "option1"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

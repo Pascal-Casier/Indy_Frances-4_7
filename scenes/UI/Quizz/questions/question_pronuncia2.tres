@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Questions" load_steps=3 format=3 uid="uid://b86qqy8jd37wl"]
+
+[ext_resource type="AudioStream" uid="uid://mcpa0bgbvl4o" path="res://assets/sounds/pronuncia/chaud.mp3" id="1_lgogw"]
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="2_bji6n"]
+
+[resource]
+script = ExtResource("2_bji6n")
+question = "écoutez ->"
+choiceA = "chou"
+choiceB = "chaud"
+choiceC = "choix"
+choiceD = "chose"
+correct = "b"
+explications = "au = [ô]"
+audiostream = ExtResource("1_lgogw")

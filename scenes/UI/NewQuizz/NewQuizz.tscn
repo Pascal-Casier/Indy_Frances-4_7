@@ -1,0 +1,349 @@
+[gd_scene load_steps=19 format=3 uid="uid://1tjbt07uljl0"]
+
+[ext_resource type="Texture2D" uid="uid://h8abvdt0jtip" path="res://assets/images/ui/cadres/UITrain10.jpg" id="1_fbtyi"]
+[ext_resource type="Script" uid="uid://tvyas0qebvqk" path="res://scripts/UI/NewQuizz/new_quizz.gd" id="1_xv17s"]
+[ext_resource type="Script" uid="uid://dkpik0awbvgn1" path="res://scripts/UI/NewQuizz/new_quizz_question_resource.gd" id="2_eu2ui"]
+[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="3_xnptr"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="5_ho3qx"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="6_ti5dg"]
+[ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="7_3oqo8"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="8_3oqo8"]
+
+[sub_resource type="Resource" id="Resource_xnptr"]
+script = ExtResource("2_eu2ui")
+question_text = "je _____ brésilien"
+audio_stream = ExtResource("3_xnptr")
+correct_answer = "suis"
+wrong_answers = Array[String](["es", "est", "sommes"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_ho3qx"]
+script = ExtResource("2_eu2ui")
+question_text = "il _____ belge"
+correct_answer = "est"
+wrong_answers = Array[String](["es", "suis", "sommes"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oqo8"]
+bg_color = Color(0.779, 0.412, 0.067, 0.417)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyb3o"]
+bg_color = Color(0.924479, 0.508763, 0.117967, 0.417)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.0601428, 0.934896, 0.0462579, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lynw3"]
+bg_color = Color(0.779, 0.412, 0.067, 0.417)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 12
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu2ui"]
+bg_color = Color(0.243137, 0.141176, 0.0823529, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.105882, 0.0745098, 0.0627451, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v86j"]
+bg_color = Color(0.273438, 0.170532, 0.0947062, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgsj5"]
+bg_color = Color(0.273438, 0.170532, 0.0947062, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm0oj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8d7c"]
+bg_color = Color(0.156595, 0.0704278, 0.174479, 0.793)
+border_width_left = 25
+border_width_top = 25
+border_width_right = 25
+border_width_bottom = 25
+border_color = Color(0.00524894, 0.335938, 0, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0, 0, 0.966)
+shadow_size = 95
+
+[node name="NewQuizz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xv17s")
+questions = Array[ExtResource("2_eu2ui")]([SubResource("Resource_xnptr"), SubResource("Resource_ho3qx")])
+
+[node name="QuestionPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="QuestionPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fbtyi")
+expand_mode = 3
+
+[node name="QuestionLabel" type="Label" parent="QuestionPanel/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 0
+offset_left = 254.0
+offset_top = 70.0
+offset_right = 694.0
+offset_bottom = 129.0
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 50
+text = "tettt"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioButton" type="Button" parent="QuestionPanel/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -149.0
+offset_top = 77.0
+offset_right = -89.0
+offset_bottom = 137.0
+grow_horizontal = 0
+theme_override_styles/hover = SubResource("StyleBoxFlat_3oqo8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nyb3o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lynw3")
+
+[node name="ExitQuizzBtn" type="Button" parent="QuestionPanel/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(50, 40)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -89.0
+offset_top = 560.0
+offset_right = -39.0
+offset_bottom = 600.0
+grow_horizontal = 0
+theme = ExtResource("6_ti5dg")
+text = "X"
+icon = ExtResource("7_3oqo8")
+
+[node name="TimerLabel" type="Label" parent="QuestionPanel/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -127.0
+offset_right = 100.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_eu2ui")
+text = "te"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionsContainer" type="GridContainer" parent="QuestionPanel"]
+custom_minimum_size = Vector2(450, 190)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -399.0
+offset_top = -331.0
+offset_right = 411.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 92
+theme_override_constants/v_separation = 102
+columns = 2
+
+[node name="Option1" type="Button" parent="QuestionPanel/OptionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(201, 78)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+text = "test"
+
+[node name="Option2" type="Button" parent="QuestionPanel/OptionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(201, 78)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+text = "test"
+
+[node name="Option3" type="Button" parent="QuestionPanel/OptionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(201, 78)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+text = "test"
+
+[node name="Option4" type="Button" parent="QuestionPanel/OptionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(201, 78)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+text = "test"
+
+[node name="ScorePanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_a8d7c")
+
+[node name="ScoreLabel" type="Label" parent="ScorePanel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.5
+offset_top = -22.0
+offset_right = 28.5
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_font_sizes/font_size = 45
+text = "test"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScorePanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -123.0
+offset_top = -82.0
+offset_right = 124.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="RestartButton" type="Button" parent="ScorePanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("8_3oqo8")
+theme_override_fonts/font = ExtResource("5_ho3qx")
+text = "Recommencer"
+
+[node name="ExitButton" type="Button" parent="ScorePanel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("8_3oqo8")
+theme_override_fonts/font = ExtResource("5_ho3qx")
+text = "Sortir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+max_polyphony = 3
+bus = &"Sfx"
+
+[connection signal="pressed" from="QuestionPanel/TextureRect/ExitQuizzBtn" to="." method="_on_exit_quizz_btn_pressed"]
+[connection signal="pressed" from="ScorePanel/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ScorePanel/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

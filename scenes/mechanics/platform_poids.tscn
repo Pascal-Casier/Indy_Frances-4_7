@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://3qcmqtialuht"]
+
+[ext_resource type="Script" uid="uid://uxhr7mkibf71" path="res://scripts/mechanics/platform_poids.gd" id="1_6lmwb"]
+[ext_resource type="Texture2D" uid="uid://cne6rhx18ty7f" path="res://assets/images/textures/Textures/Tile/Tile_23-128x128.png" id="2_jl6tw"]
+[ext_resource type="AudioStream" uid="uid://djmlqdvey2bgu" path="res://assets/sounds/sfx/poulie.mp3" id="3_iqx10"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iqx10"]
+albedo_texture = ExtResource("2_jl6tw")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_jquph"]
+material = SubResource("StandardMaterial3D_iqx10")
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6lmwb"]
+size = Vector3(2, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jl6tw"]
+size = Vector3(2, 0.2, 2)
+
+[node name="Platform_poids" type="AnimatableBody3D"]
+script = ExtResource("1_6lmwb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_jquph")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6lmwb")
+
+[node name="DetectionArea" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 82
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.151008, 0)
+shape = SubResource("BoxShape3D_jl6tw")
+
+[node name="PulleySound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_iqx10")
+attenuation_model = 2
+volume_db = -6.0
+max_distance = 28.0
+max_polyphony = 3
+bus = &"Sfx"

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyqampx3nacqq"]
+
+[ext_resource type="PackedScene" uid="uid://8dr18rh8f1qb" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props.glb" id="1_4k8jy"]
+[ext_resource type="Script" uid="uid://c3jj08f8fd2ge" path="res://scripts/roughness_correct.gd" id="2_cmhty"]
+
+[node name="Fantastic_Dungeon_Pack_Props" instance=ExtResource("1_4k8jy")]
+script = ExtResource("2_cmhty")

@@ -1,0 +1,96 @@
+[gd_resource type="Theme" format=3 uid="uid://ceqkilgsj4c24"]
+
+[sub_resource type="SystemFont" id="SystemFont_ofu7w"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt4ja"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.164706, 0.0470588, 0.462745, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmhq8"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.254902, 0.105882, 0.635294, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5xpt"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.164706, 0.0470588, 0.462745, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e5vr4"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.164706, 0.0470588, 0.462745, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 2.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="SystemFont" id="SystemFont_fi6d7"]
+font_names = PackedStringArray("Impact", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")
+
+[resource]
+default_font = SubResource("SystemFont_ofu7w")
+Button/fonts/font = SubResource("SystemFont_ofu7w")
+Button/styles/focus = SubResource("StyleBoxFlat_dt4ja")
+Button/styles/hover = SubResource("StyleBoxFlat_hmhq8")
+Button/styles/normal = SubResource("StyleBoxFlat_j5xpt")
+Button/styles/pressed = SubResource("StyleBoxFlat_e5vr4")
+Label/fonts/font = SubResource("SystemFont_fi6d7")

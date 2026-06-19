@@ -1,0 +1,104 @@
+[gd_scene load_steps=8 format=3 uid="uid://dkh737i8pvc6c"]
+
+[ext_resource type="Script" uid="uid://da2cr0o5chgkg" path="res://scripts/UI/MemoryVocabGame/memory_card.gd" id="1_8matr"]
+[ext_resource type="Theme" uid="uid://b2qf352es2gjg" path="res://Themes/btnsQuete_theme.tres" id="1_vcbpg"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="1_wiulk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqvbr"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.501961, 0.278431, 0.0901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wiulk"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.501961, 0.278431, 0.0901961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vcbpg"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.502604, 0.277281, 0.0903117, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0131497, 0.721354, 0.0906095, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppfct"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.403646, 0.220267, 0.0683255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="MemoryCard" type="Button"]
+custom_minimum_size = Vector2(155, 65)
+offset_right = 128.0
+offset_bottom = 45.0
+theme = ExtResource("1_vcbpg")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wiulk")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxFlat_bqvbr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wiulk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vcbpg")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ppfct")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("1_8matr")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(120, 43)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -21.5
+offset_right = 60.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2

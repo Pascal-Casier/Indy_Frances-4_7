@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://2bq5jphoxv84"]
+
+[ext_resource type="PackedScene" uid="uid://qwsrij0id4nj" path="res://assets/blender/panneau_grand.glb" id="1_o2e2f"]
+[ext_resource type="Script" uid="uid://cu6kcup1m4x0c" path="res://scripts/mechanics/panneau_grand.gd" id="2_g3m7k"]
+[ext_resource type="PackedScene" uid="uid://coowev0epcpfg" path="res://assets/blender/stone+frame+3d+model.glb" id="3_0qng7"]
+[ext_resource type="Texture2D" uid="uid://c1mbbbk1qmpjp" path="res://assets/images/ui/blackboard_adorned_2.jpg" id="3_v0jwv"]
+[ext_resource type="Texture2D" uid="uid://hik8wmorgabw" path="res://assets/images/ui/tuto/e_to_drop.png" id="3_y4i1h"]
+[ext_resource type="AudioStream" uid="uid://on8ir7nf7sub" path="res://assets/sounds/sfx/metalClick.ogg" id="4_ccril"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4i1h"]
+size = Vector3(4.13696, 2.38995, 0.493164)
+
+[sub_resource type="SystemFont" id="SystemFont_msgvk"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_6ybix"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_sha1e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf5jf"]
+albedo_color = Color(0.988235, 0.0156863, 0.0156863, 1)
+metallic = 0.6
+roughness = 0.49
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4mcg5"]
+size = Vector3(1, 1.39368, 1.48035)
+
+[sub_resource type="Animation" id="Animation_r5d55"]
+resource_name = "clic"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Button3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2.38046, 1.09458, 0.245941), Vector3(2.38046, 1.09458, 0.0864258), Vector3(2.38046, 1.09458, 0.245941)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_ccril")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nyb3s"]
+_data = {
+&"clic": SubResource("Animation_r5d55")
+}
+
+[node name="panneau_grand" instance=ExtResource("1_o2e2f")]
+script = ExtResource("2_g3m7k")
+hints_list = Array[String](["1", "2", "3"])
+
+[node name="stone+frame+3d+model" parent="." index="0" instance=ExtResource("3_0qng7")]
+transform = Transform3D(-2.44793e-07, 0, -6.35755, 0, 4.87887, 0, 5.6002, 0, -2.77897e-07, 0, 0, 0)
+
+[node name="Cube" parent="." index="1"]
+transform = Transform3D(1.41292, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="CollisionShape3D" parent="Cube/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999, 0, 1.20829, 0)
+shape = SubResource("BoxShape3D_y4i1h")
+
+[node name="Text" type="Label3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09326, 0.196777)
+text = "AWSD
+pour se déplacer"
+font = SubResource("SystemFont_msgvk")
+font_size = 79
+autowrap_mode = 3
+width = 800.0
+
+[node name="Picutres_frame" type="Sprite3D" parent="." index="3"]
+unique_name_in_owner = true
+transform = Transform3D(0.315, 0, 0, 0, 0.229, 0, 0, 0, 0.229, -0.743077, 1.90982, 0.2)
+visible = false
+modulate = Color(0.403646, 0.379469, 0.379469, 1)
+pixel_size = 0.0395
+transparent = false
+double_sided = false
+alpha_cut = 2
+texture = ExtResource("3_y4i1h")
+
+[node name="frame" type="Sprite3D" parent="." index="4"]
+transform = Transform3D(0.386848, 0, 0, 0, 0.299466, 0, 0, 0, 0.299466, -0.0713196, 1.891, 0.189)
+modulate = Color(0.403646, 0.379469, 0.379469, 1)
+transparent = false
+double_sided = false
+alpha_cut = 2
+texture = ExtResource("3_v0jwv")
+
+[node name="lblsuivant" type="Label3D" parent="frame" index="0"]
+transform = Transform3D(2.17, 0, 0, 0, 2.17, 0, 0, 0, 2.17, 3.42, -2.238, 0.074)
+modulate = Color(1, 1, 0.0196078, 1)
+text = "conseil
+suivant ->"
+font = SubResource("SystemFont_6ybix")
+font_size = 50
+outline_size = 19
+autowrap_mode = 2
+
+[node name="Button3D" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(0.418853, 0, 0, 0, -9.12546e-09, -0.418853, 0, 0.208766, -1.83086e-08, 2.38046, 1.09458, 0.245941)
+mesh = SubResource("CylinderMesh_sha1e")
+surface_material_override/0 = SubResource("StandardMaterial3D_mf5jf")
+
+[node name="PressE" type="Label3D" parent="Button3D" index="0"]
+transform = Transform3D(1.34579, 0, 0, 0, -5.88264e-08, -1.34579, 0, 1.34579, -5.88265e-08, 0, 1.06023, 0.0195227)
+visible = false
+text = "E"
+font_size = 140
+outline_size = 33
+
+[node name="Area3D" type="Area3D" parent="." index="6"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3439, 0.747794, 1.07128)
+shape = SubResource("BoxShape3D_4mcg5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+libraries = {
+&"": SubResource("AnimationLibrary_nyb3s")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="8"]
+
+[node name="Audio" type="AudioStreamPlayer" parent="." index="9"]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

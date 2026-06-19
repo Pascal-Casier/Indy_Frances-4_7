@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://delxj6inio1xm"]
+
+[ext_resource type="Script" uid="uid://n3wa1axk180w" path="res://scripts/weapons/tonneaux_spawner.gd" id="1_a7373"]
+[ext_resource type="AudioStream" uid="uid://k77wi4v5n12j" path="res://assets/sounds/sfx/dramatic_metal_impact.mp3" id="3_em86w"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_em86w"]
+size = Vector3(0.5, 1, 0.5)
+
+[node name="Tonneaux_spawner" type="Node3D"]
+script = ExtResource("1_a7373")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+unique_name_in_owner = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Marker3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("PrismMesh_em86w")
+skeleton = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_em86w")
+max_distance = 60.0
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3lbc8crxlrb"]
+
+[ext_resource type="Script" uid="uid://bqh528so114dd" path="res://scripts/UI/health_bar_3d.gd" id="1_bkomc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v5t4i"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ap57h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mblay"]
+bg_color = Color(0.854902, 0.231373, 0.0901961, 1)
+border_width_bottom = 3
+border_color = Color(0.407843, 0.0431373, 0.0431373, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8s0t"]
+bg_color = Color(0.392157, 0.623529, 0.215686, 1)
+border_width_bottom = 3
+border_color = Color(0.0980392, 0.188235, 0.0196078, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_bottom = 3.0
+
+[node name="HealthBar3D" type="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65752, 0)
+billboard = 1
+texture = SubResource("ViewportTexture_v5t4i")
+script = ExtResource("1_bkomc")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(208, 32)
+
+[node name="Panel" type="Panel" parent="SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ap57h")
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewport/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038
+anchor_top = 0.5
+anchor_right = 0.962
+anchor_bottom = 0.5
+offset_left = 0.0959997
+offset_top = -13.0
+offset_right = -0.0960083
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_mblay")
+theme_override_styles/fill = SubResource("StyleBoxFlat_t8s0t")
+value = 85.0

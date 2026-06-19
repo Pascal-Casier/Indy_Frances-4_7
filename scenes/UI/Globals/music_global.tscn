@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cydeahwlu1auw"]
+
+[ext_resource type="AudioStream" uid="uid://b8hni40k1wwsg" path="res://assets/sounds/musics/hero_music_menu.mp3" id="1_y3gax"]
+[ext_resource type="AudioStream" uid="uid://c44ejd0lfyxlv" path="res://assets/sounds/musics/Temple Run - High Voltage Heartbeat - Sonauto.mp3" id="2_h3fst"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_xtpye"]
+stream_count = 2
+stream_0 = ExtResource("2_h3fst")
+stream_1 = ExtResource("1_y3gax")
+
+[node name="MusicGlobal" type="AudioStreamPlayer"]
+process_mode = 3
+stream = SubResource("AudioStreamPlaylist_xtpye")
+volume_db = -24.186
+autoplay = true
+max_polyphony = 4
+bus = &"Music"

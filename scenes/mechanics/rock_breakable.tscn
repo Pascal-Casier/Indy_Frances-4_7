@@ -1,0 +1,104 @@
+[gd_scene load_steps=10 format=4 uid="uid://v0vpc10024ml"]
+
+[ext_resource type="Script" uid="uid://uf4m7e6yb824" path="res://scripts/mechanics/wall_breakable.gd" id="1_h8l24"]
+[ext_resource type="Texture2D" uid="uid://e23cuk23suqh" path="res://assets/blender/breakableWall/rock_to_break_Asset 6.png" id="2_yytn5"]
+[ext_resource type="Texture2D" uid="uid://cl8ug3sfnmipm" path="res://assets/images/particules/wall_crack.png" id="3_m7cf0"]
+[ext_resource type="Script" uid="uid://ilbjqpeyf7y3" path="res://addons/destruction/destruction.gd" id="4_8oes7"]
+[ext_resource type="PackedScene" uid="uid://cqjhk2k2gh4xg" path="res://assets/blender/breakableWall/rock_to_break_Pieces.glb" id="5_ybmuw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_upvyc"]
+resource_name = "Material.001"
+cull_mode = 2
+albedo_texture = ExtResource("2_yytn5")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kxoui"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("EwAOAA0ADgAEAAMABAAJAAgACQATABIAEwAEAA4ABAATAAkAEwALAA8AEwANAAsACQAQAAcACQASABAAAQARAAwAAQAGABEABAAFAAIABAAIAAUAAAACAAEABQAHAAYACgAMAAsADwARABAAAgADAAQAAgAAAAMAEgAPABAAEgATAA8ABwAIAAkABwAFAAgACgANAA4ACgALAA0ABgAQABEABgAHABAAAQAFAAYAAQACAAUAEQALAAwAEQAPAAsADAAAAAEADAAKAAAADgAAAAoADgADAAAA"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("PfY99gAAAAA99v//wQkAAP//PfbBCQAAPfYAAAAAAAD//wAAwQkAAP//PfY99gAAPfb//z32AAA99j32//8AAP//AAA99gAAPfYAAP//AADBCT32AAAAAAAAPfbBCQAAwQn//8EJAAAAAAAAwQkAAMEJAAAAAAAAAAA99j32AADBCT32//8AAMEJ//899gAAwQkAAP//AAAAAAAAPfYAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_660yg"]
+resource_name = "rock_to_break_Cube"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("BgA39scJxwk39gYAN/YGADf2xwk39scJN/bHCTf2xwnHCTf2xwk39vj/xwn4/8cJBgAGAAYAN/bHCfj/xwkGAMcJBgDHCfj/BgA39jf2N/b4/zf2+P839jf2N/Y39jf2N/Y39jf2N/bHCTf2xwk39jf2+P839vj/BgAGADf2BgA39vj/xwkGAMcJBgD4/zf2BgDHCccJBgDHCQYAN/bHCQYAxwkGAMcJxwnHCccJxwnHCccJxwnHCccJxwnHCccJxwn4/8cJ+P/HCQYABgD4/wYAxwk39vj/BgA39gYAN/Y39scJN/bHCccJ+P/HCfj/N/Y39vj/xwnHCTf2xwk39scJN/bHCTf2N/YGAPj/xwn4//j/N/YGADf2+P839vj/"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("RQA0ADIANAARAA0AEQAjACAAIwBFAEMARQARADQAEQBFACMARgAqADgARgAwACoAIQA8ABoAIQBCADwABQBBAC8ABQAXAEEAEAATAAkAEAAfABMAAwAKAAYAFAAdABgAJQAtACkANwA/ADoACAAMAA8ACAAAAAwARAA5AD0ARABHADkAGwAeACIAGwASAB4AJAAxADMAJAArADEAFgA7AEAAFgAcADsABwAVABkABwALABUAPgAoACwAPgA2ACgALgACAAQALgAmAAIANQABACcANQAOAAEA"),
+"material": SubResource("StandardMaterial3D_upvyc"),
+"name": "Material.001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("PfY99gAA//899j32AAD//z32PfYAAP/fPfY99gAAQNw99v//wQn/3z32///BCf+/Pfb//8EJQNw99v//wQn8xf//PfbBCf////899sEJ/////z32wQlA3P//PfbBCfzFPfYAAAAA//899gAAAABU1T32AAAAAP////8AAMEJ/////wAAwQn/////AADBCVTV//899j32/////z32Pfb/////PfY99pax//899j32/MU99v//Pfb/nz32//899v+/Pfb//z32lrE99v//Pfb8xT32Pfb/////PfY99v////899j32////nz32Pfb//5ax//8AAD32/////wAAPfb/////AAA99lTVPfYAAP////899gAA/////z32AAD//1TVwQk99gAA/9/BCT32AABA3MEJPfYAAP/fwQk99gAA//8AAD32wQn8xQAAPfbBCUDcAAA99sEJ/78AAD32wQn/38EJ///BCfzFwQn//8EJQNzBCf//wQn/38EJ///BCf+/AAAAAMEJ/78AAAAAwQn/3wAAAADBCVTVwQkAAAAA/9/BCQAAAABU1cEJAAAAAP//AAA99j32/MUAAD32PfaWsQAAPfY99v+/AAA99j32/5/BCT32//+WscEJPfb///+fwQk99v/////BCT32////n8EJ//899vzFwQn//z32lrHBCf//Pfb/n8EJ//899v+/wQkAAP/////BCQAA//9U1cEJAAD///+fAAAAAD32VNUAAAAAPfb/vwAAAAA99v+fgdr/f/9///////9/l85xX////3////9/l85xXwDGAGOB2v9//7//f5fOcV8AxgBjgdr/f6oqVNX/f///gdr/f/+//3+qKlTVfKX/f/+//3/MuQ5oAMYAY////3////9/zLkOaADGAGP/f/9/fKX/f////3/MuQ5ofKX/f/+//3+qKlTV/3//f3yl/3+qKlTV/3/+/3HfZ7H///9//3/////i/blx32ex/3////9//v//4v25cd9nsf///3////9//3////9//v+qKlTV/3/+/6oqVNX/f////+L9uQ3oMcb/f////3///w3oMcb///9//3//f/9/////4v25Degxxv///3////9//3//f6oqVNX/f///qipU1f9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_kxoui")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_amdg1"]
+size = Vector3(2, 2, 2)
+
+[node name="Rock_breakable" type="StaticBody3D" groups=["Wall"]]
+script = ExtResource("1_h8l24")
+
+[node name="Rock_breakable" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_660yg")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_amdg1")
+
+[node name="cracks" type="Node3D" parent="."]
+transform = Transform3D(0.374183, 0, 0, 0, 0.374183, 0, 0, 0, 0.374183, -0.321048, 0.188841, 0.693351)
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="cracks"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.07564, 2, 0.878534)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D2" type="Sprite3D" parent="cracks"]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0.599169, 2.33683, -4.5669)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="cracks"]
+transform = Transform3D(3.93402e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, 3.93402e-08, -1.87514, 2, -1.60595)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D4" type="Sprite3D" parent="cracks"]
+transform = Transform3D(-6.55671e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -6.55671e-08, 3.61874, 2.33683, -2.08241)
+texture = ExtResource("3_m7cf0")
+
+[node name="cracks2" type="Node3D" parent="."]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(-0.0118509, -0.135921, 0, 0.135921, -0.0118509, 0, 0, 0, 0.136437, 0.214737, 1.0933, 1.01441)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D2" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(-0.0604068, 0.104628, -5.28093e-09, 0.104628, 0.0604068, 9.14685e-09, 1.05619e-08, 0, -0.120814, 0.0493107, 0.990695, -1.06284)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D3" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(5.1802e-10, 5.9413e-09, -0.136437, 0.135921, -0.0118509, 0, -0.0118509, -0.135921, -5.96384e-09, -1.00288, 1.0933, 0.0584951)
+texture = ExtResource("3_m7cf0")
+
+[node name="Sprite3D4" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(-7.9214e-09, -4.57342e-09, 0.120814, 0.104628, 0.0604068, 9.14685e-09, -0.0604068, 0.104628, 8.88178e-16, 1.0188, 0.990695, -0.106932)
+texture = ExtResource("3_m7cf0")
+
+[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
+script = ExtResource("4_8oes7")
+fragmented = ExtResource("5_ybmuw")
+shard_container = NodePath("")
+fade_delay = 3.0
+animation_length = 3.0

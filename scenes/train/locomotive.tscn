@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bovf4fk70x3xc"]
+
+[ext_resource type="PackedScene" uid="uid://b0sj6uomdv1e4" path="res://assets/blender/locomotive.glb" id="1_v5n7t"]
+[ext_resource type="Script" uid="uid://b4hbq8mknrwwf" path="res://scripts/train/locomotive.gd" id="2_scyqf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_scyqf"]
+size = Vector3(0.805664, 0.644775, 0.37915)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1vluq"]
+size = Vector3(3, 4, 4)
+
+[node name="locomotive" instance=ExtResource("1_v5n7t")]
+script = ExtResource("2_scyqf")
+
+[node name="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef" parent="." index="0"]
+transform = Transform3D(-2.62268e-07, 0, 6, 0, 6, 0, -6, 0, -2.62268e-07, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.345337, 0)
+shape = SubResource("BoxShape3D_scyqf")
+
+[node name="lblPressE" type="Node3D" parent="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef" index="1"]
+unique_name_in_owner = true
+visible = false
+
+[node name="Label3D" type="Label3D" parent="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef/lblPressE" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0127582, 0.395957, 0.185386)
+text = "E"
+
+[node name="Label3D2" type="Label3D" parent="tripo_node_24fe004e-26be-47ff-946d-71ffcfcce0ef/lblPressE" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0127582, 0.395957, -0.161674)
+text = "E"
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 0)
+shape = SubResource("BoxShape3D_1vluq")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

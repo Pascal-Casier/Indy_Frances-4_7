@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://mm0a4l37aot"
+path="res://.godot/imported/Zombie groan.mp3-cdf7b52011da313da7d1817c4835153b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Zombie groan.mp3"
+dest_files=["res://.godot/imported/Zombie groan.mp3-cdf7b52011da313da7d1817c4835153b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

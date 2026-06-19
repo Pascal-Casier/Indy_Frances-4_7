@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://8w2foalvi1ly"]
+
+[ext_resource type="Texture2D" uid="uid://cl280tbktvpx2" path="res://assets/images/menu_bgd1.png" id="1_ahylh"]
+[ext_resource type="Script" uid="uid://crwv3v6mo7ett" path="res://scripts/UI/loading_screen.gd" id="1_gmoq3"]
+[ext_resource type="Texture2D" uid="uid://q2e4ipitj1ku" path="res://assets/images/ui/indiana/arrivée maison1.png" id="2_4x40i"]
+[ext_resource type="Texture2D" uid="uid://b78h3ty88mabb" path="res://assets/images/ui/indiana/house_forest0.png" id="3_oheac"]
+[ext_resource type="Texture2D" uid="uid://6qbrbfpyc3ap" path="res://assets/images/ui/indiana/Indy dans grenier.png" id="4_pbjre"]
+[ext_resource type="Texture2D" uid="uid://dg4wegc20856x" path="res://assets/images/ui/indiana/Indy foret.png" id="5_hhx2x"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmoq3")
+textures = Array[Texture2D]([ExtResource("2_4x40i"), ExtResource("3_oheac"), ExtResource("4_pbjre"), ExtResource("5_hhx2x")])
+tips = Array[String](["Bouton \"E\" pour prendre et relÂcher les objets.", "Bouton droit de la souris pour viser (plus précis)"])
+
+[node name="bgd" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ahylh")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -13.5
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -220.0
+offset_right = 43.0
+offset_bottom = -189.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Continuer"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="visibility_changed" from="Button" to="." method="_on_button_visibility_changed"]

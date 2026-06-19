@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://sy5435ylndv6"]
+
+[ext_resource type="Script" uid="uid://bkmjslmowj4bs" path="res://scenes/subwayGame/tile.gd" id="1_um3je"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kxg0p"]
+size = Vector3(2, 0.2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_um3je"]
+size = Vector3(2, 0.2, 4)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y0cjq"]
+size = Vector3(2, 0.3, 4)
+
+[node name="Tile" type="StaticBody3D"]
+script = ExtResource("1_um3je")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -0.5, 0, 1, 0, 1, 0, -2.18557e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_kxg0p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -0.5, 0, 1, 0, 1, 0, -2.18557e-08, 0, 0, 0)
+shape = SubResource("BoxShape3D_um3je")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0.101066, 0)
+text = "test"
+font_size = 110
+outline_size = 42
+
+[node name="ScoreArea" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -0.5, 0, 1, 0, 1, 0, -2.18557e-08, 0, 0, 0)
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScoreArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0501555, 0)
+shape = SubResource("BoxShape3D_y0cjq")

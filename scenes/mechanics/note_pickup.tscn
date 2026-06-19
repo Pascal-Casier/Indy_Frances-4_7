@@ -1,0 +1,155 @@
+[gd_scene load_steps=7 format=3 uid="uid://x1kw8hl43i8"]
+
+[ext_resource type="Script" uid="uid://dddu2q7mdkpnk" path="res://scripts/mechanics/note_pickup.gd" id="1_o2mh2"]
+[ext_resource type="Texture2D" uid="uid://bfp65angl87t3" path="res://assets/fonts/parchemin-transformed2.png" id="1_pi7qb"]
+[ext_resource type="Texture2D" uid="uid://bp85m0trvqt7a" path="res://assets/images/ui/paperUI/scrolls/square.png" id="3_cowsq"]
+[ext_resource type="FontFile" uid="uid://crcp1fsksmqen" path="res://assets/fonts/Adventure.otf" id="4_ep44c"]
+[ext_resource type="Texture2D" uid="uid://o3vr4tpvsqhb" path="res://assets/images/audioOn.png" id="5_cxku4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_flp7q"]
+size = Vector3(1, 2.1665, 2.46851)
+
+[node name="Note_pickup" type="Area3D"]
+process_mode = 3
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_o2mh2")
+note_text = "[center]Leo,
+eu preciso da tua ajuda !!
+procure um gimorio em cima, 
+ele vai te ajudar a me encontrar.
+
+Teu Vó Hugo.
+[/center]
+"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14008, 0.0689697)
+shape = SubResource("BoxShape3D_flp7q")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-09, 0.1, 0, -0.1, -4.37114e-09, 0, 0, 0, 0.1, 6.61018e-08, 1.51223, 0)
+texture = ExtResource("1_pi7qb")
+
+[node name="Control" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(500, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -390.0
+offset_top = -250.0
+offset_right = 390.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -242.0
+offset_right = 400.0
+offset_bottom = 247.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_cowsq")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Panel/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -225.5
+offset_right = 245.0
+offset_bottom = 225.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_ep44c")
+theme_override_fonts/mono_font = ExtResource("4_ep44c")
+theme_override_fonts/italics_font = ExtResource("4_ep44c")
+theme_override_fonts/bold_italics_font = ExtResource("4_ep44c")
+theme_override_fonts/bold_font = ExtResource("4_ep44c")
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[center]Leo,
+para continuar, você deverá 
+aprender uma nova lingua:
+o francês. Entre na 
+passagem secreta e vem
+me libertar, por favor,
+é muito importante.
+Conto com você.
+
+Teu Vó Hugo.
+[/center]
+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Panel/TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -124.0
+offset_top = -56.0
+offset_right = -116.0
+offset_bottom = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "ok"
+
+[node name="ButtonPlay" type="Button" parent="Control/Panel/TextureRect"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -127.0
+offset_top = -262.0
+offset_right = -100.0
+offset_bottom = -231.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("5_cxku4")
+flat = true
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.62273, 0.0347656)
+visible = false
+double_sided = false
+outline_render_priority = 0
+text = "E"
+font_size = 112
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="Control/Panel/TextureRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Panel/TextureRect/ButtonPlay" to="." method="_on_button_play_pressed"]

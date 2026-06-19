@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://cd4s3oxccfxu3"]
+
+[ext_resource type="Script" uid="uid://ba8tunklfngd8" path="res://scripts/mechanics/death_area.gd" id="1_j6cgi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ibg55"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="Animation" id="Animation_n73vb"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 1.3, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_77fo5"]
+_data = {
+&"fade": SubResource("Animation_n73vb")
+}
+
+[node name="DeathArea" type="Area3D"]
+collision_layer = 0
+collision_mask = 3
+script = ExtResource("1_j6cgi")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ibg55")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_77fo5")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

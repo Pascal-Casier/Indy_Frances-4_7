@@ -1,0 +1,243 @@
+[gd_scene load_steps=19 format=3 uid="uid://bompbhwdeupq1"]
+
+[ext_resource type="PackedScene" uid="uid://blpe3evhmn7ot" path="res://assets/blender/Whip.glb" id="1_8xvx6"]
+[ext_resource type="Script" uid="uid://d0wfpwtcas63q" path="res://scripts/weapons/whip.gd" id="2_w7ail"]
+[ext_resource type="AudioStream" uid="uid://cm83x6j6fh1px" path="res://assets/sounds/sfx/yipee.mp3" id="3_gfknj"]
+[ext_resource type="Texture2D" uid="uid://bfp65angl87t3" path="res://assets/fonts/parchemin-transformed2.png" id="4_gfknj"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="5_6heh1"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="6_fhlqt"]
+[ext_resource type="Texture2D" uid="uid://di30lr4j0ps47" path="res://assets/images/ui/indiana/whip_exemples.jpg" id="7_6heh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7ail"]
+size = Vector3(1.46896, 0.749878, 1.76855)
+
+[sub_resource type="Animation" id="Animation_besnt"]
+resource_name = "pickedup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rope_2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.9658, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Rope_2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2, 2, 2), Vector3(0.02, 0.02, 0.02)]
+}
+
+[sub_resource type="Animation" id="Animation_m0muc"]
+resource_name = "vibe"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rope_2:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.566667, 0.733333, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2), Vector3(1, 1, 1), Vector3(1.2, 1.2, 1.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6heh1"]
+_data = {
+&"pickedup": SubResource("Animation_besnt"),
+&"vibe": SubResource("Animation_m0muc")
+}
+
+[sub_resource type="Gradient" id="Gradient_besnt"]
+colors = PackedColorArray(0.942957, 0.96828, 0.365483, 1, 1, 1, 1, 0.447)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_77cpd"]
+gradient = SubResource("Gradient_besnt")
+
+[sub_resource type="Curve" id="Curve_w7ail"]
+_data = [Vector2(0, 0.455253), 0.0, 0.0, 0, 0, Vector2(0.57197, 0.268483), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_6v348"]
+curve = SubResource("Curve_w7ail")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m0muc"]
+lifetime_randomness = 0.41
+emission_shape = 6
+emission_ring_axis = Vector3(0, 90, 1)
+emission_ring_height = 0.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.8
+emission_ring_cone_angle = 72.15
+angle_min = 90.0
+angle_max = 90.0
+inherit_velocity_ratio = 5.0
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 0.1
+initial_velocity_max = 0.2
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+scale_min = 0.0
+scale_curve = SubResource("CurveTexture_6v348")
+color = Color(0.984314, 0.984314, 0.0196078, 1)
+color_ramp = SubResource("GradientTexture1D_77cpd")
+hue_variation_min = -1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_shhjm"]
+transparency = 1
+blend_mode = 1
+vertex_color_use_as_albedo = true
+metallic = 1.0
+roughness = 0.0
+emission_enabled = true
+emission = Color(1, 0.905882, 0.0156863, 1)
+emission_energy_multiplier = 5.0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gfknj"]
+material = SubResource("StandardMaterial3D_shhjm")
+size = Vector2(0.05, 0.05)
+
+[node name="Whip" instance=ExtResource("1_8xvx6")]
+script = ExtResource("2_w7ail")
+
+[node name="Rope_2" parent="." index="0"]
+unique_name_in_owner = true
+transform = Transform3D(1.86285, 0.727868, 0, -0.727868, 1.86285, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0510101, 0.303841, 0)
+shape = SubResource("BoxShape3D_w7ail")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_gfknj")
+max_polyphony = 3
+bus = &"Sfx"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+libraries = {
+&"": SubResource("AnimationLibrary_6heh1")
+}
+speed_scale = 0.5
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." index="4"]
+transform = Transform3D(0.998228, 0, 0, 0, 0.998228, 0, 0, 0, 0.998228, 0, 0, 0)
+amount = 20
+lifetime = 2.0
+randomness = 1.0
+process_material = SubResource("ParticleProcessMaterial_m0muc")
+draw_pass_1 = SubResource("QuadMesh_gfknj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" index="0"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -440.0
+offset_top = -263.5
+offset_right = 440.0
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_gfknj")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = 110.5
+offset_right = -184.0
+offset_bottom = -73.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="label" type="RichTextLabel" parent="CanvasLayer/TextureRect/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.768229, 0.150264, 0.0220066, 1)
+theme_override_fonts/normal_font = ExtResource("5_6heh1")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "Avec ce fouet, tu peux détruire
+les barricades et les tonneaux en bois,
+tu peux aussi attaquer les ennemis.
+(bouton gauche de la souris)
+
+[color=blue]Com esse chicote, você pode destruir 
+as barricadas e os toneis de madeira,
+você pode também atacar os inimigos.
+(botão esquerdo do mouse)
+[/color]"
+
+[node name="ButtonOK" type="Button" parent="CanvasLayer/TextureRect" index="1"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -165.0
+offset_top = -105.5
+offset_right = -110.0
+offset_bottom = -64.5
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("6_fhlqt")
+text = "OK"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TextureRect" index="2"]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 103.5
+offset_right = 552.0
+offset_bottom = 143.5
+scale = Vector2(6.32956, 7.09857)
+texture = ExtResource("7_6heh1")
+expand_mode = 2
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="CanvasLayer/TextureRect/ButtonOK" to="." method="_on_button_ok_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c44ejd0lfyxlv"
+path="res://.godot/imported/Temple Run - High Voltage Heartbeat - Sonauto.mp3-3a3cfa606d8fa235f45ab09c06d0ec8f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/musics/Temple Run - High Voltage Heartbeat - Sonauto.mp3"
+dest_files=["res://.godot/imported/Temple Run - High Voltage Heartbeat - Sonauto.mp3-3a3cfa606d8fa235f45ab09c06d0ec8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

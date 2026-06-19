@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb56filvuukrw"]
+
+[ext_resource type="PackedScene" uid="uid://dbdhhwvkv07ww" path="res://scenes/UI/options_display_button.tscn" id="1_eebxk"]
+[ext_resource type="Script" uid="uid://b7apnoe2s3gxc" path="res://scripts/UI/resolution_mode_button.gd" id="2_faiqc"]
+
+[node name="Resolution_Mode_Button" instance=ExtResource("1_eebxk")]
+script = ExtResource("2_faiqc")
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "Resolution"

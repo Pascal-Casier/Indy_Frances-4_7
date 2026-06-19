@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjjlpuvxiomdy"]
+
+[ext_resource type="Script" uid="uid://di2bok641ysi5" path="res://scenes/subwayGame/player.gd" id="1_ic5ul"]
+[ext_resource type="PackedScene" uid="uid://vt5uiy652gt3" path="res://scenes/characters/indiana_jones_model_4_2.tscn" id="1_tv7em"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ic5ul"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ic5ul")
+
+[node name="IndianaJones_Model_4_2" parent="." instance=ExtResource("1_tv7em")]
+
+[node name="GeneralSkeleton" parent="IndianaJones_Model_4_2/indy" index="0"]
+bones/0/position = Vector3(-0.000668944, 0.74664, 0.0260705)
+bones/0/rotation = Quaternion(0.175191, -0.133326, -0.032838, 0.974912)
+bones/1/rotation = Quaternion(0.0561437, 0.0232437, -0.00506502, 0.998139)
+bones/2/rotation = Quaternion(0.0366551, 0.00855167, 0.00133527, 0.999291)
+bones/3/rotation = Quaternion(0.0368642, 0.0070298, 0.00189632, 0.999294)
+bones/4/rotation = Quaternion(-0.0905526, 0.00144172, 0.00853326, 0.995854)
+bones/5/rotation = Quaternion(-0.196642, 0.086671, -0.0130898, 0.976549)
+bones/7/rotation = Quaternion(0.541497, 0.452878, 0.52497, -0.475488)
+bones/8/rotation = Quaternion(-0.0493103, 0.822434, -0.467351, -0.320554)
+bones/9/rotation = Quaternion(0.357428, -0.611547, 0.357278, 0.608776)
+bones/10/rotation = Quaternion(0.0220885, 0.493112, -0.0360592, 0.868937)
+bones/11/rotation = Quaternion(0.157067, -0.0695434, 0.00607017, 0.985118)
+bones/12/rotation = Quaternion(0.172718, 0.0591434, -0.0261542, 0.982846)
+bones/13/rotation = Quaternion(-0.034729, -0.000737011, 0.00571127, 0.99938)
+bones/15/rotation = Quaternion(0.552215, -0.432054, -0.568562, -0.430262)
+bones/16/rotation = Quaternion(-0.267411, 0.869983, -0.414232, -0.0057558)
+bones/17/rotation = Quaternion(0.490544, 0.511241, -0.490424, 0.507428)
+bones/18/rotation = Quaternion(0.0284929, -0.698353, -0.217044, 0.681457)
+bones/19/rotation = Quaternion(0.149363, 0.0190664, 0.0168553, 0.988455)
+bones/20/rotation = Quaternion(0.182854, -0.000605762, 0.0246878, 0.98283)
+bones/21/rotation = Quaternion(0.077802, 0.00286373, -0.00329569, 0.996959)
+bones/23/rotation = Quaternion(0.0461139, 0.47021, 0.880485, -0.039023)
+bones/24/rotation = Quaternion(-0.0723107, 0.631308, -0.758478, 0.14468)
+bones/25/rotation = Quaternion(0.10204, 0.715659, -0.690507, 0.0249217)
+bones/26/rotation = Quaternion(7.39833e-05, 0.996972, 0.0756142, 0.0181643)
+bones/28/rotation = Quaternion(0.0547843, 0.292159, 0.951212, -0.0826892)
+bones/29/rotation = Quaternion(0.0115997, 0.889815, -0.449393, -0.0783649)
+bones/30/rotation = Quaternion(-0.00993724, 0.471972, -0.881523, 0.0077727)
+bones/31/rotation = Quaternion(2.44188e-06, 0.999055, 0.0434633, 6.08521e-05)
+
+[node name="AnimationTree" parent="IndianaJones_Model_4_2" index="2"]
+active = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.959394, 0)
+shape = SubResource("CapsuleShape3D_ic5ul")
+
+[editable path="IndianaJones_Model_4_2"]

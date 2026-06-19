@@ -1,0 +1,248 @@
+[gd_scene load_steps=14 format=3 uid="uid://cg064v5beeq4q"]
+
+[ext_resource type="Script" uid="uid://b2pvwdmbwywbg" path="res://scripts/UI/intro_00.gd" id="1_67tvn"]
+[ext_resource type="AudioStream" uid="uid://b6bp83o5luu8s" path="res://assets/sounds/dialogues/intro/intro01.mp3" id="2_5f18n"]
+[ext_resource type="Texture2D" uid="uid://bfp65angl87t3" path="res://assets/fonts/parchemin-transformed2.png" id="2_iun1e"]
+[ext_resource type="Texture2D" uid="uid://cenkydcf08kg0" path="res://assets/images/ui/mystical_clearing_deep_within_the_heart2.jpg" id="2_o70ur"]
+[ext_resource type="AudioStream" uid="uid://bcypf8mt137eu" path="res://assets/sounds/dialogues/intro/intro02.mp3" id="3_icqb3"]
+[ext_resource type="AudioStream" uid="uid://84ji7k3h82k8" path="res://assets/sounds/dialogues/intro/intro03.mp3" id="4_18og4"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="4_72lus"]
+[ext_resource type="Texture2D" uid="uid://cfh4aqoem8uaa" path="res://assets/images/icons/flèche-50.png" id="5_c258h"]
+[ext_resource type="Texture2D" uid="uid://4wj0b868acc7" path="res://assets/images/bookOld (1).jpg" id="5_w3skl"]
+
+[sub_resource type="SystemFont" id="SystemFont_t7ne2"]
+font_names = PackedStringArray("Californian FB")
+font_italic = true
+font_weight = 999
+subpixel_positioning = 0
+msdf_pixel_range = 19
+
+[sub_resource type="Animation" id="Animation_5f18n"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fader/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kgsli"]
+resource_name = "zoom"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10, 20),
+"transitions": PackedFloat32Array(1, 2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.5, 1.5), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.196078)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f04ks"]
+_data = {
+&"fade_out": SubResource("Animation_5f18n"),
+&"zoom": SubResource("Animation_kgsli")
+}
+
+[node name="Into00" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_67tvn")
+paragraph1 = "Era uma noite  quente de verão. 
+
+O céu, pintado de laranja e violeta, deixava passar 
+
+os últimos raios de sol entre as árvores altas da floresta. "
+paragraph2 = "Um caminho de terra serpenteava entre os arbustos até chegar 
+
+a uma velha casa de madeira, escondida entre as sombras 
+
+e os sons suaves da natureza."
+paragraph3 = "Ali chegava Léo, vestido de aventureiro e com o olhar curioso. 
+Fazia meses que não via o avô 
+Desde que a escola acabou, Léo sonhava com este momento: 
+passar as férias na casa do avô, longe da cidade, das aulas… 
+e talvez descobrir um ou dois segredos esquecidos.
+
+Entre sombras e folhas, ele se aproxima... Vamos segui-lo, só por um instante."
+audios = Array[AudioStream]([ExtResource("2_5f18n"), ExtResource("3_icqb3"), ExtResource("4_18og4")])
+
+[node name="TextureRect3" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_o70ur")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 400)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -200.0
+offset_right = 626.0
+offset_bottom = 200.0
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_iun1e")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 130
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 90
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/TextureRect/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="Label" type="Label" parent="Panel/TextureRect/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_t7ne2")
+theme_override_font_sizes/font_size = 22
+text = "Você estava preocupado. 
+Seu avô havia desaparecido há algumas semanas, 
+e ninguém sabia onde ele estava. 
+Sentindo-se perdido e querendo encontrar alguma pista, 
+você decidiu explorar o sótão da casa do seu avô, um lugar cheio de lembranças e objetos antigos.
+
+Enquanto mexia em uma velha caixa de madeira,
+ você encontrou um envelope envelhecido com seu nome escrito à mão. 
+Curioso, você abriu o envelope e encontrou a mensagem misteriosa de seu avô."
+horizontal_alignment = 1
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="Button" type="Button" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -171.0
+offset_top = -74.0
+offset_right = -113.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("4_72lus")
+icon = ExtResource("5_c258h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 1296.0
+offset_bottom = 861.0
+pivot_offset = Vector2(648, 430)
+mouse_filter = 2
+texture = ExtResource("5_w3skl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_f04ks")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Fader" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Fader"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[connection signal="pressed" from="Panel/Button" to="." method="_on_button_pressed"]

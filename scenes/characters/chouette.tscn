@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsc7j3sgdqjo5"]
+
+[ext_resource type="PackedScene" uid="uid://bn5nro7rj2wqg" path="res://assets/characters/chouette/une_chouette_savante.glb" id="1_3yr3e"]
+[ext_resource type="Script" uid="uid://c8c4ihx1tddqx" path="res://scripts/characters/chouette.gd" id="1_jc0pp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jc0pp"]
+radius = 0.415726
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2vl5"]
+size = Vector3(0.319336, 1.72266, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pnfyf"]
+size = Vector3(1.66382, 1.87512, 1.58594)
+
+[node name="Chouette" type="StaticBody3D"]
+script = ExtResource("1_jc0pp")
+
+[node name="une_chouette_savante" parent="." instance=ExtResource("1_3yr3e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Mesh" parent="une_chouette_savante" index="0"]
+lod_bias = 0.05
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0383744, 1, 0)
+shape = SubResource("CapsuleShape3D_jc0pp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.00750483, 0.999972, 0, -0.999972, 0.00750483, 0, 0, 0, 1, 0.00255413, 0.172584, 0)
+shape = SubResource("BoxShape3D_q2vl5")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.950395, 1.3485)
+shape = SubResource("BoxShape3D_pnfyf")
+
+[node name="PressE" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.701294, 1.90236, 0)
+visible = false
+text = "E"
+font_size = 82
+outline_size = 42
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+
+[editable path="une_chouette_savante"]

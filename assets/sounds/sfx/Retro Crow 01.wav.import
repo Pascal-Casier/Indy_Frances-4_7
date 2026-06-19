@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cqpe8a2bufrdx"
+path="res://.godot/imported/Retro Crow 01.wav-847f2e27dd6fa71139937d16eead853f.sample"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/Retro Crow 01.wav"
+dest_files=["res://.godot/imported/Retro Crow 01.wav-847f2e27dd6fa71139937d16eead853f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

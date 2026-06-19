@@ -1,0 +1,105 @@
+[gd_scene load_steps=10 format=4 uid="uid://dvm88jgacbytl"]
+
+[ext_resource type="Texture2D" uid="uid://cc00b5odssuhr" path="res://assets/blender/Digicode_ImphenziaPalette01.png" id="1_2blus"]
+[ext_resource type="Script" uid="uid://cc4ctmvolkaa0" path="res://scripts/UI/computer_numbers.gd" id="1_pkq3x"]
+[ext_resource type="Texture2D" uid="uid://cuastakxgojsb" path="res://assets/blender/Digicode_digicode.jpg" id="2_pkq3x"]
+[ext_resource type="PackedScene" uid="uid://b7hwi28cniakm" path="res://scenes/UI/number_test.tscn" id="3_wf7cu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em7y4"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_2blus")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyqf0"]
+resource_name = "digicode"
+cull_mode = 2
+albedo_texture = ExtResource("2_pkq3x")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2s4qr"]
+_surfaces = [{
+"aabb": AABB(-0.0503334, -0.2, -0.12814, 0.100667, 0.4, 0.25628),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAACAAEABQACAAQABQADAAIABAABAAYABwADAAUABgAIAAcABwAIAAMABgABAAgAAwAJAAAAAAAKAAEACQAKAAAACwAIAAEAAwAIAAsACwABAAoAAwALAAkACQALAAoA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAAAAAAAAAIHsax4AAAAAfRNrHgAAAACB7JPhAAAAAH0Tk+EAAAAAAAD//wAA//8AAAAAAAD///////8AAP//AAD//wAA")
+}, {
+"aabb": AABB(-0.0503334, -0.169545, -0.0976853, 1e-05, 0.339091, 0.195371),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "digicode",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_45sqt"]
+resource_name = "Digicode_Cube"
+_surfaces = [{
+"aabb": AABB(-0.0503334, -0.2, -0.12814, 0.100667, 0.4, 0.25628),
+"attribute_data": PackedByteArray("ym/E+95o2fTKb9n03mjE+8pv7e3eaNn03mjt7cpv2fS1dtn0ym/t7bV27e3Kb9n0ym8C595o7e3eaALnym/t7bV2AufKb+3tym8C57V27e11eY755mxA+5dujvnmbAHlJntA+5dus+Z1ebPmJnsB5Q=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFgAVABcAFAAYABUAFgAXABkAGgAYABQAGQAXABsAGgAbABgAGQAbABoA"),
+"material": SubResource("StandardMaterial3D_em7y4"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("/////wAAVNUAAP////9U1QAA//8AAFTV////////VNX//wAA////vwAA//////+//////////78AAAAA////vwAAAAAAAFTV//8AAP//VNX//wAAAABU1QAAAAD//1TV//8AAAAAVNX///////9U1f////8AAFTV//8AAP//VNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD//wAAfROT4f+/AAAAAAAA/78AAH0Tax7/vwAA//8AAP+/AAAAAP///78AAIHsax7/vwAAgeyT4f+/AAD//////79U1aoqVNWqKlTVqipU1aoq/3//f/9//3//f/9//3//f1RVVFVUVVRVVFVUVVRVVFWqqlRVqqpUVaqqVFWqqlRV/z//v/8//7//P/+//z//v/9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7/")
+}, {
+"aabb": AABB(-0.0503334, -0.169545, -0.0976853, 1e-05, 0.339091, 0.195371),
+"attribute_data": PackedByteArray("ifGi8NgccB2Y848imhSi8A=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_gyqf0"),
+"name": "digicode",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///78AAP//AAABwAAA/////wTAAAAAAAAA/7/OgRf/k4M1/kmFWv3/f/7/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2s4qr")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6fni0"]
+size = Vector3(1.38965, 1, 1)
+
+[node name="ComputerNumbers" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_pkq3x")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2, 0, -3.01992e-07, 0, 2, 0, 3.01992e-07, 0, -2, 0, 0, 0)
+mesh = SubResource("ArrayMesh_45sqt")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.805176, 0, 0)
+shape = SubResource("BoxShape3D_6fni0")
+
+[node name="PressElbl" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0253277, 0.859071, 3.23609e-09)
+visible = false
+text = "[E]"
+font_size = 55
+outline_size = 22
+
+[node name="NumberTest" parent="." instance=ExtResource("3_wf7cu")]
+process_mode = 2
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="success" from="NumberTest" to="." method="_on_number_test_success"]

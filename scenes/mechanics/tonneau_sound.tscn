@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg1j4jhioah1n"]
+
+[ext_resource type="Script" uid="uid://yrsgfeiog37" path="res://scripts/mechanics/tonneau_sound.gd" id="1_7ynjv"]
+[ext_resource type="PackedScene" uid="uid://c6bwu50t0knbb" path="res://scenes/mechanics/tonneau_breakable.tscn" id="1_i0d5i"]
+[ext_resource type="AudioStream" uid="uid://dqwpf308tk0fh" path="res://assets/sounds/sfx/LEGO_DEBRISFALL.WAV" id="3_5wlf6"]
+
+[node name="TonneauSound" type="Node3D"]
+script = ExtResource("1_7ynjv")
+
+[node name="tonneau_breakable" parent="." instance=ExtResource("1_i0d5i")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_5wlf6")
+
+[connection signal="play_sound" from="tonneau_breakable" to="." method="_on_tonneau_breakable_play_sound"]

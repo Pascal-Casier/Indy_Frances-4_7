@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dl6gv8b28fhgu"]
+
+[ext_resource type="Script" uid="uid://cvlrqk16b2i0p" path="res://scripts/mechanics/interrogation_mark.gd" id="1_bfmmq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gicnj"]
+
+[node name="Interrogation_mark" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_bfmmq")
+dialog_name = "interrogation01"
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495416, 0)
+modulate = Color(0.843137, 0.584314, 0.0862745, 1)
+text = "?"
+font_size = 172
+outline_size = 24
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.520605, 0)
+shape = SubResource("BoxShape3D_gicnj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

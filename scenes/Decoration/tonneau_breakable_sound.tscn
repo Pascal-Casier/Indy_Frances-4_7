@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://de6ujwyrbj48y"]
+
+[ext_resource type="Script" uid="uid://bqjochpf2iih" path="res://scripts/mechanics/rock_breakable_sound.gd" id="1_0ujnj"]
+[ext_resource type="AudioStream" uid="uid://cfi7epn7jl2co" path="res://assets/sounds/sfx/Wood_Break_sound.mp3" id="1_b1yod"]
+[ext_resource type="PackedScene" uid="uid://c6bwu50t0knbb" path="res://scenes/mechanics/tonneau_breakable.tscn" id="2_0ujnj"]
+
+[node name="tonneau_breakable_sound" type="Node3D"]
+script = ExtResource("1_0ujnj")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_b1yod")
+pitch_scale = 0.5
+max_polyphony = 3
+bus = &"Sfx"
+
+[node name="tonneau_breakable" parent="." instance=ExtResource("2_0ujnj")]
+
+[connection signal="play_sound" from="tonneau_breakable" to="." method="_on_rock_breakable_play_sound"]

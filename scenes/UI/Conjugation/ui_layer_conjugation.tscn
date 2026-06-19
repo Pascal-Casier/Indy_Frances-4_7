@@ -1,0 +1,180 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgk3yrhsnnc0k"]
+
+[ext_resource type="Script" uid="uid://dakevn562qd2" path="res://scripts/UI/ui_layer_conjugation.gd" id="1_2uivp"]
+[ext_resource type="Script" uid="uid://bijwi6fbodwvi" path="res://scripts/resources/conjugation/conjugation_question.gd" id="2_edy5s"]
+[ext_resource type="Texture2D" uid="uid://dino2j6wbk5mw" path="res://assets/images/ui/UITrain4.png" id="3_wqgn6"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="4_e11mt"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="4_edy5s"]
+[ext_resource type="Texture2D" uid="uid://cbi16mnv4mdb3" path="res://assets/images/ui/UITrain2.png" id="5_ve8bv"]
+
+[sub_resource type="Resource" id="Resource_7j24y"]
+script = ExtResource("2_edy5s")
+verbe = "être"
+temps = "présent"
+personne = "je"
+correct_answer = "suis"
+wrong_answer_1 = "es"
+wrong_answer_2 = "sont"
+metadata/_custom_type_script = "uid://bijwi6fbodwvi"
+
+[sub_resource type="Resource" id="Resource_wuqr8"]
+script = ExtResource("2_edy5s")
+verbe = "avoir"
+temps = "présent"
+personne = "nous"
+correct_answer = "avons"
+wrong_answer_1 = "avez"
+wrong_answer_2 = "ont"
+metadata/_custom_type_script = "uid://bijwi6fbodwvi"
+
+[sub_resource type="Animation" id="Animation_5xvrq"]
+resource_name = "show_game"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRectGame:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.232143),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(326, -210), Vector2(326, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jhqq4"]
+_data = {
+&"show_game": SubResource("Animation_5xvrq")
+}
+
+[node name="UILayerConjugation" type="CanvasLayer"]
+script = ExtResource("1_2uivp")
+questions = Array[ExtResource("2_edy5s")]([SubResource("Resource_7j24y"), SubResource("Resource_wuqr8")])
+
+[node name="LabelSpeed" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 126.0
+offset_right = 207.0
+offset_bottom = 149.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRectGame" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.582)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = -210.0
+offset_right = 250.0
+offset_bottom = 94.0
+grow_horizontal = 2
+texture = ExtResource("3_wqgn6")
+metadata/_edit_use_anchors_ = true
+
+[node name="LabelVerb" type="Label" parent="TextureRectGame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 9.0
+offset_right = 322.0
+offset_bottom = 54.0
+theme_override_fonts/font = ExtResource("4_edy5s")
+theme_override_font_sizes/font_size = 35
+text = "test"
+
+[node name="LabelTemp" type="Label" parent="TextureRectGame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 63.0
+offset_right = 323.0
+offset_bottom = 108.0
+theme_override_fonts/font = ExtResource("4_edy5s")
+theme_override_font_sizes/font_size = 35
+text = "test"
+
+[node name="LabelPerson" type="Label" parent="TextureRectGame"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 268.0
+offset_top = 109.0
+offset_right = 323.0
+offset_bottom = 154.0
+theme_override_fonts/font = ExtResource("4_edy5s")
+theme_override_font_sizes/font_size = 35
+text = "test"
+
+[node name="LabelResponse" type="Label" parent="TextureRectGame"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 0
+offset_left = 131.0
+offset_top = 174.0
+offset_right = 471.0
+offset_bottom = 219.0
+theme_override_fonts/font = ExtResource("4_edy5s")
+theme_override_font_sizes/font_size = 35
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRectGame"]
+custom_minimum_size = Vector2(410, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -64.0
+offset_right = 220.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 48
+
+[node name="BtnResp1" type="Button" parent="TextureRectGame/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_e11mt")
+theme_override_font_sizes/font_size = 22
+text = "test"
+
+[node name="BtnResp2" type="Button" parent="TextureRectGame/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_e11mt")
+theme_override_font_sizes/font_size = 22
+text = "test"
+
+[node name="BtnResp3" type="Button" parent="TextureRectGame/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_e11mt")
+theme_override_font_sizes/font_size = 22
+text = "test"
+
+[node name="TextureRectTrain" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("5_ve8bv")
+expand_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_jhqq4")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

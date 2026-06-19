@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ratd6qjvtp1p"]
+
+[ext_resource type="PackedScene" uid="uid://buoeixy3mcbw6" path="res://scenes/Decoration/planches_breakable.tscn" id="1_7gmr7"]
+[ext_resource type="Script" uid="uid://bqjochpf2iih" path="res://scripts/mechanics/rock_breakable_sound.gd" id="1_q1png"]
+[ext_resource type="AudioStream" uid="uid://cfi7epn7jl2co" path="res://assets/sounds/sfx/Wood_Break_sound.mp3" id="3_q1png"]
+
+[node name="planches_breakable_sound" type="Node3D"]
+script = ExtResource("1_q1png")
+
+[node name="planches_breakable" parent="." instance=ExtResource("1_7gmr7")]
+blow_force = 1
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_q1png")
+pitch_scale = 0.5
+max_polyphony = 3
+bus = &"Sfx"
+
+[connection signal="play_sound" from="planches_breakable" to="." method="_on_rock_breakable_play_sound"]

@@ -1,0 +1,366 @@
+[gd_scene load_steps=7 format=3 uid="uid://dd1ce6s8eg5pv"]
+
+[ext_resource type="Texture2D" uid="uid://xed1vx7voiut" path="res://assets/images/ui/dico/20_mots_essentiels.jpeg" id="1_gwbw4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwbw4"]
+bg_color = Color(0.945, 0.639, 0.219, 0.342)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.966146, 0.487594, 0.13838, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jgcq"]
+bg_color = Color(0.945, 0.639, 0.219, 0.342)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.966146, 0.487594, 0.13838, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cu0a"]
+bg_color = Color(0.945, 0.639, 0.219, 0.342)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.966146, 0.487594, 0.13838, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ven28"]
+bg_color = Color(0.945, 0.639, 0.219, 0.342)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.966146, 0.487594, 0.13838, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8w6b6"]
+bg_color = Color(0.945, 0.639, 0.219, 0.147)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.966146, 0.487594, 0.13838, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Dico_images" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gwbw4")
+expand_mode = 2
+
+[node name="Button" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 122.0
+offset_right = 216.0
+offset_bottom = 271.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button2" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 283.0
+offset_right = 217.0
+offset_bottom = 446.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button3" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 460.0
+offset_right = 216.0
+offset_bottom = 629.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button4" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 119.0
+offset_right = 435.0
+offset_bottom = 238.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button5" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 247.0
+offset_right = 435.0
+offset_bottom = 368.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button6" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 376.0
+offset_right = 433.0
+offset_bottom = 496.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button7" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 251.0
+offset_top = 503.0
+offset_right = 434.0
+offset_bottom = 629.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button8" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 120.0
+offset_right = 692.0
+offset_bottom = 242.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button9" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 247.0
+offset_right = 690.0
+offset_bottom = 370.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button10" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 461.0
+offset_top = 376.0
+offset_right = 691.0
+offset_bottom = 495.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button11" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 503.0
+offset_right = 572.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button12" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 580.0
+offset_top = 504.0
+offset_right = 700.0
+offset_bottom = 629.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button13" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 120.0
+offset_right = 906.0
+offset_bottom = 273.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button14" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 282.0
+offset_right = 904.0
+offset_bottom = 447.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button15" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 460.0
+offset_right = 865.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button16" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 873.0
+offset_top = 504.0
+offset_right = 994.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button17" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1003.0
+offset_top = 504.0
+offset_right = 1124.0
+offset_bottom = 628.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button18" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1002.0
+offset_top = 377.0
+offset_right = 1125.0
+offset_bottom = 498.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button19" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 249.0
+offset_right = 1124.0
+offset_bottom = 369.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")
+
+[node name="Button20" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 120.0
+offset_right = 1125.0
+offset_bottom = 240.0
+theme_override_colors/font_hover_pressed_color = Color(0.830729, 0.369271, 0.0313831, 0.643)
+theme_override_colors/font_hover_color = Color(0.966, 0.488, 0.138, 0.643)
+theme_override_styles/focus = SubResource("StyleBoxFlat_gwbw4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_4jgcq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cu0a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ven28")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8w6b6")

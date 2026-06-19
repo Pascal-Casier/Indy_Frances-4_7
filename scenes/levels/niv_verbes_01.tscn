@@ -1,0 +1,857 @@
+[gd_scene load_steps=67 format=4 uid="uid://diuay3xvpljbg"]
+
+[ext_resource type="PackedScene" uid="uid://c4qkarqa20m76" path="res://scenes/mechanics/intro_camera.tscn" id="1_4m0ps"]
+[ext_resource type="PackedScene" uid="uid://cc33ysgujnadg" path="res://scenes/UI/ui.tscn" id="1_8tatj"]
+[ext_resource type="PackedScene" uid="uid://cdh4n3w6khtik" path="res://scenes/mechanics/checkpoint.tscn" id="2_ixnis"]
+[ext_resource type="MeshLibrary" uid="uid://dtj3qjfgmf2cv" path="res://meshlibs/TilesIndyStyleMeshlib.tres" id="2_qscpd"]
+[ext_resource type="PackedScene" uid="uid://cg6tcasj5umbn" path="res://scenes/UI/Dico/inventaire.tscn" id="2_wuxi7"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="3_g2vkc"]
+[ext_resource type="PackedScene" uid="uid://7jaffeojbign" path="res://scenes/mechanics/dalle_phrase.tscn" id="3_qscpd"]
+[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="4_g2vkc"]
+[ext_resource type="PackedScene" uid="uid://b2e2enpwr8s13" path="res://scenes/mechanics/computer.tscn" id="4_lipsa"]
+[ext_resource type="Script" uid="uid://cq7gtn2haamx4" path="res://scenes/UI/Quizz/questions/Quizz_question.gd" id="5_4m0ps"]
+[ext_resource type="AudioStream" uid="uid://be8n404p74vkt" path="res://assets/sounds/pronuncia/tu_es.mp3" id="5_g2vkc"]
+[ext_resource type="PackedScene" uid="uid://4cgryerjlel8" path="res://scenes/mechanics/canon_viseur2.tscn" id="6_bythv"]
+[ext_resource type="AudioStream" uid="uid://bs7hjlsmoxu67" path="res://assets/sounds/pronuncia/ilellleon_est.mp3" id="6_ugjk2"]
+[ext_resource type="PackedScene" uid="uid://kmhixofuof4h" path="res://scenes/mechanics/trap_laser.tscn" id="7_cpgo0"]
+[ext_resource type="AudioStream" uid="uid://b56kjithaxttq" path="res://assets/sounds/pronuncia/nous_sommes.mp3" id="7_h6ifj"]
+[ext_resource type="PackedScene" uid="uid://bdvrl7yn8sfst" path="res://scenes/Decoration/petit_panneau.tscn" id="7_n7ysm"]
+[ext_resource type="Texture2D" uid="uid://bfwyvmqog6q2" path="res://assets/images/ui/inventaire/verbes1.jpg" id="8_7vc12"]
+[ext_resource type="AudioStream" uid="uid://bj4e2xoy6y4lb" path="res://assets/sounds/pronuncia/vous_etes.mp3" id="8_awsp7"]
+[ext_resource type="AudioStream" uid="uid://cjb1nv5le1rus" path="res://assets/sounds/pronuncia/ilselles_sont.mp3" id="9_30ftf"]
+[ext_resource type="PackedScene" uid="uid://dsc7j3sgdqjo5" path="res://scenes/characters/chouette.tscn" id="9_qv3ex"]
+[ext_resource type="PackedScene" uid="uid://oq15hrf68irr" path="res://scenes/mechanics/fence_gate_grid.tscn" id="10_7vc12"]
+[ext_resource type="PackedScene" uid="uid://bpadv8xxuwbvd" path="res://scenes/mechanics/portal.tscn" id="10_506j2"]
+[ext_resource type="AudioStream" uid="uid://dfura38h5bobq" path="res://assets/sounds/pronuncia/jai.mp3" id="12_6pgjg"]
+[ext_resource type="AudioStream" uid="uid://c11rft2vqsndl" path="res://assets/sounds/pronuncia/tu_as.mp3" id="13_yxdcu"]
+[ext_resource type="PackedScene" uid="uid://ce2da44o65p77" path="res://scenes/mechanics/lever.tscn" id="14_a5w3j"]
+[ext_resource type="AudioStream" uid="uid://sjv4hc6oht1h" path="res://assets/sounds/pronuncia/il_a.mp3" id="14_rd80c"]
+[ext_resource type="PackedScene" uid="uid://n4vorkcsm6f0" path="res://scenes/mechanics/phrases_puzzle.tscn" id="15_30ftf"]
+[ext_resource type="PackedScene" uid="uid://ds6rlsbuf8q1r" path="res://scenes/mechanics/spike_floor_trap.tscn" id="15_ayg16"]
+[ext_resource type="AudioStream" uid="uid://g3lfmacverag" path="res://assets/sounds/pronuncia/nous_avons.mp3" id="15_sa8uh"]
+[ext_resource type="PackedScene" uid="uid://cb7h7kit3w1wg" path="res://scenes/mechanics/passerelle.tscn" id="16_ayg16"]
+[ext_resource type="AudioStream" uid="uid://cpu2ftxxdbuq2" path="res://assets/sounds/pronuncia/vous_avez.mp3" id="16_gb58a"]
+[ext_resource type="AudioStream" uid="uid://qn75rnrdq382" path="res://assets/sounds/pronuncia/ils_ont.mp3" id="17_0u182"]
+[ext_resource type="MeshLibrary" uid="uid://cqkum1l762snt" path="res://meshlibs/fence&trees.tres" id="17_31w5a"]
+[ext_resource type="MeshLibrary" uid="uid://ygi6bjt2t2vx" path="res://meshlibs/furnituresMeshlib.tres" id="18_ktnjj"]
+[ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="19_g403i"]
+[ext_resource type="PackedScene" uid="uid://bxnjeqyei1l75" path="res://scenes/mechanics/platform_falling.tscn" id="19_ktnjj"]
+[ext_resource type="PackedScene" uid="uid://crrujje4tn6hl" path="res://scenes/mechanics/platform_moving.tscn" id="20_fb3d7"]
+[ext_resource type="PackedScene" uid="uid://cthgk7hmm8iat" path="res://scenes/mechanics/wall_pusher.tscn" id="22_g5n2l"]
+[ext_resource type="PackedScene" uid="uid://dp5sdo13te42y" path="res://scenes/mechanics/button_floor.tscn" id="22_isx6r"]
+[ext_resource type="PackedScene" uid="uid://q6gg4obev58v" path="res://scenes/mechanics/platform_door_mecanic.tscn" id="26_0u182"]
+[ext_resource type="PackedScene" uid="uid://bp6q7c30cqb3a" path="res://scenes/mechanics/door_gate.tscn" id="31_yxdcu"]
+[ext_resource type="Script" uid="uid://bbpnm1qg0klhp" path="res://scripts/mechanics/affiche.gd" id="32_0u182"]
+[ext_resource type="PackedScene" uid="uid://daab20xmubnro" path="res://scenes/mechanics/game_console.tscn" id="33_kiyow"]
+[ext_resource type="Texture2D" uid="uid://cde8vweifpywa" path="res://assets/blender/planche_bois_Wood052_1K_Color.jpg" id="34_e1w7n"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="35_bythv"]
+[ext_resource type="PackedScene" uid="uid://btp8m3u15svhy" path="res://scenes/mechanics/book_closed.tscn" id="35_go8q5"]
+[ext_resource type="PackedScene" uid="uid://cy85ddep23l3b" path="res://scenes/mechanics/coin.tscn" id="38_ixnis"]
+[ext_resource type="PackedScene" uid="uid://tcpiw0p4ver3" path="res://scenes/mechanics/saw_trap_bilat.tscn" id="40_cpgo0"]
+[ext_resource type="PackedScene" uid="uid://jgcr3c5wa3w4" path="res://scenes/mechanics/shooting_gallery.tscn" id="40_fbm67"]
+[ext_resource type="PackedScene" uid="uid://2bq5jphoxv84" path="res://scenes/mechanics/panneau_grand.tscn" id="42_dli21"]
+[ext_resource type="PackedScene" uid="uid://tek7c6d53ldt" path="res://scenes/mechanics/blade.tscn" id="43_eflfd"]
+[ext_resource type="PackedScene" uid="uid://wgv8rpj674ov" path="res://scenes/mechanics/swiper_trap.tscn" id="44_wk4nw"]
+[ext_resource type="PackedScene" uid="uid://c1pyhkic16kx0" path="res://scenes/mechanics/gate_big.tscn" id="52_6w2ob"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ugjk2"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_bottom_color = Color(0.0506795, 0.272116, 0.414063, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_2bykf"]
+sky_material = SubResource("ProceduralSkyMaterial_ugjk2")
+
+[sub_resource type="Environment" id="Environment_5w475"]
+background_mode = 2
+sky = SubResource("Sky_2bykf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_rqxe8"]
+script = ExtResource("5_4m0ps")
+question = "tu ____ sympa !"
+choiceA = "es"
+choiceB = "as"
+choiceC = "est"
+choiceD = "ai"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="Resource" id="Resource_5u3ov"]
+script = ExtResource("5_4m0ps")
+question = "vous _____ des enfants ?"
+choiceA = "avez"
+choiceB = "ont"
+choiceC = "ai"
+choiceD = "sommes"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="Resource" id="Resource_bp7gv"]
+script = ExtResource("5_4m0ps")
+question = "nous ______ du tango"
+choiceA = "dansons"
+choiceB = "danses"
+choiceC = "dansez"
+choiceD = "dansent"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="Resource" id="Resource_qg3s5"]
+script = ExtResource("5_4m0ps")
+question = "__________ brésilien"
+choiceA = "je suis"
+choiceB = "j'ai"
+choiceC = "j'a"
+choiceD = "je es"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="Resource" id="Resource_d2uro"]
+script = ExtResource("5_4m0ps")
+question = "elles _____ du pain"
+choiceA = "mangent"
+choiceB = "mangeons"
+choiceC = "mangez"
+choiceD = "manges"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="Resource" id="Resource_6yuut"]
+script = ExtResource("5_4m0ps")
+question = "on _____ français"
+choiceA = "est"
+choiceB = "es"
+choiceC = "suis"
+choiceD = "sommes"
+correct = "a"
+explications = ""
+metadata/_custom_type_script = "uid://cq7gtn2haamx4"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jj7mo"]
+resource_name = "woody"
+cull_mode = 2
+albedo_texture = ExtResource("34_e1w7n")
+roughness = 0.4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tb0tf"]
+_surfaces = [{
+"aabb": AABB(-0.487146, -0.048698, -2.76407, 1.00174, 0.097406, 5.53603),
+"format": 34896613377,
+"index_count": 396,
+"index_data": PackedByteArray("JQAGABAAJQAGAAYABwAGAAYABwAHAAYACAAEABMACAAFAAQANgADABQANgArAAMAFAACAA8AFAADAAIAMQAAACwAMQABAAAAAQAMAAAAAQAXAAwAFwANAAwAFwAWAA0AFgAOAA0AFgAVAA4AFQAPAA4AFQAUAA8AMQAXAAEAMQAzABcAMwAWABcAMwA0ABYANAAVABYANAA1ABUANQAUABUANQA2ABQABwAQAAYABwALABAACwARABAACwAKABEACgASABEACgAJABIACQATABIACQAIABMABAATAAQABAATABMAEwASABMAEwAiABIAIgARABIAIgARABEAEQAQABEAEQAlABAALwAmACQALwAwACYAJAAlABEAJAAmACUALgAkACMALgAvACQAIwARACIAIwAkABEALQAjACEALQAuACMAIQAiABMAIQAjACIALAAhABsALAAtACEAGwATAAQAGwAhABMACgALAAoACgALAAsACgAgAB8ACgALACAACQAKAB4ACQAKAAoAHgAfAB0AHgAKAB8ACAAeAAgACAAJAB4ACAAdABwACAAeAB0ABQAIAAUABQAIAAgABQAcABgABQAIABwABQAEAAQABQAFAAQABQAbAAQABQAYABsACwAHAAsACwAHAAcACwAaACAACwAHABoAMgA4ABkAMgA3ADgAGgAGABkAGgAHAAYAMAAZACYAMAAyABkAJgAGACUAJgAZAAYAMQApABgAMQAqACkAGAAoABsAGAApACgALAAqADEALAAnACoAKQAnACgAKQAqACcADwAyADAADwACADIAAwAyAAIAAwArADIAAAAtACwAAAAMAC0ADAAuAC0ADAANAC4ADQAvAC4ADQAOAC8ADgAwAC8ADgAPADAAHwA2ADUAHwAgADYAHQA1ADQAHQAfADUAHAA0ADMAHAAdADQAGAAzADEAGAAcADMAGwAnACwAGwAoACcAIAArADYAIAAaACsAOgA4ADcAOgA5ADgAKwA3ADIAKwA6ADcAGQA5ABoAGQA4ADkAGgA6ACsAGgA5ADoA"),
+"lods": [0.0401408, PackedByteArray("JQAGABAAEQAlABAAIgARABIAEwAiABIACAAEABMACAAFAAQACQAIABMACQATABIACgAJABIACgASABEACwAKABEACwARABAABwALABAABwAQAAYANQADABYANQArAAMAMQA1ABYAMQAWAAEAFgACAA0AFgADAAIAAQAWAA0AAQANAAAAMQAAACwAMQABAAAAIwAlABEAIwAGACUAIwAZAAYAIwARACIAIwAiABMAGwAjABMAGwATAAQALAAjABsAGwAnACwAGwAoACcALAAvACMALwAZACMALwAyABkAMgA4ABkAMgA3ADgACgALABwAHgAKABwACAAeABwABQAIABwABQAcABgACwAaABwACwAHABoACQAKAB4ACAAJAB4ABQAbAAQABQAYABsAGgAGABkAGgAHAAYAMQApABgAMQAqACkAGAA1ADEAGAAcADUAHAArADUAHAAaACsAGgA6ACsAGgA5ADoAGAAoABsAGAApACgALAAqADEALAAnACoAKQAnACgAKQAqACcADQAyAC8ADQACADIAAAANAC8AAAAvACwAAwAyAAIAAwArADIAOgA4ADcAOgA5ADgAKwA3ADIAKwA6ADcAGQA5ABoAGQA4ADkA")],
+"name": "woody",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 59,
+"vertex_data": PackedByteArray("N+z4/yEGAAA37AAAIQYAAMX2+P9Q+QAAxfYAAFD5AABbC/j/GAQAAFsLAAAYBAAAtgX4/wz4AAC2BQAADPgAAFsHAAD3NQAA7wsAAMBnAAC9CQAAbpgAAAAAAAAdyAAAn/H4//c1AAD///j/7mQAAD3v+P9umAAAPvT4/1zKAAAAAPj/HcgAAL0J+P9umAAA7wv4/8BnAABbB/j/9zUAAD70AABcygAAPe8AAG6YAAD//wAA7mQAAJ/xAAD3NQAAb1QAAAEGAAC7U/j/rvgAALtTAACu+AAAb1T4/wEGAAByVQAA9zUAAEldAADPZgAA7wsAAMBnAAA9VgAAbpgAAGpRAADcyAAAclX4//c1AADvC/j/wGcAAEld+P/PZgAAPVb4/26YAAAAAPj/HcgAAGpR+P/cyAAAQKX4/wAAAAC7U/j/wwAAALtTAADDAAAAQKUAAAAAAABApQAA5voAAECl+P89BQAAiKP4//c1AACkrvj/32UAAL2i+P9umAAA1KL4/5zJAABApQAAPQUAAECl+P/m+gAAiKMAAPc1AACkrgAA32UAAL2iAABumAAA1KIAAJzJAABApfj/uv4AALtT+P///wAAu1MAAP//AABApQAAuv4AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3sj6s"]
+resource_name = "planche_bois_Cube_003"
+_surfaces = [{
+"aabb": AABB(-0.487146, -0.048698, -2.76407, 1.00174, 0.097406, 5.53603),
+"attribute_data": PackedByteArray("U4XSz5TP8Muo/2vUx/4Iub+v8Muo/zjXwf3Sz5TP96WsgGvUvYCit7+v96WsgDjX//9p1JTP6PFp7/DL//+b0eqP8Mu/r+jxrIBp1Gnv96WUz/9/rICb0eqP96W/r/9/+OWb0fjlm9Hqj1jE6o9YxP3Lm9H9y5vR6o/AvOqPwLyWspvRlrKb0eqPKLWwmZvRsJmb0eqPj61pndLPaZ3Sz7Hma9Sx5mvUf7XSz3+10s8mzmvUJs5r1JXN0s+VzdLPO7Nr1Duza9Sr5dLPq+XSzyyZa9QsmWvUsJlp1LCZadRp74+tlrJp1JayadRp7yi1/ctp1P3LadRp78C8+OVp1PjladRp71jEae9YxBOZ9bcTmfW3LJk41yyZONf0spC49LKQuDuzONc7szjXps28tqbNvLYmzjjXJs441/3lYrj95WK4seY417HmONe/r0DlBfymouXCg8gF/Kaiv69A5dTDvdDqj/DLv6/o8b+v6PGUz6eMlM+njMf7pefH+6Xnpv5P9pTP/39p7/ellM//f2L+Ff+/r/9/6o/3pb+v/3/ERP7Pv6+njL+vp4xVg2yiVYNsooFEOMdTf9T/lM/o8Wnv8MuUz+jxlM9A5UGAmvcYg9/nGIPf55TPQOUr5Hui66kgyCvke6LrqSDI2ano0OqPWMTqj1jE2ano0OHLlKF8kPjGfJD4xuHLlKHsjxzQzo+5vM6PubzsjxzQM7NGoqJ2e8eidnvHM7NGopF2FNDqjyi1kXYU0B2bu6Idm7uiaF3Ax2hdwMfqj4+tul3o0Lpd6NBp71jETZn//2nvWMRNmf//8pq05zyZN/fymrTnPJk39zqzM/9p78C8OrMz/6uyD/Y8s83mPLPN5quyD/aVzCv/lcwr/2nvKLWEzJL2hMyS9unLf+fpy3/nbOX//2nvj61s5f//v+XW9v/j9Oe/5db2/+P055TPmNgXgDTflM+Y2JTPQOWUz0DlfYD057+vQOW/r0DloP67or+vmNgF//uZv6+Y2D+CrJk/gqyZ6H/AwL+vT5m/r0+ZU4V63LOCMt+zgjLflM+Y2JTPmNhpnXrcaZ163O6aUt/umlLff7V63MCyEt7AshLef7V63JXNetzmy0nf5stJ35XNetxb5Dbfq+V63FvkNt+r5XrcO//5wGr8+plq/PqZv6+Y2L+vmNje/OTe3vzk3sH9etyUz0+ZlM9PmfrlH8Ev5BmaL+QZmvrlH8FczNmYJs3VvybN1b9czNmYN7MQmvGyH8Hxsh/BN7MQmsKa/pnCmv6ZdJkRwXSZEcHF/uPelM9PmZTPT5mUz6eMav+j55TPp4y/r6eMsn9qor+vp4xYgKqZv69Pmb+vT5k="),
+"format": 34896613399,
+"index_count": 396,
+"index_data": PackedByteArray("rAATADgArABiABMAZwAUAGMAZwAXABQAGAAMAD8AGAAPAAwA8AAJAEMA8ADAAAkARgAIADUARgALAAgA2wABAMYA2wAEAAEABQApAAIABQBSACkAUQAtACgAUQBOAC0ATQAwACwATQBJADAASgA0ADEASgBFADQA2ABPAAMA2ADiAE8A5QBLAFAA5QDnAEsA6ABIAEwA6ADsAEgA6wBEAEcA6wDxAEQAFQA2ABIAFQAjADYAJAA6ADcAJAAhADoAIAA8ADkAIAAcADwAHQBAAD0AHQAZAEAAcABCAA4AcACXAEIAlQA+AEEAlQCeAD4AngA7AD4AngCmADsApgA4ADsApgCsADgA0QCxAKkA0QDWALEApwCrAKQApwCuAKsAzgCqAKIAzgDSAKoAoAClAJ0AoACoAKUAygChAJkAygDNAKEAnACfAJgAnACjAJ8AxACbAHQAxADLAJsAcwCWAG4AcwCaAJYAIgCSAIwAIgAlAJIAjQCQAIkAjQCTAJAAHwCMAIUAHwAiAIwAgwCIAIAAgwCLAIgAGgCEAHwAGgAeAIQAfgCBAHoAfgCGAIEAEAB9AFkAEAAbAH0AWAB4AFUAWAB7AHgAEQBvAA0AEQBaAG8AWwB2AHEAWwBXAHYAJQBmAJIAJQAWAGYAlABtAJEAlABoAG0A3gD2AF8A3gDyAPYAagBhAF0AagBlAGEA1ABeAK8A1ADdAF4AsABkAK0AsABgAGQA2QC6AFQA2QC8ALoAUwC1AHIAUwC4ALUAxwC9ANwAxwC0AL0AuQCyALYAuQC7ALIAMwDfANcAMwAGAN8ACgDgAAcACgDBAOAAAADIAMMAAAAmAMgAJwDMAMkAJwAqAMwAKwDTAM8AKwAvANMALgDVANAALgAyANUAhwDuAOoAhwCOAO4AggDtAOkAggCKAO0AdwDmAOMAdwB/AOYAVgDkANoAVgB5AOQAdQCzAMUAdQC3ALMAjwC+AO8AjwBrAL4A/AD3APMA/AD6APcAwgD0AOEAwgD9APQAXAD4AGkAXAD1APgAbAD7AL8AbAD5APsA"),
+"lods": [0.0401408, PackedByteArray("rAATADgAOwCsADgAngA7AD4AQQCeAD4AGAAMAD8AGAAPAAwAHAAYAD8AHAA/ADwAIAAcADwAIAA8ADkAIwAgADkAIwA5ADYAFQAjADYAFQA2ABIA6wAJAEsA6wDAAAkA2ADrAEsA2ABLAAMATQAIACwATQALAAgABQBNACwABQAsAAIA2wABAMYA2wAEAAEAoACrAKQAoABkAKsAoABgAGQAoACkAJ0AoACdAJYAcwCgAJYAcwCWAG4AxAChAHQAdACzAMQAdAC3ALMAxADRAKEA0QBeAKEA0QDdAF4A3QD2AF4A3QDyAPYAiwCTAHgAgwCLAHgAewCDAHgAWAB7AHgAWAB4AFUAkwBtAHgAkwBoAG0AHgAiAIQAGgAeAIQAWwB2AHEAWwBXAHYAagBhAF0AagBlAGEA2QC6AFQA2QC8ALoAVADqANkAVAB3AOoAdwC+AOoAdwBrAL4AawD7AL4AawD5APsAUwC1AHIAUwC4ALUAxwC9ANwAxwC0AL0AuQCyALYAuQC7ALIAKgDfANAAKgAGAN8AAAAqANAAAADQAMMACgDgAAcACgDBAOAA/AD3APMA/AD6APcAwgD0AOEAwgD9APQAXAD4AGkAXAD1APgA")],
+"material": SubResource("StandardMaterial3D_jj7mo"),
+"name": "woody",
+"primitive": 3,
+"uv_scale": Vector4(2.01049, 1.6855, 0, 0),
+"vertex_count": 254,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_tb0tf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gb58a"]
+size = Vector3(1.271, 0.131836, 5.5564)
+
+[node name="niv_verbes01" type="Node3D"]
+
+[node name="IntroCamera" parent="." instance=ExtResource("1_4m0ps")]
+transform = Transform3D(0.5, 0.224144, -0.836516, -7.45058e-09, 0.965926, 0.258819, 0.866025, -0.129409, 0.482963, -274.919, 76.2771, 55.8929)
+
+[node name="UI" parent="." instance=ExtResource("1_8tatj")]
+
+[node name="Inventaire" parent="." instance=ExtResource("2_wuxi7")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5w475")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="IndianaPlayer4_2" parent="." instance=ExtResource("3_g2vkc")]
+
+[node name="Computer" parent="." instance=ExtResource("4_lipsa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -185, 44, 54)
+door_nbr = 14
+
+[node name="Quizz" parent="Computer" index="3"]
+quizz = Array[ExtResource("5_4m0ps")]([SubResource("Resource_rqxe8"), SubResource("Resource_5u3ov"), SubResource("Resource_bp7gv"), SubResource("Resource_qg3s5"), SubResource("Resource_d2uro"), SubResource("Resource_6yuut")])
+
+[node name="checkpoints" type="Node3D" parent="."]
+
+[node name="Checkpoint" parent="checkpoints" instance=ExtResource("2_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -110, 9, -49)
+
+[node name="Checkpoint2" parent="checkpoints" instance=ExtResource("2_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 31, -49)
+
+[node name="Checkpoint3" parent="checkpoints" instance=ExtResource("2_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 37, 39)
+
+[node name="gridmaps" type="Node3D" parent="."]
+
+[node name="GridMap2" type="GridMap" parent="gridmaps"]
+mesh_library = ExtResource("2_qscpd")
+cell_size = Vector3(1, 1, 1)
+cell_center_x = false
+cell_center_y = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(-65540, 2, 1048601, -131072, 2, 1048601, -131068, 2, 1048601, -65540, 65534, 1048601, -131072, 65534, 1048601, -131068, 65534, 1048601, -65544, 65534, 25, -65544, 2, 25, -65544, 6, 25, -65540, 6, 25, -131072, 6, 25, -131068, 6, 25, -65537, 65530, 1048604, -65537, 65526, 1048602, -65537, 65522, 1048602, -131069, 65522, 1048602, -131065, 65522, 655388, -262133, 65522, 655388, -327661, 65505, 25, -262129, 65522, 1048601, -262125, 65522, 1048601, -262125, 65514, 1048601, -327661, 65495, 1048601, -327661, 65491, 1048601, -327661, 65487, 1048601, -327665, 65487, 1048601, -327669, 65487, 655388, -196601, 65487, 655388, -65533, 65487, 655388, 131071, 65487, 655385, 131071, 65491, 655385, 131071, 65483, 655385, 131067, 65483, 655385, 131067, 65487, 655385, 131067, 65491, 655385, 131063, 65483, 655385, 131063, 65487, 655385, 131063, 65491, 655385, 131053, 65487, 655385, 131049, 65487, 655385, -131091, 65487, 655386, -131095, 65487, 655386, -589805, 65495, 655386, -589805, 65491, 655386, -589805, 65487, 655386, -589809, 65487, 655386, 131040, 65487, 655380, 131036, 65487, 655383, 262104, 65487, 655383, 393172, 65487, 655383, 393168, 65487, 655381, 393168, 65491, 655381, 393168, 65483, 655381, 393164, 65483, 655381, 393164, 65487, 655381, 393164, 65491, 655381, 393160, 65491, 21, 393160, 65487, 21, 393160, 65483, 21, 393156, 65483, 21, 393156, 65487, 21, 393156, 65491, 21, 393156, 65495, 21, 393160, 65495, 21, 393164, 65495, 21, 393168, 65495, 21, 393168, 65479, 21, 393164, 65479, 21, 393160, 65479, 21, 393156, 65479, 21, 393152, 65479, 21, 393152, 65483, 21, 393152, 65487, 21, 393152, 65491, 21, 393152, 65495, 21, 393148, 65495, 21, 393148, 65491, 21, 393148, 65487, 21, 393148, 65483, 21, 393148, 65479, 21, 393148, 65475, 21, 393152, 65475, 21, 393156, 65475, 21, 393160, 65475, 21, 393164, 65475, 21, 393168, 65475, 21, 393168, 65499, 21, 393164, 65499, 21, 393160, 65499, 21, 393156, 65499, 21, 393152, 65499, 21, 393148, 65499, 21, 393139, 65487, 21, 393135, 65487, 21, 393131, 65487, 21, 655291, 65481, 1441829, 655291, 65493, 1441829, 655291, 65475, 1441825, 655291, 65499, 1441825, 524182, 65487, 655380, 524182, 65491, 20, 524182, 65483, 20, 524178, 65483, 20, 524178, 65487, 20, 524178, 65491, 20, 524174, 65483, 20, 524174, 65487, 20, 524174, 65491, 20, 524170, 65487, 26, 524166, 65487, 26, 524162, 65487, 26, 524162, 65491, 26, 524162, 65483, 26, 524162, 65479, 26, 524162, 65475, 1441820, 655234, 65495, 1441820, 786306, 65499, 1441820, 917378, 65503, 1441817, 917374, 65503, 1441817, 393090, 65471, 1441820, 393090, 65467, 1441817, 524158, 65487, 1441818, 524154, 65487, 1441818, 524150, 65487, 1441818, 524146, 65487, 28, 393070, 65487, 28, 393066, 65487, 25, 393090, 65460, 25, 393081, 65460, 25, 393077, 65460, 25, 393073, 65460, 25, 393069, 65460, 25, 393062, 65487, 25, 393062, 65483, 25, 393062, 65473, 25, 393062, 65464, 25, 393062, 65460, 25, 393076, 65473, 25, 917362, 65503, 25, 917358, 65503, 25, 917349, 65503, 25, 917370, 65503, 25, 655226, 65503, 26, 655230, 65503, 26, 655234, 65503, 26, 655234, 65499, 25, 917345, 65503, 25, 917341, 65503, 25, 917341, 65499, 1048604, 1048413, 65495, 1048604, 1310560, 65489, 1441827, 1310560, 65481, 1441827, 1310560, 65473, 1441827, 1310560, 65466, 1441830, 1310553, 65466, 655394, 1310545, 65466, 655394, 1310537, 65466, 655394, 1310530, 65466, 38, 1310530, 65473, 1441824, 1310530, 65481, 1441824, 1310530, 65489, 1441824, 1310535, 65492, 655392, 1310543, 65492, 655392, 1310551, 65492, 655392, 1179487, 65491, 655385, 1179483, 65491, 655385, 1179479, 65491, 655385, 1179475, 65491, 655385, 1179471, 65491, 655385, 1179467, 65491, 655385, 1179463, 65491, 655385, 1179459, 65491, 655385, 1179459, 65487, 655385, 1179459, 65483, 655385, 1179459, 65479, 655385, 1179459, 65475, 655385, 1179459, 65471, 655385, 1179459, 65467, 655385, 1179463, 65467, 655385, 1179467, 65467, 655385, 1179471, 65467, 655385, 1179475, 65467, 655385, 1179479, 65467, 655385, 1179483, 65467, 655385, 1179487, 65467, 655385, 1179487, 65471, 655385, 1179487, 65475, 655385, 1179487, 65479, 655385, 1179487, 65483, 655385, 1179487, 65487, 655385, 1179463, 65471, 655385, 1179467, 65471, 655385, 1179471, 65471, 655385, 1179475, 65471, 655385, 1179479, 65471, 655385, 1179483, 65471, 655385, 1179483, 65475, 655385, 1179479, 65475, 655385, 1179475, 65475, 655385, 1179471, 65475, 655385, 1179467, 65475, 655385, 1179463, 65475, 655385, 1179463, 65479, 655385, 1179467, 65479, 655385, 1179471, 65479, 655385, 1179475, 65479, 655385, 1179479, 65479, 655385, 1179483, 65479, 655385, 1179483, 65483, 655385, 1179479, 65483, 655385, 1179475, 65483, 655385, 1179471, 65483, 655385, 1179467, 65483, 655385, 1179463, 65483, 655385, 1179463, 65487, 655385, 1179467, 65487, 655385, 1179471, 65487, 655385, 1179475, 65487, 655385, 1179479, 65487, 655385, 1179483, 65487, 655385, 1572671, 65467, 655380, 1572667, 65467, 655380, 1572663, 65467, 655380, 1572659, 65467, 655380, 1572659, 65471, 1441815, 1703731, 65475, 1441815, 1834803, 65479, 1441815, 1572659, 65475, 1441812, 1572659, 65479, 1441813, 1834803, 65483, 1441813, 1834799, 65483, 1441813, 1834795, 65483, 1441813, 1834803, 65487, 1441813, 1834799, 65487, 1441813, 1834795, 65487, 1441813, 1834795, 65491, 1441813, 1834799, 65491, 1441813, 1834803, 65491, 1441813, 1834791, 65483, 1441813, 1834791, 65487, 1441813, 1834791, 65491, 1441813, 1834773, 65487, 1441813, 2031372, 65489, 1441812, 2031372, 65485, 1441812, 2031368, 65485, 1441812, 2031368, 65489, 1441812, 2031364, 65485, 1441812, 2031364, 65489, 1441812, 2031360, 65485, 20, 2031360, 65489, 20, 2031356, 65489, 20, 2031356, 65485, 20, 2031356, 65493, 20, 2031360, 65493, 20, 2031364, 65493, 20, 2031368, 65493, 20, 2031372, 65493, 20, 2031356, 65502, 25, 2031356, 65506, 25, 2031356, 65510, 1441820, 2162428, 65514, 1441820, 2162428, 65518, 1441818, 2162432, 65518, 1441818, 2162436, 65518, 1441818, 2162436, 65522, 1441818, 2162432, 65522, 1441818, 2162428, 65522, 1441818, 2162432, 65531, 1441818, 2162432, 65535, 1441818, 2162436, 65535, 655388, 2031368, 65535, 655388, 1900300, 65535, 655388, 1900304, 65535, 655385, 1900308, 65535, 655385, 1900312, 65535, 655385, 1900312, 3, 655385, 1900312, 7, 655385, 1900316, 7, 655385, 1900312, 11, 655385, 1900316, 11, 655385, 1900312, 15, 655385, 1900316, 15, 655385, 1900320, 15, 655385, 1900320, 11, 655385, 1900320, 7, 655385, 2359070, 39, 655380, 2359074, 39, 655380, 2359066, 39, 655380, 2359066, 43, 655380, 2359070, 43, 655380, 2359074, 43, 655380, 2359074, 47, 655380, 2359070, 47, 655380, 2359066, 47, 655380, 2490147, 41, 1048612, 2490137, 41, 1048612, 2490147, 49, 1048612, 2490137, 49, 1048612, 2359066, 51, 1048596, 2359070, 51, 1048596, 2359074, 51, 1048596, 2359066, 55, 1048596, 2359070, 55, 1048596, 2359074, 55, 1048596, 2359078, 55, 1048596, 2359082, 55, 1048596, 2359082, 59, 1048596, 2359078, 59, 1048596, 2359074, 59, 1048596, 2359070, 59, 1048596, 2359066, 59, 1048596, 2359062, 59, 1048596, 2359062, 55, 1048596, 2359058, 55, 1048596, 2359058, 59, 1048596, 2359070, 63, 20, 2359070, 67, 20, 2359070, 71, 20, 2359070, 75, 1441815, 2490142, 79, 1441815, 2490142, 83, 1441813, 2490138, 83, 1441813, 2490146, 83, 1441813, 2490150, 83, 1441813, 2490154, 83, 1441813, 2490158, 83, 1441813, 2490166, 77, 1441813, 2621242, 70, 1441813, 2686783, 63, 1441813, 2686787, 63, 1441813, 2686791, 63, 1441813, 2686795, 63, 1441813, 2686783, 59, 1441813, 2686787, 59, 1441813, 2686791, 59, 1441813, 2686795, 59, 1441813, 2686795, 55, 1441813, 2686791, 55, 1441813, 2686787, 55, 1441813, 2686783, 55, 1441813, 2686783, 51, 1441813, 2686787, 51, 1441813, 2686791, 51, 1441813, 2686795, 51, 1441813, 2686795, 47, 1441813, 2686791, 47, 1441813, 2686787, 47, 1441813, 2686783, 47, 1441813, 2686783, 43, 1441813, 2686787, 43, 1441813, 2686791, 43, 1441813, 2686795, 43, 1441813, 2948939, 51, 1441814, 2686779, 51, 1441813, 2948923, 51, 1441814, 2686779, 55, 1441813, 2686779, 59, 1441813, 2686779, 63, 1441813, 2948939, 47, 1441814, 2948939, 43, 1441814, 2948931, 42, 7, 2948935, 42, 7, 2948927, 42, 7)
+}
+metadata/_editor_floor_ = Vector3(0, 44, 0)
+
+[node name="GridMapTrees" type="GridMap" parent="gridmaps"]
+mesh_library = ExtResource("17_31w5a")
+cell_size = Vector3(2, 1, 2)
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(2, 2, 1441797, 65532, 65534, 1441799, 65532, 1, 655366, 1, 65534, 655368, 196607, 65528, 655365, 262143, 65509, 655365, 262139, 65513, 655367, 262139, 65510, 655368, 262143, 65513, 1048584, 655327, 65506, 1048581, 655335, 65516, 7, 655331, 65511, 1441798, 655327, 65516, 655365, 2031504, 6, 5, 2031502, 3, 7, 2031499, 6, 8, 2424703, 65529, 8, 2424705, 65526, 7, 2949029, 28, 7, 2949021, 29, 6, 2949025, 31, 5)
+}
+metadata/_editor_floor_ = Vector3(0, 44, 0)
+
+[node name="GridMapmeubles" type="GridMap" parent="gridmaps"]
+mesh_library = ExtResource("18_ktnjj")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(1, 3, 655364, 65531, 3, 655368, 2, 65535, 655362, 1507235, 22, 6, 1507231, 22, 1441800)
+}
+metadata/_editor_floor_ = Vector3(0, 9, 0)
+
+[node name="portal" parent="gridmaps" instance=ExtResource("10_506j2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -189, 44.0191, 42.6434)
+next_level = 6
+
+[node name="dalles" type="Node3D" parent="."]
+
+[node name="Dalle_phrase" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19228, 2.02502, -11)
+dalle_texte = "Je suis"
+is_talking = true
+phrase_sound = ExtResource("4_g2vkc")
+trigger = true
+door_nbr = 1
+
+[node name="Dalle_phrase2" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0095, -2.97215, -31)
+dalle_texte = "Tu es"
+is_talking = true
+phrase_sound = ExtResource("5_g2vkc")
+trigger = true
+door_nbr = 2
+
+[node name="Dalle_phrase3" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 1.74846e-07, 1.58228e-14, 1, -8.74228e-08, -1.74846e-07, 8.74228e-08, 1, 18.8077, -2.97215, -49)
+dalle_texte = "il est, elle est, on est"
+is_talking = true
+phrase_sound = ExtResource("6_ugjk2")
+
+[node name="Dalle_phrase4" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -6.19231, 3.02785, -45)
+dalle_texte = "nous sommes"
+is_talking = true
+phrase_sound = ExtResource("7_h6ifj")
+
+[node name="Dalle_phrase5" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -6.19231, 3.02785, -49)
+dalle_texte = "vous êtes"
+is_talking = true
+phrase_sound = ExtResource("8_awsp7")
+
+[node name="Dalle_phrase6" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -6.19231, 3.02785, -53)
+dalle_texte = "ils sont, elles sont"
+is_talking = true
+phrase_sound = ExtResource("9_30ftf")
+trigger = true
+door_nbr = 3
+
+[node name="Dalle_phrase7" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -142.192, 15.0278, -33)
+dalle_texte = "j'ai"
+is_talking = true
+phrase_sound = ExtResource("12_6pgjg")
+door_nbr = 3
+
+[node name="Dalle_phrase8" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -145.192, 15.0278, -33)
+dalle_texte = "tu as"
+is_talking = true
+phrase_sound = ExtResource("13_yxdcu")
+door_nbr = 3
+
+[node name="Dalle_phrase9" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -154.445, 15.0278, -33)
+dalle_texte = "il a, elle a, on a"
+is_talking = true
+phrase_sound = ExtResource("14_rd80c")
+door_nbr = 3
+
+[node name="Dalle_phrase10" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -157.445, 15.0278, -33)
+dalle_texte = "nous avons"
+is_talking = true
+phrase_sound = ExtResource("15_sa8uh")
+door_nbr = 3
+
+[node name="Dalle_phrase11" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -160.445, 15.0278, -33)
+dalle_texte = "vous avez"
+is_talking = true
+phrase_sound = ExtResource("16_gb58a")
+door_nbr = 3
+
+[node name="Dalle_phrase12" parent="dalles" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-2.18557e-07, 0, 1, 8.74228e-08, 1, 1.42109e-14, -1, 8.74228e-08, -2.18557e-07, -163.445, 15.0278, -33)
+dalle_texte = "ils ont, elles ont"
+is_talking = true
+phrase_sound = ExtResource("17_0u182")
+trigger = true
+door_nbr = 8
+
+[node name="gates" type="Node3D" parent="."]
+
+[node name="fence_gate_grid" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 2, -14)
+door_nbr = 1
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08971, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00822, 1.26418, -2.38419e-07)
+
+[node name="fence_gate_grid2" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -3, -40)
+door_nbr = 2
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid2/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid2/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="fence_gate_grid3" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 3, -49)
+door_nbr = 3
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid3/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid3/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="fence_gate_grid4" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -82, 9, -49)
+door_nbr = 5
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid4/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid4/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="fence_gate_grid5" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -135, 15, -33)
+door_nbr = 7
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid5/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid5/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="fence_gate_grid7" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -235, 31, -49)
+door_nbr = 12
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid7/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid7/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="fence_gate_grid6" parent="gates" instance=ExtResource("10_7vc12")]
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -126, 7, -70)
+door_nbr = 6
+already_opened = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" parent="gates/fence_gate_grid6/fence_gate/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8796, 1.50672, 0)
+
+[node name="CollisionShape3D2" parent="gates/fence_gate_grid6/fence_gate/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.93706, 1.26418, 0)
+
+[node name="Passerelle" parent="gates" instance=ExtResource("16_ayg16")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -69, 9, -49)
+door_nbr = 4
+
+[node name="Lever" parent="gates" instance=ExtResource("14_a5w3j")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -140, 7, -62)
+door_nbr = 7
+
+[node name="door_gate" parent="gates" instance=ExtResource("31_yxdcu")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -165.026, 19, -43.4285)
+door_nbr = 8
+
+[node name="petit_panneau" parent="." instance=ExtResource("7_n7ysm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.94023, 0, 7.56179)
+
+[node name="Cube" parent="petit_panneau" index="0"]
+transform = Transform3D(6.86037e-15, -4.37114e-08, -1.06917, -3.59053, -4.37114e-08, 0, -1.56947e-07, 1, -4.67348e-08, 0.0367142, 2.22714, 0.0190029)
+
+[node name="Sprite3D" parent="petit_panneau" index="2"]
+transform = Transform3D(0.34725, 0, 0, 0, 0.2778, 0, 0, 0, 0.2315, 0.00565624, 2.17912, 0.100106)
+texture = ExtResource("8_7vc12")
+
+[node name="Chouette2" parent="petit_panneau" instance=ExtResource("9_qv3ex")]
+transform = Transform3D(0.987819, 0, -0.155608, 0, 1, 0, 0.155608, 0, 0.987819, 3.62564, 1.1077, -0.120761)
+timeline_name = "chouette6"
+disapear = true
+door_gate_to_open_nbr = 2
+
+[node name="traps" type="Node3D" parent="."]
+
+[node name="spike_floor_trap" parent="traps" instance=ExtResource("15_ayg16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19, -2.02138, -22)
+
+[node name="spike_floor_trap2" parent="traps" instance=ExtResource("15_ayg16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, 11.0974, -49)
+
+[node name="spike_floor_trap3" parent="traps" instance=ExtResource("15_ayg16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130, 11.0974, -49)
+
+[node name="spike_floor_trap5" parent="traps" instance=ExtResource("15_ayg16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154, 7.09738, -63)
+
+[node name="spike_floor_trap6" parent="traps" instance=ExtResource("15_ayg16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 7.09738, -76)
+
+[node name="Phrases_puzzle" parent="traps" instance=ExtResource("15_30ftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 9.09778, -62)
+phrasePT = "eles estão aqui"
+phraseFR = "ils sont ici"
+door_nbr = 4
+
+[node name="dalles" parent="traps/Phrases_puzzle" index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, -0.0428066, 18)
+
+[node name="Dalle_phrase" parent="traps/Phrases_puzzle/dalles" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 14)
+dalle_texte = "ils"
+
+[node name="Dalle_phrase2" parent="traps/Phrases_puzzle/dalles" index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 2)
+dalle_texte = "sont"
+
+[node name="Dalle_phrase4" parent="traps/Phrases_puzzle/dalles" index="2" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 6)
+dalle_texte = "sommes"
+
+[node name="Dalle_phrase3" parent="traps/Phrases_puzzle/dalles" index="3" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 10)
+dalle_texte = "ici"
+
+[node name="Phrases_puzzle2" parent="traps" instance=ExtResource("15_30ftf")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -55, 9.09778, -36)
+phrasePT = "a gente é gentil"
+phraseFR = "on est gentil"
+door_nbr = 5
+
+[node name="dalles" parent="traps/Phrases_puzzle2" index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, -0.0428066, 18)
+
+[node name="Dalle_phrase" parent="traps/Phrases_puzzle2/dalles" index="0"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 14)
+dalle_texte = "est"
+
+[node name="Dalle_phrase2" parent="traps/Phrases_puzzle2/dalles" index="1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 2)
+dalle_texte = "gentil"
+
+[node name="Dalle_phrase4" parent="traps/Phrases_puzzle2/dalles" index="2" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 6)
+dalle_texte = "on"
+
+[node name="Dalle_phrase3" parent="traps/Phrases_puzzle2/dalles" index="3" instance=ExtResource("3_qscpd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 10)
+dalle_texte = "ils"
+
+[node name="Phrases_puzzle6" parent="traps" instance=ExtResource("15_30ftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -175, 19, -68)
+phrasePT = "eu tenho um cachorro"
+phraseFR = "j'ai un chien"
+door_nbr = 10
+metadata/_edit_group_ = true
+
+[node name="Dalle_phrase" parent="traps/Phrases_puzzle6/dalles" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 3)
+dalle_texte = "chien"
+
+[node name="Dalle_phrase2" parent="traps/Phrases_puzzle6/dalles" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 3)
+dalle_texte = "un"
+
+[node name="Dalle_phrase3" parent="traps/Phrases_puzzle6/dalles" index="2" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 3)
+dalle_texte = "suis"
+
+[node name="Dalle_phrase4" parent="traps/Phrases_puzzle6/dalles" index="3" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+dalle_texte = "j'ai"
+
+[node name="DeathArea" parent="traps" instance=ExtResource("19_g403i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -6, 0)
+
+[node name="CollisionShape3D" parent="traps/DeathArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107, 0, -23.5)
+
+[node name="Platform_moving" parent="traps" instance=ExtResource("20_fb3d7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 2, -67)
+automatic = false
+door_nbr = 6
+pos2 = Vector3(0, 5, 0)
+
+[node name="WallPusher" parent="traps" instance=ExtResource("22_g5n2l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -154.865, 7, -71.6428)
+interval = 1.6
+
+[node name="WallPusher2" parent="traps" instance=ExtResource("22_g5n2l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -154.865, 7, -75.6428)
+interval = 1.2
+
+[node name="Phrases_puzzle3" parent="traps" instance=ExtResource("15_30ftf")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -163, 19, -58)
+phrasePT = "ela tem fome"
+phraseFR = "elle a faim"
+door_nbr = 11
+
+[node name="Dalle_phrase" parent="traps/Phrases_puzzle3/dalles" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 4)
+dalle_texte = "est"
+
+[node name="Dalle_phrase3" parent="traps/Phrases_puzzle3/dalles" index="1" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+dalle_texte = "elle"
+
+[node name="Dalle_phrase4" parent="traps/Phrases_puzzle3/dalles" index="2" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 4)
+dalle_texte = "a"
+
+[node name="Dalle_phrase2" parent="traps/Phrases_puzzle3/dalles" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+dalle_texte = "faim"
+
+[node name="trap_laser" parent="traps" instance=ExtResource("7_cpgo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -250, 32, -44)
+
+[node name="trap_laser2" parent="traps" instance=ExtResource("7_cpgo0")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -257, 32, -49)
+rotation_speed = 15.0
+
+[node name="SawTrapBilat" parent="traps" instance=ExtResource("40_cpgo0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120, 11, -49)
+
+[node name="GameConsole" parent="traps" instance=ExtResource("33_kiyow")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -231.33, 30, 14.768)
+door_gate_to_open_nbr = 13
+game_to_show = 1
+
+[node name="ConjugaisonGame" parent="traps/GameConsole" index="2"]
+phrases = Array[String](["je_____ français", "il ______ le rock", "nous ______", "ils _______ en France", "vous _____ du pain"])
+reponses_pronoms = Array[String](["je", "il", "nous", "ils", "vous"])
+reponses_correctes = Array[String](["parle", "danse", "chantons", "voyagent", "mangez"])
+verbes = Array[String](["parler", "danser", "chanter", "voyager", "manger"])
+
+[node name="book_closed" parent="traps" instance=ExtResource("35_go8q5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 37, 47)
+
+[node name="button_floor" parent="." instance=ExtResource("22_isx6r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126, 7, -76)
+btn_number = 6
+
+[node name="affiche" type="Node3D" parent="."]
+transform = Transform3D(-0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, -0.866025, -125, 15, -32)
+script = ExtResource("32_0u182")
+
+[node name="Cube" type="MeshInstance3D" parent="affiche"]
+transform = Transform3D(-7.86805e-08, 0, -0.5, -1.8, -4.37114e-08, 2.18557e-08, -7.86805e-08, 1, 9.55343e-16, 0, 1.78701, 0)
+mesh = SubResource("ArrayMesh_3sj6s")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="affiche/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="affiche/Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 2.22045e-16, -1.77636e-15, 1, 0, 7.10543e-15, 0, 1, 0.135498, 0, 0)
+shape = SubResource("BoxShape3D_gb58a")
+
+[node name="Cube2" type="MeshInstance3D" parent="affiche"]
+transform = Transform3D(-7.86805e-08, 0, -0.1, -1.8, -4.37114e-08, 4.37114e-09, -7.86805e-08, 1, 1.91069e-16, 0, 0.787007, 0)
+mesh = SubResource("ArrayMesh_3sj6s")
+skeleton = NodePath("")
+
+[node name="Sprite3D" type="Label3D" parent="affiche"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.76447, 0.057251)
+modulate = Color(0.232835, 0.898438, 0.22227, 1)
+text = "AVOIR
+(ter / haver)"
+font = ExtResource("35_bythv")
+font_size = 152
+outline_size = 75
+
+[node name="affiche2" type="Node3D" parent="."]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -260.985, 36, -13.5333)
+script = ExtResource("32_0u182")
+
+[node name="Cube" type="MeshInstance3D" parent="affiche2"]
+transform = Transform3D(-7.86805e-08, 0, -0.5, -1.8, -4.37114e-08, 2.18557e-08, -7.86805e-08, 1, 9.55343e-16, 0, 1.78701, 0)
+mesh = SubResource("ArrayMesh_3sj6s")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="affiche2/Cube"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="affiche2/Cube/StaticBody3D"]
+transform = Transform3D(1, 0, 2.22045e-16, -1.77636e-15, 1, 0, 7.10543e-15, 0, 1, 0.135498, 0, 0)
+shape = SubResource("BoxShape3D_gb58a")
+
+[node name="Cube2" type="MeshInstance3D" parent="affiche2"]
+transform = Transform3D(-7.86805e-08, 0, -0.1, -1.8, -4.37114e-08, 4.37114e-09, -7.86805e-08, 1, 1.91069e-16, 0, 0.787007, 0)
+mesh = SubResource("ArrayMesh_3sj6s")
+skeleton = NodePath("")
+
+[node name="Sprite3D" type="Label3D" parent="affiche2"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 1.76447, 0.057251)
+modulate = Color(0.232835, 0.898438, 0.22227, 1)
+text = "verbes en
+-ER"
+font = ExtResource("35_bythv")
+font_size = 152
+outline_size = 75
+
+[node name="coins" type="Node3D" parent="."]
+
+[node name="coin" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205, 32, -45)
+
+[node name="coin8" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -126, 11, -45)
+
+[node name="coin9" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -135, 7, -76)
+
+[node name="coin10" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -146, 7, -76)
+
+[node name="coin11" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -140, 7, -64)
+
+[node name="coin12" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -154, 7, -49)
+
+[node name="coin13" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, 37, 60)
+
+[node name="coin14" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, 37, 57)
+
+[node name="coin15" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -214, 37, 54)
+
+[node name="coin16" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -239, 37, 60)
+
+[node name="coin17" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -239, 37, 57)
+
+[node name="coin18" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -239, 37, 54)
+
+[node name="coin19" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -230, 41, 83)
+
+[node name="coin20" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -202, 41, 77)
+
+[node name="coin22" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -210, 41, 83)
+
+[node name="coin21" parent="coins" instance=ExtResource("38_ixnis")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -198, 43, 70)
+
+[node name="Phrases_puzzle" parent="." instance=ExtResource("15_30ftf")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -174, 19, -46)
+phrasePT = "vocês são ricos"
+phraseFR = "vous êtes riches"
+door_nbr = 9
+metadata/_edit_group_ = true
+
+[node name="dalles" parent="Phrases_puzzle" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 5)
+
+[node name="Dalle_phrase" parent="Phrases_puzzle/dalles" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -3)
+dalle_texte = "nous"
+
+[node name="Dalle_phrase2" parent="Phrases_puzzle/dalles" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -3)
+dalle_texte = "vous"
+
+[node name="Dalle_phrase3" parent="Phrases_puzzle/dalles" index="2" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -3)
+dalle_texte = "êtes"
+
+[node name="Dalle_phrase4" parent="Phrases_puzzle/dalles" index="3" instance=ExtResource("3_qscpd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -3)
+dalle_texte = "riches"
+
+[node name="Shooting_gallery" parent="." instance=ExtResource("40_fbm67")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -215, 31, -44)
+target_score = 7
+door_nbr = 12
+word_pairs = Dictionary[String, String]({
+"a gente tem": "on a",
+"ela tem": "elle a",
+"eles estão": "ils sont",
+"eles tem": "il ont",
+"eu sou": "je suis",
+"haver": "avoir",
+"nos estamos": "nous sommes",
+"ser/estar": "être",
+"vocês tem": "vous avez"
+})
+metadata/_edit_group_ = true
+
+[node name="TargetSpawner" parent="Shooting_gallery" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1, 5)
+
+[node name="canon_viseur" parent="Shooting_gallery" instance=ExtResource("6_bythv")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -3, 0, 5)
+
+[node name="platforms" type="Node3D" parent="."]
+
+[node name="platform_door_mecanic" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186, 19, -53)
+door_nbr = 9
+distance_to_go = Vector3(0, 2, 0)
+
+[node name="platform_door_mecanic2" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186, 19, -59)
+door_nbr = 10
+distance_to_go = Vector3(0, 4, 0)
+
+[node name="platform_door_mecanic3" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -186, 19, -65)
+door_nbr = 11
+distance_to_go = Vector3(0, 6, 0)
+
+[node name="platform_door_mecanic4" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 22, -49)
+door_nbr = 12
+distance_to_go = Vector3(0, 9, 0)
+
+[node name="platform_door_mecanic5" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 22, 20)
+door_nbr = 13
+distance_to_go = Vector3(0, 9, 0)
+time_of_animation = 2.7
+
+[node name="platform_door_mecanic6" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -226, 22, 26)
+door_nbr = 13
+distance_to_go = Vector3(0, 11, 0)
+time_of_animation = 2.9
+
+[node name="platform_door_mecanic7" parent="platforms" instance=ExtResource("26_0u182")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -226, 22, 32)
+door_nbr = 13
+distance_to_go = Vector3(0, 13, 0)
+time_of_animation = 3.1
+
+[node name="Platform_falling" parent="platforms" instance=ExtResource("19_ktnjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90, 10, -49)
+
+[node name="Platform_falling2" parent="platforms" instance=ExtResource("19_ktnjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 10, -49)
+shaking_speed = 2.0
+
+[node name="Platform_falling3" parent="platforms" instance=ExtResource("19_ktnjj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 10, -49)
+
+[node name="blade" parent="platforms" instance=ExtResource("43_eflfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -221, 38, 55)
+target_position = Vector3(0, 0, 0)
+offset1 = Vector3(0, 0, 4)
+offset2 = Vector3(-10, 0, 4)
+offset3 = Vector3(-10, 0, 0)
+offset4 = Vector3(0, 0, 0)
+movement_duration = 1.0
+
+[node name="blade2" parent="platforms" instance=ExtResource("43_eflfd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -231, 38, 59)
+target_position = Vector3(0, 0, 0)
+offset1 = Vector3(0, 0, -4)
+offset2 = Vector3(10, 0, -4)
+offset3 = Vector3(10, 0, 0)
+offset4 = Vector3(0, 0, 0)
+movement_duration = 1.0
+
+[node name="swiper_trap" parent="platforms" instance=ExtResource("44_wk4nw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -216, 37, 57)
+
+[node name="swiper_trap2" parent="platforms" instance=ExtResource("44_wk4nw")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -236, 37, 57)
+
+[node name="panneau_grand" parent="." instance=ExtResource("42_dli21")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -251, 36, -17)
+hints_list = Array[String](["Pour conjuguer un verbe en -ER :", "👉 On enlève -ER", "👉 On ajoute :", "e – es – e – ons – ez – ent", "ex: je parle, tu parles,...", "il parle, nous parlons", "vous parlez, ils parlent", "on ne prononce pas le -ent"])
+
+[node name="Gate_Big" parent="." instance=ExtResource("52_6w2ob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -190, 44, 51)
+door_number = 14
+
+[editable path="Computer"]
+[editable path="gates/fence_gate_grid"]
+[editable path="gates/fence_gate_grid2"]
+[editable path="gates/fence_gate_grid3"]
+[editable path="gates/fence_gate_grid4"]
+[editable path="gates/fence_gate_grid5"]
+[editable path="gates/fence_gate_grid7"]
+[editable path="gates/fence_gate_grid6"]
+[editable path="petit_panneau"]
+[editable path="traps/Phrases_puzzle"]
+[editable path="traps/Phrases_puzzle2"]
+[editable path="traps/Phrases_puzzle6"]
+[editable path="traps/DeathArea"]
+[editable path="traps/Phrases_puzzle3"]
+[editable path="traps/GameConsole"]
+[editable path="traps/GameConsole/GameConsole"]
+[editable path="Phrases_puzzle"]
+[editable path="Shooting_gallery"]

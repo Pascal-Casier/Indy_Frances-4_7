@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://crh8muyrhwrl2"]
+
+[ext_resource type="Script" uid="uid://cj13qgmx87lct" path="res://scripts/UI/bd_scene.gd" id="1_q6hvr"]
+[ext_resource type="Texture2D" uid="uid://861nca5118nb" path="res://assets/images/ui/BD/sort de maison_legend.jpg" id="2_sk1wy"]
+[ext_resource type="Texture2D" uid="uid://dnhj80okf72nt" path="res://assets/images/ui/BD/foret.jpg" id="3_yfkf0"]
+[ext_resource type="Texture2D" uid="uid://dc5sdfxnxb7ex" path="res://assets/images/ui/BD/frappe porte.jpg" id="4_h3ol0"]
+[ext_resource type="Texture2D" uid="uid://b5isebn71u76x" path="res://assets/images/ui/BD/entre.jpg" id="5_g3c2a"]
+
+[sub_resource type="Gradient" id="Gradient_s4veq"]
+colors = PackedColorArray(0.0126903, 0.00806342, 0.106771, 1, 0.0201213, 0.10401, 0.335938, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q6hvr"]
+gradient = SubResource("Gradient_s4veq")
+
+[node name="BD_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q6hvr")
+pages = Array[Texture2D]([ExtResource("2_sk1wy"), ExtResource("3_yfkf0"), ExtResource("4_h3ol0"), ExtResource("5_g3c2a")])
+page_sounds = Array[AudioStream]([null, null, null, null])
+page_display_time = 5.0
+fade_duration = 1.0
+
+[node name="PageTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_q6hvr")
+expand_mode = 1
+
+[node name="WhiteOverlay" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]

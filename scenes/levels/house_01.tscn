@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://bk6ixq5hjbxkg"]
+
+[ext_resource type="PackedScene" uid="uid://d0xcn0mloahad" path="res://assets/blender/LowPolyHouseMine.glb" id="1_wxr7b"]
+[ext_resource type="Script" uid="uid://csi1cl6onxfxu" path="res://scripts/UI/house_01.gd" id="2_ajm8e"]
+[ext_resource type="AudioStream" uid="uid://ck3kw3jy7oii" path="res://assets/sounds/sfx/doorOpen_2.ogg" id="3_4w4dw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tth15"]
+size = Vector3(0.848633, 1, 1)
+
+[sub_resource type="Animation" id="Animation_gs8nu"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oa4h4"]
+_data = {
+&"fadeout": SubResource("Animation_gs8nu")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yblb5"]
+size = Vector3(2.98419, 2.06305, 4.3479)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_78p5x"]
+size = Vector3(2.63956, 0.297638, 4.3479)
+
+[node name="House01" instance=ExtResource("1_wxr7b")]
+script = ExtResource("2_ajm8e")
+
+[node name="Area3D" type="Area3D" parent="." index="54"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0756836, 0.608464, 2.32513)
+shape = SubResource("BoxShape3D_tth15")
+
+[node name="Label3D" type="Label3D" parent="Area3D" index="1"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0374157, 0.730094, 1.93699)
+visible = false
+text = "E"
+font_size = 72
+outline_size = 32
+
+[node name="AudioDoor" type="AudioStreamPlayer" parent="." index="55"]
+unique_name_in_owner = true
+stream = ExtResource("3_4w4dw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="56"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" index="1"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_oa4h4")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="57"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00857544, 0.946136, 0.0426025)
+shape = SubResource("BoxShape3D_yblb5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(0.772734, 0.634731, 0, -0.634731, 0.772734, 0, 0, 0, 1, 0.860135, 2.45902, 0.0426025)
+shape = SubResource("BoxShape3D_78p5x")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(0.753093, -0.657914, 0, 0.657914, 0.753093, 0, 0, 0, 1, -0.826769, 2.502, 0.0426025)
+shape = SubResource("BoxShape3D_78p5x")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="finished" from="AudioDoor" to="." method="_on_audio_door_finished"]

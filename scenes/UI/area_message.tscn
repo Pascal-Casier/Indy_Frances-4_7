@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://crchr167cbc81"]
+
+[ext_resource type="Script" uid="uid://bi3t2prxyqo28" path="res://scripts/UI/area_message.gd" id="1_ls5ph"]
+[ext_resource type="Texture2D" uid="uid://ckanapmaql2b" path="res://assets/images/bgds/tresor.jpg" id="2_35crj"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="2_eskb3"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="4_sgvg6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8b6o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grnyj"]
+bg_color = Color(0.145098, 0.129412, 0.94902, 0.392157)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+expand_margin_left = 60.0
+expand_margin_right = 60.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[node name="AreaMessage" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_ls5ph")
+coins_nbr = 6
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502689, 0)
+shape = SubResource("BoxShape3D_k8b6o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(450, 350)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_35crj")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -62.0
+offset_right = 126.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0113729, 0.0160888, 0.111979, 1)
+theme_override_colors/font_shadow_color = Color(0.2386, 0.241016, 0.393229, 1)
+theme_override_fonts/font = ExtResource("2_eskb3")
+theme_override_font_sizes/font_size = 51
+theme_override_styles/normal = SubResource("StyleBoxFlat_grnyj")
+text = "Pour ouvrir la porte,
+paie 6 euros"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -204.0
+offset_right = 75.0
+offset_bottom = -164.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="Button1" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("4_sgvg6")
+text = "oui"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme = ExtResource("4_sgvg6")
+text = "non"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/HBoxContainer/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

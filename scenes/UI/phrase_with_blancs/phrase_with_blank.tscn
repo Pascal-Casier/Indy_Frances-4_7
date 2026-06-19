@@ -1,0 +1,129 @@
+[gd_scene load_steps=7 format=3 uid="uid://dum65s5orv1xs"]
+
+[ext_resource type="Script" uid="uid://c5wv7tqth3qj3" path="res://scripts/UI/phrase_conjugaison.gd" id="1_dntd5"]
+[ext_resource type="Texture2D" uid="uid://b8mnk15dbmrs7" path="res://assets/images/bgds/phrasemakerUIfull.jpg" id="2_qfm6b"]
+[ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="3_605qx"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="3_qfm6b"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="4_51jq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51jq1"]
+content_margin_left = 15.0
+content_margin_top = 44.0
+content_margin_right = 15.0
+
+[node name="phrase_conjugaison" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dntd5")
+title = "être"
+phrases = Array[String](["Je _____ un explorateur.", "Tu _____ un fouet.", "Nous _____ au temple.", "Ils  _____ au ciné"])
+verbes_corrects = Array[String](["suis", "as", "allons", "vont"])
+couleur_correct = Color(0.0353394, 0.0572424, 0.502604, 1)
+couleur_erreur = Color(0.528646, 0.0206502, 0.0206502, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qfm6b")
+expand_mode = 2
+
+[node name="ButtonExit" type="Button" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -149.0
+offset_top = -151.0
+offset_right = -117.0
+offset_bottom = -110.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_qfm6b")
+text = "X"
+
+[node name="TitleLabel" type="Label" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_top = 124.0
+offset_right = 48.5
+offset_bottom = 171.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.221354, 0.211555, 0.211555, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_605qx")
+theme_override_font_sizes/font_size = 46
+text = "être"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -384.5
+offset_top = -210.0
+offset_right = 384.5
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.111979, 0.103522, 0.103522, 0.882353)
+theme_override_fonts/font = ExtResource("3_605qx")
+theme_override_font_sizes/font_size = 46
+text = "Je _____ un explorateur."
+horizontal_alignment = 1
+
+[node name="LabelFeedback" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/caret_color = Color(0.132813, 0.126933, 0.126933, 1)
+theme_override_colors/font_color = Color(0.101563, 0.0965373, 0.0965373, 1)
+theme_override_constants/caret_width = 2
+theme_override_fonts/font = ExtResource("3_605qx")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_51jq1")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_51jq1")
+alignment = 1
+caret_blink = true
+
+[node name="ButtonValider" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_51jq1")
+text = "Valider"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="pressed" from="TextureRect/ButtonExit" to="." method="_on_button_exit_pressed"]

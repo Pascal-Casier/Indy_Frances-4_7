@@ -1,0 +1,258 @@
+[gd_scene load_steps=9 format=3 uid="uid://b7hwi28cniakm"]
+
+[ext_resource type="Texture2D" uid="uid://b8mnk15dbmrs7" path="res://assets/images/bgds/phrasemakerUIfull.jpg" id="1_2hrfb"]
+[ext_resource type="Script" uid="uid://baeq4giag23d2" path="res://scripts/UI/number_test.gd" id="1_td62q"]
+[ext_resource type="AudioStream" uid="uid://cl3b5gqcq58pr" path="res://assets/sounds/dico_sounds/aliments/fromage.mp3" id="2_c6ia7"]
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="2_ch60n"]
+[ext_resource type="AudioStream" uid="uid://onskmflge4h4" path="res://assets/sounds/dico_sounds/aliments/jus.mp3" id="3_o7swf"]
+[ext_resource type="FontFile" uid="uid://ci73qne8lnql0" path="res://assets/fonts/RoadRage-Regular.ttf" id="6_c6ia7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_td62q"]
+bg_color = Color(0.0807292, 0.0754734, 0.0754734, 0.32549)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.492188, 0.200852, 0.0140991, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 8
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6ia7"]
+content_margin_left = 15.0
+content_margin_right = 8.0
+bg_color = Color(0.591146, 0.284388, 0.0877482, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.955729, 0.695214, 0.450487, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="NumberTest" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_td62q")
+sound_list = Array[AudioStream]([ExtResource("2_c6ia7"), ExtResource("3_o7swf")])
+answers = Array[String](["25", "325"])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2hrfb")
+expand_mode = 2
+
+[node name="Panel" type="Panel" parent="TextureRect"]
+custom_minimum_size = Vector2(680, 360)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_td62q")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(630, 380)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Button0" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "7"
+
+[node name="Button1" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "8"
+
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "9"
+
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "4"
+
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "5"
+
+[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "6"
+
+[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "1"
+
+[node name="Button7" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "2"
+
+[node name="Button8" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "3"
+
+[node name="Button9" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_ch60n")
+text = "0"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ch60n")
+text = "jouer"
+
+[node name="InputLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.371752, 0.48758, 0.497396, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("6_c6ia7")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_c6ia7")
+text = "input"
+horizontal_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ch60n")
+text = "effacer"
+
+[node name="ValidateButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ch60n")
+text = "Valider"
+
+[node name="FeedbackLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.371752, 0.48758, 0.497396, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("6_c6ia7")
+theme_override_font_sizes/font_size = 35
+text = "feedback"
+
+[node name="EndingContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="replayBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/EndingContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ch60n")
+text = "rejouer"
+
+[node name="ExitBtn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2/EndingContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_ch60n")
+text = "sortir"
+
+[node name="AudioStreamPlayerFX" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dihkpuah4y0jy"]
+
+[ext_resource type="Texture2D" uid="uid://dwihdgyv2gh17" path="res://assets/images/textures/Wood_13-128x128.png" id="1_thie5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ilfu"]
+albedo_texture = ExtResource("1_thie5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gva0e"]
+material = SubResource("StandardMaterial3D_6ilfu")
+size = Vector3(2.3, 0.5, 0.05)
+
+[node name="planches_pieces" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999024, 0.0441599, 0, -0.0441599, 0.999024, 0, 0, 0, 1, 0, 0.515189, 0)
+mesh = SubResource("BoxMesh_gva0e")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997799, -0.0663087, 0, 0.0663087, 0.997799, 0, 0, 0, 1, 0, 1.24752, 0)
+mesh = SubResource("BoxMesh_gva0e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.998597, 0.052946, 0, -0.052946, 0.998597, 0, 0, 0, 1, 0, 1.97737, 0)
+mesh = SubResource("BoxMesh_gva0e")

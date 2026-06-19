@@ -1,0 +1,159 @@
+[gd_scene load_steps=12 format=3 uid="uid://dewgnqfq3hx5y"]
+
+[ext_resource type="Texture2D" uid="uid://j1k38bgfsinu" path="res://assets/images/parcheminblank.png" id="1_0q0r2"]
+[ext_resource type="Script" uid="uid://c32fw1rtqfww4" path="res://scripts/UI/Intro1.gd" id="1_ndurk"]
+[ext_resource type="Texture2D" uid="uid://0lic21s2i2wh" path="res://assets/images/ui/background1.png" id="2_xsr42"]
+
+[sub_resource type="SystemFont" id="SystemFont_74ojm"]
+font_names = PackedStringArray("French Script MT")
+
+[sub_resource type="SystemFont" id="SystemFont_68gtg"]
+font_names = PackedStringArray("Californian FB")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8bl4c"]
+texture = ExtResource("2_xsr42")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_baxnr"]
+texture = ExtResource("2_xsr42")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+modulate_color = Color(0.866667, 0.921569, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l0eo6"]
+texture = ExtResource("2_xsr42")
+texture_margin_left = 28.0
+texture_margin_top = 8.0
+texture_margin_right = 28.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqhjc"]
+texture = ExtResource("2_xsr42")
+texture_margin_left = 30.0
+texture_margin_top = 10.0
+texture_margin_right = 30.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Animation" id="Animation_ip05w"]
+resource_name = "fadeout"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73ldk"]
+_data = {
+&"fadeout": SubResource("Animation_ip05w")
+}
+
+[node name="Intro01" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ndurk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0q0r2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 110
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 60
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0.0980392, 0.505882, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = SubResource("SystemFont_74ojm")
+theme_override_font_sizes/normal_font_size = 61
+bbcode_enabled = true
+text = "[center]Vous êtes Pierre, un jeune garçon qui décide aujourd'hui de rendre visite à son grand-père qui vit dans une maison isolée au fond de la forêt.
+
+[color=e63946]Você é Pierre, um jovem rapaz que decide hoje visitar o seu avõ que mora em uma casa isolada no fundo da foresta.[/color][/center]"
+fit_content = true
+
+[node name="ButtonCommencer" type="Button" parent="CanvasLayer/TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -105.0
+offset_right = -20.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_68gtg")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxTexture_8bl4c")
+theme_override_styles/hover = SubResource("StyleBoxTexture_baxnr")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_l0eo6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rqhjc")
+text = "Commencer..."
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_73ldk")
+}
+
+[connection signal="pressed" from="CanvasLayer/TextureRect/ButtonCommencer" to="." method="_on_button_commencer_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

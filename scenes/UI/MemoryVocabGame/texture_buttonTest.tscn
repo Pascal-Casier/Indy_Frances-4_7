@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqo3yplugi2iy"]
+
+[ext_resource type="Texture2D" uid="uid://bt2nse68g0oup" path="res://assets/images/ui/btns/png/ui_concrete.png" id="1_1cl4l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_demg6"]
+atlas = ExtResource("1_1cl4l")
+region = Rect2(16, 16, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxyd6"]
+atlas = ExtResource("1_1cl4l")
+region = Rect2(16, 64, 127, 32)
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("AtlasTexture_demg6")
+texture_hover = SubResource("AtlasTexture_uxyd6")

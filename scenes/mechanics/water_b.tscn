@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsc3ux5wxl8wg"]
+
+[ext_resource type="Shader" uid="uid://1rosjcjits12" path="res://shaders/waterbis.gdshader" id="1_pum4j"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_yh5xi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46y5s"]
+render_priority = 0
+shader = ExtResource("1_pum4j")
+shader_parameter/albedo = Color(0.368627, 0.403922, 0.941176, 1)
+shader_parameter/albedo2 = Color(0.831373, 0.831373, 0.831373, 1)
+shader_parameter/metallic = 0.655
+shader_parameter/roughness = 0.02
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.025
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.15
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0.788235, 0.788235, 0.788235, 1)
+
+[node name="WaterB" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_yh5xi")
+surface_material_override/0 = SubResource("ShaderMaterial_46y5s")

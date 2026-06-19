@@ -1,0 +1,337 @@
+[gd_scene load_steps=17 format=3 uid="uid://df6gjtuu0mgxo"]
+
+[ext_resource type="Script" uid="uid://c5wiy428cl3sj" path="res://scripts/UI/main_menu.gd" id="1_uha6w"]
+[ext_resource type="Texture2D" uid="uid://uipbnjo64f1v" path="res://assets/images/bgds/backgroundMenu4.jpg" id="2_d6l81"]
+[ext_resource type="PackedScene" uid="uid://c4pbg52jv6f70" path="res://scenes/UI/options_menu.tscn" id="3_3blon"]
+[ext_resource type="Script" uid="uid://vu07vpfwp6m" path="res://scripts/UI/button_zoom_effect.gd" id="4_bm8t2"]
+[ext_resource type="AudioStream" uid="uid://b8hni40k1wwsg" path="res://assets/sounds/musics/hero_music_menu.mp3" id="4_jpvyj"]
+[ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="5_5d4ag"]
+[ext_resource type="PackedScene" uid="uid://di58ndqvxgc7j" path="res://scenes/UI/loading_page.tscn" id="5_e2p27"]
+[ext_resource type="Texture2D" uid="uid://ukpdbwgmwtjv" path="res://assets/images/ui/backgroundFramed.jpg" id="9_a1wsg"]
+[ext_resource type="Theme" uid="uid://b11u7fpsxsopb" path="res://Themes/cast_game_theme.tres" id="10_i7p8e"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="11_sfthw"]
+[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="12_n3ahy"]
+
+[sub_resource type="SystemFont" id="SystemFont_nfy46"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_aej72"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="Animation" id="Animation_tfcbk"]
+resource_name = "fade_out"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2p27"]
+_data = {
+&"fade_out": SubResource("Animation_tfcbk")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_scr1a"]
+bg_color = Color(0.992188, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.861979, 0.721929, 0.0471395, 1)
+border_blend = true
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Main_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uha6w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d6l81")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 24
+theme_override_fonts/font = SubResource("SystemFont_nfy46")
+theme_override_font_sizes/font_size = 64
+text = "Aventures Magiques"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 7
+alignment = 1
+
+[node name="seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aej72")
+theme_override_font_sizes/font_size = 24
+text = "Play"
+script = ExtResource("4_bm8t2")
+hover_sound = ExtResource("5_5d4ag")
+click_sound = ExtResource("5_5d4ag")
+
+[node name="seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Options_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aej72")
+theme_override_font_sizes/font_size = 24
+text = "Options
+"
+script = ExtResource("4_bm8t2")
+hover_sound = ExtResource("5_5d4ag")
+click_sound = ExtResource("5_5d4ag")
+
+[node name="seperator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aej72")
+theme_override_font_sizes/font_size = 24
+text = "Save
+"
+script = ExtResource("4_bm8t2")
+hover_sound = ExtResource("5_5d4ag")
+click_sound = ExtResource("5_5d4ag")
+
+[node name="seperator5" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Load_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aej72")
+theme_override_font_sizes/font_size = 24
+text = "Load
+"
+script = ExtResource("4_bm8t2")
+hover_sound = ExtResource("5_5d4ag")
+click_sound = ExtResource("5_5d4ag")
+
+[node name="seperator6" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Exit_Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 32)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_aej72")
+theme_override_font_sizes/font_size = 24
+text = "Exit
+"
+script = ExtResource("4_bm8t2")
+hover_sound = ExtResource("5_5d4ag")
+click_sound = ExtResource("5_5d4ag")
+
+[node name="Options_Menu" parent="." instance=ExtResource("3_3blon")]
+visible = false
+layout_mode = 1
+
+[node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jpvyj")
+volume_db = -23.247
+autoplay = true
+max_polyphony = 3
+bus = &"Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_e2p27")
+}
+
+[node name="loadingPage" parent="." instance=ExtResource("5_e2p27")]
+visible = false
+layout_mode = 1
+
+[node name="SavingPage" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="SavingPage"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_a1wsg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SavingPage/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Save_on_Slot1" type="Button" parent="SavingPage/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("10_i7p8e")
+text = "SLOT 1"
+
+[node name="Save_on_Slot2" type="Button" parent="SavingPage/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("10_i7p8e")
+text = "SLOT 2"
+
+[node name="Save_on_Slot3" type="Button" parent="SavingPage/TextureRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme = ExtResource("10_i7p8e")
+text = "SLOT 3"
+
+[node name="ConfirmationDialog" type="Panel" parent="SavingPage"]
+visible = false
+custom_minimum_size = Vector2(450, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_scr1a")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SavingPage/ConfirmationDialog"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+
+[node name="Label" type="Label" parent="SavingPage/ConfirmationDialog/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.027771, 0.0667124, 0.304688, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("11_sfthw")
+theme_override_font_sizes/font_size = 37
+text = "Supprimer les données
+ existantes ?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SavingPage/ConfirmationDialog/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ButtonConfirmSave" type="Button" parent="SavingPage/ConfirmationDialog/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("12_n3ahy")
+text = "OK"
+
+[node name="ButtonCancelSave" type="Button" parent="SavingPage/ConfirmationDialog/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("12_n3ahy")
+text = "cancel"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Save_Button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Load_Button" to="." method="_on_load_button_pressed"]
+[connection signal="pressed" from="SavingPage/TextureRect/VBoxContainer/Save_on_Slot1" to="." method="_on_save_on_slot_1_pressed"]
+[connection signal="pressed" from="SavingPage/TextureRect/VBoxContainer/Save_on_Slot2" to="." method="_on_save_on_slot_2_pressed"]
+[connection signal="pressed" from="SavingPage/TextureRect/VBoxContainer/Save_on_Slot3" to="." method="_on_save_on_slot_3_pressed"]
+[connection signal="pressed" from="SavingPage/ConfirmationDialog/VBoxContainer/HBoxContainer/ButtonConfirmSave" to="." method="_on_button_confirm_save_pressed"]
+[connection signal="pressed" from="SavingPage/ConfirmationDialog/VBoxContainer/HBoxContainer/ButtonCancelSave" to="." method="_on_button_cancel_save_pressed"]

@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://bxwrpg2e2ubbt"]
+
+[ext_resource type="Shader" uid="uid://dncvq1ppoi0em" path="res://shaders/word_bulle_shader.gdshader" id="1_nklya"]
+[ext_resource type="Script" uid="uid://bmw24d505mo2a" path="res://scripts/UI/word_bulle.gd" id="2_3480f"]
+[ext_resource type="AudioStream" uid="uid://vprbmfqyif87" path="res://assets/images/ui/dico/fruits/pomme.mp3" id="3_js8vu"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_u8wnm"]
+[ext_resource type="Texture2D" uid="uid://blxp6j621i18p" path="res://assets/images/ui/paperUI/scrolls/wide.png" id="4_js8vu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1tu8"]
+render_priority = 0
+shader = ExtResource("1_nklya")
+shader_parameter/rim_color = Color(0.396342, 0.868114, 0.945313, 1)
+shader_parameter/rim_power = 2.0
+shader_parameter/alpha_strength = 0.2
+shader_parameter/pulse_speed = 3.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_3480f"]
+radius = 0.8
+radial_segments = 32
+rings = 16
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_js8vu"]
+size = Vector3(0.794189, 0.841553, 0.793945)
+
+[sub_resource type="Animation" id="Animation_u8wnm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3480f"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.166667, 1.43333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.4, 1.4, 1.4), Vector3(1, 1, 1), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u8wnm"]
+_data = {
+&"RESET": SubResource("Animation_u8wnm"),
+&"fade": SubResource("Animation_3480f")
+}
+
+[node name="WordBulle" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_e1tu8")
+mesh = SubResource("SphereMesh_3480f")
+script = ExtResource("2_3480f")
+mot = "pomme"
+palavra = "maça"
+categorie = "fruits"
+sound = ExtResource("3_js8vu")
+couleur = Color(0.559896, 0.0510322, 0.0510322, 1)
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00402832, 0, 0)
+shape = SubResource("BoxShape3D_js8vu")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0960076, 0, 0, 0, 0.0627756, 0, 0, 0, 0.0627756, 0, 0, -0.0160897)
+texture = ExtResource("4_js8vu")
+
+[node name="Label3D" type="Label3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00468165)
+modulate = Color(0.119174, 0.559896, 0.0277032, 1)
+outline_modulate = Color(0.0512692, 0.0334269, 0.414063, 1)
+text = "test"
+font = ExtResource("3_u8wnm")
+font_size = 55
+outline_size = 17
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_u8wnm")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b2n6ojbe548is"
+path="res://.godot/imported/slotmachine (mp3cut.net).mp3-d16fba11b1fe6d927d7992d8f56c7ff2.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/sfx/slotmachine (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/slotmachine (mp3cut.net).mp3-d16fba11b1fe6d927d7992d8f56c7ff2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

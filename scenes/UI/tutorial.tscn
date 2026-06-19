@@ -1,0 +1,243 @@
+[gd_scene load_steps=11 format=3 uid="uid://d204ywa0pgc2o"]
+
+[ext_resource type="Texture2D" uid="uid://beipfow6rxjsf" path="res://assets/images/icons/tab.png" id="1_c1gck"]
+[ext_resource type="Script" uid="uid://c2ybwxwktikm5" path="res://scripts/UI/tutorial.gd" id="1_jvrx0"]
+[ext_resource type="Texture2D" uid="uid://lt1gn2m6ce1a" path="res://assets/images/icons/left_mouse_button_dark.png" id="2_7h4a3"]
+[ext_resource type="Texture2D" uid="uid://ch0vj7lvhrts8" path="res://assets/images/icons/E_light.png" id="3_7h4a3"]
+[ext_resource type="Texture2D" uid="uid://ddatm2fisj2v4" path="res://assets/images/icons/right_mouse_button_dark.png" id="3_blqdf"]
+[ext_resource type="Texture2D" uid="uid://dy48wcenxk448" path="res://assets/images/icons/middle_mouse_button_dark.png" id="4_blqdf"]
+[ext_resource type="Texture2D" uid="uid://3ntgc4klicm2" path="res://assets/images/icons/alt.png" id="5_mteb2"]
+
+[sub_resource type="Animation" id="Animation_jvrx0"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1090, 125), Vector2(891, 125)]
+}
+
+[sub_resource type="Animation" id="Animation_vdm5y"]
+resource_name = "hide"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(891, 125), Vector2(1090, 125)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nba6y"]
+_data = {
+&"hide": SubResource("Animation_vdm5y"),
+&"show": SubResource("Animation_jvrx0")
+}
+
+[node name="Tutorial" type="CanvasLayer"]
+script = ExtResource("1_jvrx0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -199.0
+offset_right = 2.0
+offset_bottom = -158.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_c1gck")
+
+[node name="Control" type="Control" parent="TextureRect"]
+custom_minimum_size = Vector2(190, 160)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -19.5
+offset_right = 190.0
+offset_bottom = 140.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="PanelTirer" type="Panel" parent="TextureRect/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/Control/PanelTirer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7h4a3")
+
+[node name="LabelTitle2" type="Label" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "tirer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("3_blqdf")
+
+[node name="LabelTitle2" type="Label" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "viser"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("3_7h4a3")
+
+[node name="LabelTitle2" type="Label" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "prendre/
+lâcher"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("4_blqdf")
+
+[node name="LabelTitle2" type="Label" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "lancer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="icon" type="TextureRect" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("5_mteb2")
+
+[node name="LabelTitle2" type="Label" parent="TextureRect/Control/PanelTirer/MarginContainer/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "plane"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelPrendre" type="Panel" parent="TextureRect/Control"]
+visible = false
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 210.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/Control/PanelPrendre"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Control/PanelPrendre/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="PanelPrendre2" type="Panel" parent="TextureRect/Control"]
+visible = false
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 180.0
+offset_bottom = 130.0
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/Control/PanelPrendre2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/Control/PanelPrendre2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nba6y")
+}

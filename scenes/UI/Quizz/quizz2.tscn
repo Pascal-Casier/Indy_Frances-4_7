@@ -1,0 +1,298 @@
+[gd_scene load_steps=13 format=3 uid="uid://dhbqbqgtvpo7h"]
+
+[ext_resource type="Theme" uid="uid://ceqkilgsj4c24" path="res://scenes/UI/Quizz/quizz_theme.tres" id="1_25os6"]
+[ext_resource type="Texture2D" uid="uid://ca46kjrmym1tt" path="res://assets/images/ui/audioOn.png" id="2_84bvv"]
+[ext_resource type="Script" uid="uid://dr2ca056clka6" path="res://scenes/UI/Quizz/quizz.gd" id="2_724kl"]
+[ext_resource type="Resource" uid="uid://ce4b0rnft3jih" path="res://scenes/UI/Quizz/questions/question001.tres" id="3_uh0ak"]
+[ext_resource type="Resource" uid="uid://b44duk4wfr4qs" path="res://scenes/UI/Quizz/questions/question002.tres" id="4_hp013"]
+[ext_resource type="AudioStream" uid="uid://bjrscon32jp3q" path="res://assets/sounds/sfx/correct2.ogg" id="5_8n1bn"]
+[ext_resource type="AudioStream" uid="uid://c5k6jemod63hg" path="res://assets/sounds/sfx/incorrect2.ogg" id="6_0qhix"]
+[ext_resource type="Texture2D" uid="uid://dag05fuqtm0l2" path="res://assets/images/ui/sheet-paper.jpeg" id="6_07ykm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcua1"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eejqm"]
+bg_color = Color(0.8, 0.117647, 0.121569, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j810w"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhq1k"]
+bg_color = Color(0.87451, 0.141176, 0.141176, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 1.0
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[node name="Quizz" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_25os6")
+script = ExtResource("2_724kl")
+quizz = Array[Resource]([ExtResource("3_uh0ak"), ExtResource("4_hp013"), ExtResource("4_hp013")])
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 110
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 115
+alignment = 1
+
+[node name="LblQuestion" type="Label" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 41
+text = "question"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="btnAudio" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+icon = ExtResource("2_84bvv")
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 75
+theme_override_constants/v_separation = 40
+columns = 2
+
+[node name="Button1" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Button2" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Button3" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="Button4" type="Button" parent="MarginContainer/Panel/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 31
+text = "ANSWER"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="btnExit" type="Button" parent="MarginContainer/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcua1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eejqm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j810w")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dhq1k")
+text = "exit"
+
+[node name="ColorRect" type="TextureRect" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(350, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_07ykm")
+
+[node name="Explications" type="Label" parent="MarginContainer/Panel/ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -10.5
+offset_right = 41.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "explications"
+
+[node name="btnOK" type="Button" parent="MarginContainer/Panel/ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -4.0
+offset_right = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "ok"
+
+[node name="ScorePanel" type="Panel" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScorePanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 45
+
+[node name="lblScore" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Résultat"
+horizontal_alignment = 1
+
+[node name="lblScore2" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "00/00"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/ScorePanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="lblBravo" type="Label" parent="MarginContainer/ScorePanel/VBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.807843, 0.156863, 0.113725, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 66
+text = "Bravo"
+horizontal_alignment = 1
+
+[node name="btnRecommencer" type="Button" parent="MarginContainer/ScorePanel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 46
+text = "Recommencer"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="CorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8n1bn")
+
+[node name="IncorrectSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0qhix")
+
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/HBoxContainer/btnAudio" to="." method="_on_btn_audio_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button3" to="." method="_on_Button3_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/GridContainer/Button4" to="." method="_on_Button4_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/VBoxContainer/HBoxContainer2/btnExit" to="." method="_on_btn_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/Panel/ColorRect/btnOK" to="." method="_on_btn_ok_pressed"]
+[connection signal="pressed" from="MarginContainer/ScorePanel/VBoxContainer/btnRecommencer" to="." method="_on_btn_recommencer_pressed"]

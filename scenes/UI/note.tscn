@@ -1,0 +1,117 @@
+[gd_scene load_steps=9 format=3 uid="uid://yiwfhq7jo1ex"]
+
+[ext_resource type="Script" uid="uid://c3jehlucpdoit" path="res://scripts/UI/note.gd" id="1_f4ew2"]
+[ext_resource type="AudioStream" uid="uid://ctcrto5iq1cjl" path="res://assets/sounds/sfx/confirm.ogg" id="2_gb5nt"]
+[ext_resource type="Texture2D" uid="uid://dsm1c6pnc0j52" path="res://assets/images/parcheminblank - Copie.png" id="2_jfggq"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="4_lmr3c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qasof"]
+size = Vector3(1, 1, 2)
+
+[sub_resource type="Animation" id="Animation_a0fo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.06, 0.06, 0.06)]
+}
+
+[sub_resource type="Animation" id="Animation_q603b"]
+resource_name = "glow"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.048, 0.048, 0.048), Vector3(0.055, 0.055, 0.055)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_58wlp"]
+_data = {
+&"RESET": SubResource("Animation_a0fo3"),
+&"glow": SubResource("Animation_q603b")
+}
+
+[node name="Note" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_f4ew2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0609)
+shape = SubResource("BoxShape3D_qasof")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-2.62268e-09, -0.06, 0, 0.06, -2.62268e-09, 0, 0, 0, 0.06, 0, 0, 0)
+texture = ExtResource("2_jfggq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_gb5nt")
+pitch_scale = 1.44
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_58wlp")
+}
+autoplay = "glow"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -91.0
+offset_right = 50.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.5
+offset_top = -11.5
+offset_right = 45.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_lmr3c")
+text = "[i] -> [notes]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

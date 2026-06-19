@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdh4n3w6khtik"]
+
+[ext_resource type="Script" uid="uid://dqulsm555e7uk" path="res://scripts/mechanics/checkpoint.gd" id="1_c78f0"]
+[ext_resource type="AudioStream" uid="uid://ocv8k1qhed1a" path="res://assets/sounds/sfx/checkpoint_robot (mp3cut.net).mp3" id="2_1pvwe"]
+[ext_resource type="PackedScene" uid="uid://dl7sjchrv0dp8" path="res://scenes/Fx/aura_glow_effect.tscn" id="2_hrkm5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1pvwe"]
+
+[sub_resource type="Animation" id="Animation_1pvwe"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(2, 2, 2), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a27pg"]
+_data = {
+&"show": SubResource("Animation_1pvwe")
+}
+
+[node name="Checkpoint" type="Area3D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c78f0")
+activation_sound = ExtResource("2_1pvwe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_1pvwe")
+
+[node name="AuraGlowEffect" parent="." instance=ExtResource("2_hrkm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874286, 0)
+
+[node name="sword_common_gltf" parent="AuraGlowEffect" index="0"]
+visible = false
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.22805, 0)
+billboard = 2
+double_sided = false
+modulate = Color(0.291972, 0.652015, 0.882813, 1)
+text = "Checkpoint"
+font_size = 77
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_a27pg")
+}
+
+[editable path="AuraGlowEffect"]

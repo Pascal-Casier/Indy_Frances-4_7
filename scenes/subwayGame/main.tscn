@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://bc2cmwx7rpg43"]
+
+[ext_resource type="Script" uid="uid://bf1bw4clrkyxn" path="res://scenes/subwayGame/main.gd" id="1_88dge"]
+[ext_resource type="PackedScene" uid="uid://cjjlpuvxiomdy" path="res://scenes/subwayGame/player.tscn" id="1_w8sfv"]
+[ext_resource type="PackedScene" uid="uid://d0b5oh8jbxjdt" path="res://scenes/subwayGame/GameUI.tscn" id="3_7axo4"]
+[ext_resource type="Script" uid="uid://bfdbe76g1erft" path="res://scenes/subwayGame/TileSpawner.gd" id="4_coa4n"]
+[ext_resource type="PackedScene" uid="uid://sy5435ylndv6" path="res://scenes/subwayGame/tile.tscn" id="5_coa4n"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_88dge"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_b5guk"]
+sky_material = SubResource("ProceduralSkyMaterial_88dge")
+
+[sub_resource type="Environment" id="Environment_7axo4"]
+background_mode = 2
+sky = SubResource("Sky_b5guk")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_coa4n"]
+size = Vector3(4, 0.2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6kyj"]
+size = Vector3(4, 0.2, 2)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_88dge")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7axo4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("1_w8sfv")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="GameUi" parent="." instance=ExtResource("3_7axo4")]
+
+[node name="TileSpawner" type="Node3D" parent="."]
+script = ExtResource("4_coa4n")
+tile_scene = ExtResource("5_coa4n")
+speed = 5.0
+avoir_ratio = 0.5
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.104277, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_coa4n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_f6kyj")

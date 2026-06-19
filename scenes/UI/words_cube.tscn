@@ -1,0 +1,206 @@
+[gd_scene load_steps=21 format=4 uid="uid://livnl7luxtuj"]
+
+[ext_resource type="Script" uid="uid://bqxv45dui22n7" path="res://scripts/UI/words_cube.gd" id="1_lwxsx"]
+[ext_resource type="Texture2D" uid="uid://d4dlbqlkql53r" path="res://assets/images/textures/Rocks007_1K_Color.jpg" id="2_0uy0q"]
+[ext_resource type="AudioStream" uid="uid://cim0o3deknrdc" path="res://assets/sounds/dico_sounds/fruits/fraise.mp3" id="2_p5575"]
+[ext_resource type="Texture2D" uid="uid://vjxu7fsyxe1d" path="res://assets/images/textures/Rocks007_1K_NormalGL.jpg" id="3_drrx3"]
+[ext_resource type="Texture2D" uid="uid://csmuvpvjrv5m" path="res://assets/images/textures/Rock022_1K_Color.jpg" id="4_drrx3"]
+[ext_resource type="Texture2D" uid="uid://dpdi1sps7xnai" path="res://assets/images/icons/arrow_left_light.png" id="5_0uy0q"]
+[ext_resource type="Texture2D" uid="uid://cjo2v8q6fjbx1" path="res://assets/images/textures/Rock022_1K_Normal.jpg" id="5_p5575"]
+[ext_resource type="Texture2D" uid="uid://b8q5cac0m6cmx" path="res://assets/images/icons/arrow_up_light.png" id="6_drrx3"]
+[ext_resource type="Texture2D" uid="uid://w3enwd1oki0m" path="res://assets/images/icons/arrow_right_light.png" id="7_p5575"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lj8x"]
+albedo_texture = ExtResource("2_0uy0q")
+normal_enabled = true
+normal_texture = ExtResource("3_drrx3")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4baww"]
+size = Vector3(1, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5575"]
+albedo_texture = ExtResource("4_drrx3")
+normal_enabled = true
+normal_texture = ExtResource("5_p5575")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_0uy0q"]
+material = SubResource("StandardMaterial3D_p5575")
+size = Vector3(4, 0.5, 0.7)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uy0q"]
+albedo_color = Color(0.0654907, 0.867188, 0.203282, 1)
+emission_enabled = true
+emission = Color(0.220791, 0.825521, 0.0666436, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_drrx3"]
+_surfaces = [{
+"aabb": AABB(-2.02887, -0.278868, -0.378868, 4.05773, 0.557735, 0.757735),
+"attribute_data": PackedByteArray("AAAAAAAAAACrqio/AAAAAKuqqj4AAAAAAACAPwAAAAAAAAAAAAAAP6uqKj8AAAA/q6qqPgAAAD8AAIA/AAAAP6uqqj4AAAAAAAAAAAAAAD+rqio/AAAAAKuqqj4AAAA/q6qqPgAAAD8AAAAAAACAP6uqKj8AAAA/q6qqPgAAgD+rqqo+AAAAP6uqKj8AAAA/q6oqPwAAAD8AAIA/AAAAP6uqqj4AAIA/q6oqPwAAgD+rqio/AACAPwAAgD8AAIA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAAEAAIAAgAEAAYAAQAFAAMAAwAFAAcACAAMAAoACgAMAA4ACQANAAsACwANAA8AEAAUABIAEgAUABYAEQAVABMAEwAVABcA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("99gBwLnHjj7s+sE+99gBQLnHjj7s+sG+99gBQLnHjj7s+sE+99gBwLnHjj7s+sG+99gBwLnHjr7s+sE+99gBQLnHjr7s+sG+99gBQLnHjr7s+sE+99gBwLnHjr7s+sG+99gBQLnHjj7s+sE+99gBwLnHjj7s+sG+99gBQLnHjj7s+sG+99gBwLnHjj7s+sE+99gBQLnHjr7s+sE+99gBwLnHjr7s+sG+99gBQLnHjr7s+sG+99gBwLnHjr7s+sE+99gBQLnHjj7s+sE+99gBwLnHjr7s+sE+99gBwLnHjj7s+sE+99gBQLnHjr7s+sE+99gBQLnHjj7s+sG+99gBwLnHjr7s+sG+99gBwLnHjj7s+sG+99gBQLnHjr7s+sG+/3//f////7//////AAD/v/9//3////+//////wAA/7//f/9/////v/////8AAP+//3//f////7//////AAD/v///AID/////AAAAgP9//7///wCA/////wAAAID/f/+///8AgP////8AAACA/3//v///AID/////AAAAgP9//78AgP//AAD/vwCAAAD///+/AID//wAA/78AgAAA////vwCA//8AAP+/AIAAAP///78AgP//AAD/vwCAAAD///+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0uy0q"]
+points = PackedVector3Array(2.03175, 0.289627, 0.380084, -2.03175, -0.28169, -0.381671, -2.03175, 0.289627, -0.381671, 2.03175, -0.28169, -0.381671, -2.03175, -0.28169, 0.380084, -2.03175, 0.289627, 0.380084, 2.03175, 0.289627, -0.381671, 2.03175, -0.28169, 0.380084)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbmgi"]
+albedo_texture = ExtResource("4_drrx3")
+normal_enabled = true
+normal_texture = ExtResource("5_p5575")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_drrx3"]
+material = SubResource("StandardMaterial3D_bbmgi")
+size = Vector3(0.2, 0.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_drrx3"]
+size = Vector3(3.55029, 0.646729, 0.567871)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0uy0q"]
+size = Vector3(3.92285, 1, 1)
+
+[node name="words_cube" type="Node3D"]
+script = ExtResource("1_lwxsx")
+son = ExtResource("2_p5575")
+
+[node name="cube1" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07611, 0.867172, 0)
+material_override = SubResource("StandardMaterial3D_1lj8x")
+mesh = SubResource("BoxMesh_4baww")
+
+[node name="w1" type="Label3D" parent="cube1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.250493)
+text = "je suis"
+
+[node name="w2" type="Label3D" parent="cube1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.253519, -0.010683)
+text = "je suis"
+
+[node name="w3" type="Label3D" parent="cube1"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -0.0330168, -0.254589)
+text = "je suis"
+
+[node name="w4" type="Label3D" parent="cube1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.25236, -0.010683)
+text = "je suis"
+
+[node name="cube2" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0336685, 0.867172, 0)
+material_override = SubResource("StandardMaterial3D_1lj8x")
+mesh = SubResource("BoxMesh_4baww")
+
+[node name="w1" type="Label3D" parent="cube2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.250493)
+text = "je suis"
+
+[node name="w2" type="Label3D" parent="cube2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.253519, -0.010683)
+text = "je suis"
+
+[node name="w3" type="Label3D" parent="cube2"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -0.0330168, -0.254589)
+text = "je suis"
+
+[node name="w4" type="Label3D" parent="cube2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.25236, -0.010683)
+text = "je suis"
+
+[node name="cube3" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02263, 0.867172, 0)
+material_override = SubResource("StandardMaterial3D_1lj8x")
+mesh = SubResource("BoxMesh_4baww")
+
+[node name="w1" type="Label3D" parent="cube3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.250493)
+text = "je suis"
+
+[node name="w2" type="Label3D" parent="cube3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.253519, -0.010683)
+text = "je suis"
+
+[node name="w3" type="Label3D" parent="cube3"]
+transform = Transform3D(1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, -0.0330168, -0.254589)
+text = "je suis"
+
+[node name="w4" type="Label3D" parent="cube3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.25236, -0.010683)
+text = "je suis"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.825183, 0.564866, 0, -0.564866, 0.825183, 0.0899419, 2.19865, 1.90227)
+
+[node name="support" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0336685, 0.248101, -0.116612)
+mesh = SubResource("BoxMesh_0uy0q")
+
+[node name="contour" type="MeshInstance3D" parent="support"]
+unique_name_in_owner = true
+material_override = SubResource("StandardMaterial3D_0uy0q")
+mesh = SubResource("ArrayMesh_drrx3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="support"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="support/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_0uy0q")
+
+[node name="supportL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.69361, 0.819143, 0.000888884)
+mesh = SubResource("BoxMesh_drrx3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="supportL"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="supportL/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6745, 0.0673531, -0.0267255)
+shape = SubResource("BoxShape3D_drrx3")
+
+[node name="supportR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66111, 0.819143, 0.000888884)
+mesh = SubResource("BoxMesh_drrx3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.08127, 0.277549, 0.238824)
+transparent = false
+double_sided = false
+texture_filter = 0
+texture = ExtResource("5_0uy0q")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013688, 0.277549, 0.238824)
+transparent = false
+double_sided = false
+texture_filter = 0
+texture = ExtResource("6_drrx3")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03119, 0.277549, 0.238824)
+transparent = false
+double_sided = false
+texture_filter = 0
+texture = ExtResource("7_p5575")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.485073, 0.733673)
+shape = SubResource("BoxShape3D_0uy0q")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

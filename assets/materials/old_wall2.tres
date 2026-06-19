@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hmchfpp5v30p"]
+
+[ext_resource type="Texture2D" uid="uid://i4tmgle8ef5i" path="res://assets/images/textures/KennysTextures/wall_timber_structure_diagonal.png" id="1_d5esu"]
+
+[resource]
+albedo_texture = ExtResource("1_d5esu")
+uv1_scale = Vector3(1, 0.5, 1)

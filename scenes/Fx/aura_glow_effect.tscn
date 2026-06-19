@@ -1,0 +1,146 @@
+[gd_scene load_steps=21 format=3 uid="uid://dl7sjchrv0dp8"]
+
+[ext_resource type="Shader" uid="uid://sogqyemi7xap" path="res://shaders/s_blinking_aura.tres" id="1_wcuvl"]
+[ext_resource type="Texture2D" uid="uid://ikcw6ri6dhe" path="res://assets/FX/T_Aura7.png" id="2_oomxx"]
+[ext_resource type="PackedScene" uid="uid://m8h3rkin60p5" path="res://assets/dungeonKaykit/sword_common.gltf.glb" id="3_ncmwi"]
+[ext_resource type="Texture2D" uid="uid://bhkfs8iu8n2q" path="res://assets/FX/T_VFX_Flare_251.jpg" id="4_mkd4n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3xe"]
+render_priority = 0
+shader = ExtResource("1_wcuvl")
+shader_parameter/Main_color = Color(0.302, 1, 3, 1)
+shader_parameter/Transparancy_texture = ExtResource("2_oomxx")
+shader_parameter/blinking_speed = 7.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ej0ef"]
+size = Vector2(3, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h47bh"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("4_mkd4n")
+albedo_texture_msdf = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_l7ewf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.23782, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_641g1"]
+curve = SubResource("Curve_l7ewf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tvjqt"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.6
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 90.0
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 0.4
+initial_velocity_max = 0.8
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_641g1")
+color = Color(0.4, 0.8, 2, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_f5sud"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3un1f"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("4_mkd4n")
+albedo_texture_msdf = true
+use_particle_trails = true
+
+[sub_resource type="Curve" id="Curve_o7kpc"]
+_data = [Vector2(0.00248756, 0.0490565), 0.0, 0.0, 0, 0, Vector2(0.31592, 1), -3.32291, -3.32291, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_o58re"]
+curve = SubResource("Curve_o7kpc")
+
+[sub_resource type="Curve" id="Curve_7ykde"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_b5hai"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2tjlu"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_d7msc"]
+curve_x = SubResource("Curve_7ykde")
+curve_y = SubResource("Curve_b5hai")
+curve_z = SubResource("Curve_2tjlu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sjcgc"]
+particle_flag_align_y = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.5
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.8
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.8
+orbit_velocity_min = 0.6
+orbit_velocity_max = 1.3
+orbit_velocity_curve = SubResource("CurveXYZTexture_d7msc")
+gravity = Vector3(0, 0, 0)
+color = Color(0.6, 0.8, 1.5, 1)
+alpha_curve = SubResource("CurveTexture_o58re")
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_20ao1"]
+shape = 0
+size = 0.2
+section_segments = 4
+
+[node name="AuraGlowEffect" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("ShaderMaterial_tf3xe")
+mesh = SubResource("QuadMesh_ej0ef")
+
+[node name="sword_common_gltf" parent="." instance=ExtResource("3_ncmwi")]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, -1.21686, 0)
+
+[node name="small_particules" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+material_override = SubResource("StandardMaterial3D_h47bh")
+amount = 10
+lifetime = 3.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_tvjqt")
+draw_pass_1 = SubResource("QuadMesh_f5sud")
+
+[node name="trails" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45424, 0)
+material_override = SubResource("StandardMaterial3D_3un1f")
+amount = 4
+lifetime = 3.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.7
+process_material = SubResource("ParticleProcessMaterial_sjcgc")
+draw_pass_1 = SubResource("RibbonTrailMesh_20ao1")

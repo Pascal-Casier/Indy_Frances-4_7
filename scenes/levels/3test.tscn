@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3gsbhwxb47af"]
+
+[ext_resource type="Texture2D" uid="uid://dyp6e35vsqwqt" path="res://assets/images/bgds/skygen-plaine2.png" id="1_uiw71"]
+[ext_resource type="MeshLibrary" uid="uid://caepweg5a6su5" path="res://meshlibs/dalle2Meshlib.tres" id="2_t3mkv"]
+[ext_resource type="MeshLibrary" uid="uid://bxoa8vowqc8d3" path="res://meshlibs/StonesWallsMeshlib3.tres" id="3_cddsv"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="4_4ptlp"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
+panorama = ExtResource("1_uiw71")
+
+[sub_resource type="Sky" id="Sky_cddsv"]
+sky_material = SubResource("PanoramaSkyMaterial_t3mkv")
+
+[sub_resource type="Environment" id="Environment_sc0rx"]
+background_mode = 1
+background_color = Color(0.270827, 0.36926, 0.424479, 1)
+sky = SubResource("Sky_cddsv")
+
+[node name="3test" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sc0rx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Gridmaps" type="Node3D" parent="."]
+
+[node name="GridMap" type="GridMap" parent="Gridmaps"]
+mesh_library = ExtResource("2_t3mkv")
+cell_size = Vector3(2, 1, 2)
+cell_center_x = false
+cell_center_z = false
+cell_scale = 2.0
+data = {
+"cells": PackedInt32Array(-1, 0, 0, -65536, 0, 0, -65536, 65535, 0, -65536, 65534, 0, -1, 65535, 0, -1, 65534, 0, -65536, 1, 0, -1, 1, 0, -65535, 1, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -1, 2, 0, -65535, 2, 0, -65536, 2, 0, -65534, 2, 0, -65534, 65535, 0, -65534, 65534, 0, -65534, 0, 0, -65534, 1, 0, -2, 2, 0, -2, 1, 0, -2, 0, 0, -2, 65535, 0, -2, 65534, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65536, 65533, 0, -65536, 65532, 0, -65536, 65531, 0, -3, 0, 0, -4, 0, 0, -5, 0, 0, -6, 0, 0, -7, 0, 0, -65536, 3, 0, -65536, 4, 0, -65536, 5, 0, -65536, 6, 0, -65536, 7, 0, -65536, 65530, 0, -65536, 65529, 0, -8, 0, 0, -65536, 65528, 0, -65536, 8, 0, -65528, 65535, 0, -65528, 1, 0, -65527, 1, 0, -65527, 0, 0, -65527, 65535, 0, -65526, 65535, 0, -65526, 0, 0, -65526, 1, 0, -9, 65535, 0, -9, 0, 0, -9, 1, 0, -10, 1, 0, -10, 0, 0, -10, 65535, 0, -11, 65535, 0, -11, 0, 0, -11, 1, 0, -1, 9, 0, -65536, 9, 0, -65535, 9, 0, -65535, 10, 0, -65536, 10, 0, -1, 10, 0, -1, 11, 0, -65536, 11, 0, -65535, 11, 0, -1, 65527, 0, -65536, 65527, 0, -65535, 65527, 0, -1, 65526, 0, -65536, 65526, 0, -65535, 65526, 0, -1, 65525, 0, -65536, 65525, 0, -65535, 65525, 0)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="GridMap2" type="GridMap" parent="Gridmaps"]
+mesh_library = ExtResource("3_cddsv")
+cell_size = Vector3(2, 1, 2)
+cell_center_x = false
+cell_center_z = false
+data = {
+"cells": PackedInt32Array(-65536, 9, 655362, -65528, 0, 1048578, -9, 0, 1048578, -65536, 65527, 2)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="IndianaPlayer4_2" parent="." instance=ExtResource("4_4ptlp")]

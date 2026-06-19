@@ -1,0 +1,120 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx3wnsd2r62cu"]
+
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="1_db07n"]
+[ext_resource type="Script" uid="uid://b78dt8wugqba6" path="res://scenes/UI/pendu/pendu_main.gd" id="1_kiiv7"]
+[ext_resource type="Texture2D" uid="uid://b8mnk15dbmrs7" path="res://assets/images/bgds/phrasemakerUIfull.jpg" id="2_hb4bl"]
+[ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="4_elb1n"]
+
+[node name="PenduMain" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_db07n")
+script = ExtResource("1_kiiv7")
+mots = Array[String](["GODOT", "PROGRAMMATION", "TABLE"])
+indices = Array[String](["Moteur de jeu open-source", "Action d'écrire du code", "meuble de cuisine"])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hb4bl")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 110
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="StatusLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.210938, 0.207633, 0.204895, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_elb1n")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="MotLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.210938, 0.207633, 0.204895, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_elb1n")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="ErreursLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.210938, 0.207633, 0.204895, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_elb1n")
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="LettresContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+alignment = 1
+
+[node name="IndiceButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/LettresContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "indice"
+
+[node name="IndiceLabel" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/LettresContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="NouvellePartieButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/LettresContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "nouvelle partie"
+
+[node name="ButtonExit" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+text = "sortie"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+volume_db = -7.924
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/LettresContainer/NouvellePartieButton" to="." method="_on_nouvelle_partie_button_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,0 +1,3532 @@
+[gd_scene load_steps=43 format=3 uid="uid://cg6tcasj5umbn"]
+
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="1_aemn0"]
+[ext_resource type="Script" uid="uid://by77imnaky7gc" path="res://scripts/UI/inventaire.gd" id="2_e3twh"]
+[ext_resource type="Script" uid="uid://dxfivjsj2bfcf" path="res://scripts/UI/Dico5.gd" id="2_o2fl0"]
+[ext_resource type="Texture2D" uid="uid://ccrhem04or2ok" path="res://assets/images/france.png" id="3_bi2qi"]
+[ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="3_kqb37"]
+[ext_resource type="Script" uid="uid://b7vgidiielq14" path="res://scripts/UI/notebook.gd" id="3_pnpvy"]
+[ext_resource type="Texture2D" uid="uid://coh6jepy564yg" path="res://assets/images/bresil.png" id="4_m8h1y"]
+[ext_resource type="Texture2D" uid="uid://blxp6j621i18p" path="res://assets/images/ui/paperUI/scrolls/wide.png" id="4_tlufp"]
+[ext_resource type="Script" uid="uid://dfll1xqk7rheb" path="res://scenes/UI/Inventory/inventory.gd" id="5_05ion"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="5_foi5n"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="6_jcspv"]
+[ext_resource type="Texture2D" uid="uid://ukpdbwgmwtjv" path="res://assets/images/ui/backgroundFramed.jpg" id="6_teln6"]
+[ext_resource type="Texture2D" uid="uid://bsnuf0nb2ly8c" path="res://assets/images/ui/inventaire/Blackboard.jpg" id="7_d3o5y"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="7_et46e"]
+[ext_resource type="Texture2D" uid="uid://dwuvobr4bhbib" path="res://assets/images/ui/paperUI/scrolls/paper.png" id="8_ck1nq"]
+[ext_resource type="Texture2D" uid="uid://ndxr1vhwwqh4" path="res://assets/images/ui/quit.png" id="9_cywvv"]
+[ext_resource type="Script" uid="uid://ctpyfwfnpbtkn" path="res://QuestSystem/quêtes_ui_tab.gd" id="11_w4ac6"]
+[ext_resource type="Theme" uid="uid://b2qf352es2gjg" path="res://Themes/btnsQuete_theme.tres" id="11_xsot7"]
+[ext_resource type="PackedScene" uid="uid://d0n6mhxsrkag2" path="res://QuestSystem/button_quest.tscn" id="12_xsot7"]
+
+[sub_resource type="SystemFont" id="SystemFont_no88j"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjm6p"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.933333, 0.360784, 0.360784, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljg13"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtk4"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sjbk"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.8, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hef20"]
+bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.109804, 0.180392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_right = 20.0
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_t22su"]
+default_font = ExtResource("6_jcspv")
+default_font_size = 50
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("6_jcspv")
+Button/styles/focus = SubResource("StyleBoxFlat_ljg13")
+Button/styles/hover = SubResource("StyleBoxFlat_jqtk4")
+Button/styles/normal = SubResource("StyleBoxFlat_0sjbk")
+Button/styles/pressed = SubResource("StyleBoxFlat_hef20")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am43v"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.523438, 0.0363569, 0.0286255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.411765, 0.368627, 0.368627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ey7o"]
+bg_color = Color(0.121325, 0.122396, 0.10869, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0666667, 0.0784314, 0.0666667, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 10
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et1l5"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.471354, 0.0527819, 0.281689, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b05u"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.0311076, 0.361979, 0.274091, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.141176, 0.0862745, 0.0901961, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fbor"]
+bg_color = Color(0.0117647, 0.0352941, 0.180392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="SystemFont" id="SystemFont_qmma1"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_u20cc"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_5u3rm"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea8gp"]
+bg_color = Color(0.341176, 0.0352941, 0.384314, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.854902, 0.878431, 0.0352941, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_co2yd"]
+bg_color = Color(0.376471, 0.0431373, 0.423529, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.854902, 0.878431, 0.0352941, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de7vs"]
+bg_color = Color(0.196078, 0.0117647, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.854902, 0.878431, 0.0352941, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
+shadow_size = 3
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="SystemFont" id="SystemFont_m43ry"]
+font_names = PackedStringArray("Georgia")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_ami7g"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_x4r4v"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_nijgw"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_yemcx"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[node name="Inventaire" type="Control"]
+process_mode = 3
+z_index = 8
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("1_aemn0")
+script = ExtResource("2_e3twh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_aemn0")
+theme_override_fonts/font = SubResource("SystemFont_no88j")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jjm6p")
+tab_alignment = 1
+current_tab = 4
+
+[node name="Pause" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Pause"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="BtnContinuer" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Continuer"
+
+[node name="BtnSave" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Sauver"
+
+[node name="BtnLoad" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Charger"
+
+[node name="BtnQuit" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Quitter"
+
+[node name="Notes" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Notebook" type="Control" parent="Control/MarginContainer/TabContainer/Notes"]
+process_mode = 3
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("3_pnpvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="Panel" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer"]
+self_modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 2
+texture = ExtResource("4_tlufp")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_foi5n")
+theme_override_font_sizes/font_size = 66
+text = "Mes notes"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NoteContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+theme = SubResource("Theme_t22su")
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 30
+columns = 7
+
+[node name="Button" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button2" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button3" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button4" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button5" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button6" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button7" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button8" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button9" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button10" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button11" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button12" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button13" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Feuille_note" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_ck1nq")
+patch_margin_left = 150
+patch_margin_top = 88
+patch_margin_right = 150
+patch_margin_bottom = 88
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 160
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 160
+theme_override_constants/margin_bottom = 110
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer"]
+custom_minimum_size = Vector2(350, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 30
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 31
+text = "fdsf"
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -94.0
+offset_top = 19.0
+offset_right = -34.0
+offset_bottom = 91.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 46
+icon = ExtResource("9_cywvv")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Quêtes" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme = ExtResource("11_xsot7")
+script = ExtResource("11_w4ac6")
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="GridContainer" type="Panel" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-59, 45)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="ButtonQuest" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("12_xsot7")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.55
+
+[node name="lblQuestTitle" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="lblQuestDescription" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(450, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.658854, 0.643412, 0.643412, 1)
+autowrap_mode = 3
+
+[node name="Dictionnaire" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("2_o2fl0")
+metadata/_tab_index = 3
+
+[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_am43v")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0ey7o")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_et1l5")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_am43v")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_0b05u")
+tab_alignment = 1
+current_tab = 3
+
+[node name="Ajouter des mots" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="CategoryOption" type="OptionButton" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="NewCategoryButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "nouvelle catégorie"
+
+[node name="FrenchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "mot français"
+right_icon = ExtResource("3_bi2qi")
+caret_blink = true
+
+[node name="PortuguesInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "traduction"
+right_icon = ExtResource("4_m8h1y")
+caret_blink = true
+
+[node name="AddButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ajouter mot"
+
+[node name="Chercher un mot" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 11
+metadata/_tab_index = 1
+
+[node name="Control" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+layout_mode = 2
+text = "Entrez votre mot :        "
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Control3" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="SearchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+caret_blink = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer"]
+custom_minimum_size = Vector2(300, 168)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6fbor")
+horizontal_scroll_mode = 0
+
+[node name="ResultLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.964706, 0.988235, 0.25098, 1)
+
+[node name="Control2" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="Liste" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="WordTree" type="Tree" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Liste"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+column_titles_visible = true
+select_mode = 1
+
+[node name="Quizz" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+metadata/_tab_index = 3
+
+[node name="WordLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0156863, 0.0156863, 0.235294, 1)
+theme_override_colors/font_outline_color = Color(0.00392157, 0.0784314, 0.345098, 1)
+theme_override_fonts/font = SubResource("SystemFont_qmma1")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="ButtonsContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+unique_name_in_owner = true
+volume_db = -18.0
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+unique_name_in_owner = true
+transparent_bg = true
+title = "Merci de confirmer ..."
+initial_position = 2
+size = Vector2i(500, 300)
+unresizable = true
+borderless = true
+always_on_top = true
+transparent = true
+dialog_text = "Vous avez maitrisé tous les mots !!
+Félicitations"
+
+[node name="Encyclopédie" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 4
+
+[node name="Inventory" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie"]
+layout_mode = 2
+mouse_filter = 1
+script = ExtResource("5_05ion")
+
+[node name="Background1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1"]
+layout_mode = 2
+texture = ExtResource("6_teln6")
+patch_margin_left = 41
+patch_margin_top = 41
+patch_margin_right = 41
+patch_margin_bottom = 41
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = SubResource("SystemFont_u20cc")
+theme_override_font_sizes/font_size = 50
+text = "La grammaire"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="separator" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+mouse_filter = 1
+
+[node name="buttons_container" type="GridContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 30
+columns = 6
+
+[node name="Cap1" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 1
+pronon-
+ciation"
+
+[node name="Cap2" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 2
+articles"
+
+[node name="Cap3" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 3
+Verbes I"
+
+[node name="Cap4" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 4
+phrases"
+
+[node name="Cap5" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 5
+pronoms
+adjectifs"
+
+[node name="Cap6" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 6
+le passé"
+
+[node name="Cap7" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 7
+adjectifs
+II"
+
+[node name="Cap8" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 8
+verbes
+futur"
+
+[node name="Cap9" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 9
+condition-
+nel
+"
+
+[node name="Cap10" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 10
+compa-
+raison"
+
+[node name="Cap11" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("SystemFont_5u3rm")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+text = "CHAP 11
+Verbes
+V"
+
+[node name="separator2" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Background2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Chapters_container" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2"]
+unique_name_in_owner = true
+self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
+layout_mode = 2
+texture = ExtResource("7_d3o5y")
+
+[node name="Cap1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=#33CC00][u][b]Capítulo 1:[/b][/u][/color]
+
+A Pronúncia
+A pronúncia do Francês é bastante diferente da que encontramos no Português, mas ambas as línguas têm sons em comum: as consoantes. Isso quer dizer que não há em Francês nenhuma consoante desconhecida para o falante do Português. O que basta aprender são as vogais simples, as vogais nasais e os ditongos.
+
+[color=#33CCFF][u]1.1. Vogais simples:[/u][/color]
+
+[table=2]
+[cell][color=#FF6600]Como se escreve[/color][/cell][cell][color=#FF6600]	Como se pronuncia[/color][/cell]
+[cell]	a[/cell] [cell]		a[/cell]
+[cell]	i[/cell] [cell]		i[/cell]
+[cell]	o[/cell] [cell]		ô/ó [/cell]
+[cell]	u[/cell] [cell]		i para a voz e o para os lábios[/cell]
+[cell]	e[/cell] [cell]		mudo[/cell]
+[cell]	é[/cell] [cell]		ê[/cell]
+[cell]	è[/cell] [cell]		é[/cell]
+[cell]	ê[/cell] [cell]		é[/cell]
+[/table]
+
+[u]Exemplos:[/u]
+[url=chapt1_1][img]res://assets/images/audioOn.png[/img][/url] <- clique aqui para ouvir (clique de novo para parar)
+
+[table=2]
+[cell] [color=#FF6600]Exemplos[/color][/cell][cell] [color=#FF6600]	o que significa[/color][/cell]
+[cell] âme, lac [/cell] [cell]	alma, lago [/cell]
+[cell] vie, riz [/cell] [cell]	vida, arroz [/cell]
+[cell] dôme, mort [/cell] [cell]	domo, morte [/cell]
+[cell] sur, rue [/cell] [cell]	sobre, rua [/cell]
+[cell] premier [/cell] [cell]	primeiro[/cell]
+[cell] blé, enchanté [/cell] [cell]	trigo, encantado [/cell]
+[cell] très, père [/cell] [cell]	muito, pai [/cell]
+[cell] fête, bête [/cell] [cell]	festa, besta [/cell]
+ [/table]
+	
+
+
+O acento gráfico só muda a pronúncia da letra “E”, que pode ser muda, fechada (Ê) ou aberta (É). Como todas as palavras em Francês são oxítonas, ou seja, só a sílaba final é tônica, o acento não marca a tonicidade de uma sílaba, como é o caso da palavra étudiant: sua pronúncia é [b]é-tu-di-[/b][color=#FF6600]ANT[/color] e não [color=#FF6600]É[/color][b]-tu-di-ant[/b] como leríamos em Português.
+
+[color=#33CCFF][u]1.2. Vogais nasais:[/u][/color]
+
+Existem três tipos de vogal nasal em Francês, são elas:
+
+[table=2]
+[cell][color=#FF6600]Como se escreve[/color][/cell][cell] [color=#FF6600]	Como se pronuncia[/color][/cell]
+[cell] am, an, em, en [/cell] [cell]		ã [/cell]
+[cell] om, on [/cell] [cell]		õ[/cell]
+[cell] im, in, um, un [/cell] [cell]		én [/cell]
+ [/table]
+
+[u]Exemplos:[/u]  
+[url=chapt1_2][img]res://assets/images/audioOn.png[/img][/url]
+
+[table=2]
+[cell] [color=#FF6600]Exemplos[/color][/cell][cell] [color=#FF6600]	o que significa[/color][/cell]
+[cell] champion, fantôme [/cell] [cell]	campeão, fantasma [/cell]
+[cell] empereur, vent [/cell] [cell]	imperador, vento [/cell]
+[cell] ombre, ongle [/cell] [cell]	sombra, unha [/cell]
+[cell] impossible, intéressant [/cell] [cell]	impossível, interessante [/cell]
+[cell] parfum, lundi [/cell] [cell]	perfume, segunda-feira[/cell]
+[/table]
+
+
+[color=#33CCFF][u]1.3. Ditongos:[/u][/color]
+
+Os ditongos são uma combinação de duas vogais para formar o som de uma só ou de uma vogal mais uma semivogal (vogal fraca):
+
+[table=2]
+[cell] [color=#FF6600]Como se escreve[/color][/cell][cell] [color=#FF6600]	Como se pronuncia[/color][/cell]
+[cell] ai [/cell] [cell]	ê/é [/cell]
+[cell] au / eau [/cell] [cell]	ô [/cell]
+[cell] ei [/cell] [cell]	é [/cell]
+[cell] ai [/cell] [cell]	ê/é [/cell]
+[cell] u / œu [/cell] [cell]	ê/é [/cell]
+[cell] ai [/cell] [cell]	e para a garganta o para os lábios [/cell]
+[cell] ou / œu [/cell] [cell]	u [/cell]
+[cell] oi [/cell] [cell]	wá [/cell]
+[/table]
+
+[u]Exemplos:[/u]  
+[url=chapt1_3][img]res://assets/images/audioOn.png[/img][/url]
+
+[table=2]
+[cell] [color=#FF6600]Exemplos[/color][/cell][cell] [color=#FF6600]		o que significa[/color][/cell]
+[cell] français, aide [/cell] [cell]		francês, ajuda [/cell]
+[cell] automobile, restaurant [/cell] [cell]		automóvel, restaurante [/cell]
+[cell] treize, seize[/cell] [cell]		treze, dezesseis [/cell]
+[cell] peu, peur [/cell] [cell]		pouco, medo [/cell]
+[cell] roue, tout [/cell] [cell]		roda, tudo[/cell]
+[cell] roi, joie [/cell] [cell]		rei, alegria[/cell]
+[/table]
+
+
+[color=#33CCFF][u]1.4. Outras ortografias:[/u][/color]
+
+Há adaptações ortográficas que servem para representar um determinado tipo de som. Em francês existem ao menos dois, GN e ILL:
+
+[table=2]
+[cell] [color=#FF6600]Como se escreve[/color][/cell][cell] [color=#FF6600]	Como se pronuncia[/color][/cell]
+[cell] gn [/cell] [cell]		nh [/cell]
+[cell] ill [/cell] [cell]		iii [/cell]
+ [/table]
+
+[u]Exemplos:[/u]  
+[url=chapt1_4][img]res://assets/images/audioOn.png[/img][/url]
+
+[table=2]
+[cell] [color=#FF6600]Exemplos[/color][/cell][cell] [color=#FF6600]		o que significa[/color][/cell]
+[cell] gagner, Espagne [/cell] [cell]		ganhar, Espanha [/cell]
+[cell] famille, travailler [/cell] [cell]		família, trabalhar [/cell]
+[/table]
+
+
+As palavras [b]ville[/b] (cidade) e [b]tranquille[/b] (tranquilo/a) não são pronunciadas da mesma forma: os dois [b]“L”[/b] ficam com som de L mesmo.[url=chapt1_5][img]res://assets/images/audioOn.png[/img][/url]
+
+[color=#33CCFF][u]1.5. O caso do [b]H[/b]:[/u][/color]
+
+Em Francês, faz-se a distinção entre “H” mudo e “H” aspirado. O mudo comporta-se como uma vogal, possibilitando a elisão entre o artigo ou pronome e a palavra começada com “H” (le + homme = l’homme, “o homem” | je + habite = j’habite, “eu moro”). Já o aspirado comporta-se como uma consoante, impedindo a elisão (le + haricot = le haricot, “o feijão” | je + hais = je hais, “eu odeio”). A única maneira de distinguir um tipo de “H” do outro é consultando o dicionário: as palavras começadas por “H” aspirado recebem sempre um asterisco. 
+
+[color=#33CCFF][u]1.6. Consoantes finais:[/u][/color]
+
+Apenas algumas consoantes finais são pronunciadas em francês: R, L, C (Q ou K, mas em palavras como banc, “banco, assento”, blanc, “branco”, e porc, “porco”, o C não é pronunciado) e F. As demais não são pronunciadas, exceto em casos particulares.
+
+Nos verbos terminados em -ER, o “R” final não é pronunciado; -ER fica com som de “Ê”.
+Exemplos:[color=#FF6600] Aimer ([color=#33FF33]amar[/color]), Chanter ([color=#33FF33]cantar[/color]), Manger ([color=#33FF33]comer[/color]), Écouter ([color=#33FF33]escutar[/color])[/color], etc. [url=chapt1_6][img]res://assets/images/audioOn.png[/img][/url]
+
+
+
+"
+
+[node name="Cap2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=#33FF33][u][b]Capítulo 2: Número e Gênero[/b][/u][/color]
+
+[color=#FFCC66][u]2.1. Artigos[/u][/color]
+
+Observe esses artigos do Português:
+ 
+[color=#33FF33]o[/color] menino [color=#33FF33]a[/color] menina [color=#33FF33]os [/color]meninos [color=#33FF33]as [/color]meninas
+[color=#33FF33]um [/color]menino [color=#33FF33]uma [/color]menina [color=#33FF33]uns [/color]meninos [color=#33FF33]umas [/color]meninas 
+
+O artigo em Francês é muito importante, pois ele marca qual é o número (plural ou singular) e o gênero (masculino ou feminino) de uma palavra. Entretanto, a marca do feminino em Francês é o [color=#33CCFF]E[/color] final mudo e do plural, [color=#33CCFF]S[/color] e às vezes [color=#33CCFF]X[/color]. Como essas letras não são pronunciadas em fins de palavra, o artigo acaba por se tornar [u]imprescindível[/u].
+[url=chapt2_1][img]res://assets/images/audioOn.png[/img][/url]
+[table=3]
+[cell]	[/cell][cell]	[color=#FFCC33]Definido[/color][/cell][cell]	[color=#FFCC33]Indefinido[/color][/cell]
+[cell]Masculino[/cell][cell]	le, l’[/cell][cell]	un[/cell]
+[cell]Feminino[/cell][cell]	la, l’[/cell][cell]	une[/cell]
+[cell]Plural[/cell][cell]	les[/cell][cell]	des[/cell]
+[/table]
+
+
+
+As elisões ([color=#FFCC33]LE > L’ ou LA > L’[/color]) acontecem toda vez que a palavra começar com [b]vogal[/b] ou [b]H mudo[/b]. No caso dos artigos plurais ([color=#FFCC33]LES e DES[/color]), o [color=#FFCC33]S final[/color] não é pronunciado, mas em contato com a vogal ou [color=#FFCC33]H mudo[/color] da palavra seguinte, é feita uma ligação com som de Z (les amis => [lezami]; des amies => [dezami]). O plural tem a mesma forma tanto para o masculino quanto para o feminino.
+
+[color=#FFCC66][u]2.2. Masculino x Feminino[/u][/color]
+
+Diferentemente do Português, as diferenças entre masculino e feminino não são tão fáceis de detectar (final O: masculino; final A: feminino; na maioria dos casos). Normalmente, pega-se a palavra masculina e adiciona-se um 
+E ao final. Entretanto, algumas palavras têm terminações diferentes e outras não têm equivalentes femininos ou masculinos. Assim sendo, os melhores exemplos são os nomes de alguns animais, os adjetivos em geral e os nomes de profissões (que no fundo também são adjetivos).
+[url=chapt2_2][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FFCC33]Masculin[/color][/cell][cell][color=#FFCC33]	Féminin[/color][/cell]
+[cell]content[/cell][cell]	contente[/cell]
+[cell]charmant[/cell][cell]	charmante[/cell]
+[cell]avocat[/cell][cell]	avocate[/cell]
+[cell]étudiant[/cell][cell]	étudiante[/cell]
+[/table]
+
+[color=green]Nos demais casos, as transformações são particulares:[/color]
+[url=chapt2_3][img]res://assets/images/audioOn.png[/img][/url]
+un chan[color=#FF6666]teur[/color] (um cantor) => une chant[color=#FF6666]euse[/color] (uma cantora)
+dou[color=#FF6666]x[/color](doce) => dou[color=#FF6666]ce[/color] 
+allemand => allemand[color=#FF6666]e[/color]
+un produc[color=#FF6666]teur[/color] (um produtor) => une produc[color=#FF6666]trice[/color]
+rou[color=#FF6666]x[/color] (ruivo) => rou[color=#FF6666]sse[/color] 
+franç[color=#FF6666]ais[/color] => franç[color=#FF6666]aise[/color]
+un infirmi[color=#FF6666]er[/color] (um infermeiro) => une infirmi[color=#FF6666]ère[/color]
+vi[color=#FF6666]eux[/color] (velho) => vi[color=#FF6666]eille[/color] 
+brésil[color=#FF6666]ien[/color] => brésil[color=#FF6666]ienne[/color]
+beau (bonito) => belle 
+améric[color=#FF6666]ain[/color] => améric[color=#FF6666]aine[/color]
+heur[color=#FF6666]eux[/color] (feliz) => heur[color=#FF6666]euse[/color] 
+gre[color=#FF6666]c[/color] => gre[color=#FF6666]cque[/color]
+sport[color=#FF6666]if[/color] => sport[color=#FF6666]ive[/color]
+
+Há palavras que servem tanto no masculino quanto no feminino: [color=#FF6666]journaliste, triste, russe[/color]. 
+Diante de palavras começadas por [u]vogal[/u], as palavras [color=#FF6666]nouveau[/color], [color=#FF6666]vieux [/color]e [color=#FF6666]beau [/color]se tornam [color=#FF6666]nouvel[/color], [color=#FF6666]vieil [/color]e [color=#FF6666]bel[/color]. 
+Exemplo: C’est un nouveau appartement >> C’est un [color=#FF6666]nouvel [/color]appartement.
+
+[color=#FFCC66][u]2.3. Singular x Plural[/u][/color]
+
+Para formar o plural de uma palavra em Francês basta adicionar [color=#CC0000]S[/color] ao final dela, mesmo que ela termine com consoante. Entretanto, como o [color=#CC0000]S final[/color] raramente é pronunciado, é preciso prestar atenção [b]aos artigos[/b]. Há também casos em que o plural é formado com [color=#CC0000]X[/color] ou [color=#CC0000]AUX[/color]. Quando a palavra já termina com [color=#CC0000]S[/color], [color=#CC0000]X[/color] ou [color=#CC0000]Z[/color], o plural tem a mesma forma do singular.
+ 
+Exemplos:
+[url=chapt2_4][img]res://assets/images/audioOn.png[/img][/url]
+l’homme (o homen) => les homme[color=#CC0000]s[/color]
+le danger (o perigo) => les danger[color=#CC0000]s[/color]
+le matelas (o colchão) => les matelas
+l’anim[color=#CC0000]al[/color] (o animal) => les anim[color=#CC0000]aux[/color]
+le vitr[color=#CC0000]ail[/color] (o vitral) => les vitr[color=#CC0000]aux[/color]
+le marte[color=#CC0000]au[/color] (o martelo) => les marte[color=#CC0000]aux[/color]
+
+[color=#FFCC66][u]2.4. Números: Cardinais x Ordinais[/u][/color]
+
+Apesar de os números serem os mesmos em Francês e em Português a leitura não. Os mais diferentes são os números de 60 a 99, pois se trata de leituras combinadas (somas e multiplicações) e não leituras simples como fazemos em Português. Já os ordinais são facílimos em comparação com nossa língua.
+
+[color=#FFCC66][u]2.4.1. Os Números Cardinais:[/u][/color]  [url=chapt2_5][color=#CC0000][img]res://assets/images/audioOn.png[/img][/color][/url]
+
+[table=4]
+[cell]0 : [/cell][cell]zéro[/cell] [cell]		11 : [/cell][cell]onze[/cell] 
+[cell]1 : [/cell][cell]un[/cell] [cell]		12 : [/cell][cell]douze[/cell] 
+[cell]2 : [/cell][cell]deux[/cell] [cell]		13 : [/cell][cell]treize[/cell]
+[cell]3 : [/cell][cell]trois[/cell] [cell]		14 : [/cell][cell]quatorze[/cell] 
+[cell]4 : [/cell][cell]quatre[/cell] [cell]		15 : [/cell][cell]quinze[/cell] 
+[cell]5 : [/cell][cell]cinq[/cell] [cell]		16 : [/cell][cell]seize[/cell]
+[cell]6 : [/cell][cell]six[/cell] [cell]		17 : [/cell][cell]dix-sept[/cell] 
+[cell]7 : [/cell][cell]sept[/cell] [cell]		18 : [/cell][cell]dix-huit[/cell] 
+[cell]8 : [/cell][cell]huit[/cell] [cell]		19 : [/cell][cell]dix-neuf[/cell]
+[cell]9 : [/cell][cell]neuf[/cell] [cell]		20 : [/cell][cell]vingt[/cell] 
+[cell]10 : [/cell][cell]dix[/cell]
+ [/table]
+
+[url=chapt2_6][color=#CC0000][img]res://assets/images/audioOn.png[/img][/color][/url]
+[table=4]
+[cell]21 :[/cell][cell]vingt et un[/cell][cell]	73 : [/cell][cell]soixante-treize [/cell]
+[cell]22 :[/cell][cell]vingt-deux[/cell][cell]	78 : [/cell][cell]soixante-dix-huit[/cell]
+[cell]23 :[/cell][cell]vingt-trois[/cell][cell]	80 : [/cell][cell]quatre-vingts[/cell]
+[cell]24 :[/cell][cell]vingt-quatre[/cell][cell]	81 : [/cell][cell]quatre-vingt-un[/cell]
+[cell]25 :[/cell][cell]vingt-cinq[/cell][cell]	 82 : [/cell][cell]quatre-vingt-deux[/cell]
+[cell]26 :[/cell][cell]vingt-six[/cell][cell]	90 : [/cell][cell]quatre-vingt-dix[/cell]
+[cell]27 :[/cell][cell]vingt-sept[/cell][cell]	91 : [/cell][cell]quatre-vingt-onze[/cell]
+[cell]28 :[/cell][cell]vingt-huit[/cell][cell]	92 : [/cell][cell]quatre-vingt-douze[/cell]
+[cell]29 :[/cell][cell]vingt-neuf[/cell][cell]	100 : [/cell][cell]cent[/cell]
+[cell]30 :[/cell][cell]trente[/cell][cell]	185 : [/cell][cell]cent quatre vingt-cinq[/cell]
+[cell]31 :[/cell][cell]trente et un[/cell][cell]	201 : [/cell][cell]deux cent un[/cell]
+[cell]32 :[/cell][cell]trente-deux[/cell][cell]	1000 : [/cell][cell]mille[/cell]
+[cell]40 :[/cell][cell]quarante[/cell][cell]	1 000 000 000 : [/cell][cell]un milliard[/cell]
+[cell]50 :[/cell][cell]cinquante[/cell][cell]	2 000 000 : [/cell][cell]deux millions[/cell]
+[cell]60 :[/cell][cell]soixante[/cell][cell]	5134 : [/cell][cell] cinq mille cent trente-quatre[/cell]
+[cell]70 :[/cell][cell]soixante-dix[/cell][cell][/cell][cell][/cell]
+[cell]71 :[/cell][cell]soixante et onze[/cell][cell][/cell][cell][/cell]
+[cell]72 :[/cell][cell]soixante-douze[/cell][cell][/cell][cell][/cell]
+ [/table]
+
+
+[color=green]Apenas os números de 17 a 99 têm hífen, exceto[/color] [color=#FF0000]21, 31, 41, 51, 61 e 71.[/color]
+
+As centenas e os milhares são simples de formar:
+
+100 - [color=#FF0000]cent [/color]
+200 - [color=#FF0000]deux cents [/color]
+300 [color=#FF0000]trois cents[/color] etc.
+
+1000 - [color=#FF0000]mille[/color] 
+2000 - [color=#FF0000]deux mille[/color] 
+3000 - [color=#FF0000]trois mille[/color] etc.
+
+1 000 000 - [color=#FF0000]un million[/color] 
+1 000 000 000 - [color=#FF0000]un milliard*[/color]
+1 000 000 00 0000 - [color=#FF0000]un billion[/color] etc.
+
+* O que em Português corresponde a 1 bilhão, em Francês é 1 milliard; 1 trilhão, 1 billion e assim por diante.
+
+[color=#FFCC66][u]2.4.2. Os Números Ordinais:[/u][/color]
+
+Em Português todos os números de uma sequência são “ordenados”, ou seja, cada um tem seu correspondente ordinal. 
+Exemplo:
+1287o - milésimo ducentésimo octogésimo sétimo.
+
+Em Francês, exceto pelo primeiro lugar [color=#FF0000](premier/première)[/color], basta adicionar [color=#FF0000]-IÈME[/color] ao último número:
+
+1287ème - mille deux cent quatre-vingt-septième.
+
+201è, 1001è, 2341è e outros números terminados em  [color=#FF0000]1[/color] NÃO usam  [color=#FF0000]PREMIER[/color] e sim  [color=#FF0000]UNIÈME[/color] porque não são o primeiro!
+
+[color=#FFCC66][u]2.4.3. Data e Hora[/u][/color]
+
+Um dos empregos mais comuns para os números são a data e a hora. Assim sendo, é preciso conhecer os dias da semana, dos meses e das estações do ano.
+
+[b]Dias da semana: [/b] [url=chapt2_7][color=#CC0000][img]res://assets/images/audioOn.png[/img][/color][/url]
+
+[color=#FF0000]Lundi - Mardi - Mercredi - Jeudi - Vendredi - Samedi - Dimanche[/color]
+
+[b]Meses do ano: [/b] [url=chapt2_8][color=#CC0000][img]res://assets/images/audioOn.png[/img][/color][/url]
+
+[color=#FF0000]Janvier, février, mars, avril, mai, juin, juillet, août, septembre, octobre, novembre, décembre[/color]
+
+[b]As estações do ano:[/b] [url=chapt2_9][color=#CC0000][img]res://assets/images/audioOn.png[/img][/color][/url]
+
+[color=#FF0000]En été (no verão), en automne, en hiver, au printemps (na primavera)[/color]
+
+[b]As horas:[/b]
+[url=chapt2_10][img]res://assets/images/audioOn.png[/img][/url]
+[table=3]
+[cell][/cell][cell]	[color=#9999FF]Hora Oficial[/color][/cell][cell]	[color=#9999FF]Hora Corrente[/color][/cell]
+[cell]7h00[/cell][cell]	sept heures[/cell][cell]	sept heures (du matin)[/cell]
+[cell]12h00[/cell][cell]	douze heures[/cell][cell]	midi[/cell]
+[cell]13h00[/cell][cell]	treize heures[/cell][cell]	une heure (de l’après-midi)[/cell]
+[cell]19h00[/cell][cell]	dix-neuf heures[/cell][cell]	sept heures (du soir)[/cell]
+[cell]00h00[/cell][cell]	vingt-quatre heures[/cell][cell]	minuit[/cell]
+[/table]
+  
+[b]Os minutos;[/b] 
+[url=chapt2_11][img]res://assets/images/audioOn.png[/img][/url]
+[table=3]
+[cell][/cell][cell]	[color=#9999FF]Hora Oficial[/color][/cell][cell]	[color=#9999FF]Hora Corrente[/color][/cell]
+[cell]15h05[/cell][cell]	quinze heures cinq[/cell][cell]	trois heures cinq[/cell]
+[cell]15h15[/cell][cell]	quinze heures quinze[/cell][cell]	trois heures et quart[/cell]
+[cell]15h30 [/cell][cell]	quinze heures trente[/cell][cell]	trois heures et demie[/cell]
+[cell]15h45 [/cell][cell]	quinze heures quarante-cinq[/cell][cell]	quatre heures moins le quart[/cell]
+[cell]15h55[/cell][cell]	quinze heures cinquante-cinq[/cell][cell]	quatre heures moins cinq[/cell]
+[/table]
+
+"
+
+[node name="Cap3" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=#33CC00][b]Capítulo 3: Verbos I (Présent)[/b] [/color]
+
+[color=#FFCC66][u]3.1. Pronomes Pessoais e Pronomes Tônicos[/u][/color]
+
+Assim como no Português, os verbos em Francês são conjugados de acordo com a pessoa (primeira, segunda e terceira) e com o número (plural ou singular). A cada uma dessas pessoas corresponde um pronome, que pode ser Pessoal ou Tônico. O Pronome Pessoal é aquele que colocamos antes do verbo para conjugá-lo, ou seja, é aquele que fica na posição de sujeito da frase; o Pronome Tônico é aquele que colocamos numa frase sem verbo ou para reforçar o sujeito ou quando a pessoa representada não está conjugando o verbo, isto é, quando está na posição de objeto ou de complemento da frase.
+
+[url=chapt3_1][img]res://assets/images/audioOn.png[/img][/url]
+[color=#FFCCFF]PAUL: - Qu’est-ce que tu fais ce matin? (o que vc faz essa manhã?)
+PIERRE: - Moi? (Eu?)
+PAUL: - Oui, toi. (Sim, vc)
+PIERRE: - Moi, je vais à l’école avec toi. (Eu, eu vou na escola com vc.)[/color]
+
+Exemplos:
+ 
+Na primeira frase, o pronome [b]TU[/b] (você/tu) está conjugando o verbo [b]FAIRE [/b](fazer), ele é o sujeito desse verbo.
+Na segunda frase, o pronome [b]MOI [/b](eu/mim) está numa frase sem verbo, por isso é empregado no lugar de [b]JE [/b](eu).
+Na terceira frase, o pronome [b]TOI [/b](você/tu/ti) está numa frase sem verbo, por isso é empregado no lugar de [b]TU [/b](você/tu).
+Na quarta frase, o pronome [b]MOI [/b]está sendo empregado como reforço do sujeito (representado pelo pronome [b]JE[/b]); esse tipo de emprego para um pronome não existe no Português do Brasil. O pronome [b]JE [/b]está conjugando o verbo [b]ALLER [/b](ir), ele é o sujeito desse verbo. 
+O pronome [b]TOI [/b]é complemento do verbo [b]ALLER[/b], por isso é empregado no lugar de [b]TU[/b].
+
+Veja agora quais são todos os pronomes e suas correspondências no Português:
+
+[table=4]
+[cell][color=#FFCC66]Pronoms Personnels[/color][/cell][cell][color=#FFCC66]	Port.[/color][/cell][cell][color=#FFCC66]	Pronoms Toniques[/color][/cell][cell][color=#FFCC66]	Port.[/color][/cell]
+[cell]JE[/cell][cell]	EU[/cell][cell]	MOI[/cell][cell]	EU, MIM[/cell]
+[cell]TU[/cell][cell]	TU/VOCÊ[/cell][cell]	TOI[/cell][cell]	TU/TI[/cell]
+[cell]IL[/cell][cell]	ELE[/cell][cell]	LUI[/cell][cell]	ELE[/cell]
+[cell]ELLE[/cell][cell]	ELA[/cell][cell]	ELLE[/cell][cell]	ELA[/cell]
+[cell]ON[/cell][cell]	*[/cell][cell]	*[/cell][cell]	*[/cell]
+[cell]NOUS[/cell][cell]	NÓS[/cell][cell]	NOUS[/cell][cell]	NOS[/cell]
+[cell]VOUS**[/cell][cell]	VOCÊS/VÓS[/cell][cell]	VOUS**[/cell][cell]	VOS[/cell]
+[cell]ILS[/cell][cell]	ELES[/cell][cell]	EUX[/cell][cell]	ELES[/cell]
+[cell]ELLES[/cell][cell]	ELAS[/cell][cell]	ELLES[/cell][cell]	EULAS[/cell]
+[/table]
+
+* O pronome [b][color=#FF6600]ON[/color][/b] é, em primeiro sentido, indeterminado. Entretanto, no Francês corrente, ele é utilizado no lugar do pronome [color=#FF6600]NOUS[/color], sendo traduzido por isso como “a gente”. Porém, dada a flexibilidade de emprego desse pronome, é possível traduzi-lo de várias maneiras. Veja a seguinte frase:
+
+[color=#FF6600]On parle Portugais.[/color] => Fala-se Português. / Alguém fala Português. / As pessoas falam Português. / Falam Português. / Português é falado. /A gente fala Português (com o sentido de “Nós falamos...”).
+
+** O pronome [color=#FF6600]VOUS [/color]além de significar VOCÊS, significa também O SENHOR, A SENHORA, A SENHORITA, ou seja, é um pronome de tratamento. O pronome [color=#FF6600]VOUS [/color]de polidez só é empregado para se referir a pessoas mais velhas, desconhecidas ou superiores hierárquicos. Logo, é preciso distinguir se o falante se dirige a uma ou mais pessoas. 
+Tratar uma pessoa por [color=#FF6600]VOUS [/color]é tratá-la por o senhor, a senhora, a senhorita. Caso seja mais de uma pessoa, [color=#FF6600]VOUS [/color]deverá ser traduzido por VOCÊS.
+Trata-se de uma questão de [u]bom senso[/u]: é preciso saber qual é a intenção de quem produz a frase e o contexto.
+
+[color=#FFCC66][u]3.2. Os Grupos de Verbos[/u][/color]
+
+Os verbos em Português são divididos em três Conjugações, ou seja, de acordo com suas terminações – [color=#FFCC66]AR, ER (OR) e IR[/color]. Em Francês, além das terminações, também são levadas em consideração regularidade ou irregularidade da conjugação de um verbo. Por essa razão os verbos franceses são divididos em Grupos e não Conjugações. Os Grupos de verbos do Francês são três. Mas antes é preciso conhecer os Verbos Auxiliares [color=#FF0000]ÊTRE[/color], [color=#FF0000]AVOIR [/color]e [color=#FF0000]ALLER[/color]:
+
+[url=chapt3_2][img]res://assets/images/audioOn.png[/img][/url]
+[b]ÊTRE [/b](ser, estar)
+je [color=#FF0000]suis[/color]
+tu [color=#FF0000]es[/color]
+il / elle / on [color=#FF0000]est[/color]
+nous [color=#FF0000]sommes[/color]
+vous [color=#FF0000]êtes[/color]
+ils / elles [color=#FF0000]sont[/color]
+
+[url=chapt3_3][img]res://assets/images/audioOn.png[/img][/url]
+[b]AVOIR [/b](ter / haver)
+j'[color=#FF0000]ai[/color]
+tu [color=#FF0000]as[/color]
+il / elle / on [color=#FF0000]a[/color]
+nous [color=#FF0000]avons[/color]
+vous [color=#FF0000]avez[/color]
+ils / elles [color=#FF0000]ont[/color]
+
+[url=chapt3_4][img]res://assets/images/audioOn.png[/img][/url]
+[b]ALLER [/b](ir)
+je [color=#FF0000]vais[/color]
+tu [color=#FF0000]vas[/color]
+il / elle / on [color=#FF0000]va[/color]
+nous [color=#FF0000]allons[/color]
+vous [color=#FF0000]allez[/color]
+ils / elles [color=#FF0000]vont[/color]
+
+[color=green]Esses verbos são essenciais e não podem de maneira alguma ser esquecidos![/color]
+
+[color=#FFCC66][u]3.2.1. Verbos do Primeiro Grupo[/u][/color]
+
+Formado pelos verbos regulares terminados em [color=#FF6600]-ER[/color]. Apenas um verbo terminado em [color=#FF6600]-ER[/color] é irregular ([color=#FF6600]ALLER[/color], “ir”). Exceto por algumas adequações ortográficas, todos os demais verbos terminados em -[color=#FF6600]ER[/color] seguem a mesma regra de conjugação.
+
+[u]Formação[/u]: Infinitivo do verbo desejado menos a terminação [color=#FF6600]-ER[/color] mais as terminações:
+
+[color=#FF6600]-E, 
+-ES, 
+-E, 
+-ONS,
+-EZ, 
+-ENT[/color]
+
+[u]Exemples:[/u][url=chapt3_5][img]res://assets/images/audioOn.png[/img][/url]
+[table=3]
+[cell][color=#FF6600]Chanter [/color](cantar)[/cell][cell]	[color=#FF6600]Marcher[/color] (andar)[/cell][cell]	[color=#FF6600]Arriver [/color](chegar)[/cell]
+[cell]je chant[color=#FF6600]e[/color][/cell][cell]	je march[color=#FF6600]e[/color][/cell][cell]	j'arriv[color=#FF6600]e[/color][/cell]
+[cell]tu chant[color=#FF6600]es[/color][/cell][cell]	tu march[color=#FF6600]es[/color][/cell][cell]	tu arriv[color=#FF6600]es[/color][/cell]
+[cell]il chant[color=#FF6600]e[/color][/cell][cell]	il march[color=#FF6600]e[/color][/cell][cell]	il arriv[color=#FF6600]e[/color][/cell]
+[cell]nous chant[color=#FF6600]ons[/color][/cell]	[cell]	nous march[color=#FF6600]ons[/color][/cell][cell]	nous arriv[color=#FF6600]ons[/color][/cell]
+[cell]vous chant[color=#FF6600]ez[/color][/cell]	[cell]	vous march[color=#FF6600]ez[/color][/cell][cell]	vous arriv[color=#FF6600]ez[/color][/cell]
+[cell]ils chant[color=#FF6600]ent[/color][/cell]	[cell]	ils march[color=#FF6600]ent[/color][/cell][cell]	ils arriv[color=#FF6600]ent[/color][/cell]
+[/table]
+
+[color=#FFCC66][u]3.2.1.1. Algumas mudanças[/u][/color]
+
+Alguns verbos do primeiro grupo precisam ser adequados na escrita para que a pronúncia se mantenha a mesma. Há quatro casos:
+
+a) Adicionar um “E” entre o radical e a terminação da pessoa [color=#FF0000]NOUS[/color]. É o caso do verbo [color=#FF0000]MANGER [/color](comer):[url=chapt3_6][img]res://assets/images/audioOn.png[/img][/url]
+
+[color=#FF0000]Manger[/color]
+je mang[color=#FF0000]e[/color]
+tu mang[color=#FF0000]es[/color]
+il mang[color=#FF0000]e[/color]
+elle mang[color=#FF0000]e[/color]
+on mang[color=#FF0000]e[/color]
+nous mang[color=#3366FF]e[/color][color=#FF0000]ons[/color]
+vous mang[color=#FF0000]ez[/color]
+ils mang[color=#FF0000]ent[/color]
+elles mang[color=#FF0000]ent[/color]
+
+Ao escrevermos “Nous mangeons” e não “Nous mangons”, mantemos a pronúncia como “manjon” e não como “mangon”.
+
+b) Escrever o verbo na pessoa [color=#FF0000]NOUS [/color]com [color=#3366FF]Ç[/color] e não com [color=#3366FF]C[/color]. Um exemplo disso é o verbo [color=#FF0000]PLACER [/color](colocar).[url=chapt3_7][img]res://assets/images/audioOn.png[/img][/url]
+[color=#FF0000]Placer[/color]
+je plac[color=#FF0000]e[/color]
+tu plac[color=#FF0000]es[/color]
+il plac[color=#FF0000]e[/color]
+nous pla[color=#3366FF]ç[/color][color=#FF0000]ons[/color]
+vous plac[color=#FF0000]ez[/color]
+ils plac[color=#FF0000]ent[/color]
+
+c) Dobrar a consoante anterior ao “[color=#3366FF]E[/color]” final. Por causa do som de “[color=#3366FF]E[/color]” fraco das terminações das pessoas JE, TU, IL, ELLE, ON, ILS, ELLES, é preciso dobrar a consoante que o precede se houver um outro “[color=#3366FF]E[/color]” fraco antes dos dois. É o caso dos verbos [color=#FF0000]S’APPELER [/color](chamar-se) e [color=#FF0000]JETER [/color](arremessar/jogar):
+
+[url=chapt3_8][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]s’appeler[/color][/cell][cell][color=#FF0000]	Jeter[/color][/cell]
+[cell]je m'app[color=#3366FF]e[/color][color=#FF0000]ll[/color]e[/cell][cell]	je j[color=#3366FF]e[/color][color=#FF0000]tt[/color]e[/cell]
+[cell]tu t'app[color=#3366FF]e[/color][color=#FF0000]ll[/color]es[/cell][cell]	tu j[color=#3366FF]e[/color][color=#FF0000]tt[/color]es[/cell]
+[cell]il s’app[color=#3366FF]e[/color][color=#FF0000]ll[/color]e[/cell][cell]	il j[color=#3366FF]e[/color][color=#FF0000]tt[/color]e[/cell]
+[cell]nous nous appelons[/cell][cell]	nous jetons[/cell]
+[cell]vous vous appelez[/cell][cell]	vous jetez[/cell]
+[cell]ils s'app[color=#3366FF]e[/color][color=#FF0000]ll[/color]ent[/cell][cell]	ils j[color=#3366FF]e[/color][color=#FF0000]tt[/color]ent[/cell]
+[/table]
+
+d) Pelo mesmo motivo - as terminações [color=#FF0000]E, ES, E, ENT[/color] fracas precedidas por outro som de “[color=#FF0000]E[/color]” fraco - um acento grave [`] é colocado sobre esse mesmo “[color=#FF0000]E[/color]”, dando-lhe o som de “É”. É o caso dos verbos [color=#FF0000]ACHETER [/color](comprar) e [color=#FF0000]MENER [/color](conduzir/levar).
+[url=chapt3_9][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]acheter[/color][/cell][cell][color=#FF0000]	mener[/color][/cell]
+[cell]j'ach[color=#3366FF]è[/color]te[/cell][cell]	je m[color=#3366FF]è[/color]ne[/cell]
+[cell]tu ach[color=#3366FF]è[/color]tes[/cell][cell]	tu m[color=#3366FF]è[/color]nes[/cell]
+[cell]il ach[color=#3366FF]è[/color]te[/cell][cell]	il m[color=#3366FF]è[/color]ne[/cell]
+[cell]nous achetons[/cell][cell]	nous menons[/cell]
+[cell]vous achetez[/cell][cell]	vous menez[/cell]
+[cell]ils ach[color=#3366FF]è[/color]tent[/cell][cell]	ils m[color=#3366FF]è[/color]nent[/cell]
+[/table]
+
+[color=#FFCC66][u]3.2.2. Verbos do Segundo Grupo[/u][/color]
+
+O segundo grupo é formado por verbos regulares terminados em -[color=#FF0000]IR[/color]. Não é fácil distinguir um verbo regular terminado em -[color=#FF0000]IR[/color] de um irregular apenas olhando para a sua forma no infinitivo. Alguns dicionários avisam quando um verbo terminado em -[color=#FF0000]IR[/color] é regular ou irregular.
+
+[u]Formação[/u]
+
+Para conjugar um verbo do segundo grupo, deve-se retirar sua terminação -[color=#FF0000]IR[/color] do infinitivo e adicionar as seguintes terminações: [color=#FF0000]-IS, -IS, -IT, -ISSONS, -ISSEZ, -ISSENT[/color]
+
+Exemplos: [color=#FF0000]Finir [/color](finir, terminar) e [color=#FF0000]Choisir [/color](escolher)
+[url=chapt3_10][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]Finir[/color][/cell][cell][color=#FF0000]	choisir[/color][/cell]
+[cell]je fin[color=#FF0000]is[/color][/cell][cell]	je chois[color=#FF0000]is[/color][/cell]
+[cell]tu fin[color=#FF0000]is[/color][/cell][cell]	tu chois[color=#FF0000]is[/color][/cell]
+[cell]il fin[color=#FF0000]it[/color][/cell][cell]	il chois[color=#FF0000]it[/color][/cell]
+[cell]nous fin[color=#FF0000]issons[/color][/cell][cell]	nous chois[color=#FF0000]issons[/color][/cell]
+[cell]vous fin[color=#FF0000]issez[/color][/cell][cell]	vous chois[color=#FF0000]issez[/color][/cell]
+[cell]ils finiss[color=#FF0000]ent[/color][/cell][cell]	ils chois[color=#FF0000]issent[/color][/cell]
+[/table]
+
+[color=#FFCC66][u]3.2.3. Verbos do Terceiro Grupo[/u][/color]
+
+O terceiro grupo é formado por verbos irregulares de todas as terminações francesas: [color=#FF0000]-ER, -IR, -RE,-OIR. [/color]
+Apesar das irregularidades, as terminações são quase sempre as mesmas, ou seja:
+[color=#FF0000]-S, 
+-S, 
+-T, 
+-ONS, 
+-EZ, 
+-ENT.[/color]
+
+Verbos Irregulares terminados em [color=#FF0000]-IR:[/color]
+
+Exemplos: [color=#FF0000]Partir [/color](partir, ir embora) e [color=#FF0000]Venir[/color](vir)
+[url=chapt3_11][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]Partir[/color][/cell][cell][color=#FF0000]	Venir[/color][/cell]
+[cell]je pars[/cell][cell]	je viens[/cell]
+[cell]tu pars[/cell][cell]	tu viens[/cell]
+[cell]il part[/cell][cell]	il vient[/cell]
+[cell]nous partons[/cell][cell]	nous venons[/cell]
+[cell]vous partez[/cell][cell]	vous venez[/cell]
+[cell]ils partent[/cell][cell]	ils viennent[/cell]
+[/table]
+
+erbos Irregulares terminados em -[color=#FF0000]RE:[/color]
+
+Exemplos: [color=#FF0000]Prendre[/color](pegar, tomar) e [color=#FF0000]Faire[/color](fazer)
+[url=chapt3_12][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]Prendre[/color][/cell][cell][color=#FF0000]	Faire[/color][/cell]
+[cell]je prends[/cell][cell]	je fais[/cell]
+[cell]tu prends[/cell][cell]	tu fais[/cell]
+[cell]il prend[/cell][cell]	il fait[/cell]
+[cell]nous prenons[/cell][cell]	nous faisons[/cell]
+[cell]vous prenez[/cell][cell]	vous faites[/cell]
+[cell]ils prennent[/cell][cell]	ils font[/cell]
+[/table]
+
+d) Verbos Irregulares terminados em -[color=#FF0000]OIR[/color]. Nota: verbo terminado em -[color=#FF0000]OIR [/color]não é verbo terminado em -[color=#FF0000]IR[/color]!!!
+
+Exemplos: [color=#FF0000]Vouloir[/color](querer) e [color=#FF0000]Devoir[/color](dever/ter que)
+[url=chapt3_13][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]Vouloir[/color][/cell][cell][color=#FF0000]	Devoir[/color][/cell]
+[cell]je veux[/cell][cell]	je dois[/cell]
+[cell]tu veux[/cell][cell]	tu dois[/cell]
+[cell]il veut[/cell][cell]	il doit[/cell]
+[cell]nous voulons[/cell][cell]	nous devons[/cell]
+[cell]vous voulez[/cell][cell]	vous devez[/cell]
+[cell]ils veulent[/cell][cell]	ils doivent[/cell]
+[/table]
+
+[color=#FFCC66][u]2.2.4. Verbos Impessoais[/u][/color]
+
+Um verbo impessoal é um verbo que, como a gramática tradicional chama, “de sujeito inexistente” e normalmente são os verbos que representam fenômenos da natureza que caem nessa classificação - um exemplo clássico é o verbo chover: chove, choverá, choveu, chovia, etc.
+Em Francês, os verbos impessoais também não têm sujeito. Entretanto é preciso dar-lhe um pronome, pois, para a gramática do Francês, [color=#FF0000]não pode haver verbo sem pronome[/color]. Por essa razão o verbo chover em Francês, [color=#FF0000]pleuvoir[/color], recebe um pronome masculino de terceira pessoa do singular: [color=#FF0000]IL[/color]. 
+Logo, a frase em Português “Chove” ou “Está chovendo” é traduzida por “[color=#FF0000]Il pleut[/color]”. 
+Não traduza o pronome “[color=#FF0000]IL[/color]” que acompanha os verbos impessoais! Ele deve desaparecer quando na tradução para o Português. Veja:
+
+[color=#9999FF]Il pleut depuis quinze jours sans arrêt[/color]. = Chove há quinze dias sem parar.
+
+[u]Principais verbos impessoais do Francês: [/u]
+[url=chapt3_14][img]res://assets/images/audioOn.png[/img][/url]
+[table=2]
+[cell][color=#FF0000]Infinitivo[/color][/cell][cell][color=#FF0000]	Conjugado[/color][/cell]
+[cell]pleuvoir (chover)[/cell][cell]	il pleut[/cell]
+[cell]falloir (ser necessário)[/cell][cell]	il faut[/cell]
+[cell]y avoir (haver)[/cell][cell]	il y a[/cell]
+[cell]suffire (bastar)[/cell][cell]	il suffit[/cell]
+[cell]manquer (faltar)[/cell][cell]	il manque[/cell]
+[/table]
+
+[color=#FFCC66][u]3.2.5. Modo Imperativo[/u][/color]
+
+Em Francês o Modo Imperativo tem a mesma função que no Português: ordens, conselhos, pedidos, advertências, chamados, etc. 
+Sua formação é feita a partir do Presente, bastando retirar os pronomes pessoais que acompanham a forma verbal. 
+Apenas as pessoas [color=#FF0000]TU, NOUS e VOUS[/color] têm formas no Imperativo. 
+
+[u]Exemplos: penser (pensar), finir, partir[/u]
+
+[table=2]
+[cell][color=#FF0000]presente[/color][/cell][cell][color=#FF0000]	imperativo[/color][/cell]
+[cell]tu penses[/cell][cell]	pense[/cell]
+[cell]nous pensons[/cell][cell]	pensons[/cell]
+[cell]vous pensez[/cell][cell]	pensez[/cell]
+[/table]
+
+[table=2]
+[cell][color=#FF0000]presente[/color][/cell][cell][color=#FF0000]	imperativo[/color][/cell]
+[cell]tu finis[/cell][cell]	finis[/cell]
+[cell]nous finissons[/cell][cell]	finissons[/cell]
+[cell]vous finissez[/cell][cell]	finissez[/cell]
+[/table]
+
+[table=2]
+[cell][color=#FF0000]presente[/color][/cell][cell][color=#FF0000]	imperativo[/color][/cell]
+[cell]tu pars[/cell][cell]	pars[/cell]
+[cell]vous partons[/cell][cell]	partons[/cell]
+[cell]vous partez[/cell][cell]	partez[/cell]
+[/table]
+
+Exceções: [color=#FF0000]Être [/color](ser/estar) [color=#FF0000]Avoir [/color](ter/haver) [color=#FF0000]Aller [/color](ir) [color=#FF0000]Savoir [/color](saber) [color=#FF0000]Vouloir [/color](querer) 
+[url=chapt3_15][img]res://assets/images/audioOn.png[/img][/url]
+[table=5]
+[cell][color=#FF0000]être[/color][/cell][cell][color=#FF0000]	Avoir[/color][/cell][cell][color=#FF0000]	Aller[/color][/cell][cell][color=#FF0000]	Savoir[/color][/cell][cell][color=#FF0000]	Vouloir[/color][/cell]
+[cell]sois[/cell][cell]	aie[/cell][cell]	va[/cell][cell]	sache[/cell][cell]	veuille[/cell]
+[cell]soyons[/cell][cell]	ayons[/cell][cell]	allons[/cell][cell]	sachons[/cell][cell]	voulons[/cell]
+[cell]soyez[/cell][cell]	ayez[/cell][cell]	allez[/cell][cell]	sachez[/cell][cell]	veuillez[/cell]
+[/table]
+
+
+"
+
+[node name="Cap4" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green][b]Capítulo 4: As Estruturas de Frases[/b][/color]
+
+[color=#FFCC66][u]4.1. A Frase Afirmativa[/u][/color]
+
+A frase afirmativa segue a mesma estrutura do Português, ou seja: Sujeito > Verbo > Objeto/Complemento. 
+
+[u]Veja:[/u]
+[url=chapt4_1][img]res://assets/images/audioOn.png[/img][/url]
+a) [color=#CCCCFF]Je > prends > un café.[/color] (Eu tomo um café.)
+b) [color=#CCCCFF]Mes amis > conduisent > bien.[/color] (Meus amigos dirigem bem.)
+c) [color=#CCCCFF]Son travail > est > loin de son quartier.[/color] (Seu trabalho fica longe de seu bairro.)
+
+[color=#FFA500][u]4.2. A Frase Interrogativa[/u][/color]
+
+Em Francês, é possível formular uma frase interrogativa de três maneiras diferentes: 
+[b]entonação, [/b][b]inversão[/b] e com uso de “[b]Est-ce que[/b]”. Veja:
+
+[color=#F4A460][u]4.2.1. Entonação[/u][/color]
+
+Como o Português é uma língua que faz uso desse recuso para expressar frases interrogativas, não é difícil para nós fazermos uma pergunta em Francês. Basta pegar a frase afirmativa e mudar sua entonação. Na escrita, é só aplicar o ponto de interrogação.
+[url=chapt4_2][img]res://assets/images/audioOn.png[/img][/url]
+Tu as déjà quinze ans. (você já tem 15 anos)
+ > [color=#DDA0DD]Tu as déjà quinze ans[/color] [color=#FF0000]?[/color] 
+ 
+Vous mangez de la viande tous les jours. (vocês comem carne todos os dias)
+ > [color=#DDA0DD]Vous mangez de la viande tous les jours[/color] [color=#FF0000]?[/color] 
+ 
+Elle écrit souvent. (ela escreve frequentemente)
+ > [color=#DDA0DD]Elle écrit souvent[/color] [color=#FF0000]?[/color] 
+
+[color=#FFA500][u]4.2.2. Inversão[/u][/color]
+
+A inversão é a maneira mais comum utilizada para se fazer uma interrogação. Para criar uma frase interrogativa por inversão é preciso trocar de lugar o verbo e o pronome, ligando-os em seguida 
+por um hífen. Veja:
+
+[color=#DDA0DD]Il est un bon voisin.[/color] (ele é um bom vizinho)[url=chapt4_3][img]res://assets/images/audioOn.png[/img][/url]
+=> [color=#FF0000]Est-il[/color] un bon voisin ?
+
+No entanto, a inversão é feita apenas com pronomes pessoais, aqueles usados para conjugar verbos, ou seja, [u]não podemos fazer a interrogativa com inversão com qualquer palavra[/u].
+
+[u]Exemplo: [/u]
+
+[color=#DDA0DD]Ma mère est une bonne femme de ménage[/color]. (minha mãe é uma boa faxineira)
+Não podemos invertê-la assim:
+Est-ma mère une bonne femme de ménage ?
+
+Quando o verbo termina em vogal nas pessoas [color=#FF0000]IL, ELLE e ON[/color], não podemos fazer a elisão, como visto em lições anteriores:
+
+[color=#DDA0DD]Elle va à l’école en train.[/color]
+[s]V’elle[/s] à l’école en train ?
+
+Perceba que se fizermos uma elisão aqui, vamos tirar a terminação do verbo e não saberemos em que tempo (presente, passado, futuro) ele está sendo conjugado. Por isso, os franceses colocam artificialmente uma terminação ([color=#FF0000]-t-[/color]) nos verbos acabados em vogal. Assim sendo, a frase correta será:
+
+[color=#FF0000]Va-t-elle[/color] [color=#DDA0DD]à l’école en train ?[/color][url=chapt4_4][img]res://assets/images/audioOn.png[/img][/url]
+
+Isso vai acontecer com os verbos [color=#FF0000]ALLER [/color](do exemplo acima), [color=#FF0000]AVOIR, Y AVOIR[/color], verbos do Primeiro Grupo (terminados em –ER) e alguns do segundo, como [color=#FF0000]SOUFFRIR, OUVRIR e DÉCOUVRIR. [/color]
+
+Veja:[url=chapt4_5][img]res://assets/images/audioOn.png[/img][/url]
+
+[color=#DDA0DD]Il a des yeux bleus.[/color] (ele tem olhos azuis) => [color=#FF0000]A-t-il[/color] des yeux bleus ?
+[color=#DDA0DD]Elle parle bien Portugais.[/color] (ela fala bem portugues) =>[color=#FF0000] Parle-t-elle[/color] bien Portugais ?
+[color=#DDA0DD]On reste chez les amis.[/color] (a gente fica na casa dos amigos) =>[color=#FF0000] Reste-t-on[/color] chez les amis ? 
+[color=#DDA0DD]Il y a des fruits mûrs sur la table.[/color] (tem frutas maduras na mesa) => [color=#FF0000]Y a-t-il[/color] des fruits mûrs sur la table ? 
+
+[color=#FFA500][u]4.2.3. Emprego de “Est-ce que”[/u][/color]
+
+O uso de “[b]est-ce que[/b]” é muito simples, bastando adicioná-lo à frase afirmativa. \"Est-ce que\" é o equivalenente de \"Será que\" em portugues. Veja:[url=chapt4_6][img]res://assets/images/audioOn.png[/img][/url]
+
+[color=#DDA0DD]Il a de grands problèmes.[/color] (ele tem grandes problemas)
+>[color=#DDA0DD] Est-ce qu’il a de grands problèmes ? [/color](será que ele tem grandes problemas?)
+[color=#DDA0DD]Elles travaillent ici.[/color] (elas trabalham aqui)
+> [color=#DDA0DD]Est-ce qu’elles travaillent ici ? [/color](será que elas trabalham aqui?)
+
+Diante de pronomes iniciados por vogal, é preciso fazer a elisão de est-ce que -> est-ce qu[color=#FF0000]'[/color]
+
+[color=#FFA500][u]4.2.4. Outras palavras interrogativas:[/u][/color]
+[url=chapt4_7][img]res://assets/images/audioOn.png[/img][/url]
+[color=#DDA0DD]Pourquoi ?[/color] (Por quê? – pergunta) 
+>> [color=#DDA0DD]Parce que...[/color] (Porque... – resposta) 
+[color=#DDA0DD]Quand ?[/color] (Quando?)
+[color=#DDA0DD]Comment ?[/color] (Como?)
+[color=#DDA0DD]Où ?[/color] (Onde?)
+[color=#DDA0DD]Qui ?[/color] (Quem?)
+[color=#DDA0DD]Combien ?[/color] (Quanto?)
+[color=#DDA0DD]Qu’est-ce que c’est ?[/color] (O que é?)
+
+[color=#FFA500][u]4.3. A Frase Negativa[/u][/color]
+
+A frase negativa é um pouco mais complicada de se usar por precisar de dois elementos, ao contrário do Português, que precisa apenas de um, o seja, o advérbio “não”. Em Francês, empregamos as partículas “[color=#FF0000]NE[/color]” e “[color=#FF0000]PAS[/color]” ao redor do verbo conjugado. Veja: [url=chapt4_8][img]res://assets/images/audioOn.png[/img][/url]
+ 
+[color=#DDA0DD]Elle travaille avec mon père.[/color] (ela trabalha com meu pai.)
+> [color=#DDA0DD]Elle[/color][color=#FF0000] ne[/color][color=#DDA0DD] travaille[/color][color=#FF0000] pas[/color] [color=#DDA0DD]avec mon père.[/color] (ela não trabalho com meu pai.)
+
+Negação simples se faz com [color=#FF0000]NON: [/color]
+
+ – [color=#DDA0DD]Tu viens avec moi ?[/color] (vc vem comigo?)
+ – [color=#DDA0DD]Non. Je ne vais pas avec toi.[/color] (não, eu não vou com vc)
+
+Negação de uma pergunta feita na [u][b]negativa[/b] [/u]se faz com [color=#FF0000]SI[/color]: 
+
+ - [color=#DDA0DD]Tu ne viens pas avec moi ?[/color] (vc não vem comigo?)
+ - [color=#DDA0DD]Mais[/color] [color=#FF0000]si[/color] [color=#DDA0DD]! Je vais avec toi ![/color] (claro que si! Eu vou com vc!)
+
+[u]Quando se nega uma negativa, afirma-se![/u]
+
+[color=#FFA500][u]4.3.1. Negando verbos não conjugados[/u][/color]
+
+Em algumas frases pode ser que precisemos de mais de um verbo para expressar algo, como é o caso dos verbos modais (poder, querer, dever, etc.). Dessa forma, é preciso saber qual deles ficará na forma negativa para aplicar as partículas [color=#FF0000]NE [/color]e [color=#FF0000]PAS[/color]. Se formos negar o verbo que está conjugado, seguimos o mesmo modelo:
+
+[color=#DDA0DD]Elles peuvent choisir leur chemin.[/color] (elas podem escolher seu caminho)
+>[color=#DDA0DD] Elles[/color] [color=#FF0000]ne [/color][color=#DDA0DD]peuvent[/color] [color=#FF0000]pas [/color][color=#DDA0DD]choisir leur chemin.[/color] (elas não podem escolher seu caminho)
+
+Entretanto, pode acontecer de não querermos negar o verbo conjugado, mas aquele que está na forma infinitiva. Neste caso, não colocamos o [color=#FF0000]NE [/color]e o [color=#FF0000]PAS [/color]ao redor do verbo, mas juntos, antes dele:
+ 
+[color=#DDA0DD]Elles peuvent choisir leur chemin. [/color]
+> [color=#DDA0DD]Elles ne peuvent pas choisir leur chemin.[/color]
+[color=#DDA0DD]Elles peuvent[/color] [color=#FF0000]ne pas[/color] [color=#DDA0DD]choisir leur chemin.[/color]
+
+Curiosamente, o que antes era uma proibição, passa a ser uma opção, pois uma coisa é não poder escolher e outra é poder não escolher. Por isso, atenção no que quer expressar antes de formar a frase! Outros exemplos:
+
+[color=#DDA0DD]On vous demande de ne pas fumer.[/color] (a gente te pede para não fumar)
+[color=#DDA0DD]Je te dis de ne pas sortir.[/color] (eu te falo para não sair)
+
+[color=#FFA500][u]4.3.2. Negando quantidades[/u][/color]
+
+Quando negamos uma quantidade em francês, querendo dizer que “não temos nenhuma unidade disso de que você está falando”, “Dessa coisa que você está falando, não há nada aqui”, etc., temos que usar a preposição “[color=#FF0000]DE[/color]” entre o “[color=#FF0000]PAS[/color]” e a coisa cuja quantidade “está sendo declarada como zero”. Veja:
+
+[color=#DDA0DD]Vous avez des enfants ?[/color] (vc tem filhos?)
+> [color=#DDA0DD]Non, nous n’avons[/color] [color=#FF0000]pas d’[/color][color=#DDA0DD]enfants.[/color] (não, não temos filhos)
+[color=#DDA0DD]Est-ce qu’il y a un chat ici ? [/color](tem um gato aqui?)
+>[color=#DDA0DD] Non, il n’y a[/color][color=#FF0000] pas de[/color] [color=#DDA0DD]chat ici.[/color]
+[color=#DDA0DD]Tu veux prendre un café avec moi ? [/color](vc quer tomar um café comigo?)
+>[color=#DDA0DD] Non, je ne veux [/color][color=#FF0000]pas de[/color][color=#DDA0DD] café[/color]. (não quero café)
+[color=#DDA0DD]Buvez ! C’est un bon vin ! [/color](beba! É um bom vinho!)
+>[color=#DDA0DD] Non, merci, je ne bois[/color][color=#FF0000] pas de[/color] [color=#DDA0DD]vin.[/color] (não, obrigado, não bebo vinho)
+
+[color=#FFA500][u]4.3.3. Outras formas de negação[/u][/color]
+
+Às vezes utilizamos mais de uma palavra negativa numa frase. Em Português, por exemplo, se dissermos: “Não vi ninguém”, uma negação não anula a outra, transformando o sentido da frase em afirmativo, ou seja, “Se você não viu ninguém, então você viu alguém”. Mas é o que acontece em Francês. Quando precisamos utilizar “ninguém”, “nada”, “nenhum” ou “(não) mais”, precisamos substituir a partícula “[color=#FF0000]PAS[/color]” por “[color=#FF0000]personne[/color]” (ninguém), “[color=#FF0000]rien[/color]” (nada), “[color=#FF0000]aucun[/color]” (nenhum) e “[color=#FF0000](non) plus[/color]” (não mais). Veja:
+
+Je [color=#FF0000]ne [/color]vois [color=#FF0000]personne [/color]ici. (não vejo ningém aqui)
+Il [color=#FF0000]ne [/color]reste [color=#FF0000]aucun [/color]doute qu’il est le coupable. (não sobra nenhuma dúvida que ele é o culpado)
+Je [color=#FF0000]ne [/color]sais [color=#FF0000]rien [/color]à l’égard de M. Leplat. (não sei nada a respeito do Sr. Leplat)
+Ça fait trois ans que je [color=#FF0000]ne [/color]vois [color=#FF0000]plus [/color]Mme. Desmoulins. (faz 3 anos que não vejo Sra Desmoulins)
+Nous [color=#FF0000]ne [/color]sommes [color=#FF0000]ni [/color]bons [color=#FF0000]ni [/color]mauvais. (somos nem bons nem ruins)
+
+[color=#FFA500][u]4.3.4. O que não é negativa[/u][/color]
+
+Às vezes, a estrutura “[color=#FF0000]NE[/color]” [...] “[color=#FF0000]PAS[/color]” pode ser confundida com a estrutura “[color=#FF0000]NE[/color]” [...] “[color=#FF0000]QUE[/color]”, que não quer dizer “NÃO”, mas sim “APENAS”, “SOMENTE”.
+
+Je [color=#FF0000]ne[/color]connais [color=#FF0000]pas[/color]cette fille.(Eu não conheço essa garota.)
+Je [color=#FF0000]ne[/color]connais [color=#FF0000]que[/color]cette fille. (Eu só conheço essa garota.)
+
+[color=#FFA500][u]4.4. Preposições e Conjunções[/u][/color]
+
+[color=#FFA500][u]4.4.1. Preposições[/u][/color]
+
+As principais preposições do Francês são:
+
+[table=4]
+[cell]à (a, para)[/cell] [cell] depuis (há = tempo)[/cell] [cell] hormis (exceto)[/cell] [cell] sans (sem)[/cell]
+[cell]après (após, depois)[/cell] [cell] derrière (atrás)[/cell][cell] hors (fora)[/cell][cell] selon (de acordo com)[/cell]
+[cell]avant (antes)[/cell] [cell] dès (desde)[/cell] [cell] malgré (apesar de)[/cell] [cell] sous (sob)[/cell]
+[cell]avec (com)[/cell] [cell] devant (diante de)[/cell][cell] outre (além de)[/cell][cell] suivant (seguinte)[/cell]
+[cell]chez (em – na casa de)[/cell] [cell] durant (durante)[/cell] [cell] par (por)[/cell] [cell] sur (sobre)[/cell]
+[cell]contre (contra)[/cell] [cell] en (em)[/cell] [cell] parmi (dentre)[/cell] [cell] vers (rumo a)[/cell]
+[cell]dans (em – dentro)[/cell] [cell] entre (entre)[/cell] [cell] pendant (durante)[/cell] [cell] voici (eis)[/cell]
+[cell]de (de)[/cell] [cell] envers (para com)[/cell] [cell] pour (para)[/cell] [cell] voilà (eis)[/cell]
+[/table]
+
+[color=#FFA500][u]4.4.1.1. Preposições + Artigos[/u][/color]
+
+Existem situações em que as preposições e os artigos se fundem. Trata-se das preposições [color=#FF0000]À[/color] e [color=#FF0000]DE[/color]e os artigos definidos:
+
+[table=3]
+[cell][u]Local [/u][/cell][cell]	[u]Destino[/u][/cell] [cell]	[u]Procedência[/u][/cell]
+[cell]Cidade [/cell][cell]	Je vais [color=#FF0000]à[/color] Paris [/cell][cell]	Je viens [color=#FF0000]de[/color] Paris[/cell]
+[cell]País Feminino (consoante)[/cell] [cell]	Il va [color=#FF0000]en[/color] France[/cell][cell]	Il vient [color=#FF0000]de[/color] France[/cell]
+[cell]País Feminino (vogal)[/cell] [cell]	Elle va [color=#FF0000]en[/color] Allemagne[/cell] [cell]	Elle vient [color=#FF0000]d’[/color]Allemagne[/cell]
+[cell]País Masculino (vogal)[/cell] [cell]	Nous allons [color=#FF0000]en[/color] Iran[/cell][cell]	Nous venons [color=#FF0000]d’[/color]Iran[/cell]
+[cell]País Masculino (consoante)[/cell] [cell]	Tu vas [color=#FF0000]au[/color] Brésil[/cell] [cell]	Tu viens [color=#FF0000]du[/color] Brésil[/cell]
+[cell]País (plural)[/cell] [cell]	Vous allez [color=#FF0000]aux[/color] Pays-Bas[/cell] [cell]	Vous venez [color=#FF0000]des[/color] Pays-Bas[/cell]
+[/table]
+
+[b]Atenção:[/b]
+
+[color=#FF0000]AU = À + LE 
+DU = DE + LE 
+AUX = À + LES 
+DES = DE +LES[/color]
+
+[color=#00FF00]Por isso, não existe em françês \"de le\", \"de les\", \"à le\" ou \"à les\" !!![/color]
+
+Não confunda o artigo indefinido plural [color=#FF0000]DES [/color](“uns”, “umas”) com a fusão artigo mais preposição [color=#FF0000]DES [/color](dos, das):
+Ils ont [color=#FF0000]des [/color]enfants. => Eles têm (uns) filhos.
+Je viens [color=#FF0000]des [/color]États-Unis. => Eu venho dos Estados Unidos.
+
+Entretanto esse caso é de pouca preocupação, pois os contextos facilmente os distinguirão.
+
+Endereço completo deve ser informado sem preposições ou artigos. Exemplo:
+
+[color=#DDA0DD]J’habite 105, rue de Lafayette, Paris.[/color]
+
+[color=#FFA500][u]4.4.1.2. Locuções Prepositivas[/u][/color]
+
+[table=3]
+
+[cell]à cause de (por causa de[/cell])[cell] au lieu de (no lugar de)[/cell][cell] faute de (falta de)[/cell]
+[cell]à côté de (ao lado de)[/cell][cell] au milieu de (no meio de)[/cell][cell] grâce à (graças a)[/cell]
+[cell]afin de (afim de)[/cell][cell] auprès de (junto a)[/cell][cell] hors de (fora de)[/cell]
+[cell]à force de (graças a)[/cell][cell] au prix de (a custo de)[/cell][cell] jusqu’à (até)[/cell]
+[cell]à la faveur de (em favor de)[/cell][cell] autour de (ao redor de)[/cell][cell] le long de (ao longo de)[/cell]
+[cell]au-dessous de (abaixo de)[/cell][cell] de peur de (temendo que)[/cell][cell] loin de (longe de)[/cell]
+[cell]au-dessus de (acima de)[/cell][cell] en dépit de (a despeito de)[/cell][cell] près de (perto de)[/cell]
+[cell]au-devant de (na frente de)[/cell][cell] en face de (diante de)[/cell][cell] quant à (quanto a, no que diz respeito a)[/cell]
+[/table]
+
+[color=#FFA500][u]4.4.2. Conjunções. [/u][/color]
+
+As principais conjunções do Francês são:
+
+[table=4]
+
+[cell]ainsi (assim)[/cell][cell] donc (então)[/cell][cell] ni (nem)[/cell][cell] que/qui (que)[/cell]
+[cell]aussi (também)[/cell][cell] et (e)[/cell][cell] or (ora)[/cell][cell] quoique (o que quer que)[/cell]
+[cell]car (pois)[/cell][cell] lorsque (quando)[/cell][cell] ou (ou)[/cell][cell] si (se)[/cell]
+[cell]cependant (contudo)[/cell][cell] mais (mas)[/cell][cell] puisque (já que)[/cell][cell] soit (seja)[/cell]
+[cell]comme (como)[/cell][cell] néanmoins (contudo)[/cell][cell] quand (quando)[/cell][cell] toutefois (todavia)[/cell]
+[/table]
+
+[color=#FFA500][u]4.4.2.1. Locuções conjuntivas [/u][/color]
+
+Veja abaixo o quadro das principais locuções conjuntivas. 
+
+[table=3]
+
+[cell]à condition que (contanto que)[/cell][cell] attendu que (visto que)[/cell][cell] depuis que (desde que)[/cell]
+[cell]afin que (afim de)[/cell][cell] aussitôt que (assim que)[/cell][cell] de sorte que (de maneira que)[/cell]
+[cell]ainsi que (assim que)[/cell][cell] autant que (enquanto)[/cell][cell] dès que (desde que)[/cell]
+[cell]alors que (enquanto)[/cell][cell] avant que (antes de)[/cell][cell] jusqu’a ce que (até que)[/cell]
+[cell]à mesure que (na medida em que)[/cell][cell] bien que (ainda que)[/cell][cell] parce que (porque)[/cell]
+[cell]à moins que (a menos que)[/cell][cell] c’est-à-dire (ou seja)[/cell][cell] quand même (mesmo assim)[/cell]
+[cell]après que (depois de)[/cell][cell] de même que (assim como)[/cell][cell] tandis que (enquanto)[/cell]
+[/table]
+
+
+"
+
+[node name="Cap5" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=#008000][b]Capítulo 5: Pronomes e Adjetivos (I)[/b][/color]
+
+
+[color=#FFA500][u]5.1. Pronomes Complemento[/u][/color]
+
+[u]Pronomes Pessoais: [/u]
+
+[color=#DDA0DD]Je, tu, il, elle, nous, vous, ils, elles[/color]
+
+[u]Pronomes Complemento de Objeto Direto (COD):[/u]
+
+[color=#DDA0DD]me/m', te/t', le/l', la/l', nous, vous, les[/color]
+
+[u]Pronomes Complemento de Objeto Indireto (COI):[/u]
+
+[color=#DDA0DD]me/m'/moi, te/t'/toi, lui, nous, vous, leur[/color]
+
+Os pronomes complemento servem para evitar repetições dentro de uma frase ou parágrafo. 
+
+No Francês eles são classificados em COD (Complément d’Objet Direct) e COI (Complément d’Objet Indirect). Veja:
+
+[color=#FFA500]5.1.1. Pronomes Complemento de Objeto Direto[/color]
+
+Je suis ici à cause de ma fille. Je veux voir ma fille. (eu estou aqui por causa da minha filha. Quero ver a minha filha.)
+=> Je veux [color=#FF0000]la[/color] voir. (eu quero vê-la)
+Ton mari est un criminel. On va arrêter ton mari. (Teu marido é um criminal. A gente vai prender o teu marido.)
+ => On va [color=#FF0000]l’[/color]arrêter. (a gente vai prende-lo)
+Ton fils ? Nous cherchons ton fils partout. (teu filho? Nos estamos procurando teu filho por todo lado.)
+=> Nous [color=#FF0000]le[/color] cherchons partout. (nos o procuramos por todo lado.)
+La salle est fermée, mais on va ouvrir la salle. (a sala esta fechada, mas vamos abrir a sala.)
+=> mais on va [color=#FF0000]l’[/color]ouvrir. (mas a gente vai abri-la)
+Elle mange les gâteaux. (ela come os bolos)
+=> elle [color=#FF0000]les [/color]mange. (ela os come)
+
+Nos itens anteriores vimos apenas os pronomes complemento das terceiras pessoas ([b]IL, ELLE, ON, ILS, ELLES[/b]), pois eles são os mais usados e que dão mais trabalho, a princípio, para reconhecer. Vejamos agora as outras pessoas:
+
+Elle donne le cadeau [b]à moi[/b]. (ela da o presente para mim) => Elle [b]me [/b]donne le cadeau. (ela me da o presente)
+Elle donne le cadeau[b] à toi[/b]. => Elle [b]te[/b] donne le cadeau.
+Elle donne le cadeau [b]à nous.[/b] => Elle [b]nous [/b]donne le cadeau.
+Elle donne le cadeau [b]à vous[/b]. => Elle [b]vous [/b]donne le cadeau.
+
+[color=#FFA500][u]5.1.2. Pronomes Complemento de Objeto Indireto[/u][/color]
+
+A diferença entre os pronomes complemento direto e indireto é a mesma do Português: os diretos substituem nomes [b]sem preposiçã[/b]o e os indiretos, nomes [b]com preposição[/b]. Veja:
+
+Je parle toujours [color=#FF0000]à[/color] elle , mais elle agit comme une sourde ! (eu sempre falo com ela mas ela age como uma surda!)
+=> Je [color=#FF0000]lui [/color]parle toujours, mais elle agit comme une sourde ! 
+
+Vous donnez souvent des nouvelles [color=#FF0000]à[/color] vos parents ? (vc da frequentemente notícias para seus pais?)
+=> Vous [color=#FF0000]leur [/color]donnez toujours des nouvelles ? 
+
+Em Português, podemos usar próclises (“pronome antes”, exemplo: Eu a vejo), ênclises (“pronome depois”, exemplo: Eu quero vê-la) ou mesóclises (“pronome no meio”, exemplo: Eu vê-la-ei). No francês, porém, os pronomes complemento são usados sempre [color=#FF0000]ANTES [/color]dos verbos: “Je [color=#FF0000]la[/color] vois; Je veux [color=#FF0000]la[/color] voir; Je [color=#FF0000]la[/color] verrai”.
+
+A única exceção será o modo [b]Imperativo Afirmativo[/b]: 
+
+como nesse modo a frase começa com o verbo, sem o pronome pessoal, os pronomes complemento devem ser colocados [color=#FF0000]depois [/color]do verbo:
+
+La rue est libre. Prends-[color=#FF0000]la[/color]. (a rua está livre, pegue-a)
+
+No [b]Imperativo negativo, o pronome vem antes[/b], como nos outros casos:
+
+La rue est interdite. Ne [color=#FF0000]la[/color] prends pas.
+
+Assim como no Português, os pronomes complemento de objeto direto coincidem na forma com os artigos definidos: [color=#FF0000]LE, LA, LES, L’[/color]. Entretanto não se preocupe, pois artigos são ligados a substantivos, enquanto pronomes são ligados a verbos.
+
+Les enfants (artigo + substantivo), on les laisse (pronome + verbo) jouer.  (as crianças, a gente deixe-as jogar)
+
+Já os COI podem ser confundidos com o pronome tônico masculino singular de terceira pessoa [color=#FF0000](LUI) [/color]e com o adjetivo possessivo plural de terceira pessoa [color=#FF0000](LEUR)[/color]. Mas a diferença é perceptível, como no caso anterior:
+
+Je leur envoie (pronome + verbo) leur lettre (possessivo + substantivo). (eu lhes envio as cartas deles)
+
+Nas pessoas [color=#FF0000]JE[/color] e [color=#FF0000]TU[/color], o Imperativo Afirmativo deve ser feito com os Pronomes Tônicos:
+
+Elle doit [color=#FF0000]me [/color]donner le cadeau. Donne-[color=#FF0000]moi [/color]le cadeau! (ele tem que me dar o presente. Dê-me o presente.
+
+Tu dois [color=#FF0000]t’[/color]arrêter maintenant. Arrête-[color=#FF0000]t[/color]oi ! (vc deve parar agora. Pare(-se) ) 
+
+Uso dos pronomes com a forma negativa: não se separam do verbo. Por isso os COD e COI ficam mais próximos ao verbo do que a partícula “[color=#FF0000]NE[/color]”:
+Il ne[color=#FF0000] l’[/color]aime pas. (ele não o/a ama)
+On ne [color=#FF0000]leur [/color]dit pas la vérité. (a gente não lhes fala a verdade)
+
+[color=#FFA500][u]5.2. Pronomes Reflexivos[/u][/color]
+
+[table=2]
+[cell][u]Pronomes Pessoais[/u][/cell][cell] [u]	Pronomes Reflexivos[/u][/cell]
+[cell]JE[/cell][cell] 	ME, M’[/cell]
+[cell]TU[/cell][cell] 	TE, T’[/cell]
+[cell]IL[/cell][cell] 	SE, S’[/cell]
+[cell]ELLE[/cell][cell] 	SE, S’[/cell]
+[cell]ON[/cell][cell] 	SE, S’[/cell]
+[cell]NOUS[/cell][cell] 	NOUS[/cell]
+[cell]VOUS[/cell][cell] 	VOUS[/cell]
+[cell]ILS[/cell][cell] 	SE, S’[/cell]
+[cell]ELLES[/cell][cell] 	SE, S’[/cell]
+[/table]
+
+Os pronomes reflexivos são aqueles que fazem do sujeito de um verbo também o seu objeto, ou, como já ouvimos muitas vezes na escola: o sujeito age sobre si mesmo. Veja:
+
+Je m’appelle Jean. (eu me chamo Jean)
+Tu t’habilles rapidement. (vc se veste rapidamente)
+Vous vous souvenez de mon père ? (vcs se lembram do meu pai?)
+Elles s’asseyent à droite du professeur. (elas se sentam a direita do professor)
+
+Há verbos que são reflexivos em Francês, mas [b]não[/b] em Português e vice-versa:
+
+Tornar-se => [b]Devenir[/b]
+Eu me torno mais compreensivo a cada dia. => Je deviens plus compréhensif chaque jour. (E não “je me deviens...”)
+
+Parar => [b]s’Arrêter[/b]
+Nous nous arrêtons au feu rouge. => Nós paramos no sinal vermelho. (E não “Nós nos paramos...”) 
+
+Passear  => [b]se Promener[/b]
+Tu te promènes le soir ? => Você passeia à noite? (E não “Você se passeia...”)
+
+[color=#FFA500][u]5.3. Adjetivos Possessivos x Pronomes Possessivos[/u][/color]
+
+[table=3]
+[cell][/cell][cell][b]Adjetivos Possessivos[/b][/cell][cell][/cell]
+[cell][u]masculino[/u] [/cell][cell] [u]feminino[/u][/cell] [cell] [u]plural[/u][/cell]
+[cell]MON (meu)[/cell][cell] MA (minha)[/cell][cell] MES (meus/minhas)[/cell]
+[cell]TON (seu)[/cell][cell] TA (sua)[/cell][cell] TES (seus/suas)[/cell]
+[cell]SON (o dele)[/cell][cell] SA (a dele)[/cell][cell] SES (os dele/as dele)[/cell]
+[cell]SON (o dela)[/cell][cell] SA (a dela)[/cell][cell] SES (os dela/as dela)[/cell]
+[cell]NOTRE (nosso)[/cell][cell] NOTRE (nossa)[/cell][cell] NOS (nossos/nossas)[/cell]
+[cell]VOTRE (o de vocês)  [/cell][cell] VOTRE (a de vocês)[/cell][cell] VOS (os de vocês/as de vocês)[/cell]
+[cell]LEUR (o deles)[/cell][cell] LEUR (a deles)[/cell][cell] LEURS (os deles/as deles)[/cell]
+[cell]LEUR (o delas[/cell])[cell] LEUR (a delas)[/cell][cell] LEURS (os delas/as delas)[/cell]
+[/table]
+
+
+[table=3]
+[cell][/cell]
+[cell][b]Pronomes Possessivos[/b][/cell][cell][/cell]
+[cell][u]masculino[/u] [/cell][cell][u] feminino[/u][/cell] [cell] [u]plural[/u][/cell]
+[cell]LE MIEN (o meu)[/cell][cell] LA MIENNE (a minha[/cell])[cell] LES MIENS (os meus), LES MIENNES (as minhas)[/cell]
+[cell]LE TIEN (o seu)[/cell][cell] LA TIENNE (a sua[/cell])[cell] LES TIENS (os seus), LES TIENNES (as suas)[/cell]
+[cell]LE SIEN (o dele)[/cell][cell] LA SIENNE (a dele)[/cell][cell] LES SIENS (os dele), LES SIENNES (as dele)[/cell]
+[cell]LE SIEN (o dela)[/cell][cell] LA SIENNE (a dela)[/cell][cell] LES SIENS (os dela), LES SIENNES (as dela)[/cell]
+[cell]LE NÔTRE (o nosso)[/cell][cell] LA NÔTRE (a nossa)[/cell][cell] LES NÔTRES (os nossos/as nossas)[/cell]
+[cell]LE VÔTRE (o de vocês) [/cell])[cell] LA VÔTRE (a de vocês)[/cell][cell] LES VÔTRES (os de vocês/as de vocês)[/cell]
+[cell]LE LEUR (o deles)[/cell][cell] LA LEUR (a deles)[/cell][cell] LES LEURS (os deles/as deles)[/cell]
+[cell]LE LEUR (o delas)[/cell][cell] LA LEUR (a delas)[/cell][cell] LES LEURS (os delas/as delas)[/cell]
+[/table]
+
+Os possessivos [color=#FF0000]MA, TA e SA[/color], por terminarem em vogal, deveriam fazer elisão, mas para evitar confusões do tipo:
+
+Ma adresse (meu endereço) > M’adresse (me envia)
+
+Os franceses utilizam os possessivos [color=#FF0000]MON, TON e SON[/color], deixando assim:
+
+[b]Mon adresse[/b] (meu endereço)
+
+Note que a palavra “adresse” em Francês é feminina, ou seja, “uma endereço”. Logo, [b]toda vez que um[/b] [color=#FF0000]MA, TA ou SA[/color][b] encontrar uma palavra feminina começada por vogal, deverão ser substituídos por[/b] [color=#FF0000]MON, TON e SON[/color]. [b]Isso não muda o gênero da palavra.[/b]
+
+Uma palavra possessiva (seja pronome ou adjetivo) confere, como o próprio nome diz, a posse exercida por um elemento sobre outro numa frase. Em Português, não fazemos uma distinção muito evidente entre pronomes possessivos e adjetivos possessivos. Em Francês, essas diferenças são visíveis e funcionam um pouco diferentemente: um adjetivo possessivo fica junto à coisa possuída, enquanto um pronome possessivo substitui a coisa possuída.
+
+Funcionam como no Português, concordando em pessoa com o possuidor e em número com a coisa possuída. Veja:
+
+- [color=#DDA0DD]À qui est ce livre ?[/color] (de quem é este livro?)
+- [color=#DDA0DD]C’est à moi; c’est mon livre.[/color] (é meu; é meu livro)
+- [color=#DDA0DD]Et où est le mien ?[/color] (e onde está o meu?)
+- [color=#DDA0DD]Je ne sais pas où est le tien.[/color] (não sei onde está o teu.)
+
+Observe que o adjetivo possessivo ([color=#FF0000]MON[/color]) está sempre junto aos objetos possuídos enquanto os pronomes possessivos ([color=#FF0000]LE MIEN, LE TIEN[/color]) estão sozinhos.
+
+[color=#FFA500][u]5.4. Adjetivos Demonstrativos x Pronomes Demonstrativos[/u][/color]
+
+A diferença aqui entre adjetivo e pronome é a mesma do item anterior: adjetivo fica junto ao substantivo e pronome substitui o substantivo. Como no caso dos possessivos, essa distinção não existe no português. Veja:
+
+[color=#FF0000]Cet [/color]homme n’a pas de valeur. (este homen não tem valor)
+[color=#FF0000]Celui-ci[/color] par contre est très valeureux. (este, por outro lado, é muito valente)
+
+Em Português usamos o mesmo pronome para traduzir duas palavras diferentes no Francês, ou seja, [b]ESSE.[/b]
+
+[color=#FFA500][u]5.4.1. Adjetivos Demonstrativos[/u][/color]
+
+Os adjetivos demonstrativos determinam o substantivo juntando uma idéia de indicação objetiva, ou seja, podemos apontar para esse substantivo, demonstrar fisicamente sua existência. Eles servem para distinguir os seres e os objetos dos quais se falam.
+
+[table=3]
+[cell][/cell][cell] [b]Masculino  [/b][/cell][cell] [b]Feminino[/b][/cell]
+[cell][u]Singular [/u][/cell][cell] CE, CET(esse, este)  [/cell][cell] CETTE(essa, esta)[/cell]
+[cell][u]Plural [/u] [/cell][cell] CES (esses, estes, essas, estas)  [/cell][cell] CES (esses, estes, essas, estas)[/cell]
+[/table]
+
+[color=#DDA0DD]Cette fille est plus belle que sa mère.[/color] (essa moça é mais bela que a mãe dela)
+[color=#DDA0DD]Ce garçon est plus gros que ses frères ![/color] (esse rapaz é mais gordo que seus irmãos)
+[color=#DDA0DD]Cet oiseau s’envole vers le ciel.[/color] (esse pássaro voa para o céu)
+[color=#DDA0DD]Ces lumières me font mal aux yeux.[/color] (essas luzes machucam meus olhos)
+[color=#DDA0DD]Ces repas sont légers.[/color] (essas refeições são leves)
+
+Quando uma palavra masculina começa com vogal ou H mudo, o demonstrativo [color=#FF0000]CE [/color]é transformado em [color=#FF0000]CET.[/color]
+
+[color=#FF0000]C’est/Ce sont[/color]: são traduzidos respectivamente por [b]É[/b] e [b]SÃO[/b] quando não há objeto para ser demonstrado ou quando a tradução de [color=#FF0000]CE [/color]por ISSO ou ISTO não faz sentido. 
+
+Exemplo:
+
+[color=#FF0000]C’est[/color] un moyen de transport trop cher. => É um meio de transporte caro demais.
+[color=#FF0000]Ce sont[/color] des vies précieuses. => São vidas preciosas.
+
+[color=#FF0000]C’est x Il est[/color]: uma forma comum de diferenciar o uso de uma forma ou da outra é que [color=#FF0000]C’est[/color] serve para constatar, apresentar, identificar. Já [color=#FF0000]Il est[/color] é usado para descrever:
+
+- Qui est cet homme ? (quem é este homem?)
+- [color=#FF0000]C’est[/color] Georges (apresentação). [color=#FF0000]Il est[/color] belge (identificação). (é Georges, ele é belga)
+
+[color=#FFA500][u]5.4.2. Pronomes Demonstrativos[/u][/color]
+
+[table=5]
+[cell][/cell][cell][b][u]Singular[/u][/b][/cell] [cell][b][u]Neutro[/u][/b][/cell] [cell][b][u]Plural[/u][/b][/cell][cell][/cell]
+[cell][b]Masculino [/b][/cell][cell][b]Feminino [/b][/cell][cell][/cell] [cell][b]Masculino [/b][/cell] [cell][b]Feminino [/b][/cell]
+[cell]celui(esse)[/cell]
+[cell]celle(essa)[/cell]
+[cell]ce(isso)[/cell]
+[cell]ceux(esses)[/cell]
+[cell]celles(essas)[/cell]
+[cell]celui-ci(este)[/cell]
+[cell]celle-ci(esta)[/cell]
+[cell]ceci(isto)[/cell]
+[cell]ceux-ci(estes)[/cell]
+[cell]celles-ci(estas)   [/cell]
+[cell]celui-là(aquele)  [/cell]
+[cell]celle-là(aquela)  [/cell]
+[cell]cela(aquilo)  [/cell]
+[cell]ceux-là(aqueles)   [/cell]
+[cell]celles-là(aquelas)   [/cell]
+[/table]
+
+Os pronomes demonstrativos substituem o substantivo mostrando as coisas ou seres dos quais se falam. Entretanto, não poderiam ser substituídos por COD ou COI, pois ao empregá-los num texto o autor quer referir-se exatamente ao que acabou de falar ou escrever ou ao que está demonstrando. 
+
+Exemplos:
+
+Le mari d’Ana joue au foot le samedi pendant que [color=#FF0000]celui [/color]de Jeannette va nager au club. (o marido de Ana joga futebol no sábado enquanto [color=#FF0000]o[/color] da Jeannette vai nadar no clube)
+
+Não poderíamos usar um pronome complemento (neste caso LE) porque “o (marido) de Jeannette” não é objeto, mas sujeito! Se você se lembra das primeiras lições, [color=#FF0000]pronomes do tipo objeto não conjugam verbo, só pronomes do tipo sujeito[/color]. E como “o (marido) de Jeannette” vai nadar, é preciso usar outro pronome, que neste caso é o celui. Em Português não temos essa distinção. Por isso quando você for escrever uma frase desse tipo, preste muita atenção no que vai fazer!
+
+[color=#FFA500][u]5.4.2.1. Quando usar cada um desses pronomes?[/u][/color]
+
+Os pronomes com partículas 
+–[color=#FF0000]CI[/color] e 
+–[color=#FF0000]LÀ[/color] recebem-nas para demonstrar a proximidade ([color=#FF0000]-CI[/color]) ou a distância ([color=#FF0000]-LÀ[/color]) que estão de quem fala.
+
+C’est une bonne poire, mais celle-[color=#FF0000]ci[/color] est plus douce. (é uma boa pera mas essa aqui é mais doce)
+C’est une belle pomme, mais celle-[color=#FF0000]là[/color] est plus mûre. (é uma bela maçã mas essa ali é mais madura)
+
+Quando não é possível saber a distância ou proximidade de um objeto, nem mesmo imaginá-la, então usamos os pronomes sem partícula. 
+
+Nota: [color=#FF0000]CECI [/color]e [color=#FF0000]CELA [/color]não têm partículas!
+
+Também usamos os pronomes sem partícula quando a distância não precisa ser considerada: 
+
+La maison de Chantal est belle, mais [color=#FF0000]celle [/color]de Monique est plus moderne. (a casa da Chantal é bela mas a de Monique é mais moderna)
+
+Frases como:
+
+Aqueles que desafiam a lei são destruídos.
+Os que desafiam a lei são destruídos.
+
+São traduzidas assim:
+
+[color=#DDA0DD]Ceux qui défient la loi sont détruits.[/color]
+
+O “[b]o[/b]” de “[b]o que[/b]” não é traduzido por “[b]le[/b]”, mas sim por [color=#FF0000]CE[/color]: 
+
+O que eu quero é impossível. => [color=#DDA0DD]Ce que je veux est impossible.[/color]
+
+"
+
+[node name="Cap6" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green][b]Capítulo 6: Verbos (II – Tempos do Passado)[/b][/color]
+
+[color=#FFA500][u]6.1. Passé Composé[/u][/color]
+
+O Passé Composé é um tempo verbal da língua francesa comparável ao tempo [b]Pretérito Perfeito[/b] da língua portuguesa. Ele serve para descrever acontecimentos acabados, ou seja, sem prolongamento indefinido, num momento passado do discurso. O que diríamos em português “Eu vi as casas”, diríamos em francês “[color=#DDA0DD]J’ai vu les maisons[/color]”. 
+
+[u]Formação[/u]
+
+O Passé Composé é formado por um verbo auxiliar “[color=#FF0000]ÊTRE[/color]” ou “[color=#FF0000]AVOIR[/color]” mais o [b]Particípio Passado[/b] do verbo que se deseja colocar no passado. Na frase citada acima, “[b]J’ai vu les maisons[/b]”, o verbo auxiliar é “[color=#FF0000]AVOIR[/color]” e o verbo que foi colocado no passado é “[color=#FF0000]VOIR[/color]”. O verbo auxiliar é conjugado no presente do indicativo, tempo que já foi demonstrado no [b]Capítulo 03[/b]. Os particípios passados têm uma formação especial, demonstrada a seguir.
+
+[table=2]
+
+[cell][u]Falar[/u] (pretérito perfeito)	 [/cell][cell][u]Parler[/u] (passé composé)[/cell]
+[cell]Eu falei [/cell][cell] J’ai parlé[/cell]
+[cell]Você falou [/cell][cell] Tu as parlé[/cell]
+[cell]Ele/Ela/a gente falou [/cell][cell] Il/Elle/On a parlé[/cell]
+[cell]Nós falamos [/cell][cell] Nous avons parlé[/cell]
+[cell]Vocês falaram [/cell][cell] Vous avez parlé[/cell]
+[cell]Eles/Elas falaram [/cell][cell] Ils/Elles ont parlé[/cell]
+[/table]
+
+[color=#FFA500][u]6.1.1. Particípio Passado[/u][/color]
+
+O particípio passado é, de certa forma, um adjetivo formado a partir de um verbo. Exemplos em português são “Cantar” => “Cantado”; “Partir” => “Partido”; “Escrever” => “Escrito”, e assim sucessivamente. Alguns verbos seguem regras fixas para essa formação, como os do Primeiro e Segundo grupos. Já os de Terceiro grupo serão apresentados em tabela à parte.
+
+[u]a) Primeiro Grupo (e demais terminados em –ER):[/u]
+
+Retira-se a terminação –[color=#FF0000]ER[/color] e coloca-se a terminação –[color=#FF0000]É[/color]. 
+
+[u]Exemplos:[/u]
+
+Chant[color=#FF0000]er[/color] (cantar) => Chant[color=#FF0000]é[/color]
+Parl[color=#FF0000]er[/color] (falar) => Parl[color=#FF0000]é[/color]
+Rest[color=#FF0000]er[/color] (ficar) => Rest[color=#FF0000]é[/color]
+All[color=#FF0000]er[/color] (ir) => All[color=#FF0000]é[/color]
+
+[u]b) Segundo Grupo (verbos regulares terminados em –[color=#FF0000]IR[/color]):[/u]
+
+Retira-se a terminação –[color=#FF0000]IR[/color] e coloca-se a terminação –[color=#FF0000]I[/color]. 
+
+[u]Exemplos:[/u]
+
+Fin[color=#FF0000]ir[/color] (finir, terminar) => Fin[color=#FF0000]i[/color]
+Chois[color=#FF0000]ir[/color] (escolher) => Chois[color=#FF0000]i[/color]
+Réuss[color=#FF0000]ir[/color] (conseguir) => Réuss[color=#FF0000]i[/color]
+
+[u]c) Terceiro Grupo (verbos irregulares terminados em -[color=#FF0000]IR[/color], -[color=#FF0000]RE[/color] e -[color=#FF0000]OIR[/color]):[/u]
+
+[table=2]
+[cell][u]infinitivo[/u][/cell][cell][u] particípio passado[/u][/cell]
+[cell]aller (ir)[/cell][cell] - allé[/cell]
+[cell]apprendre (aprender, ensinar)		[/cell][cell] - appris[/cell]
+[cell]s’asseoir (sentar-se)[/cell][cell] - assis[/cell]
+[cell]attendre (esperar)[/cell][cell] - attendu[/cell]
+[cell]avoir (ter)[/cell][cell] - eu[/cell]
+[cell]battre (derrotar)[/cell][cell] - battu[/cell]
+[cell]boire (beber)[/cell][cell] - bu[/cell]
+[cell]comprendre (compreender)[/cell][cell] - compris[/cell]
+[cell]conduire (dirigir)[/cell][cell] - conduit[/cell]
+[cell]connaître (conhecer)[/cell][cell] - connu[/cell]
+[cell]construire (construir)[/cell][cell] - construit[/cell]
+[cell]courir (correr)[/cell][cell] - couru[/cell]
+[cell]croire (crer)[/cell][cell] - cru[/cell]
+[cell]découvrir (descobrir)[/cell][cell] - découvert[/cell]
+[cell]défendre (proibir, defender)[/cell][cell] - défendu[/cell]
+[cell]devenir (tornar-se)[/cell][cell] - devenu[/cell]
+[cell]devoir (dever, ter que)[/cell][cell] - dû[/cell]
+[cell]dire (dizer)[/cell][cell] - dit[/cell]
+[cell]dormir (dormir)[/cell][cell] - dormi[/cell]
+[cell]écrire (escrever)[/cell][cell] - écrit[/cell]
+[cell]entendre (ouvir)[/cell][cell] - entendu[/cell]
+[cell]être (ser, estar, ficar)[/cell][cell] - été[/cell]
+[cell]faire (fazer)[/cell][cell] - fait[/cell]
+[cell]falloir (ser necessário)[/cell][cell] - fallu[/cell]
+[cell]interdire (proibir)[/cell][cell] - interdit[/cell]
+[cell]lire (ler)[/cell][cell] - lu[/cell]
+[cell]mentir (mentir)[/cell][cell] - menti[/cell]
+[cell]mettre (pôr, colocar)[/cell][cell] - mis[/cell]
+[cell]mourir (morrer)[/cell][cell] - mort[/cell]
+[cell]naître (nascer)[/cell][cell] - né[/cell]
+[cell]offrir (oferecer)[/cell][cell] - offert[/cell]
+[cell]ouvrir (abrir)[/cell][cell] - ouvert[/cell]
+[cell]partir (partir)[/cell][cell] - parti[/cell]
+[cell]peindre (pintar)[/cell][cell] - peint[/cell]
+[cell]perdre (perder)[/cell][cell] - perdu[/cell]
+[cell]plaire (agradar)[/cell][cell] - plu[/cell]
+[cell]pleuvoir (chover)[/cell][cell] - plu[/cell]
+[cell]pouvoir (poder)[/cell][cell] - pu[/cell]
+[cell]prendre (tomar, pegar)[/cell][cell] - pris[/cell] 
+[cell]produire (produzir)[/cell][cell] - produit[/cell]
+[cell]recevoir (receber)[/cell][cell] - reçu[/cell]
+[cell]rendre (devolver)[/cell][cell] - rendu[/cell]
+[cell]répondre (responder)[/cell][cell] - répondu[/cell]
+[cell]rire (rir)[/cell][cell] - ri[/cell]
+[cell]savoir (saber)[/cell][cell] - su[/cell]
+[cell]sentir (sentir, cheirar)[/cell][cell] - senti[/cell]
+[cell]sortir (sair)[/cell][cell] - sorti[/cell]
+[cell]suivre (seguir)[/cell][cell] - suivi[/cell]
+[cell]traduire (traduzir)[/cell][cell] - traduit[/cell]
+[cell]vendre (vender)[/cell][cell] - vendu[/cell]
+[cell]venir (vir)[/cell][cell] - venu[/cell]
+[cell]vivre (viver)[/cell][cell] - vécu[/cell]
+[cell]voir (ver)[/cell][cell] - vu[/cell]
+[cell]vouloir (querer)[/cell][cell] - voulu[/cell]
+[/table]
+
+[color=#FFA500][u]6.1.2. Quando usar “ÊTRE” e “AVOIR”[/u][/color]
+
+O verbo auxiliar mais usado é “[color=#FF0000]AVOIR[/color]”. Em apenas dois casos podemos usar o verbo “[color=#FF0000]ÊTRE[/color]” como auxiliar:
+
+[u]a) Quando o verbo desejado é reflexivo e pronominal:[/u]
+
+[color=#FF0000]S’HABILLER[/color] => [color=#DDA0DD]Elle s’est habillée pour sortir.[/color] (ela se vestiu para sair)
+[color=#FF0000]S’ASSEOIR[/color] => [color=#DDA0DD]Nous nous sommes assis par terre.[/color] (nos sentamos no chão)
+
+[u]b) Quando o verbo desejado possui sentido reflexivo mesmo não sendo pronominal:[/u]
+
+[color=#DDA0DD]ALLER/VENIR
+MONTER/DESCENDRE
+NAÎTRE/MOURIR
+ARRIVER/PARTIR
+PASSER/RESTER
+ENTRER/SORTIR
+TOMBER
+RETOURNER[/color]
+
+Há certa controvérsia sobre um critério objetivo e garantido para decretar quais verbos são esses. Alguns professores falam se tratar de verbos de movimento, mas correr e andar ([color=#DDA0DD]courir[/color] e [color=#DDA0DD]marcher[/color]) são movimentos e não são auxiliados por [color=#FF0000]être[/color]... A questão da intransitividade é problemática, pois os verbos não são exclusivamente transitivos ou intransitivos. Dessa forma, preferimos simplesmente formar uma lista dos mais usados e alertar para o fato de serem verbos com sentido reflexivo sem pronome reflexivo.
+
+Ils [color=#FF0000]sont [/color]allés à Araraquara. (eles foram para Araraquara)
+Je [color=#FF0000]suis [/color]venu de France. (eu vim da França)
+Vous [color=#FF0000]êtes [/color]passés à l’école pour prendre les enfants ? (vc passou na escola para pegar as crianças?)
+Elle [color=#FF0000]est [/color]née en Italie. (ela nasceu na Italia)
+
+[color=#FFA500][u]6.1.3. Concordância do Particípio Passado[/u][/color]
+
+Ao utilizar o verbo “[color=#FF0000]ÊTRE[/color]” como auxiliar, é necessário fazer com que o Particípio Passado concorde em número (singular/plural) e gênero (masculino/feminino) com o sujeito do verbo. 
+
+[u]Exemplos:[/u]
+
+Il est parti (masculino singular) => o Particípio Passado permanece inalterado.
+
+Elle est parti[color=#FF0000]e[/color] (feminino singular) => adiciona-se [color=#FF0000]E[/color] ao Particípio Passado.
+
+Ils sont parti[color=#FF0000]s[/color] (masculino plural) => adiciona-se [color=#FF0000]S[/color] ao Particípio Passado.
+
+Elles sont parti[color=#FF0000]es[/color] (feminino plural) => adicionam-se [color=#FF0000]ES[/color] ao Particípio Passado.
+
+O verbo “[color=#FF0000]AVOIR[/color]” pede a concordância apenas se estiver sendo usado um [b]COD[/b] e se este estiver antes do verbo: 
+
+Tu as mis la bouteille sur la table ? (vc colocou a garafa na mesa?) Neste caso existe um COD (la bouteille)  mas ele se encontra depois do verbo. Por isso, o participio passado não concorda.
+Tu [u]l’[/u]as mis[color=#FF0000]e[/color] sur la table ? (vc a colocou na mesa?) Neste caso o COD (l' = pronome que representa a garafa) esta antes do verbo e por isso o paricipio passado concorda com o COD (bouteille = feminino singular)
+Nous avons bu [u]la bière que[/u] tu as acheté[color=#FF0000]e[/color]. (nos bebemos a cerveja que vc comprou) Neste caso o pronome relativo [b] QUE[/b] representa la bière (feminino singular) e por isso o participio passado concorda com ele.
+
+[color=#FFA500][u]6.2. Imparfait[/u][/color]
+
+O [b]Imparfait[/b] do Francês corresponde ao [b]Pretérito Imperfeito[/b] do Português. Veja:
+
+Enquanto ela [color=#4169E1]corria[/color], seus cabelos [color=#4169E1]dançavam[/color] ao sol.
+ => Pendant qu’elle [color=#FF0000]courait[/color], ses cheveux [color=#FF0000]dansaient[/color] au soleil.
+
+[u]Formação:[/u]
+
+A formação do Imparfait é simples, basta saber conjugar o verbo desejado no Présent. Tomemos por exemplo o verbo [color=#FF0000]VOIR[/color] (ver), que é bem irregular:
+
+[table=2]
+
+[cell][u]VOIR      [/u][/cell][cell] [u]VER[/u][/cell]
+[cell]Je vois[/cell][cell]Eu vejo[/cell]
+[cell]Tu vois[/cell][cell]Você vê[/cell]
+[cell]Il voit[/cell][cell]Ele vê[/cell]
+[cell]Elle voit[/cell][cell]Ela vê[/cell]
+[cell]On voit[/cell][cell]Vê-se[/cell]
+[cell][color=#4169E1]Nous voy[/color][color=#FF0000]ons[/color]		[/cell][cell]Nós vemos[/cell]
+[cell]Vous voyez[/cell][cell]Vocês veem[/cell]
+[cell]Ils voient[/cell][cell]Eles veem[/cell]
+[cell]Elles voient[/cell][cell]Elas veem[/cell]
+[/table]
+
+Em seguida, pegamos o radical do verbo da primeira pessoa do plural ([color=#DDA0DD]NOUS[/color]). Para obter o radical, basta retirar sua terminação -[color=#FF0000]ONS[/color] (fica [color=#4169E1]VOY[/color]-). Depois é só adicionar as terminações do Imparfait, que são as seguintes:
+
+[color=#FF0000]-AIS, 
+-AIS, 
+-AIT, 
+-IONS, 
+-IEZ, 
+-AIENT[/color]
+
+O verbo [color=#FF0000]VOIR[/color] no [b]Imparfait [/b]fica assim então:
+
+[table=2]
+
+[cell]VOIR[/cell][cell] VER[/cell]
+[cell]Je [color=#4169E1]voy[/color][color=#FF0000]ais[/color][/cell][cell]Eu via[/cell]
+[cell]Tu [color=#4169E1]voy[/color][color=#FF0000]ais[/color][/cell][cell]Você via[/cell]
+[cell]Il [color=#4169E1]voy[/color][color=#FF0000]ait[/color][/cell][cell]Ele via[/cell]
+[cell]Elle [color=#4169E1]voy[/color][color=#FF0000]ait[/color][/cell][cell]Ela via[/cell]
+[cell]On [color=#4169E1]voy[/color][color=#FF0000]ait[/color][/cell][cell]Via-se/Era visto[/cell]
+[cell]Nous [color=#4169E1]voy[/color][color=#FF0000]ions[/color][/cell][cell]Nós víamos[/cell]
+[cell]Vous [color=#4169E1]voy[/color][color=#FF0000]iez[/color][/cell][cell]Vocês viam[/cell]
+[cell]Ils [color=#4169E1]voy[/color][color=#FF0000]aient[/color][/cell][cell]Eles viam[/cell]
+[cell]Elles [color=#4169E1]voy[/color][color=#FF0000]aient	[/color][/cell][cell]Elas viam[/cell]
+[/table]
+
+Nota: as terminações -AIS, -AIT e -AIENT tem todas o mesmo som: [b][é][/b]
+
+[u]Observação:[/u] O único verbo que não segue a essa regra é o verbo [color=#FF0000]ÊTRE[/color]: 
+
+[b]ÊTRE[/b]
+J’[color=#FF0000]ét[/color]ais (eu era...)
+Tu [color=#FF0000]ét[/color]ais
+Il [color=#FF0000]ét[/color]ait
+Elle [color=#FF0000]ét[/color]ait
+On [color=#FF0000]ét[/color]ait
+Nous [color=#FF0000]ét[/color]ions
+Vous [color=#FF0000]ét[/color]iez
+Ils [color=#FF0000]ét[/color]aient
+Elles [color=#FF0000]ét[/color]aient
+
+[color=#FFA500][u]6.3. Plus-que-Parfait[/u][/color]
+
+O [b]Plus-que-Parfait[/b] corresponde ao tempo [b]Mais-que-Perfeito[/b] do Português. Ele tem a mesma formação do [b]Passé Composé[/b], ou seja, auxiliar [color=#FF0000]ÊTRE[/color] ou [color=#FF0000]AVOIR[/color] mais o particípio passado do verbo que desejamos conjugar. Entretanto, o verbo auxiliar ([color=#DDA0DD]être ou avoir[/color]) deve ser conjugado no [b]Imparfait. [/b]Veja:
+
+Marie [color=#FF0000]avait fait[/color] la cuisine quand ses parents sont arrivés.
+Marie [color=#FF0000]arrumara [/color]a cozinha quando seus pais chegaram. 
+ou :
+Marie [color=#FF0000]tinha arrumado[/color] a cozinha quando seus pais chegaram.
+
+Tome muito cuidado ao traduzir do Português para o Francês esse tempo, pois na forma composta (verbo TER mais particípio passado do verbo a conjugar, como em “tinha arrumado”) o Mais-que-Perfeito usa sempre o mesmo auxiliar e o [b]Plus-que-Parfait[/b] varia entre dois ([color=#DDA0DD]être e avoir[/color]) com as mesmas regras do [b]Passé Composé[/b]. Veja:
+
+Ela [color=#4169E1]tinha se vestido[/color] para sair. => Elle [color=#4169E1]s’était habillée[/color] pour sortir. 
+(E não: Elle s’[color=#FF0000]avait[/color] habillée pour sortir.)
+
+Eles [color=#4169E1]tinham caído[/color] da ponte há dois anos. => Ils [color=#4169E1]étaient tombés[/color] du pont il y a deux ans. 
+(E não: Ils [color=#FF0000]avaient [/color]tombés du pont il y a deux ans.)
+
+[color=#FFA500][u]6.4. Passé Récent[/u][/color]
+
+O [b]Passé Récent[/b] não tem correspondente direto no Português, mas pode ser traduzido pela expressão “[b]acabar de[/b]”, no sentido de uma ação recém-acabada. Ele é formado pelo verbo [color=#FF0000]VENIR [/color]no [b]Présent[/b], mais a preposição [color=#FF0000]DE[/color], mais o verbo principal no Infinitivo. Veja:
+
+Monsieur Sapoti [color=#4169E1]vient de sortir[/color]. => O senhor Sapoti[color=#4169E1] acaba de sair[/color]. 
+Je [color=#4169E1]viens de téléphoner[/color] à ma mère. => [color=#4169E1]Acabo de telefonar[/color] para minha mãe.
+
+
+"
+
+[node name="Cap7" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green][b]Capítulo 7: Pronomes e Adjetivos (II)[/b][/color]
+
+[color=#FFA500][u]7.1. Pronomes Relativos[/u][/color]
+
+Um pronome relativo, ao contrário dos outros pronomes, não substitui o elemento da frase ao qual está ligado, mas também tem por função evitar repetições ao juntar duas frases. Veja:
+
+Romain est un jeune homme. (Romain é um jovem homem)
+Il travaille de lundi à samedi. (ele trabalha de segunda até sábado)
+Romain est un jeune homme [color=#FF0000]qui [/color]travaille de lundi à samedi. (Romain é um jovem homem que trabalha de segunda até sábado)
+
+Voilà la lettre. (aqui está a carta)
+Je pensais à cette lettre. (eu estava pensando nessa carta)
+Voilà la lettre [color=#FF0000]à laquelle[/color] je pensais. (aqui está a carta na qual eu estava pensando)
+
+Os pronomes relativos podem ser simples ou compostos:
+
+[u]7.1.1. Pronomes Relativos Simples[/u][color=#FFA500][/color]
+
+[color=#FF0000]QUI/QUE[/color]: ambos são traduzidos por [b]QUE[/b]. Entretanto, [color=#FF0000]QUI[/color] é utilizado para retomar o [u]sujeito [/u]de uma frase, enquanto [color=#FF0000]QUE [/color]retoma o [u]objeto[/u]. Exemplos:
+
+Marie est la fille [color=#FF0000]qui [/color]m’aime. => Marie é a garota que me ama. (Aqui Marie é quem ama.) 
+
+Marie est la fille [color=#FF0000]que [/color]j’aime. => Marie é a garota que eu amo. (Aqui Marie é amada)
+
+Memorize assim: 
+
+=> se o sujeito do verbo estiver [color=#4169E1]antes[/color] do pronome, use [color=#FF0000]QUI[/color]; 
+=> se o sujeito do verbo estiver [color=#4169E1]depois[/color] do pronome, use [color=#FF0000]QUE[/color]. 
+
+Nota: [color=#FF0000]QUE [/color]faz elisão; [color=#FF0000]QUI [/color]não faz elisão! 
+=> C’est la fille [color=#4169E1]qui [/color]ouvre la fenêtre. (é a moça que abre a janela)
+=> C'est la fille [color=#4169E1]qu'[/color]on voit tous les jours. (é a moça que a gente vê todos os dias)
+
+[color=#FF0000]OÙ[/color]: traduzido por [b]ONDE[/b]. Retoma [b]lugares, [/b]mas também [b]tempos. [/b]Note que em Português, apesar do uso muito comum de frases como “Foi num tempo onde...”, não se deve usar onde com relação a tempo e sim a lugar. Logo, quando você encontrar uma frase como “Au moment [color=#4169E1]où[/color]...” traduza por “No momento [color=#4169E1]em que[/color]...” ou coisa semelhante. 
+
+Exemplos:
+
+C’est le pays [color=#FF0000]où [/color]je suis né. (é o pais onde eu nasci)
+Ça a été à l’époque [color=#FF0000]où [/color]les gens étaient plus polis. (foi uma época em que as pessoas eram mais educadas)
+
+[color=#FF0000]DONT[/color]: traduzido por [b]CUJO[/b] ou [b]DE QUE[/b], [b]DO QUAL[/b]. Retoma elementos de frase introduzidos pela preposição [color=#FF0000]DE[/color]; seja por regência verbal, seja por posse. Veja:
+
+[u]Posse:[/u]
+
+Pierre é meu amigo. O pai de Pierre é pintor. => Pierre est mon ami. Le père de Pierre est peintre.
+Pierre é meu amigo. Seu pai é pintor. => Pierre est mon ami. Son père est peintre.
+Pierre é o amigo [color=#4169E1]cujo [/color]pai é pintor. => Pierre est l’ami [color=#FF0000]dont [/color]le père est peintre.
+
+[u]Regência:[/u]
+
+A família é um assunto[color=#4169E1] do qual[/color] eles não falam. => La famille est un sujet [color=#FF0000]dont [/color]ils ne parlent pas.
+
+[color=#FFA500][u]7.1.2. Pronomes relativos compostos[/u][/color]
+
+[table=4]
+[cell][u]Masculino Singular  [/u][/cell][cell] [u]Feminino singular  [/u][/cell][cell] [u]Masculino Plural[/u][/cell][cell] [u]Feminino Plural[/u][/cell]
+[cell]lequel(o qual)[/cell]
+[cell]laquelle(a qual)[/cell]
+[cell]lesquels(os quais)[/cell]
+[cell]lesquelles(as quais)[/cell]
+[cell]duquel(do qual)[/cell]
+[cell]de laquelle(da qual) [/cell]
+[cell]desquels(dos quais)[/cell]
+[cell]desquelles(das quais)[/cell]
+[cell]auquel(ao qual)[/cell]
+[cell]à laquelle(à qual) [/cell]
+[cell]auxquels(aos quais)  [/cell]
+[cell]auxquelles(às quais)[/cell]
+[/table]
+
+Os pronomes da primeira linha ([color=#FF0000]lequel, laquelle[/color], etc.) são raramente utilizados sem uma preposição. Já os demais são utilizados quando o antecedente a ser retomado não é uma pessoa. Veja:
+
+C’est une fille [color=#4169E1]à cause de laquelle[/color] je pleure. = [color=#4169E1]À cause de qui[/color] je pleure. => É uma garota [color=#4169E1]por causa da qual[/color] eu choro.
+
+C’est une blessure [color=#4169E1]à cause de laquelle[/color] je pleure. => É uma ferida [color=#4169E1]por causa da qual [/color]eu choro.
+
+[color=#FFA500][u]7.2. Adjetivos Indefinidos x Pronomes Indefinidos[/u][/color]
+
+1. Os adjetivos indefinidos e os pronomes indefinidos têm grafias semelhantes, mas funções diferentes: 
+enquanto os adjetivos acompanham um substantivo, os pronomes os substituem.
+
+[color=#FF0000]QUELQUE(S)[/color] (algum, alguns, alguma, algumas) Adjetivo e Pronome:
+
+J’ai su [color=#4169E1]quelques [/color]mots sur ce sujet. (adjetivo) => Eu soube algumas palavras sobre esse assunto.
+[color=#4169E1]Quelqu’un[/color] m’a dit que tu n’es pas un bon commerçant. (pronome) => Alguém me disse que você não é um bom comerciante.
+Regardez ces filles: [color=#4169E1]quelques-unes[/color] sont avocates. (pronome) => Olhem essas meninas: algumas são advogadas.
+
+[color=#FF0000]PLUSIEURS[/color] (vários, várias):
+
+J’ai vu [color=#4169E1]plusieurs [/color]voitures, mas la tienne n’était pas là. => Eu vi vários carros, mas o seu não estava lá.
+
+[color=#FF0000]CERTAIN(S)/CERTAINE(S)[/color] (certo, certos, certa, certos):
+
+[color=#4169E1]Certains [/color]hommes n’ont pas d’honneur. => Certos homens não têm honra.
+
+[color=#FF0000]DIFFÉRENT(S)/DIFFÉRENTE(S)[/color] (diferente, diferentes):
+
+Elle a visité [color=#4169E1]différents [/color]paysages pendant son dernier voyage. => Ela visitou diferentes paisagens durante sua última viagem.
+
+[color=#FF0000]CHAQUE/CHACUN/CHACUNE[/color] (cada, cada um, cada uma):
+
+Elle devient [color=#4169E1]chaque [/color]jour plus forte. => Ela se torna cada dia mais forte.
+[color=#4169E1]Chacun [/color]à son tour. => Cada um em sua vez.
+
+[color=#FF0000]TOUT/TOUS/TOUTE(S)[/color] (tudo, todo, todos, toda, todas) Adjetivo e Pronome: 
+
+Vous avez mangé [color=#4169E1]tout [/color]le gâteau. (adjetivo) =>Vocês comeram todo o bolo.
+[color=#4169E1]Tout [/color]est fini. (pronome) => Tudo está acabado.
+
+[color=#FF0000]AUTRE [/color](outro, outra):
+
+Une [color=#4169E1]autre [/color]pierre est lancée contre la fenêtre. => Outra pedra é lançada contra a janela.
+
+[color=#FFA500][u]7.3. Pronomes Y e EN[/u][/color]
+
+Os pronomes [color=#FF0000]Y[/color] e [color=#FF0000]EN[/color] substituem expressões inteiras introduzidas por preposições.
+
+[color=#FFA500][u]7.3.1. Pronome [color=#FF0000]EN[/color]: substitui expressões introduzidas pela preposição [color=#FF0000]DE[/color].[/u][/color]
+
+a) [u]Complemento de lugar.[/u]
+Il vient [color=#4169E1]de[/color] Paris. Il [color=#4169E1]en[/color] vient. => Ele vem [color=#4169E1]de[/color] Paris. Ele vem [color=#4169E1]de lá[/color]. 
+
+b) [u]Complemento nominal.[/u]
+– Tu es heureux [color=#4169E1]de[/color] venir ? – Oui, j’[color=#4169E1]en[/color] suis heureux. => Você está feliz por vir? Sim, estou feliz por isso. 
+
+c) [u]Complemento verbal[/u] (verbos regidos por [color=#FF0000]DE[/color]).
+Il se [color=#4169E1]souvient [/color]toujours [color=#4169E1]de [/color]sa maison. Il s’[color=#4169E1]en[/color] souvient toujours. => Ele sempre se lembra [color=#4169E1]da[/color] casa dele. Ele sempre se lembra [color=#4169E1]dela[/color]. 
+
+d) [u]Quantidade/Partitivo[/u].
+Tu veux [color=#4169E1]de la[/color] bierre? – Oui, j’[color=#4169E1]en[/color] veux. => Você quer cerveja? – Sim, eu quero ([color=#4169E1]disso[/color]).
+
+Perceba que o partitivo não faz parte do uso padrão atual do Português no Brasil. Portanto, [color=#FF0000]NÃO TRADUZA O PARTITIVO.[/color]
+
+[color=#FFA500][u]7.3.2. O pronome Y: [/u][/color]
+
+O número de preposições que introduzem as expressões substituíveis por [color=#FF0000]Y[/color] são incontáveis. É mais fácil levar em conta suas funções.
+
+a) [u]Complemento de lugar.[/u]
+Il habite [color=#4169E1]à[/color] São Paulo depuis vingt ans. > Il [color=#4169E1]y[/color] habite depuis vingt ans. => Ele mora em São Paulo há vinte anos. > Ele mora [color=#4169E1]lá[/color] há vinte anos.
+
+b) [u]Complemento verbal.[/u]
+Je ne m’oppose pas [color=#4169E1]à[/color] cette question. > Je ne m’[color=#4169E1]y[/color] m’oppose pas. => Eu não me oponho a essa questão. > Eu não me oponho [color=#4169E1]a[/color] ela. 
+On pense beaucoup [color=#4169E1]à[/color] cette affaire. > On [color=#4169E1]y[/color] pense beaucoup. => Pensa-se muito nesse negócio. > Pensa-se muito [color=#4169E1]nisso. [/color]
+
+Nota: Os pronomes [color=#FF0000]Y[/color] e [color=#FF0000]EN[/color] não substituem pessoas:
+
+Elle pense beaucoup à Joseph. > Elle pense [color=#4169E1]à lui[/color].  (E não: [s]Elle y pense[/s].)
+
+
+"
+
+[node name="Cap8" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green]Capítulo 8: Verbos (III – Tempos do Futuro)[/color]
+
+
+[color=#FFA500][u]8.1. Futur Simple[/u][/color]
+
+O [b]Futur Simple[/b] corresponde ao [b]Futuro do Presente[/b].
+
+Il [color=#4169E1]pleuvra[/color] demain. =>> [color=#4169E1]Choverá [/color]amanhã. 
+Je [color=#4169E1]deviendrai [/color]un grand écrivain. => Eu me [color=#4169E1]tornarei [/color]um grande escritor.
+Nous nous [color=#4169E1]marierons[/color] en avril prochain. => Nós nos [color=#4169E1]casaremos[/color] no próximo mês de abril.
+
+[u]Formação:[/u] para os verbos terminados em [b]ER, IR e RE[/b], basta pegar o [u]infinitivo [/u]do verbo desejado e adicionar as seguintes terminações: 
+
+[color=#FF0000]–AI, –AS, –A, –ONS, –EZ, –ONT[/color]
+
+[u]Exemplos:[/u]
+
+Parler (falar) => Je [color=#4169E1]parlerai [/color]à M. Dutilleul demain.
+Finir (terminar/acabar) => Vous [color=#4169E1]finirez [/color]demain.
+Mettre (colocar) => Elles [color=#4169E1]mettront [/color]le bureau en ordre.
+
+[u]Exceções: [/u]
+
+[table=3]
+[cell][u]Aller (ir)[/u][/cell][cell][u]Avoir (ter)[/u][/cell][cell][u]Courir (correr)[/u][/cell]
+[cell]j’irai[/cell][cell]j’aurai[/cell][cell]je courrai[/cell]
+[cell]tu iras[/cell][cell]tu auras[/cell][cell]tu courras[/cell]
+[cell]il ira[/cell][cell]il aura[/cell][cell]il courra[/cell]
+[cell]nous irons	[/cell][cell]nous aurons	[/cell][cell]nous courrons[/cell]
+[cell]vous irez[/cell][cell]vous aurez[/cell][cell]vous courrez[/cell]
+[cell]ils iront[/cell][cell]ils auront[/cell][cell]ils courront[/cell]
+[/table]
+
+[table=3]
+[cell][u]Devoir (dever)[/u][/cell][cell][u]Envoyer (enviar)[/u][/cell][cell][u]Être (ser,estar)[/u][/cell]
+[cell]je devrai[/cell][cell]j’enverrai[/cell][cell]je serai[/cell]
+[cell]tu devras[/cell][cell]tu enverras[/cell][cell]tu seras[/cell]
+[cell]il devra[/cell][cell]il enverra[/cell][cell]il sera[/cell]
+[cell]nous devrons	[/cell][cell]nous enverrons	[/cell][cell]nous serons[/cell]
+[cell]vous devrez[/cell][cell]vous enverrez[/cell][cell]vous serez[/cell]
+[cell]ils devront[/cell][cell]ils enverront[/cell][cell]ils seront[/cell]
+[/table]
+
+[table=3]
+
+
+[cell][u]Faire (fazer)[/u][/cell][cell][u]Mourir (morrer)[/u][/cell][cell][u]Pouvoir (poder)[/u][/cell]
+[cell]je ferai[/cell][cell]je mourrai[/cell][cell]je pourrai[/cell]
+[cell]tu feras[/cell][cell]tu mourras[/cell][cell]tu pourras[/cell]
+[cell]il fera[/cell][cell]il mourra[/cell][cell]il pourra[/cell]
+[cell]nous ferons	[/cell][cell]nous mourrons	[/cell][cell]nous pourrons[/cell]
+[cell]vous ferez[/cell][cell]vous mourrez[/cell][cell]vous pourrez[/cell]
+[cell]ils feront[/cell][cell]ils mourront[/cell][cell]ils pourront[/cell]
+[/table]
+
+[table=3]
+
+[cell][u]Savoir (saber)[/u][/cell][cell][u]Venir (vir)[/u][/cell][cell][u]Voir (ver)[/u][/cell]
+[cell]je saurai[/cell][cell]je viendrai[/cell][cell]je verrai[/cell]
+[cell]tu sauras[/cell][cell]tu viendras[/cell][cell]tu verras[/cell]
+[cell]il saura[/cell][cell]il viendra[/cell][cell]il verra[/cell]
+[cell]nous saurons	[/cell][cell]nous viendrons	[/cell][cell]nous verrons[/cell]
+[cell]vous saurez[/cell][cell]vous viendrez[/cell][cell]vous verrez[/cell]
+[cell]ils sauront[/cell][cell]ils viendront[/cell][cell]ils verront[/cell]
+[/table]
+
+[table=3]
+[cell][u]Vouloir (querer)[/u][/cell][cell][u]Pleuvoir (chover)	[/u][/cell][cell][u]Falloir (ser necessário)[/u][/cell]
+[cell]je voudrai[/cell][cell]il pleuvra	 [/cell][cell]il faudra[/cell]
+[cell]tu voudras[/cell][cell][/cell][cell][/cell]
+[cell]il voudra[/cell][cell][/cell][cell][/cell]
+[cell]nous voudrons	[/cell][cell][/cell][cell][/cell]
+[cell]vous voudrez[/cell][cell][/cell][cell][/cell]
+[cell]ils voudront[/cell][cell][/cell][cell][/cell]
+
+[/table]
+
+[color=#FFA500][u]8.2. Futur Proche[/u][/color]
+
+O [color=#FF0000]Futur Proche[/color] não tem correspondente no Português, mas é traduzido pela estrutura IR + verbo no infinitivo, ou seja, “Eu vou fazer o bolo”. A tradução é quase sempre literal. 
+[u]Exemplos:[/u]
+
+Elle [color=#4169E1]va marcher[/color] jusqu’à la fin de la place. => [color=#4169E1]Ela vai andar[/color] até o fim da praça.
+On [color=#4169E1]va prendre[/color] des oranges pour faire du jus. => A gente[color=#4169E1] vai pegar[/color] laranjas para fazer suco.
+Nous [color=#4169E1]allons dormir[/color] maintenant. => Nós [color=#4169E1]vamos dormir[/color] agora.
+
+[color=#FFA500][u]8.3. Futur Antérieur[/u][/color]
+
+O [color=#FF0000]Futur Antérieur[/color] não tem nominalmente um correspondente no Português. É um tempo composto e segue a mesma formação do [b]Passé Composé[/b]: auxiliar [color=#FF0000]ÊTRE[/color] ou [color=#FF0000]AVOIR[/color] mais [b]particípio passado[/b] do verbo desejado. A diferença é que os verbos auxiliares são conjugados no [color=#FF0000]Futur Simple[/color]:
+
+Quand je gagnerai au loto, je [color=#4169E1]serai[/color] déjà [color=#4169E1]mort. [/color]=> Quando eu ganhar na loto, eu já [color=#4169E1]terei morrido[/color]. 
+
+1. As mesmas regras do Passé Composé valem aqui ([color=#FF0000]être[/color] para os [b]14 verbos e verbos pronominais[/b]; 
+concordância de número e gênero entre particípio passado e sujeito quando o auxiliar for [color=#FF0000]être[/color], etc.):
+
+Quand j’arriverai à l’hôpital elle sera déjà né[color=#FF0000]e[/color]. 
+
+2. Em Francês não existe correspondente do [b]futuro do subjuntivo[/b]. Logo, quando você quiser expressar esse tempo em Francês, deverá usar o [b]Futur Simple[/b]:
+
+Quand je me lèverai... => Quando eu me levantar...
+(E não: Quando eu me[s] levantarei...[/s])
+
+
+"
+
+[node name="Cap9" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green]Capítulo 9: Verbos (IV)[/color]
+
+[color=#FFA500][u]9.1. Conditionnel Présent[/u][/color]
+
+O [b]Conditionnel Présent[/b] é equivalente ao [b]Futuro do Pretérito[/b]. Para conjugar um verbo nesse tempo, basta pegar os radicais do [b]Futur Simple[/b] e adicionar as terminações do [b]Imparfait[/b]. 
+[u]Exemplos:[/u]
+[url=chapt9_1][img]res://assets/images/audioOn.png[/img][/url]
+Elle [color=#FF0000]chanter[/color][color=#4169E1]a[/color] à l’Opéra ce soir. => Ela cantará na Ópera hoje à noite.
+Elle [color=#FF0000]chant[/color][color=#4169E1]ait[/color] à l’Opéra ce soir. => Ela cantava na Ópera hoje à noite.
+Elle [color=#FF0000]chanter[/color][color=#4169E1]ait[/color] à l’Opéra ce soir. => Ela cantaria na Ópera hoje à noite.
+Para que você não tenha de voltar muitas páginas atrás, eis aqui as terminações do [b]Imparfait: [/b][color=#FF0000]-AIS, -AIS, -AIT, -IONS, -IEZ, -AIENT[/color]
+ 
+Quando em Português construímos uma frase como esta:
+
+Se [color=#FF0000]eu fosse[/color] rico [color=#4169E1]eu compraria[/color] aquela casa.
+
+Percebemos que “[color=#4169E1]eu compraria[/color]” é traduzido para o Francês como [b]Conditionnel Présent[/b] e o verbo fica “[color=#4169E1]j’achèterais[/color]”. 
+Mas e o “[color=#FF0000]se eu fosse[/color]”? O imperfeito do subjuntivo existe em Francês, mas não é mais usado na forma padrão atual. Você deverá empregar, para traduzir o imperfeito do subjuntivo do Português, o [b]Imparfait[/b]. Assim sendo, “[color=#FF0000]se eu fosse[/color]” é traduzido por “[color=#FF0000]si j’étais[/color]”. 
+
+Então, nossa frase fica assim:
+
+Si [color=#FF0000]j’étais[/color] riche, [color=#4169E1]j’achèterais[/color] cette maison-là.
+
+Tome cuidado ao traduzir do Francês frases do tipo: “[color=#4169E1]Si + Imparfait[/color]”, pois elas fatalmente deverão ser traduzidas por “[color=#4169E1]Se + Imperfeito do Subjuntivo[/color]” e não “[b]Se + Imperfeito[/b]”. 
+
+Exemplo:
+
+Si elle [color=#FF0000]allait [/color]chez moi elle ne me rencontrerait pas là. => Se ela [color=#4169E1]fosse [/color]a minha casa, ela não me encontraria lá.
+(E não: > Se ela [s][color=#FF0000]ia[/color][/s] a minha casa...)
+
+[color=#FFA500][u]9.2. Conditionnel Passé[/u][/color]
+
+O [b]Conditionnel Passé[/b] não tem correspondente nominal no Português, mas como o próprio nome diz é uma versão do [b]Conditionnel[/b], porém no passado. Ele é um tempo composto que funciona como o [b]Passé Composé[/b]. A diferença é que o verbo auxiliar [color=#FF0000]ÊTRE[/color] ou [color=#FF0000]AVOIR[/color] é conjugado no [b]Conditionnel Présent[/b]. Veja:
+
+Il [color=#FF0000]aurait fait[/color] son meilleur travail s’il [color=#4169E1]avait pris[/color] un peu plus de soin. => Ele[color=#FF0000] teria feito[/color] seu melhor trabalho se ele [color=#4169E1]tivesse tomado[/color] um pouco mais de cuidado.
+
+Note que quando escrevemos uma frase no [b]Conditionnel Passé[/b], a condição dela deverá ser escrita no [b]Plus-que-Parfait[/b]. 
+
+[color=#DDA0DD]Não se esqueça das regras de concordância quando usar o verbo être como auxiliar!!![/color]
+
+[color=#FFA500][u]9.3. Modo Subjuntivo (Presente)[/u][/color]
+
+O [b]Subjonctif [/b]corresponde no Português ao [b]Presente do Subjuntivo[/b]. Como já explicado em lição anterior, o futuro e o imperfeito do subjuntivo do Português – no caso de uma tradução – deverão ser substituídos no Francês respectivamente pelo [b]Futur Simple[/b] e pelo [b]Imparfait[/b]. 
+
+[u]A formação do Subjonctif é a seguinte:[/u]
+
+a) Para as pessoas [b]JE, TU, IL, ELLE, ON, ILS e ELLES:[/b]
+
+ - Pegar a pessoa [b]ILS/ELLES[/b] do [b]Présent [/b]e retirar a terminação –[color=#FF0000]ENT[/color];
+ - Adicionar as terminações: [color=#FF0000]-E, -ES, -E, -ENT[/color]
+
+b) Para as pessoas [b]NOUS [/b]e [b]VOUS:[/b]
+ - Pegar a pessoa [b]NOUS [/b]do [b]Présent [/b]e retirar a terminação –[color=#FF0000]ONS[/color];
+ - Adicionar as terminações: [color=#FF0000]-IONS, -IEZ[/color]
+
+[u]Quadro de Formação do Subjonctif:[/u]
+
+[table=2]
+[cell][u]Prendre[/u] (Présent)      [/cell] [cell][u]Prendre[/u] (Subjonctif)[/cell]
+[cell]je prends[/cell][cell]que je [color=#4169E1]prenn[/color]e[/cell]
+[cell]tu prends[/cell][cell]que tu [color=#4169E1]prenn[/color]es[/cell]
+[cell]il, elle, on prend[/cell][cell]qu’il [color=#4169E1]prenn[/color]e[/cell]
+[cell]nous [color=#FF0000]pren[/color]ons[/cell][cell]que nous [color=#FF0000]pren[/color]ions[/cell]
+[cell]vous prenez[/cell][cell]que vous [color=#FF0000]pren[/color]iez[/cell]
+[cell]ils, elles [color=#4169E1]prenn[/color]ent[/cell][cell]qu’elles [color=#4169E1]prenn[/color]ent[/cell]
+[/table]
+
+[u]Exceções à formação:[/u]
+
+[table=3]
+
+[cell][u]Aller[/u][/cell][cell][u]Avoir[/u][/cell][cell][u]Être[/u][/cell]
+[cell]que j’aille [/cell][cell]que j’aie [/cell][cell]que je sois [/cell]
+[cell]que tu ailles[/cell][cell]que tu aies[/cell][cell]que tu sois[/cell]
+[cell]qu’il aille[/cell][cell]qu’il ait[/cell][cell]qu’il soit[/cell]
+[cell]que nous allions[/cell][cell]que nous ayons[/cell][cell]que nous soyons[/cell]
+[cell]que vous alliez[/cell][cell]que vous ayez[/cell][cell]que vous soyez[/cell]
+[cell]qu’ils aillent[/cell][cell]qu’ils aient[/cell][cell]qu’ils soient[/cell]
+[/table]
+
+[table=3]
+
+[cell][u]Faire[/u][/cell][cell][u]Pouvoir[/u][/cell][cell][u]Savoir[/u][/cell]
+[cell]que je fasse [/cell][cell]que je puisse [/cell][cell]que je sache [/cell]
+[cell]que tu fasses[/cell][cell]que tu puisses[/cell][cell]que tu saches[/cell]
+[cell]qu’il fasse[/cell][cell]qu’il puisse[/cell][cell]qu’il sache[/cell]
+[cell]que nous fassions[/cell][cell]que nous puissions[/cell][cell]que nous sachions[/cell]
+[cell]que vous fassiez[/cell][cell]que vous puissiez[/cell][cell]que vous sachiez[/cell]
+[cell]qu’ils fassent[/cell][cell]qu’ils puissent[/cell][cell]qu’ils sachent[/cell]
+[/table]
+
+
+[table=3]
+[cell][u]Valoir[/u][/cell][cell][u]Vouloir[/u][/cell][cell][u]Falloir[/u][/cell]
+[cell]que je vaille[/cell] [cell]que je veuille [/cell][cell][/cell]
+[cell]que tu vailles[/cell][cell]que tu veuilles[/cell][cell][/cell]
+[cell]qu’il vaille[/cell][cell]qu’il veuille[/cell][cell]qu’il faille [/cell]
+[cell]que nous valions[/cell][cell]que nous voulions[/cell][cell][/cell]
+[cell]que vous valiez[/cell][cell]que vous vouliez[/cell][cell][/cell]
+[cell]qu’ils vaillent[/cell][cell]qu’ils veuillent[/cell][cell][/cell]
+[/table]
+
+Esse modo é empregado diante dos chamados “[b]verbos subjetivos[/b]” mais a conjunção [color=#FF0000]QUE[/color]. São eles:
+
+[color=#FF0000]VOULOIR [/color]> [color=#4169E1]Je veux que[/color] tu fasses un bon travail. => Eu quero que você faça um bom trabalho. 
+[color=#FF0000]SOUHAITER [/color]> [color=#4169E1]Je souhaite que[/color] tu fasses un bon travail. => Eu desejo que você faça um bom trabalho.
+[color=#FF0000]AIMER[/color] > [color=#4169E1]J’aimerais que[/color] tu fasses un bon travail. => Eu gostaria que você fizesse* um bom trabalho.
+[color=#FF0000]DÉSIRER [/color]> [color=#4169E1]Je désire qu[/color]e tu fasses un bon travail. => Eu desejo que você faça um bom trabalho.
+[color=#FF0000]AVOIR PEUR[/color] > [color=#4169E1]J’ai peur que[/color] tu ne fasses pas un bon travail. => Eu tenho medo que você não faça um bom trabalho. 
+[color=#FF0000]REGRETTER [/color]> [color=#4169E1]Je regrette que[/color] tu ne fasses pas un bon travail. => Eu lamento que você não faça um bom trabalho.
+[color=#FF0000]CRAINDRE[/color] > [color=#4169E1]Je crains que[/color] tu ne fasses pas un bon travail. => Eu temo que você não faça um bom trabalho. 
+[color=#FF0000]ORDONNER [/color]> [color=#4169E1]J’ordonne que[/color] tu fasses un bon travail. =>  Eu ordeno que você faça um bom trabalho. 
+[color=#FF0000]SUPPLIER [/color]> [color=#4169E1]Je supplie que[/color] tu fasses un bon travail. => Eu suplico que você faça um bom trabalho. 
+[color=#FF0000]FALLOIR [/color]> [color=#4169E1]Il faut que[/color] tu fasses un bon travail. => É preciso que você faça um bom trabalho.
+
+* Diante de uma expressão que pede o [b]Subjonctif, [/b]você só poderá usar o [b]Subjonctif, [/b]independentemente do tempo em que está a frase subordinada. 
+
+Mesmo que em Português você diga: Eu gostaria que você [color=#4169E1]estivesse [/color]aqui.
+Não traduza por: J’aimeirais que tu [color=#FF0000]étais [/color]là. 
+Mas sim por: J’aimerais que tu [color=#4169E1]sois [/color]là. 
+
+E, ao encontrar uma frase assim:
+Nous aimerions que tu [color=#4169E1]reviennes[/color]. 
+Não traduza por: Nós gostaríamos que você [color=#FF0000]volte. [/color]
+Mas sim por: Nós gostaríamos que você [color=#4169E1]voltasse. [/color]
+
+A expressão mais simples e mais usada para o Subjonctif é [color=#FF0000]POUR QUE[/color]: 
+On va lutter [color=#FF0000]pour que[/color] le fascisme ne [color=#FF0000]revienne[/color] jamais. => As pessoas vão lutar para que o fascismo jamais volte."
+
+[node name="Cap10" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green]Capítulo 10: Comparação e Advérbios[/color]
+
+[color=#FFA500][u]10.1. Advérbios[/u][/color]
+
+Os advérbios são palavras utilizadas para expressar com mais exatidão o sentido que se quer dar a um verbo ou a um adjetivo. Veja:
+
+Ses amis sont [color=#4169E1]fous[/color] ! (seus amigos são loucos!)
+Ses amis sont [color=#4169E1]complètement fous[/color] ! (seus amigos são completamente loucos!)
+La Terre [color=#4169E1]tourne[/color]. (a terra gira)
+La Terre [color=#4169E1]tourne vite[/color]. (a terra gira depressa)
+
+[table=2]					
+[cell]	[u]Quantidade	[/u][/cell]	[cell]	[u]Tempo	[/u][/cell]
+[cell]	beaucoup (muito)	[/cell]	[cell]	aujourd’hui (hoje)	[/cell]
+[cell]	assez (o bastante)	[/cell]	[cell]	hier (ontem)	[/cell]
+[cell]	combien (quanto)	[/cell]	[cell]	demain (amanhã)	[/cell]
+[cell]	trop (demais)	[/cell]	[cell]	avant (antes)	[/cell]
+[cell]	peu (pouco)	[/cell]	[cell]	après (após)	[/cell]
+[cell]	plus (mais)	[/cell]	[cell]	depuis (desde)	[/cell]
+[cell]	moins (menos)	[/cell]	[cell]	ensuite (em seguida)	[/cell]
+[cell]		[/cell]	[cell]	pendant (durante)	[/cell]
+[cell]		[/cell]	[cell]	souvent (freqüentemente)	[/cell]
+[cell]		[/cell]	[cell]	toujours (sempre)	[/cell]
+[cell]		[/cell]	[cell]	jamais (jamais, nunca)	[/cell]
+[cell]		[/cell]	[cell]	déjà (já)	[/cell]
+[cell]		[/cell]	[cell]	encore (ainda)	[/cell]
+[cell]		[/cell]	[cell]	quelquefois (às vezes)	[/cell]
+[/table]
+
+[table=2]	
+[cell]	[u]Lugar	[/u][/cell]	[cell]	[u]Modo	[/u][/cell]
+[cell]	ici (aqui)	[/cell]	[cell]	très (muito)	[/cell]
+[cell]	là (lá, aqui)	[/cell]	[cell]	bien (bem)	[/cell]
+[cell]	dedans (dentro)	[/cell]	[cell]	mal (mal)	[/cell]
+[cell]	dehors (fora)	[/cell]	[cell]	mieux (melhor)	[/cell]
+[cell]	derrière (atrás)	[/cell]	[cell]	pire (pior)	[/cell]
+[cell]	devant (diante)	[/cell]	[cell]	terminados em -MENT	[/cell]
+[cell]	loin (longe)	[/cell]	[cell]		[/cell]
+[cell]	près (perto)	[/cell]	[cell]		[/cell]
+[cell]	où (onde)	[/cell]	[cell]		[/cell]
+[cell]	partout (em toda parte)	[/cell]	[cell]		[/cell]
+[cell]	dessus (acima)	[/cell]	[cell]		[/cell]
+[cell]	dessous (abaixo)	[/cell]	[cell]		[/cell]
+[/table]
+
+[color=#FFA500][u]10.1.1. Formação dos advérbios de modo terminados em –MENT:[/u][/color]
+
+a) Pegar o adjetivo terminado em vogal e adicionar –[color=#FF0000]MENT[/color]:
+
+vrai + [color=#4169E1]ment[/color] => vraiment (verdadeiramente)
+poli + [color=#4169E1]ment[/color] => poliment (educadamente)
+joli +[color=#4169E1]ment[/color] => joliment (lindamente)
+simple + [color=#4169E1]ment[/color] => simplement (simplesmente)
+
+
+b) Se o adjetivo terminar em consoante, pegar a forma feminina dele e adicionar -[color=#FF0000]MENT[/color]
+
+franc => franc[color=#4169E1]he[/color] + ment = franchement (francamente)
+complet => complèt[color=#4169E1]e[/color] + ment = complètement (completamente)
+
+c) Se o adjetivo terminar em –[color=#FF0000]ENT[/color] ou –[color=#FF0000]ANT[/color], transforme essa terminação respectivamente em -[color=#FF0000]EMMENT[/color] e -[color=#FF0000]AMMANT[/color]:
+
+const[color=#4169E1]ant[/color] => const[color=#4169E1]amment[/color] (constantemente)
+fréqu[color=#4169E1]ent[/color] => fréqu[color=#4169E1]emment[/color] (frequentemente)
+
+Nã se esquece que \"[color=#DDA0DD]emm[/color]\" em francês tem so som : [[color=#4169E1]AM[/color]]. Por isso, [color=#DDA0DD]fréquemment[/color] se pronuncia[color=#4169E1] [frekamã][/color].
+
+[color=#FFA500][u]10.2. Comparativo e Superlativo[/u][/color]
+
+O [b]comparativo [/b]em Francês é formado da seguinte maneira:
+
+[u]Superioridade:[/u] [color=#FF0000]PLUS [/color]+ [color=#4169E1]adjetivo[/color] + [color=#FF0000]QUE[/color]
+
+Araraquara est [color=#4169E1]plus [/color]sympathique [color=#4169E1]que [/color]São Paulo. => Araraquara é mais simpática do que São Paulo.
+
+[u]Igualdade:[/u] [color=#FF0000]AUSSI [/color]+ [color=#4169E1]adjetivo[/color] + [color=#FF0000]QUE[/color]
+
+Araraquara est [color=#4169E1]aussi [/color]bizarre [color=#4169E1]que[/color] São Paulo. => Araraquara é tão estranha quanto São Paulo.
+
+[u]Inferioridade:[/u] [color=#FF0000]MOINS [/color]+ [color=#4169E1]adjetivo [/color]+[color=#FF0000]QUE[/color]
+
+Araraquara est [color=#4169E1]moins [/color]animée [color=#4169E1]que [/color]São Paulo. => Araraquara é menos animada do que São Paulo.
+
+Maior e menor deverão ser traduzidos por [color=#FF0000]plus grand[/color] e [color=#FF0000]plus petit[/color] e não [s]majeur[/s] e [s]mineur[/s], pois estes dois últimos não são usados para a comparação.
+
+Para os [b]verbos, [/b]os elementos da comparação são os mesmos, exceto o de igualdade, que passa a ser [color=#FF0000]AUTANT[/color]:
+
+Je travaille [color=#4169E1]autant [/color][color=#4169E1]qu’[/color]eux, mais je gagne [color=#4169E1]moins qu’[/color]eux ! => Eu trabalho tanto quanto eles, mas ganho menos que eles!
+
+O [b]superlativo [/b]é formado a partir do comparativo, adicionando a ele os [color=#4169E1]artigos definidos[/color]: 
+
+[color=#4169E1]La[/color] [color=#4169E1]plus[/color] grande tour du monde est en Asie. => A maior torre do mundo fica na Ásia.
+[color=#4169E1]Les plus[/color] idiots sont toujours [color=#4169E1]les moins[/color] affectés par la malchance. => Os mais idiotas são os menos afetados pelo azar.
+
+a) Quando você quiser construir uma frase como:
+
+As pessoas mais fracas sempre perdem a esperança.
+
+Traduza por: [color=#DDA0DD]Les gens les plus faibles perdent toujours l’espoir.[/color]
+E não por:
+Les gens plus faibles perdent toujours l’espoir. 
+Ou seja, [color=#FF0000]repita o artigo[/color]! 
+
+b) Quando você quiser construir uma frase como:
+
+Quanto mais eu me aproximava, mais ela sorria.
+Traduza por: [color=#DDA0DD]Plus je m’approchais, plus elle souriait.[/color]
+ 
+c) Há duas maneiras de se dizer “[b]melhor[/b]” em Francês: [color=#FF0000]MIEUX[/color] e [color=#FF0000]MEILLEUR[/color].
+
+[color=#4169E1]Mieux [/color]é o comparativo de superioridade de [color=#4169E1]Bien[/color]. 
+[color=#4169E1]Meilleur[/color] é o comparativo de superioridade de [color=#4169E1]Bon[/color]. 
+
+[u]Exemplos:[/u]
+
+Maradona jouait [color=#4169E1]bien[/color], mais Pelé jouait [color=#4169E1]mieux[/color]. => Maradona jogava bem, mas Pelé jogava melhor.
+
+Ce gâteau est [color=#4169E1]bon[/color] mais celui-là est [color=#4169E1]meilleur[/color]. => Esse bolo é bom, mas aquele lá é melhor.
+
+[color=#4169E1]Mal[/color] é o antônimo de [color=#4169E1]Bien[/color]. Seu comparativo de superioridade é [color=#FF0000]Pire[/color]. 
+
+Je préfère rester sur terre parce qu’en enfer c’est [color=#4169E1]pire[/color] ! => Eu prefiro ficar na terra porque no inferno é pior!
+
+"
+
+[node name="Cap11" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11/ScrollContainer" groups=["Label"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/table_border = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/table_h_separation = 50
+theme_override_constants/outline_size = 3
+theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
+bbcode_enabled = true
+text = "[color=green]Capítulo 11: Verbos (V)[/color]
+
+[color=#FFA500][u]11.1. Participe Présent, Gérondif e Présent Continu[/u][/color]
+
+[b]11.1.1. O Participe Présent[/b], de certa forma, até tem um correspondente no Português, que é o [b]particípio presente[/b] dos verbos, como por exemplo: cantar > cantante; coincidir > coincidente. 
+
+Entretanto, o particípio presente do Português não traduz exatamente um emprego do [b]Participe Présent[/b]. Veja:
+
+Il s’agit d’une fille [color=#4169E1]travaillant [/color]au deuxième étage. => Trata-se de uma garota [color=#4169E1]que trabalha[/color] no segundo andar.
+Até mesmo: Trata-se de uma garota [color=#4169E1]trabalhando [/color]no segundo andar. 
+E não: Trata-se de uma garota [s]trabalhante[/s] no segundo andar.
+
+[u]Formação: [/u]Pegar a pessoa [color=#FF0000]NOUS [/color]do[b] Présent[/b], retirar a terminação -[color=#FF0000]ONS[/color] e colocar a terminação -[color=#FF0000]ANT[/color]. 
+
+[u]Exemplos:[/u]
+
+Finir > Nous finiss[color=#4169E1]ons[/color] > Finiss[color=#FF0000]ant[/color] (terminando)
+Tomber > Nous tomb[color=#4169E1]ons[/color] > Tomb[color=#FF0000]ant[/color] (caindo)
+Voir > Nous voy[color=#4169E1]ons[/color] > Voy[color=#FF0000]ant[/color] (vendo)
+
+[u]Exceções:[/u]
+
+Être: [color=#4169E1]Étant[/color] (sendo)
+Avoir: [color=#4169E1]Ayant[/color] (tendo)
+Savoir: [color=#4169E1]Sachant [/color] (sabendo)
+
+O Participe Présent pode substituir expressões como:
+
+[b]Au moment où[/b] (no momento em que):
+Voilà les argentins [color=#4169E1]au moment où[/color] ils jouent au tennis. => Eis os argentinos no momento em que jogam tênis.
+> Voilà les argentins [color=#4169E1]jouant [/color]au tennis. => Eis os argentinos jogando tênis.
+
+[b]Comme[/b] (como, expressão de causa):
+[color=#4169E1]Comme[/color] les amis ne venaient pas, il a décidé de s’en aller tout seul. => Como os amigos não vinham, ele decidiu ir embora sozinho.
+Les amis ne [color=#4169E1]venant [/color]pas, il a décidé de s’en aller tout seul. => Os amigos não vindo, ele decidiu ir embora sozinho.
+
+11.1.2. O Présent Continu tem a mesma função do Participe Présent. 
+
+[u]Formação:[/u]
+
+Verbo [color=#FF0000]ÊTRE + EN TRAIN DE[/color] + verbo desejado no [color=#FF0000]infinitivo.[/color] 
+
+[u]Exemplo:[/u]
+
+Je [color=#4169E1]suis en train de perdre[/color] la patience ! => [color=#4169E1]Estou perdendo[/color] a paciência!
+
+O uso do [b]Présent Continu[/b] restringe-se a eventos iniciados e ainda não terminados, mas não necessariamente que ocorrem simultaneamente à enunciação. Também é preciso ter cuidado ao tentar traduzir para o francês frases que usam normalmente o gerúndio do Português. 
+
+Em frases do tipo:
+
+- Para onde você está indo? 
+- Estou indo para casa.
+
+Use o [b]Présent:[/b]
+
+[color=#DDA0DD]- Où vas-tu ?
+- Je vais chez moi.[/color]
+
+[color=#FF0000]E nunca use: [/color]
+[s]- Où es-tu en train d’aller ? 
+- Je suis en train d’aller chez moi.[/s]
+
+11.1.3. O Gérondif corresponde ao gerúndio do Português. 
+
+[u]Formação:[/u]
+
+J’ai conquis ce poste [color=#4169E1]en travaillant[/color] beaucoup. => Eu conquistei esse cargo trabalhando muito.
+
+Preposição [color=#FF0000]EN[/color] + [color=#FF0000]Participe Présent[/color] do verbo desejado. 
+
+[u]Exemplo:[/u]
+
+O Gérondif substitui as seguintes expressões:
+
+[b]Parce que[/b] (porque):
+Il est mort parce qu’il riait du danger. => Ele morreu porque ria do perigo.
+> Il est mort [color=#4169E1]en riant[/color] du danger. => Ele morreu rindo do perigo.
+
+[b]Quand [/b](quando/enquanto):
+On a perdu le match quand on a désisté. => Perdemos a partida quando desistimos.
+> On a perdu le match [color=#4169E1]en désistant[/color]. => Perdemos a partida desistindo dela.
+
+[b]Si[/b] (se):
+Si vous prenez cette décision, vous allez gagner beaucoup d’ennemis ! => Se a senhora tomar essa decisão, a senhora vai ganhar muitos inimigos!
+> [color=#4169E1]En prenant[/color] cette décision, vous allez gagner beaucoup d’ennemis! => Tomando essa decisão, a senhora vai ganhar muitos inimigos!
+
+[b]Bien que/Même si[/b] (ainda que/mesmo que):
+Bien que je fasse des exercices, mon ventrereste grand ! => Ainda que eu faça exercícios, minha barriga continua grande!
+> Tout [color=#4169E1]en faisant[/color] des exercices, mon ventre reste grand ! => Mesmo fazendo exercícios, minha barriga continua grande!*
+
+* Neste exemplo temos uma frase tipicamente francesa e que muito nos atrapalha na hora de traduzir. [color=#FF0000]Tout en + gérondif[/color] pode significar uma concessão ou contradição (podemos traduzir por \"ao mesmo tempo\"), portanto, atenção a esse tipo de frase.
+
+[color=#00FF00]O uso do Gérondif pressupõe ações [b]simultâneas [/b]executadas pelo [b]mesmo sujeito[/b].[/color]
+
+[color=#FFA500][u]11.2. Passé Simple[/u][/color]
+
+O [b]Passé Simple[/b] quase não é mais usado, ficando reservado apenas para a [b]literatura, [/b]a [b]história[/b] e outras áreas cujos textos apresentam um estilo mais reservado. Na fala e nos meios impressos, o tempo utilizado é o [b]Passé Composé[/b]. O [b]Passé Simple[/b] está aqui apenas para que você aprenda a reconhecê-lo, mas não a usá-lo. 
+
+[u]Formação do Passé Simple: [/u]
+
+[b]Verbos do primeiro grupo:[/b]
+
+Infinitivo menos 
+-[color=#FF0000]ER[/color] mais as seguintes terminações: [color=#FF0000]–AI, –AS, –A, –ÂMES, –ÂTES, –ÈRENT[/color]
+
+[u]Exemplos : [/u]
+
+[table=2]
+[cell][u]Chanter[/u] (cantar)[/cell] [cell][u]Acheter[/u] (comprar)[/cell]
+[cell]je [color=#FF0000]chant[/color][color=#4169E1]ai[/color][/cell][cell]j’[color=#FF0000]achet[/color][color=#4169E1]ai[/color][/cell]
+[cell]tu chant[color=#4169E1]as[/color][/cell][cell]tu achet[color=#4169E1]as[/color][/cell]
+[cell]il chant[color=#4169E1]a[/color][/cell][cell]il achet[color=#4169E1]a[/color][/cell]
+[cell]nous chant[color=#4169E1]âmes	[/color][/cell][cell]nous achet[color=#4169E1]âmes[/color][/cell]
+[cell]vous chant[color=#4169E1]âtes[/color][/cell][cell]vous achet[color=#4169E1]âtes[/color][/cell]
+[cell]ils chant[color=#4169E1]èrent[/color][/cell][cell]ils achet[color=#4169E1]èrent[/color][/cell]
+[/table]
+
+Verbos do segundo grupo: 
+
+Infinitivo menos a terminação [color=#FF0000]IR[/color] mais as seguintes terminações: [color=#FF0000]–IS, –IS, –IT, –ÎMES, –ÎTES, –IRENT[/color]
+
+[table=2]
+[cell][u]Guérir[/u] (curar) [/cell][cell][u]Finir[/u] (terminar, acabar)[/cell]
+[cell]je [color=#FF0000]guér[/color][color=#4169E1]is[/color][/cell][cell]je [color=#FF0000]fin[/color][color=#4169E1]is[/color][/cell]
+[cell]tu guér[color=#4169E1]is[/color][/cell][cell]tu fin[color=#4169E1]is[/color][/cell]
+[cell]il guér[color=#4169E1]it[/color][/cell][cell]il fin[color=#4169E1]it[/color][/cell]
+[cell]nous guér[color=#4169E1]îmes	[/color][/cell][cell]nous fin[color=#4169E1]îmes[/color][/cell]
+[cell]vous guér[color=#4169E1]îtes[/color][/cell][cell]vous fin[color=#4169E1]îtes[/color][/cell]
+[cell]ils guér[color=#4169E1]irent[/color][/cell][cell]ils fin[color=#4169E1]irent[/color][/cell]
+[/table]
+
+Verbos do terceiro grupo:
+
+Como é difícil prever a formação dos verbos do terceiro grupo, segue uma tabela com os mais usados:
+
+[table=2]
+
+[cell]	[u]Aller[/u] (ir)	[/cell]	[cell]	[u]Avoir[/u] (ter)	[/cell]
+[cell]	j'allai	[/cell]	[cell]	j'eus	[/cell]
+[cell]	tu allas	[/cell]	[cell]	tu eus	[/cell]
+[cell]	il alla	[/cell]	[cell]	il eut	[/cell]
+[cell]	nous allâmes	[/cell]	[cell]	nous eûmes	[/cell]
+[cell]	vous allâtes	[/cell]	[cell]	vous eûtes	[/cell]
+[cell]	ils allèrent	[/cell]	[cell]	ils eurent	[/cell]
+[cell]		[/cell]	[cell]		[/cell]
+[cell]	[u]Boire[/u] (beber)	[/cell]	[cell]	[u]Connaître[/u] (conhecer)	[/cell]
+[cell]	je bus	[/cell]	[cell]	je connus	[/cell]
+[cell]	tu bus	[/cell]	[cell]	tu connus	[/cell]
+[cell]	il but	[/cell]	[cell]	il connut	[/cell]
+[cell]	nous bûmes	[/cell]	[cell]	nous connûmes	[/cell]
+[cell]	vous bûtes	[/cell]	[cell]	vous connûtes	[/cell]
+[cell]	ils burent	[/cell]	[cell]	ils connurent	[/cell]
+[cell]		[/cell]	[cell]		[/cell]
+[cell]	[u]Être[/u] (ser/estar)	[/cell]	[cell]	[u]Faire[/u] (fazer)	[/cell]
+[cell]	je fus	[/cell]	[cell]	je fis	[/cell]
+[cell]	tu fus	[/cell]	[cell]	tu fis	[/cell]
+[cell]	il fut	[/cell]	[cell]	il fit	[/cell]
+[cell]	nous fûmes	[/cell]	[cell]	nous fîmes	[/cell]
+[cell]	vous fûtes	[/cell]	[cell]	vous fîtes	[/cell]
+[cell]	ils furent	[/cell]	[cell]	ils firent	[/cell]
+[/table]
+
+
+
+
+"
+
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -26.0
+offset_top = -69.0
+offset_right = 26.0
+offset_bottom = -38.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sortir"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+unique_name_in_owner = true
+
+[node name="ExitIcon" type="Button" parent="."]
+process_mode = 3
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_left = 1026.0
+offset_top = -5.0
+offset_right = 1226.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "sortie"
+icon = ExtResource("3_kqb37")
+alignment = 0
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="ExitIcon"]
+visible = false
+layout_mode = 0
+offset_left = -105.0
+offset_top = -14.0
+offset_right = 93.0
+offset_bottom = 59.0
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.919271, 0.0119697, 0.0119697, 1)
+theme_override_font_sizes/font_size = 41
+text = "sortie "
+
+[connection signal="pressed" from="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/ButtonExit" to="Control/MarginContainer/TabContainer/Notes/Notebook" method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/ButtonExit" to="Control/MarginContainer/TabContainer/Encyclopédie/Inventory" method="_on_btn_exit_chapter_pressed"]
+[connection signal="pressed" from="ExitIcon" to="." method="_on_exit_icon_pressed"]

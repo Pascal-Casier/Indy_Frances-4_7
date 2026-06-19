@@ -1,0 +1,202 @@
+[gd_scene load_steps=18 format=3 uid="uid://bo66sdtpqjf8c"]
+
+[ext_resource type="Script" uid="uid://cdlcubs13f64h" path="res://scripts/UI/phrases_traductions.gd" id="1_5wjlo"]
+[ext_resource type="AudioStream" uid="uid://dfnmyqsfn0ne0" path="res://assets/sounds/dialogues/phrases/coiffeur/01.mp3" id="2_vc6vi"]
+[ext_resource type="AudioStream" uid="uid://b5tsertlmkdli" path="res://assets/sounds/dialogues/phrases/coiffeur/02.mp3" id="3_n2s8y"]
+[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="4_jrxl4"]
+[ext_resource type="AudioStream" uid="uid://yqwlnda8m76g" path="res://assets/sounds/dialogues/phrases/coiffeur/03.mp3" id="4_okm4g"]
+[ext_resource type="AudioStream" uid="uid://cqmocx7dt74kv" path="res://assets/sounds/dialogues/phrases/coiffeur/04.mp3" id="5_tob01"]
+[ext_resource type="AudioStream" uid="uid://d32sfk3wac78" path="res://assets/sounds/dialogues/phrases/coiffeur/05.mp3" id="6_0uco3"]
+[ext_resource type="AudioStream" uid="uid://daihdaoeek58s" path="res://assets/sounds/dialogues/phrases/coiffeur/06.mp3" id="7_t72if"]
+[ext_resource type="AudioStream" uid="uid://c3v81oxygq3tw" path="res://assets/sounds/quizz/chien.wav" id="8_t72if"]
+[ext_resource type="Texture2D" uid="uid://bsnuf0nb2ly8c" path="res://assets/images/ui/inventaire/Blackboard.jpg" id="8_vc6vi"]
+[ext_resource type="AudioStream" uid="uid://dwwjaynpdonvt" path="res://assets/sounds/dialogues/bonjour.mp3" id="9_yk7xo"]
+[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="10_eyy55"]
+[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="10_tob01"]
+[ext_resource type="Texture2D" uid="uid://dwuvobr4bhbib" path="res://assets/images/ui/paperUI/scrolls/paper.png" id="11_0uco3"]
+[ext_resource type="Theme" uid="uid://bikoxvtmj7rqs" path="res://Themes/conversation_board_theme.tres" id="11_eyy55"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="12_t72if"]
+
+[sub_resource type="Theme" id="Theme_yk7xo"]
+default_font = ExtResource("12_t72if")
+
+[node name="Phrases" type="CanvasLayer"]
+script = ExtResource("1_5wjlo")
+title = "Chez le coiffeur"
+fr_phrase = Array[String](["Bonjour ! Vous avez un rendez-vous ?", "Bonjour. Non, je n'ai pas de rendez-vous.", "Ce n'est pas grave. Je suis libre.", "Super ! Je veux couper un peu mes cheveux.", "D'accord. On commence par le shampoing ?", "Oui, merci beaucoup."])
+pt_phrase = Array[String](["Olá! Você tem um horário?", "Olá. Não, eu não tenho um horário.", "Não tem problema. Eu estou livre.", "Ótimo! Eu quero cortar um pouco o meu cabelo.", "Tudo bem. Vamos começar pelo xampu?", "Sim, muito obrigado."])
+audio_phrase = Array[AudioStream]([ExtResource("2_vc6vi"), ExtResource("3_n2s8y"), ExtResource("4_okm4g"), ExtResource("5_tob01"), ExtResource("6_0uco3"), ExtResource("7_t72if")])
+fr_vocab = Array[String](["le coiffeur", "couper", "les cheveux", "la brosse"])
+pt_vocab = Array[String](["o cabeleireiro", "cortar", "os cabelos", "a escova"])
+audio_vocab = Array[AudioStream]([ExtResource("8_t72if"), ExtResource("9_yk7xo"), ExtResource("10_eyy55")])
+color_fr = Color(0.934896, 0.922723, 0.922723, 1)
+color_pt = Color(0.861221, 0.966146, 0.571133, 1)
+color_voc_fr = Color(0.0807292, 0.0212335, 0.0212335, 1)
+color_voc_pt = Color(0.0144111, 0.0192722, 0.325521, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("11_eyy55")
+
+[node name="Bgd" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_vc6vi")
+expand_mode = 1
+
+[node name="TitleLabel" type="Label" parent="Control/Bgd"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -371.0
+offset_top = 49.0
+offset_right = 371.0
+offset_bottom = 83.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.825521, 0.767913, 0.0881415, 1)
+theme_override_colors/font_shadow_color = Color(0.200521, 0.189555, 0.189555, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 3
+theme_override_fonts/font = ExtResource("4_jrxl4")
+theme_override_font_sizes/font_size = 36
+text = "Chez le coiffeur"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Bgd"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -396.0
+offset_top = -213.0
+offset_right = 396.0
+offset_bottom = 190.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/Bgd/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Bgd/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ButtonExit" type="Button" parent="Control/Bgd"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -102.0
+offset_top = 41.0
+offset_right = -49.0
+offset_bottom = 72.0
+grow_horizontal = 0
+theme = ExtResource("10_tob01")
+text = "sortie"
+
+[node name="ButtonVocab" type="Button" parent="Control/Bgd"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -116.0
+offset_top = -69.0
+offset_right = -63.0
+offset_bottom = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("10_tob01")
+text = "Vocabulaire"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 2
+bus = &"Dialogues"
+
+[node name="Vocab_list" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -252.0
+offset_top = -220.0
+offset_right = 252.0
+offset_bottom = 244.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yk7xo")
+
+[node name="TextureRect" type="TextureRect" parent="Vocab_list"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_0uco3")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Vocab_list/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 100
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Vocab_list/TextureRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ButtonExitVocabTab" type="Button" parent="Vocab_list"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -53.0
+offset_right = -23.0
+offset_bottom = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("10_tob01")
+text = "sortie"
+
+[connection signal="pressed" from="Control/Bgd/ButtonExit" to="." method="_on_button_exit_pressed"]
+[connection signal="pressed" from="Control/Bgd/ButtonVocab" to="." method="_on_button_vocab_pressed"]
+[connection signal="pressed" from="Vocab_list/ButtonExitVocabTab" to="." method="_on_button_exit_vocab_tab_pressed"]

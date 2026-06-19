@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=4 uid="uid://cgy6up5td7m3e"]
+
+[ext_resource type="Texture2D" uid="uid://ck1u3kaen300y" path="res://assets/blender/breakableWall/wall_to_break_Bricks064_1K_Color.jpg" id="1_1wfdr"]
+[ext_resource type="Script" uid="uid://uf4m7e6yb824" path="res://scripts/mechanics/wall_breakable.gd" id="1_n5rdn"]
+[ext_resource type="Script" uid="uid://ilbjqpeyf7y3" path="res://addons/destruction/destruction.gd" id="2_nbboa"]
+[ext_resource type="PackedScene" uid="uid://vhrhp8m3siju" path="res://assets/blender/breakableWall/wall_to_break_briks.glb" id="3_x4fyt"]
+[ext_resource type="Texture2D" uid="uid://cl8ug3sfnmipm" path="res://assets/images/particules/wall_crack.png" id="5_hb0dv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1x57t"]
+resource_name = "briksMaterial"
+cull_mode = 2
+albedo_texture = ExtResource("1_1wfdr")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_n0eu2"]
+_surfaces = [{
+"aabb": AABB(-3, 0, -0.5, 6, 4.00001, 1.00001),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("BAAHAAUABAAGAAcABQACAAQABQADAAIABAAAAAYABAACAAAABgABAAcABgAAAAEABQABAAMABQAHAAEAAQACAAMAAQAAAAIA"),
+"name": "briksMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD+//7/AAAAAP7/AAAAAAAAAAD+/wAAAAAAAAAAAAD//wAA/v8AAP//AAAAAAAA///+//7/AAD///7/AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gl0ey"]
+resource_name = "wall_to_break_Cube_047"
+_surfaces = [{
+"aabb": AABB(-3, 0, -0.5, 6, 4.00001, 1.00001),
+"attribute_data": PackedByteArray("jLZfx/cQRUn//13Snttfx2fvXJL//6PkjLZJfvcQue33EFySnttJfvcQ//9n73PbZ++57WfvXJKy2u19Z+////cQc9ugte19Z+9FSY8hXdKy2gTH9xBcko8ho+SgtQTH"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("DgAXABEADgAUABcADwAHAAwADwAKAAcADQABABIADQAIAAEAEwAFABYAEwACAAUAEAAEAAsAEAAVAAQAAwAGAAkAAwAAAAYA"),
+"material": SubResource("StandardMaterial3D_1x57t"),
+"name": "briksMaterial",
+"primitive": 3,
+"uv_scale": Vector4(1.72197, 3.49371, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD+//7///8AAP7//v//fwAA/v/+////AAD+/wAA//8AAP7/AAD//wAA/v8AAP//AAAAAP7///8AAAAA/v//vwAAAAD+//9/AAAAAAAA//8AAAAAAAD/vwAAAAAAAP////8AAP7//7///wAA/v//f///AAD+//////8AAAAA/7///wAAAAD/////AAAAAP/////+//7//3////7//v///////v/+///////+/wAA//////7/AAD//////v8AAP///z//f/9/////f/+//z//f/9/////f/+//z//fwAA/3//f////z//fwAA/3//f///AAD/f/9/////v/9/AAD/f/9/////v/9//3////9//7//v/9//3////9//7//v/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_n0eu2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wo480"]
+size = Vector3(6, 4, 0.9)
+
+[node name="Wall_breakable" type="StaticBody3D" groups=["Wall"]]
+script = ExtResource("1_n5rdn")
+blow_force = 3
+
+[node name="WallToBreak_001" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_gl0ey")
+skeleton = NodePath("")
+
+[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
+script = ExtResource("2_nbboa")
+fragmented = ExtResource("3_x4fyt")
+shard_container = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shape = SubResource("BoxShape3D_wo480")
+
+[node name="cracks" type="Node3D" parent="."]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="cracks"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 2, 0.525291)
+texture = ExtResource("5_hb0dv")
+
+[node name="Sprite3D2" type="Sprite3D" parent="cracks"]
+transform = Transform3D(-0.3, 0, -2.62268e-08, 0, 0.3, 0, 2.62268e-08, 0, -0.3, 0, 2, -0.532395)
+texture = ExtResource("5_hb0dv")
+
+[node name="cracks2" type="Node3D" parent="."]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(-0.0260581, -0.298866, 0, 0.298866, -0.0260581, 0, 0, 0, 0.3, 0.495616, 2.25965, 0.525291)
+texture = ExtResource("5_hb0dv")
+
+[node name="Sprite3D2" type="Sprite3D" parent="cracks2"]
+transform = Transform3D(-0.15, 0.259808, -1.31134e-08, 0.259808, 0.15, 2.27131e-08, 2.62268e-08, 0, -0.3, -0.301707, 1.76473, -0.532395)
+texture = ExtResource("5_hb0dv")
