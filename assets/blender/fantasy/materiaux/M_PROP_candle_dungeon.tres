@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cr8ohxwkp3u2p"]
+
+[ext_resource type="Texture2D" uid="uid://cdj42ukvikqer" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_PROP_candle _dungeon_BC.png" id="1_yclgg"]
+
+[resource]
+resource_name = "M_PROP_candle_dungeon"
+cull_mode = 2
+albedo_texture = ExtResource("1_yclgg")
+roughness = 0.0

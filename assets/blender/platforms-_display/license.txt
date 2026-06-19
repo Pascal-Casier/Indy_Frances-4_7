@@ -1,0 +1,11 @@
+Model Information:
+* title:	Platforms- Display
+* source:	https://sketchfab.com/3d-models/platforms-display-f8d2813b3a2d4a40be3029bbfa0cb1f9
+* author:	Stewart Budd (https://sketchfab.com/StewartB)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Platforms- Display" (https://sketchfab.com/3d-models/platforms-display-f8d2813b3a2d4a40be3029bbfa0cb1f9) by Stewart Budd (https://sketchfab.com/StewartB) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

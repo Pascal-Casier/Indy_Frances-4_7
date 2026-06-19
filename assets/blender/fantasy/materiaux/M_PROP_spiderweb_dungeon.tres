@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c3mt6d6wxxe2k"]
+
+[ext_resource type="Texture2D" uid="uid://bqjhu42ypw188" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_PROP_spiderweb_dungeon_BC.png" id="1_d6ev6"]
+
+[resource]
+resource_name = "M_PROP_spiderweb_dungeon"
+cull_mode = 2
+albedo_texture = ExtResource("1_d6ev6")

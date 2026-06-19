@@ -1,0 +1,105 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://1l24bl5jnqnx"]
+
+[ext_resource type="FontFile" uid="uid://bpvnkn5cvgw0c" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_2y83l"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="1_5lv87"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5lv87"]
+bg_color = Color(0.54902, 0.0196078, 0.109804, 0.207843)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.830729, 0.818594, 0.0540839, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_87mr1"]
+bg_color = Color(0.549479, 0.021464, 0.109993, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yutui"]
+bg_color = Color(0.549479, 0.021464, 0.109993, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.763516, 0.882813, 0.0344849, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 4
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7edgi"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 6
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m41hb"]
+bg_color = Color(0.549479, 0.021464, 0.109993, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.830729, 0.818594, 0.0540839, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_size = 1
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2y83l"]
+bg_color = Color(0.0651042, 0.0557794, 0.0557794, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 5.0
+expand_margin_top = 8.0
+expand_margin_right = 5.0
+expand_margin_bottom = 8.0
+
+[resource]
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_2y83l")
+Button/styles/disabled = SubResource("StyleBoxFlat_5lv87")
+Button/styles/focus = SubResource("StyleBoxFlat_87mr1")
+Button/styles/hover = SubResource("StyleBoxFlat_yutui")
+Button/styles/normal = SubResource("StyleBoxFlat_7edgi")
+Button/styles/pressed = SubResource("StyleBoxFlat_m41hb")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("1_5lv87")
+Label/styles/normal = SubResource("StyleBoxFlat_2y83l")

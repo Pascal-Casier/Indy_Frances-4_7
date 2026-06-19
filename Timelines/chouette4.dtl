@@ -1,0 +1,15 @@
+join chouette center
+if {mots_trouves} == 0.0:
+	chouette: Parfait, tu as réussi, je te félicite.\
+[color=green]Perfeito, conseguiu, parabéns.[/color]
+	chouette: J'ai encore besoin de ton aide. Des mots se sont enfuis de mon dictionnaire, tu peux les récupérer pour moi ?\
+[color=green]Ainda preciso da sua ajuda. Algumas palavras escaparam do meu dicionário. Pode recuperá-las para mim?[/color]
+	chouette: Ramène-moi tous les mots que tu trouveras et je t'ouvrirai le passage pour la sortie.\
+[color=green]Traga-me todas as palavras que encontrar e eu abrirei o caminho para a saída.[/color]
+elif {mots_trouves} < 4.0:
+	chouette: Tu as trouvé {mots_trouves} mots, il me faut 4 mots.
+	[end_timeline]
+else:
+	chouette: Bravo, merci pour ton aide. Maintenant, tu peux voir ces mots dans ton dictionaire "i". Je vais t'ouvrir la porte...\
+[color=green]Muito bem, obrigado pela ajuda. Agora você pode ver essas palavras no seu dicionário "i". Eu vou abrir a porta para você...[/color]
+	[signal arg="open_gate"]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PhraseData" load_steps=2 format=3 uid="uid://bsth60pcf5p33"]
+
+[ext_resource type="Script" path="res://DragNdropSystem/PhraseData.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+tokens = PackedStringArray("Le", "TROU", "saute", "par-dessus", "TROU", "clôture", ".")
+answers = PackedStringArray("chat", "la")
+distractors = PackedStringArray("travail", "mange", "des")

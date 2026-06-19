@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://svfru5q5nqnj"]
+
+[ext_resource type="Texture2D" uid="uid://7tdivymf65bi" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_ENV_MOD_Wall_01_v1_BC.png" id="1_sn5ao"]
+
+[resource]
+resource_name = "M_MOD_Wall_01_v1"
+cull_mode = 2
+albedo_texture = ExtResource("1_sn5ao")

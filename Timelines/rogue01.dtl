@@ -1,0 +1,28 @@
+if {mots_trouves} == 0.0:
+	Marie: Bonjour et bienvenue chez moi.\
+[color=green]Bom dia e bem-vindo na minha casa.[/color]
+	Je m'appelle Marie. Et toi, comment tu t'appelles ?\
+[color=green]Eu me chamo Marie. E você, come se chama?[/color]
+	- Leonardo | [=""]
+	- Bonjour.
+		jump 
+	Marie: Enchjanté, Leonardo. J'ai besoin de ton aide.\
+[color=green]Muito prazer, Leonardo. Eu preciso da tua ajuda.[/color]
+	Marie: De l'autre côté de ces rochers, il y a des panneaux avec des mots dessus.\
+[color=green]Do outro lado dessas rochas, tem paineis com palavras.[/color]
+	Marie: Ces mots vont te permettre d'ouvrir une porte pour continuer ton aventure.\
+[color=green]Essas palavras permitirão que você abra uma porta para continuar sua aventura.[/color]
+	Marie: À chaque fois que tu trouves un nouveau mot, il sera disponible dans ton inventaire ("I")\
+[color=green]Toda vez que você encontrar uma nova palavra, ela estará disponível em seu inventário ("I")[/color]
+	Marie: Quand tu auras trouvé tous les mots, reviens me voir. Bonne chance !\
+[color=green]Quando você tiver encontrado todas as palavras, volte e me veja. Boa sorte![/color]
+	Une dernière petite chose \: fais bien attention aux mots que j'utilise, ils pourraient te servir !\
+[color=green]Uma última coisa\: preste muita atenção às palavras que uso, elas podem ser úteis para você![/color]
+	do Global.emit_open_door_gate(1)
+elif {mots_trouves} == 4.0:
+	Marie: Bravo, tu peux maintenant continuer ton chemin. Bon courage et à bientôt.\
+[color=green]Parabéns, agora você pode seguir seu caminho. Boa sorte e até breve.[/color]
+	do Global.emit_open_door_gate(2)
+elif {mots_trouves} < 4.0:
+	Marie: Tu n'a pas trouvé tous les mots. Cherche bien et reviens quand tu auras trouvé tous les mots.\
+[color=green]Você não encontrou todas as palavras. Olhe com atenção e volte quando tiver encontrado todas as palavras.[/color]

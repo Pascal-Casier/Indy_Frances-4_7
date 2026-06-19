@@ -1,0 +1,82 @@
+[gd_resource type="Theme" format=3 uid="uid://el4iwldtiux7"]
+
+[sub_resource type="SystemFont" id="SystemFont_b67xi"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ww8wf"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.0352941, 0.313726, 0.458824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfrdb"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.0352941, 0.313726, 0.458824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85098, 0.827451, 0.109804, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kfg64"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.0352941, 0.313726, 0.458824, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34nsl"]
+content_margin_left = 3.0
+content_margin_right = 3.0
+bg_color = Color(0.0352941, 0.313726, 0.458824, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.913725, 0.8, 0.168627, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = SubResource("SystemFont_b67xi")
+Button/styles/focus = SubResource("StyleBoxFlat_ww8wf")
+Button/styles/hover = SubResource("StyleBoxFlat_jfrdb")
+Button/styles/normal = SubResource("StyleBoxFlat_kfg64")
+Button/styles/pressed = SubResource("StyleBoxFlat_34nsl")

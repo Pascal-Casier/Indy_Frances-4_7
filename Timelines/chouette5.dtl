@@ -1,0 +1,15 @@
+chouette: Salut. Content de te revoir.\
+[color=green] Olá. Feliz de te rever. [/color]
+chouette: Aujourd'hui, tu vas apprendre les articles.\
+[color=green] Hoje, você vai aprender sobre os artigos. [/color]
+chouette: En français, il y a trois types d'articles \: définis, indéfinis et partitifs.\
+[color=green] Em francês, há três tipos de artigos\: definidos, indefinidos e partitivos. [/color]
+chouette: Les articles définis et indéfinis sont comme les articles définis et indéfinis en portugais.\
+[color=green] Os artigos definidos e indefinidos são como os artigos definidos e indefinidos em português. [/color]
+chouette: Les articles partitifs n'existent pas en portugais \: ils expriment une certaine quantité.\
+[color=green] Os artigos partitivos não existem em português\: eles expressam uma certa quantia. [/color]
+chouette: Une dernière chose \: en français, l'utilisation des articles est OBLIGATOIRE !!!\
+[color=green] Uma ultima coisa\: em francês, o uso dos artigos é OBRIGATÓRIO!!! [/color]
+chouette: Entre, tu comprendras...\
+[color=green] Entre, você entendera...
+[signal arg="open_gate"]

@@ -1,0 +1,9 @@
+[background arg="res://assets/images/ui/indiana/Indy_decouvre_livre2.png" fade="8.0" transition="Swipe Left To Right"]
+Você descobriu um livro antigo !!! \
+Você decide abri-lo, mas está escrito em um idioma desconhecido.\
+												[color=green] "E" para continuar[/color]
+[background arg="res://assets/images/ui/indiana/ChatGPT Image 21 de abr. de 2025, 10_32_38.png" fade="2.0" transition="Swipe Diagonal Up Left"]
+De repente, o livro aspira  você !!! [pause=4] E você perde a consciência..
+[wait time="2.0"]
+[background arg="res://assets/images/andy-holmes-rCbdp8VCYhQ-unsplash.jpg" fade="3.0" transition="Swipe Diagonal Up Left"]
+[wait time="5.0"]

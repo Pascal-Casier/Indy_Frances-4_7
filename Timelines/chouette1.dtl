@@ -1,0 +1,15 @@
+chouette (chouettePortrait): Bienvenue, voyageur. Ici, pour avancer, tu dois parler notre langue.
+Indy (Indy1): O que ela diz? Não entendo..
+label repeter
+[voice path="res://assets/sounds/dialogues/essaieencore.mp3" volume="0.0"]
+chouette: BONJOUR !\
+Tu peux répéter ?
+Indy (IndyPortraitSad): O que ela quer ???
+- Não entendo!
+	jump repeter
+- repita : "Bonjour"
+	chouette: Bien ! Tu apprends vite. Chaque mot t'ouvrira de nouvelles portes.\
+[color=green]Bom ! Você aprende rápido. Cada palavra abrirá novas portas para você.[/color]
+	chouette: Le français est la clé de ce monde. Bonne chance !\
+[color=green]O francês é a chave deste mundo. Boa sorte![/color]
+	[signal arg="open_gate"]

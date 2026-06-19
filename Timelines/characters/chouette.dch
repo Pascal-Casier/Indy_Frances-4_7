@@ -1,0 +1,56 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+&"_translation_id": "",
+&"color": Color(0.110229, 0.783854, 0, 1),
+&"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": ""
+},
+&"default_portrait": "chouettePortrait",
+&"description": "",
+&"display_name": "chouette",
+&"mirror": false,
+&"nicknames": [""],
+&"offset": Vector2(0, 0),
+&"portraits": {
+"IndyPortrait2": {
+"export_overrides": {
+"image": "\"res://Timelines/characters/IndyPortrait2.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Mago": {
+"export_overrides": {
+"image": "\"res://Timelines/characters/Mago.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"chouettePortrait": {
+"export_overrides": {
+"image": "\"res://assets/images/characters/chouettePortrait.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"rogue": {
+"export_overrides": {
+"image": "\"res://Timelines/characters/rogue.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+}
+},
+&"scale": 1.0
+}

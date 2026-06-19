@@ -1,0 +1,15 @@
+Bonjour, je m'appelle [color=red]Marie[/color]. Et toi, comment tu t'appelles ?\
+[color=green]Bom dia, eu me chamo Marie. E você, como se chama?[/color]
+[text_input text="entre ton nom :" var="hero_name" allow_empty="true"]
+Bienvenue [color=red]{hero_name}[/color] !\
+[color=green]Bem vindo[/color] [color=red]{hero_name}[/color]!
+Utilise les touches WASD pour te déplacer\
+[color=green] Use as teclas WASD para se deslocar[/color]
+Utilise la touche SHIFT pour viser\
+[color=green] Use a tecla SHIFT para mirar[/color]
+Utilise Espace pour sauter\
+[color=green] Use Space para pular[/color]
+Utilise la touche E pour prendre ou interagir avec un objet\
+[color=green] Use a tecla E para pegar ou interagir com um objeto[/color]
+Utilise la touche ESC pour ouvrir le menu\
+[color=green] Use a tecla ESC para abrir o menu[/color]

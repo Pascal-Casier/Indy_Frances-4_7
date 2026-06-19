@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" load_steps=2 format=3 uid="uid://dwu2fix4wsnc4"]
+
+[ext_resource type="Script" uid="uid://tffi3mt7mopl" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_pn2h3"]
+
+[resource]
+script = ExtResource("1_pn2h3")
+entries = {
+"chercher": {
+"color": Color(0.952941, 0.603922, 0.152941, 1),
+"name": "chercher",
+"text": "procurar",
+"title": "verbe"
+},
+"entendre": {
+"case_sensitive": true,
+"color": Color(0.953125, 0.60346, 0.15389, 1),
+"name": "entendre",
+"text": "ouvir",
+"title": "verbe"
+},
+"mot": {
+"alternatives": ["mots"],
+"case_sensitive": true,
+"color": Color(0.952941, 0.603922, 0.152941, 1),
+"name": "mot",
+"text": "uma palavra",
+"title": "un mot"
+}
+}
+enabled = true
+_translation_id = ""
+_translation_keys = {}

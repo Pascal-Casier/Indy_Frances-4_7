@@ -1,0 +1,7 @@
+Indy (IndyPortraitSad): Bonjour ! Comment tu t'appelles ?\
+moi, c'est Pascal. Qu'est-ce que tu veux ?\
+[color=green] Bom dia! Como vc se chama?\
+Eu, sou Pascal. O que vc quer?[/color]
+chouette: [if {has_met_chouette} rebonjour / enchanté]
+set {has_met_chouette} = true
+[if {has_met_chouette} rebonjour / enchanté]

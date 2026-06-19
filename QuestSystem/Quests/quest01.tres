@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=2 format=3 uid="uid://dwryvi0ofej6w"]
+
+[ext_resource type="Script" uid="uid://bnkxvii75fltu" path="res://QuestSystem/Quest_resource.gd" id="1_6tawh"]
+
+[resource]
+script = ExtResource("1_6tawh")
+title = "quest1"
+description = "trouver 5 pommes et les amener à madame Pivin"
+is_completed = false
+goal_type = "find aples"
+target_id = "aples"
+metadata/_custom_type_script = "uid://bnkxvii75fltu"

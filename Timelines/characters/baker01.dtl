@@ -1,0 +1,44 @@
+Bonjour ! Je suis le boulanger du village. Et toi, qui es-tu ?
+- Je mange un élève.
+	jump incorrect1
+- J’ai un élève.
+	jump incorrect1
+- Je suis un élève.
+	jump correct1
+label correct1
+Très bien ! Tu es un élève. Bienvenue à la boulangerie magique !
+jump node5
+label incorrect1
+Hmm… essaie encore. « Je suis » + nom, c’est pour parler de toi.
+jump 
+label node5
+Dis-moi, tu as faim ?
+label node6
+- Oui, j'ai faim.
+	jump Node7
+- Oui, je suis faim
+	jump node8
+- Oui, j’ai un faim.
+	jump node8
+label Node7
+Parfait ! J’ai aussi du pain chaud. Tu veux goûter ?
+jump node9
+label node8
+Non, attention ! On dit « j’ai faim », pas « je suis faim ».
+jump node6
+label node9
+Moi, je travaille beaucoup. J’aime faire du pain. Et toi, tu aimes apprendre le français ?
+label node10
+- Oui, j’aime apprendre.
+	jump node11
+- Oui, j’ai apprendre.
+	jump node12
+- Oui, je être apprendre.
+	jump node12
+label node11
+Bravo ! Apprendre, c’est comme faire du pain \: il faut du temps et de la passion.
+[signal arg="open_gate"]
+[end_timeline]
+label node12
+Pas tout à fait ! Pour parler d’aimer une action, on dit « j’aime » + verbe à l’infinitif.
+jump node10

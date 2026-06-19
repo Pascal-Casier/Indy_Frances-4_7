@@ -1,0 +1,10 @@
+[background arg="res://assets/images/ui/mystical_clearing_deep_within_the_heart2.jpg" fade="0.0"]
+join mago (Mago) 1
+mago (Mago): Eu sei exatamente onde ele quer que eu vá. 
+mago (Mago): Quando eu era pequeno, meu avô me falava frequentemente de um lugar especial onde ele ia para refletir e se reenergizar. 
+mago (Mago): Ele o chamava de ‘o lugar onde as estrelas encontram a terra’. Ele até me mostrou uma vez, durante uma de nossas caminhadas noturnas. 
+mago (Mago): É um lugar mágico, escondido na floresta, onde os vaga-lumes brilham como estrelas. Tenho certeza de que é lá que ele está me esperando.
+[wait time="1.0"]
+leave --All--
+Você decide ir até o lugar combinado para tentar reencontrar o seu avó...
+[wait time="1.0"]

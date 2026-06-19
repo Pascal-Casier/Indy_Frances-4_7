@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cq81h2ch62jbr"]
+
+[ext_resource type="Texture2D" uid="uid://dwid3r0ndpbir" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_PROP_dirtpile_dungeon_BC.png" id="1_rrr03"]
+
+[resource]
+resource_name = "M_PROP_dirtpile_dungeon"
+cull_mode = 2
+albedo_texture = ExtResource("1_rrr03")

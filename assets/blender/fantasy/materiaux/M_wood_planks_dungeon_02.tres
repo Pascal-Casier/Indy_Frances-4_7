@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://o6i7no2splh8"]
+
+[ext_resource type="Texture2D" uid="uid://088q7vqqpoyb" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_wood_planks_dungeon_02_BC.png" id="1_4akwr"]
+
+[resource]
+resource_name = "M_wood_planks_dungeon_02"
+cull_mode = 2
+albedo_texture = ExtResource("1_4akwr")

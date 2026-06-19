@@ -1,0 +1,72 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://dhcmrkxwxhtsx"]
+
+[ext_resource type="FontFile" uid="uid://o1dsyvugbyyd" path="res://DragNdropSystem/Bungee-Regular.ttf" id="1_gdgfy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trn2v"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03owx"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20pc6"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.094437, 0.0328096, 0.00181315, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkp8b"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_offset = Vector2(2, 2)
+
+[resource]
+default_font = ExtResource("1_gdgfy")
+Button/styles/focus = SubResource("StyleBoxFlat_trn2v")
+Button/styles/hover = SubResource("StyleBoxFlat_03owx")
+Button/styles/normal = SubResource("StyleBoxFlat_20pc6")
+Button/styles/pressed = SubResource("StyleBoxFlat_wkp8b")
+Label/colors/font_color = Color(0.471354, 0.199831, 0.0257772, 1)
+Label/font_sizes/font_size = 19
+Label/fonts/font = ExtResource("1_gdgfy")

@@ -1,0 +1,80 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://b11u7fpsxsopb"]
+
+[ext_resource type="FontFile" uid="uid://c5wfvgbieab0" path="res://assets/fonts/EBGaramond-Regular.ttf" id="1_fiege"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xiwm8"]
+bg_color = Color(0.484752, 0.46953, 0.794271, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0261841, 0.773438, 0.17797, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiege"]
+bg_color = Color(0.0317354, 0.0195923, 0.278646, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0261841, 0.773438, 0.17797, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_36y76"]
+bg_color = Color(0.0317354, 0.0195923, 0.278646, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0261841, 0.773438, 0.17797, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28oxu"]
+bg_color = Color(0.0317354, 0.0195923, 0.278646, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.271749, 0.428395, 0.940104, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1r5na"]
+bg_color = Color(0.484752, 0.46953, 0.794271, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.0261841, 0.773438, 0.17797, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+default_font = ExtResource("1_fiege")
+default_font_size = 29
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_xiwm8")
+Button/styles/focus = SubResource("StyleBoxFlat_fiege")
+Button/styles/hover = SubResource("StyleBoxFlat_36y76")
+Button/styles/normal = SubResource("StyleBoxFlat_28oxu")
+Button/styles/pressed = SubResource("StyleBoxFlat_1r5na")

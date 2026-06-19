@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bicb4w3x73fbj"]
+
+[ext_resource type="Texture2D" uid="uid://dsmci3wxftxbn" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_metal_dungeon_02_BC.png" id="1_3o12n"]
+
+[resource]
+resource_name = "M_metal_dungeon_02"
+cull_mode = 2
+albedo_texture = ExtResource("1_3o12n")

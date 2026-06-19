@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://fdlh2cei4k3r"
+path.s3tc="res://.godot/imported/Fantastic_Walls_Dungeon_T_ENV_MOD_Floor_01_v3_N.png-e7cacc49d70648211fdaf7917b5af1e5.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "3d4256d86a93ece8e4627f31c3da42e8"
+}
+
+[deps]
+
+source_file="res://assets/blender/fantasy/Fantastic_Walls_Dungeon_T_ENV_MOD_Floor_01_v3_N.png"
+dest_files=["res://.godot/imported/Fantastic_Walls_Dungeon_T_ENV_MOD_Floor_01_v3_N.png-e7cacc49d70648211fdaf7917b5af1e5.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/blender/fantasy/Fantastic_Walls_Dungeon_T_ENV_MOD_Floor_01_v3_N.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

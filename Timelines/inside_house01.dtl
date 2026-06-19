@@ -1,0 +1,25 @@
+[background arg="res://assets/images/inside house (1).png" fade="0.0"]
+join mago (Mago) 1
+mago (Mago): Tiens ! Papy n'est pas là ! Où peut-il bien être ?
+mago (Mago): je devrais peut-être l'attendre ?
+- attendre (esperar)
+- fouiller la maison (fuçar a casa)
+	jump fouiller
+label attendre
+...
+mago (Mago): Vous essayez de l'appeler \: PAPY !!!
+Personne ne répond ! Vous décidez de sortir de la maison.
+Mais en sortant de la maison, vous marchez sur un vieux livre.\
+Vous décidez de l'ouvrir et vous y découvrez un vieux parchemin.
+jump parchemin
+label fouiller
+En fouillant la maison, vous découvrez un vieux parchemin...
+[call_node path="Global" method="on_key_found"]
+label parchemin
+[background arg="res://assets/images/bookOld (1).jpg" fade="0.0"]
+vous lisez \:\
+Pierre, toi seul peut m'aider \:\
+À minuit, la clé se dévoilera et tu pourras me retrouver dans le royaume magique.
+mago (Mago): Le royaume magique ? De quoi s'agit-il ?\
+Il faut absolument que je découvre ce qui s'est passé.
+Vous décidez d'attendre minuit pour sortir et chercher cette fameuse clé. Elle ne doit pas être bien loin !

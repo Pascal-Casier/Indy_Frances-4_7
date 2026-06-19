@@ -1,0 +1,205 @@
+[gd_scene load_steps=14 format=3 uid="uid://csb8ge7cht6mq"]
+
+[ext_resource type="Script" uid="uid://buduvof2i1pmw" path="res://DragNdropSystem/Main.gd" id="1"]
+[ext_resource type="Theme" uid="uid://dhcmrkxwxhtsx" path="res://DragNdropSystem/drag_drop_theme.tres" id="1_03owx"]
+[ext_resource type="Resource" uid="uid://bsth60pcf5p33" path="res://DragNdropSystem/phrases/phrase_01.tres" id="2"]
+[ext_resource type="Script" uid="uid://bf8ungqdhncm0" path="res://DragNdropSystem/PhraseData.gd" id="2_trn2v"]
+[ext_resource type="Resource" uid="uid://devwoc4o1x2ta" path="res://DragNdropSystem/phrases/phrase_02.tres" id="3"]
+[ext_resource type="Resource" uid="uid://dj4gbdrec8yss" path="res://DragNdropSystem/phrases/phrase_03.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://djl1d3r4lomau" path="res://DragNdropSystem/IndyPhrasesPuzzle.jpg" id="7_lgr22"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03owx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trn2v"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vvyt"]
+bg_color = Color(0.653646, 0.214877, 0.0561727, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03owx"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkp8b"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.811952, 0.0438471, 0, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_20pc6"]
+bg_color = Color(0.312773, 0.161173, 0.0156112, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.094437, 0.0328096, 0.00181315, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[node name="DragNDropSystem" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_03owx")
+script = ExtResource("1")
+phrases = Array[ExtResource("2_trn2v")]([ExtResource("2"), ExtResource("3"), ExtResource("4")])
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -434.0
+offset_top = -31.0
+offset_right = -264.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("7_lgr22")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -245.0
+offset_top = -298.0
+offset_right = 267.0
+offset_bottom = 302.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.85, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 12
+theme_override_font_sizes/font_size = 28
+text = "🧩 Reconstituez la phrase !"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 80
+theme_override_styles/separator = SubResource("StyleBoxEmpty_03owx")
+
+[node name="PhraseContainer" type="HFlowContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+
+[node name="WordBankLabel" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.123652, 0.0337931, 0.393229, 1)
+theme_override_font_sizes/font_size = 16
+text = "Mots disponibles :"
+horizontal_alignment = 1
+
+[node name="WordBank" type="HFlowContainer" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+
+[node name="Separator2" type="HSeparator" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 120
+theme_override_styles/separator = SubResource("StyleBoxEmpty_03owx")
+
+[node name="ResultLabel" type="Label" parent="VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.4, 1, 0.6, 1)
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+
+[node name="ButtonRow" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CheckButton" type="Button" parent="VBox/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_trn2v")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_5vvyt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkp8b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_20pc6")
+text = "✅ Vérifier"
+
+[node name="ResetButton" type="Button" parent="VBox/ButtonRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_trn2v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkp8b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_20pc6")
+text = "🔄 Recommencer"
+
+[node name="NextButton" type="Button" parent="VBox/ButtonRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(140, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/focus = SubResource("StyleBoxFlat_trn2v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03owx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkp8b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_20pc6")
+text = "➡ Suivant"
