@@ -171,7 +171,6 @@ fadeout_time = 0.3
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_vumx3"]
 
 [resource]
-graph_offset = Vector2(-433.333, 33.3333)
 nodes/output/position = Vector2(3440, -53.3333)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_6y4aj")
 nodes/Animation/position = Vector2(0, 266.667)

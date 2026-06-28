@@ -15,9 +15,13 @@ dest_files=["res://.godot/imported/Fantastic_Dungeon_Pack_Props.glb-9c950f4e6dc0
 
 nodes/root_type=""
 nodes/root_name=""
+nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -32,6 +36,9 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={
 "materials": {
 "@MATERIAL:0": {
@@ -39,121 +46,151 @@ _subresources={
 },
 "M_CLR_yellow_E": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_CLR_yellow_E.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_CLR_yellow_E.tres",
+"use_external/path": "uid://b6xl3w4o0k4th"
 },
 "M_MOD_Wall_01_v1": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_MOD_Wall_01_v1.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_MOD_Wall_01_v1.tres",
+"use_external/path": "uid://svfru5q5nqnj"
 },
 "M_PROP_bonepile_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_bonepile_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_bonepile_dungeon.tres",
+"use_external/path": "uid://dq7o3d4dfkq74"
 },
 "M_PROP_book_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_book_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_book_dungeon.tres",
+"use_external/path": "uid://dik66asy5smqj"
 },
 "M_PROP_bottles_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_bottles_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_bottles_dungeon.tres",
+"use_external/path": "uid://d040oq16484ti"
 },
 "M_PROP_bow_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_bow_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_bow_dungeon.tres",
+"use_external/path": "uid://ckpos76l7fxdb"
 },
 "M_PROP_campfire_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_campfire_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_campfire_dungeon.tres",
+"use_external/path": "uid://c6vbx88clmjjs"
 },
 "M_PROP_candle_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_candle_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_candle_dungeon.tres",
+"use_external/path": "uid://cr8ohxwkp3u2p"
 },
 "M_PROP_chains_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_chains_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_chains_dungeon.tres",
+"use_external/path": "uid://hv8xvl2sa286"
 },
 "M_PROP_dirtpile_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_dirtpile_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_dirtpile_dungeon.tres",
+"use_external/path": "uid://cq81h2ch62jbr"
 },
 "M_PROP_ember_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_ember_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_ember_dungeon.tres",
+"use_external/path": "uid://jrhyqmmg7mx8"
 },
 "M_PROP_fabric_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_fabric_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_fabric_dungeon.tres",
+"use_external/path": "uid://b3uyydju5cl2n"
 },
 "M_PROP_flags_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_flags_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_flags_dungeon.tres",
+"use_external/path": "uid://b10e5rp8gyoly"
 },
 "M_PROP_gold_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_gold_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_gold_dungeon.tres",
+"use_external/path": "uid://b81ckprb7w567"
 },
 "M_PROP_orevein_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_orevein_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_orevein_dungeon.tres",
+"use_external/path": "uid://cb165mbp3t2my"
 },
 "M_PROP_pot_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_pot_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_pot_dungeon.tres",
+"use_external/path": "uid://bh47ik471175m"
 },
 "M_PROP_sack_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_sack_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_sack_dungeon.tres",
+"use_external/path": "uid://h4qbe4b3bmql"
 },
 "M_PROP_skeleton_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_skeleton_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_skeleton_dungeon.tres",
+"use_external/path": "uid://c3ln77tqoc47w"
 },
 "M_PROP_spiderweb_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_spiderweb_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_spiderweb_dungeon.tres",
+"use_external/path": "uid://c3mt6d6wxxe2k"
 },
 "M_PROP_stone_deco_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_stone_deco_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_stone_deco_dungeon.tres",
+"use_external/path": "uid://ccsxm6qppb6st"
 },
 "M_PROP_tools_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_tools_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_tools_dungeon.tres",
+"use_external/path": "uid://7byk2mjjm6sr"
 },
 "M_PROP_vegetation_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_vegetation_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_vegetation_dungeon.tres",
+"use_external/path": "uid://bgn0yh02ttm44"
 },
 "M_PROP_weapon_dungeon": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_PROP_weapon_dungeon.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_PROP_weapon_dungeon.tres",
+"use_external/path": "uid://bxp0bm1smmrq4"
 },
 "M_metal_dungeon_01": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_metal_dungeon_01.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_metal_dungeon_01.tres",
+"use_external/path": "uid://b7y2v1siigjsw"
 },
 "M_metal_dungeon_02": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_metal_dungeon_02.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_metal_dungeon_02.tres",
+"use_external/path": "uid://bicb4w3x73fbj"
 },
 "M_wood_planks_dungeon_01": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_01.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_01.tres",
+"use_external/path": "uid://dc3kwwbtpqanb"
 },
 "M_wood_planks_dungeon_02": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_02.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_02.tres",
+"use_external/path": "uid://o6i7no2splh8"
 },
 "M_wood_planks_dungeon_03": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_03.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_03.tres",
+"use_external/path": "uid://bg5hjnqsviv1o"
 },
 "M_wood_planks_dungeon_04": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_04.tres"
+"use_external/fallback_path": "res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_04.tres",
+"use_external/path": "uid://co1cyahlmxhue"
 }
 }
 }
 gltf/naming_version=1
 gltf/embedded_image_handling=1
+gltf/texture_map_mode=0
