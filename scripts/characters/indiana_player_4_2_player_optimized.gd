@@ -599,3 +599,4 @@ func play_foot_step() -> void:
 func shake() -> void:
 	if camroot:
 		camroot.add_shake(0.2)
+		
