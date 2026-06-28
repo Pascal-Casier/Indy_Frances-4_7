@@ -1,12 +1,9 @@
-[gd_scene load_steps=15 format=4 uid="uid://bbgv684ubmepn"]
+[gd_scene format=4 uid="uid://bbgv684ubmepn"]
 
-[ext_resource type="Texture2D" uid="uid://cms7dkt5hbs6" path="res://assets/images/textures/Textures/Urban/PAVEMENT.png" id="1_ib7jy"]
+[ext_resource type="Material" uid="uid://svfru5q5nqnj" path="res://assets/blender/fantasy/materiaux/M_MOD_Wall_01_v1.tres" id="1_ib7jy"]
 [ext_resource type="Material" uid="uid://bkbibjo18auvd" path="res://assets/materials/old_tiles1.tres" id="1_x76q1"]
 [ext_resource type="Material" uid="uid://d2k4gu8a1yvk" path="res://assets/materials/old_bricks3_material.tres" id="2_b4cwl"]
 [ext_resource type="Texture2D" uid="uid://vbw0f1lasniw" path="res://assets/images/textures/Textures/Bricks/Bricks_21-128x128.png" id="3_f85by"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6i3h"]
-albedo_texture = ExtResource("1_ib7jy")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ib7jy"]
 _surfaces = [{
@@ -28,7 +25,7 @@ _surfaces = [{
 "format": 34359742527,
 "index_count": 36,
 "index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
-"material": SubResource("StandardMaterial3D_p6i3h"),
+"material": ExtResource("1_ib7jy"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
@@ -108,24 +105,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_scs2x")
 
-[node name="RoomSceneInfinite" type="Node3D"]
+[node name="RoomSceneInfinite" type="Node3D" unique_id=745178677]
 
-[node name="Block_0_mesh" type="MeshInstance3D" parent="."]
+[node name="Block_0_mesh" type="MeshInstance3D" parent="." unique_id=1974812135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -1, -4)
 mesh = SubResource("ArrayMesh_f85by")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Block_0_mesh"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Block_0_mesh" unique_id=1259964627]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Block_0_mesh/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block_0_mesh/StaticBody3D" unique_id=974128774]
 shape = SubResource("ConvexPolygonShape3D_x76q1")
 
-[node name="Block_1_mesh" type="MeshInstance3D" parent="."]
+[node name="Block_1_mesh" type="MeshInstance3D" parent="." unique_id=3657943]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -1, -7)
 mesh = SubResource("ArrayMesh_uw21e")
 skeleton = NodePath("")
 
-[node name="Block_2_mesh" type="MeshInstance3D" parent="."]
+[node name="Block_2_mesh" type="MeshInstance3D" parent="." unique_id=897826572]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -1, -7)
 mesh = SubResource("ArrayMesh_7oag3")
 skeleton = NodePath("")
