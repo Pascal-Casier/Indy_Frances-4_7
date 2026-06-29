@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bwb2qcuxddqt6"]
 
-[ext_resource type="Script" uid="uid://i6vqvr7xwsey" path="res://scenes/jeep/jeep.gd" id="1_exgrf"]
+[ext_resource type="Script" uid="uid://d3rc0yn0m5n6y" path="res://scenes/jeep/jeepv2.gd" id="1_a5i6b"]
 [ext_resource type="Texture2D" uid="uid://c8fp7gfro3834" path="res://scenes/jeep/jeep_ImphenziaPixPal_BaseColor.png" id="2_a5i6b"]
 [ext_resource type="PackedScene" uid="uid://cuspt2jqnpxul" path="res://assets/characters/Indiana4_2/IndianaJones_fully_animated.glb" id="3_6gfx4"]
 [ext_resource type="Animation" uid="uid://b208e203aayh5" path="res://assets/animations/indy_driving.res" id="4_x58h8"]
@@ -6724,7 +6724,7 @@ radial_segments = 12
 rings = 12
 
 [node name="Jeep" type="Node3D" unique_id=372991098 groups=["Jeep"]]
-script = ExtResource("1_exgrf")
+script = ExtResource("1_a5i6b")
 
 [node name="Ball" type="RigidBody3D" parent="." unique_id=283610808]
 visible = false

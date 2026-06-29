@@ -3253,6 +3253,12 @@ door_nbr = 1
 
 [node name="Jeep" parent="." unique_id=372991098 instance=ExtResource("15_fd21f")]
 transform = Transform3D(0.06434018, 0, -0.997928, 0, 1, 0, 0.997928, 0, 0.06434018, 1.6311095, 1.9999995, 30.743475)
+steering_angle = 35.0
+steering_angle_min = 15.0
+grip_strength = 10.0
+brake_drag = 0.1
+body_tilt_strength = 0.6
+camera_smoothness = 3.0
 
 [node name="Path3D" type="Path3D" parent="." unique_id=1324479139]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.03209, 0, 0)

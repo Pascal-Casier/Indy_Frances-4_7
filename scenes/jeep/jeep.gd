@@ -18,7 +18,7 @@ var max_speed = 20.0  # vitesse max estimée (à ajuster)
 var speed_input = 0
 var turn_input = 0
 var acceleration = 30.0
-var steering_angle = 20.0
+var steering_angle = 30.0
 var turn_speed = 3.0
 
 var player_cam: Node3D = null
