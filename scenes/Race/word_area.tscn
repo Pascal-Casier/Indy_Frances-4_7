@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dhvro0g7hiv02"]
+
+[ext_resource type="FontFile" uid="uid://o1dsyvugbyyd" path="res://DragNdropSystem/Bungee-Regular.ttf" id="1_vrif1"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nln7o"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tveiw"]
+noise = SubResource("FastNoiseLite_nln7o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dcb2"]
+transparency = 1
+albedo_color = Color(1, 1, 0.2627451, 0.45490196)
+albedo_texture = SubResource("NoiseTexture2D_tveiw")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5d3sr"]
+material = SubResource("StandardMaterial3D_4dcb2")
+top_radius = 0.8935547
+bottom_radius = 0.8935547
+height = 1.8779297
+
+[node name="WordArea" type="MeshInstance3D" unique_id=889852521]
+mesh = SubResource("CylinderMesh_5d3sr")
+skeleton = NodePath("../..")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=952355382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3497958, 0)
+billboard = 2
+text = "test"
+font = ExtResource("1_vrif1")
+font_size = 124
+outline_size = 24
