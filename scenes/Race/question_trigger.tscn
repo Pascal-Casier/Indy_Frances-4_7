@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dd42nfdo000fn"]
+
+[ext_resource type="Script" uid="uid://dvi4qhc3xwgwx" path="res://scripts/race/question_trigger.gd" id="1_8gdys"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfp77"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfp77"]
+
+[node name="QuestionTrigger" type="Area3D" unique_id=434697971]
+script = ExtResource("1_8gdys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1060126208]
+shape = SubResource("BoxShape3D_bfp77")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=73815379]
+mesh = SubResource("BoxMesh_bfp77")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://bdncw8uxva84"]
+
+[ext_resource type="Script" uid="uid://psyvthhwdtar" path="res://scripts/race/race_pickup.gd" id="1_gv3vt"]
+[ext_resource type="PackedScene" uid="uid://bo5x2iq0yei5t" path="res://assets/blender/kaykitHaloween/gltf/pumpkin_orange.gltf" id="2_iu87d"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="3_3osom"]
+[ext_resource type="AudioStream" uid="uid://b55yh7obeenij" path="res://assets/sounds/sfx/Coins 10 - Sound effects Pack 2.ogg" id="4_k07e4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfp77"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_litht"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8bm0"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 0.45490196)
+albedo_texture = SubResource("NoiseTexture2D_litht")
+uv1_scale = Vector3(2.17, 2.17, 2.17)
+uv1_triplanar = true
+billboard_mode = 2
+
+[sub_resource type="QuadMesh" id="QuadMesh_bfp77"]
+material = SubResource("StandardMaterial3D_o8bm0")
+size = Vector2(2, 1)
+
+[node name="race_pickup" type="Area3D" unique_id=243982536]
+script = ExtResource("1_gv3vt")
+correct = true
+model = ExtResource("2_iu87d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1103657831]
+shape = SubResource("BoxShape3D_bfp77")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1636934247]
+
+[node name="Label3D" type="Label3D" parent="." unique_id=376635026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+billboard = 2
+double_sided = false
+modulate = Color(0.96484375, 0.6883875, 0.101760864, 1)
+text = "Test"
+font = ExtResource("3_3osom")
+font_size = 200
+outline_size = 27
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=250055770]
+stream = ExtResource("4_k07e4")
+max_polyphony = 3
+bus = &"Sfx"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1153957602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4893036, 0)
+mesh = SubResource("QuadMesh_bfp77")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

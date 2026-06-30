@@ -6723,11 +6723,10 @@ height = 0.3
 radial_segments = 12
 rings = 12
 
-[node name="Jeep" type="Node3D" unique_id=372991098 groups=["Jeep"]]
+[node name="Jeep" type="Node3D" unique_id=372991098 groups=["Jeep", "voiture"]]
 script = ExtResource("1_a5i6b")
 
-[node name="Ball" type="RigidBody3D" parent="." unique_id=283610808]
-visible = false
+[node name="Ball" type="RigidBody3D" parent="." unique_id=283610808 groups=["voiture"]]
 physics_material_override = SubResource("PhysicsMaterial_4dcb2")
 gravity_scale = 5.0
 angular_damp = 5.0
@@ -6736,6 +6735,7 @@ angular_damp = 5.0
 shape = SubResource("SphereShape3D_5d3sr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball" unique_id=1893779805]
+visible = false
 mesh = SubResource("SphereMesh_5d3sr")
 
 [node name="jeep" type="Node3D" parent="." unique_id=2088594730]
@@ -6771,7 +6771,7 @@ transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 2.09
 [node name="IndianaJones_fully_animated" parent="jeep" unique_id=144951062 instance=ExtResource("3_6gfx4")]
 transform = Transform3D(-0.84487754, 3.4059422e-08, -0.014385953, -0.0016581572, 0.8393679, 0.09738447, 0.014290071, 0.097398594, -0.8392463, -0.25350016, 0.18233883, 0.040560573)
 
-[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 134182878) index="0" unique_id=1614052530]
+[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 1961141858) index="0" unique_id=1322548023]
 bones/0/position = Vector3(-0.006782358, 0.5173115, -0.0044337222)
 bones/0/rotation = Quaternion(-0.15429467, -0.054365262, -0.04049404, 0.9856966)
 bones/1/rotation = Quaternion(0.05235725, 0.012475623, 0.01608031, 0.998421)
@@ -6802,7 +6802,7 @@ bones/29/rotation = Quaternion(-0.00048340484, 0.92394257, -0.37957278, -0.04748
 bones/30/rotation = Quaternion(0.023060404, 0.9016675, -0.42733827, -0.06201642)
 bones/31/rotation = Quaternion(-3.8195584e-08, 1, 2.0861629e-07, -9.219623e-09)
 
-[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=764744736]
+[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=870233130]
 libraries/ = SubResource("AnimationLibrary_knx5v")
 autoplay = &"indy_driving"
 

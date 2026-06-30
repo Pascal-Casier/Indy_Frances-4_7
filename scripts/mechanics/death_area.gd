@@ -10,3 +10,6 @@ func _on_body_entered(body):
 		CheckpointManager.respawn_player()
 	elif body.is_in_group("Enemy"):
 		body.die()
+	elif body.is_in_group("voiture"):
+		await get_tree().process_frame
+		get_tree().reload_current_scene()

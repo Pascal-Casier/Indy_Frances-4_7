@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://bhudrti7is8e"]
+
+[ext_resource type="Script" uid="uid://bj3a5rc2xfp48" path="res://scripts/race/race_manager.gd" id="1_kxqrp"]
+[ext_resource type="Script" uid="uid://q8rp5mscfc0j" path="res://scripts/race/question_panel.gd" id="2_2m3gc"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="3_4idkc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfp77"]
+font = ExtResource("3_4idkc")
+font_size = 48
+font_color = Color(0.94921875, 0.91605055, 0.100112915, 1)
+outline_size = 14
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_offset = Vector2(3, 3)
+
+[node name="RaceManager" type="Node3D" unique_id=1304882356]
+script = ExtResource("1_kxqrp")
+
+[node name="UI" type="Control" parent="." unique_id=600547372]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 110.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=433554957]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 27
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer" unique_id=914091225]
+layout_mode = 2
+alignment = 1
+
+[node name="QuestionPanel" type="Control" parent="UI/MarginContainer/HBoxContainer" unique_id=535975758]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("2_2m3gc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/HBoxContainer/QuestionPanel" unique_id=150202731]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 33
+
+[node name="Label" type="Label" parent="UI/MarginContainer/HBoxContainer/QuestionPanel/HBoxContainer" unique_id=55734427]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test"
+label_settings = SubResource("LabelSettings_bfp77")
+
+[node name="Button1" type="Button" parent="UI/MarginContainer/HBoxContainer/QuestionPanel/HBoxContainer" unique_id=39006036]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "btn1"
+
+[node name="Button2" type="Button" parent="UI/MarginContainer/HBoxContainer/QuestionPanel/HBoxContainer" unique_id=1806367674]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "btn2"
+
+[node name="Button3" type="Button" parent="UI/MarginContainer/HBoxContainer/QuestionPanel/HBoxContainer" unique_id=47258203]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "btn3"
+
+[node name="Timer" type="Label" parent="UI/MarginContainer/HBoxContainer" unique_id=1909907034]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "timer"
+label_settings = SubResource("LabelSettings_bfp77")
+horizontal_alignment = 2

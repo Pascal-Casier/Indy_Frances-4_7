@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cp0y41ml3lq42"]
+
+[ext_resource type="Script" uid="uid://c2tee07ucv4d" path="res://scripts/race/porte_race.gd" id="1_upgf4"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="2_qwqve"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o8bm0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfp77"]
+
+[node name="Porte_race" type="Area3D" unique_id=1110179869]
+script = ExtResource("1_upgf4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1043099913]
+mesh = SubResource("BoxMesh_o8bm0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1687843456]
+shape = SubResource("BoxShape3D_bfp77")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1385713006]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2344971, 0)
+billboard = 2
+text = "test"
+font = ExtResource("2_qwqve")
+font_size = 80
+outline_size = 22
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -64,6 +64,8 @@ var camera_base_z: float = 3.0
 var wheel_left_base_y: float
 var wheel_right_base_y: float
 
+var penalty_multiplier: float = 1.0
+var penalty_timer: float = 0.0
 
 # ============================================================
 # INITIALISATION
@@ -118,7 +120,17 @@ func _process(delta: float) -> void:
 	var throttle_ratio = speed_input / acceleration
 	var cam_target_z = camera_base_z + lerp(0.0, camera_lag_amount, clamp(throttle_ratio, 0.0, 1.0))
 	camera_jeep.position.z = lerp(camera_jeep.position.z, cam_target_z, delta * 5.0)
+	
+	# Gestion de la durée de la pénalité
+	if penalty_timer > 0.0:
+		penalty_timer -= delta
+		if penalty_timer <= 0.0:
+			penalty_multiplier = 1.0  # Réinitialisation automatique
 
+	speed_input = (
+		Input.get_action_strength("ui_up") -
+		Input.get_action_strength("ui_down")
+	) * acceleration * penalty_multiplier  # ← appliqué ici
 
 func _physics_process(delta: float) -> void:
 	model.global_position = ball.global_position + sphere_offset
@@ -196,3 +208,7 @@ func align_with_y(transform: Transform3D, new_y: Vector3) -> Transform3D:
 	transform.basis.x = -transform.basis.z.cross(new_y).normalized()
 	transform.basis.z = transform.basis.x.cross(new_y).normalized()
 	return transform
+	
+func appliquer_penalite(multiplicateur: float, duree: float = 2.0) -> void:
+	penalty_multiplier = multiplicateur
+	penalty_timer = duree
