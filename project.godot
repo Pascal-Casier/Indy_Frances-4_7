@@ -366,6 +366,7 @@ numpad3={
 3d_render/layer_3="Enemies"
 3d_render/layer_4="Projectiles"
 3d_render/layer_5="Items"
+3d_render/layer_6="debris"
 3d_render/layer_17="SimpleGrassTextured interactive layer"
 3d_physics/layer_1="world"
 3d_physics/layer_2="player"
@@ -374,6 +375,7 @@ numpad3={
 3d_physics/layer_5="Pickeable"
 3d_physics/layer_6="grappable"
 3d_physics/layer_7="physics_objects"
+3d_physics/layer_8="debris"
 
 [physics]
 

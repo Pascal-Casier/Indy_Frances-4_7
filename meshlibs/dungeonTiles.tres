@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=24 format=4 uid="uid://60rw1jnp5mkr"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://60rw1jnp5mkr"]
 
 [ext_resource type="Texture2D" uid="uid://bkni8djp031e1" path="res://assets/blender/DungeonTiles4_Asset 4.png" id="1_6w4a8"]
 [ext_resource type="Texture2D" uid="uid://wjfgl6uv4y3" path="res://assets/blender/DungeonTiles4_NormalMap4.png" id="2_mdgok"]

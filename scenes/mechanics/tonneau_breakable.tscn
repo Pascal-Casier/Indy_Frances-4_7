@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://c6bwu50t0knbb"]
+[gd_scene format=4 uid="uid://c6bwu50t0knbb"]
 
 [ext_resource type="Texture2D" uid="uid://dansojko3qx14" path="res://assets/blender/breakableWall/tonneau1_Palette.png" id="1_3cxbm"]
 [ext_resource type="Script" uid="uid://dbsv2pio7tyr8" path="res://scripts/mechanics/tonneau_breakable.gd" id="1_q4lor"]
@@ -54,34 +54,34 @@ radius = 0.4
 height = 0.811692
 radius = 0.43
 
-[node name="tonneau_breakable" type="Area3D" groups=["Wall"]]
+[node name="tonneau_breakable" type="Area3D" unique_id=810671269 groups=["Wall"]]
 collision_layer = 9
 collision_mask = 11
 script = ExtResource("1_q4lor")
 
-[node name="tonneau" type="MeshInstance3D" parent="."]
+[node name="tonneau" type="MeshInstance3D" parent="." unique_id=91268977]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0, 0)
 mesh = SubResource("ArrayMesh_wrouu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tonneau"]
+[node name="StaticBody3D" type="StaticBody3D" parent="tonneau" unique_id=2098736148]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="tonneau/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="tonneau/StaticBody3D" unique_id=1274195210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40089, 0)
 shape = SubResource("CylinderShape3D_pkmsc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=442635589]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, 0.561247, 0)
 shape = SubResource("CylinderShape3D_sxofl")
 
-[node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
+[node name="Destruction" type="Node" parent="." unique_id=966932484 node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_cmand")
 fragmented = ExtResource("3_aqp0d")
-shard_container = NodePath("")
+shard_container = NodePath("../..")
 shrink_delay = 1.0
 animation_length = 3.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=783719094]
 unique_name_in_owner = true
 stream = ExtResource("5_ivkjw")
 pitch_scale = 1.3

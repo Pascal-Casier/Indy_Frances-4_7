@@ -78,11 +78,8 @@ func _add_shard(original: MeshInstance3D, explosion_power: float) -> void:
 	body.global_position = get_parent().global_transform.origin + original.position
 	body.global_rotation = get_parent().global_rotation
 	
-	body.collision_layer = 1  # Seulement la couche 1
-	body.collision_mask = 1   # Détecte seulement la couche 1
-	#body.collision_layer = collision_layer
-	#body.collision_mask = collision_mask
-	#body.collision_layer &= ~(1 << 1)  # Retire la couche 2 du collision_layer
+	body.collision_layer = 1 << 7  # Layer 8 ("Debris") : le joueur (layer 2) ne la voit pas
+	body.collision_mask = 1        # Détecte seulement la layer 1 (sol/décor) pour tomber dessus
 	mesh.scale = original.scale
 	shape.scale = original.scale
 	shape.shape = _cached_shapes[original]
