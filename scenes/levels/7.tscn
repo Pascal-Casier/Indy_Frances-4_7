@@ -20,6 +20,8 @@
 [ext_resource type="FontFile" uid="uid://crcp1fsksmqen" path="res://assets/fonts/Adventure.otf" id="18_3tb56"]
 [ext_resource type="PackedScene" uid="uid://dhvro0g7hiv02" path="res://scenes/Race/word_area.tscn" id="19_yx64e"]
 [ext_resource type="Script" uid="uid://dhyx253hhhrus" path="res://scenes/Race/word_area.gd" id="20_8gg3f"]
+[ext_resource type="PackedScene" uid="uid://dskmxwvu1ukaj" path="res://assets/blender/road1.glb" id="21_8gg3f"]
+[ext_resource type="PackedScene" uid="uid://svutgn46h232" path="res://scenes/Race/oil_patch.tscn" id="22_e0d0c"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
 panorama = ExtResource("1_jkjun")
@@ -3281,7 +3283,7 @@ door_nbr = 1
 transform = Transform3D(0.06434018, 0, -0.997928, 0, 1, 0, 0.997928, 0, 0.06434018, 1.6311095, 1.9999995, 30.743475)
 steering_angle = 35.0
 steering_angle_min = 15.0
-grip_strength = 10.0
+grip_strength = 5.0
 brake_drag = 0.1
 body_tilt_strength = 0.6
 camera_smoothness = 3.0
@@ -3309,6 +3311,8 @@ path_joined = true
 material = ExtResource("16_fd21f")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="." unique_id=568414608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0591393, 0)
+visible = false
 mesh = SubResource("ArrayMesh_yx64e")
 
 [node name="Race_manager" type="Control" parent="." unique_id=42234628]
@@ -3366,5 +3370,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8604722, 1.9389675, 0)
 script = ExtResource("20_8gg3f")
 fr_word = "table"
 por_traducao = "mesa"
+
+[node name="road1" parent="." unique_id=1113376664 instance=ExtResource("21_8gg3f")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 154.43863, -15.196888, -35.60701)
+
+[node name="OilPatch" parent="." unique_id=293879506 instance=ExtResource("22_e0d0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 76.359406)
+
+[node name="OilPatch2" parent="." unique_id=1423642364 instance=ExtResource("22_e0d0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.278263, 0.70217407, 76.359406)
 
 [editable path="Race_manager/areaContainer/WordArea"]

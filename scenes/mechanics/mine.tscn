@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://2vq3eftt67xb"]
+[gd_scene format=4 uid="uid://2vq3eftt67xb"]
 
 [ext_resource type="Script" uid="uid://c1g670ry46ggs" path="res://scripts/mechanics/mine.gd" id="1_ox1o5"]
 [ext_resource type="AudioStream" uid="uid://dfuikk6pdmau" path="res://assets/sounds/sfx/explosion2.mp3" id="2_je3bx"]
@@ -221,78 +221,76 @@ albedo_color = Color(1, 0, 0, 0.38)
 [sub_resource type="SphereMesh" id="SphereMesh_e0wik"]
 radius = 0.57
 
-[node name="Mine" type="StaticBody3D"]
+[node name="Mine" type="StaticBody3D" unique_id=1375896150]
 script = ExtResource("1_ox1o5")
 
-[node name="MeshInstance" type="MeshInstance3D" parent="."]
+[node name="MeshInstance" type="MeshInstance3D" parent="." unique_id=1220336087]
 unique_name_in_owner = true
 transform = Transform3D(0.392842, 0, 0, 0, 0.118462, 0, 0, 0, 0.392842, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bpk3r")
 skeleton = NodePath("")
 
-[node name="contour" type="MeshInstance3D" parent="MeshInstance"]
+[node name="contour" type="MeshInstance3D" parent="MeshInstance" unique_id=1569281348]
 visible = false
 material_override = SubResource("StandardMaterial3D_je3bx")
 mesh = SubResource("ArrayMesh_a2xrc")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=101414819]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138727, 0)
 shape = SubResource("ConvexPolygonShape3D_ox1o5")
 
-[node name="ZoneDetection" type="Area3D" parent="."]
+[node name="ZoneDetection" type="Area3D" parent="." unique_id=846884740]
 unique_name_in_owner = true
 collision_layer = 0
-collision_mask = 2
+collision_mask = 514
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneDetection"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZoneDetection" unique_id=2143012308]
 shape = SubResource("SphereShape3D_sdx4a")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=45877231]
 unique_name_in_owner = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2110866716]
 unique_name_in_owner = true
 stream = ExtResource("2_je3bx")
 max_distance = 25.0
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="explosion" parent="AudioStreamPlayer3D" instance=ExtResource("3_a2xrc")]
+[node name="explosion" parent="AudioStreamPlayer3D" unique_id=880919253 instance=ExtResource("3_a2xrc")]
 
-[node name="zone_degats" type="Area3D" parent="AudioStreamPlayer3D"]
+[node name="zone_degats" type="Area3D" parent="AudioStreamPlayer3D" unique_id=1100226267]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioStreamPlayer3D/zone_degats"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AudioStreamPlayer3D/zone_degats" unique_id=1056572993]
 visible = false
 shape = SubResource("SphereShape3D_a2xrc")
 
-[node name="explosion" parent="." instance=ExtResource("3_a2xrc")]
+[node name="explosion" parent="." unique_id=16162119 instance=ExtResource("3_a2xrc")]
 
-[node name="Landmine2" type="Node3D" parent="."]
+[node name="Landmine2" type="Node3D" parent="." unique_id=1076815120]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=659519319]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_e0wik")
-}
+libraries/ = SubResource("AnimationLibrary_e0wik")
 
-[node name="AudioStreamPlayer3DBeep" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3DBeep" type="AudioStreamPlayer3D" parent="." unique_id=18813886]
 
-[node name="zone_degats" type="Area3D" parent="."]
+[node name="zone_degats" type="Area3D" parent="." unique_id=2014139848]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="zone_degats"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zone_degats" unique_id=1937227547]
 visible = false
 shape = SubResource("SphereShape3D_a2xrc")
 
-[node name="sphere" type="MeshInstance3D" parent="."]
+[node name="sphere" type="MeshInstance3D" parent="." unique_id=2051302447]
 unique_name_in_owner = true
 visible = false
 material_override = SubResource("StandardMaterial3D_a2xrc")

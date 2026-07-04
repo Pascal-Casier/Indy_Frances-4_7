@@ -376,6 +376,7 @@ numpad3={
 3d_physics/layer_6="grappable"
 3d_physics/layer_7="physics_objects"
 3d_physics/layer_8="debris"
+3d_physics/layer_10="jeep"
 
 [physics]
 

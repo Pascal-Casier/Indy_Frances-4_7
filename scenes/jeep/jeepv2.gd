@@ -11,6 +11,16 @@ class_name Jeep2
 @onready var indiana_jones_fully_animated: Node3D = $jeep/IndianaJones_fully_animated
 @onready var camera_jeep: Camera3D = $Pivot/Camera3D
 
+@onready var skid_marks_left: GPUParticles3D = $"jeep/wheel-back-left/GPUParticles3D"
+@onready var skid_marks_right: GPUParticles3D = $"jeep/wheel-back-right/GPUParticles3D2"
+@onready var smoke1: GPUParticles3D = $jeep/GPUParticles3D
+@onready var smoke2: GPUParticles3D = $jeep/GPUParticles3D2
+@onready var speedlbl: Label = $CanvasLayer/Control/speedlbl
+
+var drift_lateral_threshold = 2.0   # vitesse latérale mini pour considérer que ça dérape
+var drift_min_speed = 3.0           # vitesse totale mini pour émettre
+var grip_multiplier = 1.0
+var default_friction: float
 # ============================================================
 # PARAMÈTRES EXPORTÉS (modifiables dans l'inspecteur Godot)
 # ============================================================
@@ -67,11 +77,14 @@ var wheel_right_base_y: float
 var penalty_multiplier: float = 1.0
 var penalty_timer: float = 0.0
 
+
+
 # ============================================================
 # INITIALISATION
 # ============================================================
 
 func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	ray_cast_3d.add_exception(ball)
 	ball.contact_monitor = true
 	ball.max_contacts_reported = 10
@@ -79,7 +92,9 @@ func _ready() -> void:
 	wheel_left_base_y = wheel_front_left.rotation.y
 	wheel_right_base_y = wheel_front_right.rotation.y
 	camera_base_z = camera_jeep.position.z
-
+	if ball.physics_material_override == null:
+		ball.physics_material_override = PhysicsMaterial.new()
+	default_friction = ball.physics_material_override.friction
 
 func _on_ball_hit(body: Node) -> void:
 	if body.has_method("break_barrel"):
@@ -88,6 +103,13 @@ func _on_ball_hit(body: Node) -> void:
 		if impact > 5.0:
 			body.break_barrel()
 
+func set_grip(multiplier: float, friction: float) -> void:
+	grip_multiplier = multiplier
+	ball.physics_material_override.friction = friction
+
+func reset_grip() -> void:
+	grip_multiplier = 1.0
+	ball.physics_material_override.friction = default_friction
 
 # ============================================================
 # BOUCLE PRINCIPALE
@@ -132,6 +154,8 @@ func _process(delta: float) -> void:
 		Input.get_action_strength("ui_down")
 	) * acceleration * penalty_multiplier  # ← appliqué ici
 
+	speedlbl.text = "%d km/h" % int(get_speed_kmh())
+
 func _physics_process(delta: float) -> void:
 	model.global_position = ball.global_position + sphere_offset
 	pivot.global_position = ball.global_position
@@ -148,10 +172,34 @@ func _physics_process(delta: float) -> void:
 	var speed_factor = clamp(current_speed / 3.0, 0.0, 1.0)
 	var direction_sign = sign(speed_input) if abs(speed_input) > 0.1 else sign(-model.global_transform.basis.z.dot(ball.linear_velocity))
 	var current_basis = model.global_transform.basis
-	var rotated_basis = current_basis.rotated(current_basis.y, turn_input * speed_factor * direction_sign)
+	var rotated_basis = current_basis.rotated(current_basis.y, turn_input * speed_factor * direction_sign * grip_multiplier)
 	var smoothed_basis = current_basis.slerp(rotated_basis, delta * turn_speed)
 	model.global_basis = smoothed_basis.orthonormalized()
+	
+	var forward = -model.global_transform.basis.z
+	var right = model.global_transform.basis.x
+	var velocity = ball.linear_velocity
 
+	var forward_speed = velocity.dot(forward)
+	var lateral_speed = velocity.dot(right)
+	var total_speed = velocity.length()
+
+	var is_drifting = abs(lateral_speed) > drift_lateral_threshold and total_speed > drift_min_speed
+
+	skid_marks_left.emitting = is_drifting
+	smoke1.emitting = is_drifting
+	skid_marks_right.emitting = is_drifting
+	smoke2.emitting = is_drifting
+	
+	if is_drifting:
+		$AudioStreamBrake.play()
+	else:
+		$AudioStreamBrake.stop()
+	
+	var slip_ratio = clamp(abs(lateral_speed) / 10.0, 0.0, 1.0)
+	skid_marks_left.amount_ratio = slip_ratio
+	skid_marks_right.amount_ratio = slip_ratio
+	
 	# --- Force de propulsion ---
 	var direction = -model.global_transform.basis.z
 	var total_force = speed_input
@@ -165,7 +213,7 @@ func _physics_process(delta: float) -> void:
 	ball.apply_central_force(direction * total_force)
 
 	# Grip latéral : réduit le glissement sur les côtés
-	var right = model.global_transform.basis.x
+	#var right = model.global_transform.basis.x
 	var lateral_velocity = right.dot(ball.linear_velocity)
 	ball.apply_central_force(-right * lateral_velocity * grip_strength)
 
@@ -212,3 +260,18 @@ func align_with_y(transform: Transform3D, new_y: Vector3) -> Transform3D:
 func appliquer_penalite(multiplicateur: float, duree: float = 2.0) -> void:
 	penalty_multiplier = multiplicateur
 	penalty_timer = duree
+	
+func mud_effect(enabled : bool) -> void:
+	if enabled:
+		ball.linear_damp = 4.0
+	else:
+		ball.linear_damp = 0.1
+		
+func hit() -> void:
+	ball.linear_damp += 0.5
+	
+func get_speed() -> float:
+	return ball.linear_velocity.length()
+
+func get_speed_kmh() -> float:
+	return ball.linear_velocity.length() * 3.6

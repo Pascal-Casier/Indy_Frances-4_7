@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://svutgn46h232"]
+
+[ext_resource type="Script" uid="uid://bmhwl2paex4wl" path="res://scenes/Race/collision_shape_3d.gd" id="1_nc778"]
+[ext_resource type="Texture2D" uid="uid://0g87xgesfkph" path="res://assets/images/textures/oil_patch.png" id="2_4m11f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5d3sr"]
+size = Vector3(1, 0.9552002, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5d3sr"]
+height = 0.2
+
+[node name="OilPatch" type="Area3D" unique_id=293879506]
+monitorable = false
+script = ExtResource("1_nc778")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=572282633]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4776001, 0)
+shape = SubResource("BoxShape3D_5d3sr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=738598302]
+visible = false
+mesh = SubResource("CylinderMesh_5d3sr")
+
+[node name="Decal" type="Decal" parent="." unique_id=1960032650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09663391, 0)
+size = Vector3(4, 0.4831848, 4)
+texture_albedo = ExtResource("2_4m11f")

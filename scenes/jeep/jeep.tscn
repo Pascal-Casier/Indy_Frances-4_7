@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cuspt2jqnpxul" path="res://assets/characters/Indiana4_2/IndianaJones_fully_animated.glb" id="3_6gfx4"]
 [ext_resource type="Animation" uid="uid://b208e203aayh5" path="res://assets/animations/indy_driving.res" id="4_x58h8"]
 [ext_resource type="AudioStream" uid="uid://b100l1ccsbdmh" path="res://scenes/jeep/car_engine_loop.mp3" id="5_a5i6b"]
+[ext_resource type="AudioStream" uid="uid://ccisudvqc22um" path="res://assets/sounds/sfx/brake-6315.mp3" id="6_6gfx4"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="7_x58h8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4dcb2"]
 bounce = 0.1
@@ -123,6 +125,25 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lh777")
+
+[sub_resource type="Gradient" id="Gradient_a5i6b"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.39215687)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_thsvh"]
+gradient = SubResource("Gradient_a5i6b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4dcb2"]
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_thsvh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nln7o"]
+transparency = 1
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_tveiw"]
+material = SubResource("StandardMaterial3D_nln7o")
+size = Vector2(0.3, 0.3)
+orientation = 1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6b0lc"]
 _surfaces = [{
@@ -6723,10 +6744,18 @@ height = 0.3
 radial_segments = 12
 rings = 12
 
+[sub_resource type="LabelSettings" id="LabelSettings_5d3sr"]
+font = ExtResource("7_x58h8")
+font_size = 47
+font_color = Color(0.91796875, 0.7296854, 0.18765765, 1)
+outline_size = 16
+outline_color = Color(0.07942706, 0.077875756, 0.077875756, 1)
+
 [node name="Jeep" type="Node3D" unique_id=372991098 groups=["Jeep", "voiture"]]
 script = ExtResource("1_a5i6b")
 
 [node name="Ball" type="RigidBody3D" parent="." unique_id=283610808 groups=["voiture"]]
+collision_layer = 513
 physics_material_override = SubResource("PhysicsMaterial_4dcb2")
 gravity_scale = 5.0
 angular_damp = 5.0
@@ -6753,9 +6782,25 @@ mesh = SubResource("ArrayMesh_si60c")
 transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, -0.49285707, 0.3, 0.69333327)
 mesh = SubResource("ArrayMesh_sx8rd")
 
+[node name="GPUParticles3D" type="GPUParticles3D" parent="jeep/wheel-back-left" unique_id=663414397]
+transform = Transform3D(-1, 0, -4.371139e-07, 0, 1, 0, 4.371139e-07, 0, -1, 0, -0.21893924, 0)
+amount = 150
+lifetime = 1.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4dcb2")
+draw_pass_1 = SubResource("QuadMesh_tveiw")
+
 [node name="wheel-back-right" type="MeshInstance3D" parent="jeep" unique_id=1930636932]
 transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 0.49285698, 0.3, 0.6933334)
 mesh = SubResource("ArrayMesh_tg477")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="jeep/wheel-back-right" unique_id=185398879]
+transform = Transform3D(-1, 0, -4.371139e-07, 0, 1, 0, 4.371139e-07, 0, -1, 0, -0.21893924, 0)
+amount = 150
+lifetime = 1.5
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4dcb2")
+draw_pass_1 = SubResource("QuadMesh_tveiw")
 
 [node name="wheel-front-left" type="MeshInstance3D" parent="jeep" unique_id=731587675]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.49285692, 0.3, -0.6266667)
@@ -6771,7 +6816,7 @@ transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 2.09
 [node name="IndianaJones_fully_animated" parent="jeep" unique_id=144951062 instance=ExtResource("3_6gfx4")]
 transform = Transform3D(-0.84487754, 3.4059422e-08, -0.014385953, -0.0016581572, 0.8393679, 0.09738447, 0.014290071, 0.097398594, -0.8392463, -0.25350016, 0.18233883, 0.040560573)
 
-[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 1961141858) index="0" unique_id=1322548023]
+[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 134182878) index="0" unique_id=1614052530]
 bones/0/position = Vector3(-0.006782358, 0.5173115, -0.0044337222)
 bones/0/rotation = Quaternion(-0.15429467, -0.054365262, -0.04049404, 0.9856966)
 bones/1/rotation = Quaternion(0.05235725, 0.012475623, 0.01608031, 0.998421)
@@ -6802,12 +6847,13 @@ bones/29/rotation = Quaternion(-0.00048340484, 0.92394257, -0.37957278, -0.04748
 bones/30/rotation = Quaternion(0.023060404, 0.9016675, -0.42733827, -0.06201642)
 bones/31/rotation = Quaternion(-3.8195584e-08, 1, 2.0861629e-07, -9.219623e-09)
 
-[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=870233130]
+[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=764744736]
 libraries/ = SubResource("AnimationLibrary_knx5v")
 autoplay = &"indy_driving"
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="jeep" unique_id=776059680]
 transform = Transform3D(-1, 4.532952e-08, -2.5832134e-07, 0, 0.98495054, 0.17283644, 2.6226832e-07, 0.17283644, -0.98495054, 0.5025992, 0.2024231, 1.277893)
+emitting = false
 amount = 35
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5d3sr")
@@ -6815,6 +6861,7 @@ draw_pass_1 = SubResource("SphereMesh_4dcb2")
 
 [node name="GPUParticles3D2" type="GPUParticles3D" parent="jeep" unique_id=1605537501]
 transform = Transform3D(-1, 4.532952e-08, -2.5832134e-07, 0, 0.98495054, 0.17283644, 2.6226832e-07, 0.17283644, -0.98495054, -0.4579325, 0.2024231, 1.2778932)
+emitting = false
 amount = 35
 randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_5d3sr")
@@ -6828,5 +6875,44 @@ transform = Transform3D(1, 0, 0, 0, 0.98495054, 0.17283644, 0, -0.17283644, 0.98
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer" parent="." unique_id=1298931493]
 stream = ExtResource("5_a5i6b")
+
+[node name="AudioStreamBrake" type="AudioStreamPlayer3D" parent="." unique_id=827218088]
+stream = ExtResource("6_6gfx4")
+volume_db = 50.0
+max_polyphony = 4
+bus = &"Sfx"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1350281675]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=493912127]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -72.0
+offset_right = -111.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="speedlbl" type="Label" parent="CanvasLayer/Control" unique_id=1209007425]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.5
+offset_top = -29.5
+offset_right = 44.5
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "test"
+label_settings = SubResource("LabelSettings_5d3sr")
+horizontal_alignment = 1
 
 [editable path="jeep/IndianaJones_fully_animated"]

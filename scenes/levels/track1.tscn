@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dtr4jadj7jqtf"]
+
+[ext_resource type="Texture2D" uid="uid://ctatvmv0r4ulh" path="res://assets/images/bgds/skygen-plaine1.png" id="1_akrjo"]
+[ext_resource type="PackedScene" uid="uid://tncgqraj72l3" path="res://assets/blender/road2.glb" id="2_duslb"]
+[ext_resource type="PackedScene" uid="uid://bwb2qcuxddqt6" path="res://scenes/jeep/jeep.tscn" id="2_u8uci"]
+[ext_resource type="PackedScene" uid="uid://svutgn46h232" path="res://scenes/Race/oil_patch.tscn" id="3_u8uci"]
+[ext_resource type="PackedScene" uid="uid://d0icckwo68dyr" path="res://scenes/Race/mud_area.tscn" id="5_akrjo"]
+[ext_resource type="PackedScene" uid="uid://2vq3eftt67xb" path="res://scenes/mechanics/mine.tscn" id="6_j2lnm"]
+[ext_resource type="PackedScene" uid="uid://bdrodvvqwxb02" path="res://scenes/Race/race_arch.tscn" id="7_belsu"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
+panorama = ExtResource("1_akrjo")
+
+[sub_resource type="Sky" id="Sky_8xjyh"]
+sky_material = SubResource("PanoramaSkyMaterial_8xjyh")
+
+[sub_resource type="Environment" id="Environment_j2lnm"]
+background_mode = 2
+sky = SubResource("Sky_8xjyh")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=768480499]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=921868608]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1750172840]
+environment = SubResource("Environment_j2lnm")
+
+[node name="Jeep" parent="." unique_id=372991098 instance=ExtResource("2_u8uci")]
+transform = Transform3D(0.2882531, 0, -0.9575543, 0, 1, 0, 0.9575543, 0, 0.2882531, 0, 0.48742676, 0)
+steering_angle = 35.0
+steering_angle_min = 15.0
+grip_strength = 3.0
+brake_drag = 0.0
+body_tilt_strength = 0.6
+camera_smoothness = 3.0
+fov_max = 75.0
+
+[node name="road2" parent="." unique_id=219846561 instance=ExtResource("2_duslb")]
+transform = Transform3D(5, 0, 0, 0, 6.667, 0, 0, 0, 5, 0, -1.2930298, 0)
+
+[node name="OilPatch" parent="." unique_id=293879506 instance=ExtResource("3_u8uci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.079994, -1.0260336, -43.22228)
+grip_multiplier = 1.5
+friction_value = 1.5
+
+[node name="OilPatch2" parent="." unique_id=1203493835 instance=ExtResource("3_u8uci")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.497025, -1.0260336, -19.380285)
+friction_value = 0.02
+
+[node name="MudArea" parent="." unique_id=967828501 instance=ExtResource("5_akrjo")]
+transform = Transform3D(0.82556957, 0, -0.2100679, 0, 1, 0, 0.2874996, 0, 0.6032206, 26.137737, -0.99090576, -56.810097)
+
+[node name="Mine" parent="." unique_id=1375896150 instance=ExtResource("6_j2lnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.229097, -0.9651489, -1.4160025)
+rayon_detection = 0.6
+
+[node name="Mine2" parent="." unique_id=1668762091 instance=ExtResource("6_j2lnm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.069313, -0.9651489, -15.911174)
+rayon_detection = 0.6
+
+[node name="RaceArch" parent="." unique_id=342215945 instance=ExtResource("7_belsu")]
+transform = Transform3D(0.23396282, 0, -1.6838235, 0, 1.7, 0, 1.6838235, 0, 0.23396282, 16.330078, -0.6897836, -1.8793335)
+mots = Array[String](["pomme", "fraise", "table"])
+correct_word = 2
+
+[node name="RaceArch2" parent="." unique_id=1632292966 instance=ExtResource("7_belsu")]
+transform = Transform3D(0.55786216, 0, 1.6058613, 0, 1.7000003, 0, -1.6058613, 0, 0.55786216, -8.520997, -0.6897836, -112.374374)
+mots = Array[String](["banane", "orange", "chaise"])
+correct_word = 2
+
+[editable path="RaceArch"]
+[editable path="RaceArch2"]

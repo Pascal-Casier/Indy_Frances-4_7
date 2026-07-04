@@ -39,6 +39,9 @@ func _on_zone_detection_body_entered(body):
 	if not est_active and not a_explose:
 		if body.is_in_group("Player"): # Assure-toi que ton perso est dans le groupe "joueur"
 			amorcer_mine()
+		elif body.get_parent() is Jeep2:
+			body.get_parent().hit()
+			exploser()
 
 # 2. La mine s'active (Bip Bip + Clignotement)
 func amorcer_mine():
