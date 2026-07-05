@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://do2umbbjacqx0"]
+
+[ext_resource type="PackedScene" uid="uid://bgieauo4q83xb" path="res://assets/blender/fences&trees/PlasticBarrier.gltf" id="1_vdx7j"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_th6uk"]
+points = PackedVector3Array(0.5176711, 0.59954715, 0.08102174, 0.5176711, 0.5812955, 0.09929167, 0.5176711, 0.59954715, -0.08105445, -0.5176711, 0.59954715, 0.08102174, 0.5176711, 0.12823123, 0.16694598, -0.5176711, 0.5812955, 0.09929167, 0.5176711, 0.5812955, -0.09932438, -0.5176711, 0.59954715, -0.08105445, 0.5176711, -2.7198958e-08, 0.16694598, -0.5176711, 0.12823123, 0.16694598, 0.5176711, 0.12823123, -0.16694601, -0.5176711, 0.5812955, -0.09932438, 0.5176711, -2.7198958e-08, -0.16694601, -0.5176711, -2.7198958e-08, 0.16694598, -0.5176711, 0.12823123, -0.16694601, -0.5176711, -2.7198958e-08, -0.16694601)
+
+[node name="PlasticBarrier" unique_id=1404654288 instance=ExtResource("1_vdx7j")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlasticBarrier" parent_id_path=PackedInt32Array(1730279147) index="0" unique_id=700757311]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlasticBarrier/StaticBody3D" index="0" unique_id=1313609004]
+shape = SubResource("ConvexPolygonShape3D_th6uk")

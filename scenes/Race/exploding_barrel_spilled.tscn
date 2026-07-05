@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://csnv8ct0oca5"]
+
+[ext_resource type="PackedScene" uid="uid://xgfroxx2oxnm" path="res://assets/blender/fences&trees/ExplodingBarrel_Spilled.gltf" id="1_lqcw1"]
+[ext_resource type="Script" uid="uid://csdur7xhlrc26" path="res://scenes/Race/mud_area.gd" id="2_wetvg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wni0w"]
+size = Vector3(2.0576172, 2.7861328, 2.0256348)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gy4av"]
+size = Vector3(4.347473, 1, 3.8925781)
+
+[node name="ExplodingBarrel_Spilled" unique_id=1096899191 instance=ExtResource("1_lqcw1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ExplodingBarrel_Spilled" parent_id_path=PackedInt32Array(1727897479) index="0" unique_id=886993242]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExplodingBarrel_Spilled/StaticBody3D" index="0" unique_id=1954488511]
+transform = Transform3D(1.0000001, -9.313226e-10, 0, 9.313226e-10, 1.0000001, 0, 0, 0, 1, -0.9702097, -1.8930672, 0)
+shape = SubResource("BoxShape3D_wni0w")
+
+[node name="MudArea" type="Area3D" parent="ExplodingBarrel_Spilled" parent_id_path=PackedInt32Array(1727897479) index="1" unique_id=967828501]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -4.371139e-08, 1, 0)
+script = ExtResource("2_wetvg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ExplodingBarrel_Spilled/MudArea" index="0" unique_id=1922929684]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0.46865857, 0, -0.7250977)
+shape = SubResource("BoxShape3D_gy4av")
+
+[connection signal="body_entered" from="ExplodingBarrel_Spilled/MudArea" to="ExplodingBarrel_Spilled/MudArea" method="_on_body_entered"]
+[connection signal="body_exited" from="ExplodingBarrel_Spilled/MudArea" to="ExplodingBarrel_Spilled/MudArea" method="_on_body_exited"]
