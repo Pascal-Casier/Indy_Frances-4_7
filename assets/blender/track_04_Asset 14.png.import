@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf0xr0e3aruv4"
-path.s3tc="res://.godot/imported/Panel 12.png-74c849238aac11499b01f4de2c6b0c6a.s3tc.ctex"
+uid="uid://bg37vcdnbxodj"
+path.s3tc="res://.godot/imported/track_04_Asset 14.png-898bdc0244cf133b8ee26e6635626aa6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "dfe80e250c61c28faf2ff2ccfa364b27"
+}
 
 [deps]
 
-source_file="res://assets/images/ui/Panel 12.png"
-dest_files=["res://.godot/imported/Panel 12.png-74c849238aac11499b01f4de2c6b0c6a.s3tc.ctex"]
+source_file="res://assets/blender/track_04_Asset 14.png"
+dest_files=["res://.godot/imported/track_04_Asset 14.png-898bdc0244cf133b8ee26e6635626aa6.s3tc.ctex"]
 
 [params]
 

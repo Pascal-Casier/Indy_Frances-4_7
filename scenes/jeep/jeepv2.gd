@@ -30,23 +30,23 @@ var default_friction: float
 @export var max_speed: float = 20.0           ## Vitesse max estimée (pour les ratios)
 
 @export_group("Direction")
-@export var steering_angle: float = 20.0      ## Angle de braquage max à basse vitesse (degrés)
-@export var steering_angle_min: float = 8.0   ## Angle de braquage max à haute vitesse (degrés)
+@export var steering_angle: float = 35.0      ## Angle de braquage max à basse vitesse (degrés)
+@export var steering_angle_min: float = 15.0   ## Angle de braquage max à haute vitesse (degrés)
 @export var turn_speed: float = 3.0           ## Vitesse de rotation du modèle
 
 @export_group("Physique")
-@export var grip_strength: float = 15.0       ## Résistance au glissement latéral
-@export var brake_drag: float = 2.0           ## Décélération naturelle au relâchement
+@export var grip_strength: float = 3.0       ## Résistance au glissement latéral
+@export var brake_drag: float = 0.0           ## Décélération naturelle au relâchement
 
 @export_group("Carrosserie")
 @export var sphere_offset: Vector3 = Vector3(0, -1, 0)  ## Décalage du modèle par rapport à la balle
-@export var body_tilt_strength: float = 0.3   ## Intensité du penchement en virage
+@export var body_tilt_strength: float = 0.6   ## Intensité du penchement en virage
 
 @export_group("Caméra")
-@export var camera_smoothness: float = 6.0    ## Réactivité du suivi de la caméra
+@export var camera_smoothness: float = 3.0    ## Réactivité du suivi de la caméra
 @export var camera_lag_amount: float = 1.5    ## Recul de la caméra à l'accélération
 @export var fov_min: float = 70.0             ## FOV à l'arrêt
-@export var fov_max: float = 85.0             ## FOV à pleine vitesse
+@export var fov_max: float = 75.0             ## FOV à pleine vitesse
 
 @export_group("Son moteur")
 @export var min_pitch: float = 0.8            ## Pitch au ralenti
