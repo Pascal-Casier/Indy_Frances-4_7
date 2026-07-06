@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://csnv8ct0oca5" path="res://scenes/Race/exploding_barrel_spilled.tscn" id="4_xdc8b"]
 [ext_resource type="PackedScene" uid="uid://dg6t3ltlufqnv" path="res://scenes/Race/fire_hydrant.tscn" id="5_wu7pc"]
 [ext_resource type="PackedScene" uid="uid://do2umbbjacqx0" path="res://scenes/Race/plastic_barrier.tscn" id="6_xdc8b"]
+[ext_resource type="PackedScene" uid="uid://bj33n8xx5ot12" path="res://assets/blender/road_reliefs.glb" id="8_xw7b6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wu7pc"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -44,7 +45,7 @@ shadow_enabled = true
 directional_shadow_max_distance = 1.0
 
 [node name="road_3" parent="." unique_id=1474287280 instance=ExtResource("1_ov0ea")]
-transform = Transform3D(0.5036068, 0, -4.9745736, 0, 5, 0, 4.9745736, 0, 0.5036068, 0, -0.6089698, 0)
+transform = Transform3D(0.5036068, 0, -4.9745736, 0, 5, 0, 4.9745736, 0, 0.5036068, 0, -65.60897, 0)
 
 [node name="ground" parent="road_3" index="2" unique_id=1378138549]
 surface_material_override/0 = SubResource("ShaderMaterial_wo7rs")
@@ -55,6 +56,8 @@ steering_angle = 25.0
 turn_speed = 5.0
 
 [node name="pieges" type="Node3D" parent="." unique_id=1234833561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13, 0)
+visible = false
 
 [node name="ExplodingBarrel_Spilled" parent="pieges" unique_id=1096899191 instance=ExtResource("4_xdc8b")]
 transform = Transform3D(-0.8456734, 0, -1.8124118, 0, 2, 0, 1.8124118, 0, -0.8456734, -9.972779, 0, -59.79077)
@@ -96,5 +99,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -39)
 
 [node name="PlasticBarrier" parent="pieges" unique_id=1404654288 instance=ExtResource("6_xdc8b")]
 transform = Transform3D(1.9318516, 0, 0.5176381, 0, 2, 0, -0.5176381, 0, 1.9318516, -3.5168457, 0, -53)
+
+[node name="road_reliefs" parent="." unique_id=1694055939 instance=ExtResource("8_xw7b6")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.6887207, 0)
 
 [editable path="road_3"]
