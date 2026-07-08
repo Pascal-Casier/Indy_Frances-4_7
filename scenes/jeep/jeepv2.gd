@@ -235,8 +235,8 @@ func _physics_process(delta: float) -> void:
 	var normal = ray_cast_3d.get_collision_normal().normalized()
 	var new_transform = align_with_y(model.global_transform, normal).orthonormalized()
 	var interp = model.global_transform.interpolate_with(new_transform, delta * 10.0)
-	var scale = model.global_transform.basis.get_scale()
-	interp.basis = interp.basis.orthonormalized().scaled(scale)
+	var _scale = model.global_transform.basis.get_scale()
+	interp.basis = interp.basis.orthonormalized().scaled(_scale)
 	model.global_transform = interp
 
 	# Son moteur : réactif à la vitesse ET à l'accélérateur
@@ -256,11 +256,11 @@ func apply_speed_boost(force: float, duration: float) -> void:
 	is_boosted = true
 
 
-func align_with_y(transform: Transform3D, new_y: Vector3) -> Transform3D:
-	transform.basis.y = new_y
-	transform.basis.x = -transform.basis.z.cross(new_y).normalized()
-	transform.basis.z = transform.basis.x.cross(new_y).normalized()
-	return transform
+func align_with_y(_transform: Transform3D, new_y: Vector3) -> Transform3D:
+	_transform.basis.y = new_y
+	_transform.basis.x = -_transform.basis.z.cross(new_y).normalized()
+	_transform.basis.z = _transform.basis.x.cross(new_y).normalized()
+	return _transform
 	
 func appliquer_penalite(multiplicateur: float, duree: float = 2.0) -> void:
 	penalty_multiplier = multiplicateur

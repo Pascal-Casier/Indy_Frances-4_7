@@ -32,7 +32,7 @@ func _ready() -> void:
 	if son:
 		audio_stream_player.stream = son
 
-func _on_declenchement(body: Node3D) -> void:
+func _on_declenchement(_body: Node3D) -> void:
 	if not _active: return
 	%questionlbl.text = question
 	mot1.text = option_gauche
@@ -58,5 +58,5 @@ func _on_porte(body: Node3D, index: int) -> void:
 	repondu.emit(ok)
 
 
-func _on_trigger_area_body_entered(body: Node3D) -> void:
+func _on_trigger_area_body_entered(_body: Node3D) -> void:
 	pass # Replace with function body.

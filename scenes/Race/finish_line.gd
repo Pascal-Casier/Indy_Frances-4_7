@@ -45,7 +45,7 @@ func end_race(time_left : float) -> void:
 	var victoire := score >= SEUIL_REUSSITE
 	jeu_termine.emit(victoire, score)
 	message_lbl.text = "Score : " + str(int(score * 100)) + "%"
-	%timelbl.text = "Temps retant: %.2f" % time_left
+	%timelbl.text = "Temps restant: %.2f" % time_left
 	if time_left > 0.0 and victoire:
 		%ButtonExit.text = "Continuer..."
 	else:

@@ -55,11 +55,9 @@ directional_shadow_max_distance = 1.0
 [node name="road_3" parent="." unique_id=1474287280 instance=ExtResource("1_ov0ea")]
 transform = Transform3D(0.5036068, 0, -4.9745736, 0, 5, 0, 4.9745736, 0, 0.5036068, 0, -0.60897064, 0)
 
-[node name="ground" parent="road_3" index="2" unique_id=1378138549]
+[node name="ground" parent="road_3" index="2" unique_id=439537312]
 transform = Transform3D(25.338367, 0, 0, 0, 14.875733, 0, 0, 0, 17.943897, 8.166168, 0.03009949, 0)
 surface_material_override/0 = SubResource("ShaderMaterial_wo7rs")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="road_3/ground/StaticBody3D" parent_id_path=PackedInt32Array(1474287280, 1380054308) index="1" unique_id=1833820357]
 
 [node name="Finish_line" parent="road_3" unique_id=1307053851 instance=ExtResource("3_8y02l")]
 transform = Transform3D(-0.032042697, 0, 0.19741647, 0, 0.2, 0, -0.19741647, 0, -0.032042697, 9.176177, 0.12075653, 0.05096247)
@@ -75,6 +73,12 @@ turn_speed = 5.0
 [node name="ExplodingBarrel_Spilled" parent="pieges" unique_id=1096899191 instance=ExtResource("4_xdc8b")]
 transform = Transform3D(-1.87955, 0, -0.68358725, 0, 2, 0, 0.68358725, 0, -1.87955, -1.08393, 0, -32.926765)
 
+[node name="ExplodingBarrel_Spilled2" parent="pieges" unique_id=945351285 instance=ExtResource("4_xdc8b")]
+transform = Transform3D(-1.0564579, 0, 1.6982039, 0, 2, 0, -1.6982039, 0, -1.0564579, 22.2356, 0, 6.030552)
+
+[node name="ExplodingBarrel_Spilled3" parent="pieges" unique_id=1648197417 instance=ExtResource("4_xdc8b")]
+transform = Transform3D(-1.9906104, 0, -0.19357169, 0, 2, 0, 0.19357169, 0, -1.9906104, -45.991997, 0, 12.151059)
+
 [node name="Mine" parent="pieges" unique_id=1375896150 instance=ExtResource("4_osbrf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -39)
 rayon_detection = 1.0
@@ -88,7 +92,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, 27)
 rayon_detection = 1.0
 
 [node name="Mine4" parent="pieges" unique_id=390778436 instance=ExtResource("4_osbrf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43, 0, 77)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.990147, 0, 77)
 rayon_detection = 1.0
 
 [node name="Mine5" parent="pieges" unique_id=1056749949 instance=ExtResource("4_osbrf")]
@@ -245,7 +249,7 @@ transform = Transform3D(0.14771162, 0, 0.9890302, 0, 0.9999997, 0, -0.9890302, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
 collision_mask = 512
 monitorable = false
-total_time = 68.0
+total_time = 60.0
 
 [node name="Decor" type="Node3D" parent="." unique_id=1571382932]
 
@@ -257,6 +261,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 0, -51)
 
 [node name="Wheels_stack3" parent="Decor" unique_id=1752570416 instance=ExtResource("13_uulc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.988647, 0, -52.157898)
+
+[node name="Wheels_stack4" parent="Decor" unique_id=1517843418 instance=ExtResource("13_uulc5")]
+transform = Transform3D(-0.4576279, 0, -0.8891438, 0, 1, 0, 0.8891438, 0, -0.4576279, -41.36956, 0, 55.156635)
+
+[node name="Wheels_stack5" parent="Decor" unique_id=1077962510 instance=ExtResource("13_uulc5")]
+transform = Transform3D(-0.4576279, 0, -0.8891438, 0, 1, 0, 0.8891438, 0, -0.4576279, -40.938046, 0, 56.503407)
+
+[node name="Wheels_stack6" parent="Decor" unique_id=786547604 instance=ExtResource("13_uulc5")]
+transform = Transform3D(-0.4576279, 0, -0.8891438, 0, 1, 0, 0.8891438, 0, -0.4576279, -39.9137, 0, 57.04339)
 
 [node name="Traffic_barrier" parent="Decor" unique_id=1363158720 instance=ExtResource("14_goonb")]
 transform = Transform3D(0.7071068, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.7071068, -35.86624, 0, -20.992836)
