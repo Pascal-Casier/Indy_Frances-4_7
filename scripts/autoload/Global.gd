@@ -4,7 +4,7 @@ extends Node
 var texture = preload("res://assets/images/icons/StoneCursorMouse/PNG/01.png")  # Ton image
 
 var health := 100
-var coins : int = 6
+var coins : int = 50
 var has_key := false
 var has_keycard := false
 var has_whip := false

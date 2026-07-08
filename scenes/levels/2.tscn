@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=4 uid="uid://btuqsjlk8c6qs"]
+[gd_scene format=4 uid="uid://btuqsjlk8c6qs"]
 
 [ext_resource type="Texture2D" uid="uid://c246cy5voqryd" path="res://assets/images/bgds/skygen_cavern.png" id="1_n13iu"]
 [ext_resource type="PackedScene" uid="uid://cg6tcasj5umbn" path="res://scenes/UI/Dico/inventaire.tscn" id="1_omk6m"]
@@ -459,15 +459,11 @@ shadow_mesh = SubResource("ArrayMesh_mumfs")
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAABAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_vhsx1"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -475,23 +471,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_bgbqy"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAEA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_tbu7e"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, -1, 1, 0, 44, 14, 0, 0, 0, 1, 14, 0, 0, 0, 0, 1, 44, 0, 0, 0, 0, 1, 44, 0, 0, -1, 1, 0, 44, 14, 0, 0, 0, 1, 14, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -499,15 +489,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_omk6m"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -515,15 +501,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_027jv"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0.998371, -0.0570498, 0, 0.998371, -0.0570498, 0, 0.998371, -0.0570498, 0, 0.998371, -0.0570498, 0, 0, -0.0570498, 0.998371, 0, -0.0570498, 0.998371, 0, -0.0570498, 0.998371, 0, -0.0570498, 0.998371, 0.0991438, -0.0849804, -0.991438, 0.0991438, -0.0849804, -0.991438, 0.0991438, -0.0849804, -0.991438, 0.0991438, -0.0849804, -0.991438, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -0.998371, -0.0570498, -2.07264e-08, -0.998371, -0.0570498, -2.07264e-08, -0.998371, -0.0570498, -2.07264e-08, -0.998371, -0.0570498, -2.07264e-08)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -531,15 +514,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 4, 3, 2, 5, 6, 5, 2, 1, 0, 3, 4, 7, 6, 7, 4, 5, 6, 1, 0, 7)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_nlynd"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(2, 0, 3, 2, 0, 11, 20, 0, 9, 20, 0, 5, 22, 35, 2, 22, 35, 11, 0, 35, 13, 0, 35, 0)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -547,9 +527,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_yunmv"]
 script = ExtResource("6_hakhg")
@@ -590,15 +567,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAAB")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_n75y7"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -606,23 +579,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 1, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_ekqkj"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAABAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_l0ts4"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -630,15 +597,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_tptdq"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -646,15 +609,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_ljeeu"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -0.058722, 0.998274, 0, -0.058722, 0.998274, 0, -0.058722, 0.998274, 0, -0.058722, 0.998274, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -0.058722, -0.998274, 0, -0.058722, -0.998274, 0, -0.058722, -0.998274, 0, -0.058722, -0.998274)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -662,15 +622,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_vo1p3"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, 14, 0, 0, 14, 10, 0, -20, 8, 0, -20, 2, 15, 14, 0, 15, 14, 10, 15, -20, 8, 15, -20, 2)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -678,9 +635,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_6dmpf"]
 script = ExtResource("6_hakhg")
@@ -721,15 +675,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAABAAAAAAAAAA==")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_w5lic"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -737,23 +687,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 1)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_gbudj"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAQAAAA==")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_2oc38"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -761,15 +705,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEBAQEBAQ==")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_dad0k"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -777,15 +717,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 9, 9, 9)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_qv5sn"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0.0597619, -0.155215, -0.986071, 0.0597619, -0.155215, -0.986071, 0.0597619, -0.155215, -0.986071, 0.0597619, -0.155215, -0.986071, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0.0903808, -0.0584817, 0.994189, 0.0903808, -0.0584817, 0.994189, 0.0903808, -0.0584817, 0.994189, 0.0854131, -0.0552673, 0.994812, 0.0854131, -0.0552673, 0.994812, 0.0854131, -0.0552673, 0.994812, 0.178885, 0.98387, 0, 0.178885, 0.98387, 0, 0.178885, 0.98387, 0, 0.178885, 0.98387, 0, 0.178885, 0.98387, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0.4051, -0.0536879, -0.912695, 0.4051, -0.0536879, -0.912695, 0.4051, -0.0536879, -0.912695, 0, -0.707107, 0.707107, 0, -0.707107, 0.707107, 0, -0.707107, 0.707107)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -793,15 +730,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 4, 3, 2, 5, 6, 5, 2, 1, 6, 7, 8, 5, 6, 1, 7, 0, 7, 1, 9, 10, 4, 8, 7, 4, 10, 9, 0, 3, 4, 5, 8, 9, 7, 0)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_l55mb"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-7, 16, 10, -7, -20, 8, -7, -20, 2, -7, 16, -3, 4, 16, -3, 15, -20, 4, 15, -20, 6, 15, 14, 8, 15, 14, 2, 4, 16, 10, 4, 16, 0)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -809,9 +743,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_7pvw6"]
 script = ExtResource("6_hakhg")
@@ -852,87 +783,67 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAABAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_rfxxo"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 1, 0, 0, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_7qe2p"]
-script = ExtResource("3_fnalb")
-data = PackedByteArray("AQEBAQEB")
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_8esx4"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_36fwm"]
-script = ExtResource("5_ci58i")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
+[sub_resource type="Resource" id="Resource_rfxxo"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 1, 0, 0, 0)
+name = &"material_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_q1eec"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
-[sub_resource type="Resource" id="Resource_etqni"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_36fwm"]
+script = ExtResource("5_ci58i")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_oe5nj"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_7qe2p"]
+script = ExtResource("3_fnalb")
+data = PackedByteArray("AQEBAQEB")
+name = &"visible"
 
 [sub_resource type="Resource" id="Resource_wqwup"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
+
+[sub_resource type="Resource" id="Resource_etqni"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_i3edf"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -0.298275, 0, 0.95448, -0.298275, 0, 0.95448, -0.298275, 0, 0.95448, -0.298275, 0, 0.95448, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0.242536, 0, -0.970143, 0.242536, 0, -0.970143, 0.242536, 0, -0.970143, 0.242536, 0, -0.970143)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_oe5nj"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_wlycg"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, 1, 0, 0, 1, 8, 0, 0, 8, 0, 0, 0, 16, 1, 4, 16, 1, 13, 16, 0, 13, 16, 0, 4)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -940,9 +851,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_wljrq"]
 script = ExtResource("6_hakhg")
@@ -983,87 +891,67 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAEAAAAAAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_ngqud"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 0, 1)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_1bxhn"]
-script = ExtResource("3_fnalb")
-data = PackedByteArray("AQEBAQEB")
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_qyb6h"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_7dml1"]
-script = ExtResource("5_ci58i")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
+[sub_resource type="Resource" id="Resource_ngqud"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 0, 1)
+name = &"material_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_5jdnu"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAB")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
-[sub_resource type="Resource" id="Resource_gnl4a"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_7dml1"]
+script = ExtResource("5_ci58i")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_n4sg4"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 3, 4, 3, 2, 5, 6, 5, 2, 1, 0, 3, 4, 7, 6, 7, 4, 5, 0, 7, 6, 1)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_1bxhn"]
+script = ExtResource("3_fnalb")
+data = PackedByteArray("AQEBAQEB")
+name = &"visible"
 
 [sub_resource type="Resource" id="Resource_q1yyp"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
+
+[sub_resource type="Resource" id="Resource_gnl4a"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_uggtv"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, -0.0623783, 0, 0.998053, -0.0623783, 0, 0.998053, -0.0623783, 0, 0.998053, -0.0623783, 0, 0.998053, 0.184289, 0.982872, 0, 0.184289, 0.982872, 0, 0.184289, 0.982872, 0, 0.184289, 0.982872, 0)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_n4sg4"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 3, 4, 3, 2, 5, 6, 5, 2, 1, 0, 3, 4, 7, 6, 7, 4, 5, 0, 7, 6, 1)
+name = &"vertex_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_3r2lp"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(16, 1, 0, 0, 4, 1, 0, -33, 1, 16, -33, 0, 16, -33, 9, 0, -33, 8, 0, 4, 8, 16, 1, 9)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1071,9 +959,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_qxyav"]
 script = ExtResource("6_hakhg")
@@ -1114,87 +999,67 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAEAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_g3hpk"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 0, 1, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_xsu6l"]
-script = ExtResource("3_fnalb")
-data = PackedByteArray("AQEBAQEB")
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_sq58g"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_oxafv"]
-script = ExtResource("5_ci58i")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
+[sub_resource type="Resource" id="Resource_g3hpk"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 0, 1, 0)
+name = &"material_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_e5hfl"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
-[sub_resource type="Resource" id="Resource_3suqf"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_oxafv"]
+script = ExtResource("5_ci58i")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_fdl2g"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_xsu6l"]
+script = ExtResource("3_fnalb")
+data = PackedByteArray("AQEBAQEB")
+name = &"visible"
 
 [sub_resource type="Resource" id="Resource_jmob2"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
+
+[sub_resource type="Resource" id="Resource_3suqf"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_yo04f"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -0.0766965, 0, 0.997054, -0.0766965, 0, 0.997054, -0.0766965, 0, 0.997054, -0.0766965, 0, 0.997054, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, -0.0766965, 0, -0.997054, -0.0766965, 0, -0.997054, -0.0766965, 0, -0.997054, -0.0766965, 0, -0.997054)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_fdl2g"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_leyn3"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-8, 4, 1, -8, 4, 7, -8, -33, 7, -8, -33, 1, 5, 4, 1, 5, 4, 8, 5, -33, 8, 5, -33, 1)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1202,9 +1067,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_oo3tu"]
 script = ExtResource("6_hakhg")
@@ -1245,15 +1107,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_sipdq"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1261,23 +1119,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 1, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_hakhg"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_ci58i"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -1285,15 +1137,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_64ba3"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1301,15 +1149,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_i33xw"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1317,15 +1162,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_76eh3"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-2, 1, -2, -2, 1, 7, -2, -21, 7, -2, -21, -2, 2, 1, -2, 2, 1, 7, 2, -21, 7, 2, -21, -2)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1333,9 +1175,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_7lk5s"]
 script = ExtResource("6_hakhg")
@@ -1376,15 +1215,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAEAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_7k4ht"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1392,23 +1227,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 1, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_yeele"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_cabhc"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -1416,15 +1245,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_x4akh"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1432,15 +1257,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_dm3m1"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-0.8, 0, 0.6, -0.8, 0, 0.6, -0.8, 0, 0.6, -0.8, 0, 0.6, 0.8, 0, 0.6, 0.8, 0, 0.6, 0.8, 0, 0.6, 0.8, 0, 0.6, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1448,15 +1270,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_fpnb8"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-9, 13, -10, 0, 13, 2, 0, -9, 2, -9, -9, -10, 13, 13, -10, 4, 13, 2, 4, -9, 2, 13, -9, -10)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1464,9 +1283,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_4h6du"]
 script = ExtResource("6_hakhg")
@@ -1507,15 +1323,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAEAAAAAAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_rrxgm"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1523,23 +1335,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 1, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_tic0i"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_lwqu7"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -1547,15 +1353,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_xn0ac"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1563,15 +1365,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_t7662"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-0.989949, 0, 0.141421, -0.989949, 0, 0.141421, -0.989949, 0, 0.141421, -0.989949, 0, 0.141421, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1579,15 +1378,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_dlu4b"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 21, 6, -1, 21, 13, -1, 0, 13, -1, 0, 6, 21, 21, 6, 22, 21, 13, 22, 0, 13, 21, 0, 6)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1595,9 +1391,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_301nj"]
 script = ExtResource("6_hakhg")
@@ -1638,15 +1431,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAABAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_3kauo"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1654,23 +1443,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 1, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_kq0tj"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAABAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_h8d0i"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -1678,15 +1461,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_yd810"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1694,15 +1473,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_n7hql"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0.989949, 0, -0.141421, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1710,15 +1486,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_5qf0u"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, 12, 0, 0, 12, 7, 0, 0, 7, 0, 0, 0, 7, 12, 0, 7, 12, 7, 7, 0, 7, 7, 0, 0)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1726,9 +1499,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_i582j"]
 script = ExtResource("6_hakhg")
@@ -1769,87 +1539,67 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAEAAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_cj3c8"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 0, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_6hl2g"]
-script = ExtResource("3_fnalb")
-data = PackedByteArray("AQEBAQEB")
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_3isl6"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_duq5v"]
-script = ExtResource("5_ci58i")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
+[sub_resource type="Resource" id="Resource_cj3c8"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 0, 0)
+name = &"material_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_a5lox"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
-[sub_resource type="Resource" id="Resource_c148y"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_duq5v"]
+script = ExtResource("5_ci58i")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_kh2hr"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_6hl2g"]
+script = ExtResource("3_fnalb")
+data = PackedByteArray("AQEBAQEB")
+name = &"visible"
 
 [sub_resource type="Resource" id="Resource_5lyrm"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
+
+[sub_resource type="Resource" id="Resource_c148y"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_xjyuf"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0.110432, 0, 0.993884, 0.110432, 0, 0.993884, 0.110432, 0, 0.993884, 0.110432, 0, 0.993884, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0.110432, 0, -0.993884, 0.110432, 0, -0.993884, 0.110432, 0, -0.993884, 0.110432, 0, -0.993884)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_kh2hr"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_rw3cj"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 1, -1, -1, 1, 3, -1, 0, 3, -1, 0, -1, 8, 1, 0, 8, 1, 2, 8, -9, 2, 8, -9, 0)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1857,9 +1607,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_afxu5"]
 script = ExtResource("6_hakhg")
@@ -1869,7 +1616,6 @@ num_faces = 6
 num_face_vertices = 24
 active_vertex = -1
 active_edge = 4
-active_face = 0
 active_face_vertex = -1
 edge_vertex_indices = PackedInt32Array(0, 1, 1, 2, 2, 3, 3, 0, 7, 6, 6, 5, 5, 4, 4, 7, 0, 4, 5, 1, 6, 2, 7, 3)
 edge_face_indices = PackedInt32Array(0, 2, 0, 3, 0, 4, 0, 5, 1, 4, 1, 3, 1, 2, 1, 5, 2, 5, 2, 3, 3, 4, 4, 5)
@@ -1900,15 +1646,11 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_eaxm3"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1916,23 +1658,17 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 0, 0)
 name = &"material_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_qpit7"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_o1qrk"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
 name = &"uv_transform"
-category = ""
 data_type = 8
 stride = 6
 
@@ -1940,15 +1676,11 @@ stride = 6
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AQEBAQEB")
 name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_7cdoi"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
@@ -1956,15 +1688,12 @@ stride = 4
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
 name = &"face_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_oqmk8"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1972,15 +1701,12 @@ stride = 3
 script = ExtResource("4_sipdq")
 data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
 name = &"vertex_index"
-category = ""
 data_type = 1
-stride = 1
 
 [sub_resource type="Resource" id="Resource_rfcwe"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(0, 1, 0, 0, 1, 7, 0, 0, 7, 0, 0, 0, 8, 1, 0, 8, 1, 7, 8, 0, 7, 8, 0, 0)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -1988,9 +1714,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_yfc27"]
 script = ExtResource("6_hakhg")
@@ -2031,87 +1754,67 @@ face_vertex_data = {
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAAAAAEA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
-
-[sub_resource type="Resource" id="Resource_vupi1"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 1, 0, 0, 0)
-name = &"material_index"
-category = ""
-data_type = 1
-stride = 1
-
-[sub_resource type="Resource" id="Resource_1h65m"]
-script = ExtResource("3_fnalb")
-data = PackedByteArray("AQEBAQEB")
-name = &"visible"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_3haq1"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
 
-[sub_resource type="Resource" id="Resource_y58eq"]
-script = ExtResource("5_ci58i")
-data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
-name = &"uv_transform"
-category = ""
-data_type = 8
-stride = 6
+[sub_resource type="Resource" id="Resource_vupi1"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 1, 0, 0, 0)
+name = &"material_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_2vqdk"]
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAQAA")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
-[sub_resource type="Resource" id="Resource_20nyv"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
-name = &"face_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_y58eq"]
+script = ExtResource("5_ci58i")
+data = PackedFloat32Array(1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0)
+name = &"uv_transform"
+data_type = 8
+stride = 6
 
-[sub_resource type="Resource" id="Resource_i3hsy"]
-script = ExtResource("4_sipdq")
-data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
-name = &"vertex_index"
-category = ""
-data_type = 1
-stride = 1
+[sub_resource type="Resource" id="Resource_1h65m"]
+script = ExtResource("3_fnalb")
+data = PackedByteArray("AQEBAQEB")
+name = &"visible"
 
 [sub_resource type="Resource" id="Resource_jb0cp"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
 name = &"color"
-category = ""
 data_type = 4
 stride = 4
+
+[sub_resource type="Resource" id="Resource_20nyv"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5)
+name = &"face_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_ttn6h"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-0.997055, 0, 0.0766965, -0.997055, 0, 0.0766965, -0.997055, 0, 0.0766965, -0.997055, 0, 0.0766965, 0.997055, 0, 0.0766965, 0.997055, 0, 0.0766965, 0.997055, 0, 0.0766965, 0.997055, 0, 0.0766965, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1)
 name = &"normal"
-category = ""
 data_type = 6
 stride = 3
+
+[sub_resource type="Resource" id="Resource_i3hsy"]
+script = ExtResource("4_sipdq")
+data = PackedInt32Array(0, 1, 2, 3, 7, 6, 5, 4, 1, 0, 4, 5, 2, 1, 5, 6, 3, 2, 6, 7, 0, 3, 7, 4)
+name = &"vertex_index"
+data_type = 1
 
 [sub_resource type="Resource" id="Resource_tt3kf"]
 script = ExtResource("5_ci58i")
 data = PackedFloat32Array(-1, 1, -6, 0, 1, 7, 0, -10, 7, -1, 0, -6, 5, 1, -6, 4, 1, 7, 4, -10, 7, 5, 0, -6)
 name = &"position"
-category = ""
 data_type = 6
 stride = 3
 
@@ -2119,9 +1822,6 @@ stride = 3
 script = ExtResource("3_fnalb")
 data = PackedByteArray("AAAAAAAAAAA=")
 name = &"selected"
-category = ""
-data_type = 0
-stride = 1
 
 [sub_resource type="Resource" id="Resource_qtc3n"]
 script = ExtResource("6_hakhg")
@@ -2164,60 +1864,60 @@ points = PackedVector3Array(0.0886504, 4.32908, 0.0886504, -0.5, 0.114483, -0.5,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mjqny"]
 points = PackedVector3Array(-0.531037, -0.0926373, -2.71996, 0.523458, 0.0831119, 2.63922, 0.435411, 0.0831119, 2.72786, 0.523458, -0.0926373, 2.63922, 0.523458, 0.0831119, -2.63187, -0.531037, 0.0831119, 2.63922, -0.531037, -0.0926373, 2.63922, -0.531037, 0.0831119, -2.71996, 0.523458, -0.0926373, -2.63187, -0.17947, -0.0926373, 2.81594, 0.171787, 0.0831119, -2.80804, 0.171787, -0.0926373, -2.80804, -0.17947, 0.0831119, 2.81594, 0.171787, -0.0926373, 2.81594, -0.17947, -0.0926373, -2.80804, -0.17947, 0.0831119, -2.80804, 0.171787, 0.0831119, 2.81594, 0.435411, 0.0831119, -2.71996, 0.435411, -0.0926373, 2.72786, 0.435411, -0.0926373, -2.71996)
 
-[node name="2" type="Node3D"]
+[node name="2" type="Node3D" unique_id=1641231362]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1104089038]
 environment = SubResource("Environment_76eh3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=909548017]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="IndianaPlayer4_2" parent="." instance=ExtResource("1_wk5vn")]
+[node name="IndianaPlayer4_2" parent="." unique_id=233553556 instance=ExtResource("1_wk5vn")]
 
-[node name="portal" parent="." instance=ExtResource("3_nvq4j")]
+[node name="portal" parent="." unique_id=1746206416 instance=ExtResource("3_nvq4j")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -78, 19, -9)
 next_scene = "res://scenes/levels/3.tscn"
 next_level = 3
 
-[node name="StaticBody3D" type="StaticBody3D" parent="portal"]
+[node name="StaticBody3D" type="StaticBody3D" parent="portal" unique_id=1716728753]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="portal/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portal/StaticBody3D" unique_id=772035183]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853786, -0.71653)
 shape = SubResource("BoxShape3D_l46bu")
 
-[node name="letras" type="Node3D" parent="."]
+[node name="letras" type="Node3D" parent="." unique_id=2103802633]
 transform = Transform3D(1.19209e-07, 0, 1, 0, 1, 0, -1, 0, 1.19209e-07, -20.7776, 0, -24.7583)
 script = ExtResource("9_oqsfr")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet" parent="letras" unique_id=1950492659 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 0, 21)
 letter_audio = ExtResource("11_qf8v7")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet2" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet2" parent="letras" unique_id=172359413 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 0, 21)
 letter = "B"
 phonetic = "[bè]"
 letter_audio = ExtResource("12_mfh77")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet3" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet3" parent="letras" unique_id=248890013 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9, 0, 21)
 letter = "C"
 phonetic = "[cè]"
 letter_audio = ExtResource("13_n13iu")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet4" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet4" parent="letras" unique_id=1970174322 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 21)
 letter = "D"
 phonetic = "[dè]"
 letter_audio = ExtResource("14_4p525")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet5" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet5" type="StaticBody3D" parent="letras" unique_id=812506897]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15, 1, 21)
 script = ExtResource("15_l43ru")
 letter = "E"
@@ -2225,63 +1925,61 @@ phonetic = "[ë]"
 letter_audio = ExtResource("16_jq08h")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet5"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet5" unique_id=883474838]
 mesh = SubResource("ArrayMesh_od3ft")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet5/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet5/Cube_Default" unique_id=1887393780]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels" unique_id=1239275700]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels" unique_id=1736784357]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels" unique_id=462583404]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels" unique_id=630888775]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet5/Cube_Default/labels" unique_id=1301125943]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet5"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet5" unique_id=803580273]
 unique_name_in_owner = true
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet5"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet5" unique_id=831038600]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet5/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet5/Area3D" unique_id=1141924040]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet5"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet5" unique_id=1631727034]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet5" unique_id=1695952079]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet5"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet5" unique_id=605258447]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2290,26 +1988,26 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet5"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet5" unique_id=1138887299]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet6" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet6" parent="letras" unique_id=1299383659 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19, 2, 21)
 letter = "F"
 phonetic = "[éff]"
 letter_audio = ExtResource("18_qw6mt")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet7" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet7" parent="letras" unique_id=900725013 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 2, 23)
 letter = "G"
 phonetic = "[jè]"
 letter_audio = ExtResource("19_0yj4v")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet8" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet8" type="StaticBody3D" parent="letras" unique_id=1183837590]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 3, 27)
 script = ExtResource("15_l43ru")
 letter = "H"
@@ -2317,61 +2015,59 @@ phonetic = "[ach]"
 letter_audio = ExtResource("20_n1qqs")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet8"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet8" unique_id=1629117893]
 mesh = SubResource("ArrayMesh_n75y7")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet8/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet8/Cube_Default" unique_id=1316649706]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels" unique_id=406533913]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels" unique_id=1604935051]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels" unique_id=56982659]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels" unique_id=990997665]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet8/Cube_Default/labels" unique_id=558635930]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet8"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet8" unique_id=877657535]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet8"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet8" unique_id=342821391]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet8/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet8/Area3D" unique_id=247331718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet8"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet8" unique_id=1341840263]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet8"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet8" unique_id=1605949403]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet8"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet8" unique_id=777622931]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2380,19 +2076,19 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet8"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet8" unique_id=1936706421]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet9" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet9" parent="letras" unique_id=214120002 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 3, 31)
 letter = "I"
 phonetic = "[i]"
 letter_audio = ExtResource("21_76amn")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet10" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet10" type="StaticBody3D" parent="letras" unique_id=1639566216]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 4, 35)
 script = ExtResource("15_l43ru")
 letter = "J"
@@ -2400,61 +2096,59 @@ phonetic = "[gi]"
 letter_audio = ExtResource("22_1ft85")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet10"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet10" unique_id=1170294171]
 mesh = SubResource("ArrayMesh_l0ts4")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet10/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet10/Cube_Default" unique_id=432863241]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels" unique_id=811037632]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels" unique_id=56771419]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels" unique_id=205668729]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels" unique_id=909025072]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet10/Cube_Default/labels" unique_id=186654192]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet10"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet10" unique_id=62930164]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet10"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet10" unique_id=599102006]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet10/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet10/Area3D" unique_id=47007380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet10"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet10" unique_id=1121430149]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet10"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet10" unique_id=273563006]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet10"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet10" unique_id=1609235605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2463,40 +2157,40 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet10"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet10" unique_id=1618061894]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet11" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet11" parent="letras" unique_id=948947449 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 15, 4, 35)
 letter = "K"
 phonetic = "[cá]"
 letter_audio = ExtResource("23_3nokl")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet12" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet12" parent="letras" unique_id=1740920914 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13, 4, 35)
 letter = "L"
 phonetic = "[èll]"
 letter_audio = ExtResource("24_slmjr")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet13" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet13" parent="letras" unique_id=1888982614 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11, 4, 35)
 letter = "M"
 phonetic = "[èmm]"
 letter_audio = ExtResource("25_h6h5b")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet14" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet14" parent="letras" unique_id=160973324 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 9, 4, 35)
 letter = "N"
 phonetic = "[ènn]"
 letter_audio = ExtResource("26_nvq4j")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet15" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet15" type="StaticBody3D" parent="letras" unique_id=1368495100]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5, 6, 35)
 script = ExtResource("15_l43ru")
 letter = "O"
@@ -2504,61 +2198,59 @@ phonetic = "[ô]"
 letter_audio = ExtResource("27_n6jgh")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet15"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet15" unique_id=1059934063]
 mesh = SubResource("ArrayMesh_ekqkj")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet15/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet15/Cube_Default" unique_id=1675661658]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels" unique_id=1127625797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels" unique_id=599550545]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels" unique_id=2053590732]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels" unique_id=2026391144]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet15/Cube_Default/labels" unique_id=144641470]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet15"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet15" unique_id=939694939]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet15"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet15" unique_id=1081932717]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet15/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet15/Area3D" unique_id=59114809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet15"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet15" unique_id=423642151]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet15"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet15" unique_id=1815930384]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet15"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet15" unique_id=999391996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2567,19 +2259,19 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet15"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet15" unique_id=1026766445]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet16" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet16" parent="letras" unique_id=1471736854 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 6, 39)
 letter = "P"
 phonetic = "[pè]"
 letter_audio = ExtResource("28_ahm43")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet17" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet17" type="StaticBody3D" parent="letras" unique_id=1548905061]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 7, 43)
 script = ExtResource("15_l43ru")
 letter = "Q"
@@ -2587,61 +2279,59 @@ phonetic = "[kü]"
 letter_audio = ExtResource("29_weng1")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet17"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet17" unique_id=99784242]
 mesh = SubResource("ArrayMesh_2yu78")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet17/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet17/Cube_Default" unique_id=324397822]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels" unique_id=818269036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels" unique_id=1264789193]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels" unique_id=1059147412]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels" unique_id=710796984]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet17/Cube_Default/labels" unique_id=1932401597]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet17"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet17" unique_id=144170289]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet17"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet17" unique_id=1880877877]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet17/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet17/Area3D" unique_id=897285439]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet17"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet17" unique_id=1601497577]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet17"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet17" unique_id=1560525794]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet17"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet17" unique_id=1879299052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2650,33 +2340,33 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet17"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet17" unique_id=2144706424]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet18" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet18" parent="letras" unique_id=1174244832 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 5, 8, 47)
 letter = "R"
 phonetic = "[érr]"
 letter_audio = ExtResource("30_vhsx1")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet19" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet19" parent="letras" unique_id=248389931 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 3, 8, 47)
 letter = "S"
 phonetic = "[éss]"
 letter_audio = ExtResource("31_tbu7e")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet20" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet20" parent="letras" unique_id=44806016 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1, 8, 47)
 letter = "T"
 phonetic = "[tè]"
 letter_audio = ExtResource("32_bgbqy")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet21" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet21" type="StaticBody3D" parent="letras" unique_id=986921549]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, 10, 51)
 script = ExtResource("15_l43ru")
 letter = "U"
@@ -2684,61 +2374,59 @@ phonetic = "[ü]"
 letter_audio = ExtResource("33_l46bu")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet21"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet21" unique_id=1824804839]
 mesh = SubResource("ArrayMesh_3oodq")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet21/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet21/Cube_Default" unique_id=1853776945]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels" unique_id=873675374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels" unique_id=700338815]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels" unique_id=1163799799]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels" unique_id=795316256]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet21/Cube_Default/labels" unique_id=1425401291]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet21"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet21" unique_id=1660996897]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet21"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet21" unique_id=476576569]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet21/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet21/Area3D" unique_id=9572026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet21"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet21" unique_id=148836592]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet21"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet21" unique_id=871452779]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet21"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet21" unique_id=9698305]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2747,19 +2435,19 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet21"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet21" unique_id=127623451]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet22" parent="letras" instance=ExtResource("10_e5vxr")]
+[node name="Cube_Alphabet22" parent="letras" unique_id=982380401 instance=ExtResource("10_e5vxr")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1, 10, 55)
 letter = "V"
 phonetic = "[vè]"
 letter_audio = ExtResource("34_oqpyu")
 metadata/_edit_group_ = true
 
-[node name="Cube_Alphabet23" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet23" type="StaticBody3D" parent="letras" unique_id=1452399786]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.999999, 11.1, 59)
 script = ExtResource("15_l43ru")
 letter = "W"
@@ -2767,61 +2455,59 @@ phonetic = "[dubl vè]"
 letter_audio = ExtResource("35_omk6m")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet23"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet23" unique_id=1317531376]
 mesh = SubResource("ArrayMesh_tptdq")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet23/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet23/Cube_Default" unique_id=345293029]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels" unique_id=2079459473]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels" unique_id=801851922]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels" unique_id=1149327098]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels" unique_id=1302214141]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet23/Cube_Default/labels" unique_id=160478955]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet23"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet23" unique_id=438374497]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet23"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet23" unique_id=992355443]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet23/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet23/Area3D" unique_id=1708904479]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet23"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet23" unique_id=1302528907]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet23"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet23" unique_id=495269594]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet23"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet23" unique_id=383535956]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2830,12 +2516,12 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet23"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet23" unique_id=1058011966]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet24" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet24" type="StaticBody3D" parent="letras" unique_id=823187638]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.999999, 13.1, 63)
 script = ExtResource("15_l43ru")
 letter = "X"
@@ -2843,61 +2529,59 @@ phonetic = "[ikss]"
 letter_audio = ExtResource("36_027jv")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet24"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet24" unique_id=816494297]
 mesh = SubResource("ArrayMesh_ljeeu")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet24/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet24/Cube_Default" unique_id=1534085761]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels" unique_id=998735028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels" unique_id=1308645084]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels" unique_id=1379650417]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels" unique_id=1774783402]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet24/Cube_Default/labels" unique_id=1989549490]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet24"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet24" unique_id=1535383755]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet24"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet24" unique_id=956302773]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet24/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet24/Area3D" unique_id=166074035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet24"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet24" unique_id=1568476260]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet24"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet24" unique_id=825895895]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet24"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet24" unique_id=1496413681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2906,12 +2590,12 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet24"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet24" unique_id=666550316]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet25" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet25" type="StaticBody3D" parent="letras" unique_id=1046068137]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3, 13.1, 63)
 script = ExtResource("15_l43ru")
 letter = "Y"
@@ -2919,61 +2603,59 @@ phonetic = "[i grec]"
 letter_audio = ExtResource("37_nlynd")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet25"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet25" unique_id=1728039411]
 mesh = SubResource("ArrayMesh_vo1p3")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet25/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet25/Cube_Default" unique_id=952727491]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels" unique_id=341806457]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels" unique_id=1534448478]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels" unique_id=1537445383]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels" unique_id=1827075967]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet25/Cube_Default/labels" unique_id=1608393155]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet25"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet25" unique_id=1119612511]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet25"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet25" unique_id=1007982015]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet25/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet25/Area3D" unique_id=2019164995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet25"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet25" unique_id=1408815411]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet25"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet25" unique_id=1780432961]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet25"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet25" unique_id=112196277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -2982,12 +2664,12 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet25"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet25" unique_id=325058729]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="Cube_Alphabet26" type="StaticBody3D" parent="letras"]
+[node name="Cube_Alphabet26" type="StaticBody3D" parent="letras" unique_id=776077575]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -7, 13.1, 63)
 script = ExtResource("15_l43ru")
 letter = "Z"
@@ -2995,61 +2677,59 @@ phonetic = "[zed]"
 letter_audio = ExtResource("38_4ytfv")
 metadata/_edit_group_ = true
 
-[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet26"]
+[node name="Cube_Default" type="MeshInstance3D" parent="letras/Cube_Alphabet26" unique_id=1018595719]
 mesh = SubResource("ArrayMesh_2ak31")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="letras/Cube_Alphabet26/Cube_Default"]
+[node name="labels" type="Node3D" parent="letras/Cube_Alphabet26/Cube_Default" unique_id=615856975]
 
-[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels" unique_id=525122536]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels" unique_id=215757210]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels" unique_id=345862261]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels" unique_id=955396988]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="letras/Cube_Alphabet26/Cube_Default/labels" unique_id=696699967]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
 text = "A"
 font_size = 250
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet26"]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="letras/Cube_Alphabet26" unique_id=1442391136]
 shape = SubResource("BoxShape3D_nqxmd")
 
-[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet26"]
+[node name="Area3D" type="Area3D" parent="letras/Cube_Alphabet26" unique_id=1562823183]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet26/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="letras/Cube_Alphabet26/Area3D" unique_id=1481186877]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_ryeqq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet26"]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="letras/Cube_Alphabet26" unique_id=690658879]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet26"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="letras/Cube_Alphabet26" unique_id=1449308444]
 
-[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet26"]
+[node name="lblPhonetic" type="Label3D" parent="letras/Cube_Alphabet26" unique_id=795742513]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
@@ -3058,432 +2738,432 @@ font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet26"]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="letras/Cube_Alphabet26" unique_id=1873552130]
 stream = ExtResource("17_0jl6j")
 max_polyphony = 3
 bus = &"Sfx"
 
-[node name="DeathArea" parent="." instance=ExtResource("41_qf8v7")]
+[node name="DeathArea" parent="." unique_id=361655128 instance=ExtResource("41_qf8v7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 
-[node name="Passerelle" parent="." instance=ExtResource("57_ahm43")]
+[node name="Passerelle" parent="." unique_id=2357447 instance=ExtResource("57_ahm43")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -20.5716)
 door_nbr = 1
 
-[node name="LettersFloor" type="Node3D" parent="."]
+[node name="LettersFloor" type="Node3D" parent="." unique_id=777719474]
 transform = Transform3D(-0.212132, 0, -0.212132, 0, 0.3, 0, 0.212132, 0, -0.212132, -3.80973, 2.9274, -35.1931)
 
-[node name="LetterFloor" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor" parent="LettersFloor" unique_id=1010375628 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, -6.13163, 35.9156, -220.093)
 lettre = "C"
 
-[node name="LetterFloor2" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor2" parent="LettersFloor" unique_id=788769937 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 0.939438, 35.9156, -213.022)
 lettre = "S"
 explode = true
 
-[node name="LetterFloor3" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor3" parent="LettersFloor" unique_id=729567044 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 0.939438, 35.9156, -227.165)
 lettre = "G"
 explode = true
 
-[node name="LetterFloor4" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor4" parent="LettersFloor" unique_id=1321658324 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 8.01051, 35.9156, -220.093)
 lettre = "H"
 
-[node name="LetterFloor5" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor5" parent="LettersFloor" unique_id=2086491057 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 8.01051, 35.9156, -234.236)
 lettre = "A"
 
-[node name="LetterFloor6" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor6" parent="LettersFloor" unique_id=751251823 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 15.0816, 35.9156, -227.165)
 lettre = "E"
 explode = true
 
-[node name="LetterFloor7" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor7" parent="LettersFloor" unique_id=556583517 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 15.0816, 35.9156, -241.307)
 lettre = "D"
 explode = true
 
-[node name="LetterFloor8" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor8" parent="LettersFloor" unique_id=1666422570 instance=ExtResource("46_76amn")]
 transform = Transform3D(2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, 2.35702, 22.1526, 35.9156, -234.236)
 lettre = "T"
 
-[node name="TabouretSonore2" parent="LettersFloor" instance=ExtResource("44_0yj4v")]
+[node name="TabouretSonore2" parent="LettersFloor" unique_id=357618965 instance=ExtResource("44_0yj4v")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 51.165, 35.9156, -229.038)
 son = ExtResource("47_1ft85")
 
-[node name="TabouretSonore5" parent="LettersFloor" instance=ExtResource("44_0yj4v")]
+[node name="TabouretSonore5" parent="LettersFloor" unique_id=736920310 instance=ExtResource("44_0yj4v")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, -3.04646, 35.9156, -198.397)
 son = ExtResource("45_n1qqs")
 
-[node name="TabouretSonore3" parent="LettersFloor" instance=ExtResource("44_0yj4v")]
+[node name="TabouretSonore3" parent="LettersFloor" unique_id=1435542127 instance=ExtResource("44_0yj4v")]
 transform = Transform3D(2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, 2.35702, 117.438, 42.5822, -144.239)
 son = ExtResource("48_3nokl")
 
-[node name="TabouretSonore4" parent="LettersFloor" instance=ExtResource("44_0yj4v")]
+[node name="TabouretSonore4" parent="LettersFloor" unique_id=793896233 instance=ExtResource("44_0yj4v")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 74.7352, 42.5822, -35.7618)
 son = ExtResource("49_slmjr")
 
-[node name="LetterFloor9" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor9" parent="LettersFloor" unique_id=1701481316 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 68.5428, 35.9156, -232.281)
 lettre = "C"
 
-[node name="LetterFloor10" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor10" parent="LettersFloor" unique_id=1670021504 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 61.472, 35.9156, -225.21)
 lettre = "S"
 explode = true
 
-[node name="LetterFloor11" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor11" parent="LettersFloor" unique_id=2085140117 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 75.6139, 35.9156, -225.21)
 lettre = "G"
 explode = true
 
-[node name="LetterFloor12" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor12" parent="LettersFloor" unique_id=1623913682 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 68.5431, 35.9156, -218.139)
 lettre = "H"
 
-[node name="LetterFloor13" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor13" parent="LettersFloor" unique_id=988309713 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 82.685, 35.9156, -218.139)
 lettre = "E"
 explode = true
 
-[node name="LetterFloor14" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor14" parent="LettersFloor" unique_id=1283763226 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 75.6141, 35.9156, -211.068)
 lettre = "I"
 
-[node name="LetterFloor15" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor15" parent="LettersFloor" unique_id=1204948960 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 89.756, 35.9156, -211.068)
 lettre = "E"
 
-[node name="LetterFloor16" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor16" parent="LettersFloor" unique_id=731375290 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 82.6852, 35.9156, -203.997)
 lettre = "O"
 
-[node name="LetterFloor17" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor17" parent="LettersFloor" unique_id=968380655 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 96.8271, 35.9156, -203.997)
 lettre = "N"
 
-[node name="LetterFloor18" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor18" parent="LettersFloor" unique_id=628690609 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 89.7563, 35.9156, -196.926)
 lettre = "L"
 explode = true
 
-[node name="LetterFloor19" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor19" parent="LettersFloor" unique_id=2086604023 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 119.267, 42.5822, -125.268)
 lettre = "C"
 
-[node name="LetterFloor20" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor20" parent="LettersFloor" unique_id=1669812696 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 112.197, 42.5822, -132.339)
 lettre = "S"
 explode = true
 
-[node name="LetterFloor21" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor21" parent="LettersFloor" unique_id=1639206665 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 112.196, 42.5822, -118.197)
 lettre = "G"
 explode = true
 
-[node name="LetterFloor22" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor22" parent="LettersFloor" unique_id=661518178 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 105.125, 42.5822, -125.268)
 lettre = "H"
 
-[node name="LetterFloor23" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor23" parent="LettersFloor" unique_id=67746181 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 105.125, 42.5822, -111.126)
 lettre = "E"
 
-[node name="LetterFloor24" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor24" parent="LettersFloor" unique_id=461794022 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 98.0544, 42.5822, -118.197)
 lettre = "O"
 hurting = true
 
-[node name="LetterFloor25" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor25" parent="LettersFloor" unique_id=711865877 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 98.0542, 42.5822, -104.055)
 lettre = "V"
 
-[node name="LetterFloor26" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor26" parent="LettersFloor" unique_id=392181561 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 90.9833, 42.5822, -111.126)
 lettre = "F"
 explode = true
 
-[node name="LetterFloor27" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor27" parent="LettersFloor" unique_id=352992714 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 90.9831, 42.5822, -96.9841)
 lettre = "A"
 
-[node name="LetterFloor28" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor28" parent="LettersFloor" unique_id=1214885626 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 83.9123, 42.5822, -104.055)
 lettre = "E"
 explode = true
 
-[node name="LetterFloor29" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor29" parent="LettersFloor" unique_id=1511721261 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 83.912, 42.5822, -89.913)
 lettre = "M"
 explode = true
 
-[node name="LetterFloor30" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor30" parent="LettersFloor" unique_id=1849470290 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, 2.35702, 0, 3.33333, 0, -2.35702, 0, -2.35702, 76.8412, 42.5822, -96.9838)
 lettre = "L"
 
-[node name="LetterFloor31" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor31" parent="LettersFloor" unique_id=2081521369 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 93.0378, 42.5822, -38.3518)
 lettre = "O"
 explode = true
 
-[node name="LetterFloor32" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor32" parent="LettersFloor" unique_id=574269354 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 85.967, 42.5822, -31.281)
 lettre = "E"
 
-[node name="LetterFloor33" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor33" parent="LettersFloor" unique_id=1058253606 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 100.109, 42.5822, -31.2808)
 lettre = "S"
 explode = true
 
-[node name="LetterFloor34" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor34" parent="LettersFloor" unique_id=1558601708 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 93.038, 42.5822, -24.21)
 lettre = "C"
 
-[node name="LetterFloor35" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor35" parent="LettersFloor" unique_id=1375028731 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 107.18, 42.5822, -24.2096)
 lettre = "U"
 
-[node name="LetterFloor36" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor36" parent="LettersFloor" unique_id=1794180190 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 100.109, 42.5822, -17.1388)
 lettre = "I"
 hurting = true
 
-[node name="LetterFloor37" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor37" parent="LettersFloor" unique_id=579022099 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 114.251, 42.5822, -17.1385)
 lettre = "R"
 
-[node name="LetterFloor38" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor38" parent="LettersFloor" unique_id=498947465 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 107.18, 42.5822, -10.0677)
 lettre = "H"
 explode = true
 
-[node name="LetterFloor39" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor39" parent="LettersFloor" unique_id=1642906204 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 121.322, 42.5822, -10.0675)
 lettre = "U"
 explode = true
 
-[node name="LetterFloor40" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor40" parent="LettersFloor" unique_id=297572208 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 114.251, 42.5822, -2.99664)
 lettre = "E"
 
-[node name="LetterFloor41" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor41" parent="LettersFloor" unique_id=470366824 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 128.393, 42.5822, -2.99639)
 lettre = "U"
 
-[node name="LetterFloor42" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor42" parent="LettersFloor" unique_id=1144872251 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 121.322, 42.5822, 4.07443)
 lettre = "I"
 explode = true
 
-[node name="LetterFloor43" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor43" parent="LettersFloor" unique_id=1437834040 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 135.464, 42.5822, 4.07469)
 lettre = "E"
 explode = true
 
-[node name="LetterFloor44" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor44" parent="LettersFloor" unique_id=1930620142 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 128.393, 42.5822, 11.1455)
 lettre = "I"
 
-[node name="LetterFloor45" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor45" parent="LettersFloor" unique_id=1114296912 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 142.535, 42.5822, 11.1457)
 lettre = "L"
 
-[node name="LetterFloor46" parent="LettersFloor" instance=ExtResource("46_76amn")]
+[node name="LetterFloor46" parent="LettersFloor" unique_id=502475819 instance=ExtResource("46_76amn")]
 transform = Transform3D(-2.35702, 0, -2.35702, 0, 3.33333, 0, 2.35702, 0, -2.35702, 135.465, 42.5822, 18.2166)
 lettre = "N"
 explode = true
 
-[node name="petit_panneau2" parent="LettersFloor" instance=ExtResource("50_3nokl")]
+[node name="petit_panneau2" parent="LettersFloor" unique_id=1483917959 instance=ExtResource("50_3nokl")]
 transform = Transform3D(0, 0, -3, 0, 3, 0, 3, 0, 0, 65.7332, 36.8142, -246.616)
 
 [node name="Sprite3D" parent="LettersFloor/petit_panneau2" index="2"]
 texture = ExtResource("51_slmjr")
 
-[node name="petit_panneau5" parent="LettersFloor" instance=ExtResource("50_3nokl")]
+[node name="petit_panneau5" parent="LettersFloor" unique_id=1674454787 instance=ExtResource("50_3nokl")]
 transform = Transform3D(2.89778, 0, 0.776457, 0, 3, 0, -0.776457, 0, 2.89778, -21.941, 36.8142, -215.737)
 
-[node name="petit_panneau3" parent="LettersFloor" instance=ExtResource("50_3nokl")]
+[node name="petit_panneau3" parent="LettersFloor" unique_id=288921531 instance=ExtResource("50_3nokl")]
 transform = Transform3D(-2.89778, 0, -0.776457, 0, 3, 0, 0.776457, 0, -2.89778, 133.773, 43.5325, -126.709)
 
 [node name="Sprite3D" parent="LettersFloor/petit_panneau3" index="2"]
 transform = Transform3D(2.38637, 0, -2.98023e-08, 0, 2.4, 0, 5.96046e-08, 0, 1.89647, 0.00563431, 1.34558, 0.100111)
 texture = ExtResource("52_h6h5b")
 
-[node name="petit_panneau4" parent="LettersFloor" instance=ExtResource("50_3nokl")]
+[node name="petit_panneau4" parent="LettersFloor" unique_id=600053330 instance=ExtResource("50_3nokl")]
 transform = Transform3D(0.776457, 0, -2.89778, 0, 3, 0, 2.89778, 0, 0.776457, 90.0471, 43.4988, -52.2227)
 
 [node name="Sprite3D" parent="LettersFloor/petit_panneau4" index="2"]
 transform = Transform3D(2.38637, 0, -2.98023e-08, 0, 2.4, 0, 5.96046e-08, 0, 1.89647, 0.00563431, 1.34558, 0.100111)
 texture = ExtResource("53_nvq4j")
 
-[node name="blocks" type="Node3D" parent="."]
+[node name="blocks" type="Node3D" parent="." unique_id=1280996590]
 
-[node name="Block_3" type="Node3D" parent="blocks"]
+[node name="Block_3" type="Node3D" parent="blocks" unique_id=148058993]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49, -21, -15)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_yunmv")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("39_e5vxr")])
 
-[node name="Block_2" type="Node3D" parent="blocks"]
+[node name="Block_2" type="Node3D" parent="blocks" unique_id=1299863651]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 0, 22)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_6dmpf")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_6" type="Node3D" parent="blocks"]
+[node name="Block_6" type="Node3D" parent="blocks" unique_id=1855205480]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 22)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_7pvw6")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_4" type="Node3D" parent="blocks"]
+[node name="Block_4" type="Node3D" parent="blocks" unique_id=1061971564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 15, -13)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_wljrq")
 materials = Array[Material]([ExtResource("39_e5vxr"), ExtResource("8_kt1qv")])
 
-[node name="Block_7" type="Node3D" parent="blocks"]
+[node name="Block_7" type="Node3D" parent="blocks" unique_id=2118066215]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 15, -13)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_qxyav")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_5" type="Node3D" parent="blocks"]
+[node name="Block_5" type="Node3D" parent="blocks" unique_id=2146405150]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61, 15, -13)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_oo3tu")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("39_e5vxr"), ExtResource("8_kt1qv")])
 
-[node name="block0" type="Node3D" parent="blocks"]
+[node name="block0" type="Node3D" parent="blocks" unique_id=498147227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_7lk5s")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_0" type="Node3D" parent="blocks"]
+[node name="Block_0" type="Node3D" parent="blocks" unique_id=741542957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -13, -4)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_4h6du")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_1" type="Node3D" parent="blocks"]
+[node name="Block_1" type="Node3D" parent="blocks" unique_id=1489567999]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -21, -27)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_301nj")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="Block_8" type="Node3D" parent="blocks"]
+[node name="Block_8" type="Node3D" parent="blocks" unique_id=290487309]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, -8, -21)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_i582j")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("56_n6jgh")])
 
-[node name="Block_9" type="Node3D" parent="blocks"]
+[node name="Block_9" type="Node3D" parent="blocks" unique_id=1510150423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 18, -10)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_afxu5")
 materials = Array[Material]([ExtResource("7_wk5vn")])
 
-[node name="Block_10" type="Node3D" parent="blocks"]
+[node name="Block_10" type="Node3D" parent="blocks" unique_id=514784209]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 13, -7)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_yfc27")
 materials = Array[Material]([ExtResource("57_7qe2p")])
 
-[node name="Block_11" type="Node3D" parent="blocks"]
+[node name="Block_11" type="Node3D" parent="blocks" unique_id=1053237844]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 18, -19)
 script = ExtResource("2_kt1qv")
 mesh_vector_data = SubResource("Resource_qtc3n")
 materials = Array[Material]([ExtResource("7_wk5vn"), ExtResource("8_kt1qv")])
 
-[node name="button_floor" parent="." instance=ExtResource("58_weng1")]
+[node name="button_floor" parent="." unique_id=1879483628 instance=ExtResource("58_weng1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.4246, 4.00471, -17.7032)
 btn_number = 1
 
-[node name="Checkpoint" parent="." instance=ExtResource("59_vhsx1")]
+[node name="Checkpoint" parent="." unique_id=92703681 instance=ExtResource("59_vhsx1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 14.5, -10)
 
-[node name="Checkpoint2" parent="." instance=ExtResource("59_vhsx1")]
+[node name="Checkpoint2" parent="." unique_id=299243436 instance=ExtResource("59_vhsx1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 16.5, -6)
 
-[node name="pillar2" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar2" parent="." unique_id=1850371451 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 14, -14)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar2/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar2/pillar" parent_id_path=PackedInt32Array(1850371451, 358426288) index="0" unique_id=236316264]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar2/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar2/pillar/StaticBody3D" unique_id=140642017]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar3" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar3" parent="." unique_id=1129349822 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37, 14, -14)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar3/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar3/pillar" parent_id_path=PackedInt32Array(1129349822, 358426288) index="0" unique_id=652402580]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar3/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar3/pillar/StaticBody3D" unique_id=728143095]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar6" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar6" parent="." unique_id=88073228 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.5, 16, 20.5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar6/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar6/pillar" parent_id_path=PackedInt32Array(88073228, 358426288) index="0" unique_id=1427335057]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar6/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar6/pillar/StaticBody3D" unique_id=1301071662]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar7" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar7" parent="." unique_id=141079271 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.5, 16, 30.5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar7/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar7/pillar" parent_id_path=PackedInt32Array(141079271, 358426288) index="0" unique_id=304899034]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar7/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar7/pillar/StaticBody3D" unique_id=799976676]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar8" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar8" parent="." unique_id=1323872242 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.5, 19, -6.5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar8/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar8/pillar" parent_id_path=PackedInt32Array(1323872242, 358426288) index="0" unique_id=1295808790]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar8/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar8/pillar/StaticBody3D" unique_id=873235946]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar9" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar9" parent="." unique_id=139449682 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.5, 19, -11.5)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar9/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar9/pillar" parent_id_path=PackedInt32Array(139449682, 358426288) index="0" unique_id=1331703936]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar9/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar9/pillar/StaticBody3D" unique_id=1523011719]
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar4" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar4" parent="." unique_id=272058253 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, -0.0196877, -20)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar4/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar4/pillar" parent_id_path=PackedInt32Array(272058253, 358426288) index="0" unique_id=1676730739]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar4/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar4/pillar/StaticBody3D" unique_id=29364980]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="pillar5" parent="." instance=ExtResource("60_tbu7e")]
+[node name="pillar5" parent="." unique_id=1873271240 instance=ExtResource("60_tbu7e")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3, -0.0196877, -20)
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="pillar5/pillar" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="pillar5/pillar" parent_id_path=PackedInt32Array(1873271240, 358426288) index="0" unique_id=1192615589]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar5/pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillar5/pillar/StaticBody3D" unique_id=1576327074]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_bgbqy")
 
-[node name="stairs_wood" parent="." instance=ExtResource("61_tbu7e")]
+[node name="stairs_wood" parent="." unique_id=500960283 instance=ExtResource("61_tbu7e")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, -16)
 
-[node name="fence_gate_grid" parent="." instance=ExtResource("62_l46bu")]
+[node name="fence_gate_grid" parent="." unique_id=917400384 instance=ExtResource("62_l46bu")]
 transform = Transform3D(-2.98023e-08, 0, 1, 0, 1, 0, -1, 0, -2.98023e-08, -68.4743, 19, -9)
 door_nbr = 2
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=918420036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.20634, -19.826)
 modulate = Color(0.768229, 0.530158, 0.712431, 1)
 text = "Apprends
@@ -3491,18 +3171,18 @@ l'alphabet"
 font = ExtResource("67_4ytfv")
 font_size = 122
 
-[node name="planche_bois" parent="." instance=ExtResource("68_yunmv")]
+[node name="planche_bois" parent="." unique_id=1859472869 instance=ExtResource("68_yunmv")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 0, 4.37114e-08, 0, 1, -4.37114e-08, -2.29021e-07, 7.5122, -20)
 
-[node name="Cube" parent="planche_bois" index="0"]
+[node name="Cube" parent="planche_bois" index="0" unique_id=518595464]
 transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344981, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="planche_bois/Cube" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="planche_bois/Cube" index="0" unique_id=430728636]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="planche_bois/Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="planche_bois/Cube/StaticBody3D" unique_id=1497259598]
 shape = SubResource("ConvexPolygonShape3D_mjqny")
 
-[node name="Intro_message" parent="." instance=ExtResource("69_mjqny")]
+[node name="Intro_message" parent="." unique_id=1919892929 instance=ExtResource("69_mjqny")]
 mon_text = "[center][color=ble]
 Avant de former des mots, il faut connaître leurs briques.
 Ici, chaque lettre a une voix, une forme et un rythme.
@@ -3515,7 +3195,7 @@ Aprende a reconhecê-las, a nomeá-las e a fazê-las cantar.
 O alfabeto é a primeira chave da linguagem.[/color][/center]"
 audio = ExtResource("70_6bmjs")
 
-[node name="Wooden_sign" parent="." instance=ExtResource("71_bb2ew")]
+[node name="Wooden_sign" parent="." unique_id=1881412477 instance=ExtResource("71_bb2ew")]
 transform = Transform3D(0.00886568, 0, -0.999961, 0, 1, 0, 0.999961, 0, 0.00886568, 77.6382, 14.0245, -3.11641)
 title = "Salutations
 [E]"
@@ -3538,10 +3218,10 @@ color_fr = Color(0.856771, 0.845615, 0.845615, 1)
 color_pt = Color(0.950521, 0.844585, 0.334167, 1)
 color_voc_pt = Color(0.0365872, 0.169271, 0.105002, 1)
 
-[node name="Stele" parent="." instance=ExtResource("84_rfxxo")]
+[node name="Stele" parent="." unique_id=953317142 instance=ExtResource("84_rfxxo")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7.29902, 0.000627518, -17.3284)
 
-[node name="Stele2" parent="." instance=ExtResource("84_rfxxo")]
+[node name="Stele2" parent="." unique_id=1200213713 instance=ExtResource("84_rfxxo")]
 transform = Transform3D(5.96046e-08, 0, 1, 0, 1, 0, -1, 0, 5.96046e-08, 38.1188, 14.0006, -4.136)
 texte = "[center][color=blue]
 Essaie de te souvenir des nouveaux mots que tu apprends.
@@ -3549,7 +3229,7 @@ Essaie de te souvenir des nouveaux mots que tu apprends.
 Tente te lembrar das novas palavras que você aprende.[/color]
 [/center]"
 
-[node name="Stele3" parent="." instance=ExtResource("84_rfxxo")]
+[node name="Stele3" parent="." unique_id=1697398371 instance=ExtResource("84_rfxxo")]
 transform = Transform3D(-1, 0, 1.58933e-08, 0, 1, 0, -1.58933e-08, 0, -1, 42.1188, 14.0006, 30.864)
 texte = "[center][color=blue]
 Répéter les mots à voix haute permet une meilleure mémorisation et prononciation.
@@ -3557,7 +3237,7 @@ Répéter les mots à voix haute permet une meilleure mémorisation et prononcia
 Repetir as palavras em voz alta facilita a memorização e a pronúncia.[/color]
 [/center]"
 
-[node name="Stele4" parent="." instance=ExtResource("84_rfxxo")]
+[node name="Stele4" parent="." unique_id=740495922 instance=ExtResource("84_rfxxo")]
 transform = Transform3D(-1, 0, 1.58933e-08, 0, 1, 0, -1.58933e-08, 0, -1, 2.11882, 16.0006, 30.864)
 texte = "[center][color=blue]
 Fais particulièrement attention aux lettes E, U et R qui ont un son bien différent en portugais.
@@ -3565,7 +3245,7 @@ Fais particulièrement attention aux lettes E, U et R qui ont un son bien diffé
 Preste atenção especial às letras E, U e R, que têm um som muito diferente em português.
 [/color][/center]"
 
-[node name="Stele5" parent="." instance=ExtResource("84_rfxxo")]
+[node name="Stele5" parent="." unique_id=1435334889 instance=ExtResource("84_rfxxo")]
 transform = Transform3D(1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, 1, -5.88118, 16.0006, -10.136)
 texte = "[center][color=blue]
 Attention, ce mot est un peu compliqué, prends ton temps !
@@ -3573,35 +3253,37 @@ Attention, ce mot est un peu compliqué, prends ton temps !
 Cuidado, essa palavra é um pouco complicada, não tenha pressa![/color]
 [/center]"
 
-[node name="Platform_falling" parent="." instance=ExtResource("85_8esx4")]
+[node name="Platform_falling" parent="." unique_id=809694300 instance=ExtResource("85_8esx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 14, -4)
 
-[node name="Platform_falling2" parent="." instance=ExtResource("85_8esx4")]
+[node name="Platform_falling2" parent="." unique_id=1703462899 instance=ExtResource("85_8esx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 16, -6)
 
-[node name="Platform_falling3" parent="." instance=ExtResource("85_8esx4")]
+[node name="Platform_falling3" parent="." unique_id=1983165833 instance=ExtResource("85_8esx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 17, -8)
 
-[node name="Platform_falling4" parent="." instance=ExtResource("85_8esx4")]
+[node name="Platform_falling4" parent="." unique_id=666089957 instance=ExtResource("85_8esx4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67, 16, -5)
 
-[node name="Blades" parent="." instance=ExtResource("89_etqni")]
+[node name="Blades" parent="." unique_id=173496859 instance=ExtResource("89_etqni")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.2192, 19, -10.6873)
 
-[node name="Blades2" parent="." instance=ExtResource("89_etqni")]
+[node name="Blades2" parent="." unique_id=2057605079 instance=ExtResource("89_etqni")]
 transform = Transform3D(0.902773, 0, 0.430117, 0, 1, 0, -0.430117, 0, 0.902773, -58.8998, 19, -7.46095)
 speed = 3.7
 
-[node name="Computer_typing_game" parent="." instance=ExtResource("90_oe5nj")]
+[node name="Computer_typing_game" parent="." unique_id=1840539337 instance=ExtResource("90_oe5nj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.9766, 19, -23.3984)
 
 [node name="WordTypingGame" parent="Computer_typing_game/Control" index="0"]
 door_nbr = 2
+word_list = Array[String](["chat", "livre", "enfant", "cheval", "chien"])
+translations_pt = Array[String](["gato", "livro", "criança", "cavalo", "cachorro"])
 
-[node name="Inventaire" parent="Computer_typing_game" instance=ExtResource("1_omk6m")]
+[node name="Inventaire" parent="Computer_typing_game" unique_id=1971456830 instance=ExtResource("1_omk6m")]
 visible = false
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1241606516]
 mesh_library = ExtResource("83_bb2ew")
 cell_size = Vector3(2, 1, 2)
 cell_center_y = false
