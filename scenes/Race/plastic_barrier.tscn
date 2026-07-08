@@ -7,7 +7,10 @@ points = PackedVector3Array(0.5176711, 0.59954715, 0.08102174, 0.5176711, 0.5812
 
 [node name="PlasticBarrier" unique_id=1404654288 instance=ExtResource("1_vdx7j")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlasticBarrier" parent_id_path=PackedInt32Array(1730279147) index="0" unique_id=700757311]
+[node name="PlasticBarrier" parent="." index="0" unique_id=1730279147]
+transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlasticBarrier" index="0" unique_id=700757311]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlasticBarrier/StaticBody3D" index="0" unique_id=1313609004]
 shape = SubResource("ConvexPolygonShape3D_th6uk")

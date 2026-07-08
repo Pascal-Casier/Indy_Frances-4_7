@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=8 format=3 uid="uid://b4tcqpnrgq7wy"]
+[gd_resource type="MeshLibrary" format=3 uid="uid://b4tcqpnrgq7wy"]
 
 [ext_resource type="Texture2D" uid="uid://cntgpwtv5v3jd" path="res://assets/blender/cliffscubetiles3_Grass_21-128x128.png" id="1_8eb4r"]
 [ext_resource type="Texture2D" uid="uid://cytxtxggnds2p" path="res://assets/blender/cliffscubetiles3_Grass_21-128x128NormalMap.png" id="2_eq2g1"]

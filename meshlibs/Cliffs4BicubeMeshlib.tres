@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=15 format=4 uid="uid://d15c1brmen7t4"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://d15c1brmen7t4"]
 
 [ext_resource type="Texture2D" uid="uid://sh6yymrnxwei" path="res://assets/blender/cliffscubetiles2_Palette.png" id="1_7h1sp"]
 [ext_resource type="Texture2D" uid="uid://nx1jmyyi1ahb" path="res://assets/blender/cliffscubetiles2_wall1.png" id="2_d1ay0"]

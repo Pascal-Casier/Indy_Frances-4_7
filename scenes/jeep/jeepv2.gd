@@ -15,7 +15,9 @@ class_name Jeep2
 @onready var skid_marks_right: GPUParticles3D = $"jeep/wheel-back-right/GPUParticles3D2"
 @onready var smoke1: GPUParticles3D = $jeep/GPUParticles3D
 @onready var smoke2: GPUParticles3D = $jeep/GPUParticles3D2
-@onready var speedlbl: Label = $CanvasLayer/Control/speedlbl
+@onready var speedlbl: Label = %speedlbl
+@onready var lesma: TextureRect = %lesma
+
 
 var drift_lateral_threshold = 2.0   # vitesse latérale mini pour considérer que ça dérape
 var drift_min_speed = 3.0           # vitesse totale mini pour émettre
@@ -77,7 +79,7 @@ var wheel_right_base_y: float
 var penalty_multiplier: float = 1.0
 var penalty_timer: float = 0.0
 
-
+var time_left : float
 
 # ============================================================
 # INITIALISATION
@@ -155,6 +157,9 @@ func _process(delta: float) -> void:
 	) * acceleration * penalty_multiplier  # ← appliqué ici
 
 	speedlbl.text = "%d km/h" % int(get_speed_kmh())
+	
+	#Timer label
+	%TimeLbl.text = "%.2f" % %Timer.time_left
 
 func _physics_process(delta: float) -> void:
 	model.global_position = ball.global_position + sphere_offset
@@ -180,7 +185,7 @@ func _physics_process(delta: float) -> void:
 	var right = model.global_transform.basis.x
 	var velocity = ball.linear_velocity
 
-	var forward_speed = velocity.dot(forward)
+	var _forward_speed = velocity.dot(forward)
 	var lateral_speed = velocity.dot(right)
 	var total_speed = velocity.length()
 
@@ -263,15 +268,35 @@ func appliquer_penalite(multiplicateur: float, duree: float = 2.0) -> void:
 	
 func mud_effect(enabled : bool) -> void:
 	if enabled:
-		ball.linear_damp = 4.0
+		ball.linear_damp += 3.9
 	else:
-		ball.linear_damp = 0.1
+		ball.linear_damp -= 3.9
 		
 func hit() -> void:
 	ball.linear_damp += 0.5
+	lesma.show()
+
+func heal() -> void:
+	ball.linear_damp = 0.1
+	lesma.hide()
 	
 func get_speed() -> float:
 	return ball.linear_velocity.length()
 
 func get_speed_kmh() -> float:
 	return ball.linear_velocity.length() * 3.6
+
+func stop() -> void:
+	$AudioStreamPlayer3D.stop()
+	time_left = %Timer.time_left
+	set_physics_process(false)
+	set_process(false)
+	$AudioStreamBrake.stop()
+	speedlbl.hide()
+	%TimeLbl.hide()
+	
+
+func start_timer(total_time : float) -> void:
+	%Timer.wait_time = total_time
+	%Timer.start()
+	

@@ -6,6 +6,7 @@
 [ext_resource type="Animation" uid="uid://b208e203aayh5" path="res://assets/animations/indy_driving.res" id="4_x58h8"]
 [ext_resource type="AudioStream" uid="uid://b100l1ccsbdmh" path="res://scenes/jeep/car_engine_loop.mp3" id="5_a5i6b"]
 [ext_resource type="AudioStream" uid="uid://ccisudvqc22um" path="res://assets/sounds/sfx/brake-6315.mp3" id="6_6gfx4"]
+[ext_resource type="Texture2D" uid="uid://ddwu56weirxur" path="res://assets/images/icons/lesma.png" id="7_kowf4"]
 [ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="7_x58h8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4dcb2"]
@@ -6816,7 +6817,7 @@ transform = Transform3D(-1, 0, 8.742279e-08, 0, 1, 0, -8.742279e-08, 0, -1, 2.09
 [node name="IndianaJones_fully_animated" parent="jeep" unique_id=144951062 instance=ExtResource("3_6gfx4")]
 transform = Transform3D(-0.84487754, 3.4059422e-08, -0.014385953, -0.0016581572, 0.8393679, 0.09738447, 0.014290071, 0.097398594, -0.8392463, -0.25350016, 0.18233883, 0.040560573)
 
-[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 134182878) index="0" unique_id=1614052530]
+[node name="GeneralSkeleton" parent="jeep/IndianaJones_fully_animated/indy" parent_id_path=PackedInt32Array(144951062, 1961141858) index="0" unique_id=1322548023]
 bones/0/position = Vector3(-0.006782358, 0.5173115, -0.0044337222)
 bones/0/rotation = Quaternion(-0.15429467, -0.054365262, -0.04049404, 0.9856966)
 bones/1/rotation = Quaternion(0.05235725, 0.012475623, 0.01608031, 0.998421)
@@ -6847,7 +6848,7 @@ bones/29/rotation = Quaternion(-0.00048340484, 0.92394257, -0.37957278, -0.04748
 bones/30/rotation = Quaternion(0.023060404, 0.9016675, -0.42733827, -0.06201642)
 bones/31/rotation = Quaternion(-3.8195584e-08, 1, 2.0861629e-07, -9.219623e-09)
 
-[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=764744736]
+[node name="AnimationPlayer" parent="jeep/IndianaJones_fully_animated" index="1" unique_id=870233130]
 libraries/ = SubResource("AnimationLibrary_knx5v")
 autoplay = &"indy_driving"
 
@@ -6891,28 +6892,55 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -151.0
+offset_left = -269.0
 offset_top = -72.0
-offset_right = -111.0
+offset_right = -229.0
 offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="speedlbl" type="Label" parent="CanvasLayer/Control" unique_id=1209007425]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -29.5
-offset_right = 44.5
-offset_bottom = 29.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=581693101]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="lesma" type="TextureRect" parent="CanvasLayer/Control/HBoxContainer" unique_id=954417476]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+texture = ExtResource("7_kowf4")
+expand_mode = 2
+
+[node name="speedlbl" type="Label" parent="CanvasLayer/Control/HBoxContainer" unique_id=1209007425]
+unique_name_in_owner = true
+layout_mode = 2
 text = "test"
 label_settings = SubResource("LabelSettings_5d3sr")
 horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer" unique_id=1123835704]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="TimeLbl" type="Label" parent="CanvasLayer/Control2" unique_id=74756677]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 18.0
+offset_top = -35.0
+offset_right = 138.0
+offset_bottom = 24.0
+text = "time: "
+label_settings = SubResource("LabelSettings_5d3sr")
+
+[node name="Timer" type="Timer" parent="." unique_id=579251418]
+unique_name_in_owner = true
+one_shot = true
 
 [editable path="jeep/IndianaJones_fully_animated"]

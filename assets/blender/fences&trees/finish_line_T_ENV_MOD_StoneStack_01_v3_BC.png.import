@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5e6q60bl6en"
-path.s3tc="res://.godot/imported/skygen-1776551255658.jpg-3020a1f935f6ea3ea3151f0f53eb0cfb.s3tc.ctex"
+uid="uid://d2q0lb87u1cv7"
+path.s3tc="res://.godot/imported/finish_line_T_ENV_MOD_StoneStack_01_v3_BC.png-34a0108127b1572825cb4c0bba1d9b6f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "21396a324150d39962db29601983d66b"
+}
 
 [deps]
 
-source_file="res://assets/images/bgds/skygen-1776551255658.jpg"
-dest_files=["res://.godot/imported/skygen-1776551255658.jpg-3020a1f935f6ea3ea3151f0f53eb0cfb.s3tc.ctex"]
+source_file="res://assets/blender/fences&trees/finish_line_T_ENV_MOD_StoneStack_01_v3_BC.png"
+dest_files=["res://.godot/imported/finish_line_T_ENV_MOD_StoneStack_01_v3_BC.png-34a0108127b1572825cb4c0bba1d9b6f.s3tc.ctex"]
 
 [params]
 

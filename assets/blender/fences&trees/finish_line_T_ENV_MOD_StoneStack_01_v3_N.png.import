@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j5e6q60bl6en"
-path.s3tc="res://.godot/imported/skygen-1776551255658.jpg-3020a1f935f6ea3ea3151f0f53eb0cfb.s3tc.ctex"
+uid="uid://c46o8fxi0da4d"
+path.s3tc="res://.godot/imported/finish_line_T_ENV_MOD_StoneStack_01_v3_N.png-d76dc238c2fd0a9b55ac4742b7a2da03.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a9f0f23bf225b4e7e6d5ee9ad79b5a71"
+}
 
 [deps]
 
-source_file="res://assets/images/bgds/skygen-1776551255658.jpg"
-dest_files=["res://.godot/imported/skygen-1776551255658.jpg-3020a1f935f6ea3ea3151f0f53eb0cfb.s3tc.ctex"]
+source_file="res://assets/blender/fences&trees/finish_line_T_ENV_MOD_StoneStack_01_v3_N.png"
+dest_files=["res://.godot/imported/finish_line_T_ENV_MOD_StoneStack_01_v3_N.png-d76dc238c2fd0a9b55ac4742b7a2da03.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/blender/fences&trees/finish_line_T_ENV_MOD_StoneStack_01_v3_N.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

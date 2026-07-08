@@ -1,8 +1,10 @@
 [gd_scene format=4 uid="uid://bdrodvvqwxb02"]
 
+[ext_resource type="Script" uid="uid://cms0yvjaqpn3t" path="res://scenes/Race/race_archV2.gd" id="1_ahet7"]
 [ext_resource type="Texture2D" uid="uid://bcx46fvm1g52d" path="res://assets/blender/arche_triple_Textures-16.png" id="1_r7nvo"]
-[ext_resource type="Script" uid="uid://b65ffa5h443a" path="res://scenes/Race/race_arch.gd" id="1_vetm2"]
 [ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="2_vetm2"]
+[ext_resource type="FontFile" uid="uid://o1dsyvugbyyd" path="res://DragNdropSystem/Bungee-Regular.ttf" id="4_ahet7"]
+[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="4_tx5li"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4ud6k"]
 resource_name = "Material"
@@ -150,11 +152,42 @@ shadow_mesh = SubResource("ArrayMesh_xycdd")
 [sub_resource type="BoxShape3D" id="BoxShape3D_5d3sr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4dcb2"]
-size = Vector3(0.3708496, 2, 0.5)
+size = Vector3(0.16577148, 1.7783203, 0.5)
 
-[node name="RaceArch" type="Node3D" unique_id=342215945]
-script = ExtResource("1_vetm2")
-mots = Array[String](["mot1", "mot2", "mot3"])
+[sub_resource type="BoxShape3D" id="BoxShape3D_bfp77"]
+size = Vector3(7, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bfp77"]
+bg_color = Color(0.02019755, 0.07994385, 0.47005206, 0.8509804)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.012812296, 0.13097115, 0.29817706, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahet7"]
+font = ExtResource("4_tx5li")
+font_size = 40
+font_color = Color(0.86067706, 0.21426746, 0.041464895, 1)
+outline_size = 14
+outline_color = Color(0.048177063, 0.046483338, 0.046483338, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfp77"]
+font = ExtResource("4_ahet7")
+font_size = 34
+font_color = Color(0.80975854, 0.96484375, 0.101760864, 1)
+outline_size = 14
+outline_color = Color(0.048177063, 0.046483338, 0.046483338, 1)
+
+[node name="RaceArch" type="Node3D" unique_id=342215945 groups=["portails"]]
+script = ExtResource("1_ahet7")
 
 [node name="arche_triple" type="Node3D" parent="." unique_id=102155731]
 
@@ -162,12 +195,12 @@ mots = Array[String](["mot1", "mot2", "mot3"])
 mesh = SubResource("ArrayMesh_qoiku")
 skeleton = NodePath("")
 
-[node name="Cube_001" type="MeshInstance3D" parent="arche_triple" unique_id=1440053494]
+[node name="Cube_M" type="MeshInstance3D" parent="arche_triple" unique_id=1440053494]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, -0.3621002, 0)
 mesh = SubResource("ArrayMesh_v3myr")
 skeleton = NodePath("")
 
-[node name="Label3D" type="Label3D" parent="arche_triple/Cube_001" unique_id=374563013]
+[node name="Label3DM" type="Label3D" parent="arche_triple/Cube_M" unique_id=374563013]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3592944, 0.059916165)
 double_sided = false
 modulate = Color(0.99088544, 0.93231165, 0.41415915, 1)
@@ -177,12 +210,12 @@ font = ExtResource("2_vetm2")
 font_size = 68
 outline_size = 18
 
-[node name="Cube_002" type="MeshInstance3D" parent="arche_triple" unique_id=520126512]
+[node name="Cube_D" type="MeshInstance3D" parent="arche_triple" unique_id=520126512]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 2, -0.3621002, 0)
 mesh = SubResource("ArrayMesh_nf6ic")
 skeleton = NodePath("")
 
-[node name="Label3D2" type="Label3D" parent="arche_triple/Cube_002" unique_id=2126228219]
+[node name="Label3DG" type="Label3D" parent="arche_triple/Cube_D" unique_id=2126228219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2046304, 2.359295, 0.059916165)
 double_sided = false
 modulate = Color(0.99088544, 0.93231165, 0.41415915, 1)
@@ -192,12 +225,12 @@ font = ExtResource("2_vetm2")
 font_size = 68
 outline_size = 18
 
-[node name="Cube_003" type="MeshInstance3D" parent="arche_triple" unique_id=443663496]
+[node name="Cube_G" type="MeshInstance3D" parent="arche_triple" unique_id=443663496]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -2, -0.3621002, 0)
 mesh = SubResource("ArrayMesh_1kbqi")
 skeleton = NodePath("")
 
-[node name="Label3D3" type="Label3D" parent="arche_triple/Cube_003" unique_id=2048205431]
+[node name="Label3DD" type="Label3D" parent="arche_triple/Cube_G" unique_id=2048205431]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2046309, 2.3592954, 0.059916165)
 double_sided = false
 modulate = Color(0.99088544, 0.93231165, 0.41415915, 1)
@@ -207,46 +240,141 @@ font = ExtResource("2_vetm2")
 font_size = 68
 outline_size = 18
 
-[node name="Area3D" type="Area3D" parent="." unique_id=415931515]
+[node name="porteM" type="Area3D" parent="." unique_id=415931515]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5095054, 0)
 collision_mask = 513
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1583672440]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="porteM" unique_id=1583672440]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33589172)
 shape = SubResource("BoxShape3D_5d3sr")
 
-[node name="Area3D2" type="Area3D" parent="." unique_id=1211794849]
+[node name="porteG" type="Area3D" parent="." unique_id=1211794849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5095054, 0)
 collision_mask = 513
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D2" unique_id=1862537781]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="porteG" unique_id=1862537781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33589172)
 shape = SubResource("BoxShape3D_5d3sr")
 
-[node name="Area3D3" type="Area3D" parent="." unique_id=1282940995]
+[node name="porteD" type="Area3D" parent="." unique_id=1282940995]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5095054, 0)
 collision_mask = 513
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" unique_id=1501753589]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="porteD" unique_id=1501753589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.33589172)
 shape = SubResource("BoxShape3D_5d3sr")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=644465971]
+volume_db = 10.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1842286316]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=161677318]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.86268044, 0)
 shape = SubResource("BoxShape3D_4dcb2")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1560505955]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.86268044, 0)
 shape = SubResource("BoxShape3D_4dcb2")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" unique_id=262282278]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.86268044, 0)
 shape = SubResource("BoxShape3D_4dcb2")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" unique_id=466287475]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.75, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.86083984, 0)
 shape = SubResource("BoxShape3D_4dcb2")
+
+[node name="trigger_area" type="Area3D" parent="." unique_id=1917000909]
+collision_mask = 512
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="trigger_area" unique_id=1935466356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+shape = SubResource("BoxShape3D_bfp77")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1825813881]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1029899695]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -304.0
+offset_right = 300.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="CanvasLayer/Control" unique_id=471293796]
+modulate = Color(1, 1, 1, 0.5372549)
+custom_minimum_size = Vector2(650, 150)
+custom_maximum_size = Vector2(-1, 150)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -40.0
+offset_right = 25.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bfp77")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=671350850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="questionlbl" type="Label" parent="CanvasLayer/Control/VBoxContainer" unique_id=319290185]
+unique_name_in_owner = true
+layout_mode = 2
+text = "test"
+label_settings = SubResource("LabelSettings_ahet7")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/VBoxContainer" unique_id=341465630]
+layout_mode = 2
+
+[node name="mot1" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=1095675868]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "test"
+label_settings = SubResource("LabelSettings_bfp77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mot2" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=429696968]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "test"
+label_settings = SubResource("LabelSettings_bfp77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mot3" type="Label" parent="CanvasLayer/Control/VBoxContainer/HBoxContainer" unique_id=368887]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+text = "test"
+label_settings = SubResource("LabelSettings_bfp77")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioQuestion" type="AudioStreamPlayer" parent="." unique_id=970141821]
+unique_name_in_owner = true
+max_polyphony = 4
+bus = &"Dialogues"
