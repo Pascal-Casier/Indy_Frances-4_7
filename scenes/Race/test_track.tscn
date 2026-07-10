@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://do2umbbjacqx0" path="res://scenes/Race/plastic_barrier.tscn" id="6_xdc8b"]
 [ext_resource type="PackedScene" uid="uid://dq2mhfbqphvp7" path="res://scenes/Race/race_health.tscn" id="8_xw7b6"]
 [ext_resource type="PackedScene" uid="uid://bdrodvvqwxb02" path="res://scenes/Race/race_arch.tscn" id="9_wo7rs"]
+[ext_resource type="PackedScene" uid="uid://bm0ltprrg8pug" path="res://scenes/Race/turbo_area.tscn" id="10_f7b3g"]
 [ext_resource type="AudioStream" uid="uid://blop3pmdjngrq" path="res://assets/sounds/quizz/chat.mp3" id="11_aj8vt"]
 [ext_resource type="PackedScene" uid="uid://bwevkkb1q37rq" path="res://scenes/Race/start_line.tscn" id="11_kw353"]
 [ext_resource type="PackedScene" uid="uid://bw3hyr8r4odfd" path="res://scenes/Race/wheels_stack.tscn" id="13_uulc5"]
@@ -170,6 +171,11 @@ transform = Transform3D(1.9076765, 0, 0.60064125, 0, 2, 0, -0.60064125, 0, 1.907
 
 [node name="PlasticBarrier19" parent="pieges" unique_id=452209329 instance=ExtResource("6_xdc8b")]
 transform = Transform3D(1.6806257, 0, -1.0842032, 0, 2, 0, 1.0842032, 0, 1.6806257, 18.740671, -0.4197998, 76.088905)
+
+[node name="TurboArea" parent="pieges" unique_id=1204689488 instance=ExtResource("10_f7b3g")]
+transform = Transform3D(-2.1213202, 0, -2.1213202, 0, 3, 0, 2.1213202, 0, -2.1213202, -39, -0.1, -27)
+boost_force = 12.0
+boost_duration = 1.0
 
 [node name="Race_health" parent="." unique_id=1908438673 instance=ExtResource("8_xw7b6")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -57.160255, 0.3951416, -13.760907)

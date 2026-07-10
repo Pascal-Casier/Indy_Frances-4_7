@@ -59,7 +59,7 @@ var sword_visible : bool = true
 
 ######## fall Damage mechanic ################
 var old_vel : float = 0.0
-@export var fall_damage_thresold = 20
+@export var fall_damage_thresold := 20
 var hurt_tween : Tween
 ##############################################
 
@@ -77,14 +77,14 @@ var jump_buffer_timer: Timer
 var push_force := 25.0
 var push_factor := 0.0
 
-var picked_object
+var picked_object : RigidBody3D = null
 var pull_power := 5
 
-@onready var shoot_timer = $Shoot_Timer
+@onready var shoot_timer : Timer = $Shoot_Timer
 var can_shoot := true
-@onready var muzzle = %muzzle
+@onready var muzzle :RayCast3D = %muzzle
 var bullet = preload("res://scenes/mechanics/bullet_lighning.tscn")
-var instance
+var instance : Node3D
 var is_attacking := false
 var tuto_visible := false
 
