@@ -459,4 +459,3 @@ func intersect_frustum_all(frustum:Array[Plane])->Array[CyclopsBlock]:
 			result.append(block)
 	
 	return result
-

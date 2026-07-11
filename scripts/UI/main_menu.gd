@@ -15,8 +15,8 @@ class_name MainMenu
 @onready var saving_page: Control = $SavingPage
 @onready var confirmation_dialog: Panel = $SavingPage/ConfirmationDialog
 
-@onready var start_level = preload("res://scenes/UI/Narration/narration_ui.tscn") as PackedScene
-
+#@onready var start_level = preload("res://scenes/UI/Narration/narration_ui.tscn") as PackedScene
+@onready var start_level = preload("res://scenes/Race/terrain_test_1.tscn") as PackedScene
 var saving_slot_number := 1
 
 func _ready()-> void:

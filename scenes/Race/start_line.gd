@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var total_time : float
+@export var total_time : float = 100.0
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.get_parent() is Jeep2:

@@ -221,6 +221,8 @@ _data = {
 }
 
 [node name="Finish_line" type="Area3D" unique_id=1651339345]
+collision_mask = 513
+monitorable = false
 script = ExtResource("1_7iqf2")
 next_scene = "res://scenes/levels/main.tscn"
 
