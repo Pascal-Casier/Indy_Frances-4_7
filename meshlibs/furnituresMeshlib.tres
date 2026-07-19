@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=179 format=4 uid="uid://ygi6bjt2t2vx"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://ygi6bjt2t2vx"]
 
 [ext_resource type="Texture2D" uid="uid://d2egwy65yly48" path="res://assets/blender/meublesKaykit/gltf/furniturebits_texture.png" id="1_epmmr"]
 

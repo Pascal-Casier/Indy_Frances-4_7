@@ -1,5 +1,5 @@
 extends Node3D
-class_name Jeep2
+
 
 @onready var ball: RigidBody3D = $Ball
 @onready var model: Node3D = $jeep

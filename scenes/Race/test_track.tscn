@@ -65,7 +65,7 @@ transform = Transform3D(-0.032042697, 0, 0.19741647, 0, 0.2, 0, -0.19741647, 0, 
 next_scene = "res://scenes/UI/main_menu.tscn"
 
 [node name="Jeep" parent="." unique_id=372991098 instance=ExtResource("3_cuhtk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 steering_angle = 25.0
 turn_speed = 5.0
 
@@ -174,7 +174,6 @@ transform = Transform3D(1.6806257, 0, -1.0842032, 0, 2, 0, 1.0842032, 0, 1.68062
 
 [node name="TurboArea" parent="pieges" unique_id=1204689488 instance=ExtResource("10_f7b3g")]
 transform = Transform3D(-2.1213202, 0, -2.1213202, 0, 3, 0, 2.1213202, 0, -2.1213202, -39, -0.1, -27)
-boost_force = 12.0
 boost_duration = 1.0
 
 [node name="Race_health" parent="." unique_id=1908438673 instance=ExtResource("8_xw7b6")]
@@ -254,7 +253,6 @@ transform = Transform3D(0.14771162, 0, 0.9890302, 0, 0.9999997, 0, -0.9890302, 0
 [node name="Start_Line" parent="." unique_id=1347455542 instance=ExtResource("11_kw353")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -4)
 collision_mask = 512
-monitorable = false
 total_time = 60.0
 
 [node name="Decor" type="Node3D" parent="." unique_id=1571382932]

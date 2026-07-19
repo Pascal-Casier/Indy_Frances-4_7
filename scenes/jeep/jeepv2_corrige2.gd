@@ -18,6 +18,9 @@ class_name Jeep2
 @onready var timer_node: Timer = %Timer
 @onready var time_lbl: Label = %TimeLbl
 @onready var audio_brake: AudioStreamPlayer3D = $AudioStreamBrake
+var turbo_bar: ProgressBar                # Jauge de turbo (optionnelle, voir _ready)
+var turbo_ready_sound: AudioStreamPlayer  # Son "prêt" (optionnel)
+var turbo_particles: GPUParticles3D       # Effet de flamme/étincelles au déclenchement (optionnel)
 
 
 var drift_lateral_threshold = 2.0   # vitesse latérale mini pour considérer que ça dérape
@@ -56,6 +59,15 @@ var default_friction: float
 @export var max_pitch: float = 2.2            ## Pitch à pleine vitesse
 @export var throttle_pitch_boost: float = 0.3 ## Réactivité du pitch à l'accélérateur
 
+@export_group("Turbo")
+@export var turbo_fill_rate: float = 0.6      ## Vitesse de remplissage de la jauge (par seconde de drift)
+@export var turbo_decay_rate: float = 0.4     ## Vitesse de vidage de la jauge quand on ne drift pas
+@export var turbo_boost_force: float = 60.0   ## Force additionnelle appliquée pendant le turbo
+@export var turbo_boost_duration: float = 1.2 ## Durée du turbo (secondes)
+@export var turbo_auto_trigger: bool = false  ## true = se déclenche seul à 100%, false = il faut appuyer sur "boost"
+@export var turbo_fov_kick: float = 8.0       ## Degrés de FOV ajoutés pendant le boost (effet "vitesse")
+@export var turbo_shake_strength: float = 0.03 ## Intensité du tremblement caméra pendant le boost
+
 # ============================================================
 # VARIABLES INTERNES (non exportées)
 # ============================================================
@@ -84,6 +96,10 @@ var default_damp: float          # linear_damp de base de la balle, capturé au 
 var mud_zone_count: int = 0      # nombre de zones de boue actives (chevauchement géré)
 var hit_stack: int = 0           # nombre de "dégâts" empilés (heal() les réinitialise tous)
 
+var turbo_gauge: float = 0.0     # 0.0 (vide) à 1.0 (pleine)
+var turbo_ready: bool = false    # true dès que la jauge atteint 1.0
+var was_drifting: bool = false   # état du drift à la frame précédente (pour détecter la fin du drift)
+
 # ============================================================
 # INITIALISATION
 # ============================================================
@@ -101,6 +117,15 @@ func _ready() -> void:
 		ball.physics_material_override = PhysicsMaterial.new()
 	default_friction = ball.physics_material_override.friction
 	default_damp = ball.linear_damp
+
+	# Nœuds optionnels liés au turbo : on vérifie leur existence pour ne pas planter
+	# si tu n'as pas encore créé ces nœuds dans la scène.
+	if has_node("%TurboBar"):
+		turbo_bar = get_node("%TurboBar")
+	if has_node("%TurboReadySound"):
+		turbo_ready_sound = get_node("%TurboReadySound")
+	if has_node("%TurboParticles"):
+		turbo_particles = get_node("%TurboParticles")
 
 func _on_ball_hit(body: Node) -> void:
 	if body.has_method("break_barrel"):
@@ -128,18 +153,37 @@ func _process(delta: float) -> void:
 	wheel_front_left.rotation.y = wheel_left_base_y + turn_input
 	wheel_front_right.rotation.y = wheel_right_base_y + turn_input
 
-	# FOV dynamique : s'élargit à haute vitesse
-	camera_jeep.fov = lerp(camera_jeep.fov, lerp(fov_min, fov_max, speed_ratio), delta * 3.0)
+	# FOV dynamique : s'élargit à haute vitesse, avec un kick supplémentaire pendant le turbo
+	var target_fov = lerp(fov_min, fov_max, speed_ratio)
+	if is_boosted:
+		target_fov += turbo_fov_kick
+	camera_jeep.fov = lerp(camera_jeep.fov, target_fov, delta * 5.0)
 
 	# Camera lag : recule légèrement à l'accélération
 	var throttle_ratio = speed_input / acceleration if acceleration != 0.0 else 0.0
 	var cam_target_z = camera_base_z + lerp(0.0, camera_lag_amount, clamp(throttle_ratio, 0.0, 1.0))
 	camera_jeep.position.z = lerp(camera_jeep.position.z, cam_target_z, delta * 5.0)
 
+	# Shake caméra pendant le boost : léger tremblement aléatoire qui décroît
+	if is_boosted:
+		var shake_ratio = clamp(boost_timer / turbo_boost_duration, 0.0, 1.0)
+		camera_jeep.h_offset = randf_range(-1.0, 1.0) * turbo_shake_strength * shake_ratio
+		camera_jeep.v_offset = randf_range(-1.0, 1.0) * turbo_shake_strength * shake_ratio
+	else:
+		camera_jeep.h_offset = lerp(camera_jeep.h_offset, 0.0, delta * 10.0)
+		camera_jeep.v_offset = lerp(camera_jeep.v_offset, 0.0, delta * 10.0)
+
 	speedlbl.text = "%d km/h" % int(get_speed_kmh())
 
 	# Timer label
 	time_lbl.text = "%.2f" % timer_node.time_left
+
+	# Jauge de turbo : remplissage visuel + couleur quand prête
+	if turbo_bar:
+		turbo_bar.value = turbo_gauge * 100.0
+		var bar_fill := turbo_bar.get("theme_override_styles/fill") as StyleBoxFlat
+		if bar_fill:
+			bar_fill.bg_color = Color.ORANGE if turbo_ready else Color.CYAN
 
 func _physics_process(delta: float) -> void:
 	model.global_position = ball.global_position + sphere_offset
@@ -205,6 +249,29 @@ func _physics_process(delta: float) -> void:
 	var slip_ratio = clamp(abs(lateral_speed) / 10.0, 0.0, 1.0)
 	skid_marks_left.amount_ratio = slip_ratio
 	skid_marks_right.amount_ratio = slip_ratio
+
+	# --- Jauge de turbo (mini-turbo façon Mario Kart) ---
+	# Se remplit tant qu'on drift, se vide sinon (sauf si déjà pleine et en attente du trigger).
+	if is_drifting:
+		turbo_gauge = clamp(turbo_gauge + turbo_fill_rate * delta, 0.0, 1.0)
+	elif not turbo_ready:
+		turbo_gauge = clamp(turbo_gauge - turbo_decay_rate * delta, 0.0, 1.0)
+
+	if turbo_gauge >= 1.0 and not turbo_ready:
+		turbo_ready = true
+		if turbo_ready_sound:
+			turbo_ready_sound.play()
+		if turbo_auto_trigger:
+			trigger_turbo()
+
+	# Déclenchement manuel : soit on appuie sur "boost", soit le drift vient tout juste de se terminer
+	# (transition is_drifting -> false détectée via was_drifting, pas un simple relâchement de la direction)
+	if turbo_ready and not turbo_auto_trigger:
+		var drift_just_ended = was_drifting and not is_drifting
+		var boost_pressed = InputMap.has_action("boost") and Input.is_action_just_pressed("boost")
+		if boost_pressed or drift_just_ended:
+			trigger_turbo()
+	was_drifting = is_drifting
 	
 	# --- Force de propulsion ---
 	var direction = -model.global_transform.basis.z
@@ -256,6 +323,14 @@ func apply_speed_boost(force: float, duration: float) -> void:
 	boost_force_value = force
 	boost_timer = duration
 	is_boosted = true
+
+func trigger_turbo() -> void:
+	apply_speed_boost(turbo_boost_force, turbo_boost_duration)
+	turbo_gauge = 0.0
+	turbo_ready = false
+	if turbo_particles:
+		turbo_particles.restart()
+		turbo_particles.emitting = true
 
 
 func align_with_y(_transform: Transform3D, new_y: Vector3) -> Transform3D:
@@ -313,4 +388,3 @@ func stop() -> void:
 func start_timer(total_time: float) -> void:
 	timer_node.wait_time = total_time
 	timer_node.start()
-	

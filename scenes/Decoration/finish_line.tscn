@@ -279,6 +279,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9250093, -0.2772021)
 shape = SubResource("BoxShape3D_bfp77")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1096710695]
+layer = 2
 visible = false
 
 [node name="Control" type="Control" parent="CanvasLayer" unique_id=2098324575]
