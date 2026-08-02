@@ -2,12 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://j5e6q60bl6en" path="res://assets/images/bgds/skygen-1776551255658.jpg" id="1_kp8cw"]
 [ext_resource type="PackedScene" uid="uid://brc0xb3yqndgp" path="res://assets/blender/road_3.glb" id="1_ov0ea"]
-[ext_resource type="Shader" uid="uid://bnfceyat0i7dg" path="res://shaders/paysage_triangle.gdshader" id="2_osbrf"]
+[ext_resource type="Shader" uid="uid://bmcusndr88g1s" path="res://shaders/terrain2_shader.gdshader" id="3_1gfbc"]
 [ext_resource type="PackedScene" uid="uid://jwjsy8pcu0kj" path="res://scenes/Decoration/finish_line.tscn" id="3_8y02l"]
 [ext_resource type="PackedScene" uid="uid://bwb2qcuxddqt6" path="res://scenes/jeep/jeep.tscn" id="3_cuhtk"]
+[ext_resource type="Texture2D" uid="uid://b8v84ciss7wd4" path="res://assets/images/textures/165.JPG" id="4_66p1y"]
 [ext_resource type="PackedScene" uid="uid://2vq3eftt67xb" path="res://scenes/mechanics/mine.tscn" id="4_osbrf"]
 [ext_resource type="PackedScene" uid="uid://csnv8ct0oca5" path="res://scenes/Race/exploding_barrel_spilled.tscn" id="4_xdc8b"]
+[ext_resource type="Texture2D" uid="uid://ffk3vjy7obu" path="res://assets/images/textures/156.JPG" id="5_siyc3"]
 [ext_resource type="PackedScene" uid="uid://dg6t3ltlufqnv" path="res://scenes/Race/fire_hydrant.tscn" id="5_wu7pc"]
+[ext_resource type="Texture2D" uid="uid://i28h6jkjm6ur" path="res://assets/images/textures/Lava.png" id="6_bqdcu"]
 [ext_resource type="PackedScene" uid="uid://do2umbbjacqx0" path="res://scenes/Race/plastic_barrier.tscn" id="6_xdc8b"]
 [ext_resource type="PackedScene" uid="uid://dq2mhfbqphvp7" path="res://scenes/Race/race_health.tscn" id="8_xw7b6"]
 [ext_resource type="PackedScene" uid="uid://bdrodvvqwxb02" path="res://scenes/Race/race_arch.tscn" id="9_wo7rs"]
@@ -31,15 +34,15 @@ glow_enabled = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo7rs"]
 render_priority = 0
-shader = ExtResource("2_osbrf")
-shader_parameter/min_height = 0.0
-shader_parameter/max_height = 20.0
-shader_parameter/grass_color = Color(0.02117411, 0.23567706, 0.065693595, 1)
-shader_parameter/rock_color = Color(0.5690104, 0.37756324, 0.0689036, 1)
-shader_parameter/snow_color = Color(0.94401044, 0.68401, 0.36014983, 1)
-shader_parameter/snow_start = 0.15
-shader_parameter/blend_smooth = 0.5
-shader_parameter/slope_threshold = 0.6
+shader = ExtResource("3_1gfbc")
+shader_parameter/ground_texture = ExtResource("5_siyc3")
+shader_parameter/cliff_texture = ExtResource("4_66p1y")
+shader_parameter/top_texture = ExtResource("6_bqdcu")
+shader_parameter/top_min_height = 10.0
+shader_parameter/top_height_blend = 0.0
+shader_parameter/slope_threshold = 0.4610000218975
+shader_parameter/slope_blend = 0.0730000034675
+shader_parameter/texture_scale = 0.12
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5d3sr"]
 

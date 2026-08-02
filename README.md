@@ -30,3 +30,4 @@ n'est pas visible. !!!
 - faire des plateformes en forme de roue style tintin.
 - faire des puzzle avec le rolling mechanisme pour les sons.
 - demander de traduire un texte et choisir entre deux propositions. et montrer les erreurs dans la mauvaise traduction avec du bbcode
+- faire des escaliers pivotant

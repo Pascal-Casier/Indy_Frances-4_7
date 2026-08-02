@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://d20rravjekf6n" path="res://scenes/characters/spider_small.tscn" id="38_tm2t7"]
 [ext_resource type="MeshLibrary" uid="uid://bxoa8vowqc8d3" path="res://meshlibs/StonesWallsMeshlib3.tres" id="39_0wu1t"]
 [ext_resource type="MeshLibrary" uid="uid://60rw1jnp5mkr" path="res://meshlibs/dungeonTiles.tres" id="39_n4kpn"]
+[ext_resource type="MeshLibrary" uid="uid://6pgodeoc3yu3" path="res://meshlibs/rocks2Meshlib.tres" id="41_ikp30"]
 [ext_resource type="PackedScene" uid="uid://dqxn3087kmua0" path="res://scenes/Decoration/dungeon_door_breakable.tscn" id="41_rgobo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_up6jb"]
@@ -409,6 +410,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.00353, -1, -27.332159)
 
 [node name="dungeonDoorBreakable4" parent="." unique_id=2055844873 instance=ExtResource("41_rgobo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.003532, -1, -27.34238)
+
+[node name="GridMapRocks" type="GridMap" parent="." unique_id=703098383]
+mesh_library = ExtResource("41_ikp30")
+cell_scale = 10.0
+data = {
+"cells": PackedInt32Array(-65534, 65525, 2, -65536, 65524, 14, -1, 65522, 5, -3, 65521, 1441797, -4, 65520, 1441803, -5, 65520, 655371, -6, 65520, 655369)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [editable path="Phrases_puzzle"]
 [editable path="Phrases_puzzle2"]

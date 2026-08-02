@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=23 format=4 uid="uid://dqmju07wytn4v"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://dqmju07wytn4v"]
 
 [ext_resource type="Texture2D" uid="uid://cjmbvs3oodsmw" path="res://assets/blender/RocksTiles_Palette.png" id="1_a0170"]
 
