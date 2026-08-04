@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://crrujje4tn6hl"]
+[gd_scene format=4 uid="uid://crrujje4tn6hl"]
 
 [ext_resource type="Texture2D" uid="uid://3dsc7qnwa0aa" path="res://assets/dungeonKaykit/floor_wood_large_dungeon_texture.png" id="1_2wgdq"]
 [ext_resource type="Script" uid="uid://co4mfy1cglbee" path="res://scripts/mechanics/platform_moving.gd" id="1_nnxap"]
@@ -43,14 +43,14 @@ shadow_mesh = SubResource("ArrayMesh_dda7w")
 [sub_resource type="BoxShape3D" id="BoxShape3D_pl0tk"]
 size = Vector3(4, 0.149933, 3.97974)
 
-[node name="Platform_moving" type="AnimatableBody3D"]
+[node name="Platform_moving" type="AnimatableBody3D" unique_id=132412685]
 script = ExtResource("1_nnxap")
 
-[node name="floor_wood_large" type="MeshInstance3D" parent="."]
+[node name="floor_wood_large" type="MeshInstance3D" parent="." unique_id=898631009]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00591278, -0.0255585, -0.00012207)
 mesh = SubResource("ArrayMesh_u6tdc")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=646561092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00591278, -0.0255585, -0.00012207)
 shape = SubResource("BoxShape3D_pl0tk")

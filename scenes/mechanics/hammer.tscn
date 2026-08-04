@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bvn8xkardoo81"]
+[gd_scene format=4 uid="uid://bvn8xkardoo81"]
 
 [ext_resource type="Texture2D" uid="uid://3ir34kyeaf5n" path="res://assets/blender/Hammer_Palette.png" id="1_47obu"]
 [ext_resource type="Script" uid="uid://5sj2rqqi1bva" path="res://scripts/mechanics/hammer.gd" id="1_dq4lx"]
@@ -93,8 +93,10 @@ shadow_mesh = SubResource("ArrayMesh_rubyv")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_awuec"]
 data = PackedVector3Array(0.8914, -0.9182, 1, 0.7086, 0.9182, 1, 0.8914, 0.9182, 1, 0.8914, -0.9182, 1, 0.7086, -0.9182, 1, 0.7086, 0.9182, 1, 0.9732, -0.9182, -0.9182, 0.9732, 0.9182, 0.9182, 0.9732, 0.9182, -0.9182, 0.9732, -0.9182, -0.9182, 0.9732, -0.9182, 0.9182, 0.9732, 0.9182, 0.9182, -0.8914, -1, -0.9182, -0.7086, -1, 0.9182, -0.7086, -1, -0.9182, -0.8914, -1, -0.9182, -0.8914, -1, 0.9182, -0.7086, -1, 0.9182, 0.8914, 1, -0.9182, 0.7086, 1, 0.9182, 0.7086, 1, -0.9182, 0.8914, 1, -0.9182, 0.8914, 1, 0.9182, 0.7086, 1, 0.9182, 0.6268, -0.9182, 0.9182, 0.6268, 0.9182, -0.9182, 0.6268, 0.9182, 0.9182, 0.6268, -0.9182, 0.9182, 0.6268, -0.9182, -0.9182, 0.6268, 0.9182, -0.9182, 0.7086, -0.9182, -1, 0.8914, 0.9182, -1, 0.7086, 0.9182, -1, 0.7086, -0.9182, -1, 0.8914, -0.9182, -1, 0.8914, 0.9182, -1, -0.7086, -0.9182, 1, -0.8914, 0.9182, 1, -0.7086, 0.9182, 1, -0.7086, -0.9182, 1, -0.8914, -0.9182, 1, -0.8914, 0.9182, 1, -0.6268, -0.9182, -0.9182, -0.6268, 0.9182, 0.9182, -0.6268, 0.9182, -0.9182, -0.6268, -0.9182, -0.9182, -0.6268, -0.9182, 0.9182, -0.6268, 0.9182, 0.9182, -0.7086, 1, -0.9182, -0.8914, 1, 0.9182, -0.8914, 1, -0.9182, -0.7086, 1, -0.9182, -0.7086, 1, 0.9182, -0.8914, 1, 0.9182, -0.9732, -0.9182, 0.9182, -0.9732, 0.9182, -0.9182, -0.9732, 0.9182, 0.9182, -0.9732, -0.9182, 0.9182, -0.9732, -0.9182, -0.9182, -0.9732, 0.9182, -0.9182, -0.8914, -0.9182, -1, -0.7086, 0.9182, -1, -0.8914, 0.9182, -1, -0.8914, -0.9182, -1, -0.7086, -0.9182, -1, -0.7086, 0.9182, -1, 0.7086, -1, 0.9182, 0.6268, -0.9182, 0.9182, 0.7086, -0.9182, 1, 0.7086, 0.9182, 1, 0.6268, 0.9182, 0.9182, 0.7086, 1, 0.9182, 0.7086, -1, -0.9182, 0.7086, -0.9182, -1, 0.6268, -0.9182, -0.9182, 0.7086, 1, -0.9182, 0.6268, 0.9182, -0.9182, 0.7086, 0.9182, -1, 0.8914, -1, 0.9182, 0.8914, -0.9182, 1, 0.9732, -0.9182, 0.9182, 0.8914, 1, 0.9182, 0.9732, 0.9182, 0.9182, 0.8914, 0.9182, 1, 0.8914, -1, -0.9182, 0.9732, -0.9182, -0.9182, 0.8914, -0.9182, -1, 0.8914, 1, -0.9182, 0.8914, 0.9182, -1, 0.9732, 0.9182, -0.9182, -0.8914, -1, 0.9182, -0.9732, -0.9182, 0.9182, -0.8914, -0.9182, 1, -0.8914, 0.9182, 1, -0.9732, 0.9182, 0.9182, -0.8914, 1, 0.9182, -0.8914, -1, -0.9182, -0.8914, -0.9182, -1, -0.9732, -0.9182, -0.9182, -0.8914, 1, -0.9182, -0.9732, 0.9182, -0.9182, -0.8914, 0.9182, -1, -0.7086, -1, 0.9182, -0.7086, -0.9182, 1, -0.6268, -0.9182, 0.9182, -0.7086, 1, 0.9182, -0.6268, 0.9182, 0.9182, -0.7086, 0.9182, 1, -0.7086, -1, -0.9182, -0.6268, -0.9182, -0.9182, -0.7086, -0.9182, -1, -0.7086, 1, -0.9182, -0.7086, 0.9182, -1, -0.6268, 0.9182, -0.9182, 0.7086, -1, -0.9182, 0.6268, -0.9182, 0.9182, 0.7086, -1, 0.9182, 0.7086, -1, -0.9182, 0.6268, -0.9182, -0.9182, 0.6268, -0.9182, 0.9182, 0.7086, -0.9182, 1, 0.6268, 0.9182, 0.9182, 0.7086, 0.9182, 1, 0.7086, -0.9182, 1, 0.6268, -0.9182, 0.9182, 0.6268, 0.9182, 0.9182, 0.7086, 1, 0.9182, 0.6268, 0.9182, -0.9182, 0.7086, 1, -0.9182, 0.7086, 1, 0.9182, 0.6268, 0.9182, 0.9182, 0.6268, 0.9182, -0.9182, 0.7086, 0.9182, -1, 0.6268, -0.9182, -0.9182, 0.7086, -0.9182, -1, 0.7086, 0.9182, -1, 0.6268, 0.9182, -0.9182, 0.6268, -0.9182, -0.9182, 0.8914, -1, -0.9182, 0.7086, -0.9182, -1, 0.7086, -1, -0.9182, 0.8914, -1, -0.9182, 0.8914, -0.9182, -1, 0.7086, -0.9182, -1, 0.7086, 1, -0.9182, 0.8914, 0.9182, -1, 0.8914, 1, -0.9182, 0.7086, 1, -0.9182, 0.7086, 0.9182, -1, 0.8914, 0.9182, -1, 0.9732, 0.9182, -0.9182, 0.8914, -0.9182, -1, 0.9732, -0.9182, -0.9182, 0.9732, 0.9182, -0.9182, 0.8914, 0.9182, -1, 0.8914, -0.9182, -1, 0.8914, -1, 0.9182, 0.9732, -0.9182, -0.9182, 0.8914, -1, -0.9182, 0.8914, -1, 0.9182, 0.9732, -0.9182, 0.9182, 0.9732, -0.9182, -0.9182, 0.8914, 1, -0.9182, 0.9732, 0.9182, 0.9182, 0.8914, 1, 0.9182, 0.8914, 1, -0.9182, 0.9732, 0.9182, -0.9182, 0.9732, 0.9182, 0.9182, 0.8914, 0.9182, 1, 0.9732, -0.9182, 0.9182, 0.8914, -0.9182, 1, 0.8914, 0.9182, 1, 0.9732, 0.9182, 0.9182, 0.9732, -0.9182, 0.9182, 0.7086, -1, 0.9182, 0.8914, -0.9182, 1, 0.8914, -1, 0.9182, 0.7086, -1, 0.9182, 0.7086, -0.9182, 1, 0.8914, -0.9182, 1, 0.8914, 1, 0.9182, 0.7086, 0.9182, 1, 0.7086, 1, 0.9182, 0.8914, 1, 0.9182, 0.8914, 0.9182, 1, 0.7086, 0.9182, 1, -0.8914, -1, -0.9182, -0.9732, -0.9182, 0.9182, -0.8914, -1, 0.9182, -0.8914, -1, -0.9182, -0.9732, -0.9182, -0.9182, -0.9732, -0.9182, 0.9182, -0.8914, -0.9182, 1, -0.9732, 0.9182, 0.9182, -0.8914, 0.9182, 1, -0.8914, -0.9182, 1, -0.9732, -0.9182, 0.9182, -0.9732, 0.9182, 0.9182, -0.8914, 1, 0.9182, -0.9732, 0.9182, -0.9182, -0.8914, 1, -0.9182, -0.8914, 1, 0.9182, -0.9732, 0.9182, 0.9182, -0.9732, 0.9182, -0.9182, -0.8914, 0.9182, -1, -0.9732, -0.9182, -0.9182, -0.8914, -0.9182, -1, -0.8914, 0.9182, -1, -0.9732, 0.9182, -0.9182, -0.9732, -0.9182, -0.9182, -0.7086, -1, -0.9182, -0.8914, -0.9182, -1, -0.8914, -1, -0.9182, -0.7086, -1, -0.9182, -0.7086, -0.9182, -1, -0.8914, -0.9182, -1, -0.8914, 1, -0.9182, -0.7086, 0.9182, -1, -0.7086, 1, -0.9182, -0.8914, 1, -0.9182, -0.8914, 0.9182, -1, -0.7086, 0.9182, -1, -0.6268, 0.9182, -0.9182, -0.7086, -0.9182, -1, -0.6268, -0.9182, -0.9182, -0.6268, 0.9182, -0.9182, -0.7086, 0.9182, -1, -0.7086, -0.9182, -1, -0.7086, -1, 0.9182, -0.6268, -0.9182, -0.9182, -0.7086, -1, -0.9182, -0.7086, -1, 0.9182, -0.6268, -0.9182, 0.9182, -0.6268, -0.9182, -0.9182, -0.7086, 1, -0.9182, -0.6268, 0.9182, 0.9182, -0.7086, 1, 0.9182, -0.7086, 1, -0.9182, -0.6268, 0.9182, -0.9182, -0.6268, 0.9182, 0.9182, -0.7086, 0.9182, 1, -0.6268, -0.9182, 0.9182, -0.7086, -0.9182, 1, -0.7086, 0.9182, 1, -0.6268, 0.9182, 0.9182, -0.6268, -0.9182, 0.9182, -0.8914, -1, 0.9182, -0.7086, -0.9182, 1, -0.7086, -1, 0.9182, -0.8914, -1, 0.9182, -0.8914, -0.9182, 1, -0.7086, -0.9182, 1, -0.7086, 1, 0.9182, -0.8914, 0.9182, 1, -0.8914, 1, 0.9182, -0.7086, 1, 0.9182, -0.7086, 0.9182, 1, -0.8914, 0.9182, 1, 0.7086, -1, -0.9182, 0.8914, -1, 0.9182, 0.8914, -1, -0.9182, 0.7086, -1, -0.9182, 0.7086, -1, 0.9182, 0.8914, -1, 0.9182)
 
-[sub_resource type="Animation" id="Animation_acemh"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_xuxkq"]
+resource_name = "hammer_down"
+length = 4.0
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -102,22 +104,63 @@ tracks/0/path = NodePath("Area3D:monitoring")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.05, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [false, true, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338:rotation")
+tracks/1/path = NodePath("GPUParticles3D:emitting")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_gflpg")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"sparking"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.00627413, 0.0439189, 1.01013, 2.69787),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(1.34762, 0, 0)]
+"values": [Vector3(0.331613, 0, 0), Vector3(0.209143, 0, 0), Vector3(1.35452, 0, 0), Vector3(1.35226, 0, 0), Vector3(0.343104, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_7x8sy"]
@@ -193,7 +236,7 @@ tracks/4/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qrwqi"]
 _data = {
-&"RESET": SubResource("Animation_acemh"),
+&"hammer_down": SubResource("Animation_xuxkq"),
 &"strike": SubResource("Animation_7x8sy")
 }
 
@@ -336,50 +379,48 @@ color = Color(0, 0, 0, 1)
 
 [sub_resource type="QuadMesh" id="QuadMesh_0wkq1"]
 
-[node name="Hammer" type="Node3D"]
+[node name="Hammer" type="Node3D" unique_id=1373273250]
 script = ExtResource("1_dq4lx")
 
-[node name="hammer+3d+model" type="Node3D" parent="."]
+[node name="hammer+3d+model" type="Node3D" parent="." unique_id=448403036]
 transform = Transform3D(2.91232, 0, 0, 0, 0.644575, -2.84009, 0, 2.84009, 0.644575, 0, 0.973228, 0)
 
-[node name="Hammer" type="Node3D" parent="."]
+[node name="Hammer" type="Node3D" parent="." unique_id=867212307]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.963208, 0)
 
-[node name="tripo_node_bfd936c8-10db-4059-a80d-c22df014d338" type="MeshInstance3D" parent="Hammer"]
-transform = Transform3D(2.91232, 0, 0, 0, 0.644578, -2.84009, 0, 2.84009, 0.644578, 0, 0.0100202, 0)
+[node name="tripo_node_bfd936c8-10db-4059-a80d-c22df014d338" type="MeshInstance3D" parent="Hammer" unique_id=264786036]
+transform = Transform3D(2.91232, 0, 0, 0, 2.7536497, -0.94815904, 0, 0.94815904, 2.7536497, 0, 0.0100202, 0)
 mesh = SubResource("ArrayMesh_482fr")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338" unique_id=922990523]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer/tripo_node_bfd936c8-10db-4059-a80d-c22df014d338/StaticBody3D" unique_id=542449947]
 shape = SubResource("ConvexPolygonShape3D_s3gil")
 
-[node name="base" type="MeshInstance3D" parent="Hammer"]
+[node name="base" type="MeshInstance3D" parent="Hammer" unique_id=1418772480]
 mesh = SubResource("ArrayMesh_b5cgh")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Hammer/base"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Hammer/base" unique_id=1144837096]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer/base/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hammer/base/StaticBody3D" unique_id=1303484995]
 shape = SubResource("ConcavePolygonShape3D_awuec")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qrwqi")
-}
-autoplay = "strike"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2076717053]
+libraries/ = SubResource("AnimationLibrary_qrwqi")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=9930814]
 collision_layer = 0
 collision_mask = 2
+monitoring = false
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1741243093]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0200653, 0.524173, 6.15397)
 shape = SubResource("BoxShape3D_pk5xk")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=551874324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.04816)
 material_override = SubResource("StandardMaterial3D_lbi57")
 emitting = false
@@ -390,15 +431,15 @@ explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_ojsbc")
 draw_pass_1 = SubResource("QuadMesh_v34wo")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=562718594]
 max_distance = 120.0
 max_polyphony = 5
 bus = &"Sfx"
 
-[node name="explosion" type="Node3D" parent="."]
+[node name="explosion" type="Node3D" parent="." unique_id=1073461550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.03422)
 
-[node name="sparks" type="GPUParticles3D" parent="explosion"]
+[node name="sparks" type="GPUParticles3D" parent="explosion" unique_id=1121448973]
 unique_name_in_owner = true
 material_override = SubResource("StandardMaterial3D_ddakk")
 emitting = false
@@ -410,7 +451,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_np2rl")
 draw_pass_1 = SubResource("QuadMesh_f5yxm")
 
-[node name="flash" type="GPUParticles3D" parent="explosion"]
+[node name="flash" type="GPUParticles3D" parent="explosion" unique_id=340624840]
 unique_name_in_owner = true
 material_override = ExtResource("6_4boht")
 emitting = false
@@ -422,7 +463,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_a1aph")
 draw_pass_1 = SubResource("QuadMesh_ehtut")
 
-[node name="fire" type="GPUParticles3D" parent="explosion"]
+[node name="fire" type="GPUParticles3D" parent="explosion" unique_id=841323718]
 unique_name_in_owner = true
 material_override = ExtResource("6_4boht")
 emitting = false
@@ -434,7 +475,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_c0qcr")
 draw_pass_1 = SubResource("QuadMesh_jm7ev")
 
-[node name="smoke" type="GPUParticles3D" parent="explosion"]
+[node name="smoke" type="GPUParticles3D" parent="explosion" unique_id=1947160862]
 unique_name_in_owner = true
 material_override = ExtResource("6_4boht")
 emitting = false

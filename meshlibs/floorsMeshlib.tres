@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=218 format=4 uid="uid://rdhq5wj52y0b"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://rdhq5wj52y0b"]
 
 [ext_resource type="Texture2D" uid="uid://bsu7y08ywrf5w" path="res://assets/dungeonKaykit/floor_dirt_large_dungeon_texture.png" id="1_2yai6"]
 [ext_resource type="Texture2D" uid="uid://tavsuabpkdn4" path="res://assets/dungeonKaykit/floor_dirt_large_rocky_dungeon_texture.png" id="2_aqmb4"]

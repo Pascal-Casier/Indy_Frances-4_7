@@ -41,6 +41,7 @@
 [ext_resource type="MeshLibrary" uid="uid://60rw1jnp5mkr" path="res://meshlibs/dungeonTiles.tres" id="39_n4kpn"]
 [ext_resource type="MeshLibrary" uid="uid://6pgodeoc3yu3" path="res://meshlibs/rocks2Meshlib.tres" id="41_ikp30"]
 [ext_resource type="PackedScene" uid="uid://dqxn3087kmua0" path="res://scenes/Decoration/dungeon_door_breakable.tscn" id="41_rgobo"]
+[ext_resource type="PackedScene" uid="uid://ba6f37inxgxrh" path="res://scenes/mechanics/moving_stair.tscn" id="42_ikp30"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_up6jb"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -223,6 +224,11 @@ door_nbr = 4
 [node name="Lever" parent="door_gate2" unique_id=1625791246 instance=ExtResource("16_2rvau")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, 2)
 door_nbr = 4
+
+[node name="Lever2" parent="door_gate2" unique_id=1603977035 instance=ExtResource("16_2rvau")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34, 0, 27.999998)
+door_nbr = 22
+turn_off = false
 
 [node name="blade" parent="." unique_id=999943217 instance=ExtResource("17_lbun3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 22)
@@ -418,6 +424,11 @@ data = {
 "cells": PackedInt32Array(-65534, 65525, 2, -65536, 65524, 14, -1, 65522, 5, -3, 65521, 1441797, -4, 65520, 1441803, -5, 65520, 655371, -6, 65520, 655369)
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="MovingStair" parent="." unique_id=265266022 instance=ExtResource("42_ikp30")]
+transform = Transform3D(-8.742278e-08, 0, 2, 0, 2, 0, -2, 0, -8.742278e-08, 12, -0.9, -47)
+door_nbr = 22
+rotation_direction = 1
 
 [editable path="Phrases_puzzle"]
 [editable path="Phrases_puzzle2"]

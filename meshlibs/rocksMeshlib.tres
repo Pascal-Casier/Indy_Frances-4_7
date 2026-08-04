@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=15 format=4 uid="uid://cco1ye2tbowc3"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://cco1ye2tbowc3"]
 
 [ext_resource type="Texture2D" uid="uid://dtfjrlbkkspm7" path="res://assets/dungeonKaykit/rubble_half_dungeon_texture.png" id="1_uhtpe"]
 [ext_resource type="Texture2D" uid="uid://dbai2b0yk4ltq" path="res://assets/dungeonKaykit/rubble_large_dungeon_texture.png" id="2_txof4"]
