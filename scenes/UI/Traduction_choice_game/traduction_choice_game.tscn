@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dilpmp0uuih4c"]
+[gd_scene format=3 uid="uid://dilpmp0uuih4c"]
 
 [ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="1_cwxwn"]
 [ext_resource type="Script" uid="uid://1t2sc2divup2" path="res://scripts/UI/Traduction_choice_game/traduction_choice_game.gd" id="2_uobax"]
@@ -38,7 +38,7 @@ metadata/_custom_type_script = "uid://bdwxemgisnxtt"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wbce"]
 
-[node name="Traduction_choice_game" type="Control"]
+[node name="Traduction_choice_game" type="Control" unique_id=223748382]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +49,7 @@ theme = ExtResource("1_cwxwn")
 script = ExtResource("2_uobax")
 quiz_data = SubResource("Resource_aan8a")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=291879936]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,7 +59,7 @@ grow_vertical = 2
 texture = ExtResource("5_1x7cr")
 expand_mode = 2
 
-[node name="Title" type="Label" parent="TextureRect"]
+[node name="Title" type="Label" parent="TextureRect" unique_id=1880781059]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 41
 text = "Choisis la traduction correcte :"
 horizontal_alignment = 1
 
-[node name="OriginalPanel" type="Panel" parent="TextureRect"]
+[node name="OriginalPanel" type="Panel" parent="TextureRect" unique_id=1956485394]
 custom_minimum_size = Vector2(650, 180)
 layout_mode = 1
 anchors_preset = 5
@@ -91,7 +91,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6wbce")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/OriginalPanel"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/OriginalPanel" unique_id=1060328612]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,25 +103,25 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="OriginalLabel" type="RichTextLabel" parent="TextureRect/OriginalPanel/MarginContainer"]
+[node name="OriginalLabel" type="RichTextLabel" parent="TextureRect/OriginalPanel/MarginContainer" unique_id=1034097561]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("6_aan8a")
-theme_override_fonts/mono_font = ExtResource("6_aan8a")
-theme_override_fonts/italics_font = ExtResource("6_aan8a")
-theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
 theme_override_fonts/bold_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
 bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
 
-[node name="ProgressLabel" type="Label" parent="TextureRect"]
+[node name="ProgressLabel" type="Label" parent="TextureRect" unique_id=158207027]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
@@ -140,7 +140,7 @@ theme_override_font_sizes/font_size = 41
 text = "1/5"
 horizontal_alignment = 1
 
-[node name="AnswerContainer" type="HBoxContainer" parent="TextureRect"]
+[node name="AnswerContainer" type="HBoxContainer" parent="TextureRect" unique_id=1331475293]
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -154,13 +154,13 @@ grow_horizontal = 2
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="AnswerA" type="Button" parent="TextureRect/AnswerContainer"]
+[node name="AnswerA" type="Button" parent="TextureRect/AnswerContainer" unique_id=1100852065]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 135)
 layout_mode = 2
 theme = ExtResource("6_kpf2y")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerA"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerA" unique_id=946068]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,32 +173,32 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 15
 
-[node name="AnswerALabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerA/MarginContainer"]
+[node name="AnswerALabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerA/MarginContainer" unique_id=1580051724]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("6_aan8a")
-theme_override_fonts/mono_font = ExtResource("6_aan8a")
-theme_override_fonts/italics_font = ExtResource("6_aan8a")
-theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
 theme_override_fonts/bold_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
 bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
 
-[node name="AnswerB" type="Button" parent="TextureRect/AnswerContainer"]
+[node name="AnswerB" type="Button" parent="TextureRect/AnswerContainer" unique_id=1283816181]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 135)
 layout_mode = 2
 theme = ExtResource("6_kpf2y")
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerB"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/AnswerContainer/AnswerB" unique_id=858466722]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -211,26 +211,26 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 15
 
-[node name="AnswerBLabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerB/MarginContainer"]
+[node name="AnswerBLabel" type="RichTextLabel" parent="TextureRect/AnswerContainer/AnswerB/MarginContainer" unique_id=1572962159]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 theme_override_colors/default_color = Color(0.434896, 0.234666, 0.0215183, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_y = 1
-theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_outline_size = 1
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("6_aan8a")
-theme_override_fonts/mono_font = ExtResource("6_aan8a")
-theme_override_fonts/italics_font = ExtResource("6_aan8a")
-theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
 theme_override_fonts/bold_font = ExtResource("6_aan8a")
+theme_override_fonts/bold_italics_font = ExtResource("6_aan8a")
+theme_override_fonts/italics_font = ExtResource("6_aan8a")
+theme_override_fonts/mono_font = ExtResource("6_aan8a")
 bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
 
-[node name="FeedbackLabel" type="Label" parent="TextureRect"]
+[node name="FeedbackLabel" type="Label" parent="TextureRect" unique_id=1612577640]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -250,7 +250,7 @@ theme_override_constants/shadow_outline_size = 3
 theme_override_font_sizes/font_size = 41
 horizontal_alignment = 1
 
-[node name="ButtonExit" type="Button" parent="TextureRect"]
+[node name="ButtonExit" type="Button" parent="TextureRect" unique_id=984464795]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -258,13 +258,13 @@ anchor_right = 1.0
 offset_left = -16.0
 offset_bottom = 40.0
 grow_horizontal = 0
-theme_override_colors/icon_hover_color = Color(0.882812, 0.0620728, 0.0620728, 1)
-theme_override_colors/icon_focus_color = Color(0.976562, 0.0991821, 0.0991821, 1)
 theme_override_colors/icon_normal_color = Color(0.481771, 0.0213284, 0.0213284, 1)
+theme_override_colors/icon_focus_color = Color(0.976562, 0.0991821, 0.0991821, 1)
+theme_override_colors/icon_hover_color = Color(0.882812, 0.0620728, 0.0620728, 1)
 disabled = true
 icon = ExtResource("6_5yjcv")
 
-[node name="IDPicture" type="TextureRect" parent="TextureRect"]
+[node name="IDPicture" type="TextureRect" parent="TextureRect" unique_id=801347840]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 168)
 layout_mode = 1
@@ -276,11 +276,11 @@ texture = ExtResource("7_kpf2y")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1683890698]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=262387880]
 
-[node name="AudioStreamPlayerCorrect" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerCorrect" type="AudioStreamPlayer" parent="." unique_id=649822840]
 
 [connection signal="pressed" from="TextureRect/AnswerContainer/AnswerA" to="." method="_on_answer_a_pressed"]
 [connection signal="pressed" from="TextureRect/AnswerContainer/AnswerB" to="." method="_on_answer_b_pressed"]

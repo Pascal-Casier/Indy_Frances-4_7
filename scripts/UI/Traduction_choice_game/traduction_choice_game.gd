@@ -17,6 +17,8 @@ signal game_over
 @onready var audio_stream_player_correct: AudioStreamPlayer = $AudioStreamPlayerCorrect
 const CORRECT_SOUND = preload("res://assets/sounds/sfx/correct_sound.mp3")
 const INCORRECT_SOUND = preload("res://assets/sounds/sfx/incorrect_sound.mp3")
+const METAL_CLICK = preload("res://assets/sounds/sfx/confirm.ogg")
+
 # ── Export ────────────────────────────────────────────────────────────────────
 @export var quiz_data: QuizData  ## Glissez votre ressource QuizData ici
 
@@ -155,6 +157,8 @@ func _show_end_screen() -> void:
 		feedback_label.text   = "✔ Bravo ! %d / %d (%.0f%%)" % [_correct_count, total, score_pct * 100]
 		feedback_label.modulate = COLOR_CORRECT
 		$TextureRect/ButtonExit.disabled = false
+		audio_player.stream = METAL_CLICK
+		audio_player.play()
 	else:
 		original_label.text     = "[center][b]Quiz terminé ![/b][/center]"
 		feedback_label.modulate = COLOR_WRONG

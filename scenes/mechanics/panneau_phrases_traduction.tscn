@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://de1mso7rec550"]
+[gd_scene format=4 uid="uid://de1mso7rec550"]
 
 [ext_resource type="Texture2D" uid="uid://cgyi7yhvcboc8" path="res://assets/blender/wooden+sign+3d+model_woodensign3dmodel_basecolor.jpg" id="1_6tny2"]
 [ext_resource type="Script" uid="uid://ygvmhclxsda2" path="res://scripts/mechanics/panneau_phrases_traduction.gd" id="1_oq5su"]
 [ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="2_8uplu"]
+[ext_resource type="Texture2D" uid="uid://dwuvobr4bhbib" path="res://assets/images/ui/paperUI/scrolls/paper.png" id="3_8kb86"]
 [ext_resource type="PackedScene" uid="uid://dilpmp0uuih4c" path="res://scenes/UI/Traduction_choice_game/traduction_choice_game.tscn" id="4_8kb86"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlf8g"]
@@ -53,31 +54,35 @@ size = Vector3(0.223511, 0.10498, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ojt3"]
 size = Vector3(2.64258, 2.02686, 1.36475)
 
-[node name="Panneau_phrases_traduction" type="Node3D"]
+[node name="Panneau_phrases_traduction" type="Node3D" unique_id=331115710]
 script = ExtResource("1_oq5su")
 
-[node name="wooden+sign+3d+model" type="Node3D" parent="."]
+[node name="wooden+sign+3d+model" type="Node3D" parent="." unique_id=171161510]
 transform = Transform3D(-1.68684e-07, 0, -3.85903, 0, 3.85903, 0, 3.85903, 0, -1.68684e-07, 0, 0, 0)
 
-[node name="tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" type="MeshInstance3D" parent="wooden+sign+3d+model"]
+[node name="tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" type="MeshInstance3D" parent="wooden+sign+3d+model" unique_id=68276188]
 mesh = SubResource("ArrayMesh_oq5su")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab"]
+[node name="StaticBody3D" type="StaticBody3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" unique_id=1885564604]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=2109687106]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00680542, 0.421234, 0)
 shape = SubResource("BoxShape3D_8kb86")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=722526994]
 transform = Transform3D(0.907345, -0.420387, 0, 0.420387, 0.907345, 0, 0, 0, 1, -0.0829215, 0.731188, 0)
 shape = SubResource("BoxShape3D_vwqoq")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=2134755540]
 transform = Transform3D(0.923163, 0.384408, 0, -0.384408, 0.923163, 0, -5.32907e-14, 0, 1, 0.0504842, 0.747316, 2.22045e-16)
 shape = SubResource("BoxShape3D_vwqoq")
 
-[node name="PressELbl" type="Label3D" parent="wooden+sign+3d+model"]
+[node name="Sprite3D" type="Sprite3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" unique_id=1003853308]
+transform = Transform3D(-1.7484555e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.7484555e-09, 0.055014305, 0.3600177, 2.4047517e-09)
+texture = ExtResource("3_8kb86")
+
+[node name="PressELbl" type="Label3D" parent="wooden+sign+3d+model" unique_id=691327357]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0507238, 0.459341, -0.234172)
 visible = false
@@ -86,16 +91,16 @@ text = "[E]"
 font = ExtResource("2_8uplu")
 autowrap_mode = 3
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=58540665]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=59135085]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0288773, 1.0188, 1.02532)
 shape = SubResource("BoxShape3D_3ojt3")
 
-[node name="Traduction_choice_game" parent="." instance=ExtResource("4_8kb86")]
+[node name="Traduction_choice_game" parent="." unique_id=761341014 instance=ExtResource("4_8kb86")]
 process_mode = 2
 visible = false
 

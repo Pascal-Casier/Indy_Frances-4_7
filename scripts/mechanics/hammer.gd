@@ -2,6 +2,7 @@ extends Node3D
 
 @export var door_nbr : int = -1
 @export var automatic : bool = false
+@export var instant_kill : bool = true
 @onready var sparks: GPUParticles3D = %sparks
 @onready var flash: GPUParticles3D = %flash
 @onready var fire: GPUParticles3D = %fire
@@ -22,7 +23,10 @@ func _on_signal_emited(nbr) ->void:
 	
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
-		body.damage_received()
+		if instant_kill:
+			body._handle_death()
+		else:
+			body.damage_received()
 	if body.is_in_group("voiture"):
 		if body.get_parent().has_method("appliquer_penalite"):
 				body.get_parent().appliquer_penalite(0.3, 3.0)
