@@ -32,3 +32,4 @@ n'est pas visible. !!!
 - demander de traduire un texte et choisir entre deux propositions. et montrer les erreurs dans la mauvaise traduction avec du bbcode
 - faire des escaliers pivotant
 - faire un jeu de choix : des dalles sous un marteau qui tombe si fausse réponse
+- histoire du grand père qui envoie indy pour résoudre un mystère en Guyane...

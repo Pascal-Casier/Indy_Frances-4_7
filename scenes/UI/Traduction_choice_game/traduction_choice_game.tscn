@@ -38,6 +38,22 @@ metadata/_custom_type_script = "uid://bdwxemgisnxtt"
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6wbce"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1guuw"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.91796875, 0.09652758, 0.049006164, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.86588544, 0.8596932, 0.07328459, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 3
+shadow_offset = Vector2(2, 2)
+
 [node name="Traduction_choice_game" type="Control" unique_id=223748382]
 layout_mode = 3
 anchors_preset = 15
@@ -65,13 +81,15 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -400.0
+offset_top = 8.0
 offset_right = 400.0
-offset_bottom = 53.0
+offset_bottom = 61.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.97526044, 0.55700684, 0.19936962, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 2
-theme_override_constants/shadow_offset_y = 2
-theme_override_constants/shadow_outline_size = 3
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/shadow_outline_size = 11
 theme_override_font_sizes/font_size = 41
 text = "Choisis la traduction correcte :"
 horizontal_alignment = 1
@@ -120,6 +138,8 @@ bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ProgressLabel" type="Label" parent="TextureRect" unique_id=158207027]
 unique_name_in_owner = true
@@ -191,6 +211,8 @@ bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AnswerB" type="Button" parent="TextureRect/AnswerContainer" unique_id=1283816181]
 unique_name_in_owner = true
@@ -229,6 +251,8 @@ bbcode_enabled = true
 text = "Bonjour les [u] amis [/u]."
 fit_content = true
 scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="FeedbackLabel" type="Label" parent="TextureRect" unique_id=1612577640]
 unique_name_in_owner = true
@@ -261,6 +285,7 @@ grow_horizontal = 0
 theme_override_colors/icon_normal_color = Color(0.481771, 0.0213284, 0.0213284, 1)
 theme_override_colors/icon_focus_color = Color(0.976562, 0.0991821, 0.0991821, 1)
 theme_override_colors/icon_hover_color = Color(0.882812, 0.0620728, 0.0620728, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1guuw")
 disabled = true
 icon = ExtResource("6_5yjcv")
 
