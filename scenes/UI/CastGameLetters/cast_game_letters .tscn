@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://dr7s8npkdv1kh"]
+
+[ext_resource type="Theme" uid="uid://b11u7fpsxsopb" path="res://Themes/cast_game_theme.tres" id="1_dwt8y"]
+[ext_resource type="Script" uid="uid://c5n3ciwnecduk" path="res://scripts/UI/cast_game_letters.gd" id="1_w6bmu"]
+[ext_resource type="Texture2D" uid="uid://cq1yociequjmu" path="res://assets/images/bgds/teclado2.jpg" id="3_gr3lo"]
+[ext_resource type="AudioStream" uid="uid://b55yh7obeenij" path="res://assets/sounds/sfx/Coins 10 - Sound effects Pack 2.ogg" id="4_bvq8a"]
+[ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="5_gr3lo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw3oq"]
+bg_color = Color(0.23567706, 0.02731154, 0.087542206, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+
+[node name="CastGameLetters" type="Control" unique_id=1702742576]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dwt8y")
+script = ExtResource("1_w6bmu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=692239845]
+custom_minimum_size = Vector2(500, 550)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_gr3lo")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1196481022]
+modulate = Color(1, 1, 1, 0.694118)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Panel" type="Panel" parent="TextureRect/MarginContainer" unique_id=678101227]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/Panel" unique_id=720424421]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 42
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/Panel/MarginContainer" unique_id=1048367246]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="LabelMotPT" type="Label" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=518404367]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.9296875, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_kw3oq")
+text = "mot portugais"
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=62666287]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="LabelReponse" type="RichTextLabel" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=956851807]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+bbcode_enabled = true
+text = "mot francais"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1476372884]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+
+[node name="GrilleLettres" type="GridContainer" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1868306701]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 16
+columns = 3
+
+[node name="ButtonExit" type="Button" parent="TextureRect/MarginContainer/Panel" unique_id=1092884887]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "X"
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/Panel" unique_id=1196683926]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(175, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 160.0
+offset_top = 436.0
+offset_right = 335.0
+offset_bottom = 479.0
+size_flags_horizontal = 4
+text = "valider"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=793951889]
+stream = ExtResource("4_bvq8a")
+
+[node name="AudioStreamPlayerClic" type="AudioStreamPlayer" parent="." unique_id=273391490]
+stream = ExtResource("5_gr3lo")
+max_polyphony = 4
+bus = &"Sfx"
+
+[connection signal="pressed" from="TextureRect/MarginContainer/Panel/ButtonExit" to="." method="_on_button_exit_pressed"]
