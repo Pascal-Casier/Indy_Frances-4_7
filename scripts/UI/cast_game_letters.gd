@@ -9,7 +9,7 @@ signal exited
 @onready var next_button = %Button
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var audio_stream_player_clic: AudioStreamPlayer = $AudioStreamPlayerClic
-
+@onready var erase_button : Button = %ButtonErase
 
 # Mots exportés pour l'inspecteur
 @export var door_nb : int = -1
@@ -25,6 +25,7 @@ var current_word_index = 0
 var current_answer = ""
 var correct_word = ""
 var letter_buttons = []
+var pressed_stack = []
 
 func _ready():
 	randomize()
@@ -46,6 +47,8 @@ func _initialize_game():
 	
 	if not next_button.pressed.is_connected(_on_next_button_pressed):
 		next_button.pressed.connect(_on_next_button_pressed)
+	if not erase_button.pressed.is_connected(_on_erase_button_pressed):
+		erase_button.pressed.connect(_on_erase_button_pressed)
 	
 	next_button.text = "Mot suivant"
 	next_button.visible = false
@@ -81,6 +84,7 @@ func load_new_word():
 	show()
 	current_answer = ""
 	letter_buttons.clear()
+	pressed_stack.clear()
 	
 	# Nettoyer la grille
 	for child in letter_grid.get_children():
@@ -126,6 +130,7 @@ func _on_letter_pressed(button: Button, letter: String):
 	# Ajouter la lettre à la réponse
 	current_answer += letter
 	button.disabled = true
+	pressed_stack.append(button)  # <-- on garde une trace du bouton pressé
 	
 	# Mettre à jour l'affichage
 	update_answer_display()
@@ -154,6 +159,20 @@ func update_answer_display():
 	else:
 		answer_display.text = display.replace("[color=green]", "").replace("[color=red]", "").replace("[/color]", "")
 
+func _on_erase_button_pressed():
+	if current_answer.length() > 0:
+		audio_stream_player_clic.play()
+		
+		# Retirer la dernière lettre de la réponse
+		current_answer = current_answer.substr(0, current_answer.length() - 1)
+		
+		# Réactiver le dernier bouton pressé
+		var last_button = pressed_stack.pop_back()
+		if last_button:
+			last_button.disabled = false
+		
+		update_answer_display()
+
 func check_answer():
 	if current_answer == correct_word:
 		audio_stream_player.play()
@@ -181,6 +200,7 @@ func check_answer():
 
 func reset_current_word():
 	current_answer = ""
+	pressed_stack.clear()
 	
 	# Réactiver tous les boutons
 	for btn in letter_buttons:
