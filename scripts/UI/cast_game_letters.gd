@@ -92,7 +92,7 @@ func load_new_word():
 	correct_word = word_data["fr"]
 	
 	# Afficher le mot en portugais
-	word_display.text = "Traduisez en français: " + portuguese_word
+	word_display.text = portuguese_word
 	update_answer_display()
 	
 	# Créer les lettres pour la grille
@@ -113,7 +113,7 @@ func load_new_word():
 	for i in range(9):
 		var button = Button.new()
 		button.text = letters[i]
-		button.custom_minimum_size = Vector2(80, 80)
+		button.custom_minimum_size = Vector2(70, 61)
 		button.add_theme_font_size_override("font_size", 32)
 		button.pressed.connect(_on_letter_pressed.bind(button, letters[i]))
 		letter_grid.add_child(button)

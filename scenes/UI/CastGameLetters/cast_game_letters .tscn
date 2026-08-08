@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dr7s8npkdv1kh"]
 
-[ext_resource type="Theme" uid="uid://b11u7fpsxsopb" path="res://Themes/cast_game_theme.tres" id="1_dwt8y"]
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="1_3dhs5"]
 [ext_resource type="Script" uid="uid://c5n3ciwnecduk" path="res://scripts/UI/cast_game_letters.gd" id="1_w6bmu"]
-[ext_resource type="Texture2D" uid="uid://cq1yociequjmu" path="res://assets/images/bgds/teclado2.jpg" id="3_gr3lo"]
+[ext_resource type="Texture2D" uid="uid://bukosf5bfidb" path="res://assets/images/bgds/teclado2.jpg" id="3_gr3lo"]
 [ext_resource type="AudioStream" uid="uid://b55yh7obeenij" path="res://assets/sounds/sfx/Coins 10 - Sound effects Pack 2.ogg" id="4_bvq8a"]
 [ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="5_gr3lo"]
 
@@ -23,7 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_dwt8y")
+theme = ExtResource("1_3dhs5")
 script = ExtResource("1_w6bmu")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=692239845]
@@ -52,7 +52,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 25
+theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
@@ -67,7 +67,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 42
-theme_override_constants/margin_top = 0
+theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 45
 theme_override_constants/margin_bottom = 5
 
@@ -86,11 +86,12 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 10
 theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_kw3oq")
 text = "mot portugais"
 
 [node name="Control" type="Control" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=62666287]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
 [node name="LabelReponse" type="RichTextLabel" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=956851807]
@@ -104,7 +105,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Control2" type="Control" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1476372884]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="GrilleLettres" type="GridContainer" parent="TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1868306701]
@@ -124,11 +125,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -34.0
-offset_top = -43.0
+offset_left = -108.0
+offset_top = -64.0
+offset_right = -43.0
+offset_bottom = -21.0
 grow_horizontal = 0
 grow_vertical = 0
-text = "X"
+text = "sortir"
 
 [node name="Button" type="Button" parent="TextureRect/MarginContainer/Panel" unique_id=1196683926]
 unique_name_in_owner = true
@@ -136,9 +139,9 @@ custom_minimum_size = Vector2(175, 0)
 custom_maximum_size = Vector2(280, -1)
 layout_mode = 0
 offset_left = 160.0
-offset_top = 436.0
+offset_top = 444.0
 offset_right = 335.0
-offset_bottom = 479.0
+offset_bottom = 487.0
 size_flags_horizontal = 4
 text = "valider"
 
