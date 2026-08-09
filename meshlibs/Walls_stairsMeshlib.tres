@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=301 format=4 uid="uid://c2kpxx52kae10"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://c2kpxx52kae10"]
 
 [ext_resource type="Texture2D" uid="uid://cmeldpkdwxbp5" path="res://assets/dungeonKaykit/pillar_dungeon_texture.png" id="1_2r7s8"]
 [ext_resource type="Texture2D" uid="uid://dg678k7m12gv5" path="res://assets/dungeonKaykit/pillar_decorated_dungeon_texture.png" id="2_f25ip"]

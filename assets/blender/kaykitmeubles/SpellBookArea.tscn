@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://blnqj2cp3onqi"]
+[gd_scene format=4 uid="uid://blnqj2cp3onqi"]
 
 [ext_resource type="Script" uid="uid://b6wer2ghlaml2" path="res://scenes/mechanics/area_3d_test.gd" id="1_f5fqb"]
 [ext_resource type="Shader" uid="uid://etty0xlrpgui" path="res://scenes/shaders/hypnose_shader.gdshader" id="2_bkr8a"]
@@ -263,26 +263,26 @@ shader_parameter/distortion_strength = 0.5
 shader_parameter/swirl_strength = 0.1
 shader_parameter/color_shift = Color(0.607686, 0.632843, 0.929688, 1)
 
-[node name="SpellBookArea" type="Area3D"]
+[node name="SpellBookArea" type="Area3D" unique_id=1137848103]
 collision_layer = 0
 collision_mask = 10
 monitorable = false
 script = ExtResource("1_f5fqb")
 
-[node name="spellBook" type="MeshInstance3D" parent="."]
+[node name="spellBook" type="MeshInstance3D" parent="." unique_id=417083844]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_c31w4")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1926732447]
 shape = SubResource("ConvexPolygonShape3D_a6t1g")
 
-[node name="AuraGlowEffect" type="MeshInstance3D" parent="."]
+[node name="AuraGlowEffect" type="MeshInstance3D" parent="." unique_id=1246151350]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.683488, 0)
 material_override = SubResource("ShaderMaterial_tf3xe")
 mesh = SubResource("QuadMesh_ej0ef")
 
-[node name="small_particules" type="GPUParticles3D" parent="AuraGlowEffect"]
+[node name="small_particules" type="GPUParticles3D" parent="AuraGlowEffect" unique_id=819346584]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 material_override = SubResource("StandardMaterial3D_h47bh")
 amount = 10
@@ -291,7 +291,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_tvjqt")
 draw_pass_1 = SubResource("QuadMesh_f5sud")
 
-[node name="trails" type="GPUParticles3D" parent="AuraGlowEffect"]
+[node name="trails" type="GPUParticles3D" parent="AuraGlowEffect" unique_id=2030156629]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45424, 0)
 material_override = SubResource("StandardMaterial3D_3un1f")
 amount = 4
@@ -302,18 +302,18 @@ trail_lifetime = 0.7
 process_material = SubResource("ParticleProcessMaterial_sjcgc")
 draw_pass_1 = SubResource("RibbonTrailMesh_20ao1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1838383539]
 stream = ExtResource("7_bkr8a")
 volume_db = -8.595
 pitch_scale = 1.4
 bus = &"Sfx"
 
-[node name="AudioStreamPlayerStory" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerStory" type="AudioStreamPlayer" parent="." unique_id=1807082337]
 stream = ExtResource("6_m8loa")
 max_polyphony = 3
 bus = &"Dialogues"
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=242299623]
 process_mode = 3
 visible = false
 layout_mode = 3
@@ -323,7 +323,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="book_page" type="ColorRect" parent="Control"]
+[node name="book_page" type="ColorRect" parent="Control" unique_id=1650748961]
 process_mode = 3
 material = SubResource("ShaderMaterial_ue842")
 layout_mode = 1
@@ -333,7 +333,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/book_page"]
+[node name="TextureRect" type="TextureRect" parent="Control/book_page" unique_id=1627754951]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -349,7 +349,7 @@ grow_vertical = 2
 pivot_offset = Vector2(194, 260)
 texture = ExtResource("3_m8loa")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/book_page/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/book_page/TextureRect" unique_id=134151615]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -361,7 +361,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/book_page/TextureRect/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/book_page/TextureRect/MarginContainer" unique_id=818162257]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
@@ -377,7 +377,7 @@ text = "[wave]« Si tu lis ces mots, c’est que tu as trouvé mon livre. »
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Control/book_page/TextureRect"]
+[node name="Button" type="Button" parent="Control/book_page/TextureRect" unique_id=1444027933]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
