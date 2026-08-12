@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ce2da44o65p77" path="res://scenes/mechanics/lever.tscn" id="15_4q2w8"]
 [ext_resource type="MeshLibrary" uid="uid://ddev61w8li2p1" path="res://meshlibs/tilescubesMeshlib.tres" id="15_fd21f"]
 [ext_resource type="PackedScene" uid="uid://cjwk1sleh30hn" path="res://scenes/mechanics/dalle_trigger.tscn" id="16_4q2w8"]
+[ext_resource type="PackedScene" uid="uid://bqsn1irwtejrb" path="res://scenes/mechanics/cube_door.tscn" id="17_mywtu"]
 [ext_resource type="PackedScene" uid="uid://de1mso7rec550" path="res://scenes/mechanics/panneau_phrases_traduction.tscn" id="18_8gg3f"]
 [ext_resource type="Script" uid="uid://7vm1eoq0acp5" path="res://scripts/UI/Traduction_choice_game/resources/dialog_entry.gd" id="20_x2gpa"]
 [ext_resource type="Texture2D" uid="uid://dtxgq3jsyx7nq" path="res://assets/images/characters/chouettePortrait.png" id="21_1qm1i"]
@@ -2037,7 +2038,7 @@ door_nbr = 2
 
 [node name="Lever" parent="Mechanics" unique_id=1244643552 instance=ExtResource("15_4q2w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-door_nbr = 2
+door_nbr = 3
 turn_off = false
 
 [node name="Dalle_trigger" parent="Mechanics" unique_id=483630952 instance=ExtResource("16_4q2w8")]
@@ -2047,6 +2048,10 @@ dalle_text = "départ"
 
 [node name="textLbl" parent="Mechanics/Dalle_trigger/dalle" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0.10373901, 0)
+
+[node name="Cube_door" parent="Mechanics" unique_id=631028323 instance=ExtResource("17_mywtu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.6, 2, 22)
+door_number = 3
 
 [node name="GridMap" type="GridMap" parent="." unique_id=1480473803]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
