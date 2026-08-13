@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bwb2qcuxddqt6"]
 
-[ext_resource type="Script" uid="uid://eddtdx5hbspn" path="res://scenes/jeep/jeepv2_corrige2.gd" id="1_x58h8"]
+[ext_resource type="Script" uid="uid://tydwf4j5rsfb" path="res://scenes/jeep/jeepv3.gd" id="1_m3v23"]
 [ext_resource type="Texture2D" uid="uid://c8fp7gfro3834" path="res://scenes/jeep/jeep_ImphenziaPixPal_BaseColor.png" id="2_a5i6b"]
 [ext_resource type="AudioStream" uid="uid://b100l1ccsbdmh" path="res://scenes/jeep/car_engine_loop.mp3" id="5_a5i6b"]
 [ext_resource type="AudioStream" uid="uid://ctsksuyij632r" path="res://assets/sounds/sfx/nitro-activation.mp3" id="5_kowf4"]
@@ -347,14 +347,7 @@ ProgressBar/styles/background = SubResource("StyleBoxFlat_ilpjp")
 ProgressBar/styles/fill = SubResource("StyleBoxFlat_m3v23")
 
 [node name="Jeep" type="Node3D" unique_id=372991098 groups=["Jeep", "voiture"]]
-script = ExtResource("1_x58h8")
-turbo_fill_rate = 0.3
-turbo_decay_rate = 0.2
-turbo_boost_force = 30.0
-turbo_boost_duration = 1.5
-turbo_auto_trigger = true
-turbo_fov_kick = 10.0
-turbo_shake_strength = 0.09
+script = ExtResource("1_m3v23")
 
 [node name="Ball" type="RigidBody3D" parent="." unique_id=283610808 groups=["voiture"]]
 collision_layer = 513
