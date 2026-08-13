@@ -23,5 +23,6 @@ func move_platform():
 	tween.tween_property(self, "position", pos_initial, time).set_delay(pause_time)
 
 func trigger(dnr):
-	if dnr == door_nbr:
+	if dnr == door_nbr and not automatic:
 		move_platform()
+		automatic = true

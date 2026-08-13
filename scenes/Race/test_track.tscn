@@ -71,7 +71,6 @@ next_scene = "res://scenes/UI/main_menu.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 steering_angle = 25.0
 turn_speed = 5.0
-jump_force = 20.0
 
 [node name="pieges" type="Node3D" parent="." unique_id=1234833561]
 
