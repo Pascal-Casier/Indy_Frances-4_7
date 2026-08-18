@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bqjmwi5lw6hb2" path="res://scripts/mechanics/rock_door.gd" id="1_sdxlx"]
 [ext_resource type="AudioStream" uid="uid://bax0ka36yvmed" path="res://assets/sounds/sfx/RockSliding (mp3cut.net).mp3" id="2_3qdm3"]
 [ext_resource type="Texture2D" uid="uid://bfv58u3enl8j7" path="res://assets/images/textures/Textures/1-16/Asset 3.png" id="3_5ox0b"]
+[ext_resource type="PackedScene" uid="uid://dnpvryp8kdp2s" path="res://scenes/mechanics/digicode.tscn" id="4_3qdm3"]
 
 [sub_resource type="Animation" id="Animation_r468m"]
 resource_name = "open"
@@ -70,6 +71,9 @@ mesh = SubResource("BoxMesh_bfp77")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1154197095]
 shape = SubResource("ConvexPolygonShape3D_r6ppm")
+
+[node name="digicode" parent="MeshInstance3D/StaticBody3D" unique_id=1132414754 instance=ExtResource("4_3qdm3")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.619504, 0, 0.6077913)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=244617663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 2, 0)

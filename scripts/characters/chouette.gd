@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-@onready var press_e: Label3D = %PressE
+@onready var press_e = %PressE
 @export var timeline_name : String = "test1"
 @export var disapear := false
 @export var door_gate_to_open_nbr : int = 0
