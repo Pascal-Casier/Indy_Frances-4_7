@@ -33,3 +33,5 @@ n'est pas visible. !!!
 - faire des escaliers pivotant
 - faire un jeu de choix : des dalles sous un marteau qui tombe si fausse réponse
 - histoire du grand père qui envoie indy pour résoudre un mystère en Guyane...
+
+faire des mécaniques comme dans Prince of Persia : une dalle lève un passage durant un court laps de temps.

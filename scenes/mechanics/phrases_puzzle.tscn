@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://n4vorkcsm6f0"]
+[gd_scene format=4 uid="uid://n4vorkcsm6f0"]
 
 [ext_resource type="Script" uid="uid://ifg5rme4rnqs" path="res://scripts/mechanics/phrases_puzzle.gd" id="1_nh1mm"]
 [ext_resource type="Texture2D" uid="uid://chfmk542gswl7" path="res://assets/blender/panneau_grand_Palette.png" id="1_q2gkc"]
@@ -89,49 +89,49 @@ shadow_mesh = SubResource("ArrayMesh_rc837")
 [sub_resource type="BoxShape3D" id="BoxShape3D_hxswp"]
 size = Vector3(4.14673, 2.41345, 0.490234)
 
-[node name="Phrases_puzzle" type="Node3D"]
+[node name="Phrases_puzzle" type="Node3D" unique_id=930225922]
 script = ExtResource("1_nh1mm")
 phrasePT = "Ele nem trabalha comigo"
 
-[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" type="MeshInstance3D" parent="."]
+[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" type="MeshInstance3D" parent="." unique_id=1994537626]
 transform = Transform3D(-2.44793e-07, 0, -12.3972, 0, 4.87887, 0, 5.6002, 0, -5.41899e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qkuv6")
 skeleton = NodePath("")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=723800738]
 transform = Transform3D(2.54326, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 0)
 visible = false
 mesh = SubResource("ArrayMesh_vygm6")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" unique_id=1408761984]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" unique_id=1931001869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20461, 0)
 shape = SubResource("BoxShape3D_hxswp")
 
-[node name="lblPT1" type="Label3D" parent="."]
+[node name="lblPT1" type="Label3D" parent="." unique_id=310652959]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0172243, 2.41921, 0.0728558)
 text = "test"
 font = ExtResource("3_307eo")
-font_size = 75
+font_size = 120
 outline_size = 0
 
-[node name="lblFR" type="Label3D" parent="."]
+[node name="lblFR" type="Label3D" parent="." unique_id=1235907361]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000991821, 1.45366, 0.0568088)
 modulate = Color(0.883479, 0.960938, 0.252747, 1)
 font = ExtResource("4_vygm6")
-font_size = 75
+font_size = 100
 outline_size = 0
 uppercase = true
 
-[node name="dalles" type="Node3D" parent="."]
+[node name="dalles" type="Node3D" parent="." unique_id=2027472646]
 
-[node name="Dalle_phrase" parent="dalles" instance=ExtResource("5_307eo")]
+[node name="Dalle_phrase" parent="dalles" unique_id=735395751 instance=ExtResource("5_307eo")]
 dalle_texte = "Il"
 
-[node name="Dalle_phrase2" parent="dalles" instance=ExtResource("5_307eo")]
+[node name="Dalle_phrase2" parent="dalles" unique_id=1425393713 instance=ExtResource("5_307eo")]
 dalle_texte = "ne travaille pas."
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=430849506]
 volume_db = -7.505

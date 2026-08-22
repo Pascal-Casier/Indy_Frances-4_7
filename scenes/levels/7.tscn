@@ -18,9 +18,22 @@
 [ext_resource type="PackedScene" uid="uid://b5mbnh8me4nbl" path="res://scenes/mechanics/plateforme_callable.tscn" id="20_8gg3f"]
 [ext_resource type="Script" uid="uid://7vm1eoq0acp5" path="res://scripts/UI/Traduction_choice_game/resources/dialog_entry.gd" id="20_x2gpa"]
 [ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="22_e0d0c"]
+[ext_resource type="PackedScene" uid="uid://cid4ydxrlwi4e" path="res://scenes/mechanics/panneau_dico.tscn" id="22_iof32"]
 [ext_resource type="Script" uid="uid://bdwxemgisnxtt" path="res://scripts/UI/Traduction_choice_game/resources/quizz_data.gd" id="22_yjkb7"]
 [ext_resource type="MeshLibrary" uid="uid://ibjydcsilis1" path="res://meshlibs/IndyAI2TilesMeshlib.tres" id="23_0txh5"]
+[ext_resource type="Script" uid="uid://wmb1hst8sn54" path="res://scripts/UI/DicoWodResource.gd" id="23_mk7yj"]
+[ext_resource type="Texture2D" uid="uid://dh44blcydayed" path="res://assets/images/ui/dico/fruits/fraise.png" id="24_ggqok"]
+[ext_resource type="AudioStream" uid="uid://cim0o3deknrdc" path="res://assets/sounds/dico_sounds/fruits/fraise.mp3" id="25_11era"]
+[ext_resource type="Texture2D" uid="uid://buit558lio3vn" path="res://assets/images/ui/dico/fruits/apple.png" id="26_vx4ev"]
+[ext_resource type="AudioStream" uid="uid://vprbmfqyif87" path="res://assets/images/ui/dico/fruits/pomme.mp3" id="27_qcrrx"]
+[ext_resource type="Texture2D" uid="uid://da7xr1yd1mjn5" path="res://assets/images/ui/dico/fruits/raisin.png" id="28_d00xi"]
+[ext_resource type="AudioStream" uid="uid://dom4psr84j36b" path="res://assets/sounds/dico_sounds/fruits/raisin.mp3" id="29_ju4wi"]
+[ext_resource type="PackedScene" uid="uid://n4vorkcsm6f0" path="res://scenes/mechanics/phrases_puzzle.tscn" id="30_ggqok"]
 [ext_resource type="Shader" uid="uid://dc2c566jtiw3t" path="res://shaders/swamp.gdshader" id="30_mk7yj"]
+[ext_resource type="PackedScene" uid="uid://7jaffeojbign" path="res://scenes/mechanics/dalle_phrase.tscn" id="31_11era"]
+[ext_resource type="PackedScene" uid="uid://0drtacpdhc0u" path="res://scenes/mechanics/flipping_platform_big.tscn" id="32_11era"]
+[ext_resource type="PackedScene" uid="uid://dp5sdo13te42y" path="res://scenes/mechanics/button_floor.tscn" id="33_vx4ev"]
+[ext_resource type="PackedScene" uid="uid://brgltmp01w0ci" path="res://scenes/Fx/fire_mesh.tscn" id="34_qcrrx"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
 panorama = ExtResource("1_iof32")
@@ -109,6 +122,24 @@ shader_parameter/edge_fade_width = 0.34000001615
 material = SubResource("ShaderMaterial_4dcb2")
 size = Vector2(1500, 1500)
 
+[sub_resource type="Resource" id="Resource_k7en2"]
+script = ExtResource("23_mk7yj")
+word = "une fraise"
+photo = ExtResource("24_ggqok")
+sound = ExtResource("25_11era")
+
+[sub_resource type="Resource" id="Resource_yvamj"]
+script = ExtResource("23_mk7yj")
+word = "une pomme"
+photo = ExtResource("26_vx4ev")
+sound = ExtResource("27_qcrrx")
+
+[sub_resource type="Resource" id="Resource_vlbbl"]
+script = ExtResource("23_mk7yj")
+word = "un raisin"
+photo = ExtResource("28_d00xi")
+sound = ExtResource("29_ju4wi")
+
 [node name="7" type="Node3D" unique_id=1533161143]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1409594730]
@@ -119,7 +150,6 @@ transform = Transform3D(-0.81470394, -0.036465153, 0.5787294, 0.4829657, -0.5950
 shadow_enabled = true
 
 [node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("2_8xjyh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 20, 95)
 can_double_jump = true
 
 [node name="GridMapCubes" type="GridMap" parent="." unique_id=1346985082]
@@ -129,24 +159,24 @@ cell_center_x = false
 cell_center_y = false
 cell_center_z = false
 data = {
-"cells": PackedInt32Array(-65537, 1, 1048576, -65537, 0, 1048576, -65537, 65535, 1048576, -131072, 65535, 1048576, -131072, 0, 1048576, -131072, 1, 1048576, -131071, 1, 1048576, -131071, 0, 1048576, -131071, 65535, 1048576, -131072, 2, 1048576, -131072, 3, 1048576, -131072, 4, 1048576, -131072, 5, 1048576, -65536, 6, 1048577, 0, 7, 1048577, 0, 8, 1048576, 1, 9, 1048576, 0, 9, 1048576, 65535, 9, 1048576, 65535, 10, 1048576, 0, 10, 1048576, 1, 10, 1048576, 1, 11, 1048576, 0, 11, 1048576, 65535, 11, 1048576)
+"cells": PackedInt32Array(-65537, 1, 1048576, -65537, 0, 1048576, -65537, 65535, 1048576, -131072, 65535, 1048576, -131072, 0, 1048576, -131072, 1, 1048576, -131071, 1, 1048576, -131071, 0, 1048576, -131071, 65535, 1048576, -131072, 2, 1048576, -131072, 3, 1048576, -131072, 4, 1048576, -131072, 5, 1048576, -65536, 6, 1048577, 0, 7, 1048577, 0, 8, 1048576, 1, 9, 1048576, 0, 9, 1048576, 65535, 9, 1048576, 65535, 10, 1048576, 0, 10, 1048576, 1, 10, 1048576, 1, 11, 1048576, 0, 11, 1048576, 65535, 11, 1048576, 327693, 65525, 0, 327693, 65526, 0, 327694, 65526, 0, 327694, 65525, 0, 327695, 65525, 0, 327695, 65526, 0, 327696, 65526, 0, 327696, 65525, 0, 327697, 65525, 0, 327697, 65526, 0, 327696, 65524, 0, 327695, 65524, 0, 327694, 65524, 0, 327693, 65524, 0, 327697, 65524, 0, 1835042, 69, 3, 1835043, 69, 3, 1835044, 69, 3, 1835045, 69, 3, 1835046, 69, 3, 1835047, 69, 3, 1835047, 70, 3, 1835046, 70, 3, 1835045, 70, 3, 1835044, 70, 3, 1835043, 70, 3, 1835042, 70, 3)
 }
-metadata/_editor_floor_ = Vector3(0, 0, 0)
+metadata/_editor_floor_ = Vector3(0, 28, 0)
 
 [node name="GridMapIndytiles" type="GridMap" parent="." unique_id=2009608004]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh_library = ExtResource("23_0txh5")
 data = {
-"cells": PackedInt32Array(131077, 7, 1048588, 131077, 9, 1048586, 131077, 10, 1048586, 131077, 11, 1048586, 131077, 12, 1048586, 131077, 13, 1048586, 131076, 13, 1048586, 131078, 13, 1048586, 131078, 14, 1048586, 131077, 14, 1048586, 131076, 14, 1048586, 131077, 18, 1048586, 131077, 19, 1048586, 131077, 20, 1048586, 131077, 22, 1048588, 131077, 25, 1048588, 131077, 28, 1048588, 196613, 28, 1048588, 196613, 25, 1048588, 262149, 28, 1048588, 327685, 28, 1048588, 393221, 28, 1048588, 393221, 31, 1048588, 393224, 31, 1048588, 393227, 31, 1048588, 393230, 31, 1048588, 196610, 28, 1048581, 196608, 28, 1048581, 262142, 24, 1048586, 262141, 24, 1048586, 262141, 23, 1048586, 262142, 23, 1048586, 196610, 26, 1048578, 262142, 26, 1048577, 262140, 23, 1048586, 262140, 24, 1048586, 262140, 22, 1048586, 262141, 22, 1048586, 262142, 22, 1048586, 196613, 23, 655371, 196615, 25, 655370, 196616, 25, 655370, 196617, 25, 655370, 196618, 25, 655370, 262148, 26, 655370, 262150, 26, 655363)
+"cells": PackedInt32Array(131077, 7, 1048588, 131077, 9, 1048586, 131077, 10, 1048586, 131077, 11, 1048586, 131077, 12, 1048586, 131077, 13, 1048586, 131076, 13, 1048586, 131078, 13, 1048586, 131078, 14, 1048586, 131077, 14, 1048586, 131076, 14, 1048586, 131077, 18, 1048586, 131077, 19, 1048586, 131077, 20, 1048586, 131077, 22, 1048588, 131077, 25, 1048588, 131077, 28, 1048588, 196613, 28, 1048588, 196613, 25, 1048588, 262149, 28, 1048588, 327685, 28, 1048588, 393221, 28, 1048588, 393221, 31, 1048588, 393224, 31, 1048588, 393227, 31, 1048588, 393230, 31, 1048588, 196610, 28, 1048581, 196608, 28, 1048581, 262142, 24, 1048586, 262141, 24, 1048586, 262141, 23, 1048586, 262142, 23, 1048586, 196610, 26, 1048578, 262142, 26, 1048577, 262140, 23, 1048586, 262140, 24, 1048586, 262140, 22, 1048586, 262141, 22, 1048586, 262142, 22, 1048586, 196613, 23, 655371, 196615, 25, 655370, 196616, 25, 655370, 196617, 25, 655370, 196618, 25, 655370, 262148, 26, 655370, 262150, 26, 655363, 393238, 31, 10, 393239, 31, 10, 393240, 31, 10, 393242, 31, 12, 393244, 30, 10, 393245, 30, 10, 458780, 30, 10, 458781, 30, 10, 524316, 30, 10, 524317, 30, 10, 524318, 30, 10, 458782, 30, 10, 393246, 30, 10, 393248, 31, 12)
 }
-metadata/_editor_floor_ = Vector3(0, 4, 0)
+metadata/_editor_floor_ = Vector3(0, 6, 0)
 
 [node name="Mechanics" type="Node3D" parent="." unique_id=1849256601]
 
 [node name="Platform_moving" parent="Mechanics" unique_id=1366588383 instance=ExtResource("13_h4gjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 7, -21)
 automatic = false
-door_nbr = 1
+door_nbr = 0
 pos2 = Vector3(-22, -7, 13)
 time = 4.0
 transition_type = 7
@@ -185,11 +215,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 17.995815, 102)
 door_nbr = 3
 turn_off = false
 
+[node name="Lever2" parent="Mechanics" unique_id=1634860114 instance=ExtResource("15_4q2w8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2, 0.024900436, -2)
+turn_off = false
+
 [node name="Cube_door2" parent="Mechanics" unique_id=1451785228 instance=ExtResource("17_mywtu")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32.601795, 18, 102)
 door_number = 2
 
 [node name="digicode" parent="Mechanics/Cube_door2/MeshInstance3D/StaticBody3D" parent_id_path=PackedInt32Array(1451785228, 1186080652) index="1" unique_id=1132414754]
+visible = false
+
+[node name="Cube_door3" parent="Mechanics" unique_id=1540951928 instance=ExtResource("17_mywtu")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 88.60179, 30, 126)
+door_number = 4
+
+[node name="digicode" parent="Mechanics/Cube_door3/MeshInstance3D/StaticBody3D" parent_id_path=PackedInt32Array(1540951928, 1186080652) index="1" unique_id=1132414754]
 visible = false
 
 [node name="PlateformeCallable" parent="Mechanics" unique_id=496102175 instance=ExtResource("20_8gg3f")]
@@ -244,9 +285,102 @@ transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -1
 [node name="NewQuizz" parent="Computer_jungle/Control" index="0"]
 door_nbr = 2
 
+[node name="PanneauDico" parent="." unique_id=1099362666 instance=ExtResource("22_iof32")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 34, 7, -22)
+
+[node name="DictionnaryPanel" parent="PanneauDico" index="2"]
+title = "Dictionnaire : les mots utiles"
+resource_list = Array[ExtResource("23_mk7yj")]([SubResource("Resource_k7en2"), SubResource("Resource_yvamj"), SubResource("Resource_vlbbl")])
+quizz = false
+
+[node name="Phrases_puzzle" parent="." unique_id=413996694 instance=ExtResource("30_ggqok")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 73, 30, 139)
+phrasePT = "A gente vai comprar uma casa"
+phraseFR = "On va acheter une maison"
+door_nbr = 4
+
+[node name="Dalle_phrase" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="0" unique_id=735395751]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0000076, 0, 10)
+dalle_texte = "On"
+
+[node name="Dalle_phrase2" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="1" unique_id=1425393713]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.000023, 0, 13.000008)
+dalle_texte = "Il"
+
+[node name="Dalle_phrase3" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="2" unique_id=1482660643 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0000305, 0, 16.000023)
+dalle_texte = "Nous"
+
+[node name="Dalle_phrase4" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="3" unique_id=234843415 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0000153, 0, 10)
+dalle_texte = "vais"
+
+[node name="Dalle_phrase5" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="4" unique_id=105557184 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0000305, 0, 13.000015)
+dalle_texte = "va"
+
+[node name="Dalle_phrase6" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="5" unique_id=56790426 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1.0000381, 0, 16.00003)
+dalle_texte = "allons"
+
+[node name="Dalle_phrase7" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="6" unique_id=714627892 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.999977, 0, 10)
+dalle_texte = "demander"
+
+[node name="Dalle_phrase8" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="7" unique_id=1947114837 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9999619, 0, 13.000023)
+dalle_texte = "acheter"
+
+[node name="Dalle_phrase9" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="8" unique_id=1124508050 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.9999542, 0, 16.000038)
+dalle_texte = "regarder"
+
+[node name="Dalle_phrase10" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="9" unique_id=946867995 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.999977, 0, 10)
+dalle_texte = "la"
+
+[node name="Dalle_phrase11" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="10" unique_id=2121212204 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.999962, 0, 13.000023)
+dalle_texte = "des"
+
+[node name="Dalle_phrase12" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="11" unique_id=2102992002 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.999954, 0, 16.000038)
+dalle_texte = "une"
+
+[node name="Dalle_phrase13" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="12" unique_id=1166163306 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.9999695, 0, 10)
+dalle_texte = "maison"
+
+[node name="Dalle_phrase14" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="13" unique_id=1260606250 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.999954, 0, 13.0000305)
+dalle_texte = "chambre"
+
+[node name="Dalle_phrase15" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="14" unique_id=97231434 instance=ExtResource("31_11era")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10.999947, 0, 16.000046)
+dalle_texte = "chez"
+
+[node name="flipping_platform_big" parent="." unique_id=129479137 instance=ExtResource("32_11era")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118, 29.874882, 124.19551)
+platform_id = 6
+wait_duration = 6.0
+
+[node name="button_floor" parent="." unique_id=248477844 instance=ExtResource("33_vx4ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 106, 30, 126)
+btn_number = 6
+
+[node name="button_floor2" parent="." unique_id=1714061182 instance=ExtResource("33_vx4ev")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130, 30, 126)
+btn_number = 6
+
+[node name="fireMesh" parent="." unique_id=1172899826 instance=ExtResource("34_qcrrx")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -2, 2, 19)
+
 [editable path="Mechanics/Dalle_trigger"]
 [editable path="Mechanics/Cube_door"]
 [editable path="Mechanics/Cube_door2"]
+[editable path="Mechanics/Cube_door3"]
 [editable path="Panneau_phrases_traduction"]
 [editable path="petit_panneau"]
 [editable path="Computer_jungle"]
+[editable path="PanneauDico"]
+[editable path="Phrases_puzzle"]

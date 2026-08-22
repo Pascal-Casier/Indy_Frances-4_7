@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://0drtacpdhc0u"]
+
+[ext_resource type="Script" uid="uid://ck227dtkr7okv" path="res://scripts/mechanics/flipping_platform_big.gd" id="1_sxtie"]
+[ext_resource type="Material" uid="uid://dc3kwwbtpqanb" path="res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_01.tres" id="2_qmksy"]
+[ext_resource type="AudioStream" uid="uid://uwrifaubyxre" path="res://assets/sounds/sfx/chest_opening2.mp3" id="3_ls2sd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfp77"]
+material = ExtResource("2_qmksy")
+size = Vector3(8, 0.25, 3)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7386v"]
+points = PackedVector3Array(-4, -0.125, -1.5, -4, 0.125, -1.5, 4, -0.125, -1.5, -4, -0.125, 1.5, -4, 0.125, 1.5, 4, 0.125, -1.5, 4, -0.125, 1.5, 4, 0.125, 1.5)
+
+[sub_resource type="Animation" id="Animation_sxtie"]
+resource_name = "down"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1.5333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5707964, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ls2sd")
+}],
+"times": PackedFloat32Array(0.33333334)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_2haj3"]
+resource_name = "flip"
+length = 2.5000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ls2sd")
+}],
+"times": PackedFloat32Array(0.36666667)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1oje"]
+_data = {
+&"down": SubResource("Animation_sxtie"),
+&"flip": SubResource("Animation_2haj3")
+}
+
+[node name="flipping_platform_big" type="Node3D" unique_id=129479137]
+script = ExtResource("1_sxtie")
+
+[node name="Timer" type="Timer" parent="." unique_id=155354816]
+one_shot = true
+
+[node name="StartTimer" type="Timer" parent="." unique_id=148218501]
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1156899313]
+max_distance = 25.0
+
+[node name="pivot" type="Node3D" parent="." unique_id=1390419856]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, -0.12604934, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot" unique_id=2077417761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2445803)
+mesh = SubResource("BoxMesh_bfp77")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pivot/MeshInstance3D" unique_id=645153286]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot/MeshInstance3D/StaticBody3D" unique_id=1324883037]
+shape = SubResource("ConvexPolygonShape3D_7386v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=35846464]
+libraries/ = SubResource("AnimationLibrary_s1oje")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

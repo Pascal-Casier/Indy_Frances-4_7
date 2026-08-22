@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=4 uid="uid://bakpdkymvisn8"]
+[gd_scene format=4 uid="uid://bakpdkymvisn8"]
 
 [ext_resource type="PackedScene" uid="uid://cc33ysgujnadg" path="res://scenes/UI/ui.tscn" id="1_gme8e"]
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="1_olhx8"]
@@ -825,27 +825,27 @@ correct_answer = "vous parlez"
 wrong_answers = Array[String](["vous parles", "vous parlent", "vous parlé"])
 metadata/_custom_type_script = "uid://dkpik0awbvgn1"
 
-[node name="5" type="Node3D"]
+[node name="5" type="Node3D" unique_id=357233193]
 
-[node name="UI" parent="." instance=ExtResource("1_gme8e")]
+[node name="UI" parent="." unique_id=928862592 instance=ExtResource("1_gme8e")]
 mouse_filter = 0
 potion_icon_is_visible = false
 mots_trouves_is_visible = false
 
-[node name="IndianaPlayer4_2" parent="." instance=ExtResource("1_olhx8")]
+[node name="IndianaPlayer4_2" parent="." unique_id=1074894908 instance=ExtResource("1_olhx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00659, 0)
 arm3D_lenght = 5.0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1158697720]
 environment = SubResource("Environment_p5xfs")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1103528634]
 transform = Transform3D(-0.848162, -0.525111, 0.0698617, 0.278416, -0.329682, 0.902105, -0.450673, 0.784582, 0.425823, 0, 12.1665, -87.5855)
 shadow_enabled = true
 
-[node name="gridmaps" type="Node3D" parent="."]
+[node name="gridmaps" type="Node3D" parent="." unique_id=1840401630]
 
-[node name="GridMap" type="GridMap" parent="gridmaps"]
+[node name="GridMap" type="GridMap" parent="gridmaps" unique_id=954857848]
 mesh_library = ExtResource("4_1f8nt")
 cell_center_y = false
 data = {
@@ -853,11 +853,11 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="World" type="Node3D" parent="."]
+[node name="World" type="Node3D" parent="." unique_id=687757873]
 
-[node name="arms" type="Node3D" parent="World"]
+[node name="arms" type="Node3D" parent="World" unique_id=1261780957]
 
-[node name="platform_004" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_004" type="MeshInstance3D" parent="World/arms" unique_id=549899944]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.3718, -2.19562, 0.521986)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -867,12 +867,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_004"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_004" unique_id=1941619810]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_004/StaticBody3D" unique_id=852816285]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_005" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_005" type="MeshInstance3D" parent="World/arms" unique_id=408259304]
 transform = Transform3D(1.31134e-07, 0, 1.4, 0, 1, 0, -1, 0, 1.83588e-07, 55.418, -2.19562, 0.521986)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -882,12 +882,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_005"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_005" unique_id=1522152063]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_005/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_005/StaticBody3D" unique_id=2138879207]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_007" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_007" type="MeshInstance3D" parent="World/arms" unique_id=875406705]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -897,13 +897,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_007"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_007" unique_id=1889457023]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_007/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_007/StaticBody3D" unique_id=840033523]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_008" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_008" type="MeshInstance3D" parent="World/arms" unique_id=634561097]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 29.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -913,13 +913,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_008"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_008" unique_id=1187385880]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_008/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_008/StaticBody3D" unique_id=227747237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_009" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_009" type="MeshInstance3D" parent="World/arms" unique_id=2011155657]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 34.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -929,13 +929,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_009"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_009" unique_id=915067298]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_009/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_009/StaticBody3D" unique_id=1826060950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_010" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_010" type="MeshInstance3D" parent="World/arms" unique_id=1656018811]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 39.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -945,13 +945,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_010"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_010" unique_id=1606115445]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_010/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_010/StaticBody3D" unique_id=1050040832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_011" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_011" type="MeshInstance3D" parent="World/arms" unique_id=1721823052]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -961,13 +961,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_011"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_011" unique_id=1467413609]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_011/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_011/StaticBody3D" unique_id=1652181624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_012" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_012" type="MeshInstance3D" parent="World/arms" unique_id=1593539354]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.3668, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -977,13 +977,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_012"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_012" unique_id=1628404085]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_012/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_012/StaticBody3D" unique_id=335714574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_006" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_006" type="MeshInstance3D" parent="World/arms" unique_id=719078630]
 transform = Transform3D(-4.37114e-08, 0, -1.3, 0, 1, 0, 1, 0, -5.68248e-08, -40.389, -2.19562, 0.521986)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -993,12 +993,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_006"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_006" unique_id=1235941428]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_006/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_006/StaticBody3D" unique_id=296772925]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_013" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_013" type="MeshInstance3D" parent="World/arms" unique_id=1665131407]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -19.6282, -2.19562, 0.521986)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1008,12 +1008,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_013"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_013" unique_id=576432066]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_013/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_013/StaticBody3D" unique_id=802557989]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_017" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_017" type="MeshInstance3D" parent="World/arms" unique_id=810760108]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -34.6332, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1023,13 +1023,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_017"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_017" unique_id=113426941]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_017/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_017/StaticBody3D" unique_id=1706747208]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_018" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_018" type="MeshInstance3D" parent="World/arms" unique_id=1310410934]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -29.6332, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1039,13 +1039,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_018"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_018" unique_id=861831792]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_018/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_018/StaticBody3D" unique_id=739127710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_019" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_019" type="MeshInstance3D" parent="World/arms" unique_id=2089321265]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24.6332, -2.19562, 0.496069)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1055,13 +1055,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_019"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_019" unique_id=1695247686]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_019/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_019/StaticBody3D" unique_id=1691189092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_020" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_020" type="MeshInstance3D" parent="World/arms" unique_id=154339917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112529, -2.19562, -19.0012)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1071,12 +1071,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_020"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_020" unique_id=1112475209]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_020/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_020/StaticBody3D" unique_id=1144252414]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_022" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_022" type="MeshInstance3D" parent="World/arms" unique_id=1263146170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138446, -2.19562, -23.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1086,13 +1086,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_022"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_022" unique_id=1107915522]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_022/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_022/StaticBody3D" unique_id=1170263374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_023" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_023" type="MeshInstance3D" parent="World/arms" unique_id=2121539774]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138446, -2.19562, -28.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1102,13 +1102,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_023"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_023" unique_id=415971682]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_023/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_023/StaticBody3D" unique_id=1278004069]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_024" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_024" type="MeshInstance3D" parent="World/arms" unique_id=1880170253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138446, -2.19562, -33.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1118,13 +1118,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_024"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_024" unique_id=1990763032]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_024/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_024/StaticBody3D" unique_id=1390851442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_025" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_025" type="MeshInstance3D" parent="World/arms" unique_id=1376674026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138447, -2.19562, -38.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1134,13 +1134,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_025"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_025" unique_id=314657606]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_025/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_025/StaticBody3D" unique_id=215496450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_026" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_026" type="MeshInstance3D" parent="World/arms" unique_id=13935162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138447, -2.19562, -43.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1150,13 +1150,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_026"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_026" unique_id=256971214]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_026/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_026/StaticBody3D" unique_id=1106571229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_027" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_027" type="MeshInstance3D" parent="World/arms" unique_id=869257088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138447, -2.19562, -48.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1166,13 +1166,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_027"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_027" unique_id=1584718920]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_027/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_027/StaticBody3D" unique_id=2112491960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_036" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_036" type="MeshInstance3D" parent="World/arms" unique_id=1564355369]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138447, -2.19562, -53.9962)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1182,13 +1182,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_036"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_036" unique_id=1311335894]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_036/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_036/StaticBody3D" unique_id=925535967]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_028" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_028" type="MeshInstance3D" parent="World/arms" unique_id=2067759977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.43, -0.112525, -2.19562, 56.0329)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1198,12 +1198,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_028"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_028" unique_id=1280566726]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_028/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_028/StaticBody3D" unique_id=1176733615]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_029" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_029" type="MeshInstance3D" parent="World/arms" unique_id=947979578]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.112527, -2.19562, 19.9988)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1213,12 +1213,12 @@ mesh = SubResource("ArrayMesh_n313d")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_029"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_029" unique_id=1316792063]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_029/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_029/StaticBody3D" unique_id=2119517297]
 shape = SubResource("ConvexPolygonShape3D_klc73")
 
-[node name="platform_030" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_030" type="MeshInstance3D" parent="World/arms" unique_id=1815252231]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138443, -2.19562, 50.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1228,13 +1228,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_030"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_030" unique_id=1410238175]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_030/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_030/StaticBody3D" unique_id=898224323]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_031" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_031" type="MeshInstance3D" parent="World/arms" unique_id=1761520865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138443, -2.19562, 45.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1244,13 +1244,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_031"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_031" unique_id=777786031]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_031/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_031/StaticBody3D" unique_id=379485760]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_032" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_032" type="MeshInstance3D" parent="World/arms" unique_id=1826596227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138443, -2.19562, 40.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1260,13 +1260,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_032"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_032" unique_id=2139048666]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_032/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_032/StaticBody3D" unique_id=467662176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_033" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_033" type="MeshInstance3D" parent="World/arms" unique_id=1849492683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138443, -2.19562, 35.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1276,13 +1276,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_033"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_033" unique_id=1703353482]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_033/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_033/StaticBody3D" unique_id=908403627]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_034" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_034" type="MeshInstance3D" parent="World/arms" unique_id=1771067981]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138444, -2.19562, 30.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1292,13 +1292,13 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_034"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_034" unique_id=1876736831]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_034/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_034/StaticBody3D" unique_id=1763650837]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="platform_035" type="MeshInstance3D" parent="World/arms"]
+[node name="platform_035" type="MeshInstance3D" parent="World/arms" unique_id=1381566204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138444, -2.19562, 25.0038)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1308,15 +1308,15 @@ mesh = SubResource("ArrayMesh_olhx8")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_035"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arms/platform_035" unique_id=2061105899]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_035/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arms/platform_035/StaticBody3D" unique_id=256338589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19867, 0)
 shape = SubResource("BoxShape3D_olhx8")
 
-[node name="arches" type="Node3D" parent="World"]
+[node name="arches" type="Node3D" parent="World" unique_id=894259716]
 
-[node name="arch_002" type="MeshInstance3D" parent="World/arches"]
+[node name="arch_002" type="MeshInstance3D" parent="World/arches" unique_id=202550000]
 transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1, -0.11478, 0.177935, -21.6486)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1326,27 +1326,27 @@ mesh = SubResource("ArrayMesh_wb7uw")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_002" unique_id=841396639]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D" unique_id=1781767368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.26349, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D" unique_id=1195039038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28926, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_002/StaticBody3D" unique_id=812776559]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0850167, 3.98433, 0)
 shape = SubResource("BoxShape3D_klc73")
 
-[node name="planche_bois" parent="World/arches/arch_002" instance=ExtResource("5_csx81")]
+[node name="planche_bois" parent="World/arches/arch_002" unique_id=125646097 instance=ExtResource("5_csx81")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 0, 4.37114e-08, 0, 1, -4.37114e-08, 0, 5.18246, 0.771112)
 
-[node name="Cube" parent="World/arches/arch_002/planche_bois" index="0"]
+[node name="Cube" parent="World/arches/arch_002/planche_bois" index="0" unique_id=518595464]
 transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344981, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="World/arches/arch_002/planche_bois"]
+[node name="Label3D" type="Label3D" parent="World/arches/arch_002/planche_bois" unique_id=514554102]
 transform = Transform3D(-1.35505e-07, 1, -5.46145e-08, -4.37115e-09, 5.46145e-08, 1, 1, 1.35505e-07, 4.37115e-09, -0.344981, 0.0652866, -3.72529e-09)
 modulate = Color(0.219625, 0.221354, 0.22003, 1)
 text = "le verbe
@@ -1355,7 +1355,7 @@ font = ExtResource("6_3nc6l")
 font_size = 122
 outline_size = 47
 
-[node name="arch_006" type="MeshInstance3D" parent="World/arches"]
+[node name="arch_006" type="MeshInstance3D" parent="World/arches" unique_id=1688915558]
 transform = Transform3D(-1.2, 0, 8.74228e-08, 0, 1, 0, -1.04907e-07, 0, -1, -0.0405292, 0.177935, 22.3514)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1365,27 +1365,27 @@ mesh = SubResource("ArrayMesh_wb7uw")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_006"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_006" unique_id=1196625958]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D" unique_id=757876568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76349, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D" unique_id=847173062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80496, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_006/StaticBody3D" unique_id=1175573587]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0850167, 3.98433, 0)
 shape = SubResource("BoxShape3D_klc73")
 
-[node name="planche_bois" parent="World/arches/arch_006" instance=ExtResource("5_csx81")]
+[node name="planche_bois" parent="World/arches/arch_006" unique_id=1032754045 instance=ExtResource("5_csx81")]
 transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, 0, 4.37114e-08, 0, 1, -4.37114e-08, 0, 5.18246, 0.771112)
 
-[node name="Cube" parent="World/arches/arch_006/planche_bois" index="0"]
+[node name="Cube" parent="World/arches/arch_006/planche_bois" index="0" unique_id=518595464]
 transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344981, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois"]
+[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois" unique_id=220054221]
 transform = Transform3D(-1.35505e-07, 1, -5.46145e-08, -4.37115e-09, 5.46145e-08, 1, 1, 1.35505e-07, 4.37115e-09, -0.344981, 0.0652866, -3.72529e-09)
 modulate = Color(0.219625, 0.221354, 0.22003, 1)
 text = "le verbe
@@ -1394,13 +1394,13 @@ font = ExtResource("6_3nc6l")
 font_size = 122
 outline_size = 47
 
-[node name="planche_bois2" parent="World/arches/arch_006" instance=ExtResource("5_csx81")]
+[node name="planche_bois2" parent="World/arches/arch_006" unique_id=497769440 instance=ExtResource("5_csx81")]
 transform = Transform3D(1.91069e-15, 1, -8.74228e-08, 1, 0, 4.37114e-08, 4.37114e-08, -8.74228e-08, -1, -17.6897, 5.18246, 22.0316)
 
-[node name="Cube" parent="World/arches/arch_006/planche_bois2" index="0"]
+[node name="Cube" parent="World/arches/arch_006/planche_bois2" index="0" unique_id=518595464]
 transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344981, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois2"]
+[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois2" unique_id=2031363160]
 transform = Transform3D(-1.35505e-07, 1, -5.46145e-08, -4.37115e-09, 5.46145e-08, 1, 1, 1.35505e-07, 4.37115e-09, -0.344981, 0.0652866, -3.72529e-09)
 modulate = Color(0.219625, 0.221354, 0.22003, 1)
 text = "le verbe
@@ -1409,13 +1409,13 @@ font = ExtResource("6_3nc6l")
 font_size = 122
 outline_size = 47
 
-[node name="planche_bois3" parent="World/arches/arch_006" instance=ExtResource("5_csx81")]
+[node name="planche_bois3" parent="World/arches/arch_006" unique_id=981862131 instance=ExtResource("5_csx81")]
 transform = Transform3D(-5.73206e-15, -1, 1.74846e-07, 1, 0, 4.37114e-08, -4.37114e-08, 1.74846e-07, 1, 17.7319, 5.18246, 22.0316)
 
-[node name="Cube" parent="World/arches/arch_006/planche_bois3" index="0"]
+[node name="Cube" parent="World/arches/arch_006/planche_bois3" index="0" unique_id=518595464]
 transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, -0.344981, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois3"]
+[node name="Label3D" type="Label3D" parent="World/arches/arch_006/planche_bois3" unique_id=1499147111]
 transform = Transform3D(-1.35505e-07, 1, -5.46145e-08, -4.37115e-09, 5.46145e-08, 1, 1, 1.35505e-07, 4.37115e-09, -0.344981, 0.0652866, -3.72529e-09)
 modulate = Color(0.219625, 0.221354, 0.22003, 1)
 text = "les verbes
@@ -1424,7 +1424,7 @@ font = ExtResource("6_3nc6l")
 font_size = 122
 outline_size = 47
 
-[node name="arch_003" type="MeshInstance3D" parent="World/arches"]
+[node name="arch_003" type="MeshInstance3D" parent="World/arches" unique_id=1598226412]
 transform = Transform3D(-5.24537e-08, 0, -1, 0, 1, 0, 1.2, 0, -4.37114e-08, -22.0405, 0.177935, 0.586983)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1434,21 +1434,21 @@ mesh = SubResource("ArrayMesh_wb7uw")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_003" unique_id=1047842767]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D" unique_id=1437311753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79363, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D" unique_id=2103138079]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79584, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_003/StaticBody3D" unique_id=1649417009]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0850167, 3.98433, 0)
 shape = SubResource("BoxShape3D_klc73")
 
-[node name="arch_004" type="MeshInstance3D" parent="World/arches"]
+[node name="arch_004" type="MeshInstance3D" parent="World/arches" unique_id=559699493]
 transform = Transform3D(-5.24537e-08, 0, -1, 0, 1, 0, 1.2, 0, -4.37114e-08, 21.9595, 0.177935, 0.505271)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1458,46 +1458,46 @@ mesh = SubResource("ArrayMesh_wb7uw")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_004"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/arches/arch_004" unique_id=1972539770]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D" unique_id=1657739974]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76033, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D" unique_id=490544214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79491, 1.6001, 0)
 shape = SubResource("BoxShape3D_n313d")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="World/arches/arch_004/StaticBody3D" unique_id=1202401616]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0.0850167, 3.98433, 0)
 shape = SubResource("BoxShape3D_klc73")
 
-[node name="Mechanisms" type="Node3D" parent="World"]
+[node name="Mechanisms" type="Node3D" parent="World" unique_id=654686709]
 
-[node name="Lever" parent="World/Mechanisms" instance=ExtResource("8_v24ps")]
+[node name="Lever" parent="World/Mechanisms" unique_id=1276344446 instance=ExtResource("8_v24ps")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.77705, 0.299015, -20.034)
 door_nbr = 1
 
-[node name="Lever2" parent="World/Mechanisms" instance=ExtResource("8_v24ps")]
+[node name="Lever2" parent="World/Mechanisms" unique_id=1893352295 instance=ExtResource("8_v24ps")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -17.2229, 0.131354, -68.034)
 door_nbr = 2
 turn_off = false
 
-[node name="Lever3" parent="World/Mechanisms" instance=ExtResource("8_v24ps")]
+[node name="Lever3" parent="World/Mechanisms" unique_id=438695727 instance=ExtResource("8_v24ps")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 15.7291, 15.9319, -65.5739)
 door_nbr = 4
 
-[node name="PlateformeCallable" parent="World/Mechanisms" instance=ExtResource("8_papsp")]
+[node name="PlateformeCallable" parent="World/Mechanisms" unique_id=756061915 instance=ExtResource("8_papsp")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -16.3258, 6, -78)
 platform_id = 2
 wait_duration = 2.0
 
-[node name="digicode" parent="World/Mechanisms" instance=ExtResource("9_8bi03")]
+[node name="digicode" parent="World/Mechanisms" unique_id=1693272930 instance=ExtResource("9_8bi03")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.49016, 2, -82.4799)
 door_gate_to_open_nbr = 2
 test_type = "qcm"
 
-[node name="Cube" parent="World/Mechanisms/digicode/Digicode" index="0"]
+[node name="Cube" parent="World/Mechanisms/digicode/Digicode" index="0" unique_id=687852068]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
 
 [node name="CollisionShape3D" parent="World/Mechanisms/digicode" index="1"]
@@ -1512,12 +1512,12 @@ door_nb = 2
 [node name="NewQuizz" parent="World/Mechanisms/digicode/game2" index="0"]
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_xnptr"), SubResource("Resource_ho3qx"), SubResource("Resource_kypx5")])
 
-[node name="digicode2" parent="World/Mechanisms" instance=ExtResource("9_8bi03")]
+[node name="digicode2" parent="World/Mechanisms" unique_id=833601813 instance=ExtResource("9_8bi03")]
 transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -11.9222, 12, 105.068)
 door_gate_to_open_nbr = 7
 test_type = "spelling"
 
-[node name="Cube" parent="World/Mechanisms/digicode2/Digicode" index="0"]
+[node name="Cube" parent="World/Mechanisms/digicode2/Digicode" index="0" unique_id=687852068]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
 
 [node name="CollisionShape3D" parent="World/Mechanisms/digicode2" index="1"]
@@ -1533,11 +1533,14 @@ french_words = Array[String](["PARLER", "ÊTRE", "AVOIR"])
 [node name="NewQuizz" parent="World/Mechanisms/digicode2/game2" index="0"]
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_xnptr"), SubResource("Resource_ho3qx"), SubResource("Resource_kypx5")])
 
-[node name="Phrases_puzzle" parent="World/Mechanisms" instance=ExtResource("10_ggiaf")]
+[node name="Phrases_puzzle" parent="World/Mechanisms" unique_id=1930174281 instance=ExtResource("10_ggiaf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2989, 0.204201, -85.2432)
 phrasePT = "ela esta aqui"
 phraseFR = "elle est ici"
 door_nbr = 3
+
+[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" parent="World/Mechanisms/Phrases_puzzle" index="0"]
+transform = Transform3D(-2.44793e-07, 0, -12.3972, 0, 4.87887, 0, 5.6002, 0, -5.41899e-07, 0, 0, 2)
 
 [node name="Cube" parent="World/Mechanisms/Phrases_puzzle" index="1"]
 transform = Transform3D(2.54326, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 2)
@@ -1556,23 +1559,26 @@ dalle_texte = "ici"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.82535, -0.0363641, 5.45847)
 dalle_texte = "est"
 
-[node name="Dalle_phrase3" parent="World/Mechanisms/Phrases_puzzle/dalles" index="2" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase3" parent="World/Mechanisms/Phrases_puzzle/dalles" index="2" unique_id=1614991156 instance=ExtResource("11_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06335, -0.0363641, 5.45847)
 dalle_texte = "elle"
 
-[node name="Dalle_phrase4" parent="World/Mechanisms/Phrases_puzzle/dalles" index="3" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase4" parent="World/Mechanisms/Phrases_puzzle/dalles" index="3" unique_id=1977968095 instance=ExtResource("11_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.59572, -0.0363641, 5.43231)
 dalle_texte = "il"
 
-[node name="Dalle_phrase5" parent="World/Mechanisms/Phrases_puzzle/dalles" index="4" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase5" parent="World/Mechanisms/Phrases_puzzle/dalles" index="4" unique_id=399696333 instance=ExtResource("11_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38157, -0.0363641, 5.43231)
 dalle_texte = "suis"
 
-[node name="Phrases_puzzle2" parent="World/Mechanisms" instance=ExtResource("10_ggiaf")]
+[node name="Phrases_puzzle2" parent="World/Mechanisms" unique_id=1194494399 instance=ExtResource("10_ggiaf")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -84.7011, 0.204201, -7.2432)
 phrasePT = "eles trabalham comigo"
 phraseFR = "ils travaillent avec moi"
 door_nbr = 12
+
+[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" parent="World/Mechanisms/Phrases_puzzle2" index="0"]
+transform = Transform3D(-2.44793e-07, 0, -12.3972, 0, 4.87887, 0, 5.6002, 0, -5.41899e-07, 0, 0, 2.2407303)
 
 [node name="Cube" parent="World/Mechanisms/Phrases_puzzle2" index="1"]
 transform = Transform3D(2.54326, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 2)
@@ -1591,165 +1597,165 @@ dalle_texte = "travaillez"
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.82535, -0.0363641, 4.45847)
 dalle_texte = "avec"
 
-[node name="Dalle_phrase3" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="2" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase3" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="2" unique_id=583458594 instance=ExtResource("11_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.06335, -0.0363641, 5.45847)
 dalle_texte = "travaillent"
 
-[node name="Dalle_phrase4" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="3" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase4" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="3" unique_id=1431163476 instance=ExtResource("11_2srqd")]
 transform = Transform3D(0.566205, 0, 0.824265, 0, 1, 0, -0.824265, 0, 0.566205, -17.6721, -0.0363641, 7.32344)
 dalle_texte = "il"
 
-[node name="Dalle_phrase6" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="4" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase6" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="4" unique_id=154230563 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -21.5957, -0.0363641, 13.4323)
 dalle_texte = "ils"
 
-[node name="Dalle_phrase5" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="5" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase5" parent="World/Mechanisms/Phrases_puzzle2/dalles" index="5" unique_id=781474696 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -9.31609, -0.0363641, 19.4734)
 dalle_texte = "moi"
 
-[node name="SwiperTrapRuins" parent="World/Mechanisms" instance=ExtResource("14_kypx5")]
+[node name="SwiperTrapRuins" parent="World/Mechanisms" unique_id=2005800718 instance=ExtResource("14_kypx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258867, -48)
 
-[node name="SwiperTrapRuins2" parent="World/Mechanisms" instance=ExtResource("14_kypx5")]
+[node name="SwiperTrapRuins2" parent="World/Mechanisms" unique_id=1265602084 instance=ExtResource("14_kypx5")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0.258867, -33)
 
-[node name="platform_door_mecanic" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic" parent="World/Mechanisms" unique_id=995077055 instance=ExtResource("24_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.764, -0.381154, -61.3465)
 door_nbr = 4
 distance_to_go = Vector3(0, 11, 0)
 
-[node name="platform_door_mecanic2" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic2" parent="World/Mechanisms" unique_id=253427395 instance=ExtResource("24_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76403, -0.381154, -61.3465)
 door_nbr = 4
 
-[node name="platform_door_mecanic3" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic3" parent="World/Mechanisms" unique_id=495852744 instance=ExtResource("24_2srqd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.23597, -2.38115, 81.6535)
 door_nbr = 8
 distance_to_go = Vector3(0, 11, 0)
 
-[node name="platform_door_mecanic4" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic4" parent="World/Mechanisms" unique_id=54119076 instance=ExtResource("24_2srqd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.764, -2.38115, 81.6535)
 door_nbr = 8
 
-[node name="platform_door_mecanic5" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic5" parent="World/Mechanisms" unique_id=501051396 instance=ExtResource("24_2srqd")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 52.8853, -0.38115, -8.46781)
 door_nbr = 11
 distance_to_go = Vector3(0, 11, 0)
 
-[node name="platform_door_mecanic7" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic7" parent="World/Mechanisms" unique_id=736559764 instance=ExtResource("24_2srqd")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 57.8853, -0.38115, -14.4678)
 door_nbr = 11
 distance_to_go = Vector3(0, 14, 0)
 
-[node name="platform_door_mecanic6" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic6" parent="World/Mechanisms" unique_id=1238286070 instance=ExtResource("24_2srqd")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 48.6427, -0.38115, -4.22519)
 door_nbr = 11
 
-[node name="platform_door_mecanic8" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic8" parent="World/Mechanisms" unique_id=1478997313 instance=ExtResource("24_2srqd")]
 transform = Transform3D(-0.707107, 0, 0.707106, 0, 1, 0, -0.707106, 0, -0.707107, -51.7284, -9.61168, 16.8258)
 door_nbr = 13
 distance_to_go = Vector3(0, 11, 0)
 
-[node name="platform_door_mecanic9" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic9" parent="World/Mechanisms" unique_id=712306533 instance=ExtResource("24_2srqd")]
 transform = Transform3D(-0.707107, 0, 0.707106, 0, 1, 0, -0.707106, 0, -0.707107, -57.7284, -9.61168, 11.8257)
 door_nbr = 13
 distance_to_go = Vector3(0, 14, 0)
 
-[node name="platform_door_mecanic10" parent="World/Mechanisms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic10" parent="World/Mechanisms" unique_id=1113403359 instance=ExtResource("24_2srqd")]
 transform = Transform3D(-0.707107, 0, 0.707106, 0, 1, 0, -0.707106, 0, -0.707107, -47.4858, -9.61168, 21.0684)
 door_nbr = 13
 distance_to_go = Vector3(0, 8, 0)
 
-[node name="panneau_grand" parent="World/Mechanisms" instance=ExtResource("10_3nc6l")]
+[node name="panneau_grand" parent="World/Mechanisms" unique_id=2033198692 instance=ExtResource("10_3nc6l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0884904, -65)
 hints_list = Array[String](["ÊTRE = SER/ESTAR", "je suis", "tu es", "il/elle/on est", "nous sommes", "vous êtes", "ils/elles sont", "on = a gente"])
 audio_list = Array[AudioStream]([null, ExtResource("11_aoltl"), ExtResource("12_papsp"), ExtResource("13_8bi03"), ExtResource("14_ctk7w"), ExtResource("15_3fn2n"), ExtResource("16_tj8at")])
 
-[node name="TurretStones" parent="World/Mechanisms" instance=ExtResource("23_j3l56")]
+[node name="TurretStones" parent="World/Mechanisms" unique_id=1845038534 instance=ExtResource("23_j3l56")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0.635741, 34.8262)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" parent="World/Mechanisms/TurretStones" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 
-[node name="TurretStones2" parent="World/Mechanisms" instance=ExtResource("23_j3l56")]
+[node name="TurretStones2" parent="World/Mechanisms" unique_id=442460230 instance=ExtResource("23_j3l56")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 0.635741, 46.8262)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" parent="World/Mechanisms/TurretStones2" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 
-[node name="TurretStones3" parent="World/Mechanisms" instance=ExtResource("23_j3l56")]
+[node name="TurretStones3" parent="World/Mechanisms" unique_id=1288938607 instance=ExtResource("23_j3l56")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11, 0.635741, 60.8262)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" parent="World/Mechanisms/TurretStones3" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 
-[node name="TurretStones4" parent="World/Mechanisms" instance=ExtResource("23_j3l56")]
+[node name="TurretStones4" parent="World/Mechanisms" unique_id=912837609 instance=ExtResource("23_j3l56")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 11, 0.635741, 48.8262)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" parent="World/Mechanisms/TurretStones4" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6)
 
-[node name="CameraEvent" parent="World/Mechanisms" instance=ExtResource("24_fttqg")]
+[node name="CameraEvent" parent="World/Mechanisms" unique_id=1027107096 instance=ExtResource("24_fttqg")]
 transform = Transform3D(-1, 0, 8.74228e-08, 2.26267e-08, 0.965926, 0.258819, -8.44439e-08, 0.258819, -0.965926, 0, 4.50208, 15)
 door_nbr = 4
 
-[node name="CameraEvent3" parent="World/Mechanisms" instance=ExtResource("24_fttqg")]
+[node name="CameraEvent3" parent="World/Mechanisms" unique_id=1448021139 instance=ExtResource("24_fttqg")]
 transform = Transform3D(1.28155e-07, -0.258819, 0.965926, 2.26267e-08, 0.965926, 0.258819, -1, -1.13133e-08, 1.29645e-07, -11, 4.50208, 2)
 door_nbr = 11
 
-[node name="CameraEvent4" parent="World/Mechanisms" instance=ExtResource("24_fttqg")]
+[node name="CameraEvent4" parent="World/Mechanisms" unique_id=376845581 instance=ExtResource("24_fttqg")]
 transform = Transform3D(-0.707107, -0.183013, 0.683013, 3.47682e-08, 0.965926, 0.25882, -0.707107, 0.183013, -0.683012, -28, 9.50208, 13)
 door_nbr = 13
 
-[node name="CameraEvent2" parent="World/Mechanisms" instance=ExtResource("24_fttqg")]
+[node name="CameraEvent2" parent="World/Mechanisms" unique_id=905458646 instance=ExtResource("24_fttqg")]
 transform = Transform3D(-4.07325e-08, 0.258819, -0.965926, 2.26267e-08, 0.965926, 0.258819, 1, -1.13133e-08, -4.52008e-08, 16.8773, 2.98075, 0)
 door_nbr = 8
 
-[node name="Computer_jungle" parent="World/Mechanisms" instance=ExtResource("25_0ivej")]
+[node name="Computer_jungle" parent="World/Mechanisms" unique_id=368370390 instance=ExtResource("25_0ivej")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 1.81459, 81)
 
 [node name="NewQuizz" parent="World/Mechanisms/Computer_jungle/Control" index="0"]
 door_nbr = 5
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_cadcb"), SubResource("Resource_wgkbc"), SubResource("Resource_pa8gq")])
 
-[node name="Computer_jungle2" parent="World/Mechanisms" instance=ExtResource("25_0ivej")]
+[node name="Computer_jungle2" parent="World/Mechanisms" unique_id=440654239 instance=ExtResource("25_0ivej")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11, 10.211, 81)
 
 [node name="NewQuizz" parent="World/Mechanisms/Computer_jungle2/Control" index="0"]
 door_nbr = 8
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_pgckb"), SubResource("Resource_1f8nt"), SubResource("Resource_abq1y"), SubResource("Resource_x1184"), SubResource("Resource_j8kpf")])
 
-[node name="Platform_moving" parent="World/Mechanisms" instance=ExtResource("26_irbgx")]
+[node name="Platform_moving" parent="World/Mechanisms" unique_id=454586500 instance=ExtResource("26_irbgx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 9.24081, 99.4929)
 automatic = false
 door_nbr = 6
 pos2 = Vector3(0, -5, 0)
 
-[node name="doors" type="Node3D" parent="World"]
+[node name="doors" type="Node3D" parent="World" unique_id=724453299]
 
-[node name="door_gate" parent="World/doors" instance=ExtResource("7_rvt76")]
+[node name="door_gate" parent="World/doors" unique_id=1784889618 instance=ExtResource("7_rvt76")]
 transform = Transform3D(1.38182, 0, 0, 0, 1.2, 0, 0, 0, 1, -1.50085, 0.377012, -21.5397)
 door_nbr = 1
 
-[node name="door_gate2" parent="World/doors" instance=ExtResource("7_rvt76")]
+[node name="door_gate2" parent="World/doors" unique_id=1546738763 instance=ExtResource("7_rvt76")]
 transform = Transform3D(-1.32, 0, 8.74228e-08, 0, 1.2, 0, -1.15398e-07, 0, -1, 1.30955, 0.377012, 22.4603)
 door_nbr = 4
 
-[node name="door_gate3" parent="World/doors" instance=ExtResource("7_rvt76")]
+[node name="door_gate3" parent="World/doors" unique_id=1479577195 instance=ExtResource("7_rvt76")]
 transform = Transform3D(-5.75527e-08, 0, -1, 0, 1.2, 0, 1.31665, 0, -4.37114e-08, 22.0749, 0.377012, -0.824371)
 door_nbr = 8
 
-[node name="door_gate4" parent="World/doors" instance=ExtResource("7_rvt76")]
+[node name="door_gate4" parent="World/doors" unique_id=1986077593 instance=ExtResource("7_rvt76")]
 transform = Transform3D(-5.7699e-08, 0, 1, 0, 1.2, 0, -1.32, 0, -4.37114e-08, -21.9251, 0.377012, 1.92669)
 door_nbr = 11
 
-[node name="steles" type="Node3D" parent="World"]
+[node name="steles" type="Node3D" parent="World" unique_id=367905213]
 
-[node name="Stele" parent="World/steles" instance=ExtResource("5_n313d")]
+[node name="Stele" parent="World/steles" unique_id=1406660095 instance=ExtResource("5_n313d")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5.31009, 0.934019, -5.12867)
 texte = "[center][color=blue]
 Ici, tu pourras apprendre la conjugaison des verbes AVOIR, ÊTRE, ALLER et les verbes du premier groupe : les verbes en -ER.
@@ -1757,9 +1763,9 @@ Ici, tu pourras apprendre la conjugaison des verbes AVOIR, ÊTRE, ALLER et les v
 Aqui, você podera aprender a conjugação dos verbos TER, SER/ESTAR, IR e os verbos do primeiro grupo : os verbos em -ER.[/color]
 [/center]"
 
-[node name="Platforms" type="Node3D" parent="World"]
+[node name="Platforms" type="Node3D" parent="World" unique_id=190313567]
 
-[node name="platform_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="platform_001" type="MeshInstance3D" parent="World/Platforms" unique_id=1818677761]
 transform = Transform3D(3.22541, 0, 0, 0, 3, 0, 0, 0, 4, 75.3913, -14.3516, 0.492315)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1769,13 +1775,13 @@ mesh = SubResource("ArrayMesh_ljm8n")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_001" unique_id=1187692054]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_001/StaticBody3D" unique_id=35819667]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.17, 0)
 shape = SubResource("BoxShape3D_p5xfs")
 
-[node name="platform_002" type="MeshInstance3D" parent="World/Platforms"]
+[node name="platform_002" type="MeshInstance3D" parent="World/Platforms" unique_id=614625037]
 transform = Transform3D(2.1, 0, 0, 0, 3, 0, 0, 0, 3.2, -72.9731, -14.3516, 0.492315)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1785,13 +1791,13 @@ mesh = SubResource("ArrayMesh_ljm8n")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_002" unique_id=1142905016]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_002/StaticBody3D" unique_id=1910786608]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15967, 0)
 shape = SubResource("BoxShape3D_p5xfs")
 
-[node name="platform_003" type="MeshInstance3D" parent="World/Platforms"]
+[node name="platform_003" type="MeshInstance3D" parent="World/Platforms" unique_id=1976954774]
 transform = Transform3D(-1.31134e-07, 0, -2.4, 0, 3, 0, 3, 0, -1.04908e-07, 0.026898, -16.3516, 92.4923)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1801,13 +1807,13 @@ mesh = SubResource("ArrayMesh_ljm8n")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_003" unique_id=2129411060]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_003/StaticBody3D" unique_id=1835080781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15967, 0)
 shape = SubResource("BoxShape3D_p5xfs")
 
-[node name="platform_004" type="MeshInstance3D" parent="World/Platforms"]
+[node name="platform_004" type="MeshInstance3D" parent="World/Platforms" unique_id=1746413690]
 transform = Transform3D(-1.31134e-07, 0, -4, 0, 3, 0, 3, 0, -1.74846e-07, 0.0269045, -14.3516, -71.5077)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1817,13 +1823,13 @@ mesh = SubResource("ArrayMesh_ljm8n")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_004"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/platform_004" unique_id=1922755750]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/platform_004/StaticBody3D" unique_id=1814861986]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15967, 0)
 shape = SubResource("BoxShape3D_p5xfs")
 
-[node name="circle_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="circle_001" type="MeshInstance3D" parent="World/Platforms" unique_id=1570920396]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -1, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1832,13 +1838,13 @@ visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_csx81")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/circle_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/circle_001" unique_id=450807885]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/circle_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/circle_001/StaticBody3D" unique_id=767144582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0369209, 0)
 shape = SubResource("ConvexPolygonShape3D_olhx8")
 
-[node name="column_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="column_001" type="MeshInstance3D" parent="World/Platforms" unique_id=276009646]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8279, 0, -66.4907)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1848,13 +1854,13 @@ mesh = SubResource("ArrayMesh_8bi03")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_001" unique_id=550034834]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_001/StaticBody3D" unique_id=2103622155]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.45349, 0)
 shape = SubResource("CylinderShape3D_ctk7w")
 
-[node name="column_002" type="MeshInstance3D" parent="World/Platforms"]
+[node name="column_002" type="MeshInstance3D" parent="World/Platforms" unique_id=376766102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1721, 0, -59.4907)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1864,13 +1870,13 @@ mesh = SubResource("ArrayMesh_8bi03")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_002" unique_id=1890957661]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_002/StaticBody3D" unique_id=767467948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.45349, 0)
 shape = SubResource("CylinderShape3D_ctk7w")
 
-[node name="column_001_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="column_001_001" type="MeshInstance3D" parent="World/Platforms" unique_id=2055365936]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.3577, 0.0678786, -81.9601)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1878,12 +1884,12 @@ visibility_range_end_margin = 5.0
 mesh = SubResource("ArrayMesh_3fn2n")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_001_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/column_001_001" unique_id=2140529952]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_001_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/column_001_001/StaticBody3D" unique_id=511463451]
 shape = SubResource("ConvexPolygonShape3D_tj8at")
 
-[node name="pillar_014" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_014" type="MeshInstance3D" parent="World/Platforms" unique_id=1125009356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50024, 0.127111, -81.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1893,13 +1899,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_014"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_014" unique_id=407277807]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_014/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_014/StaticBody3D" unique_id=1382727280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_014"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_014" unique_id=80791499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1909,12 +1915,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_014/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_014/pillar_cap_002" unique_id=1576518265]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_014/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_014/pillar_cap_002/StaticBody3D" unique_id=27485511]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_015" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_015" type="MeshInstance3D" parent="World/Platforms" unique_id=1696443396]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.4998, 0.127111, -81.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1924,13 +1930,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_015"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_015" unique_id=670571144]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_015/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_015/StaticBody3D" unique_id=558854349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_015"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_015" unique_id=1435139225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1939,12 +1945,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_015/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_015/pillar_cap_002" unique_id=1741070002]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_015/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_015/pillar_cap_002/StaticBody3D" unique_id=1827478992]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_016" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_016" type="MeshInstance3D" parent="World/Platforms" unique_id=202868527]
 transform = Transform3D(1.6, 0, 0, 0, 0.3, 0, 0, 0, 1, 8.4998, -1.87293, 81.0114)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1954,24 +1960,24 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_016"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_016" unique_id=32981001]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_016/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_016/StaticBody3D" unique_id=1835514938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_016"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_016" unique_id=1423883405]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_016/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_016/pillar_cap_002" unique_id=720705870]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_016/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_016/pillar_cap_002/StaticBody3D" unique_id=2066728802]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_022" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_022" type="MeshInstance3D" parent="World/Platforms" unique_id=2037329905]
 transform = Transform3D(-6.99382e-08, 0, -1, 0, 1.79712, 0, 1.6, 0, -4.37114e-08, -34.5002, -19.8729, -8.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -1981,24 +1987,24 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_022"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_022" unique_id=1016875421]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_022/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_022/StaticBody3D" unique_id=205004951]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_022"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_022" unique_id=670095398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_022/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_022/pillar_cap_002" unique_id=682169352]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_022/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_022/pillar_cap_002/StaticBody3D" unique_id=501416010]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_023" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_023" type="MeshInstance3D" parent="World/Platforms" unique_id=165027199]
 transform = Transform3D(2.72, 0, 9.59233e-15, 0, 1.79712, 0, 0, 0, 2.7, -34.5002, -19.8729, -20.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2008,13 +2014,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_023"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_023" unique_id=1413959218]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_023/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_023/StaticBody3D" unique_id=1326869270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_023"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_023" unique_id=852408921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2024,12 +2030,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_023/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_023/pillar_cap_002" unique_id=2109740778]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_023/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_023/pillar_cap_002/StaticBody3D" unique_id=1490468612]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_026" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_026" type="MeshInstance3D" parent="World/Platforms" unique_id=513865951]
 transform = Transform3D(4.08, 0, 1.6307e-14, 0, 1.79712, 0, 0, 0, 4.59, -38.5002, -22.8729, 35.0114)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2039,13 +2045,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_026"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_026" unique_id=855026674]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_026/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_026/StaticBody3D" unique_id=1243293666]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_026"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_026" unique_id=2067058136]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2055,12 +2061,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_026/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_026/pillar_cap_002" unique_id=1081565324]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_026/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_026/pillar_cap_002/StaticBody3D" unique_id=1718372053]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_024" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_024" type="MeshInstance3D" parent="World/Platforms" unique_id=1257197663]
 transform = Transform3D(2.72, 0, 9.59233e-15, 0, 1.97683, 0, 0, 0, 2.7, -47.6967, -19.8729, -20.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2070,13 +2076,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_024"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_024" unique_id=900926447]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_024/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_024/StaticBody3D" unique_id=1900949449]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_024"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_024" unique_id=1437330029]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2086,12 +2092,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_024/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_024/pillar_cap_002" unique_id=757211957]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_024/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_024/pillar_cap_002/StaticBody3D" unique_id=540570063]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_025" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_025" type="MeshInstance3D" parent="World/Platforms" unique_id=1013241740]
 transform = Transform3D(2.72, 0, 9.59233e-15, 0, 1.76136, 0, 0, 0, 2.7, -60.6967, -19.8729, -20.9886)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2101,13 +2107,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_025"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_025" unique_id=599405684]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_025/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_025/StaticBody3D" unique_id=955516227]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_025"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_025" unique_id=543671260]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2117,12 +2123,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_025/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_025/pillar_cap_002" unique_id=1945740099]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_025/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_025/pillar_cap_002/StaticBody3D" unique_id=1276495846]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_021" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_021" type="MeshInstance3D" parent="World/Platforms" unique_id=2060298271]
 transform = Transform3D(1.5, 0, 0, 0, 0.51, 0, 0, 0, 1.4, 8.4998, -1.87293, 93.0114)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2132,13 +2138,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_021"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_021" unique_id=1980827928]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_021/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_021/StaticBody3D" unique_id=375628747]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_021"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_021" unique_id=448860304]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2147,12 +2153,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_021/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_021/pillar_cap_002" unique_id=649547872]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_021/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_021/pillar_cap_002/StaticBody3D" unique_id=1896648118]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_020" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_020" type="MeshInstance3D" parent="World/Platforms" unique_id=1087143071]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.4998, -1.87293, 105.011)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2162,13 +2168,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_020"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_020" unique_id=319912545]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_020/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_020/StaticBody3D" unique_id=827200917]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_020"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_020" unique_id=320938574]
 transform = Transform3D(1.7, 0, 0, 0, 1, 0, 0, 0, 1.3, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2178,12 +2184,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_020/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_020/pillar_cap_002" unique_id=1418966477]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_020/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_020/pillar_cap_002/StaticBody3D" unique_id=234139700]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_018" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_018" type="MeshInstance3D" parent="World/Platforms" unique_id=1223657170]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5002, -1.87293, 81.0114)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2193,13 +2199,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_018"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_018" unique_id=1043185960]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_018/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_018/StaticBody3D" unique_id=1113371749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_018"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_018" unique_id=1451565315]
 transform = Transform3D(1.8, 0, 0, 0, 1, 0, 0, 0, 0.96, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2209,12 +2215,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_018/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_018/pillar_cap_002" unique_id=1424171222]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_018/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_018/pillar_cap_002/StaticBody3D" unique_id=1141397435]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_019" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_019" type="MeshInstance3D" parent="World/Platforms" unique_id=778723224]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5002, -1.87293, 105.011)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2224,13 +2230,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_019"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_019" unique_id=138367623]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_019/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_019/StaticBody3D" unique_id=1078729088]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_019"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_019" unique_id=1606745889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2240,12 +2246,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_019/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_019/pillar_cap_002" unique_id=2024851948]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_019/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_019/pillar_cap_002/StaticBody3D" unique_id=417856673]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="pillar_017" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_017" type="MeshInstance3D" parent="World/Platforms" unique_id=1031388550]
 transform = Transform3D(1.95, 0, 0, 0, 1.3, 0, 0, 0, 2.3, -0.5002, -1.87293, 94.0114)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2255,13 +2261,13 @@ mesh = SubResource("ArrayMesh_ude6t")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_017"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_017" unique_id=456613578]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_017/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_017/StaticBody3D" unique_id=1709648225]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.99245, 0)
 shape = SubResource("BoxShape3D_ggiaf")
 
-[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_017"]
+[node name="pillar_cap_002" type="MeshInstance3D" parent="World/Platforms/pillar_017" unique_id=1207930506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0440903, 11.0002, 0)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2271,12 +2277,12 @@ mesh = SubResource("ArrayMesh_2srqd")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_017/pillar_cap_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_017/pillar_cap_002" unique_id=418678761]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_017/pillar_cap_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_017/pillar_cap_002/StaticBody3D" unique_id=801624522]
 shape = SubResource("BoxShape3D_030ws")
 
-[node name="ruins_road_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="ruins_road_001" type="MeshInstance3D" parent="World/Platforms" unique_id=1512108407]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.45635, 10.3725, -82.0333)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2286,13 +2292,13 @@ mesh = SubResource("ArrayMesh_kypx5")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/ruins_road_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/ruins_road_001" unique_id=195151533]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/ruins_road_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/ruins_road_001/StaticBody3D" unique_id=1969316050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.499999)
 shape = SubResource("BoxShape3D_gme8e")
 
-[node name="ruins_road_002" type="MeshInstance3D" parent="World/Platforms"]
+[node name="ruins_road_002" type="MeshInstance3D" parent="World/Platforms" unique_id=30483388]
 transform = Transform3D(-4.37114e-08, 0, -0.8, 0, 1, 0, 1, 0, -3.49691e-08, -1.16409, 9.90939, 105.108)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2302,45 +2308,45 @@ mesh = SubResource("ArrayMesh_kypx5")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/ruins_road_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/ruins_road_002" unique_id=1597111415]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/ruins_road_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/ruins_road_002/StaticBody3D" unique_id=1163468724]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.499999)
 shape = SubResource("BoxShape3D_gme8e")
 
-[node name="obstacle_7_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="obstacle_7_001" type="MeshInstance3D" parent="World/Platforms" unique_id=93168923]
 transform = Transform3D(0.443955, 0, 0, 0, 0.443956, 0, 0, 0, 0.443955, -12.9275, 8.19951, -83.991)
 mesh = SubResource("ArrayMesh_ctk7w")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_7_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_7_001" unique_id=1712264351]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_7_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_7_001/StaticBody3D" unique_id=1178277236]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0657883, 0)
 shape = SubResource("CylinderShape3D_3fn2n")
 
-[node name="obstacle_7_002" type="MeshInstance3D" parent="World/Platforms"]
+[node name="obstacle_7_002" type="MeshInstance3D" parent="World/Platforms" unique_id=1214303420]
 transform = Transform3D(-0.241425, 0, -0.372573, 0, 0.443955, 0, 0.372573, 0, -0.241425, -10.9994, 9.72541, -81.252)
 mesh = SubResource("ArrayMesh_ctk7w")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_7_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_7_002" unique_id=751928652]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_7_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_7_002/StaticBody3D" unique_id=588534596]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0657883, 0)
 shape = SubResource("CylinderShape3D_3fn2n")
 
-[node name="WallPusher" parent="World/Platforms" instance=ExtResource("12_ctk7w")]
+[node name="WallPusher" parent="World/Platforms" unique_id=1070310761 instance=ExtResource("12_ctk7w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67139, 10.6353, -83.2854)
 interval = 0.8
 
-[node name="WallPusher2" parent="World/Platforms" instance=ExtResource("12_ctk7w")]
+[node name="WallPusher2" parent="World/Platforms" unique_id=770045900 instance=ExtResource("12_ctk7w")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 8.97825, 10.6353, -80.9719)
 interval = 0.6
 
-[node name="Rotating_tower" parent="World/Platforms" instance=ExtResource("13_tj8at")]
+[node name="Rotating_tower" parent="World/Platforms" unique_id=334297751 instance=ExtResource("13_tj8at")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8914, 0.0936616, -75.0506)
 pause_duration = 1.5
 time_of_rotation = 2.5
@@ -2360,7 +2366,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.9095, 1.74952)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0192051, 8.77357, 0)
 shape = SubResource("CylinderShape3D_2srqd")
 
-[node name="pillar_003" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_003" type="MeshInstance3D" parent="World/Platforms" unique_id=1781133634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00496995, -4.11954, 63.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2370,13 +2376,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_003" unique_id=1302927059]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_003/StaticBody3D" unique_id=964169707]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_006" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_006" type="MeshInstance3D" parent="World/Platforms" unique_id=1015906818]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.995, -4.11954, 34.8204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2386,13 +2392,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_006"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_006" unique_id=1250919681]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_006/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_006/StaticBody3D" unique_id=1377708942]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_007" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_007" type="MeshInstance3D" parent="World/Platforms" unique_id=688723663]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.995, -4.11954, 46.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2402,13 +2408,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_007"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_007" unique_id=284197099]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_007/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_007/StaticBody3D" unique_id=529903939]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_008" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_008" type="MeshInstance3D" parent="World/Platforms" unique_id=2070066921]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.005, -4.11954, 60.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2418,13 +2424,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_008"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_008" unique_id=929616047]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_008/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_008/StaticBody3D" unique_id=905458040]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_009" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_009" type="MeshInstance3D" parent="World/Platforms" unique_id=204678989]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.005, -4.11954, 48.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2434,13 +2440,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_009"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_009" unique_id=2020036214]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_009/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_009/StaticBody3D" unique_id=894178102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_004" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_004" type="MeshInstance3D" parent="World/Platforms" unique_id=630561904]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00496995, -5.11954, 68.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2450,13 +2456,13 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_004"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_004" unique_id=49416099]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_004/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_004/StaticBody3D" unique_id=1543461886]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="pillar_005" type="MeshInstance3D" parent="World/Platforms"]
+[node name="pillar_005" type="MeshInstance3D" parent="World/Platforms" unique_id=1955103654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00496995, -6.11954, 73.7204)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2466,22 +2472,22 @@ mesh = SubResource("ArrayMesh_fttqg")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_005"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/pillar_005" unique_id=1555904167]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_005/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/pillar_005/StaticBody3D" unique_id=148854637]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075969, 0.126984, 0.0877838)
 shape = SubResource("BoxShape3D_0ivej")
 
-[node name="platform_door_mecanic" parent="World/Platforms" instance=ExtResource("24_2srqd")]
+[node name="platform_door_mecanic" parent="World/Platforms" unique_id=1898867303 instance=ExtResource("24_2srqd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.41301, -2.52023, 87)
 door_nbr = 5
 
-[node name="fence_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="fence_001" type="MeshInstance3D" parent="World/Platforms" unique_id=247164586]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, 1, -10.8897, 12.0492, 105.066)
 mesh = SubResource("ArrayMesh_1f8nt")
 skeleton = NodePath("")
 
-[node name="obstacle_9_001" type="MeshInstance3D" parent="World/Platforms"]
+[node name="obstacle_9_001" type="MeshInstance3D" parent="World/Platforms" unique_id=1375694549]
 transform = Transform3D(1.6, 0, 0, 0, 1, 0, 0, 0, 1.4, -9.41474, 7.62015, 90.0527)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2491,13 +2497,13 @@ mesh = SubResource("ArrayMesh_abq1y")
 skeleton = NodePath("")
 metadata/_edit_group_ = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_001"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_001" unique_id=954103126]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_001/StaticBody3D" unique_id=314831928]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00683594, -0.0119019, 0.000793457)
 shape = SubResource("BoxShape3D_x1184")
 
-[node name="obstacle_9_002" type="MeshInstance3D" parent="World/Platforms"]
+[node name="obstacle_9_002" type="MeshInstance3D" parent="World/Platforms" unique_id=2130040860]
 transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -10.5492, 6.79471, 95.814)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2506,13 +2512,13 @@ visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_abq1y")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_002"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_002" unique_id=1310295119]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_002/StaticBody3D" unique_id=26900811]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00683594, -0.0119019, 0.000793457)
 shape = SubResource("BoxShape3D_x1184")
 
-[node name="obstacle_9_003" type="MeshInstance3D" parent="World/Platforms"]
+[node name="obstacle_9_003" type="MeshInstance3D" parent="World/Platforms" unique_id=307362748]
 transform = Transform3D(-5.24537e-08, 0, 1.5, 0, 1, 0, -1.2, 0, -6.55671e-08, -10.6123, 7.67052, 100.428)
 visibility_range_begin_margin = 5.0
 visibility_range_end = 80.0
@@ -2521,81 +2527,81 @@ visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_abq1y")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_003"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/obstacle_9_003" unique_id=2114815100]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_003/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/obstacle_9_003/StaticBody3D" unique_id=1368498883]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00683594, -0.0119019, 0.000793457)
 shape = SubResource("BoxShape3D_x1184")
 
-[node name="planche_bois" parent="World/Platforms" instance=ExtResource("5_csx81")]
+[node name="planche_bois" parent="World/Platforms" unique_id=1268243723 instance=ExtResource("5_csx81")]
 transform = Transform3D(-4.37114e-08, 0, 2.16562, 0, 1, 0, -1.24015, 0, -1.17396e-07, 79, 12.039, 17)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/planche_bois/Cube" index="0"]
+[node name="StaticBody3D" type="StaticBody3D" parent="World/Platforms/planche_bois/Cube" parent_id_path=PackedInt32Array(1268243723, 518595464) index="0" unique_id=387278880]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/planche_bois/Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Platforms/planche_bois/Cube/StaticBody3D" unique_id=1067891225]
 shape = SubResource("ConvexPolygonShape3D_v3t4q")
 
-[node name="dalles" type="Node3D" parent="World"]
+[node name="dalles" type="Node3D" parent="World" unique_id=194296342]
 
-[node name="Dalle_phrase" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase" parent="World/dalles" unique_id=369703437 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 1, 0, 3.01992e-07, 0, -2, 0, 0.285123, 36)
 dalle_texte = "j'ai"
 is_talking = true
 phrase_sound = ExtResource("28_smv34")
 
-[node name="Dalle_phrase7" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase7" parent="World/dalles" unique_id=27240389 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 1, 0, 3.01992e-07, 0, -2, 0, 0.285123, 28)
 dalle_texte = "avoir=ter, haver"
 
-[node name="Dalle_phrase2" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase2" parent="World/dalles" unique_id=250700406 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 1, 0, 3.01992e-07, 0, -2, 0, 0.285123, 44)
 dalle_texte = "tu as"
 is_talking = true
 phrase_sound = ExtResource("29_6v1w4")
 
-[node name="Dalle_phrase3" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase3" parent="World/dalles" unique_id=1651605169 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-2, 0, -3.01992e-07, 0, 1, 0, 3.01992e-07, 0, -2, 0, 0.285123, 53)
 dalle_texte = "il a, elle a, on a"
 is_talking = true
 phrase_sound = ExtResource("30_lqf85")
 
-[node name="Dalle_phrase4" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase4" parent="World/dalles" unique_id=1574972898 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.157815, 0.663422, 63.8154)
 dalle_texte = "nous avons"
 is_talking = true
 phrase_sound = ExtResource("31_d81jq")
 
-[node name="Dalle_phrase8" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase8" parent="World/dalles" unique_id=18377347 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.7234, 0.303651, 0.571527)
 dalle_texte = "je vais"
 is_talking = true
 phrase_sound = ExtResource("37_7po3i")
 
-[node name="Dalle_phrase10" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase10" parent="World/dalles" unique_id=1025642262 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 42.7234, 0.303651, 0.571527)
 dalle_texte = "tu vas"
 is_talking = true
 phrase_sound = ExtResource("38_ite0b")
 
-[node name="Dalle_phrase11" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase11" parent="World/dalles" unique_id=1370550145 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.7234, 0.303651, 0.571527)
 dalle_texte = "il va, elle va, on va"
 is_talking = true
 phrase_sound = ExtResource("39_v3t4q")
 
-[node name="Dalle_phrase12" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase12" parent="World/dalles" unique_id=956843856 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.7234, 0.167391, 0.571527)
 dalle_texte = "nous allons"
 is_talking = true
 phrase_sound = ExtResource("40_3d0la")
 
-[node name="Dalle_phrase13" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase13" parent="World/dalles" unique_id=585861187 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 61.7234, 0.23707, 8.57153)
 dalle_texte = "vous allez"
 is_talking = true
 phrase_sound = ExtResource("41_863fd")
 
-[node name="Dalle_phrase14" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase14" parent="World/dalles" unique_id=588286131 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 61.7234, 0.190052, 16.5715)
 dalle_texte = "ils vont, elles vont"
 is_talking = true
@@ -2603,73 +2609,73 @@ phrase_sound = ExtResource("42_fx2gd")
 trigger = true
 door_nbr = 9
 
-[node name="Dalle_phrase9" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase9" parent="World/dalles" unique_id=1188519442 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 26.7234, 0.303651, 0.571527)
 dalle_texte = "aller = ir"
 is_talking = true
 phrase_sound = ExtResource("43_863fd")
 
-[node name="Dalle_phrase5" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase5" parent="World/dalles" unique_id=1575573050 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.157815, -0.336578, 68.8154)
 dalle_texte = "vous avez"
 is_talking = true
 phrase_sound = ExtResource("32_vh67p")
 
-[node name="Dalle_phrase6" parent="World/dalles" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase6" parent="World/dalles" unique_id=71934751 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.157815, -1.33658, 73.8154)
 dalle_texte = "ils ont, elles ont"
 is_talking = true
 phrase_sound = ExtResource("33_j3l56")
 
-[node name="DeathArea" parent="World" instance=ExtResource("34_vh67p")]
+[node name="DeathArea" parent="World" unique_id=922883508 instance=ExtResource("34_vh67p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -30, 0)
 monitorable = false
 
-[node name="boxes" type="Node3D" parent="World"]
+[node name="boxes" type="Node3D" parent="World" unique_id=1759631378]
 
-[node name="crate" parent="World/boxes" instance=ExtResource("38_cadcb")]
+[node name="crate" parent="World/boxes" unique_id=178222941 instance=ExtResource("38_cadcb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.42259, 89)
 
-[node name="crate2" parent="World/boxes" instance=ExtResource("38_cadcb")]
+[node name="crate2" parent="World/boxes" unique_id=1952348006 instance=ExtResource("38_cadcb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -1.39358, 100.66)
 
-[node name="crate3" parent="World/boxes" instance=ExtResource("38_cadcb")]
+[node name="crate3" parent="World/boxes" unique_id=61721349 instance=ExtResource("38_cadcb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7269, -1.39358, 103.325)
 
-[node name="SawTrapBilat" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat" parent="World" unique_id=460343266 instance=ExtResource("40_pgckb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.24944, 10.2197, 105.148)
 speed = 1.2
 
-[node name="SawTrapBilat2" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat2" parent="World" unique_id=36156738 instance=ExtResource("40_pgckb")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.04271, 10.2197, 105.148)
 speed = 0.8
 
-[node name="SawTrapBilat3" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat3" parent="World" unique_id=2144382037 instance=ExtResource("40_pgckb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04271, 10.2197, 105.148)
 
-[node name="SawTrapBilat4" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat4" parent="World" unique_id=1612522431 instance=ExtResource("40_pgckb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -4.0537, 12.0282, 105.148)
 speed = 1.2
 
-[node name="SawTrapBilat5" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat5" parent="World" unique_id=24605197 instance=ExtResource("40_pgckb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02403, 12.0282, 105.148)
 
-[node name="SawTrapBilat6" parent="World" instance=ExtResource("40_pgckb")]
+[node name="SawTrapBilat6" parent="World" unique_id=2137682250 instance=ExtResource("40_pgckb")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 2.24125, 12.0282, 105.148)
 
-[node name="Passerelle" parent="World" instance=ExtResource("41_1f8nt")]
+[node name="Passerelle" parent="World" unique_id=1632083128 instance=ExtResource("41_1f8nt")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.53231, 7.77434, 88.7386)
 door_nbr = 7
 
-[node name="fence_gate_grid" parent="World" instance=ExtResource("43_abq1y")]
+[node name="fence_gate_grid" parent="World" unique_id=1939573086 instance=ExtResource("43_abq1y")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.2278, 0, -4)
 door_nbr = 9
 
-[node name="fence_gate_grid2" parent="World" instance=ExtResource("43_abq1y")]
+[node name="fence_gate_grid2" parent="World" unique_id=1302722759 instance=ExtResource("43_abq1y")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 75.9993, 0, -1.66382)
 door_nbr = 10
 
-[node name="Computer_jungle" parent="World" instance=ExtResource("25_0ivej")]
+[node name="Computer_jungle" parent="World" unique_id=1820450388 instance=ExtResource("25_0ivej")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 87, 0, -3)
 metadata/_edit_group_ = true
 
@@ -2680,7 +2686,7 @@ transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, -0.00162
 door_nbr = 10
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_482pn"), SubResource("Resource_ant1f"), SubResource("Resource_avmnv")])
 
-[node name="Computer_jungle2" parent="World" instance=ExtResource("25_0ivej")]
+[node name="Computer_jungle2" parent="World" unique_id=1471208920 instance=ExtResource("25_0ivej")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 70.7181, 16.0891, -15)
 metadata/_edit_group_ = true
 
@@ -2691,60 +2697,60 @@ transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 2.84217e-14, 0, 1, -0.00162
 door_nbr = 11
 questions = Array[ExtResource("10_030ws")]([SubResource("Resource_482pn"), SubResource("Resource_ant1f"), SubResource("Resource_avmnv"), SubResource("Resource_3d0la"), SubResource("Resource_863fd")])
 
-[node name="spike_floor_trap" parent="World" instance=ExtResource("44_x1184")]
+[node name="spike_floor_trap" parent="World" unique_id=1338597479 instance=ExtResource("44_x1184")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 4.03689, 6)
 flash_speed = 2.0
 
-[node name="spike_floor_trap3" parent="World" instance=ExtResource("44_x1184")]
+[node name="spike_floor_trap3" parent="World" unique_id=336791496 instance=ExtResource("44_x1184")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 4.03689, 0)
 flash_speed = 2.0
 
-[node name="spike_floor_trap2" parent="World" instance=ExtResource("44_x1184")]
+[node name="spike_floor_trap2" parent="World" unique_id=1527188159 instance=ExtResource("44_x1184")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 4.03689, 14)
 flash_speed = 2.0
 
-[node name="SwiperTrapRuins" parent="World" instance=ExtResource("14_kypx5")]
+[node name="SwiperTrapRuins" parent="World" unique_id=644952898 instance=ExtResource("14_kypx5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83, 6, -11)
 
-[node name="BearTrap" parent="World" instance=ExtResource("45_j8kpf")]
+[node name="BearTrap" parent="World" unique_id=357003422 instance=ExtResource("45_j8kpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 8, -17)
 
-[node name="BearTrap2" parent="World" instance=ExtResource("45_j8kpf")]
+[node name="BearTrap2" parent="World" unique_id=1451641616 instance=ExtResource("45_j8kpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81, 8, -17)
 
-[node name="BearTrap3" parent="World" instance=ExtResource("45_j8kpf")]
+[node name="BearTrap3" parent="World" unique_id=1967186973 instance=ExtResource("45_j8kpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87, 8, -17)
 
-[node name="TurretStones" parent="World" instance=ExtResource("23_j3l56")]
+[node name="TurretStones" parent="World" unique_id=2087410282 instance=ExtResource("23_j3l56")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 91, 8, 2)
 
-[node name="Mine" parent="World" instance=ExtResource("52_qlojj")]
+[node name="Mine" parent="World" unique_id=1481739505 instance=ExtResource("52_qlojj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 12.0027, 3)
 
-[node name="trap_laser" parent="World" instance=ExtResource("53_8d1bk")]
+[node name="trap_laser" parent="World" unique_id=1915658327 instance=ExtResource("53_8d1bk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 12, 0)
 
-[node name="stairs_wood" parent="World" instance=ExtResource("54_oe8bl")]
+[node name="stairs_wood" parent="World" unique_id=609630713 instance=ExtResource("54_oe8bl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 12, -12.3178)
 
-[node name="Wheel_of_Pain" parent="World" instance=ExtResource("55_v3t4q")]
+[node name="Wheel_of_Pain" parent="World" unique_id=186106929 instance=ExtResource("55_v3t4q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 84, 0.196239, -14)
 speed_multiplier = 0.9
 
-[node name="Wheel_of_Pain2" parent="World" instance=ExtResource("55_v3t4q")]
+[node name="Wheel_of_Pain2" parent="World" unique_id=1226427735 instance=ExtResource("55_v3t4q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 80.5163, 0.196239, -14)
 speed_multiplier = 1.2
 
-[node name="Wheel_of_Pain3" parent="World" instance=ExtResource("55_v3t4q")]
+[node name="Wheel_of_Pain3" parent="World" unique_id=704898076 instance=ExtResource("55_v3t4q")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 77, 0.196239, -14)
 
-[node name="PanneauDico" parent="World" instance=ExtResource("56_3d0la")]
+[node name="PanneauDico" parent="World" unique_id=214163973 instance=ExtResource("56_3d0la")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 66.3731, 0, 10)
 
-[node name="SpikeRoller" parent="World" instance=ExtResource("57_3d0la")]
+[node name="SpikeRoller" parent="World" unique_id=1863067876 instance=ExtResource("57_3d0la")]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 70.3696, 12, 12)
 
-[node name="Panneau_affiche" parent="World" instance=ExtResource("59_qlojj")]
+[node name="Panneau_affiche" parent="World" unique_id=929168560 instance=ExtResource("59_qlojj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35, 1.68784, -24)
 son = null
 text1 = "[color=#5A2D0C]Les verbes en -ER sont les verbes les plus fréquents en français.
@@ -2765,7 +2771,7 @@ parl[color=#FF0000]er[/color] → parl-
 mang[color=#FF0000]er[/color] → mang-
 aim[color=#FF0000]er[/color] → aim-"
 
-[node name="Panneau_affiche2" parent="World" instance=ExtResource("59_qlojj")]
+[node name="Panneau_affiche2" parent="World" unique_id=133883260 instance=ExtResource("59_qlojj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4472, 3.68784, -24.7109)
 son = ExtResource("60_8d1bk")
 text1 = "✅ Étape 2 — Ajouter les terminaisons
@@ -2785,7 +2791,7 @@ nous aim[color=#FF0000]ons[/color]
 vous aim[color=#FF0000]ez[/color]
 ils aim[color=#FF0000]ent[/color]"
 
-[node name="Panneau_affiche3" parent="World" instance=ExtResource("59_qlojj")]
+[node name="Panneau_affiche3" parent="World" unique_id=1842518021 instance=ExtResource("59_qlojj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.4472, 1.25887, -24.7109)
 son = ExtResource("61_oe8bl")
 text1 = "⚠️ Attention à la prononciation. [color=purple]⚠️ Preste atenção à pronúncia[/color]
@@ -2802,42 +2808,42 @@ regarder (olhar)
 jouer (jogar, brincar)
 habiter (morar)"
 
-[node name="pilier_for_platform2" parent="World" instance=ExtResource("62_qfj7g")]
+[node name="pilier_for_platform2" parent="World" unique_id=1269585206 instance=ExtResource("62_qfj7g")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -83.9652, 0, 4.26812)
 
-[node name="Cube" parent="World/pilier_for_platform2" index="0"]
+[node name="Cube" parent="World/pilier_for_platform2" index="0" unique_id=480420982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Platform_poids3" parent="World/pilier_for_platform2" instance=ExtResource("63_nq5qf")]
+[node name="Platform_poids3" parent="World/pilier_for_platform2" unique_id=1815907765 instance=ExtResource("63_nq5qf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.99334, 4.18248, 1.22195)
 descent_distance = 4.0
 move_speed = 2.0
 starts_raised = false
 partner_platform = NodePath("../../pilier_for_platform3/Platform_poids4")
 
-[node name="pilier_for_platform3" parent="World" instance=ExtResource("62_qfj7g")]
+[node name="pilier_for_platform3" parent="World" unique_id=1706516091 instance=ExtResource("62_qfj7g")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -64.1913, 0, -7.53678)
 
-[node name="Cube" parent="World/pilier_for_platform3" index="0"]
+[node name="Cube" parent="World/pilier_for_platform3" index="0" unique_id=480420982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
-[node name="Platform_poids4" parent="World/pilier_for_platform3" instance=ExtResource("63_nq5qf")]
+[node name="Platform_poids4" parent="World/pilier_for_platform3" unique_id=720341006 instance=ExtResource("63_nq5qf")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.99392, 3.65436, 1.2511)
 descent_distance = 3.5
 move_speed = 2.0
 partner_platform = NodePath("../../pilier_for_platform2/Platform_poids3")
 
-[node name="fence_gate_grid3" parent="World" instance=ExtResource("43_abq1y")]
+[node name="fence_gate_grid3" parent="World" unique_id=2056471376 instance=ExtResource("43_abq1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, 6, 12)
 door_nbr = 12
 
-[node name="panneau_grand2" parent="World" instance=ExtResource("10_3nc6l")]
+[node name="panneau_grand2" parent="World" unique_id=207128405 instance=ExtResource("10_3nc6l")]
 transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -0.515908, -1.94055, 90.3045)
 hints_list = Array[String]([])
 visual_tuto = true
 pictures_list = Array[Texture2D]([ExtResource("64_rsi84"), ExtResource("65_h0oep"), ExtResource("66_xrvue"), ExtResource("67_6slww")])
 
-[node name="Phrases_puzzle" parent="." instance=ExtResource("10_ggiaf")]
+[node name="Phrases_puzzle" parent="." unique_id=1963204255 instance=ExtResource("10_ggiaf")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -2, 107)
 phrasePT = "O senhor tem muitos amigos"
 phraseFR = "vous avez beaucoup d'amis"
@@ -2851,21 +2857,21 @@ dalle_texte = "vous"
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1.5, 7, 0.191366, 2)
 dalle_texte = "ont"
 
-[node name="Dalle_phrase3" parent="Phrases_puzzle/dalles" index="2" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase3" parent="Phrases_puzzle/dalles" index="2" unique_id=1903296036 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1, 0, -1.5, 0, -6.55671e-08, -10, 0.191366, 7)
 dalle_texte = "avez"
 
-[node name="Dalle_phrase4" parent="Phrases_puzzle/dalles" index="3" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase4" parent="Phrases_puzzle/dalles" index="3" unique_id=1406367066 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.55671e-08, 9.49982, 0.191366, 13)
 dalle_texte = "beaucoup"
 
-[node name="Dalle_phrase5" parent="Phrases_puzzle/dalles" index="4" instance=ExtResource("11_2srqd")]
+[node name="Dalle_phrase5" parent="Phrases_puzzle/dalles" index="4" unique_id=249897617 instance=ExtResource("11_2srqd")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1, 0, 1.5, 0, -6.55671e-08, 10.0474, 0.191366, 22.2164)
 dalle_texte = "d'amis"
 
-[node name="Inventaire" parent="." instance=ExtResource("59_fx2gd")]
+[node name="Inventaire" parent="." unique_id=351817945 instance=ExtResource("59_fx2gd")]
 
-[node name="Spawner" parent="." instance=ExtResource("65_sbqey")]
+[node name="Spawner" parent="." unique_id=522690074 instance=ExtResource("65_sbqey")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -38, -1, 35)
 scene = ExtResource("66_p01jv")
 spawn_index = 13
@@ -2873,7 +2879,7 @@ next_scene_to_spawn = "res://scenes/UI/main_menu.tscn"
 next_level_nbr = 6
 animation_name = "up"
 
-[node name="Intro_message" parent="." instance=ExtResource("67_rav8n")]
+[node name="Intro_message" parent="." unique_id=323232393 instance=ExtResource("67_rav8n")]
 pausing = true
 mon_text = "[center][color=ble]
 Les verbes sont le cœur des phrases.
@@ -2887,13 +2893,13 @@ Sem eles, nada se move, nada vive.
 Aprende a compreendê-los, e darás vida às palavras.[/color][/center]"
 audio = ExtResource("68_pa8gq")
 
-[node name="crate" parent="." instance=ExtResource("38_cadcb")]
+[node name="crate" parent="." unique_id=1063199607 instance=ExtResource("38_cadcb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, -3)
 
-[node name="crate2" parent="." instance=ExtResource("38_cadcb")]
+[node name="crate2" parent="." unique_id=237385257 instance=ExtResource("38_cadcb")]
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -4, 2, 7)
 
-[node name="Computer_jungle" parent="." instance=ExtResource("25_0ivej")]
+[node name="Computer_jungle" parent="." unique_id=231804645 instance=ExtResource("25_0ivej")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -66, 6, 14.7697)
 
 [node name="NewQuizz" parent="Computer_jungle/Control" index="0"]
