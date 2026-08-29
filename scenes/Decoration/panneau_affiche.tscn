@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://os3c84uwx4l0"]
+[gd_scene format=4 uid="uid://os3c84uwx4l0"]
 
 [ext_resource type="Script" uid="uid://den8apcvx28gi" path="res://scripts/decoration/panneau_affiche.gd" id="1_ttn3i"]
 [ext_resource type="AudioStream" uid="uid://b56kjithaxttq" path="res://assets/sounds/pronuncia/nous_sommes.mp3" id="2_eqda2"]
@@ -54,7 +54,7 @@ size = Vector3(0.117188, 0.681702, 0.873047)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mwh83"]
 size = Vector3(3, 1, 2)
 
-[node name="Panneau_affiche" type="Node3D"]
+[node name="Panneau_affiche" type="Node3D" unique_id=1487719826]
 script = ExtResource("1_ttn3i")
 son = ExtResource("2_eqda2")
 text1 = "Le son “É” [e]
@@ -69,45 +69,45 @@ text2 = "
 Exemples : clé, bébé, fée.
 [color=#2E8B57]Exemplos: chave, bébé, fada.[/color]"
 
-[node name="panneau_affiche" type="Node3D" parent="."]
+[node name="panneau_affiche" type="Node3D" parent="." unique_id=1147355547]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
-[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" type="MeshInstance3D" parent="panneau_affiche"]
+[node name="tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" type="MeshInstance3D" parent="panneau_affiche" unique_id=433680295]
 transform = Transform3D(-8.65486e-08, 0, -2.376, 0, 1.9602, 0, 1.98, 0, -1.03858e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_qkuv6")
 skeleton = NodePath("")
 
-[node name="Sprite3D" type="Sprite3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a"]
+[node name="Sprite3D" type="Sprite3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" unique_id=1185295916]
 transform = Transform3D(-4.41529e-09, 0, 0.10101, 0, 0.0945785, 0, -0.0841751, 0, -3.67941e-09, 0.0121376, 0.359901, -4.42126e-10)
 texture = ExtResource("2_ttn3i")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a"]
+[node name="StaticBody3D" type="StaticBody3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a" unique_id=714609107]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="panneau_affiche/tripo_node_e57440aa-83dc-452f-99d2-6b61a3b9616a/StaticBody3D" unique_id=1860360530]
 transform = Transform3D(1, 0, 0, 0, 0.999998, 0, 0, 0, 1, 0, 0.341888, 0)
 shape = SubResource("BoxShape3D_2x0xa")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1696097789]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1377256797]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495383, 1.0232)
 shape = SubResource("BoxShape3D_mwh83")
 
-[node name="pressE" type="Label3D" parent="."]
+[node name="pressE" type="Label3D" parent="." unique_id=1208358898]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32718, 2.04574, 0.0376702)
 visible = false
 text = "[E]"
 font_size = 60
 
-[node name="Lesson" type="CanvasLayer" parent="."]
+[node name="Lesson" type="CanvasLayer" parent="." unique_id=1303236894]
 unique_name_in_owner = true
 process_mode = 2
 visible = false
 
-[node name="Control" type="Control" parent="Lesson"]
+[node name="Control" type="Control" parent="Lesson" unique_id=937209169]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -115,7 +115,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Lesson/Control"]
+[node name="TextureRect" type="TextureRect" parent="Lesson/Control" unique_id=1472896661]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,7 +125,7 @@ grow_vertical = 2
 texture = ExtResource("5_s1wak")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Lesson/Control/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Lesson/Control/TextureRect" unique_id=1036608744]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,22 +133,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 35
+theme_override_constants/margin_top = 60
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 60
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Lesson/Control/TextureRect/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Lesson/Control/TextureRect/MarginContainer" unique_id=2077694696]
 layout_mode = 2
 theme_override_constants/separation = 110
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Lesson/Control/TextureRect/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Lesson/Control/TextureRect/MarginContainer/HBoxContainer" unique_id=570421993]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_nvov1")
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = " Le son “EU / EÙ” ouvert [œ]
 [color=#5A2D0C]o som “EU / EÙ” aberto[/color]
@@ -158,14 +158,14 @@ Comme dans peur.
 La bouche est un peu plus ouverte que pour [ø], avec un rond moins serré.
 [color=#5A2D0C]A boca está um pouco mais aberta que para [ø], com um redondo menos apertado.[/color]"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Lesson/Control/TextureRect/MarginContainer/HBoxContainer"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Lesson/Control/TextureRect/MarginContainer/HBoxContainer" unique_id=1814249006]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_nvov1")
-theme_override_font_sizes/normal_font_size = 35
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "[center]Exemples :
 
@@ -175,7 +175,7 @@ cœur
 
 sœur[/center]"
 
-[node name="Button" type="Button" parent="Lesson/Control/TextureRect/MarginContainer"]
+[node name="Button" type="Button" parent="Lesson/Control/TextureRect/MarginContainer" unique_id=443331050]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
@@ -183,14 +183,14 @@ size_flags_vertical = 8
 icon = ExtResource("6_nvov1")
 flat = true
 
-[node name="Buttonexit" type="Button" parent="Lesson/Control/TextureRect/MarginContainer"]
+[node name="Buttonexit" type="Button" parent="Lesson/Control/TextureRect/MarginContainer" unique_id=1888114925]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme = ExtResource("8_2x0xa")
 text = "X"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1630377490]
 unique_name_in_owner = true
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

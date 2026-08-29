@@ -46,10 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5gxnu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8kb86"]
-size = Vector3(0.0967407, 0.855164, 0.851563)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vwqoq"]
-size = Vector3(0.223511, 0.10498, 1)
+size = Vector3(0.42797852, 0.855164, 0.9609375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ojt3"]
 size = Vector3(2.64258, 2.02686, 1.36475)
@@ -67,16 +64,8 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" unique_id=1885564604]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=2109687106]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00680542, 0.421234, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00680542, 0.421234, 2.7755576e-16)
 shape = SubResource("BoxShape3D_8kb86")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=722526994]
-transform = Transform3D(0.907345, -0.420387, 0, 0.420387, 0.907345, 0, 0, 0, 1, -0.0829215, 0.731188, 0)
-shape = SubResource("BoxShape3D_vwqoq")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab/StaticBody3D" unique_id=2134755540]
-transform = Transform3D(0.923163, 0.384408, 0, -0.384408, 0.923163, 0, -5.32907e-14, 0, 1, 0.0504842, 0.747316, 2.22045e-16)
-shape = SubResource("BoxShape3D_vwqoq")
 
 [node name="Sprite3D" type="Sprite3D" parent="wooden+sign+3d+model/tripo_node_4405d79b-17c8-4d6a-8c4c-b8ca55b9c3ab" unique_id=1003853308]
 transform = Transform3D(-1.7484555e-09, 0, -0.04, 0, 0.04, 0, 0.04, 0, -1.7484555e-09, 0.055014305, 0.3600177, 2.4047517e-09)

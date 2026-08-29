@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpwbbi3gcj57j"
-path.s3tc="res://.godot/imported/smoke_07.png-9ef5aec04fd8b00eae33b43270246e3c.s3tc.ctex"
+uid="uid://d1gob8tgjt600"
+path.s3tc="res://.godot/imported/T_smoke_flipbook.png-b218ffd03ec9acd056169a8fa5779630.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/images/particules/particulesPNG/smoke_07.png"
-dest_files=["res://.godot/imported/smoke_07.png-9ef5aec04fd8b00eae33b43270246e3c.s3tc.ctex"]
+source_file="res://assets/images/particules/T_smoke_flipbook.png"
+dest_files=["res://.godot/imported/T_smoke_flipbook.png-b218ffd03ec9acd056169a8fa5779630.s3tc.ctex"]
 
 [params]
 
