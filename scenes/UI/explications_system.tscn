@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://bfi5re14sbnqj"]
+
+[ext_resource type="Script" uid="uid://b3ar5ivnmxmoa" path="res://scripts/UI/explications_system.gd" id="1_3i281"]
+[ext_resource type="Texture2D" uid="uid://bbbkefq485ulo" path="res://assets/images/bgds/Ui_stele.jpeg" id="1_ryu5m"]
+[ext_resource type="FontFile" uid="uid://brod8d1ojbpac" path="res://assets/fonts/Cinzel-VariableFont_wght.ttf" id="2_k56gd"]
+[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="2_tfr3p"]
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="3_6bi7m"]
+[ext_resource type="AudioStream" uid="uid://blop3pmdjngrq" path="res://assets/sounds/quizz/chat.mp3" id="3_lrbhi"]
+[ext_resource type="AudioStream" uid="uid://80batsnep0sw" path="res://assets/sounds/pronuncia/nousallons.mp3" id="4_kdrpq"]
+
+[node name="ExplicationsSystem" type="Control" unique_id=1602977865]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3i281")
+textes = Array[String](["Léo : Bonjour !
+Adrien : Bonjour...
+Léo : Comment tu t'appelles ?
+Adrien : Je... je ne comprends pas.
+Léo sourit et montre Adrien du doigt.
+Léo : Comment tu t'appelles ?
+Il se montre lui-même.
+Léo : Je m'appelle Léo.
+Léo : Comment tu t'appelles ?
+Il se montre lui-même.
+Léo : Je m'appelle Léo.", "C'est un verbe irrégulier", "Il signifie SER et ESTAR"])
+narrations = Array[AudioStream]([ExtResource("2_tfr3p"), ExtResource("3_lrbhi"), ExtResource("4_kdrpq")])
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=592382770]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ryu5m")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=410823376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 180
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer" unique_id=970219567]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.23036289, 0.19815749, 0.032867268, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/normal_font = ExtResource("2_k56gd")
+theme_override_font_sizes/normal_font_size = 25
+text = "test"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect" unique_id=195091476]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -114.5
+offset_top = -95.0
+offset_right = 114.5
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+theme_override_constants/separation = 91
+
+[node name="PrevButton" type="Button" parent="TextureRect/HBoxContainer" unique_id=1634324874]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+theme = ExtResource("3_6bi7m")
+text = "⬅️ Précédent"
+
+[node name="PlayButton" type="Button" parent="TextureRect/HBoxContainer" unique_id=1306729721]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+theme = ExtResource("3_6bi7m")
+text = "Écouter 📢"
+
+[node name="NextButton" type="Button" parent="TextureRect/HBoxContainer" unique_id=198478743]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+theme = ExtResource("3_6bi7m")
+text = "Suivant ➡️"
+
+[node name="ButtonExit" type="Button" parent="TextureRect" unique_id=2146371523]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -178.0
+offset_top = -67.0
+offset_right = -80.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("3_6bi7m")
+text = "Sortie 🚪"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2097476631]
+
+[connection signal="pressed" from="TextureRect/ButtonExit" to="." method="_on_button_exit_pressed"]

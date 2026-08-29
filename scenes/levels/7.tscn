@@ -34,6 +34,8 @@
 [ext_resource type="PackedScene" uid="uid://0drtacpdhc0u" path="res://scenes/mechanics/flipping_platform_big.tscn" id="32_11era"]
 [ext_resource type="PackedScene" uid="uid://dp5sdo13te42y" path="res://scenes/mechanics/button_floor.tscn" id="33_vx4ev"]
 [ext_resource type="PackedScene" uid="uid://brgltmp01w0ci" path="res://scenes/Fx/fire_mesh.tscn" id="34_qcrrx"]
+[ext_resource type="PackedScene" uid="uid://c1nle1hchften" path="res://scenes/mechanics/stele.tscn" id="35_ju4wi"]
+[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="36_xdbbr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
 panorama = ExtResource("1_iof32")
@@ -184,6 +186,10 @@ transition_type = 7
 [node name="Hammer" parent="Mechanics" unique_id=1373273250 instance=ExtResource("14_0txh5")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0, -14)
 door_nbr = 2
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="Mechanics/Hammer" unique_id=1347014385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+aabb = AABB(-1, -4, -4, 2, 8, 8)
 
 [node name="Dalle_trigger" parent="Mechanics" unique_id=483630952 instance=ExtResource("16_4q2w8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -15)
@@ -375,6 +381,11 @@ btn_number = 6
 
 [node name="fireMesh" parent="." unique_id=1172899826 instance=ExtResource("34_qcrrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 19)
+
+[node name="Stele" parent="." unique_id=855865466 instance=ExtResource("35_ju4wi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+texte = "O verbo ÊTRE significa SER e ESTAR"
+text_audio = ExtResource("36_xdbbr")
 
 [editable path="Mechanics/Dalle_trigger"]
 [editable path="Mechanics/Cube_door"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=4 uid="uid://c1nle1hchften"]
+[gd_scene format=4 uid="uid://c1nle1hchften"]
 
 [ext_resource type="Script" uid="uid://c4dkfry2hm7n2" path="res://scripts/mechanics/stele.gd" id="1_dr8o0"]
 [ext_resource type="Texture2D" uid="uid://c877q4hj8aknv" path="res://assets/blender/stone+monument+3d+model_stonemonument3dmodel_basecolor.jpg" id="1_e8knc"]
 [ext_resource type="Texture2D" uid="uid://itl66j2wnw2q" path="res://assets/images/ui/cadres/Parchemin_intro.jpeg" id="3_dr8o0"]
-[ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="4_052u8"]
+[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="4_052u8"]
+[ext_resource type="FontFile" uid="uid://brod8d1ojbpac" path="res://assets/fonts/Cinzel-VariableFont_wght.ttf" id="5_4ayma"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_en6wb"]
 resource_name = "tripo_mat_805ef3b1-0a9b-4ff4-ae1f-788316bd01bd"
@@ -50,21 +51,6 @@ size = Vector3(0.237305, 0.929199, 0.607422)
 [sub_resource type="BoxShape3D" id="BoxShape3D_f7irg"]
 size = Vector3(0.151855, 0.749023, 0.607422)
 
-[sub_resource type="Animation" id="Animation_dr8o0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LedMeshInstance:mesh:material:albedo_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_f7irg"]
 resource_name = "pulse"
 length = 3.0
@@ -84,7 +70,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_052u8"]
 _data = {
-&"RESET": SubResource("Animation_dr8o0"),
 &"pulse": SubResource("Animation_f7irg")
 }
 
@@ -114,7 +99,7 @@ fill_to = Vector2(0, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dr8o0"]
 texture = SubResource("GradientTexture2D_f7irg")
 
-[node name="Stele" type="Area3D"]
+[node name="Stele" type="Area3D" unique_id=855865466 node_paths=PackedStringArray("led")]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -124,39 +109,38 @@ Découvre les lettres de l'alphabet en sautant sur les cubes. Attention : les cu
 [/color][color=purple]
 Descubra as letras do alfabeto pulando nos cubos. Atenção: os cubos vermelhos representam um som diferente em português.[/color]
 [/center]"
+led = NodePath("LedMeshInstance")
 
-[node name="mesh" type="MeshInstance3D" parent="."]
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=243038265]
 transform = Transform3D(-1.24896e-07, 0, -2.85728, 0, 2.85728, 0, 2.85728, 0, -1.24896e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_2ir4q")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="mesh"]
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh" unique_id=994112745]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh/StaticBody3D" unique_id=983940891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0344676, 0.46438, 0)
 shape = SubResource("BoxShape3D_c5nhq")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="mesh/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="mesh/StaticBody3D" unique_id=531715282]
 transform = Transform3D(-4.37114e-08, -4.37114e-08, -1, -1, 0, 4.37114e-08, 0, 1, -4.37114e-08, -0.0344676, 0.0822471, 1.11022e-16)
 shape = SubResource("BoxShape3D_f7irg")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_052u8")
-}
-autoplay = "pulse"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1327424659]
+libraries/ = SubResource("AnimationLibrary_052u8")
+autoplay = &"pulse"
 speed_scale = 2.0
 
-[node name="LedMeshInstance" type="MeshInstance3D" parent="."]
+[node name="LedMeshInstance" type="MeshInstance3D" parent="." unique_id=227627175]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0336343, 2.38302, -1.75473e-08)
 mesh = SubResource("SphereMesh_le7wn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=40519469]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17664, 0.939348)
 shape = SubResource("BoxShape3D_dr8o0")
 
-[node name="PressELbl" type="Label3D" parent="."]
+[node name="PressELbl" type="Label3D" parent="." unique_id=272985150]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47148, 0.158479)
 visible = false
@@ -164,7 +148,7 @@ text = "[E]"
 font_size = 120
 outline_size = 22
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=326153725]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -174,7 +158,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelText" type="Panel" parent="Control"]
+[node name="PanelText" type="Panel" parent="Control" unique_id=382278936]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -183,7 +167,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dr8o0")
 
-[node name="TextureRect" type="TextureRect" parent="Control/PanelText"]
+[node name="TextureRect" type="TextureRect" parent="Control/PanelText" unique_id=483433552]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,7 +183,7 @@ grow_vertical = 2
 texture = ExtResource("3_dr8o0")
 expand_mode = 1
 
-[node name="ButtonOK" type="Button" parent="Control/PanelText/TextureRect"]
+[node name="ButtonOK" type="Button" parent="Control/PanelText/TextureRect" unique_id=1451379003]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -212,9 +196,10 @@ offset_right = 22.0
 offset_bottom = -74.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_052u8")
 text = "OK"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelText/TextureRect"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/PanelText/TextureRect" unique_id=792321056]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -228,16 +213,37 @@ offset_bottom = 131.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelText/TextureRect/ScrollContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/PanelText/TextureRect/ScrollContainer" unique_id=1008828969]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_052u8")
+theme_override_fonts/normal_font = ExtResource("5_4ayma")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonListen" type="Button" parent="Control/PanelText/TextureRect" unique_id=567797410]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -116.0
+offset_top = 105.0
+offset_right = -62.0
+offset_bottom = 177.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 46
+text = "🔊"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2046434172]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="." to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_area_3d_body_exited"]
 [connection signal="pressed" from="Control/PanelText/TextureRect/ButtonOK" to="." method="_on_button_ok_pressed"]
+[connection signal="pressed" from="Control/PanelText/TextureRect/ButtonListen" to="." method="_on_button_listen_pressed"]

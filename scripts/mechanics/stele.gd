@@ -1,10 +1,12 @@
 extends Area3D
 
 @export_multiline var texte : String 
+@export var text_audio : AudioStream
 @onready var press_e_lbl: Label3D = %PressELbl
 @onready var control: Control = %Control
 @export var led : Node3D
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 var tween_actuel: Tween = null
 var player
@@ -13,6 +15,7 @@ var player
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	rich_text_label.text = texte
+	audio_stream_player.stream = text_audio
 	control.scale = Vector2.ZERO
 	control.modulate.a = 0
 	
@@ -86,3 +89,7 @@ func disparaitre_avec_zoom():
 	tween_actuel.set_ease(Tween.EASE_IN)
 	await tween_actuel.finished
 	control.hide()
+
+
+func _on_button_listen_pressed() -> void:
+	audio_stream_player.play()
