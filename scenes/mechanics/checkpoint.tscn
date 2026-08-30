@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdh4n3w6khtik"]
+[gd_scene format=3 uid="uid://cdh4n3w6khtik"]
 
 [ext_resource type="Script" uid="uid://dqulsm555e7uk" path="res://scripts/mechanics/checkpoint.gd" id="1_c78f0"]
 [ext_resource type="AudioStream" uid="uid://ocv8k1qhed1a" path="res://assets/sounds/sfx/checkpoint_robot (mp3cut.net).mp3" id="2_1pvwe"]
 [ext_resource type="PackedScene" uid="uid://dl7sjchrv0dp8" path="res://scenes/Fx/aura_glow_effect.tscn" id="2_hrkm5"]
+[ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="4_a27pg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1pvwe"]
 
@@ -26,32 +27,30 @@ _data = {
 &"show": SubResource("Animation_1pvwe")
 }
 
-[node name="Checkpoint" type="Area3D"]
+[node name="Checkpoint" type="Area3D" unique_id=964642880]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_c78f0")
 activation_sound = ExtResource("2_1pvwe")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1557644913]
 shape = SubResource("BoxShape3D_1pvwe")
 
-[node name="AuraGlowEffect" parent="." instance=ExtResource("2_hrkm5")]
+[node name="AuraGlowEffect" parent="." unique_id=583059595 instance=ExtResource("2_hrkm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.874286, 0)
 
-[node name="sword_common_gltf" parent="AuraGlowEffect" index="0"]
-visible = false
-
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=825569469]
 transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.22805, 0)
 billboard = 2
 double_sided = false
-modulate = Color(0.291972, 0.652015, 0.882813, 1)
+modulate = Color(0.93404996, 0.6923264, 0.39331147, 1)
+outline_modulate = Color(0.40792882, 0.2433193, 0.045682188, 1)
 text = "Checkpoint"
+font = ExtResource("4_a27pg")
 font_size = 77
+outline_size = 34
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_a27pg")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1987620849]
+libraries/ = SubResource("AnimationLibrary_a27pg")
 
 [editable path="AuraGlowEffect"]

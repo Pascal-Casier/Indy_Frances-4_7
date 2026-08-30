@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c4dkfry2hm7n2" path="res://scripts/mechanics/stele.gd" id="1_dr8o0"]
 [ext_resource type="Texture2D" uid="uid://c877q4hj8aknv" path="res://assets/blender/stone+monument+3d+model_stonemonument3dmodel_basecolor.jpg" id="1_e8knc"]
+[ext_resource type="FontFile" uid="uid://o1dsyvugbyyd" path="res://DragNdropSystem/Bungee-Regular.ttf" id="3_4ayma"]
 [ext_resource type="Texture2D" uid="uid://itl66j2wnw2q" path="res://assets/images/ui/cadres/Parchemin_intro.jpeg" id="3_dr8o0"]
 [ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="4_052u8"]
 [ext_resource type="FontFile" uid="uid://brod8d1ojbpac" path="res://assets/fonts/Cinzel-VariableFont_wght.ttf" id="5_4ayma"]
@@ -144,9 +145,12 @@ shape = SubResource("BoxShape3D_dr8o0")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47148, 0.158479)
 visible = false
+modulate = Color(0.947203, 0.7580428, 0.5483531, 1)
+outline_modulate = Color(0.34216362, 0.24101318, 0.020315472, 1)
 text = "[E]"
-font_size = 120
-outline_size = 22
+font = ExtResource("3_4ayma")
+font_size = 85
+outline_size = 35
 
 [node name="Control" type="Control" parent="." unique_id=326153725]
 unique_name_in_owner = true
@@ -218,7 +222,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
+theme_override_colors/font_outline_color = Color(0.5854947, 0.3454005, 0.03861343, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/normal_font = ExtResource("5_4ayma")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -232,11 +238,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -116.0
-offset_top = 105.0
-offset_right = -62.0
-offset_bottom = 177.0
+offset_left = -91.0
+offset_top = 26.0
+offset_right = -29.0
+offset_bottom = 87.0
 grow_horizontal = 0
+theme = ExtResource("4_052u8")
 theme_override_font_sizes/font_size = 46
 text = "🔊"
 

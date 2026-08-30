@@ -7,6 +7,8 @@ extends Area3D
 @export var led : Node3D
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var button_listen: Button = %ButtonListen
+
 
 var tween_actuel: Tween = null
 var player
@@ -18,6 +20,8 @@ func _ready() -> void:
 	audio_stream_player.stream = text_audio
 	control.scale = Vector2.ZERO
 	control.modulate.a = 0
+	if text_audio == null:
+		button_listen.hide()
 	
 
 func _unhandled_input(event: InputEvent) -> void:

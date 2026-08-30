@@ -1,9 +1,9 @@
-[gd_scene load_steps=19 format=4 uid="uid://2i6a3qrq0vnb"]
+[gd_scene format=4 uid="uid://2i6a3qrq0vnb"]
 
 [ext_resource type="Script" uid="uid://cjm0gfriym4xl" path="res://scripts/decoration/wooden_sign.gd" id="1_bbuse"]
 [ext_resource type="Texture2D" uid="uid://dxm8uu54i3pbc" path="res://assets/blender/stone+computer+3d+model_stonecomputer3dmodel_basecolor.jpg" id="1_bl8to"]
-[ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="2_bbuse"]
 [ext_resource type="PackedScene" uid="uid://c37mw2bgyxred" path="res://scenes/UI/TypingWords/word_typing_game.tscn" id="3_1b6ey"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_bbuse"]
 [ext_resource type="Texture2D" uid="uid://hwvhho5djh6q" path="res://assets/images/ui/tirelire.jpg" id="4_jx4c3"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="5_j8uy2"]
 [ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="6_mtpb3"]
@@ -89,53 +89,56 @@ font_size = 46
 outline_size = 11
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Computer_typing_game" type="Node3D" node_paths=PackedStringArray("message_label", "message", "audio_player", "led")]
+[node name="Computer_typing_game" type="Node3D" unique_id=1796319795 node_paths=PackedStringArray("message_label", "message", "audio_player", "led")]
 script = ExtResource("1_bbuse")
 message_label = NodePath("Message/Panel/LabelPrice")
 message = NodePath("Message")
 audio_player = NodePath("AudioStreamPlayerClic")
 led = NodePath("Leds")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1138445614]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=43024605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.30139, 1.41093, 0)
 shape = SubResource("BoxShape3D_jh8fd")
 debug_color = Color(0, 0.7, 0.295, 0.094)
 
-[node name="stone+computer+3d+model" type="Node3D" parent="."]
+[node name="stone+computer+3d+model" type="Node3D" parent="." unique_id=1981636589]
 transform = Transform3D(-1.5299e-07, 0, -3.5, 0, 3.5, 0, 3.5, 0, -1.5299e-07, 0, 0, 0)
 
-[node name="tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc" type="MeshInstance3D" parent="stone+computer+3d+model"]
+[node name="tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc" type="MeshInstance3D" parent="stone+computer+3d+model" unique_id=958622200]
 mesh = SubResource("ArrayMesh_uuf33")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc"]
+[node name="StaticBody3D" type="StaticBody3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc" unique_id=1263234742]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc/StaticBody3D" unique_id=1139510582]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00162637, 0.492578, -2.77556e-17)
 shape = SubResource("BoxShape3D_vfe7x")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="stone+computer+3d+model/tripo_node_1d358c9a-e68a-4dfc-a656-d3e587fe1efc/StaticBody3D" unique_id=1801115589]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0132231, 0.18078, -2.77556e-16)
 shape = SubResource("BoxShape3D_5xp8q")
 debug_color = Color(0.872396, 0.704881, 0.0477091, 0.42)
 
-[node name="PressELbl" type="Label3D" parent="."]
+[node name="PressELbl" type="Label3D" parent="." unique_id=957866411]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0.0112697, 2.0652, 0.425122)
 visible = false
 double_sided = false
+modulate = Color(0.9537795, 0.7521729, 0.5396152, 1)
+outline_modulate = Color(0.7104485, 0.41446, 0.042181857, 1)
 text = "[E]"
-font = ExtResource("2_bbuse")
+font = ExtResource("3_bbuse")
 font_size = 65
+outline_size = 18
 autowrap_mode = 3
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=640006589]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -145,32 +148,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WordTypingGame" parent="Control" instance=ExtResource("3_1b6ey")]
+[node name="WordTypingGame" parent="Control" unique_id=1626762584 instance=ExtResource("3_1b6ey")]
 visible = false
 layout_mode = 1
 
-[node name="Leds" type="Node3D" parent="."]
+[node name="Leds" type="Node3D" parent="." unique_id=80999040]
 visible = false
 
-[node name="LedMeshInstance" type="MeshInstance3D" parent="Leds"]
+[node name="LedMeshInstance" type="MeshInstance3D" parent="Leds" unique_id=2064725402]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32125, 0.401435)
 mesh = SubResource("SphereMesh_6c7wb")
 skeleton = NodePath("../..")
 
-[node name="LedMeshInstance2" type="MeshInstance3D" parent="Leds"]
+[node name="LedMeshInstance2" type="MeshInstance3D" parent="Leds" unique_id=964835077]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.290397, 2.80546, 0.381811)
 mesh = SubResource("SphereMesh_6c7wb")
 skeleton = NodePath("../..")
 
-[node name="LedMeshInstance3" type="MeshInstance3D" parent="Leds"]
+[node name="LedMeshInstance3" type="MeshInstance3D" parent="Leds" unique_id=393898457]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.356838, 2.80546, 0.369287)
 mesh = SubResource("SphereMesh_6c7wb")
 skeleton = NodePath("../..")
 
-[node name="Message" type="Control" parent="."]
+[node name="Message" type="Control" parent="." unique_id=1740666353]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -180,7 +183,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Message"]
+[node name="Panel" type="Panel" parent="Message" unique_id=1994931473]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,7 +192,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qwa4l")
 
-[node name="TextureRect" type="TextureRect" parent="Message/Panel"]
+[node name="TextureRect" type="TextureRect" parent="Message/Panel" unique_id=242009663]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -201,7 +204,7 @@ offset_bottom = 196.0
 grow_vertical = 2
 texture = ExtResource("4_jx4c3")
 
-[node name="LabelPrice" type="Label" parent="Message/Panel"]
+[node name="LabelPrice" type="Label" parent="Message/Panel" unique_id=39106278]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
@@ -219,7 +222,7 @@ text = "payer 6 pièces ?"
 label_settings = SubResource("LabelSettings_fgndj")
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Message/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Message/Panel" unique_id=1455053427]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -235,15 +238,15 @@ grow_vertical = 2
 theme = ExtResource("6_mtpb3")
 theme_override_constants/separation = 55
 
-[node name="ButtonOK" type="Button" parent="Message/Panel/HBoxContainer"]
+[node name="ButtonOK" type="Button" parent="Message/Panel/HBoxContainer" unique_id=296160033]
 layout_mode = 2
 text = "ok"
 
-[node name="ButtonCancel" type="Button" parent="Message/Panel/HBoxContainer"]
+[node name="ButtonCancel" type="Button" parent="Message/Panel/HBoxContainer" unique_id=1015142072]
 layout_mode = 2
 text = "cancel"
 
-[node name="AudioStreamPlayerClic" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerClic" type="AudioStreamPlayer" parent="." unique_id=1830793761]
 unique_name_in_owner = true
 stream = ExtResource("7_ughyn")
 

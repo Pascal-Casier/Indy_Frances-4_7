@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dmmicn3kq4wqv"]
+
+[ext_resource type="Shader" uid="uid://dc2c566jtiw3t" path="res://shaders/swamp.gdshader" id="1_lc3ok"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_11era"]
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ggqok"]
+noise = SubResource("FastNoiseLite_11era")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ggqok"]
+noise_type = 3
+seed = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mk7yj"]
+noise = SubResource("FastNoiseLite_ggqok")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dcb2"]
+render_priority = 0
+shader = ExtResource("1_lc3ok")
+shader_parameter/water_color = Color(0.15, 0.18, 0.08, 1)
+shader_parameter/murk_color = Color(0.13849428, 0.25130206, 0.05791727, 1)
+shader_parameter/shallow_color = Color(0.3, 0.32, 0.15, 1)
+shader_parameter/foam_color = Color(0.55, 0.55, 0.45, 1)
+shader_parameter/scum_color = Color(0.2, 0.35, 0.1, 1)
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_ggqok")
+shader_parameter/noise_tex_large = SubResource("NoiseTexture2D_mk7yj")
+shader_parameter/noise_tiling = 0.015
+shader_parameter/wave_speed = 0.04
+shader_parameter/wave_strength = 0.44
+shader_parameter/roughness_val = 0.6
+shader_parameter/depth_fade_distance = 0.68
+shader_parameter/refraction_strength = 0.17
+shader_parameter/foam_band_width = 0.23
+shader_parameter/foam_noise_scale = 8.0
+shader_parameter/scum_threshold = 0.315
+shader_parameter/scum_density = 0.49
+shader_parameter/scum_scroll_speed = 0.6
+shader_parameter/edge_fade_width = 0.34000001615
+
+[sub_resource type="QuadMesh" id="QuadMesh_5d3sr"]
+material = SubResource("ShaderMaterial_4dcb2")
+size = Vector2(1500, 1500)
+
+[node name="swamp" type="MeshInstance3D" unique_id=345532481]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_5d3sr")

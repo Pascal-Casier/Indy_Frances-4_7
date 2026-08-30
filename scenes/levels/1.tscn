@@ -29,6 +29,8 @@
 [ext_resource type="Script" uid="uid://7vm1eoq0acp5" path="res://scripts/UI/Traduction_choice_game/resources/dialog_entry.gd" id="27_kioh0"]
 [ext_resource type="Texture2D" uid="uid://dtxgq3jsyx7nq" path="res://assets/images/characters/chouettePortrait.png" id="28_7aj0e"]
 [ext_resource type="Script" uid="uid://bdwxemgisnxtt" path="res://scripts/UI/Traduction_choice_game/resources/quizz_data.gd" id="29_0as2w"]
+[ext_resource type="PackedScene" uid="uid://can77gje51y81" path="res://scenes/Decoration/label_fr.tscn" id="30_kioh0"]
+[ext_resource type="AudioStream" uid="uid://c7jeb4nfec76i" path="res://assets/sounds/dico_sounds/clothes/une_robe.mp3" id="31_7aj0e"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_srlfd"]
 panorama = ExtResource("2_5psil")
@@ -1296,6 +1298,13 @@ transform = Transform3D(-0.87095445, 0, 0.49136373, 0, 1, 0, -0.49136373, 0, -0.
 
 [node name="Traduction_choice_game" parent="Panneau_phrases_traduction" index="2" unique_id=761341014]
 quiz_data = SubResource("Resource_dewhy")
+
+[node name="labels" type="Node3D" parent="." unique_id=1609947877]
+
+[node name="Label_fr" parent="labels" unique_id=912553477 instance=ExtResource("30_kioh0")]
+transform = Transform3D(0.6213395, 0, 0.7835415, 0, 1, 0, -0.7835415, 0, 0.6213395, -10.435596, 1.4036174, -22.267052)
+titre_fr = "un arbre"
+son = ExtResource("31_7aj0e")
 
 [editable path="NaturePack1LP/detail_rocks_gltf"]
 [editable path="NaturePack1LP/detail_rocks_gltf2"]

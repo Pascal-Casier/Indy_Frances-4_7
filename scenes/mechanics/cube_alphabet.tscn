@@ -1,8 +1,10 @@
-[gd_scene load_steps=12 format=4 uid="uid://furp4le04nnj"]
+[gd_scene format=4 uid="uid://furp4le04nnj"]
 
 [ext_resource type="Script" uid="uid://bjdff3xs5ncj4" path="res://scripts/mechanics/cube_alphabet.gd" id="1_lrp84"]
 [ext_resource type="AudioStream" uid="uid://ctcrto5iq1cjl" path="res://assets/sounds/sfx/confirm.ogg" id="2_w6jal"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_4e5p4"]
 [ext_resource type="AudioStream" uid="uid://dbvltnftpgvq" path="res://assets/sounds/sfx/correct_answer.mp3" id="3_hm18s"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="3_nfh5x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tgimv"]
 resource_name = "Main"
@@ -97,76 +99,97 @@ _data = {
 &"entered": SubResource("Animation_2nveu")
 }
 
-[node name="Cube_Alphabet" type="StaticBody3D"]
+[node name="Cube_Alphabet" type="StaticBody3D" unique_id=610843981]
 script = ExtResource("1_lrp84")
 letter_audio = ExtResource("2_w6jal")
 
-[node name="Cube_Default" type="MeshInstance3D" parent="."]
+[node name="Cube_Default" type="MeshInstance3D" parent="." unique_id=1303120058]
 mesh = SubResource("ArrayMesh_yrpdb")
 skeleton = NodePath("")
 
-[node name="labels" type="Node3D" parent="Cube_Default"]
+[node name="labels" type="Node3D" parent="Cube_Default" unique_id=1177305220]
 
-[node name="Label3D" type="Label3D" parent="Cube_Default/labels"]
+[node name="Label3D" type="Label3D" parent="Cube_Default/labels" unique_id=742573063]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0870757, 0.959366)
+modulate = Color(0.9274734, 0.778451, 0.5186326, 1)
+outline_modulate = Color(0.4408114, 0.21284755, 0.026172541, 1)
 text = "A"
+font = ExtResource("3_4e5p4")
 font_size = 250
+outline_size = 40
 uppercase = true
 
-[node name="Label3D5" type="Label3D" parent="Cube_Default/labels"]
+[node name="Label3D5" type="Label3D" parent="Cube_Default/labels" unique_id=1556120508]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.95265, -0.056852)
+modulate = Color(0.9274734, 0.778451, 0.5186326, 1)
+outline_modulate = Color(0.4408114, 0.21284755, 0.026172541, 1)
 text = "A"
+font = ExtResource("3_4e5p4")
 font_size = 250
+outline_size = 40
 uppercase = true
 
-[node name="Label3D2" type="Label3D" parent="Cube_Default/labels"]
+[node name="Label3D2" type="Label3D" parent="Cube_Default/labels" unique_id=1708570433]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.087, -0.959)
+modulate = Color(0.9274734, 0.778451, 0.5186326, 1)
+outline_modulate = Color(0.4408114, 0.21284755, 0.026172541, 1)
 text = "A"
+font = ExtResource("3_4e5p4")
 font_size = 250
+outline_size = 40
 uppercase = true
 
-[node name="Label3D3" type="Label3D" parent="Cube_Default/labels"]
+[node name="Label3D3" type="Label3D" parent="Cube_Default/labels" unique_id=1459510815]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.959183, 0.0870757, 0.000182944)
+modulate = Color(0.9274734, 0.778451, 0.5186326, 1)
+outline_modulate = Color(0.4408114, 0.21284755, 0.026172541, 1)
 text = "A"
+font = ExtResource("3_4e5p4")
 font_size = 250
+outline_size = 40
 uppercase = true
 
-[node name="Label3D4" type="Label3D" parent="Cube_Default/labels"]
+[node name="Label3D4" type="Label3D" parent="Cube_Default/labels" unique_id=303125388]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0.959183, 0.087, 0.000183028)
+modulate = Color(0.9274734, 0.778451, 0.5186326, 1)
+outline_modulate = Color(0.4408114, 0.21284755, 0.026172541, 1)
 text = "A"
+font = ExtResource("3_4e5p4")
 font_size = 250
+outline_size = 40
 uppercase = true
 
-[node name="CollisionShape3D1" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D1" type="CollisionShape3D" parent="." unique_id=692772257]
 unique_name_in_owner = true
 shape = SubResource("BoxShape3D_6sdny")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1742349011]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=198527847]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06489, 0)
 shape = SubResource("BoxShape3D_flko1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_od7iw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=349753610]
+libraries/ = SubResource("AnimationLibrary_od7iw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=227131175]
 
-[node name="lblPhonetic" type="Label3D" parent="."]
+[node name="lblPhonetic" type="Label3D" parent="." unique_id=996029573]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.86916, 2.923, -0.64362)
 visible = false
 billboard = 2
+modulate = Color(0.9011674, 0.6637301, 0.36761215, 1)
+outline_modulate = Color(0.19090384, 0.13168561, 0.0063127177, 1)
 text = "[A]"
+font = ExtResource("3_nfh5x")
 font_size = 157
 outline_size = 62
 uppercase = true
 
-[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamShowing" type="AudioStreamPlayer" parent="." unique_id=516863237]
 stream = ExtResource("3_hm18s")
 volume_db = -14.857
 max_polyphony = 3

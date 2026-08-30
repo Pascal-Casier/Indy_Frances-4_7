@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="2_8xjyh"]
 [ext_resource type="PackedScene" uid="uid://crrujje4tn6hl" path="res://scenes/mechanics/platform_moving.tscn" id="13_h4gjh"]
 [ext_resource type="PackedScene" uid="uid://bvn8xkardoo81" path="res://scenes/mechanics/hammer.tscn" id="14_0txh5"]
+[ext_resource type="PackedScene" uid="uid://dmmicn3kq4wqv" path="res://scenes/Decoration/swamp.tscn" id="14_11era"]
 [ext_resource type="PackedScene" uid="uid://ce2da44o65p77" path="res://scenes/mechanics/lever.tscn" id="15_4q2w8"]
 [ext_resource type="MeshLibrary" uid="uid://ddev61w8li2p1" path="res://meshlibs/tilescubesMeshlib.tres" id="15_fd21f"]
 [ext_resource type="PackedScene" uid="uid://cjwk1sleh30hn" path="res://scenes/mechanics/dalle_trigger.tscn" id="16_4q2w8"]
@@ -26,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://da7xr1yd1mjn5" path="res://assets/images/ui/dico/fruits/raisin.png" id="28_d00xi"]
 [ext_resource type="AudioStream" uid="uid://dom4psr84j36b" path="res://assets/sounds/dico_sounds/fruits/raisin.mp3" id="29_ju4wi"]
 [ext_resource type="PackedScene" uid="uid://n4vorkcsm6f0" path="res://scenes/mechanics/phrases_puzzle.tscn" id="30_ggqok"]
-[ext_resource type="Shader" uid="uid://dc2c566jtiw3t" path="res://shaders/swamp.gdshader" id="30_mk7yj"]
 [ext_resource type="PackedScene" uid="uid://7jaffeojbign" path="res://scenes/mechanics/dalle_phrase.tscn" id="31_11era"]
 [ext_resource type="PackedScene" uid="uid://0drtacpdhc0u" path="res://scenes/mechanics/flipping_platform_big.tscn" id="32_11era"]
 [ext_resource type="PackedScene" uid="uid://dp5sdo13te42y" path="res://scenes/mechanics/button_floor.tscn" id="33_vx4ev"]
@@ -51,48 +51,6 @@ fog_aerial_perspective = 0.925
 fog_height = -7.0
 fog_height_density = 3.1402
 fog_depth_end = 15.0
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_11era"]
-seed = 1
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ggqok"]
-noise = SubResource("FastNoiseLite_11era")
-seamless = true
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ggqok"]
-noise_type = 3
-seed = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mk7yj"]
-noise = SubResource("FastNoiseLite_ggqok")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4dcb2"]
-render_priority = 0
-shader = ExtResource("30_mk7yj")
-shader_parameter/water_color = Color(0.15, 0.18, 0.08, 1)
-shader_parameter/murk_color = Color(0.13849428, 0.25130206, 0.05791727, 1)
-shader_parameter/shallow_color = Color(0.3, 0.32, 0.15, 1)
-shader_parameter/foam_color = Color(0.55, 0.55, 0.45, 1)
-shader_parameter/scum_color = Color(0.2, 0.35, 0.1, 1)
-shader_parameter/noise_tex = SubResource("NoiseTexture2D_ggqok")
-shader_parameter/noise_tex_large = SubResource("NoiseTexture2D_mk7yj")
-shader_parameter/noise_tiling = 0.015
-shader_parameter/wave_speed = 0.04
-shader_parameter/wave_strength = 0.44
-shader_parameter/roughness_val = 0.6
-shader_parameter/depth_fade_distance = 0.68
-shader_parameter/refraction_strength = 0.17
-shader_parameter/foam_band_width = 0.23
-shader_parameter/foam_noise_scale = 8.0
-shader_parameter/scum_threshold = 0.315
-shader_parameter/scum_density = 0.49
-shader_parameter/scum_scroll_speed = 0.6
-shader_parameter/edge_fade_width = 0.34000001615
-
-[sub_resource type="QuadMesh" id="QuadMesh_5d3sr"]
-material = SubResource("ShaderMaterial_4dcb2")
-size = Vector2(1500, 1500)
 
 [sub_resource type="Resource" id="Resource_k7en2"]
 script = ExtResource("23_mk7yj")
@@ -217,10 +175,8 @@ wait_duration = 2.5
 [node name="DeathArea" parent="." unique_id=1179320614 instance=ExtResource("22_e0d0c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
-[node name="swamp" type="MeshInstance3D" parent="." unique_id=2068572400]
+[node name="swamp" parent="." unique_id=345532481 instance=ExtResource("14_11era")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.034915, 0)
-visible = false
-mesh = SubResource("QuadMesh_5d3sr")
 
 [node name="LetterFloor" parent="." unique_id=772868541 instance=ExtResource("16_fd21f")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 17, 13, 66)

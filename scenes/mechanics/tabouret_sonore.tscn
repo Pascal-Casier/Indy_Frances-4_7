@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=4 uid="uid://c30ythlmrx0dg"]
+[gd_scene format=4 uid="uid://c30ythlmrx0dg"]
 
 [ext_resource type="Script" uid="uid://doexitsq5nnww" path="res://scripts/mechanics/tabouret_sonore.gd" id="1_8xyqf"]
 [ext_resource type="Texture2D" uid="uid://w46ne7evg7bb" path="res://assets/blender/tabouret_ImphenziaPalette01.png" id="1_u8uef"]
 [ext_resource type="AudioStream" uid="uid://dmmi0dclw4jii" path="res://assets/sounds/alphabet/h.mp3" id="2_e66lu"]
 [ext_resource type="Texture2D" uid="uid://ggqa0tdixfe3" path="res://assets/blender/Speaker_ImphenziaPalette01.png" id="3_txk53"]
 [ext_resource type="AudioStream" uid="uid://on8ir7nf7sub" path="res://assets/sounds/sfx/metalClick.ogg" id="5_8btgf"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="5_122i8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvbv5"]
 resource_name = "Material"
@@ -160,59 +161,62 @@ _data = {
 &"on": SubResource("Animation_uo14l")
 }
 
-[node name="TabouretSonore" type="Node3D"]
+[node name="TabouretSonore" type="Node3D" unique_id=338961166]
 script = ExtResource("1_8xyqf")
 son = ExtResource("2_e66lu")
 
-[node name="Speaker2" type="Node3D" parent="."]
+[node name="Speaker2" type="Node3D" parent="." unique_id=649321600]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.10122, 0)
 
-[node name="Speaker" type="MeshInstance3D" parent="Speaker2"]
+[node name="Speaker" type="MeshInstance3D" parent="Speaker2" unique_id=1220152179]
 mesh = SubResource("ArrayMesh_6tnbj")
 skeleton = NodePath("")
 
-[node name="button" type="MeshInstance3D" parent="Speaker2"]
+[node name="button" type="MeshInstance3D" parent="Speaker2" unique_id=1933793549]
 mesh = SubResource("ArrayMesh_0kyep")
 skeleton = NodePath("")
 
-[node name="tabouret" type="Node3D" parent="."]
+[node name="tabouret" type="Node3D" parent="." unique_id=718804271]
 
-[node name="Cube" type="MeshInstance3D" parent="tabouret"]
+[node name="Cube" type="MeshInstance3D" parent="tabouret" unique_id=1387026826]
 mesh = SubResource("ArrayMesh_gh5rs")
 skeleton = NodePath("")
 
-[node name="pressE" type="Label3D" parent="."]
+[node name="pressE" type="Label3D" parent="." unique_id=1809815099]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0272266, 2.51117, -0.252344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0272266, 2.6095357, -0.252344)
 visible = false
+billboard = 2
+modulate = Color(0.9537795, 0.7521729, 0.5396152, 1)
+outline_modulate = Color(0.7104485, 0.41446, 0.042181857, 1)
 text = "E"
-font_size = 75
+font = ExtResource("5_122i8")
+font_size = 85
+outline_size = 35
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1471306123]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=433819451]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000732422, 0.897121, 0.852125)
 shape = SubResource("BoxShape3D_xr41l")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=791732956]
 unique_name_in_owner = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1182603304]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=382783166]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08704, 0)
 shape = SubResource("BoxShape3D_00flu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1687105841]
 unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_hxh4y")
-}
+libraries/ = SubResource("AnimationLibrary_hxh4y")
 
-[node name="AudioStreamClic" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamClic" type="AudioStreamPlayer" parent="." unique_id=486073085]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

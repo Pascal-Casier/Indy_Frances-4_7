@@ -1,9 +1,9 @@
-[gd_scene load_steps=38 format=4 uid="uid://di7xkfh3t2yph"]
+[gd_scene format=4 uid="uid://di7xkfh3t2yph"]
 
 [ext_resource type="Script" uid="uid://b08sv4ipsfhye" path="res://scripts/mechanics/letter_floor.gd" id="1_07vyf"]
 [ext_resource type="Texture2D" uid="uid://b40cy7v4e7fuh" path="res://assets/blender/platforms-_display/textures/Material.002_baseColor.png" id="2_8hyjg"]
 [ext_resource type="Texture2D" uid="uid://calfeh1hyt8mx" path="res://assets/images/explosion_textures/Flare00.PNG" id="2_18uge"]
-[ext_resource type="FontFile" uid="uid://ci73qne8lnql0" path="res://assets/fonts/RoadRage-Regular.ttf" id="2_lom1v"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="2_lom1v"]
 [ext_resource type="Material" uid="uid://bmbe0eu5aveib" path="res://scenes/Fx/materialFlare.tres" id="3_w6uwb"]
 [ext_resource type="AudioStream" uid="uid://dfuikk6pdmau" path="res://assets/sounds/sfx/explosion2.mp3" id="5_wa4sf"]
 [ext_resource type="AudioStream" uid="uid://dbvltnftpgvq" path="res://assets/sounds/sfx/correct_answer.mp3" id="6_gia63"]
@@ -196,47 +196,49 @@ _data = {
 &"float": SubResource("Animation_yunby")
 }
 
-[node name="LetterFloor" type="Node3D"]
+[node name="LetterFloor" type="Node3D" unique_id=435131776]
 script = ExtResource("1_07vyf")
 
-[node name="floor_tile_small" type="MeshInstance3D" parent="."]
+[node name="floor_tile_small" type="MeshInstance3D" parent="." unique_id=764551239]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0363477, 0)
 skeleton = NodePath("")
 
-[node name="letter" type="Label3D" parent="floor_tile_small"]
+[node name="letter" type="Label3D" parent="floor_tile_small" unique_id=1258892815]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 2.98023e-08, 1, 0, -1, 2.98023e-08, 0, 0.0791361, 0)
+modulate = Color(0.9537795, 0.7521729, 0.5396152, 1)
+outline_modulate = Color(0.7104485, 0.41446, 0.042181857, 1)
 text = "y"
 font = ExtResource("2_lom1v")
 font_size = 260
-outline_size = 35
+outline_size = 60
 uppercase = true
 
-[node name="StaticBody3D" type="StaticBody3D" parent="floor_tile_small"]
+[node name="StaticBody3D" type="StaticBody3D" parent="floor_tile_small" unique_id=65486076]
 
-[node name="Collision" type="CollisionShape3D" parent="floor_tile_small/StaticBody3D"]
+[node name="Collision" type="CollisionShape3D" parent="floor_tile_small/StaticBody3D" unique_id=370569927]
 unique_name_in_owner = true
 shape = SubResource("ConvexPolygonShape3D_kat6v")
 
-[node name="contour" type="MeshInstance3D" parent="floor_tile_small"]
+[node name="contour" type="MeshInstance3D" parent="floor_tile_small" unique_id=1912646330]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00572395, -0.0487306, 0.00395536)
 visible = false
 material_override = SubResource("StandardMaterial3D_p7jhs")
 mesh = SubResource("ArrayMesh_kvur4")
 skeleton = NodePath("../bookE_gltf/Cube_002_Material_002_0")
 
-[node name="bookE_gltf" type="Node3D" parent="floor_tile_small"]
+[node name="bookE_gltf" type="Node3D" parent="floor_tile_small" unique_id=1528149093]
 
-[node name="Cube_002_Material_002_0" type="MeshInstance3D" parent="floor_tile_small/bookE_gltf"]
+[node name="Cube_002_Material_002_0" type="MeshInstance3D" parent="floor_tile_small/bookE_gltf" unique_id=1041872795]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00572395, -0.0487306, 0.00395536)
 mesh = SubResource("ArrayMesh_l5fte")
 skeleton = NodePath("")
 
-[node name="explosion" type="Node3D" parent="."]
+[node name="explosion" type="Node3D" parent="." unique_id=1782981327]
 
-[node name="sparks" type="GPUParticles3D" parent="explosion"]
+[node name="sparks" type="GPUParticles3D" parent="explosion" unique_id=2065284622]
 unique_name_in_owner = true
 material_override = SubResource("StandardMaterial3D_ddakk")
 emitting = false
@@ -248,7 +250,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_np2rl")
 draw_pass_1 = SubResource("QuadMesh_f5yxm")
 
-[node name="flash" type="GPUParticles3D" parent="explosion"]
+[node name="flash" type="GPUParticles3D" parent="explosion" unique_id=693840554]
 unique_name_in_owner = true
 material_override = ExtResource("3_w6uwb")
 emitting = false
@@ -260,7 +262,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_a1aph")
 draw_pass_1 = SubResource("QuadMesh_ehtut")
 
-[node name="fire" type="GPUParticles3D" parent="explosion"]
+[node name="fire" type="GPUParticles3D" parent="explosion" unique_id=1614155338]
 unique_name_in_owner = true
 material_override = ExtResource("3_w6uwb")
 emitting = false
@@ -272,7 +274,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_c0qcr")
 draw_pass_1 = SubResource("QuadMesh_jm7ev")
 
-[node name="smoke" type="GPUParticles3D" parent="explosion"]
+[node name="smoke" type="GPUParticles3D" parent="explosion" unique_id=1949356174]
 unique_name_in_owner = true
 material_override = ExtResource("3_w6uwb")
 emitting = false
@@ -285,33 +287,31 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_gdl34")
 draw_pass_1 = SubResource("QuadMesh_0wkq1")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=813473800]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1650354893]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0824293, 0)
 shape = SubResource("BoxShape3D_0f8k6")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=482658926]
 unique_name_in_owner = true
 stream = ExtResource("5_wa4sf")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1785188608]
 unique_name_in_owner = true
 wait_time = 3.0
 one_shot = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1586258732]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_j0x54")
-}
-autoplay = "float"
+libraries/ = SubResource("AnimationLibrary_j0x54")
+autoplay = &"float"
 
-[node name="AudioStreamCorrect" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamCorrect" type="AudioStreamPlayer" parent="." unique_id=273934925]
 unique_name_in_owner = true
 stream = ExtResource("6_gia63")
 volume_db = -16.054
