@@ -96,6 +96,7 @@ theme = ExtResource("3_6bi7m")
 text = "Suivant ➡️"
 
 [node name="ButtonExit" type="Button" parent="TextureRect" unique_id=2146371523]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

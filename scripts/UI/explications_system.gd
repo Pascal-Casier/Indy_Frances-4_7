@@ -1,4 +1,7 @@
 extends Control
+class_name Explications
+
+signal exit
 
 ## Liste des textes affichés, un par explication
 @export_multiline var textes: Array[String] = []
@@ -11,8 +14,12 @@ extends Control
 @onready var button_prev: Button = $TextureRect/HBoxContainer/PrevButton
 @onready var button_play: Button = $TextureRect/HBoxContainer/PlayButton
 @onready var button_next: Button = $TextureRect/HBoxContainer/NextButton
+@onready var button_exit: Button = %ButtonExit
+
+const CLICK = preload("uid://c5dh7yd3ejg5t")
 
 var index: int = 0
+var index_max_atteint: int = 0
 
 const TEXTE_ECOUTER := "Écouter"
 const TEXTE_PAUSE := "Pause"
@@ -59,6 +66,9 @@ func _update_display() -> void:
 		return
 
 	label.text = textes[index]
+	# Met à jour l'index maximum atteint
+	if index > index_max_atteint:
+		index_max_atteint = index
 
 	# Désactive les boutons aux bornes
 	button_prev.disabled = index == 0
@@ -71,7 +81,11 @@ func _update_display() -> void:
 
 	# Désactive "Écouter" si aucun audio n'est associé
 	button_play.disabled = index >= narrations.size() or narrations[index] == null
-
+	# Exit activé seulement si on a déjà atteint le dernier texte
+	button_exit.disabled = index_max_atteint < textes.size() - 1
 
 func _on_button_exit_pressed() -> void:
+	audio_player.stream = CLICK
+	audio_player.play()
 	hide()
+	exit.emit()

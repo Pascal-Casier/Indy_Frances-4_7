@@ -10,16 +10,13 @@
 [ext_resource type="PackedScene" uid="uid://di7xkfh3t2yph" path="res://scenes/mechanics/letter_floor.tscn" id="16_fd21f"]
 [ext_resource type="PackedScene" uid="uid://bdvrl7yn8sfst" path="res://scenes/Decoration/petit_panneau.tscn" id="17_3tb56"]
 [ext_resource type="PackedScene" uid="uid://bqsn1irwtejrb" path="res://scenes/mechanics/cube_door.tscn" id="17_mywtu"]
-[ext_resource type="PackedScene" uid="uid://de1mso7rec550" path="res://scenes/mechanics/panneau_phrases_traduction.tscn" id="18_8gg3f"]
 [ext_resource type="PackedScene" uid="uid://cmpkngi1ntkj5" path="res://scenes/mechanics/platform_moving_stone.tscn" id="18_mk7yj"]
 [ext_resource type="FontFile" uid="uid://dj2b5tp1dum55" path="res://assets/fonts/Some Time Later.otf" id="18_u017p"]
 [ext_resource type="PackedScene" uid="uid://go5ldcw25ofb" path="res://scenes/characters/papi.tscn" id="19_ggqok"]
 [ext_resource type="PackedScene" uid="uid://bghwrjogy8vr5" path="res://scenes/mechanics/computer_jungle.tscn" id="19_yx64e"]
 [ext_resource type="PackedScene" uid="uid://b5mbnh8me4nbl" path="res://scenes/mechanics/plateforme_callable.tscn" id="20_8gg3f"]
-[ext_resource type="Script" uid="uid://7vm1eoq0acp5" path="res://scripts/UI/Traduction_choice_game/resources/dialog_entry.gd" id="20_x2gpa"]
 [ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="22_e0d0c"]
 [ext_resource type="PackedScene" uid="uid://cid4ydxrlwi4e" path="res://scenes/mechanics/panneau_dico.tscn" id="22_iof32"]
-[ext_resource type="Script" uid="uid://bdwxemgisnxtt" path="res://scripts/UI/Traduction_choice_game/resources/quizz_data.gd" id="22_yjkb7"]
 [ext_resource type="MeshLibrary" uid="uid://ibjydcsilis1" path="res://meshlibs/IndyAI2TilesMeshlib.tres" id="23_0txh5"]
 [ext_resource type="Script" uid="uid://wmb1hst8sn54" path="res://scripts/UI/DicoWodResource.gd" id="23_mk7yj"]
 [ext_resource type="Texture2D" uid="uid://dh44blcydayed" path="res://assets/images/ui/dico/fruits/fraise.png" id="24_ggqok"]
@@ -34,8 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://0drtacpdhc0u" path="res://scenes/mechanics/flipping_platform_big.tscn" id="32_11era"]
 [ext_resource type="PackedScene" uid="uid://dp5sdo13te42y" path="res://scenes/mechanics/button_floor.tscn" id="33_vx4ev"]
 [ext_resource type="PackedScene" uid="uid://brgltmp01w0ci" path="res://scenes/Fx/fire_mesh.tscn" id="34_qcrrx"]
-[ext_resource type="PackedScene" uid="uid://c1nle1hchften" path="res://scenes/mechanics/stele.tscn" id="35_ju4wi"]
-[ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="36_xdbbr"]
+[ext_resource type="PackedScene" uid="uid://cvhrts8s4vuy5" path="res://scenes/mechanics/stele_explications.tscn" id="35_d00xi"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8xjyh"]
 panorama = ExtResource("1_iof32")
@@ -55,32 +51,6 @@ fog_aerial_perspective = 0.925
 fog_height = -7.0
 fog_height_density = 3.1402
 fog_depth_end = 15.0
-
-[sub_resource type="Resource" id="Resource_32q6f"]
-script = ExtResource("20_x2gpa")
-original_text = "Bienvenue, étranger."
-correct_translation = "Bem vindo, estrangeiro."
-wrong_translation = "Boa noite, estrangeiro."
-metadata/_custom_type_script = "uid://7vm1eoq0acp5"
-
-[sub_resource type="Resource" id="Resource_ewy4i"]
-script = ExtResource("20_x2gpa")
-original_text = "Utilise ton savoir pour progresser."
-correct_translation = "Use seu saber para progredir"
-wrong_translation = "Use seu saber para chegar."
-metadata/_custom_type_script = "uid://7vm1eoq0acp5"
-
-[sub_resource type="Resource" id="Resource_v6u0g"]
-script = ExtResource("20_x2gpa")
-original_text = "Attention, il y a beaucoup de pièges !"
-correct_translation = "Cuidado, tem muitas armadilhas!"
-wrong_translation = "Cuidada, tem várias armadilhas!"
-metadata/_custom_type_script = "uid://7vm1eoq0acp5"
-
-[sub_resource type="Resource" id="Resource_x6lxv"]
-script = ExtResource("22_yjkb7")
-entries = Array[ExtResource("20_x2gpa")]([SubResource("Resource_32q6f"), SubResource("Resource_ewy4i"), SubResource("Resource_v6u0g")])
-metadata/_custom_type_script = "uid://bdwxemgisnxtt"
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_11era"]
 seed = 1
@@ -244,13 +214,6 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 22, 30, 107)
 down_offset = Vector3(0, -11, 0)
 wait_duration = 2.5
 
-[node name="Panneau_phrases_traduction" parent="." unique_id=331115710 instance=ExtResource("18_8gg3f")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.0244966, 22)
-door_nbr = 1
-
-[node name="Traduction_choice_game" parent="Panneau_phrases_traduction" index="2" unique_id=761341014]
-quiz_data = SubResource("Resource_x6lxv")
-
 [node name="DeathArea" parent="." unique_id=1179320614 instance=ExtResource("22_e0d0c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 
@@ -382,16 +345,14 @@ btn_number = 6
 [node name="fireMesh" parent="." unique_id=1172899826 instance=ExtResource("34_qcrrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 19)
 
-[node name="Stele" parent="." unique_id=855865466 instance=ExtResource("35_ju4wi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
-texte = "O verbo ÊTRE significa SER e ESTAR"
-text_audio = ExtResource("36_xdbbr")
+[node name="Stele_explications" parent="." unique_id=1053332950 instance=ExtResource("35_d00xi")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2, 22.061996)
+door_nbr = 1
 
 [editable path="Mechanics/Dalle_trigger"]
 [editable path="Mechanics/Cube_door"]
 [editable path="Mechanics/Cube_door2"]
 [editable path="Mechanics/Cube_door3"]
-[editable path="Panneau_phrases_traduction"]
 [editable path="petit_panneau"]
 [editable path="Computer_jungle"]
 [editable path="PanneauDico"]
