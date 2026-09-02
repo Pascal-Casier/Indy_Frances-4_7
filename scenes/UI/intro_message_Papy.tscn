@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cytdhdscj32w7"]
+
+[ext_resource type="PackedScene" uid="uid://dx6028dlxtdhu" path="res://scenes/UI/intro_message.tscn" id="1_rmkle"]
+[ext_resource type="Texture2D" uid="uid://fmbidicukmb7" path="res://assets/images/bgds/LivrePapi3.png" id="2_4dk3e"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="3_4dk3e"]
+[ext_resource type="FontFile" uid="uid://dgicvdqk3gshs" path="res://assets/fonts/Italianno-Regular.ttf" id="3_f11pv"]
+
+[node name="Intro_message_Livret" unique_id=572216984 instance=ExtResource("1_rmkle")]
+mon_text = "Mon cher Léo,
+
+Si tu lis cette lettre, c’est que le moment est venu de te révéler un secret. Ton grand-père a besoin de ton aide. Je suis parti en Guyane pour retrouver une ancienne cité cachée dans la forêt, mais je suis maintenant poursuivi par des hommes dangereux. Pour me retrouver, tu devras traverser plusieurs épreuves et comprendre des messages écrits en français. Apprends cette langue avec courage, car chaque mot pourra te rapprocher de moi. Rejoins-moi en Guyane, mais sois prudent : la jungle cache des dangers et je ne peux pas te promettre que le voyage sera sans risque. Fais-moi confiance, petit Léo. Ton grand-père t’attend.
+
+[color=saddlebrown]Mon cher Léo,
+
+Se você está lendo esta carta, é porque chegou o momento de revelar um segredo a você. Seu avô precisa da sua ajuda. Parti para a Guiana para encontrar uma antiga cidade escondida na floresta, mas agora estou sendo perseguido por homens perigosos. Para me encontrar, você terá que enfrentar várias provas e compreender mensagens escritas em francês. Aprenda essa língua com coragem, pois cada palavra poderá aproximá-lo de mim. Venha me encontrar na Guiana, mas tenha cuidado: a floresta esconde muitos perigos e não posso prometer que a viagem será segura. Confie em mim, pequeno Léo. Seu avô está esperando por você.[/color]"
+
+[node name="TextureRect" parent="." index="0"]
+texture = ExtResource("2_4dk3e")
+
+[node name="MarginContainer" parent="TextureRect" index="0"]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -506.0
+offset_top = 88.0
+offset_right = -85.0
+offset_bottom = -121.0
+grow_horizontal = 0
+
+[node name="RichTextLabel" parent="TextureRect/MarginContainer" index="0"]
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_f11pv")
+theme_override_font_sizes/normal_font_size = 38
+
+[node name="ButtonContinuer" parent="TextureRect" index="1"]
+offset_left = 239.0
+offset_top = -101.0
+offset_right = 326.0
+offset_bottom = -70.0
+theme = ExtResource("3_4dk3e")
+
+[node name="ColorRect" parent="." index="1"]
+self_modulate = Color(1, 1, 1, 0)

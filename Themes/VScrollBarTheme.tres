@@ -1,5 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://dl4v6q2hcxxvj"]
 
+[ext_resource type="FontFile" uid="uid://dgicvdqk3gshs" path="res://assets/fonts/Italianno-Regular.ttf" id="1_y56fo"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbiw6"]
 bg_color = Color(0.611979, 0.184794, 0.0302802, 1)
 
@@ -15,6 +17,7 @@ border_width_bottom = 2
 border_color = Color(0.851563, 0.416183, 0.0554403, 1)
 
 [resource]
+default_font = ExtResource("1_y56fo")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_wbiw6")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_mpd3m")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_mpd3m")

@@ -137,9 +137,9 @@ func end_quiz() -> void:
 	var percentage = float(score) / float(total_questions) * 100.0
 	var success_threshold = 70.0
 	if percentage >= success_threshold:
-		feedback_label.text = "Bravo ! Quiz réussi ! Score final : " + str(score) + "/" + str(total_questions) + " (" + str(int(percentage)) + "%)"
+		feedback_label.text = "🏆Bravo ! Quiz réussi ! Score final : " + str(score) + "/" + str(total_questions) + " (" + str(int(percentage)) + "%)"
 	else:
-		feedback_label.text = "Score insuffisant : " + str(score) + "/" + str(total_questions) + " (" + str(int(percentage)) + "%). Il faut au moins " + str(int(success_threshold)) + "% pour réussir."
+		feedback_label.text = "Score insuffisant ❗: " + str(score) + "/" + str(total_questions) + " (" + str(int(percentage)) + "%). Il faut au moins " + str(int(success_threshold)) + "% pour réussir."
 	
 	# Désactiver tous les boutons
 	for button in buttons_list:
@@ -147,11 +147,11 @@ func end_quiz() -> void:
 	# Ajouter le bouton approprié selon le résultat
 	var action_button = Button.new()
 	if percentage >= success_threshold:
-		action_button.text = "Sortir"
+		action_button.text = "Sortir 🚪"
 		action_button.pressed.connect(exit_quiz)
 		#action_button.connect("pressed", Callable(self, "exit_quiz"))
 	else:
-		action_button.text = "Recommencer"
+		action_button.text = "Recommencer 🔄"
 		action_button.connect("pressed", Callable(self, "restart_quiz"))
 		
 	action_button.custom_minimum_size = Vector2(170, 66)
@@ -164,7 +164,7 @@ func restart_quiz() -> void:
 	
 	# Supprimer le bouton recommencer s'il existe
 	for child in grid_container.get_children():
-		if child.text == "Recommencer" or child.text == "Sortir":
+		if child.text == "Recommencer 🔄" or child.text == "Sortir 🚪":
 			child.queue_free()
 	
 	setup_quiz()

@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dubvpcf5f50fk"]
+[gd_scene format=3 uid="uid://dubvpcf5f50fk"]
 
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_6jc5x"]
 [ext_resource type="Script" uid="uid://d0w8i2badu60c" path="res://scripts/UI/dictionnary_panel.gd" id="1_vrokr"]
 [ext_resource type="Texture2D" uid="uid://buit558lio3vn" path="res://assets/images/ui/dico/fruits/apple.png" id="3_wdnp4"]
 [ext_resource type="Script" uid="uid://wmb1hst8sn54" path="res://scripts/UI/DicoWodResource.gd" id="4_bhpi5"]
@@ -11,10 +12,14 @@
 [ext_resource type="AudioStream" uid="uid://dom4psr84j36b" path="res://assets/sounds/dico_sounds/fruits/raisin.mp3" id="10_nqvlh"]
 [ext_resource type="AudioStream" uid="uid://bm664d4f3es5f" path="res://assets/sounds/dico_sounds/fruits/peche.mp3" id="11_c6ujo"]
 [ext_resource type="Texture2D" uid="uid://b8mnk15dbmrs7" path="res://assets/images/bgds/phrasemakerUIfull.jpg" id="12_41urp"]
+[ext_resource type="Texture2D" uid="uid://kj3mw8ygqkg2" path="res://assets/images/icons/dog50x50.png" id="12_tjuux"]
+[ext_resource type="AudioStream" uid="uid://c3v81oxygq3tw" path="res://assets/sounds/quizz/chien.wav" id="13_6jc5x"]
 [ext_resource type="Script" uid="uid://30f3wdbdks4q" path="res://scripts/UI/DicoQuizzPanel.gd" id="13_jkcd0"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="13_kyjkw"]
 [ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="14_2mtkv"]
 [ext_resource type="Texture2D" uid="uid://ca46kjrmym1tt" path="res://assets/images/ui/audioOn.png" id="14_jkcd0"]
+[ext_resource type="Texture2D" uid="uid://feyubilm150k" path="res://assets/images/icons/cat50x50.png" id="14_nafi2"]
+[ext_resource type="AudioStream" uid="uid://blop3pmdjngrq" path="res://assets/sounds/quizz/chat.mp3" id="15_a4126"]
 
 [sub_resource type="Resource" id="Resource_k7en2"]
 script = ExtResource("4_bhpi5")
@@ -40,6 +45,20 @@ word = "une pêche"
 photo = ExtResource("6_ap2k0")
 sound = ExtResource("11_c6ujo")
 
+[sub_resource type="Resource" id="Resource_jkcd0"]
+script = ExtResource("4_bhpi5")
+word = "chien"
+photo = ExtResource("12_tjuux")
+sound = ExtResource("13_6jc5x")
+metadata/_custom_type_script = "uid://wmb1hst8sn54"
+
+[sub_resource type="Resource" id="Resource_41urp"]
+script = ExtResource("4_bhpi5")
+word = "chat"
+photo = ExtResource("14_nafi2")
+sound = ExtResource("15_a4126")
+metadata/_custom_type_script = "uid://wmb1hst8sn54"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0sce"]
 bg_color = Color(0.76, 0.46246, 0.0988, 0.341176)
 border_width_left = 2
@@ -52,7 +71,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="DictionnaryPanel" type="Control"]
+[node name="DictionnaryPanel" type="Control" unique_id=2019007208]
 process_mode = 3
 top_level = true
 layout_mode = 3
@@ -61,14 +80,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_2mtkv")
+theme = ExtResource("1_6jc5x")
 script = ExtResource("1_vrokr")
 title = "Dictionnaire : les fruits"
-resource_list = Array[ExtResource("4_bhpi5")]([SubResource("Resource_k7en2"), SubResource("Resource_yvamj"), SubResource("Resource_vlbbl"), SubResource("Resource_h1mr3")])
+resource_list = Array[ExtResource("4_bhpi5")]([SubResource("Resource_k7en2"), SubResource("Resource_yvamj"), SubResource("Resource_vlbbl"), SubResource("Resource_h1mr3"), SubResource("Resource_jkcd0"), SubResource("Resource_41urp")])
 quizz = true
 door_nb = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=660118250]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +97,7 @@ grow_vertical = 2
 texture = ExtResource("12_41urp")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=475725818]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -90,11 +109,11 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 80
 
-[node name="Panel" type="Panel" parent="TextureRect/MarginContainer"]
+[node name="Panel" type="Panel" parent="TextureRect/MarginContainer" unique_id=1926035423]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_b0sce")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/Panel" unique_id=1313454342]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,29 +122,30 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 100
 
-[node name="Label" type="Label" parent="TextureRect/MarginContainer/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/Panel/VBoxContainer" unique_id=825555834]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 6
+theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/font = ExtResource("13_kyjkw")
 theme_override_font_sizes/font_size = 41
 text = "Dictionnaire : les fruits"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/Panel/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer/Panel/VBoxContainer" unique_id=1971965930]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/h_separation = 95
+theme_override_constants/h_separation = 65
 theme_override_constants/v_separation = 50
 columns = 4
 
-[node name="ButtonExit" type="Button" parent="TextureRect"]
+[node name="ButtonExit" type="Button" parent="TextureRect" unique_id=449378197]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -138,7 +158,7 @@ grow_horizontal = 0
 theme = ExtResource("14_2mtkv")
 text = "fermer"
 
-[node name="ButtonQuizz" type="Button" parent="TextureRect"]
+[node name="ButtonQuizz" type="Button" parent="TextureRect" unique_id=44815146]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -154,7 +174,7 @@ grow_vertical = 0
 theme = ExtResource("14_2mtkv")
 text = "QUIZZ"
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1857124754]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -162,10 +182,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("14_2mtkv")
+theme = ExtResource("1_6jc5x")
 script = ExtResource("13_jkcd0")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=559029792]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -175,7 +195,7 @@ grow_vertical = 2
 texture = ExtResource("12_41urp")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=630383501]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -187,32 +207,32 @@ theme_override_constants/margin_top = 100
 theme_override_constants/margin_right = 100
 theme_override_constants/margin_bottom = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=544499149]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="LabelQuizz" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="LabelQuizz" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=1444496935]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.830729, 0.784183, 0.499736, 1)
+theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 7
+theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 4
 theme_override_fonts/font = ExtResource("13_kyjkw")
 theme_override_font_sizes/font_size = 56
 text = "quizz"
 horizontal_alignment = 1
 
-[node name="ReplayButton" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+[node name="ReplayButton" type="Button" parent="Control/MarginContainer/VBoxContainer" unique_id=1001392744]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("14_2mtkv")
 icon = ExtResource("14_jkcd0")
 
-[node name="GridContainer2" type="GridContainer" parent="Control/MarginContainer/VBoxContainer"]
+[node name="GridContainer2" type="GridContainer" parent="Control/MarginContainer/VBoxContainer" unique_id=1950234662]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -220,36 +240,36 @@ theme_override_constants/h_separation = 25
 theme_override_constants/v_separation = 25
 columns = 5
 
-[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=1106070124]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.827451, 0.780392, 0.494118, 1)
+theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 5
-theme_override_constants/shadow_outline_size = 5
+theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("13_kyjkw")
 theme_override_font_sizes/font_size = 36
 text = "score"
 horizontal_alignment = 2
 
-[node name="FeedbackLabel" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+[node name="FeedbackLabel" type="Label" parent="Control/MarginContainer/VBoxContainer" unique_id=2106241823]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0.827451, 0.780392, 0.494118, 1)
+theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 5
-theme_override_constants/shadow_offset_y = 5
-theme_override_constants/outline_size = 5
+theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("13_kyjkw")
 theme_override_font_sizes/font_size = 36
 horizontal_alignment = 1
 
-[node name="AudioStreamQuizz" type="AudioStreamPlayer" parent="Control"]
+[node name="AudioStreamQuizz" type="AudioStreamPlayer" parent="Control" unique_id=1915839698]
 unique_name_in_owner = true
 
 [connection signal="pressed" from="TextureRect/ButtonExit" to="." method="_on_button_exit_pressed"]

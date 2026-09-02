@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c37mw2bgyxred"]
 
 [ext_resource type="Script" uid="uid://c0ul01fpo5p6g" path="res://scenes/UI/TypingWords/word_typing_game.gd" id="1"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_qahsu"]
 [ext_resource type="Texture2D" uid="uid://bsnuf0nb2ly8c" path="res://assets/images/ui/inventaire/Blackboard.jpg" id="2_gd6gd"]
 [ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_vntiv"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="4_2cc5y"]
-[ext_resource type="Theme" uid="uid://jkwkhb7nn5mj" path="res://Themes/medievalTheme.tres" id="5_6xd1u"]
 [ext_resource type="Texture2D" uid="uid://i6vd7ji5lif7" path="res://assets/images/bgds/IndyVictory.jpg" id="6_6xd1u"]
 [ext_resource type="Texture2D" uid="uid://cbbphcto7o1m8" path="res://assets/images/bgds/IndyTyping1.jpg" id="7_qahsu"]
 [ext_resource type="AudioStream" uid="uid://c5k6jemod63hg" path="res://assets/sounds/sfx/incorrect2.ogg" id="8_e3tfm"]
@@ -36,12 +36,16 @@ scale_max = 8.0
 color = Color(0.908854, 0.867472, 0.0260349, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wb7df"]
+content_margin_left = 3.0
+content_margin_top = 10.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
 bg_color = Color(0.61837727, 0.33397195, 0.1180506, 0.61960787)
 border_width_left = 6
 border_width_top = 6
 border_width_right = 6
 border_width_bottom = 6
-border_blend = true
+border_color = Color(0.7104485, 0.41446, 0.042181857, 1)
 corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
@@ -56,6 +60,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+theme = ExtResource("1_qahsu")
 script = ExtResource("1")
 time_limit = 10.0
 base_points = 1
@@ -90,7 +95,6 @@ grow_vertical = 2
 theme_override_colors/default_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/normal_font = ExtResource("3_vntiv")
 theme_override_font_sizes/normal_font_size = 72
 bbcode_enabled = true
 text = "_ _ _ _ _"
@@ -106,9 +110,6 @@ offset_bottom = 102.0
 theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 4
 theme_override_fonts/font = ExtResource("3_vntiv")
 theme_override_font_sizes/font_size = 36
 text = "Score: 0"
@@ -154,11 +155,6 @@ offset_left = 248.0
 offset_top = 392.0
 offset_right = 848.0
 offset_bottom = 492.0
-theme_override_colors/font_color = Color(0.0391642, 0.716146, 0.0920534, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("4_2cc5y")
 theme_override_font_sizes/font_size = 29
 text = "traduction"
@@ -176,7 +172,7 @@ offset_right = -80.0
 offset_bottom = 40.0
 grow_horizontal = 0
 grow_vertical = 2
-theme = ExtResource("5_6xd1u")
+theme = ExtResource("1_qahsu")
 theme_override_font_sizes/font_size = 32
 text = "🔊 Réécouter"
 
@@ -225,10 +221,6 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0.9537795, 0.7521729, 0.5396152, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0.7104485, 0.41446, 0.042181857, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_constants/outline_size = 7
-theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/font = ExtResource("3_vntiv")
 theme_override_font_sizes/font_size = 30
 text = "FÉLICITATIONS ! 🏆
@@ -288,7 +280,7 @@ offset_right = -163.0
 offset_bottom = -15.0
 grow_horizontal = 0
 grow_vertical = 0
-theme = ExtResource("5_6xd1u")
+theme = ExtResource("1_qahsu")
 text = "Sortie 🚪"
 
 [node name="ButtonRecommencer" type="Button" parent="VictoryPanel" unique_id=2116270077]
@@ -304,7 +296,7 @@ offset_right = 66.5
 offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("5_6xd1u")
+theme = ExtResource("1_qahsu")
 text = "Recommencer 🔁"
 
 [node name="SuccessParticles" type="GPUParticles2D" parent="." unique_id=1435115799]
@@ -340,7 +332,7 @@ offset_right = 45.0
 offset_bottom = -28.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("5_6xd1u")
+theme = ExtResource("1_qahsu")
 text = "Commencer"
 
 [node name="Label" type="RichTextLabel" parent="Intro" unique_id=628910021]
@@ -349,7 +341,10 @@ offset_left = 670.0
 offset_top = 26.0
 offset_right = 1136.0
 offset_bottom = 246.0
-theme_override_fonts/normal_font = ExtResource("3_vntiv")
+theme_override_constants/shadow_outline_size = 5
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 8
 theme_override_font_sizes/normal_font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_wb7df")
 bbcode_enabled = true
