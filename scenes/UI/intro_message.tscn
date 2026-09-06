@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://dx6028dlxtdhu"]
+[gd_scene format=3 uid="uid://dx6028dlxtdhu"]
 
 [ext_resource type="Texture2D" uid="uid://itl66j2wnw2q" path="res://assets/images/ui/cadres/Parchemin_intro.jpeg" id="1_kxqhd"]
 [ext_resource type="Script" uid="uid://lhxb0efvak1x" path="res://scripts/UI/intro_message.gd" id="1_o2m84"]
 [ext_resource type="Theme" uid="uid://dl4v6q2hcxxvj" path="res://Themes/VScrollBarTheme.tres" id="3_mpd3m"]
 [ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="3_wbiw6"]
-[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="4_wbiw6"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="5_mpd3m"]
 
 [sub_resource type="Animation" id="Animation_wbiw6"]
 resource_name = "fade_in"
@@ -44,7 +44,7 @@ _data = {
 &"fade_out": SubResource("Animation_mpd3m")
 }
 
-[node name="Intro_message" type="Control"]
+[node name="Intro_message" type="Control" unique_id=1290377654]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -55,7 +55,7 @@ grow_vertical = 2
 script = ExtResource("1_o2m84")
 mon_text = "Nous sommes ici"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=964923967]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -65,7 +65,7 @@ grow_vertical = 2
 texture = ExtResource("1_kxqhd")
 expand_mode = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1096064913]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -79,13 +79,13 @@ offset_bottom = 151.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect/MarginContainer" unique_id=1137422141]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_mpd3m")
 theme_override_colors/default_color = Color(0.117188, 0.110779, 0.110779, 1)
-theme_override_constants/shadow_offset_y = 1
 theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("3_wbiw6")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
@@ -93,7 +93,7 @@ text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ButtonContinuer" type="Button" parent="TextureRect"]
+[node name="ButtonContinuer" type="Button" parent="TextureRect" unique_id=1828270550]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -107,10 +107,10 @@ offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_force_pass_scroll_events = false
-theme = ExtResource("4_wbiw6")
+theme = ExtResource("5_mpd3m")
 text = "continuer"
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1497714256]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,11 +120,9 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_3r5ln")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1395723842]
+libraries/ = SubResource("AnimationLibrary_3r5ln")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1900990991]
 
 [connection signal="pressed" from="TextureRect/ButtonContinuer" to="." method="_on_button_continuer_pressed"]

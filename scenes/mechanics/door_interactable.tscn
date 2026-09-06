@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://ymcor6qsmf4n"]
+[gd_scene format=4 uid="uid://ymcor6qsmf4n"]
 
 [ext_resource type="Script" uid="uid://bks40jw0b6hdj" path="res://scripts/mechanics/door_interactable.gd" id="1_wdoyn"]
 [ext_resource type="Texture2D" uid="uid://dvll87brt0os8" path="res://assets/dungeonKaykit/wall_doorway_dungeon_texture.png" id="1_y1p1p"]
+[ext_resource type="FontFile" uid="uid://ci73qne8lnql0" path="res://assets/fonts/RoadRage-Regular.ttf" id="3_se0bs"]
 [ext_resource type="AudioStream" uid="uid://ck3kw3jy7oii" path="res://assets/sounds/sfx/doorOpen_2.ogg" id="4_18yun"]
 [ext_resource type="AudioStream" uid="uid://dhk7cb34ckex1" path="res://assets/sounds/sfx/doorClosed.ogg" id="5_a2ox6"]
 [ext_resource type="AudioStream" uid="uid://wfxv2rxbrsbw" path="res://assets/sounds/sfx/closed.wav" id="6_bxo77"]
@@ -150,28 +151,31 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_se0bs"]
 size = Vector3(1.70416, 1.40332, 1.46777)
 
-[node name="Door_interactable" type="Node3D"]
+[node name="Door_interactable" type="Node3D" unique_id=1018982326]
 script = ExtResource("1_wdoyn")
 
-[node name="wall_doorway_door" type="MeshInstance3D" parent="."]
+[node name="wall_doorway_door" type="MeshInstance3D" parent="." unique_id=540752958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.179901, 0, 0)
 mesh = SubResource("ArrayMesh_rilsg")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wall_doorway_door"]
+[node name="StaticBody3D" type="StaticBody3D" parent="wall_doorway_door" unique_id=512043612]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway_door/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_doorway_door/StaticBody3D" unique_id=1537307047]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.813154, 1.35698, 0)
 shape = SubResource("BoxShape3D_uw4px")
 
-[node name="Label3D" type="Label3D" parent="wall_doorway_door"]
+[node name="Label3D" type="Label3D" parent="wall_doorway_door" unique_id=352252586]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.792664, 2.26605, 0.132225)
 visible = false
+modulate = Color(0.85026044, 0.5682087, 0.21688117, 1)
+outline_modulate = Color(0.39192706, 0.25331852, 0.030339535, 1)
 text = "fermé"
+font = ExtResource("3_se0bs")
 font_size = 66
-outline_size = 29
+outline_size = 15
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=73378628]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -185,30 +189,29 @@ offset_bottom = -111.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Control" unique_id=2004005598]
 visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.85026044, 0.5682087, 0.21688117, 1)
+theme_override_colors/font_outline_color = Color(0.39192706, 0.25331852, 0.030339535, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 22
-text = "press E"
+theme_override_fonts/font = ExtResource("3_se0bs")
+theme_override_font_sizes/font_size = 40
+text = "[E]"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_uvljf")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1318413206]
+libraries/ = SubResource("AnimationLibrary_uvljf")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=680501378]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1987921840]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1317350152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04073, 0.610266, 0.919637)
 shape = SubResource("BoxShape3D_se0bs")
 
