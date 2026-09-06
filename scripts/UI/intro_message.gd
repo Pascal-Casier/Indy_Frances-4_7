@@ -1,5 +1,7 @@
 extends Control
 
+signal exit
+
 @export var pausing : bool = false
 @export_multiline var mon_text : String = "test"
 @export var audio : AudioStream
@@ -42,4 +44,5 @@ func _on_button_continuer_pressed() -> void:
 		get_tree().paused = false
 	if player:
 		player.can_move = true
-	queue_free()
+	exit.emit()
+	hide()

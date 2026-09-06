@@ -1,14 +1,12 @@
 [gd_scene format=4 uid="uid://blnqj2cp3onqi"]
 
 [ext_resource type="Script" uid="uid://b6wer2ghlaml2" path="res://scenes/mechanics/area_3d_test.gd" id="1_f5fqb"]
-[ext_resource type="Shader" uid="uid://etty0xlrpgui" path="res://scenes/shaders/hypnose_shader.gdshader" id="2_bkr8a"]
-[ext_resource type="Texture2D" uid="uid://di1h2e58gh5hs" path="res://assets/images/ui/paperUI/Cadre UI.png" id="3_m8loa"]
+[ext_resource type="Texture2D" uid="uid://b4pug3lprm117" path="res://assets/images/particules/particulesPNG/star_02.png" id="3_e2bmg"]
+[ext_resource type="Texture2D" uid="uid://dul1o6jouktqf" path="res://assets/images/particules/particulesPNG/circle_03.png" id="4_c5vnu"]
 [ext_resource type="Shader" uid="uid://sogqyemi7xap" path="res://shaders/s_blinking_aura.tres" id="4_kafak"]
-[ext_resource type="Texture2D" uid="uid://ikcw6ri6dhe" path="res://assets/FX/T_Aura7.png" id="5_e2bmg"]
-[ext_resource type="Texture2D" uid="uid://bhkfs8iu8n2q" path="res://assets/FX/T_VFX_Flare_251.jpg" id="6_c5vnu"]
-[ext_resource type="AudioStream" uid="uid://cidlg2nvv4hx0" path="res://assets/sounds/dialogues/magic_book/livremagique.mp3" id="6_m8loa"]
-[ext_resource type="AudioStream" uid="uid://ds7eu24ee2tt" path="res://assets/sounds/sfx/magical_sound.mp3" id="7_bkr8a"]
-[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="9_kafak"]
+[ext_resource type="Texture2D" uid="uid://deu6xttk8u7ju" path="res://assets/images/particules/particulesPNG/fire_02.png" id="5_qglrr"]
+[ext_resource type="AudioStream" uid="uid://d3n88se7kifqa" path="res://assets/sounds/sfx/page-turn-single.mp3" id="6_bkr8a"]
+[ext_resource type="PackedScene" uid="uid://cytdhdscj32w7" path="res://scenes/UI/intro_message_Papy.tscn" id="7_m8loa"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bxkpg"]
 resource_name = "BrownDark"
@@ -147,8 +145,8 @@ points = PackedVector3Array(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tf3xe"]
 render_priority = 0
 shader = ExtResource("4_kafak")
-shader_parameter/Main_color = Color(0.302, 1, 3, 1)
-shader_parameter/Transparancy_texture = ExtResource("5_e2bmg")
+shader_parameter/Main_color = Color(0.1066343, 0.26000336, 0.5460356, 1)
+shader_parameter/Transparancy_texture = ExtResource("3_e2bmg")
 shader_parameter/blinking_speed = 7.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_ej0ef"]
@@ -159,7 +157,7 @@ transparency = 1
 shading_mode = 0
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
-albedo_texture = ExtResource("6_c5vnu")
+albedo_texture = ExtResource("4_c5vnu")
 albedo_texture_msdf = true
 billboard_mode = 3
 billboard_keep_scale = true
@@ -201,7 +199,7 @@ cull_mode = 2
 shading_mode = 0
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
-albedo_texture = ExtResource("6_c5vnu")
+albedo_texture = ExtResource("5_qglrr")
 albedo_texture_msdf = true
 use_particle_trails = true
 
@@ -256,13 +254,6 @@ shape = 0
 size = 0.2
 section_segments = 4
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ue842"]
-shader = ExtResource("2_bkr8a")
-shader_parameter/time_scale = 0.8
-shader_parameter/distortion_strength = 0.5
-shader_parameter/swirl_strength = 0.1
-shader_parameter/color_shift = Color(0.607686, 0.632843, 0.929688, 1)
-
 [node name="SpellBookArea" type="Area3D" unique_id=1137848103]
 collision_layer = 0
 collision_mask = 10
@@ -303,96 +294,19 @@ process_material = SubResource("ParticleProcessMaterial_sjcgc")
 draw_pass_1 = SubResource("RibbonTrailMesh_20ao1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1838383539]
-stream = ExtResource("7_bkr8a")
+stream = ExtResource("6_bkr8a")
 volume_db = -8.595
 pitch_scale = 1.4
 bus = &"Sfx"
 
-[node name="AudioStreamPlayerStory" type="AudioStreamPlayer" parent="." unique_id=1807082337]
-stream = ExtResource("6_m8loa")
-max_polyphony = 3
-bus = &"Dialogues"
-
-[node name="Control" type="Control" parent="." unique_id=242299623]
-process_mode = 3
+[node name="Intro_message_Livret" parent="." unique_id=572216984 instance=ExtResource("7_m8loa")]
 visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+pausing = true
 
-[node name="book_page" type="ColorRect" parent="Control" unique_id=1650748961]
-process_mode = 3
-material = SubResource("ShaderMaterial_ue842")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="Control/book_page" unique_id=1627754951]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset = Vector2(194, 260)
-texture = ExtResource("3_m8loa")
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/book_page/TextureRect" unique_id=134151615]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/book_page/TextureRect/MarginContainer" unique_id=818162257]
-layout_mode = 2
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-bbcode_enabled = true
-text = "[wave]« Si tu lis ces mots, c’est que tu as trouvé mon livre. »
-
-« Je suis parti dans un monde étrange. »
-
-« Là-bas, tout se comprend en français. »
-
-« Apprends cette langue. Elle t’aidera à me retrouver. »
-
-« Commence doucement. Un mot après l’autre. »[/wave]"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="Control/book_page/TextureRect" unique_id=1444027933]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -47.0
-offset_right = 45.0
-offset_bottom = -16.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("9_kafak")
-disabled = true
-text = "continue..."
+[node name="ColorRect" parent="Intro_message_Livret" index="1" unique_id=1497714256]
+self_modulate = Color(1, 1, 1, 1)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="pressed" from="Control/book_page/TextureRect/Button" to="." method="_on_continue_button_pressed"]
+[connection signal="exit" from="Intro_message_Livret" to="." method="_on_intro_message_livret_exit"]
+
+[editable path="Intro_message_Livret"]

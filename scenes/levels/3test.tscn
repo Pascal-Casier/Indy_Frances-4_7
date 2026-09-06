@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c3gsbhwxb47af"]
+[gd_scene format=3 uid="uid://c3gsbhwxb47af"]
 
 [ext_resource type="Texture2D" uid="uid://dyp6e35vsqwqt" path="res://assets/images/bgds/skygen-plaine2.png" id="1_uiw71"]
 [ext_resource type="MeshLibrary" uid="uid://caepweg5a6su5" path="res://meshlibs/dalle2Meshlib.tres" id="2_t3mkv"]
 [ext_resource type="MeshLibrary" uid="uid://bxoa8vowqc8d3" path="res://meshlibs/StonesWallsMeshlib3.tres" id="3_cddsv"]
-[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="4_4ptlp"]
+[ext_resource type="PackedScene" uid="uid://c287m26c8vtbq" path="res://DragonSystem/dragon.tscn" id="4_s7evj"]
+[ext_resource type="PackedScene" uid="uid://c4nob8sb6rjy7" path="res://assets/blender/paysage2.glb" id="5_4dlqf"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
 panorama = ExtResource("1_uiw71")
@@ -16,18 +17,19 @@ background_mode = 1
 background_color = Color(0.270827, 0.36926, 0.424479, 1)
 sky = SubResource("Sky_cddsv")
 
-[node name="3test" type="Node3D"]
+[node name="3test" type="Node3D" unique_id=1458026864]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1269351192]
 environment = SubResource("Environment_sc0rx")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=77723944]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="Gridmaps" type="Node3D" parent="."]
+[node name="Gridmaps" type="Node3D" parent="." unique_id=525853787]
+visible = false
 
-[node name="GridMap" type="GridMap" parent="Gridmaps"]
+[node name="GridMap" type="GridMap" parent="Gridmaps" unique_id=2064509924]
 mesh_library = ExtResource("2_t3mkv")
 cell_size = Vector3(2, 1, 2)
 cell_center_x = false
@@ -38,7 +40,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="GridMap2" type="GridMap" parent="Gridmaps"]
+[node name="GridMap2" type="GridMap" parent="Gridmaps" unique_id=1130210858]
 mesh_library = ExtResource("3_cddsv")
 cell_size = Vector3(2, 1, 2)
 cell_center_x = false
@@ -48,4 +50,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="IndianaPlayer4_2" parent="." instance=ExtResource("4_4ptlp")]
+[node name="Dragon" parent="." unique_id=596475454 instance=ExtResource("4_s7evj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.32275, 0)
+speed = 20.0
+yaw_speed = 50.0
+pitch_speed = 15.0
+mouse_smoothing = 2.2
+
+[node name="paysage2" parent="." unique_id=1272160329 instance=ExtResource("5_4dlqf")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0.25195313, 0.81978834, 1.675993)

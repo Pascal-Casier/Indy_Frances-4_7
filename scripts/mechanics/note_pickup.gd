@@ -18,6 +18,9 @@ func _on_body_entered(body: Node3D) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and %Label3D.visible:
 		show_message()
+	if event.is_action_pressed("interact") and %Control.visible:
+		_on_button_pressed()
+		
 func _on_button_pressed() -> void:
 	%Control.hide()
 	get_tree().paused = false
