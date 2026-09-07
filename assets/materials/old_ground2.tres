@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cewgfhgadpp77"]
+
+[ext_resource type="Texture2D" uid="uid://bnr34akkkxkwx" path="res://assets/images/textures/textureswithnlmap/168.JPG" id="1_pbod1"]
+[ext_resource type="Texture2D" uid="uid://c8rp83glnss5k" path="res://assets/images/textures/textureswithnlmap/168_norm.JPG" id="2_ixu4s"]
+
+[resource]
+albedo_texture = ExtResource("1_pbod1")
+normal_enabled = true
+normal_texture = ExtResource("2_ixu4s")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+uv1_world_triplanar = true

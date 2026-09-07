@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc33ysgujnadg"]
+[gd_scene format=3 uid="uid://cc33ysgujnadg"]
 
 [ext_resource type="Script" uid="uid://xgftsnamnywr" path="res://scripts/UI/ui_bis.gd" id="1_tpnoy"]
 [ext_resource type="Texture2D" uid="uid://bye1jinjagy7e" path="res://assets/images/ui/HeartFull.png" id="2_xdo5d"]
@@ -7,9 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bduu15f8c0nfn" path="res://assets/images/ui/key.png" id="4_nku4w"]
 [ext_resource type="Texture2D" uid="uid://74c8okip1d5g" path="res://assets/images/ui/Keycard.PNG" id="5_c04t8"]
 [ext_resource type="Texture2D" uid="uid://d4h0c5ndjx2xe" path="res://assets/images/icons/icons8-bateria-64.png" id="7_35jxk"]
-[ext_resource type="Texture2D" uid="uid://bt53yfe3cvyd3" path="res://assets/images/bgds/Cadre_menu.jpg" id="7_owlbh"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="7_c5elv"]
+[ext_resource type="Texture2D" uid="uid://fmbidicukmb7" path="res://assets/images/bgds/LivrePapi3.png" id="8_cketn"]
 [ext_resource type="Script" uid="uid://hs315j2tb44s" path="res://scripts/UI/mouse_sens_h_slider.gd" id="8_tpnoy"]
 [ext_resource type="PackedScene" uid="uid://di58ndqvxgc7j" path="res://scenes/UI/loading_page.tscn" id="9_vb61p"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="10_cketn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qrge8"]
 bg_color = Color(0.160784, 0.160784, 0.160784, 1)
@@ -94,7 +96,7 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vb61p"]
-bg_color = Color(0.0313726, 0.109804, 0.235294, 0.952941)
+bg_color = Color(0.4758861, 0.18611011, 0, 0.9529412)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -104,7 +106,7 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[node name="UI" type="Control"]
+[node name="UI" type="Control" unique_id=911524149]
 process_mode = 3
 z_index = -1
 layout_mode = 3
@@ -116,7 +118,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_tpnoy")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=528120413]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -128,27 +130,27 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 12
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1963790967]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1626345298]
 layout_mode = 2
 theme_override_constants/separation = -11
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=274379414]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1243383461]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("2_xdo5d")
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=829353821]
 custom_minimum_size = Vector2(200, 25)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -158,24 +160,24 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_3ialv")
 step = 1.0
 value = 100.0
 
-[node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=465940329]
 layout_mode = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_r88bd")
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=810318828]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 10
 
-[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="icon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=1021174322]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 texture = ExtResource("3_qw3wq")
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=2043355880]
 custom_minimum_size = Vector2(200, 25)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -184,19 +186,19 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qrge8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_dru7a")
 step = 1.0
 
-[node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer2" unique_id=859916298]
 layout_mode = 2
 theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_r88bd")
 
-[node name="KeyPicture" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="KeyPicture" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=57349507]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 texture = ExtResource("4_nku4w")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="keycard" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="keycard" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1740391786]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
@@ -204,7 +206,7 @@ texture = ExtResource("5_c04t8")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HBoxContainerMots_trouves" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainerMots_trouves" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2032360974]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -212,7 +214,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 4
 alignment = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves"]
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves" unique_id=1865151212]
 custom_minimum_size = Vector2(230, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -220,7 +222,7 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_d53vo")
 
-[node name="lbltitle" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves/Panel"]
+[node name="lbltitle" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves/Panel" unique_id=1908238393]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 4
@@ -236,7 +238,7 @@ text = " mots trouvés :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Lblmots_trouves_nbr" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves/Panel"]
+[node name="Lblmots_trouves_nbr" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves/Panel" unique_id=1645615077]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 6
@@ -255,7 +257,7 @@ text = "00"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1752684805]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
@@ -263,7 +265,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 4
 alignment = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HBoxContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HBoxContainer" unique_id=1366637351]
 custom_minimum_size = Vector2(100, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -271,17 +273,17 @@ size_flags_vertical = 4
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_d53vo")
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/Panel"]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/HBoxContainer/Panel" unique_id=997382656]
+layout_mode = 0
 offset_right = 64.0
 offset_bottom = 64.0
 size_flags_vertical = 4
 texture = ExtResource("4_55x7g")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/Panel"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/HBoxContainer/Panel" unique_id=1667246310]
 unique_name_in_owner = true
-layout_mode = 2
+layout_mode = 0
 offset_left = 50.0
 offset_top = 2.0
 offset_right = 96.0
@@ -290,7 +292,7 @@ mouse_filter = 1
 theme_override_font_sizes/font_size = 40
 text = "00"
 
-[node name="Pause_menu" type="MarginContainer" parent="."]
+[node name="Pause_menu" type="MarginContainer" parent="." unique_id=2050771647]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -299,70 +301,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 0
+theme = ExtResource("7_c5elv")
 theme_override_constants/margin_left = 145
 theme_override_constants/margin_top = 145
 theme_override_constants/margin_right = 145
 theme_override_constants/margin_bottom = 145
 
-[node name="Panel" type="TextureRect" parent="Pause_menu"]
+[node name="Panel" type="TextureRect" parent="Pause_menu" unique_id=1497014330]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
-texture = ExtResource("7_owlbh")
+texture = ExtResource("8_cketn")
 expand_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Pause_menu/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_menu/Panel" unique_id=244255768]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 101.0
+offset_top = -146.0
+offset_right = 308.0
+offset_bottom = 134.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="btnresume" type="Button" parent="Pause_menu/Panel/VBoxContainer"]
+[node name="btnresume" type="Button" parent="Pause_menu/Panel/VBoxContainer" unique_id=654671450]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ckkbv")
 theme_override_font_sizes/font_size = 32
 text = "continuer"
 
-[node name="btnoptions" type="Button" parent="Pause_menu/Panel/VBoxContainer"]
+[node name="btnoptions" type="Button" parent="Pause_menu/Panel/VBoxContainer" unique_id=842788853]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ckkbv")
 theme_override_font_sizes/font_size = 32
 text = "options"
 
-[node name="btnload" type="Button" parent="Pause_menu/Panel/VBoxContainer"]
+[node name="btnload" type="Button" parent="Pause_menu/Panel/VBoxContainer" unique_id=234919343]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ckkbv")
 theme_override_font_sizes/font_size = 32
 text = "charger"
 
-[node name="btnOptions" type="Button" parent="Pause_menu/Panel/VBoxContainer"]
+[node name="btnOptions" type="Button" parent="Pause_menu/Panel/VBoxContainer" unique_id=1092591277]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ckkbv")
 theme_override_font_sizes/font_size = 32
 text = "recommencer"
 
-[node name="btnMenuPrincipal" type="Button" parent="Pause_menu/Panel/VBoxContainer"]
+[node name="btnMenuPrincipal" type="Button" parent="Pause_menu/Panel/VBoxContainer" unique_id=1206230159]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_ckkbv")
 theme_override_font_sizes/font_size = 32
 text = "menu principal"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_tpnoy")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=68021437]
+libraries/ = SubResource("AnimationLibrary_tpnoy")
 
-[node name="Fader" type="Control" parent="."]
+[node name="Fader" type="Control" parent="." unique_id=1583038599]
 z_index = -2
-layout_mode = 2
 anchors_preset = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -370,7 +370,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Fader"]
+[node name="ColorRect" type="ColorRect" parent="Fader" unique_id=1742130904]
 z_index = -3
 layout_mode = 1
 anchors_preset = 15
@@ -381,7 +381,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
-[node name="BatteryIcons" type="HBoxContainer" parent="."]
+[node name="BatteryIcons" type="HBoxContainer" parent="." unique_id=783471618]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -393,12 +393,12 @@ offset_bottom = -18.0
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="batteryImage" type="TextureRect" parent="BatteryIcons"]
+[node name="batteryImage" type="TextureRect" parent="BatteryIcons" unique_id=1635388721]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("7_35jxk")
 
-[node name="BatteryProgressBar" type="ProgressBar" parent="BatteryIcons"]
+[node name="BatteryProgressBar" type="ProgressBar" parent="BatteryIcons" unique_id=966834470]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
@@ -408,10 +408,10 @@ theme_override_styles/background = SubResource("StyleBoxFlat_qrge8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_tpnoy")
 value = 100.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=1195047511]
 unique_name_in_owner = true
 
-[node name="options_menu" type="MarginContainer" parent="."]
+[node name="options_menu" type="MarginContainer" parent="." unique_id=1694237551]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(600, 400)
@@ -428,12 +428,12 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="options_menu"]
+[node name="Panel" type="Panel" parent="options_menu" unique_id=1086326925]
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_vb61p")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="options_menu/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="options_menu/Panel" unique_id=760122757]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -443,12 +443,13 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="Label" type="Label" parent="options_menu/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="options_menu/Panel/VBoxContainer" unique_id=638802673]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_cketn")
 text = "sensitibilité mouse :"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="options_menu/Panel/VBoxContainer"]
+[node name="HSlider" type="HSlider" parent="options_menu/Panel/VBoxContainer" unique_id=2078306464]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -458,18 +459,20 @@ step = 0.02
 value = 0.01
 script = ExtResource("8_tpnoy")
 
-[node name="nbr" type="Label" parent="options_menu/Panel/VBoxContainer"]
+[node name="nbr" type="Label" parent="options_menu/Panel/VBoxContainer" unique_id=615854784]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_fonts/font = ExtResource("10_cketn")
 text = "sensitibilité mouse :"
 horizontal_alignment = 1
 
-[node name="ButtonExit" type="Button" parent="options_menu/Panel/VBoxContainer"]
+[node name="ButtonExit" type="Button" parent="options_menu/Panel/VBoxContainer" unique_id=844987488]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("7_c5elv")
 text = "exit"
 
-[node name="loadingPage" parent="." instance=ExtResource("9_vb61p")]
+[node name="loadingPage" parent="." unique_id=1852817497 instance=ExtResource("9_vb61p")]
 visible = false
 layout_mode = 1
 
