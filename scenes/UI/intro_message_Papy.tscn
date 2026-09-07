@@ -5,13 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dgicvdqk3gshs" path="res://assets/fonts/Italianno-Regular.ttf" id="3_f11pv"]
 
 [node name="Intro_message_Livret" unique_id=572216984 instance=ExtResource("1_rmkle")]
-mon_text = "Mon cher Léo,
-
-Si tu lis cette lettre, c’est que le moment est venu de te révéler un secret. Ton grand-père a besoin de ton aide. Je suis parti en Guyane pour retrouver une ancienne cité cachée dans la forêt, mais je suis maintenant poursuivi par des hommes dangereux. Pour me retrouver, tu devras traverser plusieurs épreuves et comprendre des messages écrits en français. Apprends cette langue avec courage, car chaque mot pourra te rapprocher de moi. Rejoins-moi en Guyane, mais sois prudent : la jungle cache des dangers et je ne peux pas te promettre que le voyage sera sans risque. Fais-moi confiance, petit Léo. Ton grand-père t’attend.
-
-[color=saddlebrown]Mon cher Léo,
-
-Se você está lendo esta carta, é porque chegou o momento de revelar um segredo a você. Seu avô precisa da sua ajuda. Parti para a Guiana para encontrar uma antiga cidade escondida na floresta, mas agora estou sendo perseguido por homens perigosos. Para me encontrar, você terá que enfrentar várias provas e compreender mensagens escritas em francês. Aprenda essa língua com coragem, pois cada palavra poderá aproximá-lo de mim. Venha me encontrar na Guiana, mas tenha cuidado: a floresta esconde muitos perigos e não posso prometer que a viagem será segura. Confie em mim, pequeno Léo. Seu avô está esperando por você.[/color]"
+script = null
 
 [node name="TextureRect" parent="." index="0" unique_id=964923967]
 texture = ExtResource("2_4dk3e")

@@ -1,6 +1,5 @@
-[gd_scene load_steps=31 format=4 uid="uid://dg7f4by51cm4q"]
+[gd_scene format=4 uid="uid://dg7f4by51cm4q"]
 
-[ext_resource type="Script" uid="uid://b6wer2ghlaml2" path="res://scenes/mechanics/area_3d_test.gd" id="1_a6t1g"]
 [ext_resource type="Shader" uid="uid://etty0xlrpgui" path="res://scenes/shaders/hypnose_shader.gdshader" id="2_pa8p1"]
 [ext_resource type="Texture2D" uid="uid://di1h2e58gh5hs" path="res://assets/images/ui/paperUI/Cadre UI.png" id="3_k80nl"]
 [ext_resource type="Shader" uid="uid://sogqyemi7xap" path="res://shaders/s_blinking_aura.tres" id="4_pcvlw"]
@@ -260,29 +259,35 @@ shape = 0
 size = 0.2
 section_segments = 4
 
-[node name="SpellBookArea" type="Area3D"]
+[node name="SpellBookArea" type="Area3D" unique_id=1855197595]
 collision_layer = 0
 collision_mask = 10
 monitorable = false
-script = ExtResource("1_a6t1g")
 
-[node name="spellBook" type="MeshInstance3D" parent="."]
+[node name="spellBook" type="MeshInstance3D" parent="." unique_id=770698525]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
 mesh = SubResource("ArrayMesh_c31w4")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=651961433]
 shape = SubResource("ConvexPolygonShape3D_a6t1g")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="." unique_id=119551095]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=43329636]
 material = SubResource("ShaderMaterial_ue842")
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect" unique_id=334081503]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -297,7 +302,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_k80nl")
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect/TextureRect" unique_id=1345204096]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -309,7 +314,7 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/TextureRect/MarginContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/ColorRect/TextureRect/MarginContainer" unique_id=189058267]
 layout_mode = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
@@ -320,7 +325,7 @@ Mais prends garde : seule la maîtrise des défis te permettra de tourner les pa
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="ColorRect/TextureRect"]
+[node name="Button" type="Button" parent="Control/ColorRect/TextureRect" unique_id=1969984655]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -335,12 +340,12 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "continue..."
 
-[node name="AuraGlowEffect" type="MeshInstance3D" parent="."]
+[node name="AuraGlowEffect" type="MeshInstance3D" parent="." unique_id=677577505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.683488, 0)
 material_override = SubResource("ShaderMaterial_tf3xe")
 mesh = SubResource("QuadMesh_ej0ef")
 
-[node name="small_particules" type="GPUParticles3D" parent="AuraGlowEffect"]
+[node name="small_particules" type="GPUParticles3D" parent="AuraGlowEffect" unique_id=2026756922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 material_override = SubResource("StandardMaterial3D_h47bh")
 amount = 10
@@ -349,7 +354,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_tvjqt")
 draw_pass_1 = SubResource("QuadMesh_f5sud")
 
-[node name="trails" type="GPUParticles3D" parent="AuraGlowEffect"]
+[node name="trails" type="GPUParticles3D" parent="AuraGlowEffect" unique_id=1706899882]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.45424, 0)
 material_override = SubResource("StandardMaterial3D_3un1f")
 amount = 4
@@ -359,5 +364,3 @@ trail_enabled = true
 trail_lifetime = 0.7
 process_material = SubResource("ParticleProcessMaterial_sjcgc")
 draw_pass_1 = SubResource("RibbonTrailMesh_20ao1")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

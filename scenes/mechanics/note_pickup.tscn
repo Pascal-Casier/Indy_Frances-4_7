@@ -36,6 +36,7 @@ texture = ExtResource("1_pi7qb")
 
 [node name="Control" type="CanvasLayer" parent="." unique_id=1456340208]
 unique_name_in_owner = true
+process_mode = 2
 visible = false
 
 [node name="Panel" type="Panel" parent="Control" unique_id=1116810508]

@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://c3gsbhwxb47af"]
 
+[ext_resource type="PackedScene" uid="uid://dx6028dlxtdhu" path="res://scenes/UI/intro_message.tscn" id="1_h4hor"]
 [ext_resource type="Texture2D" uid="uid://dyp6e35vsqwqt" path="res://assets/images/bgds/skygen-plaine2.png" id="1_uiw71"]
 [ext_resource type="MeshLibrary" uid="uid://caepweg5a6su5" path="res://meshlibs/dalle2Meshlib.tres" id="2_t3mkv"]
 [ext_resource type="MeshLibrary" uid="uid://bxoa8vowqc8d3" path="res://meshlibs/StonesWallsMeshlib3.tres" id="3_cddsv"]
-[ext_resource type="PackedScene" uid="uid://c287m26c8vtbq" path="res://DragonSystem/dragon.tscn" id="4_s7evj"]
 [ext_resource type="PackedScene" uid="uid://c4nob8sb6rjy7" path="res://assets/blender/paysage2.glb" id="5_4dlqf"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="5_npntn"]
+[ext_resource type="PackedScene" uid="uid://x1kw8hl43i8" path="res://scenes/mechanics/note_pickup.tscn" id="6_h4hor"]
+[ext_resource type="PackedScene" uid="uid://blnqj2cp3onqi" path="res://assets/blender/kaykitmeubles/SpellBookArea.tscn" id="8_qs2og"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
 panorama = ExtResource("1_uiw71")
@@ -27,7 +30,6 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="Gridmaps" type="Node3D" parent="." unique_id=525853787]
-visible = false
 
 [node name="GridMap" type="GridMap" parent="Gridmaps" unique_id=2064509924]
 mesh_library = ExtResource("2_t3mkv")
@@ -50,12 +52,15 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Dragon" parent="." unique_id=596475454 instance=ExtResource("4_s7evj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.32275, 0)
-speed = 20.0
-yaw_speed = 50.0
-pitch_speed = 15.0
-mouse_smoothing = 2.2
-
 [node name="paysage2" parent="." unique_id=1272160329 instance=ExtResource("5_4dlqf")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0.25195313, 0.81978834, 1.675993)
+
+[node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("5_npntn")]
+
+[node name="Note_pickup" parent="." unique_id=399824198 instance=ExtResource("6_h4hor")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.117172)
+
+[node name="SpellBookArea" parent="." unique_id=1137848103 instance=ExtResource("8_qs2og")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06376076, 1.4165118, -3.613638)
+
+[node name="Intro_message" parent="." unique_id=1290377654 instance=ExtResource("1_h4hor")]

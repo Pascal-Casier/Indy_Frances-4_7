@@ -1,10 +1,11 @@
 extends Area3D
 
-@export var signal_index : int = 1
+@export var signal_index : int = -1
 @export_multiline var note_text : String
 @export var sound : AudioStream
 
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
+var player : CharacterBody3D
 
 func _ready() -> void:
 	if sound:
@@ -13,13 +14,14 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group('Player'):
+		player = body
 		%Label3D.show()
 		
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and %Label3D.visible:
 		show_message()
-	if event.is_action_pressed("interact") and %Control.visible:
-		_on_button_pressed()
+	#if event.is_action_pressed("interact") and %Control.visible:
+		#_on_button_pressed()
 		
 func _on_button_pressed() -> void:
 	%Control.hide()
@@ -39,6 +41,7 @@ func show_message() -> void:
 
 func _on_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Player"):
+		player = null
 		%Label3D.hide()
 
 

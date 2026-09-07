@@ -19,5 +19,9 @@ func _ready() -> void:
 
 
 func light_on(nbr) -> void:
-	if door_nbr == nbr:
+	if door_nbr == nbr and not is_on:
 		omni_light_3d.show()
+		is_on = true
+	elif door_nbr == nbr and is_on:
+		omni_light_3d.hide()
+		is_on = false
