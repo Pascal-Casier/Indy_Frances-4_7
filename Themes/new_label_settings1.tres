@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://5uvjtc7g5o5i"]
+
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="1_kr8qq"]
+
+[resource]
+font = ExtResource("1_kr8qq")
+font_size = 32
+font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
+outline_size = 8
+outline_color = Color(0.6337224, 0.22108038, 0.023734048, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.5254902)
+shadow_offset = Vector2(2, 2)

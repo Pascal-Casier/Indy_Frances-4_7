@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkcgceejookti"
-path.s3tc="res://.godot/imported/SkygenForest2.jpg-c1a364abc6fce9b522f8efb955898389.s3tc.ctex"
+uid="uid://de4ne61bxs0aw"
+path.s3tc="res://.godot/imported/word_picker_buttonUI2.png-7bbe67df86843695a3a2ecf2bbfcb6d2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "c4605358494d2c97b50367d46615176d"
+}
 
 [deps]
 
-source_file="res://assets/images/bgds/SkygenForest2.jpg"
-dest_files=["res://.godot/imported/SkygenForest2.jpg-c1a364abc6fce9b522f8efb955898389.s3tc.ctex"]
+source_file="res://assets/blender/word_picker_buttonUI2.png"
+dest_files=["res://.godot/imported/word_picker_buttonUI2.png-7bbe67df86843695a3a2ecf2bbfcb6d2.s3tc.ctex"]
 
 [params]
 

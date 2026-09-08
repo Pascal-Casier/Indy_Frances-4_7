@@ -1,13 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://1tjbt07uljl0"]
+[gd_scene format=3 uid="uid://1tjbt07uljl0"]
 
 [ext_resource type="Texture2D" uid="uid://h8abvdt0jtip" path="res://assets/images/ui/cadres/UITrain10.jpg" id="1_fbtyi"]
 [ext_resource type="Script" uid="uid://tvyas0qebvqk" path="res://scripts/UI/NewQuizz/new_quizz.gd" id="1_xv17s"]
 [ext_resource type="Script" uid="uid://dkpik0awbvgn1" path="res://scripts/UI/NewQuizz/new_quizz_question_resource.gd" id="2_eu2ui"]
 [ext_resource type="AudioStream" uid="uid://dglmmit0akn5h" path="res://assets/sounds/pronuncia/je_suis.mp3" id="3_xnptr"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="5_ho3qx"]
-[ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="6_ti5dg"]
+[ext_resource type="LabelSettings" uid="uid://5uvjtc7g5o5i" path="res://Themes/new_label_settings1.tres" id="6_lynw3"]
 [ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="7_3oqo8"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="7_6v86j"]
 [ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="8_3oqo8"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="9_cgsj5"]
 
 [sub_resource type="Resource" id="Resource_xnptr"]
 script = ExtResource("2_eu2ui")
@@ -24,17 +26,13 @@ correct_answer = "est"
 wrong_answers = Array[String](["es", "suis", "sommes"])
 metadata/_custom_type_script = "uid://dkpik0awbvgn1"
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oqo8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lynw3"]
 bg_color = Color(0.779, 0.412, 0.067, 0.417)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-shadow_size = 6
+shadow_size = 12
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nyb3o"]
@@ -51,13 +49,17 @@ corner_radius_bottom_left = 32
 shadow_size = 3
 shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lynw3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oqo8"]
 bg_color = Color(0.779, 0.412, 0.067, 0.417)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-shadow_size = 12
+shadow_size = 6
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eu2ui"]
@@ -76,13 +78,8 @@ expand_margin_right = 5.0
 shadow_size = 3
 shadow_offset = Vector2(2, 2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v86j"]
-bg_color = Color(0.273438, 0.170532, 0.0947062, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_size = 2
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm0oj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgsj5"]
 bg_color = Color(0.273438, 0.170532, 0.0947062, 1)
@@ -91,8 +88,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm0oj"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v86j"]
+bg_color = Color(0.273438, 0.170532, 0.0947062, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8d7c"]
 bg_color = Color(0.156595, 0.0704278, 0.174479, 0.793)
@@ -109,7 +111,7 @@ corner_radius_bottom_left = 20
 shadow_color = Color(0, 0, 0, 0.966)
 shadow_size = 95
 
-[node name="NewQuizz" type="Control"]
+[node name="NewQuizz" type="Control" unique_id=1927649533]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,7 +121,7 @@ grow_vertical = 2
 script = ExtResource("1_xv17s")
 questions = Array[ExtResource("2_eu2ui")]([SubResource("Resource_xnptr"), SubResource("Resource_ho3qx")])
 
-[node name="QuestionPanel" type="Panel" parent="."]
+[node name="QuestionPanel" type="Panel" parent="." unique_id=1383212779]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(600, 400)
 layout_mode = 1
@@ -129,7 +131,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="QuestionPanel"]
+[node name="TextureRect" type="TextureRect" parent="QuestionPanel" unique_id=767108395]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -139,7 +141,7 @@ grow_vertical = 2
 texture = ExtResource("1_fbtyi")
 expand_mode = 3
 
-[node name="QuestionLabel" type="Label" parent="QuestionPanel/TextureRect"]
+[node name="QuestionLabel" type="Label" parent="QuestionPanel/TextureRect" unique_id=122320427]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(440, 0)
 layout_mode = 0
@@ -150,10 +152,11 @@ offset_bottom = 129.0
 theme_override_fonts/font = ExtResource("5_ho3qx")
 theme_override_font_sizes/font_size = 50
 text = "tettt"
+label_settings = ExtResource("6_lynw3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioButton" type="Button" parent="QuestionPanel/TextureRect"]
+[node name="AudioButton" type="Button" parent="QuestionPanel/TextureRect" unique_id=672346081]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
@@ -165,11 +168,11 @@ offset_top = 77.0
 offset_right = -89.0
 offset_bottom = 137.0
 grow_horizontal = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_3oqo8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nyb3o")
 theme_override_styles/normal = SubResource("StyleBoxFlat_lynw3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nyb3o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3oqo8")
 
-[node name="ExitQuizzBtn" type="Button" parent="QuestionPanel/TextureRect"]
+[node name="ExitQuizzBtn" type="Button" parent="QuestionPanel/TextureRect" unique_id=314250383]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 40)
 layout_mode = 1
@@ -181,11 +184,11 @@ offset_top = 560.0
 offset_right = -39.0
 offset_bottom = 600.0
 grow_horizontal = 0
-theme = ExtResource("6_ti5dg")
+theme = ExtResource("7_6v86j")
 text = "X"
 icon = ExtResource("7_3oqo8")
 
-[node name="TimerLabel" type="Label" parent="QuestionPanel/TextureRect"]
+[node name="TimerLabel" type="Label" parent="QuestionPanel/TextureRect" unique_id=1311957059]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 1
@@ -204,10 +207,11 @@ theme_override_fonts/font = ExtResource("5_ho3qx")
 theme_override_font_sizes/font_size = 33
 theme_override_styles/normal = SubResource("StyleBoxFlat_eu2ui")
 text = "te"
+label_settings = ExtResource("6_lynw3")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="OptionsContainer" type="GridContainer" parent="QuestionPanel"]
+[node name="OptionsContainer" type="GridContainer" parent="QuestionPanel" unique_id=1794323214]
 custom_minimum_size = Vector2(450, 190)
 layout_mode = 1
 anchors_preset = 7
@@ -225,55 +229,67 @@ theme_override_constants/h_separation = 92
 theme_override_constants/v_separation = 102
 columns = 2
 
-[node name="Option1" type="Button" parent="QuestionPanel/OptionsContainer"]
+[node name="Option1" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1347897735]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(201, 78)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
+theme_override_colors/font_outline_color = Color(0.6337224, 0.22108038, 0.023734048, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("9_cgsj5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
 text = "test"
 
-[node name="Option2" type="Button" parent="QuestionPanel/OptionsContainer"]
+[node name="Option2" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1173666794]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(201, 78)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
+theme_override_colors/font_outline_color = Color(0.6337224, 0.22108038, 0.023734048, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("9_cgsj5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
 text = "test"
 
-[node name="Option3" type="Button" parent="QuestionPanel/OptionsContainer"]
+[node name="Option3" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1916105639]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(201, 78)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
+theme_override_colors/font_outline_color = Color(0.6337224, 0.22108038, 0.023734048, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("9_cgsj5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
 text = "test"
 
-[node name="Option4" type="Button" parent="QuestionPanel/OptionsContainer"]
+[node name="Option4" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1530686739]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(201, 78)
 layout_mode = 2
 size_flags_horizontal = 6
-theme_override_fonts/font = ExtResource("5_ho3qx")
+theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
+theme_override_colors/font_outline_color = Color(0.6337224, 0.22108038, 0.023734048, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("9_cgsj5")
 theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gm0oj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgsj5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6v86j")
 text = "test"
 
-[node name="ScorePanel" type="Panel" parent="."]
+[node name="ScorePanel" type="Panel" parent="." unique_id=1342401103]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(600, 400)
@@ -291,7 +307,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_a8d7c")
 
-[node name="ScoreLabel" type="Label" parent="ScorePanel"]
+[node name="ScoreLabel" type="Label" parent="ScorePanel" unique_id=822190834]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -309,7 +325,7 @@ theme_override_fonts/font = ExtResource("5_ho3qx")
 theme_override_font_sizes/font_size = 45
 text = "test"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ScorePanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ScorePanel" unique_id=636930210]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -325,21 +341,21 @@ grow_vertical = 0
 theme_override_constants/separation = 65
 alignment = 1
 
-[node name="RestartButton" type="Button" parent="ScorePanel/HBoxContainer"]
+[node name="RestartButton" type="Button" parent="ScorePanel/HBoxContainer" unique_id=1750692853]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("8_3oqo8")
 theme_override_fonts/font = ExtResource("5_ho3qx")
 text = "Recommencer"
 
-[node name="ExitButton" type="Button" parent="ScorePanel/HBoxContainer"]
+[node name="ExitButton" type="Button" parent="ScorePanel/HBoxContainer" unique_id=992025446]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("8_3oqo8")
 theme_override_fonts/font = ExtResource("5_ho3qx")
 text = "Sortir"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=911944070]
 volume_db = -10.0
 max_polyphony = 3
 bus = &"Sfx"

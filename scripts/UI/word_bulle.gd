@@ -16,6 +16,8 @@ var base_y := 0.0
 func _ready() -> void:
 	%Label3D.text = mot
 	%Label3D.modulate = couleur
+	%Label3D2.text = mot
+	%Label3D2.modulate = couleur
 	base_y = global_position.y
 	
 func _process(_delta: float) -> void:
