@@ -148,6 +148,7 @@ layout/style_directory={
 
 [display]
 
+window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

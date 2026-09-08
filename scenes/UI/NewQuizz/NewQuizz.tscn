@@ -8,7 +8,6 @@
 [ext_resource type="LabelSettings" uid="uid://5uvjtc7g5o5i" path="res://Themes/new_label_settings1.tres" id="6_lynw3"]
 [ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="7_3oqo8"]
 [ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="7_6v86j"]
-[ext_resource type="Theme" uid="uid://el4iwldtiux7" path="res://Themes/Dico_theme.tres" id="8_3oqo8"]
 [ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="9_cgsj5"]
 
 [sub_resource type="Resource" id="Resource_xnptr"]
@@ -97,13 +96,12 @@ corner_radius_bottom_left = 10
 shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8d7c"]
-bg_color = Color(0.156595, 0.0704278, 0.174479, 0.793)
+bg_color = Color(0.90555173, 0.55778307, 0.0100930715, 0.7921569)
 border_width_left = 25
 border_width_top = 25
 border_width_right = 25
 border_width_bottom = 25
-border_color = Color(0.00524894, 0.335938, 0, 1)
-border_blend = true
+border_color = Color(0.61618507, 0.32031882, 0.017674115, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -219,19 +217,19 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -399.0
-offset_top = -331.0
-offset_right = 411.0
-offset_bottom = -16.0
+offset_left = -401.0
+offset_top = -359.0
+offset_right = 419.0
+offset_bottom = -47.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/h_separation = 92
-theme_override_constants/v_separation = 102
+theme_override_constants/h_separation = 82
+theme_override_constants/v_separation = 62
 columns = 2
 
 [node name="Option1" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1347897735]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(201, 78)
+custom_minimum_size = Vector2(366, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
@@ -246,7 +244,7 @@ text = "test"
 
 [node name="Option2" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1173666794]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(201, 78)
+custom_minimum_size = Vector2(366, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
@@ -261,7 +259,7 @@ text = "test"
 
 [node name="Option3" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1916105639]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(201, 78)
+custom_minimum_size = Vector2(366, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
@@ -276,7 +274,7 @@ text = "test"
 
 [node name="Option4" type="Button" parent="QuestionPanel/OptionsContainer" unique_id=1530686739]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(201, 78)
+custom_minimum_size = Vector2(366, 125)
 layout_mode = 2
 size_flags_horizontal = 6
 theme_override_colors/font_color = Color(0.9230891, 0.72042286, 0.47975668, 1)
@@ -324,6 +322,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_ho3qx")
 theme_override_font_sizes/font_size = 45
 text = "test"
+label_settings = ExtResource("6_lynw3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ScorePanel" unique_id=636930210]
 layout_mode = 1
@@ -344,14 +343,14 @@ alignment = 1
 [node name="RestartButton" type="Button" parent="ScorePanel/HBoxContainer" unique_id=1750692853]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("8_3oqo8")
+theme = ExtResource("7_6v86j")
 theme_override_fonts/font = ExtResource("5_ho3qx")
 text = "Recommencer"
 
 [node name="ExitButton" type="Button" parent="ScorePanel/HBoxContainer" unique_id=992025446]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("8_3oqo8")
+theme = ExtResource("7_6v86j")
 theme_override_fonts/font = ExtResource("5_ho3qx")
 text = "Sortir"
 

@@ -57,6 +57,7 @@ corner_radius_top_left = 15
 corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
+shadow_offset = Vector2(2, 2)
 
 [sub_resource type="SystemFont" id="SystemFont_ckkbv"]
 font_names = PackedStringArray("Impact")
@@ -208,14 +209,14 @@ stretch_mode = 5
 
 [node name="HBoxContainerMots_trouves" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2032360974]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
 alignment = 2
 
 [node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/HBoxContainerMots_trouves" unique_id=1865151212]
-custom_minimum_size = Vector2(230, 70)
+custom_minimum_size = Vector2(230, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -233,6 +234,8 @@ offset_right = 138.0
 offset_bottom = 28.0
 grow_vertical = 2
 mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.52156866)
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("10_cketn")
 theme_override_font_sizes/font_size = 22
 text = " mots trouvés :"
@@ -253,6 +256,9 @@ offset_bottom = 27.5
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6156863)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("10_cketn")
 theme_override_font_sizes/font_size = 22
 text = "00"
@@ -291,6 +297,10 @@ offset_top = 2.0
 offset_right = 96.0
 offset_bottom = 57.0
 mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.65882355)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/shadow_outline_size = 2
 theme_override_fonts/font = ExtResource("10_cketn")
 theme_override_font_sizes/font_size = 40
 text = "00"

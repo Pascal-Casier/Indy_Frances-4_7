@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://cy85ddep23l3b"]
+[gd_scene format=4 uid="uid://cy85ddep23l3b"]
 
 [ext_resource type="Script" uid="uid://fq18tbisiykx" path="res://scripts/mechanics/coin.gd" id="1_5cnoy"]
 [ext_resource type="AudioStream" uid="uid://b0yyvuwt2hfal" path="res://assets/sounds/sfx/handleCoins.ogg" id="2_5ovbb"]
+[ext_resource type="Texture2D" uid="uid://bhkfs8iu8n2q" path="res://assets/FX/T_VFX_Flare_251.jpg" id="3_ykrg7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cph6x"]
 resource_name = "Gold"
@@ -9,6 +10,8 @@ cull_mode = 2
 albedo_color = Color(0.733293, 0.613273, 0.358939, 1)
 metallic = 0.409091
 roughness = 0.234091
+emission_enabled = true
+emission = Color(0.51972955, 0.48406664, 0.05136623, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_jyrpj"]
 _surfaces = [{
@@ -80,28 +83,148 @@ _data = {
 &"picked_up": SubResource("Animation_hnk28")
 }
 
-[node name="coin" type="Area3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h47bh"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_ykrg7")
+albedo_texture_msdf = true
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_l7ewf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.23782, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_641g1"]
+curve = SubResource("Curve_l7ewf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n7n2h"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 1.0
+emission_ring_radius = 0.6
+emission_ring_inner_radius = 0.5
+emission_ring_cone_angle = 90.0
+angle_min = -180.0
+angle_max = 180.0
+direction = Vector3(0, 1, 0)
+spread = 5.0
+initial_velocity_min = 0.4
+initial_velocity_max = 0.8
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_641g1")
+color = Color(1.4512609, 1.4351686, 0.77927905, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_f5sud"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3un1f"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+vertex_color_is_srgb = true
+albedo_texture = ExtResource("3_ykrg7")
+albedo_texture_msdf = true
+use_particle_trails = true
+
+[sub_resource type="Curve" id="Curve_o7kpc"]
+_data = [Vector2(0.00248756, 0.0490565), 0.0, 0.0, 0, 0, Vector2(0.31592, 1), -3.32291, -3.32291, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_o58re"]
+curve = SubResource("Curve_o7kpc")
+
+[sub_resource type="Curve" id="Curve_7ykde"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_b5hai"]
+_limits = [-2.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_2tjlu"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_d7msc"]
+curve_x = SubResource("Curve_7ykde")
+curve_y = SubResource("Curve_b5hai")
+curve_z = SubResource("Curve_2tjlu")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4mir6"]
+particle_flag_align_y = true
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.5
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.8
+emission_ring_cone_angle = 90.0
+direction = Vector3(0, 1, 0)
+spread = 0.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.8
+orbit_velocity_min = 0.6
+orbit_velocity_max = 1.3
+orbit_velocity_curve = SubResource("CurveXYZTexture_d7msc")
+gravity = Vector3(0, 0, 0)
+color = Color(1.4512609, 1.4351686, 0.77927905, 1)
+alpha_curve = SubResource("CurveTexture_o58re")
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_20ao1"]
+shape = 0
+size = 0.2
+section_segments = 4
+
+[node name="coin" type="Area3D" unique_id=1941924278]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_5cnoy")
 
-[node name="coin" type="MeshInstance3D" parent="."]
+[node name="coin" type="MeshInstance3D" parent="." unique_id=921755386]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.10373, 0)
 mesh = SubResource("ArrayMesh_14srl")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1001850516]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.10373, 0)
 shape = SubResource("CylinderShape3D_kcdrr")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1478685729]
 stream = ExtResource("2_5ovbb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_g8mgv")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1549016406]
+libraries/ = SubResource("AnimationLibrary_g8mgv")
+
+[node name="small_particules" type="GPUParticles3D" parent="." unique_id=1485609621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2824669, 0)
+material_override = SubResource("StandardMaterial3D_h47bh")
+amount = 10
+lifetime = 3.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_n7n2h")
+draw_pass_1 = SubResource("QuadMesh_f5sud")
+
+[node name="trails" type="GPUParticles3D" parent="." unique_id=1856710110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17177308, 0)
+material_override = SubResource("StandardMaterial3D_3un1f")
+amount = 4
+lifetime = 3.0
+fixed_fps = 60
+trail_enabled = true
+trail_lifetime = 0.7
+process_material = SubResource("ParticleProcessMaterial_4mir6")
+draw_pass_1 = SubResource("RibbonTrailMesh_20ao1")
 
 [connection signal="body_entered" from="." to="." method="_on_coin_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

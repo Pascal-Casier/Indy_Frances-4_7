@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=28 format=4 uid="uid://b1344xcro6xh3"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://b1344xcro6xh3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ewtta"]
 resource_name = "Stone"

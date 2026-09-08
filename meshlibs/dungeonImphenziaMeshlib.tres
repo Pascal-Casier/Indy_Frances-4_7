@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=19 format=4 uid="uid://dkbiv5bvea3si"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://dkbiv5bvea3si"]
 
 [ext_resource type="Texture2D" uid="uid://krg2ck5bqitk" path="res://assets/blender/Imphezia/DungeonModularImphenzia_Palette.png" id="1_r0gkj"]
 

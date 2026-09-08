@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://1l24bl5jnqnx"]
+[gd_resource type="Theme" format=3 uid="uid://1l24bl5jnqnx"]
 
 [ext_resource type="FontFile" uid="uid://bpvnkn5cvgw0c" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_2y83l"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="1_5lv87"]
