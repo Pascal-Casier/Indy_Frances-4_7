@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_enum("TRAD", "KENNEY", "KENNEY_DETAIL") var wall_type
+@export_enum("TRAD", "KENNEY", "BRIKS") var wall_type
 @export var door_number : int = -1
 @export var can_interact : bool = false
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
