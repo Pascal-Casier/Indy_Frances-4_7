@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ci1y4ct28m01r"]
+
+[ext_resource type="Script" uid="uid://3r0d4topobwk" path="res://scripts/decoration/light_flicking.gd" id="1_med7k"]
+
+[node name="OmniLight3D9" type="OmniLight3D" unique_id=329777640]
+light_color = Color(0.556381, 0.955729, 0.550042, 1)
+light_energy = 3.0
+light_bake_mode = 1
+omni_range = 16.0
+script = ExtResource("1_med7k")
+door_num = -5

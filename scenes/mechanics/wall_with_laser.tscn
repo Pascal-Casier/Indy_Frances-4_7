@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://bxp6et7bmc1ht"]
+[gd_scene format=4 uid="uid://bxp6et7bmc1ht"]
 
 [ext_resource type="Script" uid="uid://bgccsn45qtfma" path="res://scripts/mechanics/wall_with_laser.gd" id="1_lk4a7"]
-[ext_resource type="Texture2D" uid="uid://bi8onfkw3spm1" path="res://assets/dungeonKaykit/wall_pillar_dungeon_texture.png" id="1_tn1kg"]
+[ext_resource type="Texture2D" uid="uid://crc2c6bnllrgn" path="res://assets/dungeonKaykit/wall_pillar_dungeon_texture.png" id="1_tn1kg"]
 [ext_resource type="PackedScene" uid="uid://m5jhjaj2bdei" path="res://scenes/Fx/laser.tscn" id="2_b8i2w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5g1w"]
@@ -95,27 +95,25 @@ _data = {
 &"move": SubResource("Animation_miit1")
 }
 
-[node name="Wall_with_laser" type="Node3D"]
+[node name="Wall_with_laser" type="Node3D" unique_id=532476697]
 script = ExtResource("1_lk4a7")
 
-[node name="wall_pillar" type="MeshInstance3D" parent="."]
+[node name="wall_pillar" type="MeshInstance3D" parent="." unique_id=1512258285]
 mesh = SubResource("ArrayMesh_ircuw")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="wall_pillar"]
+[node name="StaticBody3D" type="StaticBody3D" parent="wall_pillar" unique_id=65887116]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_pillar/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall_pillar/StaticBody3D" unique_id=899831588]
 shape = SubResource("ConvexPolygonShape3D_63v2k")
 
-[node name="gun" type="MeshInstance3D" parent="."]
+[node name="gun" type="MeshInstance3D" parent="." unique_id=2039278296]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.00758, 0.538495)
 mesh = SubResource("CylinderMesh_285ld")
 
-[node name="Laser" parent="gun" instance=ExtResource("2_b8i2w")]
+[node name="Laser" parent="gun" unique_id=1937129644 instance=ExtResource("2_b8i2w")]
 transform = Transform3D(-1, -8.74228e-08, -4.37114e-08, 8.74228e-08, -1, 4.37114e-08, -4.37114e-08, 4.37114e-08, 1, 0, 0.26251, 0)
 target_position = Vector3(0, -10, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8cosx")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1841813382]
+libraries/ = SubResource("AnimationLibrary_8cosx")
