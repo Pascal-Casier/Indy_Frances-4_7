@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://ccp5mledrjdcp" path="res://scripts/weapons/blade_axis_trap.gd" id="1_fp1v3"]
 [ext_resource type="PackedScene" uid="uid://dxduplahxugdb" path="res://assets/blender/blade_axis1.glb" id="1_ocvba"]
+[ext_resource type="AudioStream" uid="uid://v4skiobc41qy" path="res://assets/sounds/sfx/Whoosh Sound Effects.mp3" id="3_fp1v3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80jn3"]
+size = Vector3(0.30688477, 0.5149536, 0.30078125)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5d3sr"]
+size = Vector3(0.81359863, 0.28735352, 0.42358398)
 
 [node name="Blade_axis_trap" type="Node3D" unique_id=818631217]
 script = ExtResource("1_fp1v3")
@@ -9,7 +16,27 @@ script = ExtResource("1_fp1v3")
 [node name="blade_axis1" parent="." unique_id=934355457 instance=ExtResource("1_ocvba")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
 
-[node name="blade" parent="blade_axis1" index="1" unique_id=1336499920]
+[node name="StaticBody3D" type="StaticBody3D" parent="blade_axis1/Cylinder" parent_id_path=PackedInt32Array(934355457, 1570759341) index="0" unique_id=1343747866]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="blade_axis1/Cylinder/StaticBody3D" unique_id=87748478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2644348, 0)
+shape = SubResource("BoxShape3D_80jn3")
+
+[node name="blade" parent="blade_axis1" index="1" unique_id=1111634968]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="blade_axis1/blade" index="0" unique_id=1950383605]
+collision_layer = 0
+collision_mask = 10
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="blade_axis1/blade/Area3D" unique_id=1202931524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4927961, 0.23498538, 0)
+shape = SubResource("BoxShape3D_5d3sr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=126551030]
+stream = ExtResource("3_fp1v3")
+
+[connection signal="body_entered" from="blade_axis1/blade/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="blade_axis1"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=43 format=3 uid="uid://cg6tcasj5umbn"]
+[gd_scene format=3 uid="uid://cg6tcasj5umbn"]
 
 [ext_resource type="Theme" uid="uid://xvcu7wubj0hx" path="res://Themes/DicoTheme.tres" id="1_aemn0"]
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_p8obj"]
 [ext_resource type="Script" uid="uid://by77imnaky7gc" path="res://scripts/UI/inventaire.gd" id="2_e3twh"]
 [ext_resource type="Script" uid="uid://dxfivjsj2bfcf" path="res://scripts/UI/Dico5.gd" id="2_o2fl0"]
 [ext_resource type="Texture2D" uid="uid://ccrhem04or2ok" path="res://assets/images/france.png" id="3_bi2qi"]
 [ext_resource type="Texture2D" uid="uid://b88bychvcstpc" path="res://assets/images/icons/exit_icon.png" id="3_kqb37"]
 [ext_resource type="Script" uid="uid://b7vgidiielq14" path="res://scripts/UI/notebook.gd" id="3_pnpvy"]
 [ext_resource type="Texture2D" uid="uid://coh6jepy564yg" path="res://assets/images/bresil.png" id="4_m8h1y"]
+[ext_resource type="FontFile" uid="uid://ci73qne8lnql0" path="res://assets/fonts/RoadRage-Regular.ttf" id="4_pk30t"]
 [ext_resource type="Texture2D" uid="uid://blxp6j621i18p" path="res://assets/images/ui/paperUI/scrolls/wide.png" id="4_tlufp"]
 [ext_resource type="Script" uid="uid://dfll1xqk7rheb" path="res://scenes/UI/Inventory/inventory.gd" id="5_05ion"]
 [ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="5_foi5n"]
@@ -20,9 +22,17 @@
 [ext_resource type="Theme" uid="uid://b2qf352es2gjg" path="res://Themes/btnsQuete_theme.tres" id="11_xsot7"]
 [ext_resource type="PackedScene" uid="uid://d0n6mhxsrkag2" path="res://QuestSystem/button_quest.tscn" id="12_xsot7"]
 
-[sub_resource type="SystemFont" id="SystemFont_no88j"]
-font_names = PackedStringArray("Impact")
-subpixel_positioning = 0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwj45"]
+bg_color = Color(0.61960787, 0.30588236, 0.039215688, 0.5176471)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.30859375, 0.15285599, 0.019688917, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjm6p"]
 content_margin_left = 16.0
@@ -109,20 +119,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_jqtk4")
 Button/styles/normal = SubResource("StyleBoxFlat_0sjbk")
 Button/styles/pressed = SubResource("StyleBoxFlat_hef20")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am43v"]
-content_margin_left = 16.0
-content_margin_right = 16.0
-bg_color = Color(0.523438, 0.0363569, 0.0286255, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.411765, 0.368627, 0.368627, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ey7o"]
 bg_color = Color(0.121325, 0.122396, 0.10869, 1)
 border_width_left = 10
@@ -137,19 +133,6 @@ corner_radius_bottom_left = 15
 shadow_size = 10
 shadow_offset = Vector2(5, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et1l5"]
-content_margin_left = 16.0
-content_margin_right = 16.0
-bg_color = Color(0.471354, 0.0527819, 0.281689, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0b05u"]
 content_margin_left = 16.0
 content_margin_right = 16.0
@@ -159,6 +142,33 @@ border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.141176, 0.0862745, 0.0901961, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_am43v"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.523438, 0.0363569, 0.0286255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.411765, 0.368627, 0.368627, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et1l5"]
+content_margin_left = 16.0
+content_margin_right = 16.0
+bg_color = Color(0.471354, 0.0527819, 0.281689, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -187,6 +197,22 @@ subpixel_positioning = 0
 [sub_resource type="SystemFont" id="SystemFont_5u3rm"]
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de7vs"]
+bg_color = Color(0.196078, 0.0117647, 0.223529, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.854902, 0.878431, 0.0352941, 1)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
+shadow_size = 3
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ea8gp"]
 bg_color = Color(0.341176, 0.0352941, 0.384314, 1)
@@ -220,31 +246,11 @@ shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
 shadow_size = 1
 shadow_offset = Vector2(5, 5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de7vs"]
-bg_color = Color(0.196078, 0.0117647, 0.223529, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.854902, 0.878431, 0.0352941, 1)
-border_blend = true
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_color = Color(0.0313726, 0.027451, 0.027451, 0.6)
-shadow_size = 3
-shadow_offset = Vector2(5, 5)
-
 [sub_resource type="SystemFont" id="SystemFont_m43ry"]
 font_names = PackedStringArray("Georgia")
 subpixel_positioning = 0
 
-[sub_resource type="SystemFont" id="SystemFont_ami7g"]
-font_names = PackedStringArray("Comic Sans MS")
-subpixel_positioning = 0
-
-[sub_resource type="SystemFont" id="SystemFont_x4r4v"]
+[sub_resource type="SystemFont" id="SystemFont_yemcx"]
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
 
@@ -252,11 +258,15 @@ subpixel_positioning = 0
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
 
-[sub_resource type="SystemFont" id="SystemFont_yemcx"]
+[sub_resource type="SystemFont" id="SystemFont_x4r4v"]
 font_names = PackedStringArray("Comic Sans MS")
 subpixel_positioning = 0
 
-[node name="Inventaire" type="Control"]
+[sub_resource type="SystemFont" id="SystemFont_ami7g"]
+font_names = PackedStringArray("Comic Sans MS")
+subpixel_positioning = 0
+
+[node name="Inventaire" type="Control" unique_id=201290689]
 process_mode = 3
 z_index = 8
 layout_mode = 3
@@ -266,10 +276,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme = ExtResource("1_aemn0")
+theme = ExtResource("1_p8obj")
 script = ExtResource("2_e3twh")
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=210419803]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -278,7 +288,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control"]
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=716494108]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -290,75 +300,76 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer"]
+[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer" unique_id=892862884]
 layout_mode = 2
 theme = ExtResource("1_aemn0")
-theme_override_fonts/font = SubResource("SystemFont_no88j")
+theme_override_fonts/font = ExtResource("4_pk30t")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gwj45")
 theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jjm6p")
 tab_alignment = 1
 current_tab = 4
 
-[node name="Pause" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+[node name="Pause" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=1471662993]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Pause"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Pause" unique_id=2108824726]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 20
 
-[node name="BtnContinuer" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+[node name="BtnContinuer" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer" unique_id=646101975]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Continuer"
 
-[node name="BtnSave" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+[node name="BtnSave" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer" unique_id=432299681]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Sauver"
 
-[node name="BtnLoad" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+[node name="BtnLoad" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer" unique_id=1100383276]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Charger"
 
-[node name="BtnQuit" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer"]
+[node name="BtnQuit" type="Button" parent="Control/MarginContainer/TabContainer/Pause/VBoxContainer" unique_id=1574159176]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 text = "Quitter"
 
-[node name="Notes" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+[node name="Notes" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=802319233]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
-[node name="Notebook" type="Control" parent="Control/MarginContainer/TabContainer/Notes"]
+[node name="Notebook" type="Control" parent="Control/MarginContainer/TabContainer/Notes" unique_id=1667088480]
 process_mode = 3
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("3_pnpvy")
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook" unique_id=245085349]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
 
-[node name="Panel" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer"]
+[node name="Panel" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer" unique_id=1248861115]
 self_modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 2
 texture = ExtResource("4_tlufp")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel" unique_id=1698959853]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -370,11 +381,11 @@ theme_override_constants/margin_top = 180
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer" unique_id=1613154333]
 layout_mode = 2
 theme_override_constants/separation = 11
 
-[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=837817129]
 visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_foi5n")
@@ -382,11 +393,11 @@ theme_override_font_sizes/font_size = 66
 text = "Mes notes"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=265426674]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="NoteContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="NoteContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1009173704]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
@@ -396,98 +407,98 @@ theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 30
 columns = 7
 
-[node name="Button" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=705646872]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button2" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button2" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1016982412]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button3" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button3" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=818814271]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button4" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button4" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1692348163]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button5" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button5" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1378187053]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button6" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button6" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2128804208]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button7" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button7" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=239820764]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button8" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button8" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1190530250]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button9" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button9" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1215387881]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button10" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button10" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2070373555]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button11" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button11" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1067934144]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button12" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button12" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=960154103]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Button13" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer"]
+[node name="Button13" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2050874656]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
-[node name="Feuille_note" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel"]
+[node name="Feuille_note" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel" unique_id=1545439080]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -502,7 +513,7 @@ patch_margin_top = 88
 patch_margin_right = 150
 patch_margin_bottom = 88
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note" unique_id=394453904]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -514,14 +525,14 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 160
 theme_override_constants/margin_bottom = 110
 
-[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer" unique_id=816359098]
 custom_minimum_size = Vector2(350, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect" unique_id=1984712300]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -530,10 +541,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 30
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer" unique_id=1273045067]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer" unique_id=293867226]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
@@ -545,7 +556,7 @@ theme_override_font_sizes/font_size = 31
 text = "fdsf"
 horizontal_alignment = 1
 
-[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note"]
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note" unique_id=463292582]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 1
 anchors_preset = 1
@@ -562,14 +573,14 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Quêtes" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+[node name="Quêtes" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=1172161866]
 visible = false
 layout_mode = 2
 theme = ExtResource("11_xsot7")
 script = ExtResource("11_w4ac6")
 metadata/_tab_index = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes" unique_id=601543455]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -578,11 +589,11 @@ theme_override_constants/margin_top = 80
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 80
 
-[node name="GridContainer" type="Panel" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer"]
+[node name="GridContainer" type="Panel" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer" unique_id=2025116375]
 layout_mode = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer" unique_id=398054998]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -591,20 +602,20 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-59, 45)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer" unique_id=459286381]
 layout_mode = 2
 size_flags_horizontal = 3
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer" unique_id=401774407]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="ButtonQuest" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer/VBoxContainer" instance=ExtResource("12_xsot7")]
+[node name="ButtonQuest" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/ScrollContainer/VBoxContainer" unique_id=1803423319 instance=ExtResource("12_xsot7")]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer" unique_id=182856629]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
@@ -612,23 +623,23 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer" unique_id=1525162051]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.55
 
-[node name="lblQuestTitle" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="lblQuestTitle" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1690297608]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="lblQuestDescription" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+[node name="lblQuestDescription" type="Label" parent="Control/MarginContainer/TabContainer/Quêtes/MarginContainer/GridContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=797201999]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(450, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.658854, 0.643412, 0.643412, 1)
 autowrap_mode = 3
 
-[node name="Dictionnaire" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+[node name="Dictionnaire" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=425749254]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 20
@@ -638,94 +649,94 @@ theme_override_constants/margin_bottom = 20
 script = ExtResource("2_o2fl0")
 metadata/_tab_index = 3
 
-[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire"]
+[node name="TabContainer" type="TabContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire" unique_id=331961458]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_styles/tab_focus = SubResource("StyleBoxFlat_am43v")
 theme_override_styles/panel = SubResource("StyleBoxFlat_0ey7o")
-theme_override_styles/tab_selected = SubResource("StyleBoxFlat_et1l5")
-theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_am43v")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_0b05u")
+theme_override_styles/tab_hovered = SubResource("StyleBoxFlat_am43v")
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_et1l5")
+theme_override_styles/tab_focus = SubResource("StyleBoxFlat_am43v")
 tab_alignment = 1
 current_tab = 3
 
-[node name="Ajouter des mots" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+[node name="Ajouter des mots" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer" unique_id=114663961]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 metadata/_tab_index = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots" unique_id=1009553787]
 layout_mode = 2
 theme_override_constants/separation = 25
 alignment = 1
 
-[node name="CategoryOption" type="OptionButton" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer"]
+[node name="CategoryOption" type="OptionButton" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer" unique_id=782880750]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 25)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="NewCategoryButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer"]
+[node name="NewCategoryButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots/HBoxContainer" unique_id=1379286729]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "nouvelle catégorie"
 
-[node name="FrenchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+[node name="FrenchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots" unique_id=188768335]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "mot français"
-right_icon = ExtResource("3_bi2qi")
 caret_blink = true
+right_icon = ExtResource("3_bi2qi")
 
-[node name="PortuguesInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+[node name="PortuguesInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots" unique_id=1464404787]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 placeholder_text = "traduction"
-right_icon = ExtResource("4_m8h1y")
 caret_blink = true
+right_icon = ExtResource("4_m8h1y")
 
-[node name="AddButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots"]
+[node name="AddButton" type="Button" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Ajouter des mots" unique_id=715570583]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "ajouter mot"
 
-[node name="Chercher un mot" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+[node name="Chercher un mot" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer" unique_id=1173288321]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 11
 metadata/_tab_index = 1
 
-[node name="Control" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+[node name="Control" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot" unique_id=571640586]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot" unique_id=27743472]
 layout_mode = 2
 text = "Entrez votre mot :        "
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Control3" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+[node name="Control3" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot" unique_id=36034723]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot" unique_id=970832718]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 45
 alignment = 1
 
-[node name="SearchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer"]
+[node name="SearchInput" type="LineEdit" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer" unique_id=803093719]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -733,31 +744,31 @@ size_flags_horizontal = 0
 size_flags_vertical = 4
 caret_blink = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer" unique_id=745425679]
 custom_minimum_size = Vector2(300, 168)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_6fbor")
 horizontal_scroll_mode = 0
 
-[node name="ResultLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer/ScrollContainer"]
+[node name="ResultLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot/HBoxContainer/ScrollContainer" unique_id=1728992580]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.964706, 0.988235, 0.25098, 1)
 
-[node name="Control2" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot"]
+[node name="Control2" type="Control" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Chercher un mot" unique_id=529940170]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="Liste" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+[node name="Liste" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer" unique_id=1132550110]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
-[node name="WordTree" type="Tree" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Liste"]
+[node name="WordTree" type="Tree" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Liste" unique_id=487861083]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
@@ -765,13 +776,13 @@ columns = 3
 column_titles_visible = true
 select_mode = 1
 
-[node name="Quizz" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+[node name="Quizz" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer" unique_id=1914688202]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 metadata/_tab_index = 3
 
-[node name="WordLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+[node name="WordLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz" unique_id=1668497478]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -782,7 +793,7 @@ theme_override_fonts/font = SubResource("SystemFont_qmma1")
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 
-[node name="ButtonsContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+[node name="ButtonsContainer" type="GridContainer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz" unique_id=2042500989]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -791,17 +802,17 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 25
 columns = 2
 
-[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+[node name="ScoreLabel" type="Label" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz" unique_id=456790665]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer/Quizz" unique_id=1269842935]
 unique_name_in_owner = true
 volume_db = -18.0
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer"]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Control/MarginContainer/TabContainer/Dictionnaire/TabContainer" unique_id=1007745919]
 unique_name_in_owner = true
 transparent_bg = true
 title = "Merci de confirmer ..."
@@ -814,16 +825,16 @@ transparent = true
 dialog_text = "Vous avez maitrisé tous les mots !!
 Félicitations"
 
-[node name="Encyclopédie" type="MarginContainer" parent="Control/MarginContainer/TabContainer"]
+[node name="Encyclopédie" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=79238981]
 layout_mode = 2
 metadata/_tab_index = 4
 
-[node name="Inventory" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie"]
+[node name="Inventory" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie" unique_id=771168482]
 layout_mode = 2
 mouse_filter = 1
 script = ExtResource("5_05ion")
 
-[node name="Background1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+[node name="Background1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory" unique_id=275106334]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -836,7 +847,7 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1" unique_id=895252267]
 layout_mode = 2
 texture = ExtResource("6_teln6")
 patch_margin_left = 41
@@ -844,7 +855,7 @@ patch_margin_top = 41
 patch_margin_right = 41
 patch_margin_bottom = 41
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect" unique_id=524208658]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -853,7 +864,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer" unique_id=1471714882]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -863,187 +874,186 @@ text = "La grammaire"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="separator" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+[node name="separator" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer" unique_id=1793783206]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 1
 
-[node name="buttons_container" type="GridContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+[node name="buttons_container" type="GridContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer" unique_id=246519614]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/h_separation = 35
 theme_override_constants/v_separation = 30
 columns = 6
 
-[node name="Cap1" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap1" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=2111997805]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 1
 pronon-
 ciation"
 
-[node name="Cap2" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap2" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1891652409]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 2
 articles"
 
-[node name="Cap3" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap3" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1628579525]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 3
 Verbes I"
 
-[node name="Cap4" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap4" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1457721524]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 4
 phrases"
 
-[node name="Cap5" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap5" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=12459334]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 5
 pronoms
 adjectifs"
 
-[node name="Cap6" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap6" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=679519855]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 6
 le passé"
 
-[node name="Cap7" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap7" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=2082220412]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 7
 adjectifs
 II"
 
-[node name="Cap8" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap8" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1822520789]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 8
 verbes
 futur"
 
-[node name="Cap9" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap9" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1466556646]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 9
 condition-
 nel
 "
 
-[node name="Cap10" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap10" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=1635940244]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 10
 compa-
 raison"
 
-[node name="Cap11" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container"]
+[node name="Cap11" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer/buttons_container" unique_id=991287411]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/font = SubResource("SystemFont_5u3rm")
 theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_de7vs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ea8gp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_co2yd")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ea8gp")
 text = "CHAP 11
 Verbes
 V"
 
-[node name="separator2" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer"]
+[node name="separator2" type="Control" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background1/NinePatchRect/VBoxContainer" unique_id=1960295713]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="Background2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+[node name="Background2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory" unique_id=899369526]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -1057,13 +1067,13 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="Chapters_container" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2"]
+[node name="Chapters_container" type="NinePatchRect" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2" unique_id=891371070]
 unique_name_in_owner = true
 self_modulate = Color(0.160784, 0.160784, 0.160784, 1)
 layout_mode = 2
 texture = ExtResource("7_d3o5y")
 
-[node name="Cap1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap1" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1616348678]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1076,27 +1086,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1" unique_id=789054898]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap1/ScrollContainer" unique_id=1345889938 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=#33CC00][u][b]Capítulo 1:[/b][/u][/color]
 
@@ -1227,7 +1237,7 @@ Exemplos:[color=#FF6600] Aimer ([color=#33FF33]amar[/color]), Chanter ([color=#3
 
 "
 
-[node name="Cap2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap2" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1982558019]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1240,27 +1250,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2" unique_id=1070410785]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap2/ScrollContainer" unique_id=127527479 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=#33FF33][u][b]Capítulo 2: Número e Gênero[/b][/u][/color]
 
@@ -1444,7 +1454,7 @@ Um dos empregos mais comuns para os números são a data e a hora. Assim sendo, 
 
 "
 
-[node name="Cap3" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap3" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=106869120]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1457,27 +1467,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3" unique_id=407964979]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap3/ScrollContainer" unique_id=2070419578 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=#33CC00][b]Capítulo 3: Verbos I (Présent)[/b] [/color]
 
@@ -1766,7 +1776,7 @@ Exceções: [color=#FF0000]Être [/color](ser/estar) [color=#FF0000]Avoir [/colo
 
 "
 
-[node name="Cap4" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap4" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=821018078]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -1779,27 +1789,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4" unique_id=252868899]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap4/ScrollContainer" unique_id=549741068 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green][b]Capítulo 4: As Estruturas de Frases[/b][/color]
 
@@ -2049,7 +2059,7 @@ Veja abaixo o quadro das principais locuções conjuntivas.
 
 "
 
-[node name="Cap5" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap5" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1518542426]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -2062,27 +2072,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5" unique_id=1465751757]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap5/ScrollContainer" unique_id=1569242127 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=#008000][b]Capítulo 5: Pronomes e Adjetivos (I)[/b][/color]
 
@@ -2350,7 +2360,7 @@ O que eu quero é impossível. => [color=#DDA0DD]Ce que je veux est impossible.[
 
 "
 
-[node name="Cap6" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap6" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=865736541]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -2363,27 +2373,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6" unique_id=1203675828]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap6/ScrollContainer" unique_id=1217890103 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green][b]Capítulo 6: Verbos (II – Tempos do Passado)[/b][/color]
 
@@ -2630,7 +2640,7 @@ Je [color=#4169E1]viens de téléphoner[/color] à ma mère. => [color=#4169E1]A
 
 "
 
-[node name="Cap7" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap7" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1312367251]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -2643,27 +2653,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7" unique_id=802890850]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap7/ScrollContainer" unique_id=180877344 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green][b]Capítulo 7: Pronomes e Adjetivos (II)[/b][/color]
 
@@ -2816,7 +2826,7 @@ Elle pense beaucoup à Joseph. > Elle pense [color=#4169E1]à lui[/color].  (E n
 
 "
 
-[node name="Cap8" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap8" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=254810604]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -2829,27 +2839,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8" unique_id=786527747]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap8/ScrollContainer" unique_id=1102280750 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green]Capítulo 8: Verbos (III – Tempos do Futuro)[/color]
 
@@ -2956,7 +2966,7 @@ Quand je me lèverai... => Quando eu me levantar...
 
 "
 
-[node name="Cap9" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap9" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1331954735]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -2969,27 +2979,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9" unique_id=999907952]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap9/ScrollContainer" unique_id=597683395 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green]Capítulo 9: Verbos (IV)[/color]
 
@@ -3120,7 +3130,7 @@ Mas sim por: Nós gostaríamos que você [color=#4169E1]voltasse. [/color]
 A expressão mais simples e mais usada para o Subjonctif é [color=#FF0000]POUR QUE[/color]: 
 On va lutter [color=#FF0000]pour que[/color] le fascisme ne [color=#FF0000]revienne[/color] jamais. => As pessoas vão lutar para que o fascismo jamais volte."
 
-[node name="Cap10" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap10" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1368710099]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -3133,27 +3143,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10" unique_id=573292433]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap10/ScrollContainer" unique_id=640733021 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green]Capítulo 10: Comparação e Advérbios[/color]
 
@@ -3280,7 +3290,7 @@ Je préfère rester sur terre parce qu’en enfer c’est [color=#4169E1]pire[/c
 
 "
 
-[node name="Cap11" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="Cap11" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1870252830]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -3293,27 +3303,27 @@ theme_override_constants/margin_top = 120
 theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 120
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11" unique_id=1116667032]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11/ScrollContainer" groups=["Label"]]
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container/Cap11/ScrollContainer" unique_id=1938577294 groups=["Label"]]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/table_h_separation = 50
+theme_override_colors/table_border = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 3
+theme_override_constants/table_h_separation = 50
 theme_override_fonts/normal_font = SubResource("SystemFont_m43ry")
-theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
-theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
-theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
 theme_override_fonts/bold_font = SubResource("SystemFont_yemcx")
+theme_override_fonts/bold_italics_font = SubResource("SystemFont_nijgw")
+theme_override_fonts/italics_font = SubResource("SystemFont_x4r4v")
+theme_override_fonts/mono_font = SubResource("SystemFont_ami7g")
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 26
 theme_override_font_sizes/bold_italics_font_size = 22
 theme_override_font_sizes/italics_font_size = 22
 theme_override_font_sizes/mono_font_size = 22
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 26
 bbcode_enabled = true
 text = "[color=green]Capítulo 11: Verbos (V)[/color]
 
@@ -3482,7 +3492,7 @@ Como é difícil prever a formação dos verbos do terceiro grupo, segue uma tab
 
 "
 
-[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container"]
+[node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory/Background2/Chapters_container" unique_id=1242591661]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7
@@ -3498,10 +3508,10 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Sortir"
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory"]
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="Control/MarginContainer/TabContainer/Encyclopédie/Inventory" unique_id=1507085262]
 unique_name_in_owner = true
 
-[node name="ExitIcon" type="Button" parent="."]
+[node name="ExitIcon" type="Button" parent="." unique_id=1130190430]
 process_mode = 3
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
@@ -3515,7 +3525,7 @@ icon = ExtResource("3_kqb37")
 alignment = 0
 icon_alignment = 1
 
-[node name="Label" type="Label" parent="ExitIcon"]
+[node name="Label" type="Label" parent="ExitIcon" unique_id=772896437]
 visible = false
 layout_mode = 0
 offset_left = -105.0

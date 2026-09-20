@@ -7651,7 +7651,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.900
 [node name="bench_decorated2" parent="Deco" unique_id=37509537 instance=ExtResource("84_r13we")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -15, 0, -11)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/bench_decorated2/bench_decorated" parent_id_path=PackedInt32Array(37509537, 1873999049) index="0" unique_id=1438659112]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/bench_decorated2/bench_decorated" parent_id_path=PackedInt32Array(37509537, 2053882801) index="0" unique_id=1438659112]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/bench_decorated2/bench_decorated/StaticBody3D" unique_id=381405706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731931, 0)
@@ -7663,7 +7663,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -17.7181, 0, -11)
 [node name="coffin_decorated2" parent="Deco" unique_id=808082383 instance=ExtResource("86_fs0t1")]
 transform = Transform3D(-1.5, -6.35275e-22, -1.31134e-07, 1.16287e-07, 0.693296, -1.33017, 6.06099e-08, -1.33017, -0.693296, 1.55366, 1.97052, 20.9993)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/coffin_decorated2/coffin_decorated" parent_id_path=PackedInt32Array(808082383, 958480302) index="0" unique_id=1747306926]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/coffin_decorated2/coffin_decorated" parent_id_path=PackedInt32Array(808082383, 483013665) index="0" unique_id=1747306926]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/coffin_decorated2/coffin_decorated/StaticBody3D" unique_id=464344921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381688, 0)
@@ -7678,7 +7678,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -38)
 [node name="barrel_large_decorated_gltf" parent="Deco" unique_id=691636527 instance=ExtResource("88_rslpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85712, 0, -14.7519)
 
-[node name="barrel_large_decorated" parent="Deco/barrel_large_decorated_gltf" index="0" unique_id=4828172]
+[node name="barrel_large_decorated" parent="Deco/barrel_large_decorated_gltf" index="0" unique_id=1130087199]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_large_decorated_gltf/barrel_large_decorated" index="0" unique_id=1710435585]
@@ -7690,7 +7690,7 @@ shape = SubResource("CylinderShape3D_fh8gu")
 [node name="barrel_small_stack_gltf" parent="Deco" unique_id=751018702 instance=ExtResource("89_rslpv")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 15.1073, 0, 6.00805)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack" parent_id_path=PackedInt32Array(751018702, 1557444678) index="0" unique_id=630058355]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack" parent_id_path=PackedInt32Array(751018702, 1037345147) index="0" unique_id=630058355]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack/StaticBody3D" unique_id=515851417]
 shape = SubResource("ConvexPolygonShape3D_mmsbi")
@@ -7698,7 +7698,7 @@ shape = SubResource("ConvexPolygonShape3D_mmsbi")
 [node name="barrel_small_stack_gltf2" parent="Deco" unique_id=1814187382 instance=ExtResource("89_rslpv")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 29.1073, 0, -25.992)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack" parent_id_path=PackedInt32Array(1814187382, 1557444678) index="0" unique_id=1180531922]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack" parent_id_path=PackedInt32Array(1814187382, 1037345147) index="0" unique_id=1180531922]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack/StaticBody3D" unique_id=1920147943]
 shape = SubResource("ConvexPolygonShape3D_mmsbi")

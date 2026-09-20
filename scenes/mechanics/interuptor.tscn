@@ -1,8 +1,28 @@
-[gd_scene load_steps=12 format=4 uid="uid://bna7a3wwsi28t"]
+[gd_scene format=4 uid="uid://bna7a3wwsi28t"]
 
 [ext_resource type="Material" uid="uid://bg5hjnqsviv1o" path="res://assets/blender/fantasy/materiaux/M_wood_planks_dungeon_03.tres" id="1_dv72s"]
 [ext_resource type="Script" uid="uid://c0ou2forgflvv" path="res://scripts/mechanics/interuptor.gd" id="1_x6w4v"]
+[ext_resource type="Texture2D" uid="uid://dowwl5aspjrp2" path="res://assets/blender/fantasy/Fantastic_Dungeon_Pack_Props_T_wood_planks_dungeon_03_BC.png" id="2_v1o5n"]
 [ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="2_x6w4v"]
+[ext_resource type="Shader" uid="uid://c0bv2hn278j73" path="res://shaders/highLight_shader2.tres" id="3_sbpy7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fp1v3"]
+render_priority = 0
+shader = ExtResource("3_sbpy7")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_width = 0.10000000475
+shader_parameter/cycle_interval = 2.000000095
+shader_parameter/angle_fade = 1.0
+shader_parameter/x_direction = -1.0
+shader_parameter/y_direction = -1.0
+shader_parameter/z_direction = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsyft"]
+resource_name = "M_wood_planks_dungeon_03"
+next_pass = SubResource("ShaderMaterial_fp1v3")
+cull_mode = 2
+albedo_texture = ExtResource("2_v1o5n")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5wo5c"]
 _surfaces = [{
@@ -28,7 +48,7 @@ _surfaces = [{
 "index_count": 264,
 "index_data": PackedByteArray("GQAhACIAGQAXACEAAAA4ADkAAAABADgAAwAAADkAAwA5ADoABAADADoABAA6ADsABQAEADsABQA7ADwABwA9AD4ABwAKAD0ACwA/AEAACwAMAD8ADwALAEAADwBAAEEAEAAPAEEAEABBAEIAEQAQAEIAEQBCAEMARAApACgAKAApACsARABFACkAKAArACwARgBFAEQALAArAEcARgBIAEUALABHAEkAKgBIAEYASQBHAEoAKgBLAEgAFQBLACoAFQATAEsASQBKAC0ALQBKAEwALQBMAE0ATQBMAC4ATQAuAE4ATgAuABQATgAUABIAFgBPABgAFgBQAE8AUQBSAAIAUQBTAFIAJABTAFEAJABUAFMAVQBUACQAVQBWAFQABgBWAFUABgAjAFYACQAlAAgACQBXACUAWAAmAA4AWABZACYAWgBZAFgAWgBbAFkAXABbAFoAXABdAFsADQBdAFwADQAnAF0AGgAcAF4AGgAbABwAXgAcAF8AXgBfAGAAYABfAC8AYAAvADAAMAAvAGEAMABhAGIAYgBhAB0AYgAdADEAMQAdAB4AMQAeADIAMgAeAGMAMgBjAGQAZABjAGUAZABlAGYAZgBlAGcAZgBnADMAMwBnAB8AMwAfACAAaAA1ADYAaABpADUAagBpAGgAagBrAGkAbABrAGoAbABtAGsANABtAGwANAA3AG0A"),
 "lods": [0.0381031, PackedByteArray("GQAhACIAGQAXACEAFgAiACEAFgAhABgAAAABAAIAAwAAAAIAAwACACMAJAAjAAIABgAjACQABAADACMABQAEACMABwAlAAkACQAlAAgABwAKACUACwAMACYADwALACYAEAAPACYAEAAmACcAEQAQACcADQAnACYADQAmAA4AKAATACkAKgATACgAFQATACoAKAApACsAKAArACwALAArAC0ALQArABIAEgArAC4AEgAuABQAGgAbABwAGgAcAC8AGgAvADAAMAAvAB0AMAAdADEAMQAdAB4AMQAeADIAMgAeAB8AMgAfADMAMwAfACAANAA1ADYANAA3ADUA"), 0.0720854, PackedByteArray("AAABAAIAAwAAAAIABAADAAIABQAEAAIABgAFAAIABwAIAAkABwAKAAgACwAMAA0ADgANAAwADwALAA0AEAAPAA0AEQAQAA0AEgATABQAFQATABIAFgAXABgAFgAZABcAGgAbABwAGgAcAB0AGgAdAB4AGgAeAB8AGgAfACAA")],
-"material": ExtResource("1_dv72s"),
+"material": SubResource("StandardMaterial3D_nsyft"),
 "name": "M_wood_planks_dungeon_03",
 "primitive": 3,
 "uv_scale": Vector4(1.12421, 3.23835, 1.9621, 1.98032),
@@ -142,39 +162,37 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nsyft"]
 
-[node name="Interuptor" type="Node3D"]
+[node name="Interuptor" type="Node3D" unique_id=2065890365]
 script = ExtResource("1_x6w4v")
 turn_off = false
 
-[node name="SM_PROP_lever_dungeon_02" type="MeshInstance3D" parent="."]
+[node name="SM_PROP_lever_dungeon_02" type="MeshInstance3D" parent="." unique_id=146454153]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("ArrayMesh_cqkfu")
 skeleton = NodePath("")
 
-[node name="SM_PROP_lever_handle_dungeon_02" type="MeshInstance3D" parent="SM_PROP_lever_dungeon_02"]
+[node name="SM_PROP_lever_handle_dungeon_02" type="MeshInstance3D" parent="SM_PROP_lever_dungeon_02" unique_id=552633165]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0.0276165)
 mesh = SubResource("ArrayMesh_prnbn")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=564309115]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_sbpy7")
-}
+libraries/ = SubResource("AnimationLibrary_sbpy7")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1678971005]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=708391355]
 unique_name_in_owner = true
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1823083036]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6421)
 shape = SubResource("BoxShape3D_nsyft")
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=286152643]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.896899, 0.0362449)
 visible = false

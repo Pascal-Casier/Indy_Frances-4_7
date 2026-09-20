@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://cewgfhgadpp77" path="res://assets/materials/old_ground2.tres" id="14_80jn3"]
 [ext_resource type="Material" uid="uid://crbu1mvn1xcfj" path="res://assets/materials/old_bricks4_material.tres" id="14_eggyd"]
 [ext_resource type="PackedScene" uid="uid://cne45tpbau2nt" path="res://scenes/characters/dragon_to_mount.tscn" id="15_80jn3"]
+[ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="15_byu0c"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
 panorama = ExtResource("1_uiw71")
@@ -497,7 +498,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
 [node name="paysage2" parent="." unique_id=1272160329 instance=ExtResource("5_4dlqf")]
-transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0.25195313, 0.81978834, 1.675993)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0.25195313, 0.81978834, 9.231504)
 
 [node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("5_npntn")]
 
@@ -527,3 +528,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -4, 5)
 script = ExtResource("9_jkygx")
 mesh_vector_data = SubResource("Resource_qests")
 materials = Array[Material]([ExtResource("14_80jn3")])
+
+[node name="Blade_axis_trap" parent="." unique_id=818631217 instance=ExtResource("15_byu0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.762451, -0.96320224, 9.322632)
+interval = 0.5
