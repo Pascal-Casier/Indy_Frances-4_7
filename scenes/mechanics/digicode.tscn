@@ -1,9 +1,91 @@
-[gd_scene format=3 uid="uid://dnpvryp8kdp2s"]
+[gd_scene format=4 uid="uid://dnpvryp8kdp2s"]
 
 [ext_resource type="PackedScene" uid="uid://cheuxcgkg617p" path="res://assets/blender/Digicode.glb" id="1_3n0tn"]
 [ext_resource type="Script" uid="uid://df6kd6ymh0rp6" path="res://scripts/mechanics/digicode.gd" id="1_xss15"]
 [ext_resource type="PackedScene" uid="uid://dr7s8npkdv1kh" path="res://scenes/UI/CastGameLetters/cast_game_letters .tscn" id="3_2o3k0"]
+[ext_resource type="Texture2D" uid="uid://cc00b5odssuhr" path="res://assets/blender/Digicode_ImphenziaPalette01.png" id="3_dng5s"]
 [ext_resource type="PackedScene" uid="uid://1tjbt07uljl0" path="res://scenes/UI/NewQuizz/NewQuizz.tscn" id="4_6unrm"]
+[ext_resource type="Shader" uid="uid://bcspqnvxth0jf" path="res://shaders/highLight_shader.tres" id="4_8qnhl"]
+[ext_resource type="Texture2D" uid="uid://cuastakxgojsb" path="res://assets/blender/Digicode_digicode.jpg" id="5_mf22e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hxovq"]
+render_priority = 0
+shader = ExtResource("4_8qnhl")
+shader_parameter/shine_color = Color(1, 1, 1, 1)
+shader_parameter/shine_speed = 1.0
+shader_parameter/shine_width = 0.10000000475
+shader_parameter/cycle_interval = 2.000000095
+shader_parameter/angle_fade = 1.0
+shader_parameter/x_direction = -1.0
+shader_parameter/y_direction = -1.0
+shader_parameter/z_direction = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tikrv"]
+resource_name = "Material"
+next_pass = SubResource("ShaderMaterial_hxovq")
+cull_mode = 2
+albedo_texture = ExtResource("3_dng5s")
+roughness = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyqf0"]
+resource_name = "digicode"
+cull_mode = 2
+albedo_texture = ExtResource("5_mf22e")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2s4qr"]
+_surfaces = [{
+"aabb": AABB(-0.05033338, -0.19999999, -0.12813987, 0.10066676, 0.39999998, 0.25627974),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAwAAAAIABAACAAEABQACAAQABQADAAIABAABAAYABwADAAUABgAIAAcABwAIAAMABgABAAgAAwAJAAAAAAAKAAEACQAKAAAACwAIAAEAAwAIAAsACwABAAoAAwALAAkACQALAAoA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("/////wAAAAAAAP////8AAAAA//8AAAAAAAAAAAAAAAAAAIHsax4AAAAAfRNrHgAAAACB7JPhAAAAAH0Tk+EAAAAAAAD//wAA//8AAAAAAAD///////8AAP//AAD//wAA")
+}, {
+"aabb": AABB(-0.05033338, -0.16954543, -0.09768531, 1e-05, 0.33909085, 0.19537061),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "digicode",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_soxla"]
+resource_name = "Digicode_Cube"
+_surfaces = [{
+"aabb": AABB(-0.05033338, -0.19999999, -0.12813987, 0.10066676, 0.39999998, 0.25627974),
+"attribute_data": PackedByteArray("ym/E+95o2fTKb9n03mjE+8pv7e3eaNn03mjt7cpv2fS1dtn0ym/t7bV27e3Kb9n0ym8C595o7e3eaALnym/t7bV2AufKb+3tym8C57V27e11eY755mxA+5dujvnmbAHlJntA+5dus+Z1ebPmJnsB5Q=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFgAVABcAFAAYABUAFgAXABkAGgAYABQAGQAXABsAGgAbABgAGQAbABoA"),
+"material": SubResource("StandardMaterial3D_tikrv"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("/////wAAVNUAAP////9U1QAA//8AAFTV////////VNX//wAA////vwAA//////+//////////78AAAAA////vwAAAAAAAFTV//8AAP//VNX//wAAAABU1QAAAAD//1TV//8AAAAAVNX///////9U1f////8AAFTV//8AAP//VNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD//wAAfROT4f+/AAAAAAAA/78AAH0Tax7/vwAA//8AAP+/AAAAAP///78AAIHsax7/vwAAgeyT4f+/AAD//////79U1aoqVNWqKlTVqipU1aoq/3//f/9//3//f/9//3//f1RVVFVUVVRVVFVUVVRVVFWqqlRVqqpUVaqqVFWqqlRV/z//v/8//7//P/+//z//v/9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7/")
+}, {
+"aabb": AABB(-0.05033338, -0.16954543, -0.09768531, 1e-05, 0.33909085, 0.19537061),
+"attribute_data": PackedByteArray("ifGi8NgccB2Y848imhSi8A=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_gyqf0"),
+"name": "digicode",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///78AAP//AAABwAAA/////wTAAAAAAAAA/7/OgRf/k4M1/kmFWv3/f/7/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2s4qr")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xss15"]
 size = Vector3(0.759766, 1, 0.488403)
@@ -19,6 +101,7 @@ press_elbl = NodePath("PressElbl")
 
 [node name="Cube" parent="Digicode" index="0" unique_id=687852068]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_soxla")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=246637204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.255798)

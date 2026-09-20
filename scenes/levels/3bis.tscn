@@ -114,6 +114,7 @@
 [ext_resource type="PackedScene" uid="uid://ci1y4ct28m01r" path="res://scenes/Decoration/Light_flicking.tscn" id="94_88odg"]
 [ext_resource type="Texture2D" uid="uid://bkwrcvalye3x5" path="res://assets/blender/kaykitHaloween/gltf/halloweenbits_texture.png" id="101_1os6m"]
 [ext_resource type="Material" uid="uid://b3uyydju5cl2n" path="res://assets/blender/fantasy/materiaux/M_PROP_fabric_dungeon.tres" id="105_t354b"]
+[ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="115_au5fb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_webpc"]
 panorama = ExtResource("1_mrb78")
@@ -7005,6 +7006,7 @@ materials = Array[Material]([ExtResource("32_14a6r")])
 
 [node name="Roof" type="Node3D" parent="Blocks" unique_id=1017819525]
 transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, -6.383731, 8.99769, 38.875694)
+visible = false
 
 [node name="Block_36" type="Node3D" parent="Blocks/Roof" unique_id=981909666]
 script = ExtResource("27_1r1pi")
@@ -7037,6 +7039,7 @@ materials = Array[Material]([ExtResource("65_p1ixo")])
 
 [node name="Roof2" type="Node3D" parent="Blocks" unique_id=1005640658]
 transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, -71.429886, 5.978964, 38.87564)
+visible = false
 
 [node name="Block_36" type="Node3D" parent="Blocks/Roof2" unique_id=87644263]
 script = ExtResource("27_1r1pi")
@@ -7648,7 +7651,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.900
 [node name="bench_decorated2" parent="Deco" unique_id=37509537 instance=ExtResource("84_r13we")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -15, 0, -11)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/bench_decorated2/bench_decorated" parent_id_path=PackedInt32Array(37509537, 2053882801) index="0" unique_id=1438659112]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/bench_decorated2/bench_decorated" parent_id_path=PackedInt32Array(37509537, 1873999049) index="0" unique_id=1438659112]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/bench_decorated2/bench_decorated/StaticBody3D" unique_id=381405706]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731931, 0)
@@ -7660,7 +7663,7 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -17.7181, 0, -11)
 [node name="coffin_decorated2" parent="Deco" unique_id=808082383 instance=ExtResource("86_fs0t1")]
 transform = Transform3D(-1.5, -6.35275e-22, -1.31134e-07, 1.16287e-07, 0.693296, -1.33017, 6.06099e-08, -1.33017, -0.693296, 1.55366, 1.97052, 20.9993)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/coffin_decorated2/coffin_decorated" parent_id_path=PackedInt32Array(808082383, 483013665) index="0" unique_id=1747306926]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/coffin_decorated2/coffin_decorated" parent_id_path=PackedInt32Array(808082383, 958480302) index="0" unique_id=1747306926]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/coffin_decorated2/coffin_decorated/StaticBody3D" unique_id=464344921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381688, 0)
@@ -7675,7 +7678,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 4, -38)
 [node name="barrel_large_decorated_gltf" parent="Deco" unique_id=691636527 instance=ExtResource("88_rslpv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85712, 0, -14.7519)
 
-[node name="barrel_large_decorated" parent="Deco/barrel_large_decorated_gltf" index="0" unique_id=1130087199]
+[node name="barrel_large_decorated" parent="Deco/barrel_large_decorated_gltf" index="0" unique_id=4828172]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_large_decorated_gltf/barrel_large_decorated" index="0" unique_id=1710435585]
@@ -7687,7 +7690,7 @@ shape = SubResource("CylinderShape3D_fh8gu")
 [node name="barrel_small_stack_gltf" parent="Deco" unique_id=751018702 instance=ExtResource("89_rslpv")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 15.1073, 0, 6.00805)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack" parent_id_path=PackedInt32Array(751018702, 1037345147) index="0" unique_id=630058355]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack" parent_id_path=PackedInt32Array(751018702, 1557444678) index="0" unique_id=630058355]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/barrel_small_stack_gltf/barrel_small_stack/StaticBody3D" unique_id=515851417]
 shape = SubResource("ConvexPolygonShape3D_mmsbi")
@@ -7695,7 +7698,7 @@ shape = SubResource("ConvexPolygonShape3D_mmsbi")
 [node name="barrel_small_stack_gltf2" parent="Deco" unique_id=1814187382 instance=ExtResource("89_rslpv")]
 transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 29.1073, 0, -25.992)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack" parent_id_path=PackedInt32Array(1814187382, 1037345147) index="0" unique_id=1180531922]
+[node name="StaticBody3D" type="StaticBody3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack" parent_id_path=PackedInt32Array(1814187382, 1557444678) index="0" unique_id=1180531922]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Deco/barrel_small_stack_gltf2/barrel_small_stack/StaticBody3D" unique_id=1920147943]
 shape = SubResource("ConvexPolygonShape3D_mmsbi")
@@ -7866,6 +7869,9 @@ data = {
 "cells": PackedInt32Array(65523, 7, 1441821, 65527, 10, 655389, 5, 18, 655361, 458735, 18, 43, 262145, 18, 655394, 327679, 18, 655392, 262161, 18, 655393, 262159, 18, 655394, 5, 65519, 1048600, 11, 8, 1048600, 65526, 65519, 1441816, 65524, 65530, 655373, 262146, 11, 1048626, 262152, 11, 1048626, 327676, 65529, 1441842, 327676, 65522, 1048626, 327666, 65522, 1048626, 458738, 11, 1048626, 327682, 65517, 1048625, 393214, 65517, 1048625, 14, 65521, 1048616, 65533, 65528, 1048616, 65533, 65523, 1048616, 65517, 65517, 40, 65517, 65529, 40, 65517, 1, 40, 65523, 10, 40, 18, 10, 40, 18, 5, 40, 8, 65526, 67, 65528, 5, 67, 12, 65531, 66, 65532, 8, 66, 131089, 65522, 66, 262154, 2, 66, 262154, 16, 66, 327675, 17, 66, 458734, 12, 66, 65531, 65488, 1441816, 196590, 65487, 1441858, 131088, 65488, 1441858, 9, 65478, 34, 9, 65452, 43, 13, 65464, 1441794, 13, 65465, 1441794, 18, 65455, 1441794, 18, 65456, 1441794, 18, 65452, 69, 65535, 0, 1441811, 5, 14, 655379, 65534, 65470, 0, 65534, 65471, 1441792, 3, 65462, 1441793, 3, 65465, 1441793, 65522, 65477, 1441835, 65522, 65480, 1048619, 65522, 65483, 1048610, 7, 65478, 22, 13, 65478, 69, 65526, 65453, 69, 3, 65457, 1441861, 65528, 65462, 655384, 65528, 65475, 24, 65532, 65469, 1441811, 65524, 65469, 1048595, 65528, 65468, 1048585, 65534, 65462, 1048642, 9, 65484, 1048642, 13, 65489, 1048616, 65525, 65455, 1048616, 9, 65489, 1048580, 7, 65489, 1441796, 131087, 65468, 655377, 196606, 65452, 1048626, 262129, 65475, 50, 327675, 65490, 1441841, 327693, 65490, 1441841, 262148, 65490, 1441841, 262156, 65451, 1048625, 458732, 65482, 655409, 262151, 65467, 655409, 262163, 65459, 49, 524268, 65468, 655409, 524268, 65458, 655409, 458743, 65490, 655434, 393225, 65490, 655434, 589861, 65466, 49, 589861, 65458, 49)
 }
 metadata/_editor_floor_ = Vector3(0, 9, 0)
+
+[node name="Blade_axis_trap" parent="." unique_id=818631217 instance=ExtResource("115_au5fb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.083336, 1.9073486e-06, -22.344814)
 
 [editable path="traps/DeathArea"]
 [editable path="traps/Computer_jungle"]

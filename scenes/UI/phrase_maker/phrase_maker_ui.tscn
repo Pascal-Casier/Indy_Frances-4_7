@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcy2ha20yqta5"]
+[gd_scene format=3 uid="uid://bcy2ha20yqta5"]
 
 [ext_resource type="Script" uid="uid://sokgfrjfhlak" path="res://scripts/UI/phrase_maker_ui.gd" id="1_hij75"]
 [ext_resource type="Texture2D" uid="uid://dqkmvyog3k1c3" path="res://assets/images/bgds/phrasemakerUI.jpg" id="2_2513c"]
@@ -65,20 +65,6 @@ Label/font_sizes/font_size = 19
 Label/fonts/font = ExtResource("4_2513c")
 Label/styles/normal = SubResource("StyleBoxFlat_2y83l")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2513c"]
-bg_color = Color(0.33, 0.1419, 0.033, 0.0823529)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.843837, 0.856771, 0.0290053, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-shadow_size = 1
-shadow_offset = Vector2(2, 2)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_buk10"]
 content_margin_left = 5.0
 content_margin_right = 5.0
@@ -92,6 +78,20 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 shadow_size = 2
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2513c"]
+bg_color = Color(0.33, 0.1419, 0.033, 0.0823529)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.843837, 0.856771, 0.0290053, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_size = 1
 shadow_offset = Vector2(2, 2)
 
 [sub_resource type="Theme" id="Theme_pjfyj"]
@@ -126,12 +126,12 @@ Label/font_sizes/font_size = 22
 Label/fonts/font = ExtResource("4_2513c")
 Label/styles/normal = SubResource("StyleBoxFlat_2y83l")
 
-[node name="Phrase_maker_UI" type="CanvasLayer"]
+[node name="Phrase_maker_UI" type="CanvasLayer" unique_id=1477729519]
 process_mode = 2
 script = ExtResource("1_hij75")
 phrases_raw = Array[String](["Eu sou um heroi", "Je,suis,un,héros", "le,nous", "o gato dorme", "Le,chat,dort", "vite,mange"])
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=398934833]
 custom_minimum_size = Vector2(550, 300)
 layout_mode = 3
 anchors_preset = 15
@@ -140,7 +140,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=846338605]
 custom_minimum_size = Vector2(0, 300)
 layout_mode = 1
 anchors_preset = 15
@@ -151,7 +151,7 @@ grow_vertical = 2
 texture = ExtResource("2_2513c")
 expand_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect" unique_id=267316480]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -163,12 +163,12 @@ theme_override_constants/margin_top = 65
 theme_override_constants/margin_right = 125
 theme_override_constants/margin_bottom = 65
 
-[node name="ColorRect" type="ColorRect" parent="Control/TextureRect/MarginContainer"]
+[node name="ColorRect" type="ColorRect" parent="Control/TextureRect/MarginContainer" unique_id=786513822]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.122, 0.116, 0.109, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer/ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer/ColorRect" unique_id=1093577743]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -185,39 +185,39 @@ grow_vertical = 2
 theme = SubResource("Theme_hgufb")
 theme_override_constants/separation = 25
 
-[node name="DialogText" type="RichTextLabel" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer"]
+[node name="DialogText" type="RichTextLabel" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer" unique_id=567612527]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(500, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/default_color = Color(0.940104, 0.743063, 0.198303, 1)
 theme_override_fonts/normal_font = ExtResource("4_2513c")
-theme_override_fonts/mono_font = ExtResource("4_2513c")
-theme_override_fonts/italics_font = ExtResource("4_2513c")
-theme_override_fonts/bold_italics_font = ExtResource("4_2513c")
 theme_override_fonts/bold_font = ExtResource("4_2513c")
+theme_override_fonts/bold_italics_font = ExtResource("4_2513c")
+theme_override_fonts/italics_font = ExtResource("4_2513c")
+theme_override_fonts/mono_font = ExtResource("4_2513c")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "fggd"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Control" type="Control" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer"]
+[node name="Control" type="Control" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer" unique_id=1606573433]
 custom_minimum_size = Vector2(0, 102)
 layout_mode = 2
 
-[node name="ValidationButton" type="Button" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer"]
+[node name="ValidationButton" type="Button" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer" unique_id=1824308428]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_styles/focus = SubResource("StyleBoxFlat_2513c")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2513c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2513c")
 theme_override_styles/normal = SubResource("StyleBoxFlat_buk10")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2513c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2513c")
+theme_override_styles/focus = SubResource("StyleBoxFlat_2513c")
 text = "     "
 
-[node name="FeedbackLabel" type="Label" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer"]
+[node name="FeedbackLabel" type="Label" parent="Control/TextureRect/MarginContainer/ColorRect/VBoxContainer" unique_id=933038235]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -225,10 +225,10 @@ size_flags_horizontal = 4
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SentenceContainer" type="HBoxContainer" parent="Control"]
+[node name="SentenceContainer" type="HBoxContainer" parent="Control" unique_id=1904981460]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 80)
-layout_mode = 2
+layout_mode = 0
 offset_left = 306.0
 offset_top = 179.0
 offset_right = 853.0
@@ -237,7 +237,7 @@ theme = SubResource("Theme_pjfyj")
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="WordGrid" type="GridContainer" parent="Control"]
+[node name="WordGrid" type="GridContainer" parent="Control" unique_id=227954552]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -252,7 +252,7 @@ theme = SubResource("Theme_2513c")
 theme_override_constants/h_separation = 17
 columns = 10
 
-[node name="Button" type="Button" parent="Control"]
+[node name="Button" type="Button" parent="Control" unique_id=821844562]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -267,7 +267,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme = SubResource("Theme_hgufb")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1392111600]
 volume_db = -12.404
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_exit_pressed"]

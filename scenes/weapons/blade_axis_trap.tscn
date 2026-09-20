@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://kxj08f6qxd2l"]
+
+[ext_resource type="Script" uid="uid://ccp5mledrjdcp" path="res://scripts/weapons/blade_axis_trap.gd" id="1_fp1v3"]
+[ext_resource type="PackedScene" uid="uid://dxduplahxugdb" path="res://assets/blender/blade_axis1.glb" id="1_ocvba"]
+
+[node name="Blade_axis_trap" type="Node3D" unique_id=818631217]
+script = ExtResource("1_fp1v3")
+
+[node name="blade_axis1" parent="." unique_id=934355457 instance=ExtResource("1_ocvba")]
+transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
+
+[node name="blade" parent="blade_axis1" index="1" unique_id=1336499920]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[editable path="blade_axis1"]
