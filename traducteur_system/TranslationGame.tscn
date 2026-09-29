@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://c8mtm6ybx23kt"]
+
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_a1oks"]
+[ext_resource type="Script" uid="uid://dxq1vc5ks1k4t" path="res://traducteur_system/translation_game.gd" id="1_h8ky7"]
+[ext_resource type="Script" uid="uid://cbd0dlhtvnv43" path="res://traducteur_system/TranslationExercise.gd" id="2_m8yw5"]
+[ext_resource type="Texture2D" uid="uid://bbbkefq485ulo" path="res://assets/images/bgds/Ui_stele.jpeg" id="3_m8yw5"]
+[ext_resource type="LabelSettings" uid="uid://5uvjtc7g5o5i" path="res://Themes/new_label_settings1.tres" id="5_ix4bu"]
+
+[sub_resource type="Resource" id="Resource_5d3sr"]
+script = ExtResource("2_m8yw5")
+french_sentence = "Nous sommes ensemble"
+correct_tokens = Array[String](["nos", "estamos", "juntos"])
+distractor_tokens = Array[String](["vos", "são", "vários"])
+metadata/_custom_type_script = "uid://cbd0dlhtvnv43"
+
+[node name="TranslationGame" type="Control" unique_id=1148668439]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a1oks")
+script = ExtResource("1_h8ky7")
+current_exercise = SubResource("Resource_5d3sr")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1146836312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_m8yw5")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=278967187]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -135.0
+offset_right = 408.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="FranchLabel" type="Label" parent="VBoxContainer" unique_id=1145986253]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = ExtResource("5_ix4bu")
+horizontal_alignment = 1
+
+[node name="AnswerContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=340284388]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+alignment = 1
+
+[node name="PoolContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=736050551]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+alignment = 1
+
+[node name="Control" type="Control" parent="VBoxContainer" unique_id=729145974]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1994996789]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="ResetButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=988887573]
+layout_mode = 2
+text = "reset"
+
+[node name="ValidateButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=148628183]
+layout_mode = 2
+text = "validate"
+
+[node name="FeedbackLabel" type="Label" parent="VBoxContainer" unique_id=593391387]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="ButtonExit" type="Button" parent="." unique_id=587126218]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(80, 45)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -191.0
+offset_top = -92.0
+offset_right = -144.0
+offset_bottom = -59.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "sortir🚪"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=475558612]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ValidateButton" to="." method="_on_validate_button_pressed"]
+[connection signal="pressed" from="ButtonExit" to="." method="_on_button_exit_pressed"]

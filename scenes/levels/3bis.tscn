@@ -6137,6 +6137,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("2_j1sqf")
 
 [node name="22roofBig_001" type="MeshInstance3D" parent="level_sons" unique_id=207434500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03100586, 0, 0.02557373)
 mesh = SubResource("ArrayMesh_sdt5a")
 skeleton = NodePath("")
 
@@ -6225,10 +6226,6 @@ speed_multiplier = 1.3
 [node name="CollisionShape3D" parent="traps/DeathArea" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14, -71.5)
 
-[node name="Wall_with_laser" parent="traps" unique_id=668427654 instance=ExtResource("11_q60su")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.5796, 12, 18)
-door_nb = 0
-
 [node name="Wall_with_laser2" parent="traps" unique_id=1411454674 instance=ExtResource("11_q60su")]
 transform = Transform3D(-1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, -1, -16.5796, -0.0729628, -29)
 
@@ -6239,6 +6236,11 @@ anim_speed = 1.2
 [node name="Platform_locked" parent="traps" unique_id=38972203 instance=ExtResource("21_0a6j2")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 11, 8, 37.778)
 door_nbr = 2
+is_up_at_start = false
+
+[node name="Platform_locked3" parent="traps" unique_id=1648636268 instance=ExtResource("21_0a6j2")]
+transform = Transform3D(-4.371141e-08, 0, -1, 0, 1, 0, 1, 0, -4.371141e-08, 38.069046, 6.2198486, -17.283379)
+door_nbr = -3
 is_up_at_start = false
 
 [node name="Platform_locked2" parent="traps" unique_id=1101378247 instance=ExtResource("21_0a6j2")]
@@ -6282,14 +6284,6 @@ turn_off = false
 [node name="Lever3" parent="traps" unique_id=1108066883 instance=ExtResource("11_mrb78")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 21.98597, 0.0249004, -135.58044)
 door_nbr = -9
-
-[node name="button_floor" parent="traps" unique_id=829037587 instance=ExtResource("17_nis08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 8, 6)
-btn_number = 1
-
-[node name="button_floor3" parent="traps" unique_id=83265535 instance=ExtResource("17_nis08")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0.00470972, -162)
-btn_number = 4
 
 [node name="button_floor5" parent="traps" unique_id=613412948 instance=ExtResource("17_nis08")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00470972, -43)
@@ -6351,13 +6345,14 @@ french_words = Array[String](["TRAVAIL", "SEIZE", "MONTAGNE", "FAMILLE"])
 door_nbr = 6
 
 [node name="fence_gate_grid" parent="traps" unique_id=821195223 instance=ExtResource("23_88odg")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.98904, 12.015558, 20.529455)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.98904, 12.015558, 15.42597)
 door_nbr = 12
 
 [node name="affiches2" type="Node3D" parent="." unique_id=1633884359]
 
 [node name="Panneau_affiche" parent="affiches2" unique_id=538876302 instance=ExtResource("5_tp444")]
 transform = Transform3D(1.58151e-06, 0, -2, 0, 2, 0, 2, 0, 1.58151e-06, 37.7514, 4.00462, -35.04575)
+door_number = -3
 son = ExtResource("6_x1h1c")
 text1 = "Le son [ə] (e muet)
 
@@ -6399,6 +6394,7 @@ pouce /pus/ – [color=#2E8B57]polegar[/color]
 
 [node name="Panneau_affiche8" parent="affiches2" unique_id=185135105 instance=ExtResource("5_tp444")]
 transform = Transform3D(1.73205, 0, 1, 0, 2, 0, -1, 0, 1.73205, -33.2486, 7.00462, -164.233)
+door_number = 4
 son = ExtResource("14_i6ndu")
 text1 = "Le son [y] (u français)
 
@@ -6619,6 +6615,7 @@ Espagne /ɛspaɲ/ – [color=#2E8B57]Espanha[/color]
 
 [node name="Panneau_affiche2" parent="affiches2" unique_id=807388245 instance=ExtResource("5_tp444")]
 transform = Transform3D(3.89414e-07, 0, 2, 0, 2, 0, -2, 0, 3.89414e-07, 16.8804, 8.00461, 6.0422)
+door_number = 1
 son = ExtResource("7_0a6j2")
 text1 = "Le son [e] (é)
 
@@ -6951,7 +6948,7 @@ mesh_vector_data = SubResource("Resource_5fw6q")
 materials = Array[Material]([ExtResource("58_i6ndu")])
 
 [node name="Block_27" type="Node3D" parent="Blocks" unique_id=89076518]
-transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, 21.616268, 3.99769, 37.875717)
+transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, 20.116268, 3.99769, 37.875717)
 script = ExtResource("27_1r1pi")
 mesh_vector_data = SubResource("Resource_qwtr7")
 materials = Array[Material]([ExtResource("33_2npxb")])
@@ -7006,7 +7003,6 @@ materials = Array[Material]([ExtResource("32_14a6r")])
 
 [node name="Roof" type="Node3D" parent="Blocks" unique_id=1017819525]
 transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, -6.383731, 8.99769, 38.875694)
-visible = false
 
 [node name="Block_36" type="Node3D" parent="Blocks/Roof" unique_id=981909666]
 script = ExtResource("27_1r1pi")
@@ -7039,7 +7035,6 @@ materials = Array[Material]([ExtResource("65_p1ixo")])
 
 [node name="Roof2" type="Node3D" parent="Blocks" unique_id=1005640658]
 transform = Transform3D(3.953775e-07, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.953775e-07, -71.429886, 5.978964, 38.87564)
-visible = false
 
 [node name="Block_36" type="Node3D" parent="Blocks/Roof2" unique_id=87644263]
 script = ExtResource("27_1r1pi")

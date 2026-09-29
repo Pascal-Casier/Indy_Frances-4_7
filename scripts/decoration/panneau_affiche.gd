@@ -1,5 +1,6 @@
 extends Node3D
 
+@export var door_number : int = -1
 @export var son : AudioStream
 @export_multiline var text1 : String
 @export_multiline var text2 : String
@@ -45,6 +46,7 @@ func _on_button_audio_pressed() -> void:
 		audio_stream_player.play()
 
 func _on_buttonexit_pressed() -> void:
+	Global.emit_open_door_gate(door_number)
 	if player:
 		player.can_move = true
 		get_tree().paused = false
