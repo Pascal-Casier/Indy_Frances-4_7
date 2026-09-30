@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://sowdoyysjcw3"]
+[gd_scene format=3 uid="uid://sowdoyysjcw3"]
 
 [ext_resource type="Script" uid="uid://c1gogjcn0efh2" path="res://scripts/UI/traduction_game.gd" id="1_yyw4h"]
 [ext_resource type="Theme" uid="uid://1l24bl5jnqnx" path="res://Themes/vocab_theme.tres" id="2_74fyp"]
@@ -49,11 +49,11 @@ expand_margin_bottom = 5.0
 shadow_size = 3
 shadow_offset = Vector2(2, 2)
 
-[node name="traduction_game" type="CanvasLayer"]
+[node name="traduction_game" type="CanvasLayer" unique_id=168851237]
 script = ExtResource("1_yyw4h")
 word_pairs = Array[ExtResource("2_nxp3x")]([ExtResource("4_w6wqj"), SubResource("Resource_nxp3x"), SubResource("Resource_fugco"), SubResource("Resource_76nyv")])
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=660801178]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,7 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_74fyp")
 
-[node name="TextureRect" type="TextureRect" parent="Control"]
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=923092576]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,11 +72,11 @@ grow_vertical = 2
 texture = ExtResource("5_76nyv")
 expand_mode = 1
 
-[node name="Bulle" type="Sprite2D" parent="Control/TextureRect"]
+[node name="Bulle" type="Sprite2D" parent="Control/TextureRect" unique_id=62859592]
 position = Vector2(740, 162)
 texture = ExtResource("6_w6wqj")
 
-[node name="Label" type="Label" parent="Control/TextureRect/Bulle"]
+[node name="Label" type="Label" parent="Control/TextureRect/Bulle" unique_id=262309104]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -96,7 +96,7 @@ le mot :"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect" unique_id=626513921]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -108,11 +108,11 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 600
 theme_override_constants/margin_bottom = 30
 
-[node name="Panel" type="Panel" parent="Control/TextureRect/MarginContainer"]
+[node name="Panel" type="Panel" parent="Control/TextureRect/MarginContainer" unique_id=1187981733]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/MarginContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Control/TextureRect/MarginContainer/Panel" unique_id=1740262290]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -124,27 +124,27 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer" unique_id=625557985]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_constants/separation = 57
 alignment = 1
 
-[node name="PortugueseLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="PortugueseLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=583218539]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 5
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FormedWordLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="FormedWordLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=860870409]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 5
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="GridContainer" type="GridContainer" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=13320954]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -152,70 +152,70 @@ theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 3
 
-[node name="LetterButton1" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton1" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=171434284]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton2" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton2" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1212079240]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton3" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton3" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1638985541]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton4" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton4" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=19989115]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton5" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton5" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1652381043]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton6" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton6" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=720239871]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton7" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton7" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1330466672]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton8" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton8" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1531231722]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="LetterButton9" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer"]
+[node name="LetterButton9" type="Button" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer/GridContainer" unique_id=1983442400]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 theme = ExtResource("7_x8na4")
 text = "A"
 
-[node name="FeedbackLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer"]
+[node name="FeedbackLabel" type="Label" parent="Control/TextureRect/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=428803333]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 5
@@ -223,11 +223,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_76nyv")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Indiana2" type="Sprite2D" parent="Control"]
+[node name="Indiana2" type="Sprite2D" parent="Control" unique_id=1050345263]
 position = Vector2(1066, 372)
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("6_nxp3x")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=126524775]
 stream = ExtResource("7_76nyv")
 volume_db = -12.033
