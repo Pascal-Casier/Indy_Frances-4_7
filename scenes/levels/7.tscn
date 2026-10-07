@@ -220,10 +220,13 @@ resource_list = Array[ExtResource("23_mk7yj")]([SubResource("Resource_k7en2"), S
 quizz = false
 
 [node name="Phrases_puzzle" parent="." unique_id=413996694 instance=ExtResource("30_ggqok")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 73, 30, 139)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 73, 30, 139)
 phrasePT = "A gente vai comprar uma casa"
 phraseFR = "On va acheter une maison"
 door_nbr = 4
+
+[node name="tableau" parent="Phrases_puzzle" index="0" unique_id=1913320263]
+transform = Transform3D(1.5717473, 0, 0, 0, 1.8737295, 0, 0, 0, 0.99999994, 0, 0, 0)
 
 [node name="Dalle_phrase" parent="Phrases_puzzle/dalles" parent_id_path=PackedInt32Array(413996694, 2027472646) index="0" unique_id=735395751]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 5.0000076, 0, 10)

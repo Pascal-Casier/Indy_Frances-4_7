@@ -4,8 +4,8 @@ extends Node3D
 @export var phraseFR : String = "Il ne travaille pas avec moi"
 @export var door_nbr : int = -1
 
-@onready var lbl_pt_1: Label3D = $lblPT1
-@onready var lbl_fr: Label3D = $lblFR
+@onready var lbl_pt_1: Label3D = $tableau/lblPT1
+@onready var lbl_fr: Label3D = $tableau/lblFR
 @onready var dalles: Node3D = $dalles
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 

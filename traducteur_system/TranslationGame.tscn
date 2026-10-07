@@ -1,16 +1,30 @@
 [gd_scene format=3 uid="uid://c8mtm6ybx23kt"]
 
 [ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_a1oks"]
-[ext_resource type="Script" uid="uid://dxq1vc5ks1k4t" path="res://traducteur_system/translation_game.gd" id="1_h8ky7"]
+[ext_resource type="Script" uid="uid://cd588elilljc5" path="res://traducteur_system/translation_game - Copie.gd" id="2_ix4bu"]
 [ext_resource type="Script" uid="uid://cbd0dlhtvnv43" path="res://traducteur_system/TranslationExercise.gd" id="2_m8yw5"]
 [ext_resource type="Texture2D" uid="uid://bbbkefq485ulo" path="res://assets/images/bgds/Ui_stele.jpeg" id="3_m8yw5"]
 [ext_resource type="LabelSettings" uid="uid://5uvjtc7g5o5i" path="res://Themes/new_label_settings1.tres" id="5_ix4bu"]
 
-[sub_resource type="Resource" id="Resource_5d3sr"]
+[sub_resource type="Resource" id="Resource_ouhvu"]
 script = ExtResource("2_m8yw5")
-french_sentence = "Nous sommes ensemble"
-correct_tokens = Array[String](["nos", "estamos", "juntos"])
-distractor_tokens = Array[String](["vos", "são", "vários"])
+french_sentence = "Le chien mange"
+correct_tokens = Array[String](["o", "cachorro", "come"])
+distractor_tokens = Array[String](["la", "chante"])
+metadata/_custom_type_script = "uid://cbd0dlhtvnv43"
+
+[sub_resource type="Resource" id="Resource_ovo48"]
+script = ExtResource("2_m8yw5")
+french_sentence = "Les enfants dorment"
+correct_tokens = Array[String](["as", "crianças", "dormem"])
+distractor_tokens = Array[String](["a", "janela"])
+metadata/_custom_type_script = "uid://cbd0dlhtvnv43"
+
+[sub_resource type="Resource" id="Resource_yue2s"]
+script = ExtResource("2_m8yw5")
+french_sentence = "Vous avez une belle maison"
+correct_tokens = Array[String](["o Sr", "tem", "uma", "bela", "casa"])
+distractor_tokens = Array[String](["la", "voiture"])
 metadata/_custom_type_script = "uid://cbd0dlhtvnv43"
 
 [node name="TranslationGame" type="Control" unique_id=1148668439]
@@ -21,8 +35,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_a1oks")
-script = ExtResource("1_h8ky7")
-current_exercise = SubResource("Resource_5d3sr")
+script = ExtResource("2_ix4bu")
+exercises = Array[ExtResource("2_m8yw5")]([SubResource("Resource_ouhvu"), SubResource("Resource_ovo48"), SubResource("Resource_yue2s")])
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1146836312]
 layout_mode = 1
