@@ -72,15 +72,17 @@ horizontal_alignment = 1
 
 [node name="AnswerContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=340284388]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(600, 80)
+custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
-alignment = 1
+size_flags_horizontal = 4
 
 [node name="PoolContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=736050551]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 80)
+custom_minimum_size = Vector2(600, 80)
+custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
-alignment = 1
+size_flags_horizontal = 4
 
 [node name="Control" type="Control" parent="VBoxContainer" unique_id=729145974]
 custom_minimum_size = Vector2(0, 25)
@@ -102,6 +104,10 @@ text = "validate"
 [node name="FeedbackLabel" type="Label" parent="VBoxContainer" unique_id=593391387]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6901961)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
 horizontal_alignment = 1
 
 [node name="ButtonExit" type="Button" parent="." unique_id=587126218]
