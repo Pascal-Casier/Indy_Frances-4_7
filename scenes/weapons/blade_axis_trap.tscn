@@ -16,13 +16,13 @@ script = ExtResource("1_fp1v3")
 [node name="blade_axis1" parent="." unique_id=934355457 instance=ExtResource("1_ocvba")]
 transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="blade_axis1/Cylinder" parent_id_path=PackedInt32Array(934355457, 1570759341) index="0" unique_id=1343747866]
+[node name="StaticBody3D" type="StaticBody3D" parent="blade_axis1/Cylinder" parent_id_path=PackedInt32Array(934355457, 1588644013) index="0" unique_id=1343747866]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="blade_axis1/Cylinder/StaticBody3D" unique_id=87748478]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2644348, 0)
 shape = SubResource("BoxShape3D_80jn3")
 
-[node name="blade" parent="blade_axis1" index="1" unique_id=1111634968]
+[node name="blade" parent="blade_axis1" index="1" unique_id=1336499920]
 transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Area3D" type="Area3D" parent="blade_axis1/blade" index="0" unique_id=1950383605]
@@ -36,6 +36,8 @@ shape = SubResource("BoxShape3D_5d3sr")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=126551030]
 stream = ExtResource("3_fp1v3")
+volume_db = -15.36
+max_distance = 15.0
 
 [connection signal="body_entered" from="blade_axis1/blade/Area3D" to="." method="_on_area_3d_body_entered"]
 

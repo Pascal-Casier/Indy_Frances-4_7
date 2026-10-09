@@ -15,6 +15,8 @@
 [ext_resource type="Material" uid="uid://crbu1mvn1xcfj" path="res://assets/materials/old_bricks4_material.tres" id="14_eggyd"]
 [ext_resource type="PackedScene" uid="uid://cne45tpbau2nt" path="res://scenes/characters/dragon_to_mount.tscn" id="15_80jn3"]
 [ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="15_byu0c"]
+[ext_resource type="PackedScene" uid="uid://dp6ub342l2q5k" path="res://scenes/mechanics/platform_drivable.tscn" id="16_byu0c"]
+[ext_resource type="Script" uid="uid://drxl0uk1pjpgh" path="res://scenes/mechanics/platform_game/platform_question.gd" id="17_vk2do"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
 panorama = ExtResource("1_uiw71")
@@ -459,6 +461,29 @@ face_vertex_data = {
 &"vertex_index": SubResource("Resource_khbmh")
 }
 
+[sub_resource type="Resource" id="Resource_bfp77"]
+script = ExtResource("17_vk2do")
+text = "Vous ______ français ?"
+answers = Array[String](["avez", "allez", "êtes"])
+correct_index = 2
+explanation = "verbe ÊTRE 2è pers pluriel"
+metadata/_custom_type_script = "uid://drxl0uk1pjpgh"
+
+[sub_resource type="Resource" id="Resource_o8bm0"]
+script = ExtResource("17_vk2do")
+text = "je ________ Brésilien"
+answers = Array[String](["ai", "suis", "est"])
+correct_index = 1
+explanation = "verbe ÊTRE 1ère pers. sing"
+metadata/_custom_type_script = "uid://drxl0uk1pjpgh"
+
+[sub_resource type="Resource" id="Resource_pt7aj"]
+script = ExtResource("17_vk2do")
+text = "uma vaca"
+answers = Array[String](["une vache", "un taureau", "un porc"])
+explanation = "dwwwwaw"
+metadata/_custom_type_script = "uid://drxl0uk1pjpgh"
+
 [node name="3test" type="Node3D" unique_id=1458026864]
 
 [node name="UI" parent="." unique_id=911524149 instance=ExtResource("1_byu0c")]
@@ -532,3 +557,22 @@ materials = Array[Material]([ExtResource("14_80jn3")])
 [node name="Blade_axis_trap" parent="." unique_id=818631217 instance=ExtResource("15_byu0c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.762451, -0.96320224, 9.322632)
 interval = 0.5
+
+[node name="PlatformDrivable" parent="." unique_id=2101602163 node_paths=PackedStringArray("travel_switch") instance=ExtResource("16_byu0c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 11)
+questions = Array[ExtResource("17_vk2do")]([SubResource("Resource_bfp77"), SubResource("Resource_o8bm0"), SubResource("Resource_pt7aj")])
+steps_to_goal = 3
+travel_switch = NodePath("switch")
+move_duration = 1.8
+feedback_duration = 1.8
+
+[node name="AnswerSlab2" parent="PlatformDrivable" index="6" unique_id=1238393680]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.7929373, 0, 0.4284401)
+
+[node name="AnswerSlab3" parent="PlatformDrivable" index="7" unique_id=21861761]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.644967, 0, 0.42844105)
+
+[node name="Marker3D" parent="PlatformDrivable" index="8" unique_id=1541142872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.200468, 7.5584116, 21.644772)
+
+[editable path="PlatformDrivable"]
