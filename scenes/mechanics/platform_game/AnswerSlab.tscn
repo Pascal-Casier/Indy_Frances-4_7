@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo1mdvvkcnfs6" path="res://scenes/mechanics/platform_game/answer_slab.gd" id="1_k8qin"]
 [ext_resource type="Texture2D" uid="uid://ko0fwqq8cm20" path="res://assets/blender/dalle_dalle3.png" id="2_k8qin"]
-[ext_resource type="FontFile" uid="uid://brod8d1ojbpac" path="res://assets/fonts/Cinzel-VariableFont_wght.ttf" id="3_67for"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="3_k8qin"]
 [ext_resource type="AudioStream" uid="uid://bax0ka36yvmed" path="res://assets/sounds/sfx/RockSliding (mp3cut.net).mp3" id="4_ttd3h"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bfp77"]
@@ -15,25 +15,13 @@ uv1_offset = Vector3(0.01, -0.03, 0)
 
 [sub_resource type="Animation" id="Animation_txhe2"]
 resource_name = "down"
-tracks/0/type = "value"
+tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D:position")
+tracks/0/path = NodePath("AudioStreamPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.16666667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, -0.037026227, 0)]
-}
-tracks/1/type = "audio"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "clips": [{
 "end_offset": 1.63,
 "start_offset": 0.157752,
@@ -41,7 +29,7 @@ tracks/1/keys = {
 }],
 "times": PackedFloat32Array(0)
 }
-tracks/1/use_blend = true
+tracks/0/use_blend = true
 
 [sub_resource type="Animation" id="Animation_amd6w"]
 resource_name = "up"
@@ -100,7 +88,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o8bm0")
 [node name="Label3D" type="Label3D" parent="Node3D" unique_id=1669819409]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.051932573, 0)
 text = "test"
-font = ExtResource("3_67for")
+font = ExtResource("3_k8qin")
 font_size = 70
 outline_size = 25
 

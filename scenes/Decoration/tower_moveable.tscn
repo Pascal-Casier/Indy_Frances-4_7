@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://daf3cm0603vhk"]
+
+[ext_resource type="Script" uid="uid://c8qu50pv6tnow" path="res://scripts/decoration/tower_moveable.gd" id="1_5i3jl"]
+[ext_resource type="Texture2D" uid="uid://dtd33hj72fa0" path="res://assets/images/textures/Textures/BuildingTextures/BRICKS.png" id="1_ais2f"]
+[ext_resource type="AudioStream" uid="uid://ojjju8kulb8x" path="res://assets/sounds/sfx/RockSlidingLoop.mp3" id="2_egb1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4dcb2"]
+albedo_texture = ExtResource("1_ais2f")
+uv1_scale = Vector3(4.35, 9.835, 4.35)
+uv1_offset = Vector3(0.07, 0, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5d3sr"]
+material = SubResource("StandardMaterial3D_4dcb2")
+size = Vector3(2, 15, 2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_mhysq"]
+points = PackedVector3Array(-1, -7.5, -1, -1, -7.5, 1, -1, 7.499999, -1, 1, -7.5, -1, 1, -7.5, 1, -1, 7.499999, 1, 1, 7.499999, -1, 1, 7.499999, 1)
+
+[node name="Tower_moveable" type="Node3D" unique_id=1247895336]
+script = ExtResource("1_5i3jl")
+move_sound = ExtResource("2_egb1d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1634548830]
+mesh = SubResource("BoxMesh_5d3sr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2005295418]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=120103725]
+shape = SubResource("ConvexPolygonShape3D_mhysq")

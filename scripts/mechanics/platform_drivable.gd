@@ -31,6 +31,7 @@ signal goal_reached
 const CORRECT_SOUND = preload("uid://born1mix6seh0")
 const INCORRECT_SOUND = preload("uid://drqgwjmv3iqc1")
 const METAL_CLICK = preload("uid://on8ir7nf7sub")
+const STONE_MOVING_SOUND = preload("res://assets/sounds/sfx/RockSlidingLoop.mp3")
 
 var _start_position: Vector3
 var _step_vector: Vector3
@@ -164,9 +165,14 @@ func _on_travel_switch_toggled() -> void:
 
 ## Fonction utilitaire pour gérer le Tween de déplacement
 func _move_to_position(target: Vector3, custom_duration: float = -1.0) -> void:
+	audio_stream_player.stream = STONE_MOVING_SOUND
+	audio_stream_player.pitch_scale = 0.4
+	audio_stream_player.play()
 	var duration := move_duration if custom_duration <= 0.0 else custom_duration
 	var tween := create_tween()
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	tween.set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(self, "global_position", target, duration)
 	await tween.finished
+	audio_stream_player.stop()
+	audio_stream_player.pitch_scale = 1
