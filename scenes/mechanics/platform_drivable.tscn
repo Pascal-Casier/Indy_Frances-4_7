@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bdmvlpje1t17b" path="res://scripts/mechanics/platform_drivable.gd" id="1_uh58l"]
 [ext_resource type="Script" uid="uid://drxl0uk1pjpgh" path="res://scenes/mechanics/platform_game/platform_question.gd" id="2_pt7aj"]
-[ext_resource type="FontFile" uid="uid://ci73qne8lnql0" path="res://assets/fonts/RoadRage-Regular.ttf" id="3_pt7aj"]
+[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="3_y5ipe"]
 [ext_resource type="PackedScene" uid="uid://dwb8sr8ej1d0w" path="res://assets/blender/PlatformMoveable.glb" id="6_pt7aj"]
+[ext_resource type="Texture2D" uid="uid://ko0fwqq8cm20" path="res://assets/blender/dalle_dalle3.png" id="6_qfed1"]
 [ext_resource type="PackedScene" uid="uid://cxafvjtv2whq4" path="res://scenes/mechanics/platform_game/AnswerSlab.tscn" id="6_y5ipe"]
 [ext_resource type="Script" uid="uid://dw3dd6vbnc204" path="res://scenes/mechanics/platform_game/switch.gd" id="7_y5ipe"]
 
@@ -29,14 +30,13 @@ size = Vector3(14.544922, 0.5541992, 9.603516)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bfp77"]
 size = Vector3(1, 1.4744873, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8bm0"]
-albedo_color = Color(0.7652527, 0.048790902, 0.048790902, 1)
-metallic = 1.0
-roughness = 0.5
+[sub_resource type="BoxMesh" id="BoxMesh_bfp77"]
+size = Vector3(2, 0.1, 2)
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_bfp77"]
-material = SubResource("StandardMaterial3D_o8bm0")
-height = 0.3
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8bm0"]
+albedo_texture = ExtResource("6_qfed1")
+uv1_scale = Vector3(3, 2.03, 2.03)
+uv1_offset = Vector3(0.01, -0.03, 0)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qfed1"]
 points = PackedVector3Array(5.0276036, 4.5553513, 0.1710662, 2.133717, -0.032400608, 0.18014485, 5.0276036, 0.69869375, 0.1710662, 5.0276036, 4.5553513, -0.17310798, -5.0076785, 4.5553513, 0.1710662, 2.133717, -0.032400608, -0.1821512, -2.1147747, -0.032400608, 0.18014485, 5.0276036, 0.69869375, -0.17310798, -5.0076785, 4.5553513, -0.17310798, -5.0076785, 0.69869375, 0.1710662, -2.1147747, -0.032400608, -0.1821512, -5.0076785, 0.69869375, -0.17310798)
@@ -73,43 +73,55 @@ shape = SubResource("BoxShape3D_jwqs7")
 [node name="QuestionLabel3D" type="Label3D" parent="." unique_id=1687922426]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.027946949, 3.3713515, 3.600514)
 text = "test"
-font = ExtResource("3_pt7aj")
+font = ExtResource("3_y5ipe")
 font_size = 120
 outline_size = 50
 
 [node name="FeedbackLabel3D" type="Label3D" parent="." unique_id=1566717463]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.027946949, 2.2834961, 3.600514)
 text = "test"
-font = ExtResource("3_pt7aj")
+font = ExtResource("3_y5ipe")
 font_size = 120
 outline_size = 50
 
 [node name="AnswerSlab" parent="." unique_id=196308052 instance=ExtResource("6_y5ipe")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0.42844057)
+text_width_meters = 2.4
 
 [node name="MeshInstance3D" parent="AnswerSlab/Node3D" parent_id_path=PackedInt32Array(196308052, 874072309) index="0" unique_id=488368876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1317315e-07, 0, 1.29455)
 
 [node name="Label3D" parent="AnswerSlab/Node3D" parent_id_path=PackedInt32Array(196308052, 874072309) index="1" unique_id=1669819409]
 transform = Transform3D(1, -4.081116e-09, -2.6399052e-08, 2.639905e-08, 0.30196995, 0.9533176, 4.081109e-09, -0.9533176, 0.30196995, 9.547253e-08, 0.74440837, -1.0920787)
+font = ExtResource("3_y5ipe")
+font_size = 85
+outline_size = 30
 
 [node name="AnswerSlab2" parent="." unique_id=1003828537 instance=ExtResource("6_y5ipe")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4, 0, 0.42844057)
+text_width_meters = 2.4
 
 [node name="MeshInstance3D" parent="AnswerSlab2/Node3D" parent_id_path=PackedInt32Array(1003828537, 874072309) index="0" unique_id=488368876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1317315e-07, 0, 1.29455)
 
 [node name="Label3D" parent="AnswerSlab2/Node3D" parent_id_path=PackedInt32Array(1003828537, 874072309) index="1" unique_id=1669819409]
 transform = Transform3D(1, -4.081116e-09, -2.6399052e-08, 2.639905e-08, 0.30196995, 0.9533176, 4.081109e-09, -0.9533176, 0.30196995, 9.547253e-08, 0.74440837, -1.0920787)
+font = ExtResource("3_y5ipe")
+font_size = 85
+outline_size = 30
 
 [node name="AnswerSlab3" parent="." unique_id=586691324 instance=ExtResource("6_y5ipe")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4, 0, 0.42844057)
+text_width_meters = 2.4
 
 [node name="MeshInstance3D" parent="AnswerSlab3/Node3D" parent_id_path=PackedInt32Array(586691324, 874072309) index="0" unique_id=488368876]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1317315e-07, 0, 1.29455)
 
 [node name="Label3D" parent="AnswerSlab3/Node3D" parent_id_path=PackedInt32Array(586691324, 874072309) index="1" unique_id=1669819409]
 transform = Transform3D(1, -4.081116e-09, -2.6399052e-08, 2.639905e-08, 0.30196995, 0.9533176, 4.081109e-09, -0.9533176, 0.30196995, 9.547253e-08, 0.74440837, -1.0920787)
+font = ExtResource("3_y5ipe")
+font_size = 85
+outline_size = 30
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1541142872]
 
@@ -125,38 +137,41 @@ script = ExtResource("7_y5ipe")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23724365, 0)
 shape = SubResource("BoxShape3D_bfp77")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="switch" unique_id=2059799852]
-mesh = SubResource("CylinderMesh_bfp77")
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="switch" unique_id=1789107788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.018624783)
+mesh = SubResource("BoxMesh_bfp77")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_o8bm0")
 
 [node name="PlatformMoveable" parent="." unique_id=72727001 instance=ExtResource("6_pt7aj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_002" parent_id_path=PackedInt32Array(72727001, 793269860) index="0" unique_id=1839333592]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_002" parent_id_path=PackedInt32Array(72727001, 1034932801) index="0" unique_id=1839333592]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_002/StaticBody3D" unique_id=114549117]
 shape = SubResource("ConvexPolygonShape3D_qfed1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_003" parent_id_path=PackedInt32Array(72727001, 1086933160) index="0" unique_id=550431612]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_003" parent_id_path=PackedInt32Array(72727001, 1918697780) index="0" unique_id=550431612]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_003/StaticBody3D" unique_id=2053875613]
 shape = SubResource("ConvexPolygonShape3D_yg7eg")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_005" parent_id_path=PackedInt32Array(72727001, 930556840) index="0" unique_id=218045356]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_005" parent_id_path=PackedInt32Array(72727001, 97682425) index="0" unique_id=218045356]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_005/StaticBody3D" unique_id=1352665806]
 shape = SubResource("ConvexPolygonShape3D_jko2v")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_001" parent_id_path=PackedInt32Array(72727001, 1392538846) index="0" unique_id=1293971734]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_001" parent_id_path=PackedInt32Array(72727001, 1218288379) index="0" unique_id=1293971734]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_001/StaticBody3D" unique_id=383592591]
 shape = SubResource("ConvexPolygonShape3D_wctx3")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_004" parent_id_path=PackedInt32Array(72727001, 1908584595) index="0" unique_id=110653076]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_004" parent_id_path=PackedInt32Array(72727001, 1769685727) index="0" unique_id=110653076]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_004/StaticBody3D" unique_id=1738641199]
 shape = SubResource("ConvexPolygonShape3D_kfb7y")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_006" parent_id_path=PackedInt32Array(72727001, 725036683) index="0" unique_id=700260329]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMoveable/Cube_006" parent_id_path=PackedInt32Array(72727001, 1682185190) index="0" unique_id=700260329]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMoveable/Cube_006/StaticBody3D" unique_id=281025282]
 shape = SubResource("ConvexPolygonShape3D_00x1s")

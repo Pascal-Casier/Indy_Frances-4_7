@@ -31,7 +31,7 @@ signal goal_reached
 const CORRECT_SOUND = preload("uid://born1mix6seh0")
 const INCORRECT_SOUND = preload("uid://drqgwjmv3iqc1")
 const METAL_CLICK = preload("uid://on8ir7nf7sub")
-const STONE_MOVING_SOUND = preload("res://assets/sounds/sfx/RockSlidingLoop.mp3")
+const STONE_MOVING_SOUND = preload("res://assets/sounds/sfx/mechanical_movement_sfx.ogg")
 
 var _start_position: Vector3
 var _step_vector: Vector3

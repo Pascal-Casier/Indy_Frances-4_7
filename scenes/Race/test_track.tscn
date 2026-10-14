@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://blop3pmdjngrq" path="res://assets/sounds/quizz/chat.mp3" id="11_aj8vt"]
 [ext_resource type="PackedScene" uid="uid://bwevkkb1q37rq" path="res://scenes/Race/start_line.tscn" id="11_kw353"]
 [ext_resource type="PackedScene" uid="uid://bw3hyr8r4odfd" path="res://scenes/Race/wheels_stack.tscn" id="13_uulc5"]
+[ext_resource type="PackedScene" uid="uid://ds7ru7qtq4cwk" path="res://scenes/Decoration/log_rigid_body.tscn" id="14_66p1y"]
 [ext_resource type="PackedScene" uid="uid://d4aj45rmqgjv5" path="res://scenes/Race/traffic_barrier.tscn" id="14_goonb"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_kp8cw"]
@@ -178,6 +179,14 @@ transform = Transform3D(1.6806257, 0, -1.0842032, 0, 2, 0, 1.0842032, 0, 1.68062
 [node name="TurboArea" parent="pieges" unique_id=1204689488 instance=ExtResource("10_f7b3g")]
 transform = Transform3D(-2.1213202, 0, -2.1213202, 0, 3, 0, 2.1213202, 0, -2.1213202, -39, -0.1, -27)
 boost_duration = 1.0
+
+[node name="Log_rigidBody" parent="pieges" unique_id=962932137 instance=ExtResource("14_66p1y")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -6, 0, -44)
+mass = 1.0
+
+[node name="Log_rigidBody2" parent="pieges" unique_id=521209156 instance=ExtResource("14_66p1y")]
+transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, -51, 0, -19)
+mass = 1.0
 
 [node name="Race_health" parent="." unique_id=1908438673 instance=ExtResource("8_xw7b6")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, -57.160255, 0.3951416, -13.760907)

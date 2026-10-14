@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=4 uid="uid://4cgryerjlel8"]
+[gd_scene format=4 uid="uid://4cgryerjlel8"]
 
 [ext_resource type="Script" uid="uid://cqhh7jmitqstn" path="res://scripts/mechanics/canon_viseur_2.gd" id="1_3m8ri"]
 [ext_resource type="PackedScene" uid="uid://bdxfdd81djmv1" path="res://scenes/mechanics/bullet_lighning.tscn" id="2_kc4tp"]
 [ext_resource type="AudioStream" uid="uid://6ipogh5vpvbk" path="res://assets/sounds/sfx/firing_sound.mp3" id="3_kc4tp"]
 [ext_resource type="PackedScene" uid="uid://kb5w3khmn5me" path="res://assets/blender/button_teamRed.gltf.glb" id="4_a5krj"]
 [ext_resource type="Material" path="res://assets/characters/skeletons/gltf/Metal.material" id="4_p21m5"]
+[ext_resource type="Texture2D" uid="uid://00cvayb8afwr" path="res://assets/images/textures/Textures/Industrial/STORAGE.png" id="5_n2sf5"]
 [ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="6_wts7u"]
 [ext_resource type="AudioStream" uid="uid://n6lvgtdofw1n" path="res://assets/sounds/sfx/soft-click.mp3" id="8_yrifp"]
 [ext_resource type="Texture2D" uid="uid://j1k38bgfsinu" path="res://assets/images/parcheminblank.png" id="9_o48d4"]
@@ -379,12 +380,13 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x582s")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrifp"]
-albedo_color = Color(0.601562, 0.399451, 0.0391642, 1)
+albedo_color = Color(0.09386977, 0.23913157, 0.088636965, 1)
 metallic = 0.61
 roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv43h"]
 albedo_color = Color(0.325521, 0.319733, 0.309414, 1)
+albedo_texture = ExtResource("5_n2sf5")
 metallic = 0.44
 roughness = 0.35
 
@@ -432,7 +434,7 @@ corner_radius_bottom_left = 6
 shadow_size = 5
 shadow_offset = Vector2(2, 2)
 
-[node name="canon_viseur" type="Area3D"]
+[node name="canon_viseur" type="Area3D" unique_id=1152691036]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
@@ -444,72 +446,72 @@ rotation_verticale_max = 10.0
 bullet_scene = ExtResource("2_kc4tp")
 sensibilite_souris = 0.05
 
-[node name="Bomber_1_Base" type="MeshInstance3D" parent="."]
+[node name="Bomber_1_Base" type="MeshInstance3D" parent="." unique_id=318530759]
 unique_name_in_owner = true
 visible = false
 mesh = SubResource("ArrayMesh_aeqbq")
 skeleton = NodePath("")
 
-[node name="hero_pos" type="Marker3D" parent="Bomber_1_Base"]
+[node name="hero_pos" type="Marker3D" parent="Bomber_1_Base" unique_id=738810162]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.63464)
 
-[node name="Bomber_1_Mid" type="MeshInstance3D" parent="."]
+[node name="Bomber_1_Mid" type="MeshInstance3D" parent="." unique_id=12908258]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00241089, -0.23233)
 visible = false
 mesh = SubResource("ArrayMesh_qsdlo")
 skeleton = NodePath("")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="Bomber_1_Mid"]
+[node name="StaticBody3D2" type="StaticBody3D" parent="Bomber_1_Mid" unique_id=1079402781]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56167, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Bomber_1_Mid/StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bomber_1_Mid/StaticBody3D2" unique_id=1785628462]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.561671, 0)
 shape = SubResource("CylinderShape3D_1o1m3")
 
-[node name="Bomber_1_Gun" type="MeshInstance3D" parent="Bomber_1_Mid"]
+[node name="Bomber_1_Gun" type="MeshInstance3D" parent="Bomber_1_Mid" unique_id=846574592]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.56167, 0)
 visible = false
 mesh = SubResource("ArrayMesh_hhapp")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Bomber_1_Mid/Bomber_1_Gun"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Bomber_1_Mid/Bomber_1_Gun" unique_id=143208992]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bomber_1_Mid/Bomber_1_Gun/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Bomber_1_Mid/Bomber_1_Gun/StaticBody3D" unique_id=1007379104]
 transform = Transform3D(0.992204, 0.124623, -5.44746e-09, 0, -4.37114e-08, -1, -0.124623, 0.992204, -4.33706e-08, 0.00503544, 0.0361873, 0.33066)
 shape = SubResource("CylinderShape3D_1o1m3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1835226366]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.970143, 1.0076)
 shape = SubResource("BoxShape3D_klxxu")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=220814646]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.12233, 0.784147)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=311709927]
 unique_name_in_owner = true
 stream = ExtResource("3_kc4tp")
 pitch_scale = 0.62
 max_polyphony = 4
 bus = &"Sfx"
 
-[node name="Gun_3" type="Node3D" parent="."]
+[node name="Gun_3" type="Node3D" parent="." unique_id=975852852]
 
-[node name="Gun_3_Base" type="MeshInstance3D" parent="Gun_3"]
+[node name="Gun_3_Base" type="MeshInstance3D" parent="Gun_3" unique_id=2053760211]
 unique_name_in_owner = true
 mesh = SubResource("ArrayMesh_4pb76")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("4_p21m5")
 
-[node name="Gun_3_Mid" type="MeshInstance3D" parent="Gun_3"]
+[node name="Gun_3_Mid" type="MeshInstance3D" parent="Gun_3" unique_id=743548755]
 unique_name_in_owner = true
 mesh = SubResource("ArrayMesh_56feg")
 skeleton = NodePath("")
 
-[node name="Gun_3_Gun" type="MeshInstance3D" parent="Gun_3/Gun_3_Mid"]
+[node name="Gun_3_Gun" type="MeshInstance3D" parent="Gun_3/Gun_3_Mid" unique_id=1757412164]
 unique_name_in_owner = true
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.31461, 0)
 mesh = SubResource("ArrayMesh_osflh")
@@ -517,11 +519,11 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_yrifp")
 surface_material_override/1 = SubResource("StandardMaterial3D_pv43h")
 
-[node name="Marker3D" type="Marker3D" parent="Gun_3/Gun_3_Mid/Gun_3_Gun"]
+[node name="Marker3D" type="Marker3D" parent="Gun_3/Gun_3_Mid/Gun_3_Gun" unique_id=910509998]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.80753e-08, 0.0884054, 2.52483)
 
-[node name="esc" type="Label3D" parent="Gun_3"]
+[node name="esc" type="Label3D" parent="Gun_3" unique_id=350167199]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59057, 0.630279, 0.57289)
 visible = false
@@ -533,7 +535,7 @@ font = ExtResource("6_wts7u")
 font_size = 45
 outline_size = 20
 
-[node name="bulletNbr" type="Label3D" parent="Gun_3"]
+[node name="bulletNbr" type="Label3D" parent="Gun_3" unique_id=524517864]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59057, 1.17279, 0.57289)
 visible = false
@@ -545,26 +547,24 @@ font = ExtResource("6_wts7u")
 font_size = 65
 outline_size = 20
 
-[node name="positionmark" type="MeshInstance3D" parent="."]
+[node name="positionmark" type="MeshInstance3D" parent="." unique_id=1813889220]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0424684, 1.48833)
 mesh = SubResource("CylinderMesh_kc4tp")
 surface_material_override/0 = SubResource("StandardMaterial3D_a5krj")
 
-[node name="button_teamRed_gltf" parent="." instance=ExtResource("4_a5krj")]
+[node name="button_teamRed_gltf" parent="." unique_id=1778678797 instance=ExtResource("4_a5krj")]
 transform = Transform3D(1, 0, 0, 0, 0.26, 0, 0, 0, 1, 0, 0, 1.50841)
 
-[node name="AudioStreamPlayerClic" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayerClic" type="AudioStreamPlayer" parent="." unique_id=1846781669]
 unique_name_in_owner = true
 stream = ExtResource("8_yrifp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=5126108]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_pv43h")
-}
+libraries/ = SubResource("AnimationLibrary_pv43h")
 
-[node name="BuyAmmoPanel" type="Control" parent="."]
+[node name="BuyAmmoPanel" type="Control" parent="." unique_id=1407858633]
 process_mode = 2
 visible = false
 custom_minimum_size = Vector2(300, 400)
@@ -581,7 +581,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="BuyAmmoPanel"]
+[node name="TextureRect" type="TextureRect" parent="BuyAmmoPanel" unique_id=2055763223]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -591,7 +591,7 @@ grow_vertical = 2
 texture = ExtResource("9_o48d4")
 expand_mode = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="BuyAmmoPanel/TextureRect"]
+[node name="MarginContainer" type="MarginContainer" parent="BuyAmmoPanel/TextureRect" unique_id=1223824140]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -603,11 +603,11 @@ theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="BuyAmmoPanel/TextureRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="BuyAmmoPanel/TextureRect/MarginContainer" unique_id=441478079]
 layout_mode = 2
 alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer" unique_id=1976211760]
 texture_filter = 1
 layout_mode = 2
 size_flags_vertical = 3
@@ -619,36 +619,36 @@ text = "[center]
 combien tu en veux ? [/color]
 [/center]"
 
-[node name="LineEdit" type="LineEdit" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer"]
+[node name="LineEdit" type="LineEdit" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer" unique_id=591221690]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 alignment = 1
-right_icon = ExtResource("10_x582s")
 caret_blink = true
+right_icon = ExtResource("10_x582s")
 
-[node name="Control" type="Control" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer"]
+[node name="Control" type="Control" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer" unique_id=2064615525]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer" unique_id=978429281]
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="ButtonOk" type="Button" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ButtonOk" type="Button" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1653188851]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme = ExtResource("12_n2sf5")
 text = "oui"
 
-[node name="ButtonNon" type="Button" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ButtonNon" type="Button" parent="BuyAmmoPanel/TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1266250919]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme = ExtResource("12_n2sf5")
 text = "non"
 
-[node name="alertpanel" type="Control" parent="BuyAmmoPanel/TextureRect"]
+[node name="alertpanel" type="Control" parent="BuyAmmoPanel/TextureRect" unique_id=848491036]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(150, 100)
@@ -665,7 +665,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="BuyAmmoPanel/TextureRect/alertpanel"]
+[node name="Panel" type="Panel" parent="BuyAmmoPanel/TextureRect/alertpanel" unique_id=2122335855]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -674,7 +674,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x582s")
 
-[node name="Label" type="Label" parent="BuyAmmoPanel/TextureRect/alertpanel/Panel"]
+[node name="Label" type="Label" parent="BuyAmmoPanel/TextureRect/alertpanel/Panel" unique_id=19777062]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
@@ -696,7 +696,7 @@ text = "Argent
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="escLbl" type="Control" parent="."]
+[node name="escLbl" type="Control" parent="." unique_id=1777046283]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -713,7 +713,7 @@ grow_vertical = 0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="escLbl"]
+[node name="Label" type="Label" parent="escLbl" unique_id=65141137]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -735,7 +735,7 @@ theme_override_fonts/font = ExtResource("13_n2sf5")
 theme_override_font_sizes/font_size = 25
 text = "[E] = sortie"
 
-[node name="BulletLbl" type="Label" parent="escLbl"]
+[node name="BulletLbl" type="Label" parent="escLbl" unique_id=403187171]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 7

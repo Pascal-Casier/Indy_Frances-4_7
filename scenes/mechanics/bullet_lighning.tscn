@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://bdxfdd81djmv1"]
+[gd_scene format=4 uid="uid://bdxfdd81djmv1"]
 
 [ext_resource type="PackedScene" uid="uid://cju3bmtslbapg" path="res://scenes/mechanics/bullet_1.tscn" id="1_1to6h"]
 [ext_resource type="Texture2D" uid="uid://calfeh1hyt8mx" path="res://assets/images/explosion_textures/Flare00.PNG" id="2_1dotn"]
@@ -172,7 +172,7 @@ color = Color(0, 0, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_y8bqq"]
 size = Vector3(0.246094, 0.300781, 0.322388)
 
-[node name="BulletLighning" instance=ExtResource("1_1to6h")]
+[node name="BulletLighning" unique_id=1689311056 instance=ExtResource("1_1to6h")]
 
 [node name="MeshInstance3D" parent="." index="0"]
 transform = Transform3D(-4.27651e-16, 0, -1, 0.481493, -4.37114e-08, 0, -2.10467e-08, -1, 0, 0, 0, 0)
@@ -180,18 +180,18 @@ mesh = SubResource("ArrayMesh_237pr")
 
 [node name="RayCast3D" parent="MeshInstance3D" index="0"]
 transform = Transform3D(1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, 0, 0, 0.0734881)
-collision_mask = 9
+collision_mask = 13
 
-[node name="lightning_gltf" type="Node3D" parent="." index="3"]
+[node name="lightning_gltf" type="Node3D" parent="." index="3" unique_id=900953709]
 visible = false
 
-[node name="lightning" type="MeshInstance3D" parent="lightning_gltf" index="0"]
+[node name="lightning" type="MeshInstance3D" parent="lightning_gltf" index="0" unique_id=1527304924]
 mesh = SubResource("ArrayMesh_80mpr")
 skeleton = NodePath("")
 
-[node name="explosion" type="Node3D" parent="." index="4"]
+[node name="explosion" type="Node3D" parent="." index="4" unique_id=960669249]
 
-[node name="sparks" type="GPUParticles3D" parent="explosion" index="0"]
+[node name="sparks" type="GPUParticles3D" parent="explosion" index="0" unique_id=1644968059]
 material_override = SubResource("StandardMaterial3D_ddakk")
 emitting = false
 amount = 20
@@ -202,7 +202,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_np2rl")
 draw_pass_1 = SubResource("QuadMesh_f5yxm")
 
-[node name="flash" type="GPUParticles3D" parent="explosion" index="1"]
+[node name="flash" type="GPUParticles3D" parent="explosion" index="1" unique_id=1446325024]
 material_override = ExtResource("3_is0q3")
 emitting = false
 amount = 1
@@ -213,7 +213,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_a1aph")
 draw_pass_1 = SubResource("QuadMesh_ehtut")
 
-[node name="fire" type="GPUParticles3D" parent="explosion" index="2"]
+[node name="fire" type="GPUParticles3D" parent="explosion" index="2" unique_id=87265570]
 material_override = ExtResource("3_is0q3")
 emitting = false
 amount = 13
@@ -224,7 +224,7 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_c0qcr")
 draw_pass_1 = SubResource("QuadMesh_jm7ev")
 
-[node name="smoke" type="GPUParticles3D" parent="explosion" index="3"]
+[node name="smoke" type="GPUParticles3D" parent="explosion" index="3" unique_id=908667555]
 material_override = ExtResource("3_is0q3")
 emitting = false
 amount = 10
@@ -236,12 +236,12 @@ fixed_fps = 60
 process_material = SubResource("ParticleProcessMaterial_gdl34")
 draw_pass_1 = SubResource("QuadMesh_0wkq1")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5" unique_id=849711539]
 stream = ExtResource("4_syubk")
 volume_db = -15.093
 
-[node name="Area3D" type="Area3D" parent="." index="6"]
+[node name="Area3D" type="Area3D" parent="." index="6" unique_id=1263842511]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=545162065]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00458264, 0.967462)
 shape = SubResource("BoxShape3D_y8bqq")
