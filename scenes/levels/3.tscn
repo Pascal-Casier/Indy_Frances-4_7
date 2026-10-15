@@ -60,7 +60,6 @@
 [ext_resource type="PackedScene" uid="uid://ce23bkf5uhlr8" path="res://scenes/mechanics/spawner.tscn" id="52_xir5i"]
 [ext_resource type="Script" uid="uid://dkpik0awbvgn1" path="res://scripts/UI/NewQuizz/new_quizz_question_resource.gd" id="58_1tvni"]
 [ext_resource type="PackedScene" uid="uid://bghwrjogy8vr5" path="res://scenes/mechanics/computer_jungle.tscn" id="58_eb247"]
-[ext_resource type="PackedScene" uid="uid://dytj0oqhc1k16" path="res://scenes/mechanics/crate.tscn" id="60_5kypw"]
 [ext_resource type="PackedScene" uid="uid://dl6gv8b28fhgu" path="res://scenes/mechanics/interrogation_mark.tscn" id="85_nf58t"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_64obo"]
@@ -315,7 +314,7 @@ shadow_mesh = SubResource("ArrayMesh_348bo")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1tdyv"]
 points = PackedVector3Array(0.690152, 2.86846, 0.0745463, -1.07522, 2.62331, -0.0235347, -1.07522, 2.62331, 0.0255562, 0.346617, -0.024519, -0.219495, -0.143802, -0.024519, 0.368789, -0.780933, 1.7407, -0.611819, 0.690152, 1.29986, 0.417981, -0.388667, -0.024519, -0.0725248, 0.641076, 3.01561, -0.0725248, 0.0523307, -0.024519, -0.366566, -1.02614, 2.67246, 0.0745463, 0.29754, -0.024519, 0.319799, -0.68278, 1.8387, -0.611819, 0.690152, 2.77046, -0.0725248, 0.54275, 3.06477, 0.0745463, -0.290514, -0.024519, 0.319799, -1.07522, 2.72131, -0.0235347, -0.290514, -0.024519, -0.317576, 0.54275, 3.06477, -0.0725248, 0.591999, 1.29986, 0.417981, 0.591999, 2.81961, -0.121414, 0.19956, 0.0246344, -0.317576, 0.690152, 1.20155, 0.417981, -0.388667, -0.024519, 0.0745463, 0.346617, -0.024519, 0.221718, -1.02614, 2.67246, -0.0725248, 0.493674, 3.11392, 0.0255562, 0.150484, -0.024519, 0.368789, 0.493674, 2.81961, 0.123637, -0.143802, 0.0246344, 0.368789, -0.0456494, -0.024519, -0.366566, 0.29754, -0.024519, -0.268485)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5kypw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw20n"]
 render_priority = 0
 shader = ExtResource("44_u6v6k")
 shader_parameter/albedo = Color(1, 1, 1, 1)
@@ -851,7 +850,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_1tdyv")
 
 [node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="lvl" unique_id=1484213001]
-material_override = SubResource("ShaderMaterial_5kypw")
+material_override = SubResource("ShaderMaterial_jw20n")
 multimesh = SubResource("MultiMesh_o2fi7")
 script = ExtResource("47_onla1")
 sgt_radius = 2.0
@@ -960,9 +959,6 @@ time_of_animation = 1.5
 [node name="Interrogation_mark" parent="mechanics" unique_id=877241475 instance=ExtResource("85_nf58t")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -3, 6)
 dialog_name = "interrogation04"
-
-[node name="crate" parent="mechanics" unique_id=503382677 instance=ExtResource("60_5kypw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3076706, -0.15737808, 14.062837)
 
 [node name="Computer_jungle" parent="." unique_id=1239268684 instance=ExtResource("58_eb247")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, -28.1157, 4.63491, 30.4635)
