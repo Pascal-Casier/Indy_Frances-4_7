@@ -1,0 +1,186 @@
+[gd_scene format=3 uid="uid://dsa8jqxkst0pp"]
+
+[ext_resource type="MeshLibrary" uid="uid://ddev61w8li2p1" path="res://meshlibs/tilescubesMeshlib.tres" id="1_0joep"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="2_ughe1"]
+[ext_resource type="PackedScene" uid="uid://oq15hrf68irr" path="res://scenes/mechanics/fence_gate_grid.tscn" id="3_nqtx6"]
+[ext_resource type="PackedScene" uid="uid://bghwrjogy8vr5" path="res://scenes/mechanics/computer_jungle.tscn" id="4_pfk3w"]
+[ext_resource type="Script" uid="uid://dkpik0awbvgn1" path="res://scripts/UI/NewQuizz/new_quizz_question_resource.gd" id="5_r6mux"]
+[ext_resource type="PackedScene" uid="uid://4cgryerjlel8" path="res://scenes/mechanics/canon_viseur2.tscn" id="6_r6mux"]
+[ext_resource type="PackedScene" uid="uid://ciw7ql7afqvt1" path="res://scenes/mechanics/target.tscn" id="7_0ohfp"]
+[ext_resource type="PackedScene" uid="uid://hq2repghfywq" path="res://scenes/mechanics/tennis_ball_bullet.tscn" id="7_br4hh"]
+[ext_resource type="PackedScene" uid="uid://crrujje4tn6hl" path="res://scenes/mechanics/platform_moving.tscn" id="8_0ohfp"]
+[ext_resource type="PackedScene" uid="uid://ds6rlsbuf8q1r" path="res://scenes/mechanics/spike_floor_trap.tscn" id="10_wx75w"]
+[ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="11_vyqpb"]
+[ext_resource type="PackedScene" uid="uid://tcpiw0p4ver3" path="res://scenes/mechanics/saw_trap_bilat.tscn" id="12_y7234"]
+[ext_resource type="PackedScene" uid="uid://143o68j8o16n" path="res://scenes/mechanics/swiper_trap_ruins.tscn" id="13_bl8x3"]
+[ext_resource type="PackedScene" uid="uid://2i6a3qrq0vnb" path="res://scenes/mechanics/computer_typing_game.tscn" id="14_bl8x3"]
+[ext_resource type="PackedScene" uid="uid://cb7h7kit3w1wg" path="res://scenes/mechanics/passerelle.tscn" id="15_n12wu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3y452"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_nqtx6"]
+sky_material = SubResource("ProceduralSkyMaterial_3y452")
+
+[sub_resource type="Environment" id="Environment_pfk3w"]
+background_mode = 2
+sky = SubResource("Sky_nqtx6")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_vykn7"]
+script = ExtResource("5_r6mux")
+question_text = "sempre"
+correct_answer = "toujours"
+wrong_answers = Array[String](["jamais", "parfois", "souvent"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_0in2u"]
+script = ExtResource("5_r6mux")
+question_text = "olhar"
+correct_answer = "regarder"
+wrong_answers = Array[String](["chanter", "trouver", "chercher"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_n862c"]
+script = ExtResource("5_r6mux")
+question_text = "uma janela"
+correct_answer = "une fenêtre"
+wrong_answers = Array[String](["un rideau", "une cloche", "une chaise"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_wx75w"]
+script = ExtResource("5_r6mux")
+question_text = "procurar"
+correct_answer = "chercher"
+wrong_answers = Array[String](["trouver", "regarder", "entendre"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_1ph4h"]
+script = ExtResource("5_r6mux")
+question_text = "feliz"
+correct_answer = "heureux"
+wrong_answers = Array[String](["joyeux", "car", "fidèle"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[sub_resource type="Resource" id="Resource_f3ke5"]
+script = ExtResource("5_r6mux")
+question_text = "eu queria"
+correct_answer = "je voudrais"
+wrong_answers = Array[String](["je pourrais", "je veux", "je vois"])
+metadata/_custom_type_script = "uid://dkpik0awbvgn1"
+
+[node name="PetitGame" type="Node3D" unique_id=230626951]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=996868261]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2067515806]
+environment = SubResource("Environment_pfk3w")
+
+[node name="GridMap" type="GridMap" parent="." unique_id=722435501]
+mesh_library = ExtResource("1_0joep")
+data = {
+"cells": PackedInt32Array(-65538, 65534, 3, -65538, 65535, 3, -65538, 0, 3, -65538, 1, 3, -65537, 65534, 3, -65537, 65535, 3, -65537, 0, 3, -65537, 1, 3, -131072, 65534, 3, -131072, 65535, 3, -131072, 0, 3, -131072, 1, 3, -131071, 65534, 3, -131071, 65535, 3, -131071, 0, 3, -131071, 1, 3, -131070, 65535, 3, -131070, 0, 3, -131069, 65535, 3, -131069, 0, 3, -131068, 65535, 3, -131068, 0, 3, -131067, 65535, 3, -131067, 0, 3, -131066, 65535, 3, -131066, 0, 3, -131065, 65535, 3, -131065, 0, 3, -131064, 65535, 3, -131064, 0, 3, -131063, 65535, 3, -131063, 0, 3, -131062, 65535, 3, -131062, 0, 3, -131061, 65535, 3, -131061, 0, 3, -131060, 65535, 3, -131060, 0, 3, -131059, 65535, 3, -131059, 0, 3, -131060, 65525, 3, -131060, 65526, 3, -131060, 65527, 3, -131060, 65528, 3, -131060, 65529, 3, -131059, 65525, 3, -131059, 65526, 3, -131059, 65527, 3, -131059, 65528, 3, -131059, 65529, 3, -131058, 65525, 3, -131058, 65526, 3, -131058, 65527, 3, -131058, 65528, 3, -131058, 65529, 3, -131057, 65525, 3, -131057, 65526, 3, -131057, 65527, 3, -131057, 65528, 3, -131057, 65529, 3, -131056, 65525, 3, -131056, 65526, 3, -131056, 65527, 3, -131056, 65528, 3, -131056, 65529, 3, 196614, 65525, 3, 196614, 65526, 3, 196614, 65527, 3, 196614, 65528, 3, 196615, 65525, 3, 196615, 65526, 3, 196615, 65527, 3, 196615, 65528, 3, 196616, 65525, 3, 196616, 65526, 3, 196616, 65527, 3, 196616, 65528, 3, 196617, 65525, 3, 196617, 65526, 3, 196617, 65527, 3, 196617, 65528, 3, 262149, 65525, 5, 262149, 65526, 5, 262148, 65526, 4, 262148, 65525, 4, 262147, 65526, 3, 262147, 65525, 3, 262146, 65525, 3, 262146, 65526, 3, 262147, 65527, 3, 262147, 65528, 3, 262147, 65529, 3, 262146, 65529, 3, 262146, 65528, 3, 262146, 65527, 3, 262147, 65530, 0, 262147, 65531, 0, 262147, 65532, 0, 262146, 65532, 0, 262146, 65531, 0, 262146, 65530, 0, 327677, 65532, 0, 327678, 65532, 0, 327679, 65532, 0, 262144, 65532, 0, 262145, 65532, 0, 262145, 65531, 0, 262144, 65531, 0, 327679, 65531, 0, -131070, 65534, 3, -131069, 65534, 3, -131069, 65533, 3, -131070, 65533, 3, 327678, 65531, 0, 327677, 65531, 0, 327676, 65532, 0, 327676, 65531, 0, 327675, 65531, 0, 327674, 65531, 0, 327673, 65531, 0, 327673, 65532, 0, 327672, 65531, 0, 327672, 65532, 0, 327671, 65532, 0, 327674, 65532, 0, 327675, 65532, 0, 327671, 65531, 0, 327671, 65533, 0, 327671, 65534, 0, 327671, 65535, 0, 327671, 0, 0, 327671, 1, 0, 327671, 2, 0, 327671, 3, 0, 327672, 3, 0, 327672, 2, 0, 327672, 1, 0, 327672, 0, 0, 327672, 65535, 0, 327672, 65534, 0, 327672, 65533, 0, 327671, 4, 0, 327672, 4, 0, 327672, 5, 0, 327671, 5, 0, 393209, 5, 655362, 393209, 4, 655362, 393210, 5, 655361, 393210, 4, 655361, 458747, 5, 655362, 458747, 4, 655362, 458748, 5, 655361, 458748, 4, 655361, 458749, 4, 655360, 458749, 5, 655360, 458750, 5, 655360, 458750, 4, 655360, 458751, 4, 655360, 458751, 5, 655360, 393216, 5, 655360, 393217, 5, 655360, 393218, 5, 655360, 393219, 5, 655360, 393220, 5, 655360, 393220, 4, 655360, 393219, 4, 655360, 393218, 4, 655360, 393217, 4, 655360, 393216, 4, 655360, 393217, 6, 655360, 393218, 6, 655360, 393218, 7, 655360, 393217, 7, 655360, 393217, 11, 655360, 393218, 11, 655360, 393218, 12, 655360, 393217, 12, 655360, 393217, 13, 655360, 393218, 13, 655360, 393218, 14, 655360, 393217, 14, 655360)
+}
+metadata/_editor_floor_ = Vector3(0, 6, 0)
+
+[node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("2_ughe1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.728014, 9.655653, -15.980232)
+
+[node name="fence_gate_grid" parent="." unique_id=1745285577 instance=ExtResource("3_nqtx6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.042808, -1.000001, -0.02832532)
+door_nbr = 1
+
+[node name="Computer_jungle" parent="." unique_id=471541456 instance=ExtResource("4_pfk3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.669759, -1, -3.3341684)
+
+[node name="NewQuizz" parent="Computer_jungle/Control" index="0"]
+door_nbr = 1
+questions = Array[ExtResource("5_r6mux")]([SubResource("Resource_vykn7"), SubResource("Resource_0in2u"), SubResource("Resource_n862c")])
+
+[node name="Computer_jungle2" parent="." unique_id=236145828 instance=ExtResource("4_pfk3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.095669, -0.9999981, -21.13635)
+
+[node name="NewQuizz" parent="Computer_jungle2/Control" index="0"]
+door_nbr = 3
+questions = Array[ExtResource("5_r6mux")]([SubResource("Resource_wx75w"), SubResource("Resource_1ph4h"), SubResource("Resource_f3ke5")])
+
+[node name="canon_viseur" parent="." unique_id=1152691036 instance=ExtResource("6_r6mux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.496117, -0.970143, -1.2275839)
+bullet_speed = 38.0
+bullet_scene = ExtResource("7_br4hh")
+
+[node name="Target" parent="." unique_id=757134103 instance=ExtResource("7_0ohfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.545853, -1, -20.145597)
+door_number = 2
+
+[node name="Platform_moving" parent="." unique_id=132412685 instance=ExtResource("8_0ohfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.981174, -1.1991944, -9.999879)
+automatic = false
+door_nbr = 2
+pos2 = Vector3(-3, 0, 6)
+
+[node name="Platform_moving2" parent="." unique_id=1584973776 instance=ExtResource("8_0ohfp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.633564, 8.960995, -19.602665)
+automatic = false
+door_nbr = 3
+pos2 = Vector3(0, -10, 0)
+
+[node name="traps" type="Node3D" parent="." unique_id=1695931632]
+
+[node name="spike_floor_trap" parent="." unique_id=1140634332 instance=ExtResource("10_wx75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.984002, 10.995742, -15.969716)
+flash_speed = 3.0
+
+[node name="spike_floor_trap2" parent="." unique_id=1773241569 instance=ExtResource("10_wx75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.984002, 10.995742, -11.96987)
+flash_speed = 3.0
+
+[node name="spike_floor_trap3" parent="." unique_id=1434496819 instance=ExtResource("10_wx75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.984002, 10.995742, -7.983086)
+flash_speed = 3.0
+
+[node name="spike_floor_trap5" parent="." unique_id=1047052001 instance=ExtResource("10_wx75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9840021, 10.995742, -7.983086)
+flash_speed = 3.0
+
+[node name="spike_floor_trap7" parent="." unique_id=577730487 instance=ExtResource("10_wx75w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.015998, 10.995742, -7.983086)
+flash_speed = 3.0
+
+[node name="DeathArea" parent="." unique_id=1883610563 instance=ExtResource("11_vyqpb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.419736, 0)
+
+[node name="SawTrapBilat" parent="." unique_id=1017318009 instance=ExtResource("12_y7234")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.935223, 11.145487, -8.012117)
+
+[node name="SawTrapBilat2" parent="." unique_id=1481088425 instance=ExtResource("12_y7234")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.743597, 11.145487, -8.012117)
+speed = 1.2
+
+[node name="SawTrapBilat3" parent="." unique_id=942786716 instance=ExtResource("12_y7234")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.85972, 11.145487, -8.012117)
+speed = 1.1
+
+[node name="SwiperTrapRuins" parent="." unique_id=1208141214 instance=ExtResource("13_bl8x3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.022419, 11.000503, 2.9507422)
+
+[node name="Computer_typing_game" parent="." unique_id=1796319795 instance=ExtResource("14_bl8x3")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 8.434722, 15, 9.811711)
+
+[node name="WordTypingGame" parent="Computer_typing_game/Control" parent_id_path=PackedInt32Array(1796319795, 640006589) index="0" unique_id=1626762584]
+door_nbr = 4
+word_list = Array[String](["chat", "livre", "enfant", "femme", "merci"])
+translations_pt = Array[String](["gato", "livro", "criança", "mulher", "obrigado"])
+
+[node name="Passerelle" parent="Computer_typing_game/Control" parent_id_path=PackedInt32Array(1796319795, 640006589) index="1" unique_id=1164979141 instance=ExtResource("15_n12wu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9885292, 15.008972, 15.584259)
+door_nbr = 4
+
+[editable path="Computer_jungle"]
+[editable path="Computer_jungle2"]
+[editable path="Computer_typing_game"]
