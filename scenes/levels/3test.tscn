@@ -632,6 +632,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.745426, -0.9, -1.6162969)
 
 [node name="canon_viseur" parent="." unique_id=937840645 instance=ExtResource("21_6y0oo")]
 transform = Transform3D(0.9999068, 0, 0.013651639, 0, 1, 0, -0.013651639, 0, 0.9999068, -23.254534, -0.87014306, -13.57632)
+rotation_verticale_min = -45.0
 
 [node name="crate" parent="." unique_id=341027089 instance=ExtResource("22_6y0oo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.885462, 0.62343764, 2.4233572)
@@ -677,6 +678,23 @@ max_contacts_reported = 2
 
 [node name="Shooting_gallery" parent="." unique_id=915044514 instance=ExtResource("23_3txjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.460701, -0.8999996, -22.7585)
+word_pairs = Dictionary[String, String]({
+"cachorro": "chien",
+"cadeira": "chaise",
+"carro": "voiture",
+"casa": "maison",
+"comida": "nourriture",
+"criança": "enfant",
+"escola": "école",
+"família": "famille",
+"flor": "fleur",
+"gato": "chat",
+"janela": "fenêtre",
+"livro": "livre",
+"tempo": "temps",
+"trabalho": "travail",
+"água": "eau"
+})
 
 [node name="TargetSpawner" parent="Shooting_gallery" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9570389, 0, -9.571556)

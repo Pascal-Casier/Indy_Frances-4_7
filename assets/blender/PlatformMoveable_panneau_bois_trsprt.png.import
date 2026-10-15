@@ -20,7 +20,7 @@ dest_files=["res://.godot/imported/PlatformMoveable_panneau_bois_trsprt.png-0c49
 [params]
 
 compress/mode=2
-compress/high_quality=null
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
