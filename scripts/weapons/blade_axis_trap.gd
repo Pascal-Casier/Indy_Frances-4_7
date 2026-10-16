@@ -28,3 +28,11 @@ func start_rotation_loop() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Player"):
 		body.damage_received()
+
+
+func _on_visible_on_screen_enabler_3d_screen_entered() -> void:
+	set_physics_process(true)
+
+
+func _on_visible_on_screen_enabler_3d_screen_exited() -> void:
+	set_physics_process(false)

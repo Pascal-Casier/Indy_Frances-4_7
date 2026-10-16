@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d0cpjvd8m6o5a"]
 
 [ext_resource type="Script" uid="uid://cxuedeylwjxnv" path="res://scripts/decoration/barrel_exploding.gd" id="1_bmrfv"]
+[ext_resource type="PackedScene" uid="uid://boen0pcicsidu" path="res://scenes/Fx/explosion_fx.tscn" id="2_1gyoy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ce166"]
 resource_name = "Red"
@@ -112,3 +113,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=200806461]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51171875, 0)
 shape = SubResource("CylinderShape3D_bfp77")
+
+[node name="explosionFX" parent="." unique_id=937983164 instance=ExtResource("2_1gyoy")]

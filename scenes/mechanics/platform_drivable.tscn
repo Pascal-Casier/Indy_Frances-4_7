@@ -143,6 +143,11 @@ mesh = SubResource("BoxMesh_bfp77")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_o8bm0")
 
+[node name="Label3D" type="Label3D" parent="switch/MeshInstance3D2" unique_id=1877560363]
+transform = Transform3D(-4.371139e-08, -1, 4.371139e-08, 0, -4.371139e-08, -1, 1, -4.371139e-08, 1.9106855e-15, 0.03260231, 0.07439542, 0.010867357)
+text = "↩️"
+font_size = 350
+
 [node name="PlatformMoveable" parent="." unique_id=72727001 instance=ExtResource("6_pt7aj")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 0)
 

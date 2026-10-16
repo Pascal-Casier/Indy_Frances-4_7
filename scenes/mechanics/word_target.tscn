@@ -13,12 +13,6 @@ rings = 6
 transparency = 1
 shading_mode = 0
 albedo_color = Color(1, 1, 1, 0.3137255)
-albedo_texture = ExtResource("2_81t41")
-metallic = 0.96
-roughness = 0.11
-emission_enabled = true
-uv1_scale = Vector3(2.94, 2.035, 2.94)
-uv1_offset = Vector3(0, 0.04, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wf4hb"]
 margin = 0.01
