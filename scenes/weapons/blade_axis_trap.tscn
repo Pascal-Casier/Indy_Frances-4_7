@@ -39,6 +39,10 @@ stream = ExtResource("3_fp1v3")
 volume_db = -15.36
 max_distance = 15.0
 
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=1515458130]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.92567515, 0)
+aabb = AABB(-4.8837347, -1.1491141, -4.5281725, 9.767469, 2.2982283, 9.056345)
+
 [connection signal="body_entered" from="blade_axis1/blade/Area3D" to="." method="_on_area_3d_body_entered"]
 
 [editable path="blade_axis1"]
