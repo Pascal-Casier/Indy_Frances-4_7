@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bo02unv5auvdu"]
+
+[ext_resource type="PackedScene" uid="uid://dv1coyivwo53l" path="res://assets/blender/right_turn_sign.glb" id="1_s52b5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y328u"]
+size = Vector3(5.4260254, 1.5186768, 0.6437988)
+
+[node name="right_turn_sign" unique_id=1463044924 instance=ExtResource("1_s52b5")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="signage_arrows_right" parent_id_path=PackedInt32Array(268323468) index="0" unique_id=1186755808]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="signage_arrows_right/StaticBody3D" index="0" unique_id=1581494973]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7512506, 0)
+shape = SubResource("BoxShape3D_y328u")

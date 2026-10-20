@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bpyauh7dhns76"]
+
+[ext_resource type="Texture2D" uid="uid://5cfjcrghpbov" path="res://assets/images/textures/Grass_01_512.png" id="1_7n8tl"]
+[ext_resource type="Texture2D" uid="uid://ctjt6l8cqugww" path="res://assets/images/daytime_small.png" id="1_v82ea"]
+[ext_resource type="Texture2D" uid="uid://dinrxkmxe6oq1" path="res://assets/images/textures/Grass_01_512nlmap.png" id="2_hjghw"]
+[ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="3_qq8ng"]
+[ext_resource type="PackedScene" uid="uid://berjl2w2sx211" path="res://scenes/Decoration/trees.tscn" id="5_qq8ng"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gqeuj"]
+panorama = ExtResource("1_v82ea")
+
+[sub_resource type="Sky" id="Sky_yjrqv"]
+sky_material = SubResource("PanoramaSkyMaterial_gqeuj")
+
+[sub_resource type="Environment" id="Environment_jq5qn"]
+background_mode = 2
+sky = SubResource("Sky_yjrqv")
+glow_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_pt5os"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uelme"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rd6kt"]
+noise = SubResource("FastNoiseLite_uelme")
+color_ramp = SubResource("Gradient_pt5os")
+seamless = true
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_388hl"]
+_shader_parameters = {
+&"bias_distance": null,
+&"blend_sharpness": null,
+&"depth_blur": null,
+&"enable_macro_variation": null,
+&"enable_projection": null,
+&"flat_terrain_normals": null,
+&"macro_variation1": null,
+&"macro_variation2": null,
+&"macro_variation_slope": null,
+&"mipmap_bias": null,
+&"noise1_angle": null,
+&"noise1_offset": null,
+&"noise1_scale": null,
+&"noise2_scale": null,
+&"noise_texture": SubResource("NoiseTexture2D_rd6kt"),
+&"projection_threshold": null
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p0th4"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+backlight_enabled = true
+backlight = Color(0.5, 0.5, 0.5, 1)
+distance_fade_mode = 1
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 96.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_y3sog"]
+generated_type = 1
+height_offset = 0.5
+material_override = SubResource("StandardMaterial3D_p0th4")
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 128.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_v82ea"]
+name = "Grass_01_512"
+albedo_texture = ExtResource("1_7n8tl")
+normal_texture = ExtResource("2_hjghw")
+roughness = 0.192
+uv_scale = 0.575
+detiling_rotation = 0.149
+detiling_shift = 0.101
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_7tel6"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_y3sog")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_v82ea")])
+
+[node name="village" type="Node3D" unique_id=780681298]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1254862835]
+environment = SubResource("Environment_jq5qn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=954023120]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Terrain3D" type="Terrain3D" parent="." unique_id=1654767528]
+data_directory = "res://TerrainDossier/village"
+material = SubResource("Terrain3DMaterial_388hl")
+assets = SubResource("Terrain3DAssets_7tel6")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("3_qq8ng")]
+
+[node name="trees" parent="." unique_id=1382373361 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(-0.91817325, 0, -0.39617908, 0, 1, 0, 0.39617908, 0, -0.91817325, -38.57117, 0, -4.1440063)
+
+[node name="trees2" parent="." unique_id=550263619 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(0.93363464, 0, -0.35822666, 0, 1, 0, 0.35822666, 0, 0.93363464, -27.144749, 0, -17.7162)
+
+[node name="trees5" parent="." unique_id=1192785200 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(0.10951987, 0, 0.9939846, 0, 1, 0, -0.9939846, 0, 0.10951987, -46.63717, 0, 13.057541)
+
+[node name="trees6" parent="." unique_id=89571116 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(-0.7729385, 0, -0.634481, 0, 1, 0, 0.634481, 0, -0.7729385, -40.4881, 0, 29.699553)
+
+[node name="trees3" parent="." unique_id=2053668527 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1827984, 0, 9.609419)
+
+[node name="trees4" parent="." unique_id=1435893795 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(0.92255116, 0, 0.3858747, 0, 1, 0, -0.3858747, 0, 0.92255116, -6.9709654, 0, 21.41678)
+
+[node name="trees7" parent="." unique_id=1581249996 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(0.82307833, 0, 0.56792784, 0, 1, 0, -0.56792784, 0, 0.82307833, -12.582863, 0, 39.847687)
+
+[node name="trees8" parent="." unique_id=1521676046 instance=ExtResource("5_qq8ng")]
+transform = Transform3D(0.5401829, 0, 0.8415476, 0, 1, 0, -0.8415476, 0, 0.5401829, -17.526793, 0, 57.604385)
