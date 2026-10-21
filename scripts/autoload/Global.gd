@@ -130,11 +130,24 @@ func emit_on_new_book_found_signal() -> void:
 func emit_spawn_signal(index):
 	spawn.emit(index)
 
-func add_note(title: String, content: String):
+#func add_note(title: String, content: String):
+	#var note = {
+		#"title": title,
+		#"content": content
+	#}
+	#notes.append(note)
+	#new_note.emit()
+
+func add_note(title: String, content: String) -> void:
+	# Vérification par boucle
+	for note in notes:
+		if note["title"] == title:
+			print_debug("Cette note existe déjà.")
+			return
+			
 	var note = {
 		"title": title,
 		"content": content
 	}
 	notes.append(note)
-	new_note.emit()
-	
+	new_note.emit()	

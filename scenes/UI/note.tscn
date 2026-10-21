@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yiwfhq7jo1ex"]
+[gd_scene format=3 uid="uid://yiwfhq7jo1ex"]
 
 [ext_resource type="Script" uid="uid://c3jehlucpdoit" path="res://scripts/UI/note.gd" id="1_f4ew2"]
 [ext_resource type="AudioStream" uid="uid://ctcrto5iq1cjl" path="res://assets/sounds/sfx/confirm.ogg" id="2_gb5nt"]
@@ -45,35 +45,33 @@ _data = {
 &"glow": SubResource("Animation_q603b")
 }
 
-[node name="Note" type="Area3D"]
+[node name="Note" type="Area3D" unique_id=1945755273]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 script = ExtResource("1_f4ew2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=758815421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0609)
 shape = SubResource("BoxShape3D_qasof")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-2.62268e-09, -0.06, 0, 0.06, -2.62268e-09, 0, 0, 0, 0.06, 0, 0, 0)
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=237163478]
+transform = Transform3D(-2.6226832e-09, -0.06, 0, 0.06, -2.6226832e-09, 0, 0, 0, 0.06, 0, 0, 0)
 texture = ExtResource("2_jfggq")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=488659949]
 unique_name_in_owner = true
 stream = ExtResource("2_gb5nt")
 pitch_scale = 1.44
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_58wlp")
-}
-autoplay = "glow"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=148717097]
+libraries/ = SubResource("AnimationLibrary_58wlp")
+autoplay = &"glow"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=250540658]
 visible = false
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1348573111]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 3
 anchors_preset = 8
@@ -88,7 +86,7 @@ offset_bottom = -51.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+[node name="Panel" type="Panel" parent="CanvasLayer/Control" unique_id=648641217]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -96,7 +94,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/Control/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel" unique_id=1165658110]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

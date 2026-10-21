@@ -1,0 +1,19 @@
+[style name="simpleStyle1"]
+join chouette center
+Marie: Bonjour.
+- Pardon ?
+- Bonjour
+Marie: Je m'appelle Marie, et toi ?
+- Je m'appelle Leo
+- ???
+Marie: Tu ne parles pas français ? Tu parles quelle langue ?
+[wait time="0.5" hide_text="false" skippable="true"]
+- portugais.
+- ???
+Marie: Ok, je peux t'aider, je connais un peu le portugais.\
+[color=green]Ok, eu posso te ajudar, eu conheço um pouco o portugues.[/color]
+Marie: Qu'est-ce que tu cherches ?\
+[color=green]O que você procura ?[/color]
+[wait time="0.5" hide_text="false" skippable="true"]
+- Je cherche mon grand-père
+- Je voudrais trouver mon grand-père

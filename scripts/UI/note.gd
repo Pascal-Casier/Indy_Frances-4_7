@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var disapear : bool = false
 @export var note_title = "Titre de la note"
 @export_multiline var note_content = "Contenu de la note"
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
@@ -11,5 +12,8 @@ func _on_body_entered(body: Node3D) -> void:
 		Global.add_note(note_title, note_content)
 		audio_stream_player.play()
 		canvas_layer.show()
-		await get_tree().create_timer(1.3).timeout
-		queue_free()
+		await get_tree().create_timer(1.5).timeout
+		if disapear:
+			queue_free()
+		else:
+			canvas_layer.hide()

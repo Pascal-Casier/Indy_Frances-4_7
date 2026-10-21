@@ -249,6 +249,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="tree_pine_orange_large" type="MeshInstance3D" parent="tree_pine_orange_large2" unique_id=568945923]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_6j30q")
@@ -259,6 +260,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3.3615825, 0, 5.4365716)
 
 [node name="tree_pine_orange_medium" type="MeshInstance3D" parent="tree_pine_orange_medium2" unique_id=1801233438]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_p0k0b")
@@ -269,6 +271,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.5707133, 0, 4.671395)
 
 [node name="tree_pine_orange_small" type="MeshInstance3D" parent="tree_pine_orange_small2" unique_id=2141428067]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_oie0e")
@@ -279,6 +282,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7374718, 0, -6.1629767)
 
 [node name="tree_pine_yellow_large" type="MeshInstance3D" parent="tree_pine_yellow_large2" unique_id=410690078]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_ftggq")
@@ -289,6 +293,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.375106, 0, 0)
 
 [node name="tree_pine_yellow_medium" type="MeshInstance3D" parent="tree_pine_yellow_medium2" unique_id=348536649]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_b143m")
@@ -299,6 +304,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7.095378, 0, 0.27749872)
 
 [node name="tree_pine_yellow_small" type="MeshInstance3D" parent="tree_pine_yellow_small2" unique_id=28614221]
 visibility_range_begin_margin = 3.0
+visibility_range_end = 100.0
 visibility_range_end_margin = 5.0
 visibility_range_fade_mode = 1
 mesh = SubResource("ArrayMesh_lomru")

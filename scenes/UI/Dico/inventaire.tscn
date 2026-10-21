@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://blxp6j621i18p" path="res://assets/images/ui/paperUI/scrolls/wide.png" id="4_tlufp"]
 [ext_resource type="Script" uid="uid://dfll1xqk7rheb" path="res://scenes/UI/Inventory/inventory.gd" id="5_05ion"]
 [ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="5_foi5n"]
-[ext_resource type="FontFile" uid="uid://dxmfjeyw3qefc" path="res://assets/fonts/RifficFree-Bold.ttf" id="6_jcspv"]
 [ext_resource type="Texture2D" uid="uid://ukpdbwgmwtjv" path="res://assets/images/ui/backgroundFramed.jpg" id="6_teln6"]
 [ext_resource type="Texture2D" uid="uid://bsnuf0nb2ly8c" path="res://assets/images/ui/inventaire/Blackboard.jpg" id="7_d3o5y"]
 [ext_resource type="FontFile" uid="uid://qb2eb7up28fb" path="res://assets/fonts/BabySchoolItalic.ttf" id="7_et46e"]
@@ -45,79 +44,6 @@ border_width_bottom = 2
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ljg13"]
-bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.8, 0.109804, 0.180392, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 20.0
-expand_margin_right = 20.0
-shadow_size = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqtk4"]
-bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.8, 0.109804, 0.180392, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 20.0
-expand_margin_right = 20.0
-shadow_size = 7
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sjbk"]
-bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.8, 0.8, 0.180392, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 20.0
-expand_margin_right = 20.0
-shadow_size = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hef20"]
-bg_color = Color(0.27451, 0.137255, 0.0627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.8, 0.109804, 0.180392, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 20.0
-expand_margin_right = 20.0
-shadow_size = 2
-
-[sub_resource type="Theme" id="Theme_t22su"]
-default_font = ExtResource("6_jcspv")
-default_font_size = 50
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
-Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
-Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-Button/fonts/font = ExtResource("6_jcspv")
-Button/styles/focus = SubResource("StyleBoxFlat_ljg13")
-Button/styles/hover = SubResource("StyleBoxFlat_jqtk4")
-Button/styles/normal = SubResource("StyleBoxFlat_0sjbk")
-Button/styles/pressed = SubResource("StyleBoxFlat_hef20")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ey7o"]
 bg_color = Color(0.121325, 0.122396, 0.10869, 1)
@@ -307,7 +233,7 @@ theme_override_fonts/font = ExtResource("4_pk30t")
 theme_override_styles/panel = SubResource("StyleBoxFlat_gwj45")
 theme_override_styles/tab_focus = SubResource("StyleBoxFlat_jjm6p")
 tab_alignment = 1
-current_tab = 4
+current_tab = 1
 
 [node name="Pause" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=1471662993]
 visible = false
@@ -341,8 +267,8 @@ layout_mode = 2
 text = "Quitter"
 
 [node name="Notes" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=802319233]
-visible = false
 layout_mode = 2
+theme = ExtResource("1_p8obj")
 metadata/_tab_index = 1
 
 [node name="Notebook" type="Control" parent="Control/MarginContainer/TabContainer/Notes" unique_id=1667088480]
@@ -377,9 +303,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 180
+theme_override_constants/margin_top = 148
 theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 88
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer" unique_id=1613154333]
 layout_mode = 2
@@ -402,98 +328,115 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-theme = SubResource("Theme_t22su")
+theme = ExtResource("1_p8obj")
 theme_override_constants/h_separation = 60
 theme_override_constants/v_separation = 30
-columns = 7
+columns = 4
 
 [node name="Button" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=705646872]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
-text = "avoir"
+text = "chercher"
 
 [node name="Button2" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1016982412]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
-text = "avoir"
+text = "sortir (sair)"
 
 [node name="Button3" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=818814271]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button4" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1692348163]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button5" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1378187053]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button6" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2128804208]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button7" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=239820764]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button8" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1190530250]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button9" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1215387881]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button10" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2070373555]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button11" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1067934144]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button12" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=960154103]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
 
 [node name="Button13" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=2050874656]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.211765, 0.321569, 0.792157, 1)
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button14" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=3057762]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button15" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=704581967]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button16" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=372462997]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button17" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=624012154]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_et46e")
+theme_override_font_sizes/font_size = 25
+text = "avoir"
+
+[node name="Button18" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/MarginContainer/VBoxContainer/ScrollContainer/NoteContainer" unique_id=1273900825]
+layout_mode = 2
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 25
 text = "avoir"
@@ -520,16 +463,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 160
+theme_override_constants/margin_left = 80
 theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 160
-theme_override_constants/margin_bottom = 110
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
 
 [node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer" unique_id=816359098]
-custom_minimum_size = Vector2(350, 400)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect" unique_id=1984712300]
@@ -537,6 +477,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 6.0
+offset_right = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 30
@@ -546,15 +488,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note/MarginContainer/TextureRect/MarginContainer/ScrollContainer" unique_id=293867226]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 0)
+custom_maximum_size = Vector2(700, 500)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("7_et46e")
 theme_override_font_sizes/font_size = 31
-text = "fdsf"
-horizontal_alignment = 1
+text = "fdsf sdffsdfdsdfdffdsdfd dddssd  ddsffffffffffffffffffffffffffffffffgg gfddff ff gg fffff 
+ggghfghhg   gggggggggggggggg   gggggggggggggggggggggggggggggggggggggggggggggggggggg  gg
+ gggggggggggg"
+autowrap_mode = 2
+autowrap_trim_flags = 0
 
 [node name="ButtonExit" type="Button" parent="Control/MarginContainer/TabContainer/Notes/Notebook/MarginContainer/Panel/Feuille_note" unique_id=463292582]
 custom_minimum_size = Vector2(60, 0)
@@ -826,6 +773,7 @@ dialog_text = "Vous avez maitrisé tous les mots !!
 Félicitations"
 
 [node name="Encyclopédie" type="MarginContainer" parent="Control/MarginContainer/TabContainer" unique_id=79238981]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 4
 

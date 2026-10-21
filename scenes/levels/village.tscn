@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bpyauh7dhns76"]
 
 [ext_resource type="Texture2D" uid="uid://5cfjcrghpbov" path="res://assets/images/textures/Grass_01_512.png" id="1_7n8tl"]
+[ext_resource type="PackedScene" uid="uid://cg6tcasj5umbn" path="res://scenes/UI/Dico/inventaire.tscn" id="1_uelme"]
 [ext_resource type="Texture2D" uid="uid://ctjt6l8cqugww" path="res://assets/images/daytime_small.png" id="1_v82ea"]
 [ext_resource type="Texture2D" uid="uid://dinrxkmxe6oq1" path="res://assets/images/textures/Grass_01_512nlmap.png" id="2_hjghw"]
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="3_qq8ng"]
 [ext_resource type="PackedScene" uid="uid://berjl2w2sx211" path="res://scenes/Decoration/trees.tscn" id="5_qq8ng"]
+[ext_resource type="PackedScene" uid="uid://1ls5kw80krk6" path="res://scenes/Decoration/house_static.tscn" id="6_yjrqv"]
+[ext_resource type="PackedScene" uid="uid://b2sy5w33rack3" path="res://scenes/characters/girl.tscn" id="7_jq5qn"]
+[ext_resource type="PackedScene" uid="uid://bdvrl7yn8sfst" path="res://scenes/Decoration/petit_panneau.tscn" id="9_rd6kt"]
+[ext_resource type="PackedScene" uid="uid://yiwfhq7jo1ex" path="res://scenes/UI/note.tscn" id="10_388hl"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gqeuj"]
 panorama = ExtResource("1_v82ea")
@@ -91,6 +96,8 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 
 [node name="village" type="Node3D" unique_id=780681298]
 
+[node name="Inventaire" parent="." unique_id=201290689 instance=ExtResource("1_uelme")]
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1254862835]
 environment = SubResource("Environment_jq5qn")
 
@@ -106,27 +113,55 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="IndianaPlayer4_2" parent="." unique_id=2146724510 instance=ExtResource("3_qq8ng")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.248646, 0, 10.61644)
 
-[node name="trees" parent="." unique_id=1382373361 instance=ExtResource("5_qq8ng")]
+[node name="Trees" type="Node3D" parent="." unique_id=1666341049]
+
+[node name="trees" parent="Trees" unique_id=1382373361 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(-0.91817325, 0, -0.39617908, 0, 1, 0, 0.39617908, 0, -0.91817325, -38.57117, 0, -4.1440063)
 
-[node name="trees2" parent="." unique_id=550263619 instance=ExtResource("5_qq8ng")]
+[node name="trees2" parent="Trees" unique_id=550263619 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(0.93363464, 0, -0.35822666, 0, 1, 0, 0.35822666, 0, 0.93363464, -27.144749, 0, -17.7162)
 
-[node name="trees5" parent="." unique_id=1192785200 instance=ExtResource("5_qq8ng")]
+[node name="trees5" parent="Trees" unique_id=1192785200 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(0.10951987, 0, 0.9939846, 0, 1, 0, -0.9939846, 0, 0.10951987, -46.63717, 0, 13.057541)
 
-[node name="trees6" parent="." unique_id=89571116 instance=ExtResource("5_qq8ng")]
+[node name="trees6" parent="Trees" unique_id=89571116 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(-0.7729385, 0, -0.634481, 0, 1, 0, 0.634481, 0, -0.7729385, -40.4881, 0, 29.699553)
 
-[node name="trees3" parent="." unique_id=2053668527 instance=ExtResource("5_qq8ng")]
+[node name="trees3" parent="Trees" unique_id=2053668527 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1827984, 0, 9.609419)
 
-[node name="trees4" parent="." unique_id=1435893795 instance=ExtResource("5_qq8ng")]
+[node name="trees4" parent="Trees" unique_id=1435893795 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(0.92255116, 0, 0.3858747, 0, 1, 0, -0.3858747, 0, 0.92255116, -6.9709654, 0, 21.41678)
 
-[node name="trees7" parent="." unique_id=1581249996 instance=ExtResource("5_qq8ng")]
+[node name="trees7" parent="Trees" unique_id=1581249996 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(0.82307833, 0, 0.56792784, 0, 1, 0, -0.56792784, 0, 0.82307833, -12.582863, 0, 39.847687)
 
-[node name="trees8" parent="." unique_id=1521676046 instance=ExtResource("5_qq8ng")]
+[node name="trees8" parent="Trees" unique_id=1521676046 instance=ExtResource("5_qq8ng")]
 transform = Transform3D(0.5401829, 0, 0.8415476, 0, 1, 0, -0.8415476, 0, 0.5401829, -17.526793, 0, 57.604385)
+
+[node name="Deco" type="Node3D" parent="." unique_id=1324721580]
+
+[node name="House_static" parent="Deco" unique_id=973821031 instance=ExtResource("6_yjrqv")]
+transform = Transform3D(-6.292241, 0, 7.7722387, 0, 10, 0, -7.7722387, 0, -6.292241, -67.630356, 0, 80.5061)
+
+[node name="Girl" parent="Deco" unique_id=1193736288 instance=ExtResource("7_jq5qn")]
+transform = Transform3D(-0.4961181, 0, 0.92540085, 0, 1.05, 0, -0.92540085, 0, -0.4961181, -65.20404, 0.063209765, 77.892876)
+dialogue_name = "girl1"
+
+[node name="petit_panneau" parent="Deco" unique_id=1532239288 instance=ExtResource("9_rd6kt")]
+transform = Transform3D(-0.3076144, 0, 0.9515111, 0, 1, 0, -0.9515111, 0, -0.3076144, -36.360756, 0, 17.103561)
+
+[node name="Sprite3D" parent="Deco/petit_panneau" index="2"]
+visible = false
+
+[node name="Note" parent="Deco/petit_panneau" unique_id=775921338 instance=ExtResource("10_388hl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3143818, 0.07767677)
+note_title = "chercher "
+note_content = "chercher = procurar / buscar
+esse verbo é regular, ele se conjuga como os verbos
+do primeiro grupo em -ER :
+je cherche, tu cherches, il cherche,..."
+
+[editable path="Deco/petit_panneau"]
