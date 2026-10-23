@@ -33,6 +33,7 @@ script = ExtResource("2_5g7h0")
 scene = ExtResource("6_eggq6")
 overrides = {
 "box_color_custom": "Color(0.013693921, 0.030766958, 0.25651044, 1)",
+"box_panel": "\"res://Timelines/my_custom_textbox2.tres\"",
 "next_indicator_texture": "\"res://assets/images/ui/pressE.png\""
 }
 

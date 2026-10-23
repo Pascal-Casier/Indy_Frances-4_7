@@ -40,6 +40,8 @@ var total_mots_attendus : int = 10  # nombre total de mots à trouver dans ce ni
 
 var notes = []
 
+var wheels_picked_up_nbr : int = 0
+
 signal mouse_sensitivity_changed(new_value)
 signal on_coins_updated
 signal on_health_updated

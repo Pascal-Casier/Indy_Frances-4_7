@@ -29,13 +29,14 @@ overrides = {
 "box_modulate_global_color": "false",
 "box_panel": "\"res://Timelines/my_custom_textbox.tres\"",
 "box_size": "Vector2(920, 200)",
-"custom_normal_font": "\"res://assets/fonts/Acme-Regular.ttf\"",
+"custom_normal_font": "\"res://assets/fonts/IMFellEnglish-Regular.ttf\"",
 "name_label_custom_color": "Color(0.0263333, 0.123998, 0.919271, 1)",
 "name_label_custom_size": "14.0",
 "name_label_hide_when_no_character": "true",
 "portrait_stretch_factor": "0.2",
-"text_custom_color": "Color(0.143229, 0.135396, 0.135396, 1)",
-"text_custom_size": "14.0"
+"text_custom_color": "Color(0.7044271, 0.6324323, 0.16234843, 1)",
+"text_custom_size": "14.0",
+"text_use_global_color": "false"
 }
 
 [sub_resource type="Resource" id="Resource_7yaf6"]
@@ -45,6 +46,9 @@ scene = ExtResource("5_frpd8")
 [sub_resource type="Resource" id="Resource_tfn8c"]
 script = ExtResource("1_k68q3")
 scene = ExtResource("6_dtqv5")
+overrides = {
+"font_custom": "\"res://assets/fonts/IMFellEnglish-Regular.ttf\""
+}
 
 [sub_resource type="Resource" id="Resource_6sjsw"]
 script = ExtResource("1_k68q3")

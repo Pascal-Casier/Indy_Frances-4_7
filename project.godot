@@ -76,7 +76,7 @@ layout/styles={
 "inherits": ""
 }
 }
-layout/default_style="res://Dialogic_styles/my_style0.tres"
+layout/default_style="res://Timelines/simpleStyle1.tres"
 text/letter_speed=0.01
 text/skippable=true
 text/skippable_delay=0.1
@@ -143,7 +143,7 @@ animations/cross_fade_default_length=0.5
 save/encryption_on_exports_only=true
 audio/type_sound_bus="Dialogues"
 layout/style_directory={
-"": "res://Dialogic_styles/my_style0.tres",
+"": "res://Timelines/simpleStyle1.tres",
 "my_style0": "res://Dialogic_styles/my_style0.tres",
 "simpleStyle1": "res://Timelines/simpleStyle1.tres"
 }

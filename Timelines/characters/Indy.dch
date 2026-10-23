@@ -4,9 +4,11 @@
 &"_translation_id": "",
 &"color": Color(0.903646, 0.204181, 0.0258857, 1),
 &"custom_info": {
+"prefix": "",
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "",
+"suffix": ""
 },
 &"default_portrait": "Indy1",
 &"description": "",

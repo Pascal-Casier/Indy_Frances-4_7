@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://b2sy5w33rack3"]
+[gd_scene format=4 uid="uid://b2sy5w33rack3"]
 
 [ext_resource type="Script" uid="uid://chnts1g6704bd" path="res://scripts/characters/baker.gd" id="1_1dq2t"]
 [ext_resource type="Texture2D" uid="uid://ihsagkairv6i" path="res://assets/characters/Girl/Girl3_texture_0.png" id="1_fax4h"]
@@ -211,17 +211,17 @@ size = Vector3(1, 1, 0.725586)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_faben"]
 
-[node name="Girl" type="CharacterBody3D" node_paths=PackedStringArray("press_elbl")]
+[node name="Girl" type="CharacterBody3D" unique_id=820996696 node_paths=PackedStringArray("press_elbl")]
 script = ExtResource("1_1dq2t")
 press_elbl = NodePath("Girl3/Armature/PressElbl")
 
-[node name="Girl3" type="Node3D" parent="."]
+[node name="Girl3" type="Node3D" parent="." unique_id=1406145022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0361621, 0)
 
-[node name="Armature" type="Node3D" parent="Girl3"]
+[node name="Armature" type="Node3D" parent="Girl3" unique_id=1453456132]
 transform = Transform3D(1.15, 0, 0, 0, 1.15, 0, 0, 0, 1.15, 0, 0, 0)
 
-[node name="GeneralSkeleton" type="Skeleton3D" parent="Girl3/Armature"]
+[node name="GeneralSkeleton" type="Skeleton3D" parent="Girl3/Armature" unique_id=1241196410]
 unique_name_in_owner = true
 motion_scale = 0.206275
 bones/0/name = "Hips"
@@ -512,11 +512,11 @@ bones/40/position = Vector3(-0.0104759, 0.0887874, -0.000999894)
 bones/40/rotation = Quaternion(-0.0586198, 0.998199, -0.00625303, -0.0110723)
 bones/40/scale = Vector3(1.00001, 1.00001, 1)
 
-[node name="temp" type="MeshInstance3D" parent="Girl3/Armature/GeneralSkeleton"]
+[node name="temp" type="MeshInstance3D" parent="Girl3/Armature/GeneralSkeleton" unique_id=1053856589]
 mesh = SubResource("ArrayMesh_npncr")
 skin = SubResource("Skin_vpl10")
 
-[node name="PressElbl" type="Label3D" parent="Girl3/Armature"]
+[node name="PressElbl" type="Label3D" parent="Girl3/Armature" unique_id=836095690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0158203, 2.32945, -1.86265e-08)
 visible = false
 billboard = 2
@@ -524,24 +524,26 @@ text = "[E]"
 font_size = 47
 outline_size = 19
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Girl3"]
-libraries = {
-&"": SubResource("AnimationLibrary_1rm1r")
-}
-autoplay = "Girl_idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Girl3" unique_id=1181065420]
+libraries/ = SubResource("AnimationLibrary_1rm1r")
+autoplay = &"Girl_idle"
 
-[node name="Area3D" type="Area3D" parent="Girl3"]
+[node name="Area3D" type="Area3D" parent="Girl3" unique_id=1749128260]
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Girl3/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Girl3/Area3D" unique_id=749260723]
 transform = Transform3D(0.999998, 0, 2.08616e-07, 0, 0.999999, 0, -2.08616e-07, 0, 0.999998, -0.00473256, 0.7014, 0.745552)
 shape = SubResource("BoxShape3D_f4pd8")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=99119037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932475, 0)
 shape = SubResource("CapsuleShape3D_faben")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=31550848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13943434, 1.0140636, 0)
+aabb = AABB(-1, -1.3816617, -1, 2, 2.7633233, 2)
 
 [connection signal="body_entered" from="Girl3/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Girl3/Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,5 +1,4 @@
-[style name="simpleStyle1"]
-join chouette center
+join Marie left
 Marie: Bonjour.
 - Pardon ?
 - Bonjour
@@ -7,13 +6,38 @@ Marie: Je m'appelle Marie, et toi ?
 - Je m'appelle Leo
 - ???
 Marie: Tu ne parles pas français ? Tu parles quelle langue ?
+do Global.emit_open_door_gate(1)
 [wait time="0.5" hide_text="false" skippable="true"]
-- portugais.
+- je parle portugais.
 - ???
+	Marie: Je vais t'aider\
+	[color=green]Eu vou te ajudar[/color]
+	jump lbl1
 Marie: Ok, je peux t'aider, je connais un peu le portugais.\
 [color=green]Ok, eu posso te ajudar, eu conheço um pouco o portugues.[/color]
+label lbl1
 Marie: Qu'est-ce que tu cherches ?\
 [color=green]O que você procura ?[/color]
-[wait time="0.5" hide_text="false" skippable="true"]
+[wait time="0.3" hide_text="false" skippable="true"]
 - Je cherche mon grand-père
-- Je voudrais trouver mon grand-père
+	Marie: Comment s'appelle ton grand-père ?\
+	[color=green]Como se chama o teu avô?[/color]
+	Indy: Henri
+	Marie: Ah oui, j'en ai entendu parler !\
+	[color=green]Ah sim, eu ouvi falar dele![/color]\
+	Il est passé par ici et il m'a dit que tu viendrais.\
+	[color=green]Ele passou por aqui e me disse que vc viria.[/color]
+	Marie: Tu vas avoir besoin d'une voiture pour le retrouver.\
+	[color=green]Você vai precisar de um carro para encontra-lo.[/color]\
+	Je peux te prêter ma voiture.\
+	[color=green]Posso te emprestar meu carro.[/color]
+	Marie: Malheureusement, il manque les roues et le volant !\
+	[color=green]Infelizmente, faltam as rodas e o volante![/color]
+	Marie: Peux-tu m'aider à les retrouver ?
+	- d'accord
+		Marie: Super, reviens me voir quand tu auras tout trouvé.\
+		[color=green]Otimo, volta me ver quando vc tiver encontrado tudo.[/color]
+- ???
+	Marie: tu ne comprends pas ?\
+	[color=green]Vocã nêo entende?[/color]
+	jump lbl1

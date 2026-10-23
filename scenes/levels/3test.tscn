@@ -6,6 +6,7 @@
 [ext_resource type="MeshLibrary" uid="uid://bxoa8vowqc8d3" path="res://meshlibs/StonesWallsMeshlib3.tres" id="3_cddsv"]
 [ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="3_exd13"]
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="5_npntn"]
+[ext_resource type="PackedScene" uid="uid://ds7ru7qtq4cwk" path="res://scenes/Decoration/log_rigid_body.tscn" id="7_fid8k"]
 [ext_resource type="PackedScene" uid="uid://cne45tpbau2nt" path="res://scenes/characters/dragon_to_mount.tscn" id="15_80jn3"]
 [ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="15_byu0c"]
 [ext_resource type="PackedScene" uid="uid://dp6ub342l2q5k" path="res://scenes/mechanics/platform_drivable.tscn" id="16_byu0c"]
@@ -245,6 +246,12 @@ max_speed = 3.0
 
 [node name="PanneauUI" parent="Shooting_gallery" index="3"]
 transform = Transform3D(0.46023926, 0, 0.88779503, 0, 1, 0, -0.88779503, 0, 0.46023926, -6.56575, -4.7683716e-07, 3.2142792)
+
+[node name="Log_rigidBody" parent="." unique_id=962932137 instance=ExtResource("7_fid8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.366212, 0, 0)
+
+[node name="Log_rigidBody2" parent="." unique_id=1164412741 instance=ExtResource("7_fid8k")]
+transform = Transform3D(0.13597089, 0, 0.9907128, 0, 1, 0, -0.9907128, 0, 0.13597089, -10.755312, 1.7062285, 0)
 
 [editable path="PlatformDrivable"]
 [editable path="PlatformDrivable/AnswerSlab"]
