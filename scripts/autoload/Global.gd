@@ -69,6 +69,7 @@ signal lantern_off
 @warning_ignore("unused_signal")
 signal full_battery
 signal switch_changed(id: String, is_on: bool)
+@warning_ignore("unused_signal")
 signal wheels_nb_found(wheels_picked_up_nbr)
 #signal health_update
 

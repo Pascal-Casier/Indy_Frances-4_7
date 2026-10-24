@@ -76,7 +76,7 @@ layout/styles={
 "inherits": ""
 }
 }
-layout/default_style="res://Timelines/simpleStyle1.tres"
+layout/default_style="res://Dialogic_styles/my_style0.tres"
 text/letter_speed=0.01
 text/skippable=true
 text/skippable_delay=0.1
@@ -133,7 +133,7 @@ directories/dtl_directory={
 "tuto1": "res://Timelines/tuto1.dtl",
 "tuto_canon": "res://Timelines/tuto_canon.dtl"
 }
-layout/style_list=["res://Dialogic_styles/my_style0.tres", "res://Timelines/simpleStyle1.tres"]
+layout/style_list=["res://Dialogic_styles/my_style0.tres"]
 extensions_folder="res://addons/dialogic_additions"
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -143,9 +143,8 @@ animations/cross_fade_default_length=0.5
 save/encryption_on_exports_only=true
 audio/type_sound_bus="Dialogues"
 layout/style_directory={
-"": "res://Timelines/simpleStyle1.tres",
-"my_style0": "res://Dialogic_styles/my_style0.tres",
-"simpleStyle1": "res://Timelines/simpleStyle1.tres"
+"": "res://Dialogic_styles/my_style0.tres",
+"my_style0": "res://Dialogic_styles/my_style0.tres"
 }
 audio/channel_defaults={
 "": {

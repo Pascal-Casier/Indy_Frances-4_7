@@ -137,6 +137,7 @@ func update_word_tree() -> void:
 
 func _on_new_category_button_pressed() -> void:
 	var dialog = AcceptDialog.new()
+	style_edit_dialog(dialog)
 	var vbox = VBoxContainer.new()
 	var input = LineEdit.new()
 	
@@ -316,20 +317,81 @@ func _show_delete_dialog(french_word: String) -> void:
 	
 	_show_dialog(confirm_dialog)
 
+func style_edit_dialog(dialog: AcceptDialog) -> void:
+	var custom_theme = Theme.new()
+
+	# Couleurs générales
+	var panel = StyleBoxFlat.new()
+	panel.bg_color = Color("#24344A")
+	panel.set_corner_radius_all(10)
+	panel.set_content_margin_all(16)
+
+	custom_theme.set_stylebox("panel", "AcceptDialog", panel)
+
+	# Champs de texte
+	var field = StyleBoxFlat.new()
+	field.bg_color = Color("#101927")
+	field.border_color = Color("#40536B")
+	field.set_border_width_all(1)
+	field.set_corner_radius_all(5)
+	field.set_content_margin_all(8)
+
+	custom_theme.set_stylebox("normal", "LineEdit", field)
+	custom_theme.set_stylebox("focus", "LineEdit", field)
+
+	# Couleur du texte
+	custom_theme.set_color(
+		"font_color", "LineEdit", Color.WHITE
+	)
+	custom_theme.set_color(
+		"font_color", "Label", Color("#E5EDF7")
+	)
+
+	# Boutons
+	var button_normal = StyleBoxFlat.new()
+	button_normal.bg_color = Color("#354357")
+	button_normal.set_corner_radius_all(6)
+	button_normal.set_content_margin_all(8)
+
+	var button_hover = button_normal.duplicate()
+	button_hover.bg_color = Color("#465D78")
+
+	custom_theme.set_stylebox(
+		"normal", "Button", button_normal
+	)
+	custom_theme.set_stylebox(
+		"hover", "Button", button_hover
+	)
+	custom_theme.set_stylebox(
+		"pressed", "Button", button_hover
+	)
+
+	custom_theme.set_color(
+		"font_color", "Button", Color.WHITE
+	)
+
+	# Appliquer le thème à la fenêtre et à ses contrôles
+	dialog.theme = custom_theme
+
+
 func _show_edit_dialog(french_word: String) -> void:
 	var dialog = AcceptDialog.new()
 	dialog.title = "Éditer le mot"
+	dialog.ok_button_text = "ENREGISTRER"
+	dialog.min_size = Vector2i(550, 300)
+	style_edit_dialog(dialog)
 	
 	var vbox = VBoxContainer.new()
 	dialog.add_child(vbox)
 	vbox.position = Vector2(16, 8)
-	vbox.custom_minimum_size = Vector2(200, 100)
+	vbox.custom_minimum_size = Vector2(500, 100)
 	
 	# Champs d'édition
 	var french_container = HBoxContainer.new()
 	var french_label = Label.new()
 	french_label.text = "Français:"
 	var french_edit = LineEdit.new()
+	french_edit.custom_minimum_size = Vector2(150, 50)
 	french_edit.text = french_word
 	french_container.add_child(french_label)
 	french_container.add_child(french_edit)
@@ -338,6 +400,7 @@ func _show_edit_dialog(french_word: String) -> void:
 	var portuguese_label = Label.new()
 	portuguese_label.text = "Portugais:"
 	var portuguese_edit = LineEdit.new()
+	portuguese_edit.custom_minimum_size = Vector2(150,50)
 	portuguese_edit.text = dictionary.words[french_word].portuguese
 	portuguese_container.add_child(portuguese_label)
 	portuguese_container.add_child(portuguese_edit)

@@ -180,6 +180,8 @@ size = Vector3(1.2790527, 0.79589844, 2.6748047)
 
 [node name="UI" parent="." unique_id=911524149 instance=ExtResource("14_fwidt")]
 mouse_filter = 2
+potion_icon_is_visible = false
+mots_trouves_is_visible = false
 
 [node name="tires_control" parent="UI" unique_id=242651078 instance=ExtResource("15_7tel6")]
 layout_mode = 1
