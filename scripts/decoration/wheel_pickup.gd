@@ -12,5 +12,6 @@ func _on_body_entered(body: Node3D) -> void:
 		audio_stream_player.play()
 		set_deferred("monitoring", false)
 		Global.wheels_picked_up_nbr += 1
+		Global.wheels_nb_found.emit(Global.wheels_picked_up_nbr)
 		await audio_stream_player.finished
 		queue_free()
