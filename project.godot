@@ -95,8 +95,10 @@ text/autopauses={}
 glossary/default_case_sensitive=true
 variables={
 "has_met_chouette": false,
+"has_met_girl": false,
 "hero_name": "",
-"mots_trouves": 0
+"mots_trouves": 0,
+"wheels_found": 0
 }
 text/input_action="interact"
 glossary/glossary_files=["res://Timelines/glossary1/glossaire.tres"]

@@ -87,6 +87,7 @@ var bullet = preload("res://scenes/mechanics/bullet_lighning.tscn")
 var instance : Node3D
 var is_attacking := false
 var tuto_visible := false
+var grappling_enabled : bool = false
 
 # OPTIMISATION: Cache pour l'AnimationTree
 var anim_state_machine
@@ -120,6 +121,8 @@ func _ready():
 	jump_buffer_timer.one_shot = true
 	add_child(jump_buffer_timer)
 	
+	if not grappling_enabled:
+		%RayCast3DGrapin.enabled = false
 	# OPTIMISATION: Cache le state machine
 	if animation_tree:
 		anim_state_machine = animation_tree.get("parameters/JumpStateMachine/playback")

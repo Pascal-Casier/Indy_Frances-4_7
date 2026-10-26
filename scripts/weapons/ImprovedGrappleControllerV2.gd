@@ -14,7 +14,7 @@ var target : Vector3
 var target_normal : Vector3      # Normal of the surface hit
 var target_object               # The object we're grappling to
 var launched := false
-var can_grapple := true
+@export var can_grapple := true
 var grapple_cooldown := 0.5      # Time before can grapple again
 
 # Optional VFX/SFX
@@ -31,6 +31,8 @@ func _ready():
 		reticle.hide()
 
 func _physics_process(delta: float) -> void:
+	if !can_grapple:
+		return
 	# Check if target is in range
 	if ray.is_colliding():
 		var hit_distance = ray.global_position.distance_to(ray.get_collision_point())

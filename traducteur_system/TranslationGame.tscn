@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c8mtm6ybx23kt"]
 
+[ext_resource type="Theme" uid="uid://cvq8c0kyygma1" path="res://Themes/btns_styles_theme.tres" id="1_5i8xp"]
 [ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_a1oks"]
 [ext_resource type="Script" uid="uid://cd588elilljc5" path="res://traducteur_system/translation_game - Copie.gd" id="2_ix4bu"]
 [ext_resource type="Script" uid="uid://cbd0dlhtvnv43" path="res://traducteur_system/TranslationExercise.gd" id="2_m8yw5"]
@@ -34,7 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_a1oks")
+theme = ExtResource("1_5i8xp")
 script = ExtResource("2_ix4bu")
 exercises = Array[ExtResource("2_m8yw5")]([SubResource("Resource_ouhvu"), SubResource("Resource_ovo48"), SubResource("Resource_yue2s")])
 
@@ -76,6 +77,8 @@ custom_minimum_size = Vector2(600, 80)
 custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_a1oks")
+theme_override_constants/h_separation = 8
 
 [node name="PoolContainer" type="HFlowContainer" parent="VBoxContainer" unique_id=736050551]
 unique_name_in_owner = true
@@ -83,6 +86,8 @@ custom_minimum_size = Vector2(600, 80)
 custom_maximum_size = Vector2(500, -1)
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_a1oks")
+theme_override_constants/h_separation = 8
 
 [node name="Control" type="Control" parent="VBoxContainer" unique_id=729145974]
 custom_minimum_size = Vector2(0, 25)

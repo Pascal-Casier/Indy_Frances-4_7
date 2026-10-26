@@ -1,5 +1,10 @@
 join Marie left
+if {wheels_found} >= 4.0:
+	jump found4wheels
+if {has_met_girl} == true:
+	jump second visit
 Marie: Bonjour.
+set {has_met_girl} = true
 - Pardon ?
 - Bonjour
 Marie: Je m'appelle Marie, et toi ?
@@ -41,3 +46,12 @@ Marie: Qu'est-ce que tu cherches ?\
 	Marie: tu ne comprends pas ?\
 	[color=green]Vocã nêo entende?[/color]
 	jump lbl1
+if {wheels_found} < 4.0:
+	[end_timeline]
+label second visit
+Tu n'as que {wheels_found} roues, il en faut quatre ! Reviens me voir quand tu les auras toutes.\
+[color=green]Vc só tem {wheels_found} rodas! Volte me ver quando tiver todas. [/color]
+[end_timeline]
+label found4wheels
+Marie: tu as trouvé {wheels_found} roues, félicitation. Tu peux utiliser ma voiture.\
+[color=green]vc encontrou {wheels_found} rodas. Vc pode usar o meu carro.[/color]
