@@ -35,7 +35,7 @@ func _ready() -> void:
 
 ## Fonction appelée lors de la réception du signal open_door(nbr)
 func open_door(nbr: int) -> void:
-	if is_moving and door_nbr != nbr:
+	if is_moving or door_nbr != nbr:
 		return
 		
 	is_moving = true

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cyd736wt4lmr6"]
+
+[ext_resource type="Texture2D" uid="uid://bm105o1cxhrmb" path="res://assets/images/particules/particulesPNG/star_04.png" id="1_cc1nc"]
+
+[sub_resource type="Gradient" id="Gradient_lam60"]
+colors = PackedColorArray(1.1947912, 0.96997714, 0.04206184, 1, 1.2510043, 0.2072689, 0.013090343, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_thsvh"]
+gradient = SubResource("Gradient_lam60")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4dcb2"]
+emission_shape_scale = Vector3(1, 0.2, 0.1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angular_velocity_min = -26.800016
+angular_velocity_max = 200.49998
+gravity = Vector3(0, 1, 0)
+scale_min = 0.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_thsvh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tveiw"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_cc1nc")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_5d3sr"]
+material = SubResource("StandardMaterial3D_tveiw")
+
+[node name="Fx_wall" type="Node3D" unique_id=915528433]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1837824766]
+amount = 85
+lifetime = 2.0
+fixed_fps = 60
+process_material = SubResource("ParticleProcessMaterial_4dcb2")
+draw_pass_1 = SubResource("QuadMesh_5d3sr")

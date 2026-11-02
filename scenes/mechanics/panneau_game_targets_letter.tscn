@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=4 uid="uid://bvl7c7fifhh0a"]
+[gd_scene format=4 uid="uid://bvl7c7fifhh0a"]
 
-[ext_resource type="Script" uid="uid://cxp0o5kfy3hja" path="res://scripts/mechanics/panneau_game_targets_letter.gd" id="1_i5w7s"]
+[ext_resource type="Script" uid="uid://cyvngy4w28bt4" path="res://scenes/mechanics/panneau_game_targets_letter2.gd" id="1_jlt2j"]
 [ext_resource type="Texture2D" uid="uid://chfmk542gswl7" path="res://assets/blender/panneau_grand_Palette.png" id="1_w73jb"]
 [ext_resource type="Texture2D" uid="uid://bqvddvgtd6hha" path="res://assets/images/ui/vecFrame1.png" id="2_i5w7s"]
 [ext_resource type="PackedScene" uid="uid://cb5l7o35u5kg6" path="res://scenes/mechanics/target_letter.tscn" id="4_jlt2j"]
@@ -56,20 +56,20 @@ subpixel_positioning = 0
 font_names = PackedStringArray("Impact")
 subpixel_positioning = 0
 
-[node name="PanneauGameTargetsLetter" type="Node3D"]
-script = ExtResource("1_i5w7s")
+[node name="PanneauGameTargetsLetter" type="Node3D" unique_id=1918406365]
+script = ExtResource("1_jlt2j")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1083483873]
 transform = Transform3D(1.41292, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jlt2j")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Cube"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube" unique_id=1041763771]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube/StaticBody3D" unique_id=1561719050]
 shape = SubResource("ConvexPolygonShape3D_iux50")
 
-[node name="Text" type="Label3D" parent="."]
+[node name="Text" type="Label3D" parent="." unique_id=1908849654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2923, 2.48813, 0.196777)
 text = "tire sur les cibles pour former la traduction du mot :
 "
@@ -79,7 +79,7 @@ horizontal_alignment = 0
 autowrap_mode = 3
 width = 800.0
 
-[node name="Text2" type="Label3D" parent="."]
+[node name="Text2" type="Label3D" parent="." unique_id=238396490]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.789742, 2.33166, 0.196777)
 modulate = Color(0.0654907, 0.867188, 0.128123, 1)
@@ -90,7 +90,7 @@ font_size = 69
 autowrap_mode = 3
 width = 800.0
 
-[node name="TextAnswer" type="Label3D" parent="."]
+[node name="TextAnswer" type="Label3D" parent="." unique_id=1766232292]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0071795, 1.62807, 0.196777)
 modulate = Color(0.820313, 0.027771, 0.027771, 1)
@@ -101,15 +101,15 @@ font_size = 69
 autowrap_mode = 3
 width = 800.0
 
-[node name="frame" type="Sprite3D" parent="."]
+[node name="frame" type="Sprite3D" parent="." unique_id=2079012722]
 transform = Transform3D(0.10121, 0, 0, 0, 0.0737794, 0, 0, 0, 0.114314, 0, 1.891, 0.189)
 double_sided = false
 alpha_cut = 2
 texture = ExtResource("2_i5w7s")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1377117194]
 volume_db = -7.704
 
-[node name="Target_Letter" parent="." instance=ExtResource("4_jlt2j")]
+[node name="Target_Letter" parent="." unique_id=855295327 instance=ExtResource("4_jlt2j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.52478)
 lettre = "A"

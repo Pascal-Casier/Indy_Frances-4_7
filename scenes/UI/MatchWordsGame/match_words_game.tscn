@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://4rtabu8d07pb"]
+
+[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_dpim6"]
+[ext_resource type="Texture2D" uid="uid://c8hoeluefgal6" path="res://assets/images/bgds/words_match_game_Bgd.jpg" id="1_o3jv7"]
+[ext_resource type="Script" uid="uid://cyanhnkglvcav" path="res://scripts/UI/match_words_game.gd" id="1_rfg15"]
+
+[node name="MatchWordsGame" type="Control" unique_id=2110585878]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_dpim6")
+script = ExtResource("1_rfg15")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=546826789]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_o3jv7")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=845506549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 165
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 13
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=1286096117]
+layout_mode = 2
+theme_override_constants/separation = 113
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=194532555]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="LeftColumn" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=47225611]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 300)
+custom_maximum_size = Vector2(320, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="RightColumn" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=43567106]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 300)
+custom_maximum_size = Vector2(320, -1)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1263217551]
+layout_mode = 2
+theme_override_constants/separation = 132
+alignment = 1
+
+[node name="Button" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=747105929]
+visible = false
+layout_mode = 2
+text = "Reset
+"
+
+[node name="Button2" type="Button" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=372459398]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "sortir"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=582170562]
+unique_name_in_owner = true
+
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/HBoxContainer2/Button2" to="." method="_on_exit_button_pressed"]

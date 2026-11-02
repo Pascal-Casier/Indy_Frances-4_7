@@ -53,6 +53,9 @@ sky_material = SubResource("PanoramaSkyMaterial_gqeuj")
 [sub_resource type="Environment" id="Environment_jq5qn"]
 background_mode = 2
 sky = SubResource("Sky_yjrqv")
+tonemap_mode = 4
+ssr_enabled = true
+ssao_enabled = true
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7knv"]
@@ -454,7 +457,7 @@ size = Vector3(350, 1, 350)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_y3sog"]
 points = PackedVector3Array(-150, -0.5, -150, -150, 0.5, -150, 150, -0.5, -150, -150, -0.5, 150, -150, 0.5, 150, 150, 0.5, -150, 150, -0.5, 150, 150, 0.5, 150)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ubm2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqi4n"]
 render_priority = 0
 shader = ExtResource("16_2guwv")
 shader_parameter/albedo = Color(1, 1, 1, 1)
@@ -1217,10 +1220,10 @@ mesh = SubResource("BoxMesh_5d3sr")
 shape = SubResource("ConvexPolygonShape3D_y3sog")
 
 [node name="SimpleGrassTextured" type="MultiMeshInstance3D" parent="." unique_id=1487684622]
-material_override = SubResource("ShaderMaterial_8ubm2")
+material_override = SubResource("ShaderMaterial_nqi4n")
 multimesh = SubResource("MultiMesh_vvsqg")
 script = ExtResource("19_4bo6l")
-sgt_radius = 1.9
+sgt_radius = 1.9000000000000001
 sgt_density = 16
 sgt_scale = 1.0
 sgt_rotation = 0.0

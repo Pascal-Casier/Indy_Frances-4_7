@@ -7,17 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="3_exd13"]
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="5_npntn"]
 [ext_resource type="PackedScene" uid="uid://ds7ru7qtq4cwk" path="res://scenes/Decoration/log_rigid_body.tscn" id="7_fid8k"]
+[ext_resource type="PackedScene" uid="uid://hq2repghfywq" path="res://scenes/mechanics/tennis_ball_bullet.tscn" id="15_6y0oo"]
 [ext_resource type="PackedScene" uid="uid://cne45tpbau2nt" path="res://scenes/characters/dragon_to_mount.tscn" id="15_80jn3"]
 [ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="15_byu0c"]
 [ext_resource type="PackedScene" uid="uid://dp6ub342l2q5k" path="res://scenes/mechanics/platform_drivable.tscn" id="16_byu0c"]
 [ext_resource type="Script" uid="uid://drxl0uk1pjpgh" path="res://scenes/mechanics/platform_game/platform_question.gd" id="17_vk2do"]
 [ext_resource type="PackedScene" uid="uid://daf3cm0603vhk" path="res://scenes/Decoration/tower_moveable.tscn" id="18_eggyd"]
 [ext_resource type="PackedScene" uid="uid://ce2da44o65p77" path="res://scenes/mechanics/lever.tscn" id="19_dv2g2"]
+[ext_resource type="PackedScene" uid="uid://dsyk0ecnmy6ep" path="res://scenes/mechanics/platform_spin_trap.tscn" id="19_eggyd"]
+[ext_resource type="PackedScene" uid="uid://bvl7c7fifhh0a" path="res://scenes/mechanics/panneau_game_targets_letter.tscn" id="20_6y0oo"]
 [ext_resource type="PackedScene" uid="uid://d0cpjvd8m6o5a" path="res://scenes/Decoration/barrel_exploding.tscn" id="20_l70lp"]
+[ext_resource type="PackedScene" uid="uid://cb5l7o35u5kg6" path="res://scenes/mechanics/target_letter.tscn" id="21_3txjq"]
 [ext_resource type="PackedScene" uid="uid://4cgryerjlel8" path="res://scenes/mechanics/canon_viseur2.tscn" id="21_6y0oo"]
 [ext_resource type="PackedScene" uid="uid://dytj0oqhc1k16" path="res://scenes/mechanics/crate.tscn" id="22_6y0oo"]
 [ext_resource type="PackedScene" uid="uid://jgcr3c5wa3w4" path="res://scenes/mechanics/shooting_gallery.tscn" id="23_3txjq"]
+[ext_resource type="PackedScene" uid="uid://b8m2n1y0qk5vi" path="res://scenes/mechanics/secret_wall.tscn" id="23_exd13"]
 [ext_resource type="Script" uid="uid://ckrmkfvb2tq26" path="res://scripts/mechanics/target_spawner2.gd" id="24_exd13"]
+[ext_resource type="Material" uid="uid://b341xpwcsinrp" path="res://assets/materials/old_brick_dungeon.tres" id="24_mc1jp"]
+[ext_resource type="PackedScene" uid="uid://bieic7y6f6fvh" path="res://scenes/Fx/fx_secret_system.tscn" id="25_1rvo2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t3mkv"]
 panorama = ExtResource("1_uiw71")
@@ -58,6 +65,10 @@ metadata/_custom_type_script = "uid://drxl0uk1pjpgh"
 [sub_resource type="BoxShape3D" id="BoxShape3D_21l23"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2dhh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5d3sr"]
+material = ExtResource("24_mc1jp")
+size = Vector3(3, 5, 1)
 
 [node name="3test" type="Node3D" unique_id=1458026864]
 
@@ -173,6 +184,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.745426, -0.9, -1.6162969)
 transform = Transform3D(0.9999068, 0, 0.013651639, 0, 1, 0, -0.013651639, 0, 0.9999068, -23.254534, -0.87014306, -13.57632)
 rotation_verticale_min = -45.0
 
+[node name="canon_viseur2" parent="." unique_id=1152691036 instance=ExtResource("21_6y0oo")]
+transform = Transform3D(-0.2719814, 0, 0.96230245, 0, 1, 0, -0.96230245, 0, -0.2719814, -35.824116, -0.87014306, -32.086086)
+rotation_verticale_min = -45.0
+bullet_speed = 50.0
+bullet_scene = ExtResource("15_6y0oo")
+
 [node name="crate" parent="." unique_id=341027089 instance=ExtResource("22_6y0oo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.885462, 0.62343764, 2.4233572)
 continuous_cd = true
@@ -253,9 +270,71 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.366212, 0, 0)
 [node name="Log_rigidBody2" parent="." unique_id=1164412741 instance=ExtResource("7_fid8k")]
 transform = Transform3D(0.13597089, 0, 0.9907128, 0, 1, 0, -0.9907128, 0, 0.13597089, -10.755312, 1.7062285, 0)
 
+[node name="Platform_spin_trap" parent="." unique_id=317453897 instance=ExtResource("19_eggyd")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -8.633545, 0, -31.071411)
+
+[node name="PanneauGameTargetsLetter" parent="." unique_id=2093109373 instance=ExtResource("20_6y0oo")]
+transform = Transform3D(-0.52461326, 0, 0.85134065, 0, 1, 0, -0.85134065, 0, -0.52461326, -49.20284, -0.9000244, -17.80481)
+door_nbr = 12
+dictionnaire_traduction = Dictionary[String, String]({
+"CACHORRO": "CHIEN",
+"GATO": "CHAT",
+"MESA": "TABLE"
+})
+
+[node name="Cube" parent="PanneauGameTargetsLetter" index="0" unique_id=1083483873]
+transform = Transform3D(0.8853667, 0, 0.7793232, 0, 1.34888, 0, -1.1011213, 0, 0.6266221, -3.7844315, 0, 5.5881424)
+
+[node name="Text" parent="PanneauGameTargetsLetter" index="1" unique_id=1908849654]
+transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -5.067482, 2.48813, 7.4978886)
+
+[node name="Text2" parent="PanneauGameTargetsLetter" index="2" unique_id=238396490]
+transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -3.1362076, 2.33166, 5.0959854)
+
+[node name="TextAnswer" parent="PanneauGameTargetsLetter" index="3" unique_id=1766232292]
+transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -3.6265793, 1.62807, 5.7058525)
+
+[node name="frame" parent="PanneauGameTargetsLetter" index="4" unique_id=2079012722]
+transform = Transform3D(0.063420415, 0, 0.08908756, 0, 0.0737794, 0, -0.07887531, 0, 0.07163168, -3.6371384, 1.891, 5.7065735)
+
+[node name="Target_Letter2" parent="PanneauGameTargetsLetter" unique_id=382100215 instance=ExtResource("21_3txjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18775, 0, 2.5247798)
+lettre = "P"
+
+[node name="Target_Letter6" parent="PanneauGameTargetsLetter" unique_id=408714333 instance=ExtResource("21_3txjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.559288, 0, 2.3429146)
+lettre = "P"
+
+[node name="Target_Letter3" parent="PanneauGameTargetsLetter" unique_id=873982849 instance=ExtResource("21_3txjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.266619, 0, 2.5247798)
+lettre = "N"
+
+[node name="Target_Letter4" parent="PanneauGameTargetsLetter" unique_id=320182074 instance=ExtResource("21_3txjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.744904, 0, 2.52478)
+lettre = "I"
+
+[node name="Target_Letter5" parent="PanneauGameTargetsLetter" unique_id=1023852973 instance=ExtResource("21_3txjq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.735748, 0, 2.5191383)
+lettre = "I"
+
+[node name="Secret_wall" parent="." unique_id=1319673992 instance=ExtResource("23_exd13")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.141174, -0.9000244, -35.6492)
+door_number = 12
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1219774194]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.03833, 1.5963068, -36.617004)
+mesh = SubResource("BoxMesh_5d3sr")
+
+[node name="FX_secret_system" parent="MeshInstance3D" unique_id=1007788878 node_paths=PackedStringArray("target_node") instance=ExtResource("25_1rvo2")]
+door_number = 12
+target_node = NodePath("..")
+move_distance = -4.0
+move_time = 2.0
+
 [editable path="PlatformDrivable"]
 [editable path="PlatformDrivable/AnswerSlab"]
 [editable path="PlatformDrivable/AnswerSlab2"]
 [editable path="PlatformDrivable/AnswerSlab3"]
 [editable path="PlatformDrivable/PlatformMoveable"]
 [editable path="Shooting_gallery"]
+[editable path="PanneauGameTargetsLetter"]

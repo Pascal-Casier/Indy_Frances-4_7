@@ -16,8 +16,10 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	explications_system.textes = textes_array
-	explications_system.narrations = narrations_array
+	if textes_array != null :
+		explications_system.textes = textes_array
+		explications_system.narrations = narrations_array
+		explications_system._update_display()
 	player = get_tree().get_first_node_in_group("Player")
 	
 

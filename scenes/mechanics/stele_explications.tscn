@@ -140,6 +140,11 @@ outline_size = 22
 
 [node name="ExplicationsSystem" parent="." unique_id=1602977865 instance=ExtResource("2_by8hf")]
 visible = false
+textes = Array[String](["merde"])
+narrations = Array[AudioStream]([null])
+
+[node name="RichTextLabel" parent="ExplicationsSystem/TextureRect/MarginContainer" parent_id_path=PackedInt32Array(1602977865, 410823376) index="0" unique_id=970219567]
+bbcode_enabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

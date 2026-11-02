@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://cb5l7o35u5kg6"]
+[gd_scene format=4 uid="uid://cb5l7o35u5kg6"]
 
 [ext_resource type="Script" uid="uid://duiu2y280r0vo" path="res://scripts/mechanics/target_letter.gd" id="1_f62pu"]
 [ext_resource type="AudioStream" uid="uid://clnwpirj3oln8" path="res://assets/sounds/sfx/ImpactShortEffect.mp3" id="1_y31wc"]
@@ -170,51 +170,50 @@ _data = {
 height = 0.189957
 radius = 0.615888
 
-[node name="Target_Letter" type="Node3D" groups=["target_letter"]]
+[node name="Target_Letter" type="Node3D" unique_id=408714333 groups=["target_letter"]]
 script = ExtResource("1_f62pu")
 
-[node name="targetStand_gltf" type="Node3D" parent="."]
+[node name="targetStand_gltf" type="Node3D" parent="." unique_id=1579516278]
 
-[node name="targetStand" type="MeshInstance3D" parent="targetStand_gltf"]
+[node name="targetStand" type="MeshInstance3D" parent="targetStand_gltf" unique_id=429022723]
 mesh = SubResource("ArrayMesh_f62pu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="targetStand_gltf/targetStand"]
+[node name="StaticBody3D" type="StaticBody3D" parent="targetStand_gltf/targetStand" unique_id=219387795]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="targetStand_gltf/targetStand/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="targetStand_gltf/targetStand/StaticBody3D" unique_id=629139620]
 shape = SubResource("ConvexPolygonShape3D_gi0yi")
 
-[node name="Label3D" type="Label3D" parent="targetStand_gltf"]
+[node name="Label3D" type="Label3D" parent="targetStand_gltf" unique_id=708233949]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00118206, 2.27171, -0.0630541)
 text = "E"
 font_size = 198
 outline_size = 53
 
-[node name="Cube" type="MeshInstance3D" parent="targetStand_gltf"]
+[node name="Cube" type="MeshInstance3D" parent="targetStand_gltf" unique_id=732815479]
 transform = Transform3D(2.59511e-15, -2.8541e-08, -0.217521, -1.35821, -2.8541e-08, 0, -5.93692e-08, 0.652941, -9.50815e-09, 0.0353684, 2.15086, -0.0978383)
 mesh = SubResource("ArrayMesh_h4tkx")
 skeleton = NodePath("")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="targetStand_gltf"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="targetStand_gltf" unique_id=619613673]
 transform = Transform3D(-2.8541e-08, -0.305174, 3.22432e-08, 0, -1.33396e-08, -0.737638, 0.652941, -1.33396e-08, 1.4094e-15, 0.0341862, 1.60226, -0.132532)
 mesh = SubResource("BoxMesh_c2tbx")
 surface_material_override/0 = SubResource("StandardMaterial3D_f3lff")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1275465808]
 unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_cg1fh")
-}
+libraries/ = SubResource("AnimationLibrary_cg1fh")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=538780862]
 stream = ExtResource("1_y31wc")
 pitch_scale = 0.73
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1759756995]
+unique_name_in_owner = true
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=782545606]
 transform = Transform3D(1, 0, 0, 0, 0.429235, -0.903193, 0, 0.903193, 0.429235, 0, 1.2678, 0.745732)
 shape = SubResource("CylinderShape3D_h4tkx")
 
