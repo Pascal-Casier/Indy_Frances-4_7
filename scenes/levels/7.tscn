@@ -5,12 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://f6yv4winbe7u" path="res://scenes/characters/IndianaPlayer_4_2_Player.tscn" id="2_8xjyh"]
 [ext_resource type="PackedScene" uid="uid://bjl8r23pmbgc0" path="res://scenes/UI/tires_control_UI.tscn" id="2_32q6f"]
 [ext_resource type="PackedScene" uid="uid://kxj08f6qxd2l" path="res://scenes/weapons/blade_axis_trap.tscn" id="12_11era"]
-[ext_resource type="PackedScene" uid="uid://crrujje4tn6hl" path="res://scenes/mechanics/platform_moving.tscn" id="13_h4gjh"]
-[ext_resource type="PackedScene" uid="uid://bvn8xkardoo81" path="res://scenes/mechanics/hammer.tscn" id="14_0txh5"]
 [ext_resource type="PackedScene" uid="uid://dmmicn3kq4wqv" path="res://scenes/Decoration/swamp.tscn" id="14_11era"]
 [ext_resource type="PackedScene" uid="uid://ce2da44o65p77" path="res://scenes/mechanics/lever.tscn" id="15_4q2w8"]
 [ext_resource type="MeshLibrary" uid="uid://ddev61w8li2p1" path="res://meshlibs/tilescubesMeshlib.tres" id="15_fd21f"]
-[ext_resource type="PackedScene" uid="uid://cjwk1sleh30hn" path="res://scenes/mechanics/dalle_trigger.tscn" id="16_4q2w8"]
 [ext_resource type="PackedScene" uid="uid://di7xkfh3t2yph" path="res://scenes/mechanics/letter_floor.tscn" id="16_fd21f"]
 [ext_resource type="PackedScene" uid="uid://bdvrl7yn8sfst" path="res://scenes/Decoration/petit_panneau.tscn" id="17_3tb56"]
 [ext_resource type="PackedScene" uid="uid://bqsn1irwtejrb" path="res://scenes/mechanics/cube_door.tscn" id="17_mywtu"]
@@ -19,15 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bghwrjogy8vr5" path="res://scenes/mechanics/computer_jungle.tscn" id="19_yx64e"]
 [ext_resource type="PackedScene" uid="uid://b5mbnh8me4nbl" path="res://scenes/mechanics/plateforme_callable.tscn" id="20_8gg3f"]
 [ext_resource type="PackedScene" uid="uid://cd4s3oxccfxu3" path="res://scenes/mechanics/death_area.tscn" id="22_e0d0c"]
-[ext_resource type="PackedScene" uid="uid://cid4ydxrlwi4e" path="res://scenes/mechanics/panneau_dico.tscn" id="22_iof32"]
 [ext_resource type="MeshLibrary" uid="uid://ibjydcsilis1" path="res://meshlibs/IndyAI2TilesMeshlib.tres" id="23_0txh5"]
-[ext_resource type="Script" uid="uid://wmb1hst8sn54" path="res://scripts/UI/DicoWodResource.gd" id="23_mk7yj"]
-[ext_resource type="Texture2D" uid="uid://dh44blcydayed" path="res://assets/images/ui/dico/fruits/fraise.png" id="24_ggqok"]
-[ext_resource type="AudioStream" uid="uid://cim0o3deknrdc" path="res://assets/sounds/dico_sounds/fruits/fraise.mp3" id="25_11era"]
-[ext_resource type="Texture2D" uid="uid://buit558lio3vn" path="res://assets/images/ui/dico/fruits/apple.png" id="26_vx4ev"]
-[ext_resource type="AudioStream" uid="uid://vprbmfqyif87" path="res://assets/images/ui/dico/fruits/pomme.mp3" id="27_qcrrx"]
-[ext_resource type="Texture2D" uid="uid://da7xr1yd1mjn5" path="res://assets/images/ui/dico/fruits/raisin.png" id="28_d00xi"]
-[ext_resource type="AudioStream" uid="uid://dom4psr84j36b" path="res://assets/sounds/dico_sounds/fruits/raisin.mp3" id="29_ju4wi"]
 [ext_resource type="PackedScene" uid="uid://bdnmmkfrtptsy" path="res://scenes/Decoration/wheel_pickup.tscn" id="29_qcrrx"]
 [ext_resource type="PackedScene" uid="uid://daf3cm0603vhk" path="res://scenes/Decoration/tower_moveable.tscn" id="30_d00xi"]
 [ext_resource type="PackedScene" uid="uid://n4vorkcsm6f0" path="res://scenes/mechanics/phrases_puzzle.tscn" id="30_ggqok"]
@@ -59,24 +48,6 @@ fog_aerial_perspective = 0.925
 fog_height = -7.0
 fog_height_density = 3.1402
 fog_depth_end = 15.0
-
-[sub_resource type="Resource" id="Resource_k7en2"]
-script = ExtResource("23_mk7yj")
-word = "une fraise"
-photo = ExtResource("24_ggqok")
-sound = ExtResource("25_11era")
-
-[sub_resource type="Resource" id="Resource_yvamj"]
-script = ExtResource("23_mk7yj")
-word = "une pomme"
-photo = ExtResource("26_vx4ev")
-sound = ExtResource("27_qcrrx")
-
-[sub_resource type="Resource" id="Resource_vlbbl"]
-script = ExtResource("23_mk7yj")
-word = "un raisin"
-photo = ExtResource("28_d00xi")
-sound = ExtResource("29_ju4wi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7knv"]
 resource_name = "colormap"
@@ -197,30 +168,6 @@ metadata/_editor_floor_ = Vector3(0, 9, 0)
 
 [node name="Mechanics" type="Node3D" parent="." unique_id=1849256601]
 
-[node name="Platform_moving" parent="Mechanics" unique_id=1366588383 instance=ExtResource("13_h4gjh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 7, -21)
-automatic = false
-door_nbr = 0
-pos2 = Vector3(-22, -7, 13)
-time = 4.0
-transition_type = 7
-
-[node name="Hammer" parent="Mechanics" unique_id=1373273250 instance=ExtResource("14_0txh5")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 0, -14)
-door_nbr = 2
-
-[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="Mechanics/Hammer" unique_id=1347014385]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-aabb = AABB(-1, -4, -4, 2, 8, 8)
-
-[node name="Dalle_trigger" parent="Mechanics" unique_id=483630952 instance=ExtResource("16_4q2w8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -15)
-door_nbr = 2
-dalle_text = "départ"
-
-[node name="textLbl" parent="Mechanics/Dalle_trigger/dalle" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1.19249e-08, 1, 0, -1, 1.19249e-08, 0, 0.10373901, 0)
-
 [node name="Cube_door" parent="Mechanics" unique_id=631028323 instance=ExtResource("17_mywtu")]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, 21.947618, 14, 45)
 door_number = 5
@@ -334,14 +281,6 @@ transform = Transform3D(-5.9604645e-08, 0, 1, 0, 1, 0, -1, 0, -5.9604645e-08, -1
 
 [node name="NewQuizz" parent="Computer_jungle/Control" index="0"]
 door_nbr = 2
-
-[node name="PanneauDico" parent="." unique_id=1099362666 instance=ExtResource("22_iof32")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 34, 7, -22)
-
-[node name="DictionnaryPanel" parent="PanneauDico" index="2"]
-title = "Dictionnaire : les mots utiles"
-resource_list = Array[ExtResource("23_mk7yj")]([SubResource("Resource_k7en2"), SubResource("Resource_yvamj"), SubResource("Resource_vlbbl")])
-quizz = false
 
 [node name="Phrases_puzzle" parent="." unique_id=413996694 instance=ExtResource("30_ggqok")]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 73, 30, 139)
@@ -482,19 +421,19 @@ dictionnaire_traduction = Dictionary[String, String]({
 })
 
 [node name="Cube" parent="PanneauGameTargetsLetter" index="0" unique_id=1083483873]
-transform = Transform3D(1.41292, 0, 0, 0, 1.34888, 0, 0, 0, 1, 0, 0, 2.337799)
+transform = Transform3D(1.3647759, 0, -0.25881904, 0, 1.3488799, 0, 0.36569056, 0, 0.96592575, 0.030151367, 0, 2.420517)
 
 [node name="Text" parent="PanneauGameTargetsLetter" index="1" unique_id=1908849654]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2922974, 2.4881287, 2.5345764)
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -2.23497, 2.4881287, 2.0172958)
 
 [node name="Text2" parent="PanneauGameTargetsLetter" index="2" unique_id=238396490]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78974915, 2.3316612, 2.5345764)
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, 0.7420654, 2.3316612, 2.814991)
 
 [node name="TextAnswer" parent="PanneauGameTargetsLetter" index="3" unique_id=1766232292]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0071868896, 1.6280708, 2.5345764)
+transform = Transform3D(0.9659258, 0, -0.25881904, 0, 1, 0, 0.25881904, 0, 0.9659258, -0.013839722, 1.6280708, 2.6124496)
 
 [node name="frame" parent="PanneauGameTargetsLetter" index="4" unique_id=2079012722]
-transform = Transform3D(0.10121, 0, 0, 0, 0.0737794, 0, 0, 0, 0.114314, 0, 1.8909988, 2.5267982)
+transform = Transform3D(0.09776136, 0, -0.029586643, 0, 0.0737794, 0, 0.026195075, 0, 0.11041884, -0.01876831, 1.8909988, 2.6030731)
 
 [node name="Target_Letter" parent="PanneauGameTargetsLetter" index="6" unique_id=855295327]
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 24.999992, 0, 0.5247803)
@@ -523,13 +462,11 @@ lettre = "A"
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 25, 0, 18.52478)
 lettre = "A"
 
-[editable path="Mechanics/Dalle_trigger"]
 [editable path="Mechanics/Cube_door"]
 [editable path="Mechanics/Cube_door2"]
 [editable path="Mechanics/Cube_door3"]
 [editable path="Mechanics/Cube_door4"]
 [editable path="petit_panneau"]
 [editable path="Computer_jungle"]
-[editable path="PanneauDico"]
 [editable path="Phrases_puzzle"]
 [editable path="PanneauGameTargetsLetter"]
