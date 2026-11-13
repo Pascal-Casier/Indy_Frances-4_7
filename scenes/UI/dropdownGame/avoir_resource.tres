@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Exercice" format=3 uid="uid://d3ithcxo72hge"]
+
+[ext_resource type="Script" uid="uid://4l3i7ggmxg2a" path="res://scenes/UI/dropdownGame/dropdownResource.gd" id="1_7wlfd"]
+
+[resource]
+script = ExtResource("1_7wlfd")
+titre = "AVOIR"
+texte = "Elle [a|as|ai] un petit frère. Tu [as|a|ai] faim après le sport ? Nous [avons|avez|ont] un grand jardin. Ils [ont|avons|a] beaucoup de devoirs."
+metadata/_custom_type_script = "uid://4l3i7ggmxg2a"

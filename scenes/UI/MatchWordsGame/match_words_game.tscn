@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://4rtabu8d07pb"]
 
-[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_dpim6"]
+[ext_resource type="Theme" uid="uid://bi4rcj4yme2le" path="res://Themes/dropdownTheme.tres" id="1_dpim6"]
 [ext_resource type="Texture2D" uid="uid://c8hoeluefgal6" path="res://assets/images/bgds/words_match_game_Bgd.jpg" id="1_o3jv7"]
 [ext_resource type="Script" uid="uid://cyanhnkglvcav" path="res://scripts/UI/match_words_game.gd" id="1_rfg15"]
 
