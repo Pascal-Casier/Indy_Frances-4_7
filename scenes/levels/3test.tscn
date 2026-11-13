@@ -157,7 +157,7 @@ move_time = 2.0
 
 [node name="Lever" parent="." unique_id=100005146 instance=ExtResource("19_dv2g2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.590088, -0.8931822, 13.178955)
-door_nbr = 5
+door_nbr = 12
 turn_off = false
 
 [node name="Barrel_exploding" parent="." unique_id=1909496385 instance=ExtResource("20_l70lp")]

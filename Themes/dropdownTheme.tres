@@ -1,10 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://bi4rcj4yme2le"]
 
 [ext_resource type="FontFile" uid="uid://bt1xa2gijcdrc" path="res://assets/fonts/IMFellEnglish-Regular.ttf" id="1_8ip13"]
+[ext_resource type="FontFile" uid="uid://ci5dcffw5hjiy" path="res://assets/fonts/Acme-Regular.ttf" id="2_s63kn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s63kn"]
-bg_color = Color(0.21834867, 0.20815852, 0.23913157, 1)
-skew = Vector2(0.1, 0)
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -17,8 +17,7 @@ shadow_size = 1
 shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrgrs"]
-bg_color = Color(0.21834867, 0.20815852, 0.23913157, 1)
-skew = Vector2(0.1, 0)
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -32,7 +31,6 @@ shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_augmg"]
 bg_color = Color(0.21834867, 0.20815852, 0.23913157, 1)
-skew = Vector2(0.1, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -44,8 +42,7 @@ shadow_color = Color(0, 0, 0, 0.6784314)
 shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nleq2"]
-bg_color = Color(0.21834867, 0.20815852, 0.23913157, 1)
-skew = Vector2(0.1, 0)
+bg_color = Color(0.3092811, 0.1521017, 0.027855072, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -57,8 +54,7 @@ shadow_size = 2
 shadow_offset = Vector2(1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqcvh"]
-bg_color = Color(0.21834867, 0.20815852, 0.23913157, 1)
-skew = Vector2(0.1, 0)
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -68,6 +64,32 @@ corner_radius_top_left = 3
 corner_radius_top_right = 3
 shadow_color = Color(0, 0, 0, 0.6784314)
 shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m885d"]
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_repj5"]
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aogsk"]
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orocr"]
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsjpv"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5m67"]
+bg_color = Color(0.19528818, 0.09508458, 0.015876003, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yf8im"]
+bg_color = Color(0.51972955, 0.25952768, 0.05136623, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffuod"]
+bg_color = Color(0.3092811, 0.1521017, 0.027855072, 1)
 
 [resource]
 default_font = ExtResource("1_8ip13")
@@ -87,3 +109,24 @@ Button/styles/hover = SubResource("StyleBoxFlat_wrgrs")
 Button/styles/hover_pressed = SubResource("StyleBoxFlat_augmg")
 Button/styles/normal = SubResource("StyleBoxFlat_nleq2")
 Button/styles/pressed = SubResource("StyleBoxFlat_lqcvh")
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_8ip13")
+OptionButton/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+OptionButton/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/constants/align_to_largest_stylebox = 1
+OptionButton/constants/arrow_margin = 6
+OptionButton/constants/h_separation = 15
+OptionButton/font_sizes/font_size = 20
+OptionButton/fonts/font = ExtResource("2_s63kn")
+OptionButton/styles/disabled = SubResource("StyleBoxFlat_m885d")
+OptionButton/styles/focus = SubResource("StyleBoxFlat_repj5")
+OptionButton/styles/hover = SubResource("StyleBoxFlat_aogsk")
+OptionButton/styles/hover_pressed = SubResource("StyleBoxFlat_orocr")
+OptionButton/styles/normal = SubResource("StyleBoxFlat_qsjpv")
+OptionButton/styles/pressed = SubResource("StyleBoxFlat_o5m67")
+PopupMenu/font_sizes/font_size = 20
+PopupMenu/fonts/font = ExtResource("1_8ip13")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_yf8im")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_ffuod")

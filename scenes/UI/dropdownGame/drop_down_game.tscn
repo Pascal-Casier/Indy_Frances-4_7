@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://g84ki6y1w670"]
 
-[ext_resource type="Theme" uid="uid://cqxapjn44ubta" path="res://Themes/medievalTheme2.tres" id="1_82gy7"]
 [ext_resource type="Texture2D" uid="uid://b8mnk15dbmrs7" path="res://assets/images/bgds/phrasemakerUIfull.jpg" id="1_i50jr"]
 [ext_resource type="Script" uid="uid://bdukuycj57kgh" path="res://scenes/UI/dropdownGame/drop_down_game.gd" id="1_mffar"]
+[ext_resource type="Theme" uid="uid://bi4rcj4yme2le" path="res://Themes/dropdownTheme.tres" id="1_v066p"]
 [ext_resource type="Script" uid="uid://4l3i7ggmxg2a" path="res://scenes/UI/dropdownGame/dropdownResource.gd" id="2_01flm"]
 [ext_resource type="Resource" uid="uid://dp2wvb6eygmf2" path="res://scenes/UI/dropdownGame/etre_resource.tres" id="4_v066p"]
 [ext_resource type="Resource" uid="uid://d3ithcxo72hge" path="res://scenes/UI/dropdownGame/avoir_resource.tres" id="5_nniqb"]
@@ -15,9 +15,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_82gy7")
+theme = ExtResource("1_v066p")
 script = ExtResource("1_mffar")
 exercices = Array[ExtResource("2_01flm")]([ExtResource("4_v066p"), ExtResource("5_nniqb"), ExtResource("6_f7lln")])
+melanger_ordre = true
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1112160850]
 self_modulate = Color(0.40573663, 0.39587772, 0.39587772, 1)
@@ -44,6 +45,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 
 [node name="Progression" type="Label" parent="VBoxContainer" unique_id=1116090162]
 unique_name_in_owner = true

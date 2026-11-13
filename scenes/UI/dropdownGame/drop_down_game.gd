@@ -1,11 +1,16 @@
 extends Control
 
+## Émis quand le joueur a réussi la série (≥ seuil) et clique sur "Sortir".
+signal success
+
 ## Liste d'exercices : le joueur devra tous les compléter.
 @export var exercices: Array[Exercice] = []
 ## Texte utilisé si la liste ci-dessus est vide.
 @export_multiline var texte_par_defaut: String = "Le [chat|chien|poisson] [dort|vole|chante] sur le [canapé|nuage|arbre]."
 ## Si activé, l'ordre des exercices est mélangé à chaque série.
 @export var melanger_ordre: bool = false
+## Pourcentage minimum de bonnes réponses pour réussir la série.
+@export_range(0.0, 1.0, 0.01) var seuil_reussite: float = 0.75
 @export var couleur_correct: Color = Color.LIME_GREEN
 @export var couleur_erreur: Color = Color.RED
 
@@ -20,6 +25,7 @@ var textes: Array[String] = []
 var index_actuel: int = 0
 var score_total: int = 0
 var trous_total: int = 0
+var serie_reussie: bool = false
 # Chaque trou : { "menu": OptionButton, "bonne": String }
 var trous: Array = []
 
@@ -27,7 +33,7 @@ var trous: Array = []
 func _ready() -> void:
 	bouton.pressed.connect(_on_valider)
 	bouton_suivant.pressed.connect(_on_suivant)
-	bouton_rejouer.pressed.connect(_demarrer_serie)
+	bouton_rejouer.pressed.connect(_on_rejouer_ou_sortir)
 	_demarrer_serie()
 
 
@@ -45,6 +51,8 @@ func _demarrer_serie() -> void:
 	index_actuel = 0
 	score_total = 0
 	trous_total = 0
+	serie_reussie = false
+	bouton_rejouer.text = "Rejouer"
 	_afficher_exercice()
 
 
@@ -65,6 +73,7 @@ func construire_texte(texte: String) -> void:
 	var regex := RegEx.new()
 	regex.compile("\\[([^\\]]+)\\]")
 
+	@warning_ignore("shadowed_variable_base_class")
 	var position := 0
 	for m in regex.search_all(texte):
 		_ajouter_mots(texte.substr(position, m.get_start() - position))
@@ -123,11 +132,28 @@ func _on_valider() -> void:
 
 
 func _afficher_bilan_final() -> void:
-	var note := roundi(20.0 * score_total / max(trous_total, 1))
+	var ratio: float = float(score_total) / maxi(trous_total, 1)
+	var note := roundi(20.0 * ratio)
+	serie_reussie = ratio >= seuil_reussite
+
 	resultat.text += "\n\nSérie terminée !\nScore total : %d / %d  (%d/20)" % [score_total, trous_total, note]
+	if serie_reussie:
+		resultat.text += "\nBravo, vous avez réussi !"
+		bouton_rejouer.text = "Sortir"
+	else:
+		resultat.text += "\nIl faut au moins %d%% de bonnes réponses. Réessayez !" % roundi(seuil_reussite * 100.0)
+		bouton_rejouer.text = "Rejouer"
 	bouton_rejouer.visible = true
 
 
 func _on_suivant() -> void:
 	index_actuel += 1
 	_afficher_exercice()
+
+
+func _on_rejouer_ou_sortir() -> void:
+	if serie_reussie:
+		visible = false
+		success.emit()
+	else:
+		_demarrer_serie()
