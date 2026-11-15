@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://4rtabu8d07pb"]
 
 [ext_resource type="Theme" uid="uid://bi4rcj4yme2le" path="res://Themes/dropdownTheme.tres" id="1_dpim6"]
-[ext_resource type="Texture2D" uid="uid://c8hoeluefgal6" path="res://assets/images/bgds/words_match_game_Bgd.jpg" id="1_o3jv7"]
 [ext_resource type="Script" uid="uid://cyanhnkglvcav" path="res://scripts/UI/match_words_game.gd" id="1_rfg15"]
+[ext_resource type="Texture2D" uid="uid://dc1bafiw7cee8" path="res://assets/images/bgds/words_matching-removebg.png" id="3_dpim6"]
 
 [node name="MatchWordsGame" type="Control" unique_id=2110585878]
 layout_mode = 3
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_o3jv7")
+texture = ExtResource("3_dpim6")
 
 [node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=845506549]
 layout_mode = 1

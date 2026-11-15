@@ -184,3 +184,8 @@ func _on_button_exit_pressed() -> void:
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	hide()
+
+
+func _on_button_return_pressed() -> void:
+	setup_quiz()
+	hide()
