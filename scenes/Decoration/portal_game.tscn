@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bd7fhi7eeil3u"]
+
+[ext_resource type="Script" uid="uid://dxwmn7emh5bcm" path="res://scripts/decoration/portal_game.gd" id="1_bk7w0"]
+[ext_resource type="Shader" uid="uid://b5ok14js3fbha" path="res://shaders/portal_cube.gdshader" id="1_utlfk"]
+[ext_resource type="PackedScene" uid="uid://4rtabu8d07pb" path="res://scenes/UI/MatchWordsGame/match_words_game.tscn" id="3_nmxyw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8bm0"]
+render_priority = 0
+shader = ExtResource("1_utlfk")
+shader_parameter/color_core = Color(0.94062644, 0.827421, 0.068220414, 1)
+shader_parameter/color_mid = Color(0.55, 0.15, 1, 1)
+shader_parameter/color_edge = Color(0.05, 0.75, 1, 1)
+shader_parameter/speed = 1.6450000781375
+shader_parameter/twist = 3.0
+shader_parameter/arms = 8.0
+shader_parameter/noise_scale = 2.6950001042625
+shader_parameter/cube_half_size = 0.5
+shader_parameter/tunnel_depth = 1.77200008417
+shader_parameter/core_size = 4.358000183255
+shader_parameter/frame_width = 0.0400000019
+shader_parameter/intensity = 0.854000040565
+shader_parameter/rim_power = 3.0
+shader_parameter/alpha_base = 0.2110000100225
+
+[sub_resource type="BoxMesh" id="BoxMesh_bfp77"]
+size = Vector3(1, 1, 0.1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hts2m"]
+points = PackedVector3Array(0.5, 0.5, 0.05, 0.5, 0.5, -0.05, -0.5, 0.5, 0.05, 0.5, -0.5, 0.05, 0.5, -0.5, -0.05, -0.5, 0.5, -0.05, -0.5, -0.5, 0.05, -0.5, -0.5, -0.05)
+
+[node name="Portal_Game" type="Area3D" unique_id=1761463823]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_bk7w0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1429143334]
+material_override = SubResource("ShaderMaterial_o8bm0")
+mesh = SubResource("BoxMesh_bfp77")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1163915592]
+shape = SubResource("ConvexPolygonShape3D_hts2m")
+
+[node name="MatchWordsGame" parent="." unique_id=2110585878 instance=ExtResource("3_nmxyw")]
+process_mode = 2
+visible = false
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="success" from="MatchWordsGame" to="." method="_on_match_words_game_success"]

@@ -1,7 +1,7 @@
 extends Control
 
 @export var queuing : bool = true
-
+signal success
 
 # --- DONNÉES DU JEU (Configurables dans l'Inspecteur) ---
 @export var vocab_pairs: Dictionary = {
@@ -231,6 +231,7 @@ func _on_game_finished() -> void:
 func _on_exit_button_pressed() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().paused = false
+	success.emit()
 	if queuing:
 		queue_free()
 	else:

@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://d0cpjvd8m6o5a" path="res://scenes/Decoration/barrel_exploding.tscn" id="20_l70lp"]
 [ext_resource type="PackedScene" uid="uid://cb5l7o35u5kg6" path="res://scenes/mechanics/target_letter.tscn" id="21_3txjq"]
 [ext_resource type="PackedScene" uid="uid://4cgryerjlel8" path="res://scenes/mechanics/canon_viseur2.tscn" id="21_6y0oo"]
+[ext_resource type="PackedScene" uid="uid://bd7fhi7eeil3u" path="res://scenes/Decoration/portal_game.tscn" id="22_3txjq"]
 [ext_resource type="PackedScene" uid="uid://dytj0oqhc1k16" path="res://scenes/mechanics/crate.tscn" id="22_6y0oo"]
 [ext_resource type="PackedScene" uid="uid://b8m2n1y0qk5vi" path="res://scenes/mechanics/secret_wall.tscn" id="23_exd13"]
 [ext_resource type="Material" uid="uid://b341xpwcsinrp" path="res://assets/materials/old_brick_dungeon.tres" id="24_mc1jp"]
@@ -192,19 +193,19 @@ dictionnaire_traduction = Dictionary[String, String]({
 })
 
 [node name="Cube" parent="PanneauGameTargetsLetter" index="0" unique_id=1083483873]
-transform = Transform3D(0.8853667, 0, 0.7793232, 0, 1.34888, 0, -1.1011213, 0, 0.6266221, -3.7844315, 0, 5.5881424)
+transform = Transform3D(1.3981425, 0, -0.14424919, 0, 1.3488799, 0, 0.20381252, 0, 0.9895413, 5.284111, -9.536743e-07, -3.44693)
 
 [node name="Text" parent="PanneauGameTargetsLetter" index="1" unique_id=1908849654]
-transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -5.067482, 2.48813, 7.4978886)
+transform = Transform3D(0.9895413, 0, -0.14424929, 0, 1, 0, 0.14424929, 0, 0.9895413, 2.9874039, 2.4881291, -3.5828705)
 
 [node name="Text2" parent="PanneauGameTargetsLetter" index="2" unique_id=238396490]
-transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -3.1362076, 2.33166, 5.0959854)
+transform = Transform3D(0.9895413, 0, -0.14424929, 0, 1, 0, 0.14424929, 0, 0.9895413, 6.0372047, 2.331659, -3.1382828)
 
 [node name="TextAnswer" parent="PanneauGameTargetsLetter" index="3" unique_id=1766232292]
-transform = Transform3D(0.6266221, 0, 0.7793232, 0, 1, 0, -0.7793232, 0, 0.6266221, -3.6265793, 1.62807, 5.7058525)
+transform = Transform3D(0.9895413, 0, -0.14424929, 0, 1, 0, 0.14424929, 0, 0.9895413, 5.2628326, 1.628069, -3.2511673)
 
 [node name="frame" parent="PanneauGameTargetsLetter" index="4" unique_id=2079012722]
-transform = Transform3D(0.063420415, 0, 0.08908756, 0, 0.0737794, 0, -0.07887531, 0, 0.07163168, -3.6371384, 1.891, 5.7065735)
+transform = Transform3D(0.10015149, 0, -0.016489705, 0, 0.0737794, 0, 0.014599461, 0, 0.113118455, 5.2568436, 1.8909991, -3.2599068)
 
 [node name="Target_Letter2" parent="PanneauGameTargetsLetter" unique_id=382100215 instance=ExtResource("21_3txjq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18775, 0, 2.5247798)
@@ -250,6 +251,9 @@ target_node = NodePath("..")
 move_time = 2.0
 movement_type = 2
 move_distance = -4.0
+
+[node name="Portal_Game" parent="." unique_id=1761463823 instance=ExtResource("22_3txjq")]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1, 2.7302136, 0.66055894, 7.9081917)
 
 [editable path="PlatformDrivable"]
 [editable path="PlatformDrivable/AnswerSlab"]
