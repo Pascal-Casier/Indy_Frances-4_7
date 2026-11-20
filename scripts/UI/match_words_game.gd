@@ -12,6 +12,12 @@ signal success
 	"Soleil": { "text": "Sol", "audio": "" }
 }
 
+# --- TEXTURES DES BOUTONS ---
+@export var tex_normal: Texture2D = preload("res://assets/images/ui/btns/boutons_nl.png")
+@export var tex_hover: Texture2D = preload("res://assets/images/ui/btns/boutons_hover.png")
+@export var tex_pressed: Texture2D = preload("res://assets/images/ui/btns/boutons_pressed.png")
+@export var button_size: Vector2 = Vector2(220, 64)
+
 # --- SONS ---
 @export var victory_audio: String = "res://assets/sounds/sfx/yipee.mp3" # Son de victoire optionnel
 
@@ -28,8 +34,8 @@ signal success
 @onready var audio_player: AudioStreamPlayer = %AudioStreamPlayer
 
 # --- VARIABLES D'ÉTAT ---
-var selected_left_button: Button = null
-var selected_right_button: Button = null
+var selected_left_button: TextureButton = null
+var selected_right_button: TextureButton = null
 var matched_count: int = 0
 var is_busy: bool = false
 
@@ -62,29 +68,42 @@ func setup_game() -> void:
 	right_items.shuffle()
 
 	for item in left_items:
-		var btn: Button = _create_vocab_button(item, true)
+		var btn: TextureButton = _create_vocab_button(item, true)
 		left_column.add_child(btn)
 
 	for item in right_items:
-		var btn: Button = _create_vocab_button(item, false)
+		var btn: TextureButton = _create_vocab_button(item, false)
 		right_column.add_child(btn)
 
-func _create_vocab_button(text_val: String, is_left: bool) -> Button:
-	var btn: Button = Button.new()
-	btn.text = text_val
-	btn.resized.connect(func(): btn.pivot_offset = btn.size / 2)
+func _create_vocab_button(text_val: String, is_left: bool) -> TextureButton:
+	var btn: TextureButton = TextureButton.new()
+	btn.texture_normal = tex_normal
+	btn.texture_hover = tex_hover
+	btn.texture_pressed = tex_pressed
+	btn.ignore_texture_size = true
+	btn.stretch_mode = TextureButton.STRETCH_SCALE
+	btn.custom_minimum_size = button_size
 	btn.modulate = color_default
+	btn.resized.connect(func(): btn.pivot_offset = btn.size / 2)
+
+	# Ajouter un Label centré pour afficher le mot ou la traduction
+	var lbl: Label = Label.new()
+	lbl.text = text_val
+	lbl.set_anchors_preset(Control.PRESET_FULL_RECT)
+	lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	btn.add_child(lbl)
 	
+	btn.set_meta("id", text_val)
 	if is_left:
-		btn.set_meta("id", text_val) 
 		btn.pressed.connect(_on_left_button_pressed.bind(btn))
 	else:
-		btn.set_meta("id", text_val)
 		btn.pressed.connect(_on_right_button_pressed.bind(btn))
 		
 	return btn
 
-func _on_left_button_pressed(button: Button) -> void:
+func _on_left_button_pressed(button: TextureButton) -> void:
 	if is_busy or button.disabled: return
 	
 	var key = button.get_meta("id")
@@ -99,7 +118,7 @@ func _on_left_button_pressed(button: Button) -> void:
 	
 	_check_match()
 
-func _on_right_button_pressed(button: Button) -> void:
+func _on_right_button_pressed(button: TextureButton) -> void:
 	if is_busy or button.disabled: return
 
 	if selected_right_button and selected_right_button != button:
@@ -155,7 +174,7 @@ func _check_match() -> void:
 		selected_right_button = null
 		is_busy = false
 
-func _animate_button(button: Button, target_color: Color, target_scale: Vector2, quick: bool = false) -> void:
+func _animate_button(button: TextureButton, target_color: Color, target_scale: Vector2, quick: bool = false) -> void:
 	if not is_instance_valid(button): return
 	var tween = create_tween()
 	tween.set_parallel(true) 
@@ -168,7 +187,7 @@ func _animate_button(button: Button, target_color: Color, target_scale: Vector2,
 	tween.tween_property(button, "scale", target_scale, duration)\
 		.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 
-func _shake_button(button: Button) -> void:
+func _shake_button(button: TextureButton) -> void:
 	if not is_instance_valid(button): return
 	var tween = create_tween()
 	var original_pos = button.position
@@ -204,7 +223,7 @@ func _on_game_finished() -> void:
 	vbox.add_theme_constant_override("separation", 15)
 	
 	var label = Label.new()
-	label.text = "🏆 BIEN JOUÈ !\nFélicitations, l'Aventurier !"
+	label.text = "🏆 BIEN JOUÉ !\nFélicitations, l'Aventurier !"
 	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	vbox.add_child(label)
 	
@@ -236,3 +255,4 @@ func _on_exit_button_pressed() -> void:
 		queue_free()
 	else:
 		hide()
+		

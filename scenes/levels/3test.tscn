@@ -154,6 +154,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.200468, 7.5584116, 21.644
 
 [node name="Tower_moveable" parent="." unique_id=1247895336 instance=ExtResource("18_eggyd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.676941, -7.4000244, 17.51648)
+door_nbr = 7
 move_time = 2.0
 
 [node name="Lever" parent="." unique_id=100005146 instance=ExtResource("19_dv2g2")]
@@ -254,6 +255,7 @@ move_distance = -4.0
 
 [node name="Portal_Game" parent="." unique_id=1761463823 instance=ExtResource("22_3txjq")]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1, 2.7302136, 0.66055894, 7.9081917)
+doorNbr = 7
 
 [editable path="PlatformDrivable"]
 [editable path="PlatformDrivable/AnswerSlab"]
@@ -261,3 +263,4 @@ transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1, 2.7302136, 0.66055894, 7.9081
 [editable path="PlatformDrivable/AnswerSlab3"]
 [editable path="PlatformDrivable/PlatformMoveable"]
 [editable path="PanneauGameTargetsLetter"]
+[editable path="Portal_Game"]

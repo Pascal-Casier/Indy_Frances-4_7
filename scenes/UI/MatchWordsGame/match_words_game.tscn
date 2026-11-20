@@ -13,6 +13,28 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_dpim6")
 script = ExtResource("1_rfg15")
+vocab_pairs = {
+"Bonjour": {
+"audio": "res://assets/sounds/dialogues/phrases/salutations/bonjour.wav",
+"text": "Olá"
+},
+"Chat": {
+"audio": "",
+"text": "Gato"
+},
+"Chien": {
+"audio": "",
+"text": "Cachorro"
+},
+"Maison": {
+"audio": "res://audio/maison.ogg",
+"text": "Casa"
+},
+"Soleil": {
+"audio": "",
+"text": "Sol"
+}
+}
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=546826789]
 layout_mode = 1
@@ -49,7 +71,7 @@ custom_minimum_size = Vector2(320, 300)
 custom_maximum_size = Vector2(320, -1)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 15
+theme_override_constants/separation = 9
 alignment = 1
 
 [node name="RightColumn" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/HBoxContainer" unique_id=43567106]
@@ -58,7 +80,7 @@ custom_minimum_size = Vector2(320, 300)
 custom_maximum_size = Vector2(320, -1)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 15
+theme_override_constants/separation = 9
 alignment = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=1263217551]
